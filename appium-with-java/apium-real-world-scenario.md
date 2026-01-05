@@ -19,7 +19,7 @@ This document explains **how Appium is used in real-world projects**, how it int
 
 ## 🏗️ Real-World Architecture (High Level)
 
-```
+```text
 Automation Code (CI / Local)
         |
         v
@@ -27,7 +27,7 @@ Appium Server
         |
         v
 Mobile Device (Real / Emulator)
-``
+```
 
 Android Studio is **only a local development tool**, not part of production automation.
 
@@ -56,7 +56,7 @@ Android Studio is replaced by:
 - Appium Server → Local
 - Tests → Local machine
 
-```
+```text
 Test Code → Appium Server → ADB → Emulator
 ```
 
@@ -75,7 +75,7 @@ Test Code → Appium Server → ADB → Emulator
 
 ### Setup
 
-```
+```test
 CI Server (Jenkins / GitHub Actions)
         |
         v
@@ -83,7 +83,7 @@ Central Appium Server
         |
         v
 Device Lab (Real Devices)
-``
+```
 
 ### Key Points
 - Multiple **real Android & iOS devices**
@@ -117,7 +117,7 @@ Cloud Appium Server (BrowserStack)
         |
         v
 Real Mobile Device (Cloud)
-``
+```
 
 ### What BrowserStack Provides
 - Real Android & iOS devices
@@ -197,7 +197,7 @@ Appium Tests Triggered
         |
         v
 Results + Reports
-``
+```
 
 CI machines:
 - Do NOT have Android Studio UI
