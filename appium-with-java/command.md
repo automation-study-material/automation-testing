@@ -17,3 +17,6 @@ boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("m
     "percent", 3.0
 ));
 ```
+
+- `swipe` - we can swipe (horizontal direction)- It may be images
+  
