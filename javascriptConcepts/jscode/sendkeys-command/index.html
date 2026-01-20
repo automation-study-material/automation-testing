@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://Play-Wright-course.github.io/automation-testing/javascriptConcepts/jscode/sendkeys-command/">
       
       
+        <link rel="prev" href="../methods-in-playwright/">
+      
+      
+        <link rel="next" href="../inputValue%26TextContent/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>📘 Playwright – All Ways to Enter or Send Text (Complete Guide) - Automation Notes</title>
+        <title>SendKeys Command - Automation Notes</title>
       
     
     
@@ -98,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              📘 Playwright – All Ways to Enter or Send Text (Complete Guide)
+              SendKeys Command
             
           </span>
         </div>
@@ -832,18 +836,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -864,7 +870,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -882,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/general.md" class="md-nav__link">
+      <a href="../general/" class="md-nav__link">
         
   
   
@@ -910,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/test-package.md" class="md-nav__link">
+      <a href="../test-package/" class="md-nav__link">
         
   
   
@@ -938,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/sample-playwright-test.md" class="md-nav__link">
+      <a href="../sample-playwright-test/" class="md-nav__link">
         
   
   
@@ -966,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/page-vs-browser.md" class="md-nav__link">
+      <a href="../page-vs-browser/" class="md-nav__link">
         
   
   
@@ -994,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/locators.md" class="md-nav__link">
+      <a href="../locators/" class="md-nav__link">
         
   
   
@@ -1022,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/methods-in-playwright.md" class="md-nav__link">
+      <a href="../methods-in-playwright/" class="md-nav__link">
         
   
   
@@ -1047,10 +1053,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../playwright/jscode/sendkeys-command.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SendKeys Command
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1066,6 +1099,175 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Quick Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-fill-fast-clears-field-no-keystrokes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ fill() – Fast, Clears Field, No Keystrokes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-type-human-like-typing-doesnt-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ type() – Human-Like Typing, Doesn’t Clear
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-keyboardtype-type-into-focused-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ keyboard.type() – Type Into Focused Element
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-keyboardpress-single-key-press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ keyboard.press() – Single Key Press
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-keyboardinserttext-insert-text-without-keystrokes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5️⃣ keyboard.insertText() – Insert Text Without Keystrokes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-evaluate-set-value-using-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6️⃣ evaluate() – Set Value Using JavaScript
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Detailed Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Detailed Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clearing-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clearing Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typing-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typing Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trigger Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-for-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best for Reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎉 Final Recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1078,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/inputValue&TextContent.md" class="md-nav__link">
+      <a href="../inputValue%26TextContent/" class="md-nav__link">
         
   
   
@@ -1106,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/dropdown.md" class="md-nav__link">
+      <a href="../dropdown/" class="md-nav__link">
         
   
   
@@ -1134,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/auto-suggestion-dropdown.md" class="md-nav__link">
+      <a href="../auto-suggestion-dropdown/" class="md-nav__link">
         
   
   
@@ -1162,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/radio-buttons.md" class="md-nav__link">
+      <a href="../radio-buttons/" class="md-nav__link">
         
   
   
@@ -1190,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/alert-iframe.md" class="md-nav__link">
+      <a href="../alert-iframe/" class="md-nav__link">
         
   
   
@@ -1218,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/window-tab-handle.md" class="md-nav__link">
+      <a href="../window-tab-handle/" class="md-nav__link">
         
   
   
@@ -1246,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/calender.md" class="md-nav__link">
+      <a href="../calender/" class="md-nav__link">
         
   
   
@@ -1274,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/playwright-assertion.md" class="md-nav__link">
+      <a href="../playwright-assertion/" class="md-nav__link">
         
   
   
@@ -1302,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/json-data-iteration.md" class="md-nav__link">
+      <a href="../json-data-iteration/" class="md-nav__link">
         
   
   
@@ -1330,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/excel.md" class="md-nav__link">
+      <a href="../excel/" class="md-nav__link">
         
   
   
@@ -1358,7 +1560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/customeFixureToGetTestData.md" class="md-nav__link">
+      <a href="../customeFixureToGetTestData/" class="md-nav__link">
         
   
   

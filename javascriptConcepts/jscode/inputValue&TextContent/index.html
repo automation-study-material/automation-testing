@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://Play-Wright-course.github.io/automation-testing/javascriptConcepts/jscode/inputValue%26TextContent/">
       
       
+        <link rel="prev" href="../sendkeys-command/">
+      
+      
+        <link rel="next" href="../dropdown/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>Playwright inputValue() & textContent() — What They REALLY Return - Automation Notes</title>
+        <title>Input Value & Text Content - Automation Notes</title>
       
     
     
@@ -98,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Playwright inputValue() &amp; textContent() — What They REALLY Return
+              Input Value & Text Content
             
           </span>
         </div>
@@ -832,18 +836,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -864,7 +870,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -882,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/general.md" class="md-nav__link">
+      <a href="../general/" class="md-nav__link">
         
   
   
@@ -910,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/test-package.md" class="md-nav__link">
+      <a href="../test-package/" class="md-nav__link">
         
   
   
@@ -938,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/sample-playwright-test.md" class="md-nav__link">
+      <a href="../sample-playwright-test/" class="md-nav__link">
         
   
   
@@ -966,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/page-vs-browser.md" class="md-nav__link">
+      <a href="../page-vs-browser/" class="md-nav__link">
         
   
   
@@ -994,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/locators.md" class="md-nav__link">
+      <a href="../locators/" class="md-nav__link">
         
   
   
@@ -1022,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/methods-in-playwright.md" class="md-nav__link">
+      <a href="../methods-in-playwright/" class="md-nav__link">
         
   
   
@@ -1050,7 +1056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/sendkeys-command.md" class="md-nav__link">
+      <a href="../sendkeys-command/" class="md-nav__link">
         
   
   
@@ -1075,10 +1081,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../playwright/jscode/inputValue&TextContent.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Value & Text Content
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1094,6 +1127,309 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#short-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Short Answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correct-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Correct Mental Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Correct Mental Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incorrect-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Incorrect understanding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correct-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Correct understanding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputvalue-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 inputValue() — Explained
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 inputValue() — Explained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ What it returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputvalue-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 inputValue() Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 inputValue() Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-user-types-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ User types manually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-playwright-fills-the-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Playwright fills the value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-value-set-via-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ Value set via HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-value-changed-via-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ Value changed via JavaScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-inputvalue-does-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ What inputValue() Does NOT Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textcontent-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 textContent() — Explained
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 textContent() — Explained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-returns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ What it returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textcontent-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 textContent() Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 textContent() Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-reading-visible-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Reading visible text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hidden-text-is-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Hidden text is included
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-common-mistake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ ❌ Common mistake
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputvalue-vs-textcontent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆚 inputValue() vs textContent()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputvalue-vs-getattributevalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆚 inputValue() vs getAttribute('value')
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice-in-playwright-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Best Practice in Playwright (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easy-rule-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Easy Rule to Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 Final Answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1106,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/dropdown.md" class="md-nav__link">
+      <a href="../dropdown/" class="md-nav__link">
         
   
   
@@ -1134,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/auto-suggestion-dropdown.md" class="md-nav__link">
+      <a href="../auto-suggestion-dropdown/" class="md-nav__link">
         
   
   
@@ -1162,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/radio-buttons.md" class="md-nav__link">
+      <a href="../radio-buttons/" class="md-nav__link">
         
   
   
@@ -1190,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/alert-iframe.md" class="md-nav__link">
+      <a href="../alert-iframe/" class="md-nav__link">
         
   
   
@@ -1218,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/window-tab-handle.md" class="md-nav__link">
+      <a href="../window-tab-handle/" class="md-nav__link">
         
   
   
@@ -1246,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/calender.md" class="md-nav__link">
+      <a href="../calender/" class="md-nav__link">
         
   
   
@@ -1274,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/playwright-assertion.md" class="md-nav__link">
+      <a href="../playwright-assertion/" class="md-nav__link">
         
   
   
@@ -1302,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/json-data-iteration.md" class="md-nav__link">
+      <a href="../json-data-iteration/" class="md-nav__link">
         
   
   
@@ -1330,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/excel.md" class="md-nav__link">
+      <a href="../excel/" class="md-nav__link">
         
   
   
@@ -1358,7 +1694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../playwright/jscode/customeFixureToGetTestData.md" class="md-nav__link">
+      <a href="../customeFixureToGetTestData/" class="md-nav__link">
         
   
   
