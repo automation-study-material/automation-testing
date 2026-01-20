@@ -1,20 +1,49 @@
-site_name: JavaScript Playwright Docs
+site_name: Automation Notes
 site_url: https://Play-Wright-course.github.io/automation-testing/
 use_directory_urls: true
 nav:
   - JavaScript Concepts:
+      - RoadMap: javascriptConcepts/30-day-roadmap.md
+      - "Synchronous & ASynchronous":
+        -  concepts: javascriptConcepts/Synchronous-And-Asynchronous.md 
+        -  deep guide: javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide.md
+      - Data Types: javascriptConcepts/dataTypes.md
       - Variables: javascriptConcepts/variables.md
       - Var vs Let: javascriptConcepts/var-vs-let-vaiable.md
       - Vaiables snipped code: javascriptConcepts/variables-code.md
-      - Data Types: javascriptConcepts/dataTypes.md
-      - Operators: javascriptConcepts/operator.md
+      - Operator: javascriptConcepts/operator.md
+      - Objects in JS: javascriptConcepts/objects-in-js.md
       - Flow Statements: javascriptConcepts/flow-statement.md
       - Arrays & Objects: javascriptConcepts/Arrays.md
+      - String in JS: javascriptConcepts/string -in-js.md
+      - Class & Constructor: javascriptConcepts/class-constructor.md
       - Functions: javascriptConcepts/functions.md
       - Arrow Functions: javascriptConcepts/arrow-functions.md
+      - Regular Function vs Arrow Function: javascriptConcepts/regularfunction-vs-arrowFunction.md
+      - JavaScript Promises: javascriptConcepts/js-promises.md
+      - JavaScript Promises – Snippet Code: javascriptConcepts/js-promises-snipped-code.md
       - Interview code: javascriptConcepts/basics-interview-code.md
       
-      
+  - PlayWright with Javascript:
+    - General: playwright/general.md
+    - Test Package: playwright/test-package.md
+    - Sample Playwright Test: playwright/sample-playwright-test.md
+    - Page vs Browser: playwright/page-vs-browser.md
+    - Locators: playwright/locators.md
+    - Methods in Playwright: playwright/methods-in-playwright.md
+    - SendKeys Command: playwright/sendkeys-command.md
+    - Input Value & Text Content: playwright/inputValue&TextContent.md
+    - Dropdown: playwright/dropdown.md
+    - Auto Suggestion Dropdown: playwright/auto-suggestion-dropdown.md
+    - Radio Buttons: playwright/radio-buttons.md
+    - Alert & Iframe: playwright/alert-iframe.md
+    - Window & Tab Handle: playwright/window-tab-handle.md
+    - Calendar: playwright/calender.md
+    - Playwright Assertions: playwright/playwright-assertion.md
+    - JSON Data Iteration: playwright/json-data-iteration.md
+    - Excel Handling: playwright/excel.md
+    - Custom Fixture to Get Test Data: playwright/customeFixureToGetTestData.md
+    
   - PlayWright With Java:
       - Locators: playwright-Java/locator.md
       - Page Navigation: playwright-Java/page-navigation-actions.md
@@ -40,6 +69,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
 
 
