@@ -25,24 +25,24 @@ nav:
       - Interview code: javascriptConcepts/basics-interview-code.md
       
   - PlayWright with Javascript:
-    - General: playwright/jscode/general.md
-    - Test Package: playwright/jscode/test-package.md
-    - Sample Playwright Test: playwright/jscode/sample-playwright-test.md
-    - Page vs Browser: playwright/jscode/page-vs-browser.md
-    - Locators: playwright/jscode/locators.md
-    - Methods in Playwright: playwright/jscode/methods-in-playwright.md
-    - SendKeys Command: playwright/jscode/sendkeys-command.md
-    - Input Value & Text Content: playwright/jscode/inputValue&TextContent.md
-    - Dropdown: playwright/jscode/dropdown.md
-    - Auto Suggestion Dropdown: playwright/jscode/auto-suggestion-dropdown.md
-    - Radio Buttons: playwright/jscode/radio-buttons.md
-    - Alert & Iframe: playwright/jscode/alert-iframe.md
-    - Window & Tab Handle: playwright/jscode/window-tab-handle.md
-    - Calendar: playwright/jscode/calender.md
-    - Playwright Assertions: playwright/jscode/playwright-assertion.md
-    - JSON Data Iteration: playwright/jscode/json-data-iteration.md
-    - Excel Handling: playwright/jscode/excel.md
-    - Custom Fixture to Get Test Data: playwright/jscode/customeFixureToGetTestData.md
+    - General: javascriptConcepts/jscode/general.md
+    - Test Package: javascriptConcepts/jscode/test-package.md
+    - Sample Playwright Test: javascriptConcepts/jscode/sample-playwright-test.md
+    - Page vs Browser: javascriptConcepts/jscode/page-vs-browser.md
+    - Locators: javascriptConcepts/jscode/locators.md
+    - Methods in Playwright: javascriptConcepts/jscode/methods-in-playwright.md
+    - SendKeys Command: javascriptConcepts/jscode/sendkeys-command.md
+    - Input Value & Text Content: javascriptConcepts/jscode/inputValue&TextContent.md
+    - Dropdown: javascriptConcepts/jscode/dropdown.md
+    - Auto Suggestion Dropdown: javascriptConcepts/jscode/auto-suggestion-dropdown.md
+    - Radio Buttons: javascriptConcepts/jscode/radio-buttons.md
+    - Alert & Iframe: javascriptConcepts/jscode/alert-iframe.md
+    - Window & Tab Handle: javascriptConcepts/jscode/window-tab-handle.md
+    - Calendar: javascriptConcepts/jscode/calender.md
+    - Playwright Assertions: javascriptConcepts/jscode/playwright-assertion.md
+    - JSON Data Iteration: javascriptConcepts/jscode/json-data-iteration.md
+    - Excel Handling: javascriptConcepts/jscode/excel.md
+    - Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
     
   - PlayWright With Java:
       - Locators: playwright-Java/locator.md
@@ -69,6 +69,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
 
 
