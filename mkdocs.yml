@@ -44,7 +44,7 @@ nav:
     - Excel Handling: javascriptConcepts/jscode/excel.md
     - Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
     
-  - Java Concepts
+  - Java Concepts:
     - Encapsulation: java-concepts/encapsulation.md
     - Inheritance: java-concepts/inheritance.md
     - Abstraction: java-concepts/abstraction.md
@@ -78,6 +78,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
 
 
