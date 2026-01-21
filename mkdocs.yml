@@ -44,6 +44,15 @@ nav:
     - Excel Handling: javascriptConcepts/jscode/excel.md
     - Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
     
+  - Java Concepts
+    - Encapsulation: java-concepts/encapsulation.md
+    - Inheritance: java-concepts/inheritance.md
+    - Abstraction: java-concepts/abstraction.md
+    - Polymorphism: java-concepts/polymorphism.md
+    - Collections:
+      - ArrayList: java-concepts/collections/ArrayList.md
+      - LinkedList: java-concepts/collections/LinkedList.md
+    -
   - PlayWright With Java:
       - Locators: playwright-Java/locator.md
       - Page Navigation: playwright-Java/page-navigation-actions.md
@@ -69,6 +78,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
 
 
