@@ -1,0 +1,2857 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Play-Wright-course.github.io/automation-testing/java-concepts/collections/LinkedList/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>LinkedList – From Scratch to Expert (Interview Notes) - Automation Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linkedlist-from-scratch-to-expert-interview-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Automation Notes" class="md-header__button md-logo" aria-label="Automation Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Automation Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LinkedList – From Scratch to Expert (Interview Notes)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Automation Notes" class="md-nav__button md-logo" aria-label="Automation Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Automation Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JavaScript Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/30-day-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RoadMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synchronous & ASynchronous
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Synchronous & ASynchronous
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/Synchronous-And-Asynchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    deep guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/dataTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/var-vs-let-vaiable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Var vs Let
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/variables-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vaiables snipped code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/objects-in-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Objects in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/flow-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/Arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays & Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/string%20-in-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/class-constructor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class & Constructor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/arrow-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrow Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/regularfunction-vs-arrowFunction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Function vs Arrow Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/js-promises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Promises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/js-promises-snipped-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Promises – Snippet Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/basics-interview-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlayWright with Javascript
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PlayWright with Javascript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/test-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/sample-playwright-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Playwright Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/page-vs-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page vs Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/locators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/methods-in-playwright/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods in Playwright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/sendkeys-command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SendKeys Command
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/inputValue%26TextContent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Value & Text Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/dropdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dropdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/auto-suggestion-dropdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auto Suggestion Dropdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/radio-buttons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/alert-iframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert & Iframe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/window-tab-handle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window & Tab Handle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/calender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/playwright-assertion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playwright Assertions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/json-data-iteration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Data Iteration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/customeFixureToGetTestData/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fixture to Get Test Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlayWright With Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PlayWright With Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/locator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/page-navigation-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page Navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/playwright-interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inputs And Buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/checkbox-radio-button/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checkbox And Radio buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/dropdown_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dropdown Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/iframes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    iframe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/mouse-keyboard-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mouse Keyboard Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/alerts-promt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/handling-windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handle Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/file-upload-download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File upload And Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/screenshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ScreenShot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/exceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/interview-question/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InterViwe Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-linkedlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is a LinkedList?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-linkedlist-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why LinkedList Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-types-of-linked-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Types of Linked Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Types of Linked Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#singly-linked-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Singly Linked List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doubly-linked-list-java-uses-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doubly Linked List (Java uses this)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circular-linked-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circular Linked List
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-java-linkedlist-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Java LinkedList Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-internal-structure-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Internal Structure (Very Important)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Internal Structure (Very Important)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-class-simplified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Class (Simplified)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-visual-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Visual Representation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-indexing-in-linkedlist-critical-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Indexing in LinkedList (CRITICAL CONCEPT)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-why-indexing-is-slow-in-linkedlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Why Indexing Is Slow in LinkedList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-adding-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Adding Elements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Adding Elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-at-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➕ Add at End
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-at-beginning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➕ Add at Beginning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-at-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➕ Add at Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-removing-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Removing Elements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-accessing-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Accessing Elements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-memory-overhead-expert-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Memory Overhead (Expert Insight)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Cache Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-linkedlist-as-queue-deque-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. LinkedList as Queue, Deque, Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. LinkedList as Queue, Deque, Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queue-fifo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Queue (FIFO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deque-double-ended-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Deque (Double-Ended Queue)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Stack (Not Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-time-complexity-summary-linkedlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Time Complexity Summary (LinkedList)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-when-to-use-linkedlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. When to Use LinkedList
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. When to Use LinkedList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Use when:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Avoid when:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-linkedlist-vs-arraylist-reality-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. LinkedList vs ArrayList (Reality Check)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. LinkedList vs ArrayList (Reality Check)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages &amp; Disadvantages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advantages &amp; Disadvantages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arraylist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ ArrayList
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linkedlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ LinkedList
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 Quick Recommendation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-interview-ready-explanation-memorize-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Interview-Ready Explanation (Memorize This)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="linkedlist-from-scratch-to-expert-interview-notes">LinkedList – From Scratch to Expert (Interview Notes)<a class="headerlink" href="#linkedlist-from-scratch-to-expert-interview-notes" title="Permanent link">&para;</a></h1>
+<p>This document explains <strong>LinkedList</strong> in Java from <strong>beginner to expert level</strong>, covering <strong>internal working, indexing behavior, performance, memory usage, and when to use it</strong>, in an interview-ready format.</p>
+<hr />
+<h2 id="1-what-is-a-linkedlist">1. What is a LinkedList?<a class="headerlink" href="#1-what-is-a-linkedlist" title="Permanent link">&para;</a></h2>
+<p>A <strong>LinkedList</strong> is a linear data structure where elements are stored as <strong>nodes</strong>.</p>
+<p>Each node contains:
+- The actual data
+- Reference(s) to neighboring nodes</p>
+<p>Unlike arrays or ArrayList:
+- Elements are <strong>not stored in contiguous memory</strong>
+- There is <strong>no direct random access</strong></p>
+<hr />
+<h2 id="2-why-linkedlist-exists">2. Why LinkedList Exists<a class="headerlink" href="#2-why-linkedlist-exists" title="Permanent link">&para;</a></h2>
+<p>Problems with arrays / ArrayList:
+- Costly insert/delete due to shifting
+- Fixed size (arrays)</p>
+<p>LinkedList solves:
+- Dynamic size
+- Easy insertion and deletion</p>
+<p>But introduces:
+- Slower access
+- Higher memory usage</p>
+<hr />
+<h2 id="3-types-of-linked-lists">3. Types of Linked Lists<a class="headerlink" href="#3-types-of-linked-lists" title="Permanent link">&para;</a></h2>
+<h3 id="singly-linked-list">Singly Linked List<a class="headerlink" href="#singly-linked-list" title="Permanent link">&para;</a></h3>
+<p>A → B → C → D → null</p>
+<p>graphql
+Copy code</p>
+<h3 id="doubly-linked-list-java-uses-this">Doubly Linked List (Java uses this)<a class="headerlink" href="#doubly-linked-list-java-uses-this" title="Permanent link">&para;</a></h3>
+<p>null ← A ⇄ B ⇄ C ⇄ D → null</p>
+<p>shell
+Copy code</p>
+<h3 id="circular-linked-list">Circular Linked List<a class="headerlink" href="#circular-linked-list" title="Permanent link">&para;</a></h3>
+<p>A → B → C → A</p>
+<p>yaml
+Copy code</p>
+<hr />
+<h2 id="4-java-linkedlist-class">4. Java LinkedList Class<a class="headerlink" href="#4-java-linkedlist-class" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">public class LinkedList&lt;E&gt;
+    extends AbstractSequentialList&lt;E&gt;
+    implements List&lt;E&gt;, Deque&lt;E&gt;, Queue&lt;E&gt;
+</code></pre>
+<p>LinkedList can act as:
+  - List
+  - Queue
+  - Deque
+  - Stack (not recommended)</p>
+<h2 id="5-internal-structure-very-important">5. Internal Structure (Very Important)<a class="headerlink" href="#5-internal-structure-very-important" title="Permanent link">&para;</a></h2>
+<h3 id="node-class-simplified">Node Class (Simplified)<a class="headerlink" href="#node-class-simplified" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">private static class Node&lt;E&gt; {
+    E item;
+    Node&lt;E&gt; next;
+    Node&lt;E&gt; prev;
+}
+</code></pre>
+<p>LinkedList Maintains</p>
+<pre><code class="language-java">Node&lt;E&gt; first; // head
+Node&lt;E&gt; last;  // tail
+int size;
+</code></pre>
+<h2 id="6-visual-representation">6. Visual Representation<a class="headerlink" href="#6-visual-representation" title="Permanent link">&para;</a></h2>
+<pre><code class="language-text">first                         last
+ ↓                             ↓
+null ← A ⇄ B ⇄ C ⇄ D → null
+</code></pre>
+<p>Each node knows:
+ - Its previous node
+ - Its next node</p>
+<h2 id="7-indexing-in-linkedlist-critical-concept">7. Indexing in LinkedList (CRITICAL CONCEPT)<a class="headerlink" href="#7-indexing-in-linkedlist-critical-concept" title="Permanent link">&para;</a></h2>
+<p>Does LinkedList have indexing?
+✔ Logically – YES
+❌ Physically – NO</p>
+<p>Reason:</p>
+<p>LinkedList implements List</p>
+<p>So index-based methods exist:</p>
+<p>java
+Copy code
+get(index)
+add(index, element)
+remove(index)
+But internally:</p>
+<p>There is no array</p>
+<p>No direct index-to-memory mapping</p>
+<p>How get(index) works internally
+java
+Copy code
+list.get(5);
+Steps:</p>
+<p>Index is validated</p>
+<p>JVM decides traversal direction:</p>
+<p>java
+Copy code
+if (index &lt; size / 2)
+    traverse from head;
+else
+    traverse from tail;
+Moves node-by-node until index is reached</p>
+<p>⏱ Time Complexity: O(n)</p>
+<h2 id="8-why-indexing-is-slow-in-linkedlist">8. Why Indexing Is Slow in LinkedList<a class="headerlink" href="#8-why-indexing-is-slow-in-linkedlist" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Requires traversal</li>
+<li>Pointer dereferencing</li>
+<li>No cache locality</li>
+<li>Nodes scattered in memory</li>
+</ul>
+<p>📌 <strong>Note:</strong> Indexing exists only for API consistency.</p>
+<hr />
+<h2 id="9-adding-elements">9. Adding Elements<a class="headerlink" href="#9-adding-elements" title="Permanent link">&para;</a></h2>
+<h3 id="add-at-end">➕ Add at End<a class="headerlink" href="#add-at-end" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">list.add(&quot;A&quot;);
+
+Steps:
+- Create new node
+- Set newNode.prev = last
+- Set last.next = newNode
+- Update last
+
+⏱ Time Complexity: O(1)
+
+
+## 8. Why Indexing Is Slow in LinkedList
+Requires traversal
+
+Pointer dereferencing
+
+No cache locality
+
+Nodes scattered in memory
+
+📌 Indexing exists only for API consistency
+
+## 9. Adding Elements in LinkedList
+
+---
+
+### ➕ Add at End
+
+**Method Used:**
+
+  - list.add(&quot;A&quot;);
+
+
+```java
+import java.util.LinkedList;
+
+public class AddAtEndExample {
+    public static void main(String[] args) {
+        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+
+        list.add(&quot;A&quot;);
+        list.add(&quot;B&quot;);
+
+        System.out.println(list);
+    }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code>[A, B]
+</code></pre>
+<p>Steps:
+ - Create new node
+ - Set newNode.prev = last
+ - Set last.next = newNode
+ - Update last
+⏱ Time Complexity: O(1)</p>
+<h3 id="add-at-beginning">➕ Add at Beginning<a class="headerlink" href="#add-at-beginning" title="Permanent link">&para;</a></h3>
+<p><strong>Method Used:</strong></p>
+<ul>
+<li>list.addFirst("B");</li>
+</ul>
+<pre><code class="language-java">import java.util.LinkedList;
+
+public class AddAtBeginningExample {
+    public static void main(String[] args) {
+        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+
+        list.add(&quot;A&quot;);
+        list.addFirst(&quot;B&quot;);
+
+        System.out.println(list);
+    }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">[B, A]
+</code></pre>
+<p>Steps:
+  - Create new node
+  - Set newNode.next = first
+  - Update first.prev
+  - Update first
+⏱ Time Complexity: O(1)</p>
+<h3 id="add-at-index">➕ Add at Index<a class="headerlink" href="#add-at-index" title="Permanent link">&para;</a></h3>
+<p><strong>Method Used:</strong></p>
+<ul>
+<li>list.add(2, "X");</li>
+</ul>
+<pre><code class="language-java">java
+Copy code
+import java.util.LinkedList;
+
+public class AddAtIndexExample {
+    public static void main(String[] args) {
+        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+
+        list.add(&quot;A&quot;);
+        list.add(&quot;B&quot;);
+        list.add(&quot;C&quot;);
+
+        list.add(2, &quot;X&quot;);
+
+        System.out.println(list);
+    }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">[A, B, X, C]
+</code></pre>
+<p>Steps:
+  - Traverse to index → O(n)
+  - Update node links → O(1)
+⏱ Overall Time Complexity: O(n)</p>
+<h2 id="10-removing-elements">10. Removing Elements<a class="headerlink" href="#10-removing-elements" title="Permanent link">&para;</a></h2>
+<p>Remove from Middle
+java
+Copy code
+list.remove(2);
+Steps:</p>
+<p>Traverse to node</p>
+<p>Update:</p>
+<p>prev.next</p>
+<p>next.prev</p>
+<p>⏱ Time Complexity: O(n)</p>
+<p>Remove from Ends
+java
+Copy code
+list.removeFirst();
+list.removeLast();
+⏱ Time Complexity: O(1)</p>
+<h2 id="11-accessing-elements">11. Accessing Elements<a class="headerlink" href="#11-accessing-elements" title="Permanent link">&para;</a></h2>
+<p>java
+Copy code
+list.get(index);
+No direct access</p>
+<p>Requires traversal</p>
+<p>⏱ Time Complexity: O(n)</p>
+<h2 id="12-memory-overhead-expert-insight">12. Memory Overhead (Expert Insight)<a class="headerlink" href="#12-memory-overhead-expert-insight" title="Permanent link">&para;</a></h2>
+<p>Each node stores:</p>
+<p>Data reference</p>
+<p>Next reference</p>
+<p>Previous reference</p>
+<p>➡️ 3 references per element</p>
+<p>Compared to ArrayList:</p>
+<p>1 reference per element</p>
+<h2 id="13-cache-performance">13. Cache Performance<a class="headerlink" href="#13-cache-performance" title="Permanent link">&para;</a></h2>
+<p>LinkedList is not cache-friendly:</p>
+<p>Nodes are scattered in heap</p>
+<p>Frequent cache misses</p>
+<p>This is why LinkedList is often slower than ArrayList in practice.</p>
+<h2 id="14-linkedlist-as-queue-deque-stack">14. LinkedList as Queue, Deque, Stack<a class="headerlink" href="#14-linkedlist-as-queue-deque-stack" title="Permanent link">&para;</a></h2>
+<h3 id="queue-fifo">🔹 Queue (FIFO)<a class="headerlink" href="#queue-fifo" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue&lt;String&gt; list = new LinkedList&lt;&gt;();
+
+        list.offer(&quot;A&quot;);
+        list.offer(&quot;B&quot;);
+        list.offer(&quot;C&quot;);
+
+        System.out.println(list.poll());
+        System.out.println(list.peek());
+    }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code>A
+B
+</code></pre>
+<h3 id="deque-double-ended-queue">🔹 Deque (Double-Ended Queue)<a class="headerlink" href="#deque-double-ended-queue" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">import java.util.Deque;
+import java.util.LinkedList;
+
+public class DequeExample {
+    public static void main(String[] args) {
+        Deque&lt;String&gt; list = new LinkedList&lt;&gt;();
+
+        list.addFirst(&quot;X&quot;);
+        list.addLast(&quot;Y&quot;);
+
+        System.out.println(list);
+    }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code>[X, Y]
+</code></pre>
+<h3 id="stack-not-recommended">🔹 Stack (Not Recommended)<a class="headerlink" href="#stack-not-recommended" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">import java.util.LinkedList;
+
+public class StackExample {
+    public static void main(String[] args) {
+        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+
+        list.push(&quot;A&quot;);
+        list.push(&quot;B&quot;);
+
+        System.out.println(list.pop());
+        System.out.println(list);
+    }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code>B
+[A]
+</code></pre>
+<p>⚠️ Note: Stack operations using LinkedList are allowed, but ArrayDeque is preferred.</p>
+<h2 id="15-time-complexity-summary-linkedlist">15. Time Complexity Summary (LinkedList)<a class="headerlink" href="#15-time-complexity-summary-linkedlist" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Time Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get(index)</code></td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>addFirst()</code> / <code>addLast()</code></td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>removeFirst()</code> / <code>removeLast()</code></td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>add(index)</code></td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>remove(index)</code></td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="16-when-to-use-linkedlist">16. When to Use LinkedList<a class="headerlink" href="#16-when-to-use-linkedlist" title="Permanent link">&para;</a></h2>
+<h3 id="use-when">✅ Use when:<a class="headerlink" href="#use-when" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Frequent insert/remove at head or tail<br />
+<strong>Example:</strong> Implementing an undo/redo feature where elements are added and removed from ends.</p>
+</li>
+<li>
+<p>Queue / Deque use cases<br />
+<strong>Example:</strong> Task scheduling systems, printer queues, or BFS traversal using a queue.</p>
+</li>
+<li>
+<p>Size changes frequently<br />
+<strong>Example:</strong> Applications where elements are dynamically added/removed, such as playlist management.</p>
+</li>
+</ul>
+<hr />
+<h3 id="avoid-when">❌ Avoid when:<a class="headerlink" href="#avoid-when" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Frequent random access<br />
+<strong>Example:</strong> Accessing elements by index in a loop (<code>list.get(i)</code>), such as searching or sorting.</p>
+</li>
+<li>
+<p>Read-heavy operations<br />
+<strong>Example:</strong> Displaying large lists repeatedly (e.g., product catalogs).</p>
+</li>
+<li>
+<p>Large datasets<br />
+<strong>Example:</strong> Storing millions of elements where memory overhead and cache misses impact performance.</p>
+</li>
+</ul>
+<h2 id="17-linkedlist-vs-arraylist-reality-check">17. LinkedList vs ArrayList (Reality Check)<a class="headerlink" href="#17-linkedlist-vs-arraylist-reality-check" title="Permanent link">&para;</a></h2>
+<h3 id="comparison-table">Comparison Table<a class="headerlink" href="#comparison-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>LinkedList</th>
+<th>ArrayList</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal DS</td>
+<td>Doubly Linked List</td>
+<td>Dynamic Array</td>
+</tr>
+<tr>
+<td>Indexing</td>
+<td>Logical only</td>
+<td>Physical</td>
+</tr>
+<tr>
+<td><code>get(index)</code></td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Insert / Delete</td>
+<td>Fast at ends</td>
+<td>Slow in middle</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Cache Friendly</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="advantages-disadvantages">Advantages &amp; Disadvantages<a class="headerlink" href="#advantages-disadvantages" title="Permanent link">&para;</a></h3>
+<h4 id="arraylist">✅ ArrayList<a class="headerlink" href="#arraylist" title="Permanent link">&para;</a></h4>
+<p><strong>Advantages</strong>
+- Fast random access (<code>O(1)</code>)
+- Better cache locality
+- Less memory overhead
+- Performs well for read-heavy operations</p>
+<p><strong>Disadvantages</strong>
+- Slow insertions/deletions in the middle
+- Resizing cost when capacity grows
+- Shifting elements is expensive</p>
+<hr />
+<h4 id="linkedlist">✅ LinkedList<a class="headerlink" href="#linkedlist" title="Permanent link">&para;</a></h4>
+<p><strong>Advantages</strong>
+- Fast insertions/deletions at beginning and end
+- No resizing overhead
+- Good for frequent structural modifications</p>
+<p><strong>Disadvantages</strong>
+- Slow random access (<code>O(n)</code>)
+- Higher memory usage (extra node pointers)
+- Poor cache performance</p>
+<hr />
+<h3 id="real-world-use-cases">Real-World Use Cases<a class="headerlink" href="#real-world-use-cases" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Preferred Collection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequent random access</td>
+<td>ArrayList</td>
+</tr>
+<tr>
+<td>Read-heavy applications</td>
+<td>ArrayList</td>
+</tr>
+<tr>
+<td>Queue / Deque implementation</td>
+<td>LinkedList</td>
+</tr>
+<tr>
+<td>Frequent insert/delete at ends</td>
+<td>LinkedList</td>
+</tr>
+<tr>
+<td>Memory-sensitive applications</td>
+<td>ArrayList</td>
+</tr>
+<tr>
+<td>Large data with frequent updates</td>
+<td>LinkedList</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quick-recommendation">📌 Quick Recommendation<a class="headerlink" href="#quick-recommendation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <strong>ArrayList</strong> by default</li>
+<li>Use <strong>LinkedList</strong> only when:</li>
+<li>Insertions/deletions at ends dominate</li>
+<li>Random access is rare</li>
+</ul>
+<h2 id="18-interview-ready-explanation-memorize-this">18. Interview-Ready Explanation (Memorize This)<a class="headerlink" href="#18-interview-ready-explanation-memorize-this" title="Permanent link">&para;</a></h2>
+<p>LinkedList in Java is implemented as a doubly linked list where each element is stored as a node containing references to the previous and next nodes. Although it supports index-based operations through the List interface, it does not provide direct indexing internally, and accessing elements requires traversal, making get operations O(n). LinkedList is best suited for scenarios involving frequent insertions and deletions at the ends, such as queues and deques.</p>
+<h2 id="19-key-takeaways">19. Key Takeaways<a class="headerlink" href="#19-key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Doubly linked list implementation</li>
+<li>No physical indexing</li>
+<li>No shifting of elements</li>
+<li>High memory overhead</li>
+<li>Poor cache locality</li>
+<li>Best for queue/deque scenarios</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
