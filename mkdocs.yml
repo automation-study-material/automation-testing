@@ -52,7 +52,7 @@ nav:
     - Collections:
       - ArrayList: java-concepts/collections/ArrayList.md
       - LinkedList: java-concepts/collections/LinkedList.md
-    -
+    
   - PlayWright With Java:
       - Locators: playwright-Java/locator.md
       - Page Navigation: playwright-Java/page-navigation-actions.md
@@ -78,6 +78,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
 
 
