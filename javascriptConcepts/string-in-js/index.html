@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://Play-Wright-course.github.io/automation-testing/javascriptConcepts/string-in-js/">
       
       
+        <link rel="prev" href="../Arrays/">
+      
+      
+        <link rel="next" href="../set-map/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>JavaScript Strings --- Complete Guide - Automation Notes</title>
+        <title>String in JS - Automation Notes</title>
       
     
     
@@ -98,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JavaScript Strings --- Complete Guide
+              String in JS
             
           </span>
         </div>
@@ -191,18 +195,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -223,7 +229,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -601,10 +607,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../string -in-js.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String in JS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -612,6 +645,573 @@
     
   
     String in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is a String?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-string-declaration-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. String Declaration Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. String Declaration Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-single-quotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Single Quotes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-double-quotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Double Quotes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-backticks-template-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Backticks (Template Literals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-string-immutability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. String Immutability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-string-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. String Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. String Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loose-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        == (loose equality)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        === (strict equality)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localecompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        localeCompare()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-string-methods-detailed-with-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. String Methods --- Detailed With Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. String Methods --- Detailed With Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-charatindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. charAt(index)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-atindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. at(index)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-indexof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. indexOf()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lastindexof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. lastIndexOf()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. includes()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-startswith" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. startsWith()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-endswith" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. endsWith()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-slicestart-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. slice(start, end)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-substringstart-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. substring(start, end)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-substrstart-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. substr(start, length)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-touppercase-tolowercase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. toUpperCase() / toLowerCase()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. trim()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trimstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trimStart()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trimend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trimEnd()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. replace()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replaceall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replaceAll()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. split()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-concat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. concat()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. match()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-matchall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. matchAll()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-padstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. padStart()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-padend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. padEnd()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-repeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. repeat()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-localecompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. localeCompare()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-valueof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. valueOf()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. toString()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-string-methods-table-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. String Methods Table (Cheat Sheet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-small-interview-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Small Interview Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Small Interview Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reverse-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reverse string
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-palindrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check palindrome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-vowels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count vowels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-non-repeating-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First non-repeating character
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-occurance-of-substring-into-main-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find occurance of substring into main string
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set & Map
   
 
     

@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://Play-Wright-course.github.io/automation-testing/javascriptConcepts/set-map/">
       
       
+        <link rel="prev" href="../string-in-js/">
+      
+      
+        <link rel="next" href="../class-constructor/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>Sets & Maps in JavaScript (From Scratch) - Automation Notes</title>
+        <title>Set & Map - Automation Notes</title>
       
     
     
@@ -98,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sets &amp; Maps in JavaScript (From Scratch)
+              Set & Map
             
           </span>
         </div>
@@ -191,18 +195,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -223,7 +229,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -604,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../string -in-js.md" class="md-nav__link">
+      <a href="../string-in-js/" class="md-nav__link">
         
   
   
@@ -620,6 +626,358 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set & Map
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set & Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set in JavaScript
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Set in JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-what-is-a-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 What is a Set?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-key-characteristics-of-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Key Characteristics of Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-creating-a-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Creating a Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-common-set-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Common Set Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-iterating-a-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Iterating a Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-real-world-use-cases-of-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Real-World Use Cases of Set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 Real-World Use Cases of Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-duplicates-from-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remove duplicates from array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-unique-user-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track unique user actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-map-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Map in JavaScript
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Map in JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-what-is-a-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 What is a Map?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-why-use-map-instead-of-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Why Use Map Instead of Object?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-creating-a-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Creating a Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-common-map-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Common Map Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-using-objects-as-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Using Objects as Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-iterating-a-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Iterating a Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-real-world-use-cases-of-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Real-World Use Cases of Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Real-World Use Cases of Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequency-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-api-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caching API responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-set-vs-map-vs-object-vs-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Set vs Map vs Object vs Array
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-interview-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Interview Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
