@@ -15,7 +15,8 @@ nav:
       - Objects in JS: javascriptConcepts/objects-in-js.md
       - Flow Statements: javascriptConcepts/flow-statement.md
       - Arrays & Objects: javascriptConcepts/Arrays.md
-      - String in JS: javascriptConcepts/string -in-js.md
+      - String in JS: javascriptConcepts/string-in-js.md
+      - Set & Map: javascriptConcepts/set-map.md
       - Class & Constructor: javascriptConcepts/class-constructor.md
       - Functions: javascriptConcepts/functions.md
       - Arrow Functions: javascriptConcepts/arrow-functions.md
@@ -78,6 +79,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
 
 
