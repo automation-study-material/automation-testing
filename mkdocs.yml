@@ -5,11 +5,11 @@ nav:
 
   - Java Concepts:
     - Constructor:
-      - Concept: java-concepts/constructor.md‎
+      - Concept: java-concepts/constructor-advance.md‎
       - Advanace: java-concepts/constructor-advance.md
     - Oops Concepts:
       - Encapsulation: 
-        - Concept: java-concepts/encapsulation.md
+        - Concept: java-concepts/constructor.md
         - Adavance: java-concepts/encapsulation-advance.md
       - Inheritance: 
         - Concept: java-concepts/inheritance.md
@@ -107,4 +107,5 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
