@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://Play-Wright-course.github.io/automation-testing/java-concepts/abstraction-in-depth1/">
       
       
+        <link rel="prev" href="../abstraction/">
+      
+      
+        <link rel="next" href="../abstraction-in-depth2/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>Abstraction in Java (Abstract Class – From Scratch to Interview Ready) - Automation Notes</title>
+        <title>Abstraction-Notes-2 - Automation Notes</title>
       
     
     
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Abstraction in Java (Abstract Class – From Scratch to Interview Ready)
+              Abstraction-Notes-2
             
           </span>
         </div>
@@ -1454,18 +1458,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1486,7 +1492,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1557,18 +1563,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -1589,7 +1597,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1632,10 +1640,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../abstraction-in-depth1.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1651,6 +1686,441 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 What is Abstraction?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔷 What is Abstraction?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realworld-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real‑world example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-java-supports-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 How Java Supports Abstraction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 What is an Abstract Class?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔷 What is an Abstract Class?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-we-need-abstract-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Why Do We Need Abstract Classes?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Abstract Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Implementing Abstract Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-creation-with-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Object Creation with Abstract Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-jvm-working-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Backend / JVM Working (Very Important)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔷 Backend / JVM Working (Very Important)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compile-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compile Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract-class-constructor-important-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Abstract Class Constructor (Important Concept)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔷 Abstract Class Constructor (Important Concept)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abstract-classes-do-have-constructors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract classes DO have constructors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameterized-constructor-in-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Parameterized Constructor in Abstract Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-in-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Variables in Abstract Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-abstract-class-have-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Can Abstract Class Have main()?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-methods-in-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Static Methods in Abstract Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract-class-vs-interface-quick-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Abstract Class vs Interface (Quick Comparison)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 When to Use Abstract Class?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realtime-example-bank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Real‑Time Example (Bank)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Common Interview Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔷 Common Interview Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-why-cant-we-create-object-of-abstract-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why can’t we create object of abstract class?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-can-abstract-class-have-zero-abstract-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Can abstract class have zero abstract methods?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-can-abstract-class-have-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Can abstract class have constructor?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-can-abstract-class-implement-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Can abstract class implement interface?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-what-if-child-doesnt-implement-abstract-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. What if child doesn’t implement abstract method?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-can-constructor-be-abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Can constructor be abstract?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-can-abstract-class-be-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Can abstract class be final?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-can-we-override-nonabstract-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Can we override non‑abstract methods?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-interview-traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Common Interview Traps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oneline-interview-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 One‑Line Interview Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-of-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ End of Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1663,7 +2133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../abstraction-in-depth2.md" class="md-nav__link">
+      <a href="../abstraction-in-depth2/" class="md-nav__link">
         
   
   
