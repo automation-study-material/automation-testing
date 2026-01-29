@@ -50,8 +50,8 @@ nav:
     - Inheritance: java-concepts/inheritance.md
     - Abstraction: 
       -  Abstraction-Notes-1: java-concepts/abstraction.md
-      -  Abstraction-Notes-2: abstraction-in-depth1.md
-      -  Abstraction-Notes-3: abstraction-in-depth2.md
+      -  Abstraction-Notes-2: java-concepts/abstraction-in-depth1.md
+      -  Abstraction-Notes-3: java-concepts/abstraction-in-depth2.md
       
     - Polymorphism: java-concepts/polymorphism.md
     - Collections:
@@ -97,6 +97,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
 
 
