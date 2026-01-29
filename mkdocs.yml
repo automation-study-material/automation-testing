@@ -71,14 +71,29 @@ nav:
 
       
 
-      
 theme:
   name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
 
 markdown_extensions:
   - toc:
       permalink: true
   - tables
+
 
 
 
