@@ -2,6 +2,42 @@ site_name: Automation Notes
 site_url: https://Play-Wright-course.github.io/automation-testing/
 use_directory_urls: true
 nav:
+
+  - Java Concepts:
+    - Constructor:
+      - Concept: java-concepts/constructor.md‎
+      - Advanace: java-concepts/constructor-advance.md
+    - Oops Concepts:
+      - Encapsulation: 
+        - Concept: java-concepts/encapsulation.md
+        - Adavance: java-concepts/encapsulation-advance.md
+      - Inheritance: 
+        - Concept: java-concepts/inheritance.md
+        - Advance: java-concepts/inheritance-advance.md
+      - Abstraction: 
+        -  Abstraction-Notes-1: java-concepts/abstraction.md
+        -  Abstraction-Notes-2: java-concepts/abstraction-in-depth1.md
+        -  Abstraction-Notes-3: java-concepts/abstraction-in-depth2.md
+      - Polymorphism: java-concepts/polymorphism.md
+    - Collections:
+      - ArrayList: java-concepts/collections/ArrayList.md
+      - LinkedList: java-concepts/collections/LinkedList.md
+    
+  - PlayWright With Java:
+      - Locators: playwright-Java/locator.md
+      - Page Navigation: playwright-Java/page-navigation-actions.md
+      - Inputs And Buttons: playwright-Java/playwright-interaction.md
+      - Checkbox And Radio buttons: playwright-Java/checkbox-radio-button.md
+      - Dropdown Handling: playwright-Java/dropdown_handling.md
+      - iframe: playwright-Java/iframes.md
+      - Mouse Keyboard Actions: playwright-Java/mouse-keyboard-actions.md
+      - Alerts: playwright-Java/alerts-promt.md
+      - Handle Windows: playwright-Java/handling-windows.md
+      - File upload And Download: playwright-Java/file-upload-download.md
+      - ScreenShot: playwright-Java/screenshot.md
+      - Exceptions: playwright-Java/exceptions.md
+      - InterViwe Questions: playwright-Java/interview-question.md
+      
   - JavaScript Concepts:
       - RoadMap: javascriptConcepts/30-day-roadmap.md
       - "Synchronous & ASynchronous":
@@ -45,40 +81,7 @@ nav:
     - Excel Handling: javascriptConcepts/jscode/excel.md
     - Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
     
-  - Java Concepts:
-    - Constructor:
-      - Concept: java-concepts/constructor.md‎
-      - Advanace: java-concepts/constructor-advance.md
-    - Oops Concepts:
-      - Encapsulation: 
-        - Concept: java-concepts/encapsulation.md
-        - Adavance: java-concepts/encapsulation-advance.md
-      - Inheritance: 
-        - Concept: java-concepts/inheritance.md
-        - Advance: java-concepts/inheritance-advance.md
-      - Abstraction: 
-        -  Abstraction-Notes-1: java-concepts/abstraction.md
-        -  Abstraction-Notes-2: java-concepts/abstraction-in-depth1.md
-        -  Abstraction-Notes-3: java-concepts/abstraction-in-depth2.md
-      - Polymorphism: java-concepts/polymorphism.md
-    - Collections:
-      - ArrayList: java-concepts/collections/ArrayList.md
-      - LinkedList: java-concepts/collections/LinkedList.md
-    
-  - PlayWright With Java:
-      - Locators: playwright-Java/locator.md
-      - Page Navigation: playwright-Java/page-navigation-actions.md
-      - Inputs And Buttons: playwright-Java/playwright-interaction.md
-      - Checkbox And Radio buttons: playwright-Java/checkbox-radio-button.md
-      - Dropdown Handling: playwright-Java/dropdown_handling.md
-      - iframe: playwright-Java/iframes.md
-      - Mouse Keyboard Actions: playwright-Java/mouse-keyboard-actions.md
-      - Alerts: playwright-Java/alerts-promt.md
-      - Handle Windows: playwright-Java/handling-windows.md
-      - File upload And Download: playwright-Java/file-upload-download.md
-      - ScreenShot: playwright-Java/screenshot.md
-      - Exceptions: playwright-Java/exceptions.md
-      - InterViwe Questions: playwright-Java/interview-question.md
+  
 
       
 
@@ -104,3 +107,4 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+
