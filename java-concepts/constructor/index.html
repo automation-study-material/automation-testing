@@ -3204,6 +3204,122 @@ public class Main {
 }
 
 </code></pre>
+<pre><code class="language-java">class Employee {
+
+    // =========================
+    // Instance Variables
+    // =========================
+    int id;
+    String name;
+    int age;
+    String company;
+    double salary;
+
+    // ==================================================
+    // 1️⃣ DEFAULT CONSTRUCTOR (NO ARG)
+    // ==================================================
+    // Entry point if no data is provided
+    public Employee() {
+        // Calls 2-arg constructor
+        this(0, &quot;Unknown&quot;);
+
+        System.out.println(&quot;1️⃣ Default constructor executed&quot;);
+    }
+
+    // ==================================================
+    // 2️⃣ TWO-PARAMETER CONSTRUCTOR
+    // ==================================================
+    public Employee(int id, String name) {
+        // Calls 3-arg constructor
+        this(id, name, 18);
+
+        System.out.println(&quot;2️⃣ Two-parameter constructor executed&quot;);
+    }
+
+    // ==================================================
+    // 3️⃣ THREE-PARAMETER CONSTRUCTOR
+    // ==================================================
+    public Employee(int id, String name, int age) {
+        // Calls 5-arg constructor
+        this(id, name, age, &quot;Not Assigned&quot;, 0.0);
+
+        System.out.println(&quot;3️⃣ Three-parameter constructor executed&quot;);
+    }
+
+    // ==================================================
+    // 4️⃣ FULL CONSTRUCTOR (MASTER)
+    // ==================================================
+    // This constructor does actual initialization
+    public Employee(int id, String name, int age, String company, double salary) {
+
+        System.out.println(&quot;4️⃣ Full constructor START&quot;);
+
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.company = company;
+        this.salary = salary;
+
+        System.out.println(&quot;4️⃣ Full constructor END&quot;);
+    }
+
+    // =========================
+    // Utility Method
+    // =========================
+    public void displayInfo() {
+        System.out.println(&quot;\n📌 Employee Details&quot;);
+        System.out.println(&quot;ID      : &quot; + id);
+        System.out.println(&quot;Name    : &quot; + name);
+        System.out.println(&quot;Age     : &quot; + age);
+        System.out.println(&quot;Company : &quot; + company);
+        System.out.println(&quot;Salary  : &quot; + salary);
+    }
+}
+</code></pre>
+<p>Main Class calling-</p>
+<pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+
+        System.out.println(&quot;🚀 Creating Employee Object\n&quot;);
+
+        Employee emp = new Employee();
+
+        emp.displayInfo();
+    }
+}
+</code></pre>
+<pre><code class="language-txt">🚀 Creating Employee Object
+
+4️⃣ Full constructor START
+4️⃣ Full constructor END
+3️⃣ Three-parameter constructor executed
+2️⃣ Two-parameter constructor executed
+1️⃣ Default constructor executed
+
+📌 Employee Details
+ID      : 0
+Name    : Unknown
+Age     : 18
+Company : Not Assigned
+Salary  : 0.0
+🔷 Execution Flow (THIS IS KEY 🧠)
+When you do:
+
+Employee emp = new Employee();
+Call chain:
+Employee()
+   ↓ this(0, &quot;Unknown&quot;)
+Employee(int, String)
+   ↓ this(id, name, 18)
+Employee(int, String, int)
+   ↓ this(id, name, age, &quot;Not Assigned&quot;, 0.0)
+Employee(int, String, int, String, double)
+Execution order (reverse):
+4️⃣ Full constructor
+3️⃣ Three-param constructor
+2️⃣ Two-param constructor
+1️⃣ Default constructor
+</code></pre>
 <h4 id="b-using-super-calling-parent-class-constructor">b) Using super() – Calling Parent Class Constructor<a class="headerlink" href="#b-using-super-calling-parent-class-constructor" title="Permanent link">&para;</a></h4>
 <pre><code class="language-java">class Employee {
     String name;
