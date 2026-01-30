@@ -3077,25 +3077,24 @@
 <li>Automatically provided by Java if no constructor is defined.</li>
 <li>No parameters and initializes objects with default values.</li>
 </ul>
-<pre><code class="language-java">class Employee {
-    String name;
-    int age;
+<pre><code class="language-java">class Test{
+    String name=&quot;xyz&quot;;
+    int age=55;
 
-    // Default constructor
-    public Employee() {
-        name = &quot;Unknown&quot;;
-        age = 0;
+    public Test() {
+        name = name;
+        age = age;
     }
-
     public void displayInfo() {
         System.out.println(&quot;Name: &quot; + name + &quot;, Age: &quot; + age);
     }
 }
-
-public class Main {
+class Main {
     public static void main(String[] args) {
-        Employee emp = new Employee(); // Default constructor called
-        emp.displayInfo(); // Output: Name: Unknown, Age: 0
+        Test obj=new Test();
+        obj.displayInfo();
+        obj.name=&quot;Umesh&quot;;
+        obj.displayInfo();
     }
 }
 </code></pre>
