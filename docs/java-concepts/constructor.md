@@ -27,25 +27,24 @@
 - No parameters and initializes objects with default values.
 
 ```java
-class Employee {
-    String name;
-    int age;
+class Test{
+    String name="xyz";
+    int age=55;
 
-    // Default constructor
-    public Employee() {
-        name = "Unknown";
-        age = 0;
+    public Test() {
+        name = name;
+        age = age;
     }
-
     public void displayInfo() {
         System.out.println("Name: " + name + ", Age: " + age);
     }
 }
-
-public class Main {
+class Main {
     public static void main(String[] args) {
-        Employee emp = new Employee(); // Default constructor called
-        emp.displayInfo(); // Output: Name: Unknown, Age: 0
+        Test obj=new Test();
+        obj.displayInfo();
+        obj.name="Umesh";
+        obj.displayInfo();
     }
 }
 ```
