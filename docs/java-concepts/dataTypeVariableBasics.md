@@ -1,0 +1,180 @@
+# Java Basics – Data Types, Variables & Operators
+
+This document covers **core Java fundamentals** required for **software testing & automation**.
+
+---
+
+## 1️⃣ Data Types in Java
+
+Java is a **statically typed** language, meaning variables must have a declared data type.
+
+---
+
+### 🔹 Primitive Data Types
+
+| Data Type | Size | Example | Usage in Testing |
+|---------|------|--------|------------------|
+| `int` | 4 bytes | `int age = 25;` | Status codes, counts |
+| `double` | 8 bytes | `double price = 99.99;` | Decimal values |
+| `boolean` | 1 bit | `boolean result = true;` | Pass/Fail conditions |
+| `char` | 2 bytes | `char grade = 'A';` | Single characters |
+
+---
+
+### 🔹 Non-Primitive Data Type
+
+#### `String`
+- Used to store text
+- Most commonly used in testing
+
+```java
+String message = "Login Successful";
+```
+
+**Common testing usage:**
+- UI text validation
+- API response validation
+- Error message comparison
+
+---
+
+## 2️⃣ Variables in Java
+
+A variable stores data that can change during program execution.
+
+### 🔹 Syntax
+```java
+dataType variableName = value;
+```
+
+### 🔹 Example
+```java
+int expectedResult = 200;
+boolean isDisplayed = true;
+```
+
+---
+
+### 🔹 Variable Naming Rules
+✅ Must start with a letter, `_` or `$`  
+✅ Cannot start with a number  
+✅ Cannot use Java keywords  
+✅ Case-sensitive  
+
+❌ Invalid
+```java
+int 1value;
+int class;
+```
+
+✅ Valid
+```java
+int value1;
+int totalCount;
+```
+
+---
+
+## 3️⃣ Operators in Java
+
+Operators perform operations on variables and values.
+
+---
+
+### 🔹 Arithmetic Operators
+
+| Operator | Description | Example |
+|--------|-------------|--------|
+| `+` | Addition | `a + b` |
+| `-` | Subtraction | `a - b` |
+| `*` | Multiplication | `a * b` |
+| `/` | Division | `a / b` |
+| `%` | Modulus | `a % b` |
+
+```java
+int total = 10 + 5;
+```
+
+---
+
+### 🔹 Relational Operators
+
+Used for **comparison**, very important in validations.
+
+| Operator | Meaning |
+|--------|--------|
+| `==` | Equal to |
+| `!=` | Not equal |
+| `>` | Greater than |
+| `<` | Less than |
+| `>=` | Greater than or equal |
+| `<=` | Less than or equal |
+
+```java
+if (actual == expected) {
+    System.out.println("Test Passed");
+}
+```
+
+---
+
+### 🔹 Logical Operators
+
+Used to combine multiple conditions.
+
+| Operator | Meaning |
+|--------|--------|
+| `&&` | AND |
+| `||` | OR |
+| `!` | NOT |
+
+```java
+if (isLoggedIn && isDashboardVisible) {
+    System.out.println("Login Test Passed");
+}
+```
+
+---
+
+## 4️⃣ Type Casting in Java
+
+Type casting is converting one data type into another.
+
+---
+
+### 🔹 Implicit Casting (Widening)
+Automatic conversion from smaller to larger type.
+
+```java
+int a = 10;
+double b = a;
+```
+
+---
+
+### 🔹 Explicit Casting (Narrowing)
+Manual conversion from larger to smaller type.
+
+```java
+double x = 10.5;
+int y = (int) x;
+```
+
+---
+
+## 🧪 Testing Perspective Summary
+
+| Concept | Usage in Testing |
+|------|------------------|
+| Data Types | Store expected & actual values |
+| Variables | Hold test data |
+| Operators | Validations & conditions |
+| Type Casting | Handle API & UI data |
+
+---
+
+## ✅ Interview Tip
+> **90% of automation logic is built using these basics.  
+Strong fundamentals = strong framework understanding.**
+
+---
