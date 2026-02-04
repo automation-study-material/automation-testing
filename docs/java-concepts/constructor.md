@@ -318,6 +318,11 @@ public class Main {
 }
 
 ```
+Output:
+```text
+Name: Alice, Age: 35
+Department: IT
+```
 ### 5.Private Constructor
 - Restricts object creation outside the class.
 - Used in Singleton Design Pattern.
