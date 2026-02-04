@@ -140,7 +140,7 @@ if (isLoggedIn && isDashboardVisible) {
 
 Type casting is converting one data type into another.
 
----
+```text
 double
 ↓
 float
