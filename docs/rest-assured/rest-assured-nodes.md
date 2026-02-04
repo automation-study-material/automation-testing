@@ -338,14 +338,17 @@ public class CreateUserTest extends BaseTest {
 
 ## 13. Logging (Debugging Like a Pro)
 
+Logging helps understand **what was sent** and **what was received** when tests fail.
+
 ```java
 given()
     .baseUri("https://reqres.in")
-    .log().all()
+    .log().all()              // logs request details
 .when()
     .get("/api/users/2")
 .then()
-    .log().body()
+    .log().status()           // logs status code
+    .log().body()             // logs response body
     .statusCode(200);
 ```
 
@@ -379,15 +382,107 @@ given()
 
 ---
 
-## 16. How to Revise These Notes
+## 16. Assertion Validation (Very Important for Interviews & Projects)
 
-1. Read one section
-2. Copy code
-3. Run it
-4. Modify values
-5. Observe response
+Assertions decide **pass or fail** of a test. Interviewers expect you to know **what you validate and why**.
 
-That’s how confidence is built.
+### 16.1 Status Code Assertion
+
+```java
+given()
+    .baseUri("https://reqres.in")
+.when()
+    .get("/api/users/2")
+.then()
+    .statusCode(200);
+```
+
+Why: Confirms request succeeded.
+
+---
+
+### 16.2 Response Body Field Validation
+
+```java
+given()
+    .baseUri("https://reqres.in")
+.when()
+    .get("/api/users/2")
+.then()
+    .body("data.id", equalTo(2))
+    .body("data.email", containsString("@"));
+```
+
+Why: Ensures correct data returned.
+
+---
+
+### 16.3 Multiple Assertions Together
+
+```java
+given()
+    .baseUri("https://reqres.in")
+.when()
+    .get("/api/users/2")
+.then()
+    .statusCode(200)
+    .body("data.first_name", notNullValue())
+    .body("data.last_name", notNullValue());
+```
+
+---
+
+### 16.4 Header Validation
+
+```java
+given()
+    .baseUri("https://reqres.in")
+.when()
+    .get("/api/users/2")
+.then()
+    .header("Content-Type", containsString("application/json"));
+```
+
+---
+
+### 16.5 Response Time Validation
+
+```java
+given()
+    .baseUri("https://reqres.in")
+.when()
+    .get("/api/users/2")
+.then()
+    .time(lessThan(2000L));
+```
+
+Why: Basic performance validation.
+
+---
+
+### 16.6 Schema Validation (Interview Favorite)
+
+```java
+given()
+    .baseUri("https://reqres.in")
+.when()
+    .get("/api/users/2")
+.then()
+    .assertThat()
+    .body(matchesJsonSchemaInClasspath("userSchema.json"));
+```
+
+Why: Validates complete response structure.
+
+---
+
+## 17. How to Revise These Notes
+
+1. Read concept
+2. Understand **why assertion is used**
+3. Run code
+4. Intentionally break assertion
+5. Observe failure message
 
 ---
 
@@ -402,100 +497,93 @@ Tell me what you want next and I’ll extend this.
 
 ---
 
-## 17. Interview Questions & Answers (Mapped to Above Topics)
+## 17. Interview Questions & Answers (With Code & Explanation)
 
-### Q1. What is an API and why do we test APIs?
+### Q1. How do you validate an API response?
 
 **Answer:**
-An API is a contract that allows two systems to communicate. We test APIs to validate business logic, data accuracy, performance, and error handling without relying on UI, which makes testing faster, stable, and more reliable.
+I validate status code, response body, headers, schema, and response time.
+
+```java
+given()
+    .baseUri("https://reqres.in")
+.when()
+    .get("/api/users/2")
+.then()
+    .statusCode(200)
+    .body("data.id", equalTo(2));
+```
 
 ---
 
-### Q2. Why is API testing preferred over UI testing?
+### Q2. How do you validate JSON response fields?
 
 **Answer:**
-API testing is faster, less flaky, independent of UI changes, and helps detect defects early in the development cycle. UI tests are mainly for end-to-end validation.
+Using JSON Path with Hamcrest matchers.
+
+```java
+.body("data.email", containsString("@"))
+.body("data.first_name", notNullValue());
+```
 
 ---
 
-### Q3. What is REST and what are its constraints?
+### Q3. How do you pass data from one API to another?
 
 **Answer:**
-REST is an architectural style for designing networked applications. Its constraints include client-server architecture, statelessness, uniform interface, cacheability, layered system, and optional code-on-demand.
+By extracting response values using JsonPath.
+
+```java
+String response = given().get("/api/users/2").asString();
+JsonPath js = new JsonPath(response);
+int userId = js.getInt("data.id");
+```
 
 ---
 
-### Q4. Difference between POST, PUT, and PATCH?
+### Q4. How do you handle assertions in REST Assured?
 
 **Answer:**
-POST creates a new resource and is non-idempotent. PUT replaces the entire resource and is idempotent. PATCH updates only specific fields of a resource.
+REST Assured uses Hamcrest assertions for readable and fluent validations.
+
+```java
+.body("data.id", equalTo(2))
+.body("data.email", containsString("reqres"));
+```
 
 ---
 
-### Q5. What does idempotent mean?
+### Q5. What validations do you perform in real projects?
 
 **Answer:**
-An operation is idempotent if multiple identical requests produce the same result. GET, PUT, and DELETE are idempotent; POST is not.
+I validate status code, mandatory fields, data correctness, headers, schema, and response time.
 
 ---
 
-### Q6. What are common HTTP status codes you validate?
+### Q6. What happens if an assertion fails?
 
 **Answer:**
-200 (OK), 201 (Created), 204 (No Content), 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), and 500 (Internal Server Error).
+Test execution stops for that test and the framework marks it as failed with a detailed error message.
 
 ---
 
-### Q7. What is REST Assured and why is it used?
+### Q7. How do you validate error responses?
 
 **Answer:**
-REST Assured is a Java-based library used for API automation. It simplifies API testing using readable syntax and integrates easily with TestNG, Maven, and CI tools.
+By asserting error status codes and messages.
 
----
-
-### Q8. What is JSON Path and where is it used?
-
-**Answer:**
-JSON Path is used to extract values from JSON responses for validation, looping, or passing data between API calls.
-
----
-
-### Q9. What is a POJO and why is it important in API automation?
-
-**Answer:**
-A POJO is a Plain Old Java Object used to map JSON payloads. It improves readability, reusability, and maintainability and is considered an industry best practice.
-
----
-
-### Q10. How do you handle authentication in REST Assured?
-
-**Answer:**
-Authentication is handled using headers, tokens, OAuth, or API keys. Tokens are usually generated once and reused using RequestSpecification or utility classes.
-
----
-
-### Q11. What is RequestSpecification and why do we use it?
-
-**Answer:**
-RequestSpecification is used to store common request configurations like base URI, headers, and authentication to avoid duplication and improve framework maintainability.
-
----
-
-### Q12. How do you validate API responses?
-
-**Answer:**
-By validating status codes, response body values, headers, response schema, and execution time.
-
----
-
-### Q13. How do you debug API automation failures?
-
-**Answer:**
-By enabling request and response logging, checking payloads, validating headers, and analyzing response codes and error messages.
+```java
+given()
+    .get("/api/users/999")
+.then()
+    .statusCode(404);
+```
 
 ---
 
 ## 18. CI/CD Execution – Jenkins (Complete Beginner-Friendly Explanation)
+
+– Jenkins (Complete Beginner-Friendly Explanation)
 
 ### What is CI/CD?
 
