@@ -30,7 +30,17 @@ nav:
       - ArrayList: java-concepts/collections/ArrayList.md
       - LinkedList: java-concepts/collections/LinkedList.md
   
+  - BDD Cucumber:
+    - Cucumber Notes: cucumber/cucumber.md
     
+  - TestNg :
+    - Retry Mechanism: testng/retry-mechanism.md
+    
+  - Rest Assured:
+    - Rest API Notes: rest-assured/rest-assured-nodes.md
+    - Interview Question: rest-assured/interview-questions.md
+    - Framework: rest-assured/framework.md
+  
   - PlayWright With Java:
       - Locators: playwright-Java/locator.md
       - Page Navigation: playwright-Java/page-navigation-actions.md
