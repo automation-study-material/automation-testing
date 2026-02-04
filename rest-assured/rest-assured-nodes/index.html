@@ -1,0 +1,4124 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Play-Wright-course.github.io/automation-testing/rest-assured/rest-assured-nodes/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>API Testing with REST Assured – Deep Dive (Beginner → 4 Years Experience) - Automation Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-testing-with-rest-assured-deep-dive-beginner-4-years-experience" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Automation Notes" class="md-header__button md-logo" aria-label="Automation Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Automation Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Testing with REST Assured – Deep Dive (Beginner → 4 Years Experience)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Automation Notes" class="md-nav__button md-logo" aria-label="Automation Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Automation Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/dataTypeVariableBasics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DataTypesBasics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-flow-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FlowControl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constructor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Constructor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/constructor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/constructor-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oops Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Oops Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4_1" id="__nav_1_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Encapsulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/encapsulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/encapsulation-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adavance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4_2" id="__nav_1_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inheritance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/inheritance-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4_3" id="__nav_1_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Abstraction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/abstraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/abstraction-in-depth1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/abstraction-in-depth2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oops Concept Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Oops Concept Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/code-Oppos-concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/code-oppose-concepts-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/code-oppose-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/Java-SeleniumFramework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Selenium Implementaions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Collections
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/ArrayList/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArrayList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/LinkedList/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlayWright With Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PlayWright With Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/locator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/page-navigation-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page Navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/playwright-interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inputs And Buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/checkbox-radio-button/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checkbox And Radio buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/dropdown_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dropdown Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/iframes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    iframe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/mouse-keyboard-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mouse Keyboard Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/alerts-promt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/handling-windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handle Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/file-upload-download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File upload And Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/screenshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ScreenShot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/exceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/interview-question/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InterViwe Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JavaScript Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/30-day-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RoadMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synchronous & ASynchronous
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Synchronous & ASynchronous
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/Synchronous-And-Asynchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    deep guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/dataTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/var-vs-let-vaiable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Var vs Let
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/variables-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vaiables snipped code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/objects-in-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Objects in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/flow-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/Arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays & Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/string-in-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/set-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set & Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/class-constructor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class & Constructor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/arrow-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrow Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/regularfunction-vs-arrowFunction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Function vs Arrow Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/js-promises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Promises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/js-promises-snipped-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Promises – Snippet Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/basics-interview-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlayWright with Javascript
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PlayWright with Javascript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/test-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/sample-playwright-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Playwright Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/page-vs-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page vs Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/locators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/methods-in-playwright/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods in Playwright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/sendkeys-command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SendKeys Command
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/inputValue%26TextContent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Value & Text Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/dropdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dropdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/auto-suggestion-dropdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auto Suggestion Dropdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/radio-buttons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/alert-iframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert & Iframe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/window-tab-handle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window & Tab Handle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/calender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/playwright-assertion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playwright Assertions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/json-data-iteration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Data Iteration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/customeFixureToGetTestData/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fixture to Get Test Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-an-api-real-world-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is an API? (Real-World Explanation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What is an API? (Real-World Explanation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real example:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-apis-are-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why APIs are critical
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-api-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What is API Testing?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. What is API Testing?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-api-testing-is-preferred-over-ui-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why API testing is preferred over UI testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rest-architecture-explained-clearly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. REST Architecture Explained Clearly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. REST Architecture Explained Clearly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rest-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-http-methods-with-business-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. HTTP Methods (With Business Meaning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. HTTP Methods (With Business Meaning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-fetch-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET – Fetch Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-create-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST – Create Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-update-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PUT – Update / Replace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-partial-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PATCH – Partial Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-remove-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DELETE – Remove Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-http-status-codes-testers-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. HTTP Status Codes (Tester’s Thinking)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. HTTP Status Codes (Tester’s Thinking)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rest-assured-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. REST Assured Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. REST Assured Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-testers-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why testers use it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-maven-dependencies-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Maven Dependencies (Complete)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-first-complete-rest-assured-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. First Complete REST Assured Test
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. First Complete REST Assured Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation-line-by-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation (Line by line)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sending-request-body-all-ways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Sending Request Body (All Ways)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Sending Request Body (All Ways)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-string-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 String Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-hashmap-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 HashMap Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-json-file-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 JSON File Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-pojo-concept-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. POJO Concept (Very Important)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. POJO Concept (Very Important)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pojo-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POJO Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pojo-in-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using POJO in Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-json-path-complete-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. JSON Path – Complete Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-requestspecification-framework-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. RequestSpecification (Framework Level)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. RequestSpecification (Framework Level)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using It
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-logging-debugging-like-a-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Logging (Debugging Like a Pro)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-authentication-bearer-token-full-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Authentication – Bearer Token (Full Example)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-best-practices-industry-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Best Practices (Industry Standard)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-how-to-revise-these-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. How to Revise These Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-interview-questions-answers-mapped-to-above-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Interview Questions &amp; Answers (Mapped to Above Topics)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Interview Questions &amp; Answers (Mapped to Above Topics)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-what-is-an-api-and-why-do-we-test-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q1. What is an API and why do we test APIs?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-why-is-api-testing-preferred-over-ui-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q2. Why is API testing preferred over UI testing?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-what-is-rest-and-what-are-its-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q3. What is REST and what are its constraints?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-difference-between-post-put-and-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q4. Difference between POST, PUT, and PATCH?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-what-does-idempotent-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q5. What does idempotent mean?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6-what-are-common-http-status-codes-you-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q6. What are common HTTP status codes you validate?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q7-what-is-rest-assured-and-why-is-it-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q7. What is REST Assured and why is it used?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q8-what-is-json-path-and-where-is-it-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q8. What is JSON Path and where is it used?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q9-what-is-a-pojo-and-why-is-it-important-in-api-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q9. What is a POJO and why is it important in API automation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q10-how-do-you-handle-authentication-in-rest-assured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q10. How do you handle authentication in REST Assured?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q11-what-is-requestspecification-and-why-do-we-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q11. What is RequestSpecification and why do we use it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q12-how-do-you-validate-api-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q12. How do you validate API responses?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q13-how-do-you-debug-api-automation-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q13. How do you debug API automation failures?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-cicd-execution-jenkins-complete-beginner-friendly-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. CI/CD Execution – Jenkins (Complete Beginner-Friendly Explanation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. CI/CD Execution – Jenkins (Complete Beginner-Friendly Explanation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is CI/CD?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-jenkins-for-api-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Jenkins for API Automation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jenkins-job-flow-for-api-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jenkins Job Flow for API Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1. Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-maven-project-structure-industry-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2. Maven Project Structure (Industry Standard)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-testng-configuration-testngxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3. TestNG Configuration (testng.xml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-jenkins-job-configuration-freestyle-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4. Jenkins Job Configuration (Freestyle Job)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-jenkins-execution-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5. Jenkins Execution Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-common-jenkins-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6. Common Jenkins Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jenkins-api-automation-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jenkins + API Automation Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-testing-with-rest-assured-deep-dive-beginner-4-years-experience">API Testing with REST Assured – Deep Dive (Beginner → 4 Years Experience)<a class="headerlink" href="#api-testing-with-rest-assured-deep-dive-beginner-4-years-experience" title="Permanent link">&para;</a></h1>
+<p>These notes are written to be <strong>read slowly and understood</strong>, not skimmed. Every concept includes <strong>why it exists</strong>, <strong>when it’s used</strong>, and <strong>complete working code snippets</strong> so nothing feels magical or confusing.</p>
+<hr />
+<h2 id="1-what-is-an-api-real-world-explanation">1. What is an API? (Real-World Explanation)<a class="headerlink" href="#1-what-is-an-api-real-world-explanation" title="Permanent link">&para;</a></h2>
+<p>An <strong>API (Application Programming Interface)</strong> is a contract that allows two software systems to communicate.</p>
+<h3 id="real-example">Real example:<a class="headerlink" href="#real-example" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A mobile app asks for a list of hotels</li>
+<li>The backend fetches data from database</li>
+<li>API sends only required data back</li>
+</ul>
+<p>The UI never talks directly to the database.</p>
+<pre><code>Mobile App / Web UI → API → Backend Logic → Database
+</code></pre>
+<h3 id="why-apis-are-critical">Why APIs are critical<a class="headerlink" href="#why-apis-are-critical" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Same backend supports <strong>Web, Mobile, Third-party apps</strong></li>
+<li>Frontend &amp; backend can be written in different languages</li>
+<li>Improves <strong>security, scalability, maintainability</strong></li>
+</ul>
+<hr />
+<h2 id="2-what-is-api-testing">2. What is API Testing?<a class="headerlink" href="#2-what-is-api-testing" title="Permanent link">&para;</a></h2>
+<p>API Testing means validating:</p>
+<ul>
+<li>Request structure</li>
+<li>Response correctness</li>
+<li>Business logic</li>
+<li>Error handling</li>
+<li>Performance and security (basic level)</li>
+</ul>
+<h3 id="why-api-testing-is-preferred-over-ui-testing">Why API testing is preferred over UI testing<a class="headerlink" href="#why-api-testing-is-preferred-over-ui-testing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Faster execution</li>
+<li>Less flaky</li>
+<li>No UI dependency</li>
+<li>Early bug detection</li>
+</ul>
+<hr />
+<h2 id="3-rest-architecture-explained-clearly">3. REST Architecture Explained Clearly<a class="headerlink" href="#3-rest-architecture-explained-clearly" title="Permanent link">&para;</a></h2>
+<p><strong>REST (Representational State Transfer)</strong> is an architectural style.</p>
+<h3 id="rest-principles">REST Principles<a class="headerlink" href="#rest-principles" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Client–Server</strong> – UI and backend are independent</li>
+<li><strong>Stateless</strong> – Every request contains all information</li>
+<li><strong>Uniform Interface</strong> – Uses HTTP methods</li>
+<li><strong>Cacheable</strong> – Responses can be cached</li>
+<li><strong>Layered System</strong> – Security, load balancer layers allowed</li>
+</ol>
+<hr />
+<h2 id="4-http-methods-with-business-meaning">4. HTTP Methods (With Business Meaning)<a class="headerlink" href="#4-http-methods-with-business-meaning" title="Permanent link">&para;</a></h2>
+<h3 id="get-fetch-data">GET – Fetch Data<a class="headerlink" href="#get-fetch-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Does not modify data</li>
+<li>Safe and idempotent</li>
+</ul>
+<h3 id="post-create-data">POST – Create Data<a class="headerlink" href="#post-create-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Creates new resource</li>
+<li>Not idempotent</li>
+</ul>
+<h3 id="put-update-replace">PUT – Update / Replace<a class="headerlink" href="#put-update-replace" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Updates entire resource</li>
+<li>Idempotent</li>
+</ul>
+<h3 id="patch-partial-update">PATCH – Partial Update<a class="headerlink" href="#patch-partial-update" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Updates selected fields</li>
+</ul>
+<h3 id="delete-remove-data">DELETE – Remove Data<a class="headerlink" href="#delete-remove-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Deletes resource</li>
+</ul>
+<hr />
+<h2 id="5-http-status-codes-testers-thinking">5. HTTP Status Codes (Tester’s Thinking)<a class="headerlink" href="#5-http-status-codes-testers-thinking" title="Permanent link">&para;</a></h2>
+<h3 id="success">Success<a class="headerlink" href="#success" title="Permanent link">&para;</a></h3>
+<ul>
+<li>200 OK – Request successful</li>
+<li>201 Created – Resource created</li>
+<li>204 No Content – Success, no body</li>
+</ul>
+<h3 id="client-errors">Client Errors<a class="headerlink" href="#client-errors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>400 – Bad request / invalid payload</li>
+<li>401 – Authentication failed</li>
+<li>403 – Permission issue</li>
+<li>404 – Resource not found</li>
+</ul>
+<h3 id="server-errors">Server Errors<a class="headerlink" href="#server-errors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>500 – Internal server error</li>
+<li>503 – Service down</li>
+</ul>
+<hr />
+<h2 id="6-rest-assured-introduction">6. REST Assured Introduction<a class="headerlink" href="#6-rest-assured-introduction" title="Permanent link">&para;</a></h2>
+<p>REST Assured is a Java library used to test REST APIs.</p>
+<h3 id="why-testers-use-it">Why testers use it<a class="headerlink" href="#why-testers-use-it" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Easy syntax</li>
+<li>Java-based</li>
+<li>Integrates with TestNG</li>
+<li>Supports JSON &amp; XML</li>
+</ul>
+<hr />
+<h2 id="7-maven-dependencies-complete">7. Maven Dependencies (Complete)<a class="headerlink" href="#7-maven-dependencies-complete" title="Permanent link">&para;</a></h2>
+<pre><code class="language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;io.rest-assured&lt;/groupId&gt;
+        &lt;artifactId&gt;rest-assured&lt;/artifactId&gt;
+        &lt;version&gt;5.3.0&lt;/version&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.testng&lt;/groupId&gt;
+        &lt;artifactId&gt;testng&lt;/artifactId&gt;
+        &lt;version&gt;7.8.0&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+        &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+        &lt;version&gt;2.15.2&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+<hr />
+<h2 id="8-first-complete-rest-assured-test">8. First Complete REST Assured Test<a class="headerlink" href="#8-first-complete-rest-assured-test" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+import org.testng.annotations.Test;
+
+public class GetUsersTest {
+
+    @Test
+    public void getUsers() {
+
+        given()
+            .baseUri(&quot;https://reqres.in&quot;)
+        .when()
+            .get(&quot;/api/users?page=2&quot;)
+        .then()
+            .statusCode(200)
+            .body(&quot;page&quot;, equalTo(2))
+            .body(&quot;data.size()&quot;, greaterThan(0));
+    }
+}
+</code></pre>
+<h3 id="explanation-line-by-line">Explanation (Line by line)<a class="headerlink" href="#explanation-line-by-line" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>given()</code> → request setup</li>
+<li><code>when()</code> → action</li>
+<li><code>then()</code> → validation</li>
+</ul>
+<hr />
+<h2 id="9-sending-request-body-all-ways">9. Sending Request Body (All Ways)<a class="headerlink" href="#9-sending-request-body-all-ways" title="Permanent link">&para;</a></h2>
+<h3 id="91-string-payload">9.1 String Payload<a class="headerlink" href="#91-string-payload" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">String payload = &quot;{\&quot;name\&quot;:\&quot;John\&quot;,\&quot;job\&quot;:\&quot;Tester\&quot;}&quot;;
+
+given()
+    .baseUri(&quot;https://reqres.in&quot;)
+    .contentType(&quot;application/json&quot;)
+    .body(payload)
+.when()
+    .post(&quot;/api/users&quot;)
+.then()
+    .statusCode(201);
+</code></pre>
+<hr />
+<h3 id="92-hashmap-payload">9.2 HashMap Payload<a class="headerlink" href="#92-hashmap-payload" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">Map&lt;String, String&gt; data = new HashMap&lt;&gt;();
+data.put(&quot;name&quot;, &quot;John&quot;);
+data.put(&quot;job&quot;, &quot;Tester&quot;);
+
+given()
+    .baseUri(&quot;https://reqres.in&quot;)
+    .contentType(&quot;application/json&quot;)
+    .body(data)
+.when()
+    .post(&quot;/api/users&quot;)
+.then()
+    .statusCode(201);
+</code></pre>
+<hr />
+<h3 id="93-json-file-payload">9.3 JSON File Payload<a class="headerlink" href="#93-json-file-payload" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">File file = new File(&quot;src/test/resources/user.json&quot;);
+
+given()
+    .baseUri(&quot;https://reqres.in&quot;)
+    .contentType(&quot;application/json&quot;)
+    .body(file)
+.when()
+    .post(&quot;/api/users&quot;)
+.then()
+    .statusCode(201);
+</code></pre>
+<hr />
+<h2 id="10-pojo-concept-very-important">10. POJO Concept (Very Important)<a class="headerlink" href="#10-pojo-concept-very-important" title="Permanent link">&para;</a></h2>
+<h3 id="pojo-class">POJO Class<a class="headerlink" href="#pojo-class" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">public class User {
+    private String name;
+    private String job;
+
+    public User() {}
+
+    public User(String name, String job) {
+        this.name = name;
+        this.job = job;
+    }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getJob() { return job; }
+    public void setJob(String job) { this.job = job; }
+}
+</code></pre>
+<h3 id="using-pojo-in-test">Using POJO in Test<a class="headerlink" href="#using-pojo-in-test" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">User user = new User(&quot;John&quot;, &quot;Tester&quot;);
+
+given()
+    .baseUri(&quot;https://reqres.in&quot;)
+    .contentType(&quot;application/json&quot;)
+    .body(user)
+.when()
+    .post(&quot;/api/users&quot;)
+.then()
+    .statusCode(201);
+</code></pre>
+<hr />
+<h2 id="11-json-path-complete-usage">11. JSON Path – Complete Usage<a class="headerlink" href="#11-json-path-complete-usage" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">String response = given()
+    .baseUri(&quot;https://reqres.in&quot;)
+.when()
+    .get(&quot;/api/users?page=2&quot;)
+.then()
+    .extract().response().asString();
+
+JsonPath js = new JsonPath(response);
+
+int totalPages = js.getInt(&quot;total_pages&quot;);
+int userCount = js.getInt(&quot;data.size()&quot;);
+String firstEmail = js.getString(&quot;data[0].email&quot;);
+</code></pre>
+<hr />
+<h2 id="12-requestspecification-framework-level">12. RequestSpecification (Framework Level)<a class="headerlink" href="#12-requestspecification-framework-level" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">import io.restassured.specification.RequestSpecification;
+import org.testng.annotations.BeforeClass;
+
+public class BaseTest {
+
+    protected RequestSpecification request;
+
+    @BeforeClass
+    public void setup() {
+        request = given()
+            .baseUri(&quot;https://reqres.in&quot;)
+            .contentType(&quot;application/json&quot;);
+    }
+}
+</code></pre>
+<h3 id="using-it">Using It<a class="headerlink" href="#using-it" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">public class CreateUserTest extends BaseTest {
+
+    @Test
+    public void createUser() {
+        request
+            .body(new User(&quot;Alex&quot;, &quot;QA&quot;))
+        .when()
+            .post(&quot;/api/users&quot;)
+        .then()
+            .statusCode(201);
+    }
+}
+</code></pre>
+<hr />
+<h2 id="13-logging-debugging-like-a-pro">13. Logging (Debugging Like a Pro)<a class="headerlink" href="#13-logging-debugging-like-a-pro" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">given()
+    .baseUri(&quot;https://reqres.in&quot;)
+    .log().all()
+.when()
+    .get(&quot;/api/users/2&quot;)
+.then()
+    .log().body()
+    .statusCode(200);
+</code></pre>
+<hr />
+<h2 id="14-authentication-bearer-token-full-example">14. Authentication – Bearer Token (Full Example)<a class="headerlink" href="#14-authentication-bearer-token-full-example" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">String token = &quot;your_token_here&quot;;
+
+given()
+    .baseUri(&quot;https://api.example.com&quot;)
+    .header(&quot;Authorization&quot;, &quot;Bearer &quot; + token)
+.when()
+    .get(&quot;/profile&quot;)
+.then()
+    .statusCode(200);
+</code></pre>
+<hr />
+<h2 id="15-best-practices-industry-standard">15. Best Practices (Industry Standard)<a class="headerlink" href="#15-best-practices-industry-standard" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Always validate status code</li>
+<li>Validate response body</li>
+<li>Avoid hard-coded data</li>
+<li>Use POJOs</li>
+<li>Centralize auth logic</li>
+<li>Use RequestSpecification</li>
+<li>Separate test data</li>
+</ul>
+<hr />
+<h2 id="16-how-to-revise-these-notes">16. How to Revise These Notes<a class="headerlink" href="#16-how-to-revise-these-notes" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Read one section</li>
+<li>Copy code</li>
+<li>Run it</li>
+<li>Modify values</li>
+<li>Observe response</li>
+</ol>
+<p>That’s how confidence is built.</p>
+<hr />
+<p>If you want next:</p>
+<ul>
+<li>Complete <strong>API Automation Framework</strong></li>
+<li><strong>Interview Q&amp;A mapped to these topics</strong></li>
+<li><strong>Real project structure (Maven + TestNG)</strong></li>
+<li><strong>CI/CD execution (Jenkins)</strong></li>
+</ul>
+<p>Tell me what you want next and I’ll extend this.</p>
+<hr />
+<h2 id="17-interview-questions-answers-mapped-to-above-topics">17. Interview Questions &amp; Answers (Mapped to Above Topics)<a class="headerlink" href="#17-interview-questions-answers-mapped-to-above-topics" title="Permanent link">&para;</a></h2>
+<h3 id="q1-what-is-an-api-and-why-do-we-test-apis">Q1. What is an API and why do we test APIs?<a class="headerlink" href="#q1-what-is-an-api-and-why-do-we-test-apis" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+An API is a contract that allows two systems to communicate. We test APIs to validate business logic, data accuracy, performance, and error handling without relying on UI, which makes testing faster, stable, and more reliable.</p>
+<hr />
+<h3 id="q2-why-is-api-testing-preferred-over-ui-testing">Q2. Why is API testing preferred over UI testing?<a class="headerlink" href="#q2-why-is-api-testing-preferred-over-ui-testing" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+API testing is faster, less flaky, independent of UI changes, and helps detect defects early in the development cycle. UI tests are mainly for end-to-end validation.</p>
+<hr />
+<h3 id="q3-what-is-rest-and-what-are-its-constraints">Q3. What is REST and what are its constraints?<a class="headerlink" href="#q3-what-is-rest-and-what-are-its-constraints" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+REST is an architectural style for designing networked applications. Its constraints include client-server architecture, statelessness, uniform interface, cacheability, layered system, and optional code-on-demand.</p>
+<hr />
+<h3 id="q4-difference-between-post-put-and-patch">Q4. Difference between POST, PUT, and PATCH?<a class="headerlink" href="#q4-difference-between-post-put-and-patch" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+POST creates a new resource and is non-idempotent. PUT replaces the entire resource and is idempotent. PATCH updates only specific fields of a resource.</p>
+<hr />
+<h3 id="q5-what-does-idempotent-mean">Q5. What does idempotent mean?<a class="headerlink" href="#q5-what-does-idempotent-mean" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+An operation is idempotent if multiple identical requests produce the same result. GET, PUT, and DELETE are idempotent; POST is not.</p>
+<hr />
+<h3 id="q6-what-are-common-http-status-codes-you-validate">Q6. What are common HTTP status codes you validate?<a class="headerlink" href="#q6-what-are-common-http-status-codes-you-validate" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+200 (OK), 201 (Created), 204 (No Content), 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), and 500 (Internal Server Error).</p>
+<hr />
+<h3 id="q7-what-is-rest-assured-and-why-is-it-used">Q7. What is REST Assured and why is it used?<a class="headerlink" href="#q7-what-is-rest-assured-and-why-is-it-used" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+REST Assured is a Java-based library used for API automation. It simplifies API testing using readable syntax and integrates easily with TestNG, Maven, and CI tools.</p>
+<hr />
+<h3 id="q8-what-is-json-path-and-where-is-it-used">Q8. What is JSON Path and where is it used?<a class="headerlink" href="#q8-what-is-json-path-and-where-is-it-used" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+JSON Path is used to extract values from JSON responses for validation, looping, or passing data between API calls.</p>
+<hr />
+<h3 id="q9-what-is-a-pojo-and-why-is-it-important-in-api-automation">Q9. What is a POJO and why is it important in API automation?<a class="headerlink" href="#q9-what-is-a-pojo-and-why-is-it-important-in-api-automation" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+A POJO is a Plain Old Java Object used to map JSON payloads. It improves readability, reusability, and maintainability and is considered an industry best practice.</p>
+<hr />
+<h3 id="q10-how-do-you-handle-authentication-in-rest-assured">Q10. How do you handle authentication in REST Assured?<a class="headerlink" href="#q10-how-do-you-handle-authentication-in-rest-assured" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+Authentication is handled using headers, tokens, OAuth, or API keys. Tokens are usually generated once and reused using RequestSpecification or utility classes.</p>
+<hr />
+<h3 id="q11-what-is-requestspecification-and-why-do-we-use-it">Q11. What is RequestSpecification and why do we use it?<a class="headerlink" href="#q11-what-is-requestspecification-and-why-do-we-use-it" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+RequestSpecification is used to store common request configurations like base URI, headers, and authentication to avoid duplication and improve framework maintainability.</p>
+<hr />
+<h3 id="q12-how-do-you-validate-api-responses">Q12. How do you validate API responses?<a class="headerlink" href="#q12-how-do-you-validate-api-responses" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+By validating status codes, response body values, headers, response schema, and execution time.</p>
+<hr />
+<h3 id="q13-how-do-you-debug-api-automation-failures">Q13. How do you debug API automation failures?<a class="headerlink" href="#q13-how-do-you-debug-api-automation-failures" title="Permanent link">&para;</a></h3>
+<p><strong>Answer:</strong>
+By enabling request and response logging, checking payloads, validating headers, and analyzing response codes and error messages.</p>
+<hr />
+<h2 id="18-cicd-execution-jenkins-complete-beginner-friendly-explanation">18. CI/CD Execution – Jenkins (Complete Beginner-Friendly Explanation)<a class="headerlink" href="#18-cicd-execution-jenkins-complete-beginner-friendly-explanation" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-cicd">What is CI/CD?<a class="headerlink" href="#what-is-cicd" title="Permanent link">&para;</a></h3>
+<p>CI/CD automates build, test, and deployment processes so code changes are validated continuously.</p>
+<ul>
+<li><strong>CI (Continuous Integration):</strong> Run tests automatically on every code commit</li>
+<li><strong>CD (Continuous Delivery):</strong> Prepare code for release</li>
+</ul>
+<hr />
+<h3 id="why-jenkins-for-api-automation">Why Jenkins for API Automation?<a class="headerlink" href="#why-jenkins-for-api-automation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Open source</li>
+<li>Easy Maven integration</li>
+<li>Widely used in industry</li>
+<li>Supports scheduled and triggered executions</li>
+</ul>
+<hr />
+<h3 id="jenkins-job-flow-for-api-automation">Jenkins Job Flow for API Automation<a class="headerlink" href="#jenkins-job-flow-for-api-automation" title="Permanent link">&para;</a></h3>
+<pre><code>Developer Commit → GitHub → Jenkins → Maven Build → REST Assured Tests → Report
+</code></pre>
+<hr />
+<h3 id="step-1-prerequisites">Step 1. Prerequisites<a class="headerlink" href="#step-1-prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Java installed</li>
+<li>Maven installed</li>
+<li>Jenkins installed</li>
+<li>Git repository with API automation code</li>
+</ul>
+<hr />
+<h3 id="step-2-maven-project-structure-industry-standard">Step 2. Maven Project Structure (Industry Standard)<a class="headerlink" href="#step-2-maven-project-structure-industry-standard" title="Permanent link">&para;</a></h3>
+<pre><code>api-automation
+ ├── pom.xml
+ ├── src/test/java
+ │    ├── tests
+ │    ├── base
+ │    └── utils
+ └── src/test/resources
+</code></pre>
+<hr />
+<h3 id="step-3-testng-configuration-testngxml">Step 3. TestNG Configuration (testng.xml)<a class="headerlink" href="#step-3-testng-configuration-testngxml" title="Permanent link">&para;</a></h3>
+<pre><code class="language-xml">&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;API Suite&quot;&gt;
+    &lt;test name=&quot;API Tests&quot;&gt;
+        &lt;classes&gt;
+            &lt;class name=&quot;tests.GetUsersTest&quot;/&gt;
+            &lt;class name=&quot;tests.CreateUserTest&quot;/&gt;
+        &lt;/classes&gt;
+    &lt;/test&gt;
+&lt;/suite&gt;
+</code></pre>
+<hr />
+<h3 id="step-4-jenkins-job-configuration-freestyle-job">Step 4. Jenkins Job Configuration (Freestyle Job)<a class="headerlink" href="#step-4-jenkins-job-configuration-freestyle-job" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open Jenkins</li>
+<li>Create <strong>New Item → Freestyle Project</strong></li>
+<li>Configure Source Code Management → Git</li>
+<li>Add GitHub repository URL</li>
+<li>Add Maven build step</li>
+</ol>
+<p><strong>Maven Command:</strong></p>
+<pre><code>mvn clean test
+</code></pre>
+<hr />
+<h3 id="step-5-jenkins-execution-result">Step 5. Jenkins Execution Result<a class="headerlink" href="#step-5-jenkins-execution-result" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Console output shows API execution logs</li>
+<li>TestNG results displayed</li>
+<li>Build marked as SUCCESS or FAILURE</li>
+</ul>
+<hr />
+<h3 id="step-6-common-jenkins-interview-questions">Step 6. Common Jenkins Interview Questions<a class="headerlink" href="#step-6-common-jenkins-interview-questions" title="Permanent link">&para;</a></h3>
+<p><strong>Q. How do you trigger Jenkins jobs?</strong>
+A. Manually, scheduled (cron), or via Git webhook.</p>
+<p><strong>Q. What happens if API tests fail?</strong>
+A. Jenkins marks the build as failed and stops the pipeline.</p>
+<p><strong>Q. Can API tests run headlessly in Jenkins?</strong>
+A. Yes, API tests don’t need UI or browser.</p>
+<hr />
+<h3 id="jenkins-api-automation-best-practices">Jenkins + API Automation Best Practices<a class="headerlink" href="#jenkins-api-automation-best-practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Keep Jenkinsfile or job simple</li>
+<li>Do not hard-code credentials</li>
+<li>Separate environments (QA, UAT)</li>
+<li>Generate reports after execution</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
