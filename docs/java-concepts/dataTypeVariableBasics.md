@@ -141,6 +141,18 @@ if (isLoggedIn && isDashboardVisible) {
 Type casting is converting one data type into another.
 
 ---
+double
+↓
+float
+↓
+long
+↓
+int
+↓
+short
+↓
+byte
+```
 
 ### 🔹 Implicit Casting (Widening)
 Automatic conversion from smaller to larger type.
