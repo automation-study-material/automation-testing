@@ -1,138 +1,25 @@
 
-# Cucumber Tags – Complete Practical Guide (Beginner → Advanced)
+# Cucumber Tags + Hooks + Parallel – Crystal Clear Guide (with Execution Order & Output)
+
+This guide explains everything with **small feature examples + exact execution output** so you can visually understand behavior.
 
 ---
 
-# ✅ Golden Rule (remember forever)
+# ✅ Hook + Tag Combined Examples (Clear + Practical)
 
-## Cucumber filters **SCENARIOS**, not feature files
-
-Even if tag is on **Feature → it gets copied to all scenarios automatically**.
-
----
-
-# 🟢 Example 1 — Tag at Feature level
+## Feature
 
 ```gherkin
 @smoke
 Feature: Login
 
-  Scenario: Valid login
-  Scenario: Invalid login
-  Scenario: Forgot password
-```
-
-Runner:
-
-```java
-tags = "@smoke"
-```
-
-Internally:
-
-```
-@smoke Valid login
-@smoke Invalid login
-@smoke Forgot password
-```
-
-✅ All run
-
----
-
-# 🟢 Example 2 — Tag at Scenario level
-
-```gherkin
-Feature: Login
-
-  @smoke
-  Scenario: Valid login
-
-  Scenario: Invalid login
-```
-
-Runner:
-
-```java
-tags = "@smoke"
-```
-
-Execution:
-
-```
-✔ Valid login
-❌ Invalid login
+  Scenario: Login test
+    Given user opens app
 ```
 
 ---
 
-# 🟢 Example 3 — Mixed
-
-```gherkin
-@smoke
-Feature: Login
-
-  Scenario: Valid login
-
-  @regression
-  Scenario: Invalid login
-```
-
-Runner → `@regression`
-
-```
-❌ Valid login
-✔ Invalid login
-```
-
----
-
-# 🟢 Example 4 — Multiple tag expression
-
-Runner:
-
-```java
-tags = "@smoke and @regression"
-```
-
-Both tags must exist.
-
----
-
-# 🟢 Example 5 — Scenario Outline
-
-```gherkin
-@smoke
-Scenario Outline: login
-Examples:
- | user |
- | A |
- | B |
-```
-
-Internally:
-
-```
-@smoke Scenario A
-@smoke Scenario B
-```
-
----
-
-------------------------------------------------------------
-# ✅ Hook + Tag Combined Examples (VERY IMPORTANT)
-------------------------------------------------------------
-
-## Hooks can also be filtered using tags
-
-### Feature
-
-```gherkin
-@smoke
-Scenario: Login test
-```
-
-### Hook
+## Hook
 
 ```java
 @Before("@smoke")
@@ -141,104 +28,190 @@ public void smokeSetup() {
 }
 ```
 
-Runs only for:
-```
-@smoke scenarios
-```
-
 ---
 
-## Multiple tag hook
-
-```java
-@Before("@smoke and not @api")
-```
-
-Meaning:
-```
-Run only smoke but NOT api tests
-```
-
----
-
-## Combined order + tag
-
-```java
-@Before(order = 1)
-public void globalSetup(){}
-
-@Before(value = "@smoke", order = 2)
-public void smokeSetup(){}
-```
-
-Execution:
+## ✅ Execution Order
 
 ```
-globalSetup
-smokeSetup
-Scenario
+Smoke setup
+Given user opens app
 ```
+
+👉 Runs ONLY for @smoke scenarios
 
 ---
 
 ------------------------------------------------------------
-# ✅ Parallel + Tags
+# ✅ Multiple Tag Hook Example
+------------------------------------------------------------
+
+## Hook
+
+```java
+@Before("@smoke and not @api")
+public void smokeOnlyUI() {
+    System.out.println("Only UI smoke test");
+}
+```
+
+## Feature
+
+```gherkin
+@smoke @ui
+Scenario: UI smoke
+
+@smoke @api
+Scenario: API smoke
+```
+
+## Execution
+
+```
+Only UI smoke test   ✔ for UI
+(no hook)            ❌ for API
+```
+
+👉 Hook runs only when BOTH conditions match
+
+---
+
+------------------------------------------------------------
+# ✅ Combined Order + Tag (Very Important)
+------------------------------------------------------------
+
+## Hooks
+
+```java
+@Before(order = 1)
+public void globalSetup() {
+    System.out.println("Global setup");
+}
+
+@Before(value = "@smoke", order = 2)
+public void smokeSetup() {
+    System.out.println("Smoke setup");
+}
+```
+
+---
+
+## Feature
+
+```gherkin
+@smoke
+Scenario: Login
+```
+
+---
+
+## ✅ Actual Execution
+
+```
+Global setup
+Smoke setup
+Scenario steps
+```
+
+---
+
+👉 Rule:
+Before → ascending order
+
+---
+
+------------------------------------------------------------
+# ✅ Parallel + Tags (with clear output)
 ------------------------------------------------------------
 
 ## Enable parallel
 
+### Runner
+
 ```java
+@Override
 @DataProvider(parallel = true)
+public Object[][] scenarios() {
+    return super.scenarios();
+}
 ```
 
 OR
 
+### pom.xml
+
 ```xml
 <parallel>methods</parallel>
-<threadCount>4</threadCount>
+<threadCount>3</threadCount>
 ```
 
 ---
 
-## Example
-
-Feature:
+## Feature
 
 ```gherkin
-@smoke Scenario A
-@smoke Scenario B
-@smoke Scenario C
+@smoke Scenario: A
+@smoke Scenario: B
+@smoke Scenario: C
 ```
 
-Runner:
+---
+
+## Runner
 
 ```java
 tags="@smoke"
 ```
 
-### Execution (parallel)
+---
+
+## ✅ Execution (parallel)
 
 ```
-Thread1 → A
-Thread2 → B
-Thread3 → C
+Thread-1 → Scenario A
+Thread-2 → Scenario B
+Thread-3 → Scenario C
 ```
 
 ⚠ Order NOT guaranteed
 
----
+Sometimes:
 
-## Best Practice with parallel
-
-✔ Avoid shared static variables  
-✔ Avoid scenario dependency  
-✔ Use ThreadLocal driver  
-✔ Use independent test data  
+```
+C → A → B
+```
+or any order
 
 ---
 
 ------------------------------------------------------------
-# ✅ Multiple Runner Strategy (Industry Standard)
+# ✅ Parallel + Hook Execution Example
+------------------------------------------------------------
+
+## Hook
+
+```java
+@Before
+public void before() {
+    System.out.println(Thread.currentThread().getName());
+}
+```
+
+---
+
+## Output
+
+```
+Thread-1
+Thread-2
+Thread-3
+```
+
+👉 Shows scenarios running simultaneously
+
+---
+
+------------------------------------------------------------
+# ✅ Multiple Runner Strategy (with calling examples)
 ------------------------------------------------------------
 
 ## SmokeRunner
@@ -248,12 +221,26 @@ Thread3 → C
 public class SmokeRunner {}
 ```
 
+Run:
+
+```
+mvn test -Dtest=SmokeRunner
+```
+
+Runs → only smoke tests
+
+---
+
 ## RegressionRunner
 
 ```java
 @CucumberOptions(tags="@regression")
 public class RegressionRunner {}
 ```
+
+Runs → only regression tests
+
+---
 
 ## FullSuiteRunner
 
@@ -262,46 +249,77 @@ public class RegressionRunner {}
 public class FullSuiteRunner {}
 ```
 
-Benefits:
+Runs → everything except work-in-progress
 
-✔ Separate pipelines  
-✔ Faster execution  
-✔ Easy CI integration  
-✔ Clean control  
+---
+
+## Benefits
+
+✔ Separate execution  
+✔ Faster CI  
+✔ Easy debugging  
+✔ No manual tag change  
 
 ---
 
 ------------------------------------------------------------
-# ✅ Interview Q&A Section
+# ✅ Full Execution Timeline Example
 ------------------------------------------------------------
 
-### Q1. Do tags work at feature level or scenario level?
-👉 Scenario level. Feature tags are inherited.
+## Hooks
 
----
-
-### Q2. Can we run multiple tags?
-👉 Yes
-
-```
-@smoke and @regression
-@smoke or @api
-not @slow
+```java
+@Before(order = 1)  globalSetup
+@Before(order = 2)  smokeSetup
+@After(order = 2)   smokeCleanup
+@After(order = 1)   globalCleanup
 ```
 
----
+## Scenario
 
-### Q3. What happens if no tag is provided?
-👉 All scenarios run
-
----
-
-### Q4. Do tags affect execution order?
-👉 No, only filtering
+```gherkin
+@smoke
+Scenario: Test
+```
 
 ---
 
-### Q5. Can hooks use tags?
+## ✅ Actual Flow
+
+```
+globalSetup
+smokeSetup
+Scenario steps
+smokeCleanup
+globalCleanup
+```
+
+---
+
+👉 After hooks run in reverse order
+
+---
+
+------------------------------------------------------------
+# ✅ Interview Q&A Section (Very Common)
+------------------------------------------------------------
+
+### Q1. Do tags run features or scenarios?
+👉 Scenarios only
+
+---
+
+### Q2. Does feature tag apply to scenarios?
+👉 Yes (inherited)
+
+---
+
+### Q3. Does parallel maintain order?
+👉 No
+
+---
+
+### Q4. Can hooks use tags?
 👉 Yes
 
 ```java
@@ -310,20 +328,22 @@ not @slow
 
 ---
 
-### Q6. Does parallel maintain order?
-👉 No, order becomes random
+### Q5. Order of hooks?
+👉 Before → ascending  
+👉 After → descending
 
 ---
 
-### Q7. Best tagging strategy?
-👉
-Feature → module  
-Scenario → test type  
+### Q6. Best practice with parallel?
+👉 ThreadLocal, no shared state
 
 ---
 
 ------------------------------------------------------------
-# ✅ 1-Line Memory Trick
+# ✅ Memory Trick
 ------------------------------------------------------------
 
-👉 **Tags filter scenarios only. Feature tags are automatically inherited. Hooks can also use tags. Parallel removes order guarantee.**
+👉 Tags filter scenarios  
+👉 Hooks respect tags  
+👉 Parallel breaks order  
+👉 Before ↑ After ↓
