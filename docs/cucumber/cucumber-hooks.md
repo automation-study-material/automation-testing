@@ -2,6 +2,7 @@
 # Cucumber Hooks – Execution Table + Parallel Behavior Guide
 
 This guide explains:
+
 ✅ Hook execution with different tag combinations (table format)  
 ✅ Hook behavior in parallel execution  
 ✅ Clear examples + outputs  
@@ -207,3 +208,5 @@ Q: Do hooks run per thread?
 👉 Before ↑  
 👉 After ↓  
 👉 Parallel = random order across scenarios  
+
+## Hooks without tag always executed.
