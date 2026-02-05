@@ -3225,77 +3225,148 @@ String firstUser = jp.getString(&quot;users[0].name&quot;);
 </code></pre>
 <hr />
 <h1 id="filtering-examples">🚀 Filtering Examples<a class="headerlink" href="#filtering-examples" title="Permanent link">&para;</a></h1>
+<h2 id="example-1-admin-user">Example 1 – ADMIN user<a class="headerlink" href="#example-1-admin-user" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getString(&quot;users.find { it.role == 'ADMIN' }.name&quot;);
-jp.getList(&quot;users.findAll { it.active }.name&quot;);
-jp.getInt(&quot;users.salary.max()&quot;);
+</code></pre>
+<p>Output:</p>
+<pre><code>Umesh
 </code></pre>
 <hr />
-<h1 id="20-practice-problems-with-answers">🔥 20 Practice Problems (with Answers)<a class="headerlink" href="#20-practice-problems-with-answers" title="Permanent link">&para;</a></h1>
+<h2 id="example-2-active-users">Example 2 – Active users<a class="headerlink" href="#example-2-active-users" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">jp.getList(&quot;users.findAll { it.active }.name&quot;);
+</code></pre>
+<p>Output:</p>
+<pre><code>[Umesh, Neha]
+</code></pre>
+<hr />
+<h2 id="example-3-max-salary">Example 3 – Max salary<a class="headerlink" href="#example-3-max-salary" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">jp.getInt(&quot;users.salary.max()&quot;);
+</code></pre>
+<p>Output:</p>
+<pre><code>90000
+</code></pre>
+<hr />
+<h1 id="20-practice-problems-with-answers-outputs">🔥 20 Practice Problems WITH ANSWERS + OUTPUTS<a class="headerlink" href="#20-practice-problems-with-answers-outputs" title="Permanent link">&para;</a></h1>
 <h2 id="q1-get-company-name">Q1 Get company name<a class="headerlink" href="#q1-get-company-name" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getString(&quot;company&quot;);
 </code></pre>
+<p>Output: <code>ABC Tech</code></p>
+<hr />
 <h2 id="q2-get-total-users">Q2 Get total users<a class="headerlink" href="#q2-get-total-users" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getInt(&quot;total&quot;);
 </code></pre>
+<p>Output: <code>3</code></p>
+<hr />
 <h2 id="q3-get-first-user-id">Q3 Get first user id<a class="headerlink" href="#q3-get-first-user-id" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getInt(&quot;users[0].id&quot;);
 </code></pre>
+<p>Output: <code>101</code></p>
+<hr />
 <h2 id="q4-get-last-user-name">Q4 Get last user name<a class="headerlink" href="#q4-get-last-user-name" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getString(&quot;users[-1].name&quot;);
 </code></pre>
+<p>Output: <code>Neha</code></p>
+<hr />
 <h2 id="q5-get-all-names-list">Q5 Get all names list<a class="headerlink" href="#q5-get-all-names-list" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getList(&quot;users.name&quot;);
 </code></pre>
+<p>Output:</p>
+<pre><code>[Umesh, Amit, Neha]
+</code></pre>
+<hr />
 <h2 id="q6-get-all-ids-as-integers">Q6 Get all ids as integers<a class="headerlink" href="#q6-get-all-ids-as-integers" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getList(&quot;users.id&quot;, Integer.class);
 </code></pre>
+<p>Output:</p>
+<pre><code>[101, 102, 103]
+</code></pre>
+<hr />
 <h2 id="q7-count-users">Q7 Count users<a class="headerlink" href="#q7-count-users" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getInt(&quot;users.size()&quot;);
 </code></pre>
+<p>Output: <code>3</code></p>
+<hr />
 <h2 id="q8-get-all-active-users">Q8 Get all active users<a class="headerlink" href="#q8-get-all-active-users" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getList(&quot;users.findAll { it.active }.name&quot;);
 </code></pre>
+<p>Output:</p>
+<pre><code>[Umesh, Neha]
+</code></pre>
+<hr />
 <h2 id="q9-get-first-inactive-user">Q9 Get first inactive user<a class="headerlink" href="#q9-get-first-inactive-user" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getString(&quot;users.find { !it.active }.name&quot;);
 </code></pre>
+<p>Output: <code>Amit</code></p>
+<hr />
 <h2 id="q10-get-admin-role-user">Q10 Get ADMIN role user<a class="headerlink" href="#q10-get-admin-role-user" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getString(&quot;users.find { it.role == 'ADMIN' }.name&quot;);
 </code></pre>
+<p>Output: <code>Umesh</code></p>
+<hr />
 <h2 id="q11-get-users-with-salary-55000">Q11 Get users with salary &gt; 55000<a class="headerlink" href="#q11-get-users-with-salary-55000" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getList(&quot;users.findAll { it.salary &gt; 55000 }.name&quot;);
 </code></pre>
+<p>Output:</p>
+<pre><code>[Umesh, Neha]
+</code></pre>
+<hr />
 <h2 id="q12-get-max-salary">Q12 Get max salary<a class="headerlink" href="#q12-get-max-salary" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getInt(&quot;users.salary.max()&quot;);
 </code></pre>
+<p>Output: <code>90000</code></p>
+<hr />
 <h2 id="q13-get-min-salary">Q13 Get min salary<a class="headerlink" href="#q13-get-min-salary" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getInt(&quot;users.salary.min()&quot;);
 </code></pre>
+<p>Output: <code>50000</code></p>
+<hr />
 <h2 id="q14-get-sum-of-salaries">Q14 Get sum of salaries<a class="headerlink" href="#q14-get-sum-of-salaries" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getInt(&quot;users.salary.sum()&quot;);
 </code></pre>
-<h2 id="q15-check-if-java-skill-exists">Q15 Check if "Java" skill exists<a class="headerlink" href="#q15-check-if-java-skill-exists" title="Permanent link">&para;</a></h2>
+<p>Output: <code>200000</code></p>
+<hr />
+<h2 id="q15-check-if-java-skill-exists">Q15 Check if Java skill exists<a class="headerlink" href="#q15-check-if-java-skill-exists" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getList(&quot;users.skills.flatten()&quot;).contains(&quot;Java&quot;);
 </code></pre>
+<p>Output: <code>true</code></p>
+<hr />
 <h2 id="q16-get-second-users-first-skill">Q16 Get second user's first skill<a class="headerlink" href="#q16-get-second-users-first-skill" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getString(&quot;users[1].skills[0]&quot;);
 </code></pre>
+<p>Output: <code>Python</code></p>
+<hr />
 <h2 id="q17-get-all-skills-combined">Q17 Get all skills combined<a class="headerlink" href="#q17-get-all-skills-combined" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getList(&quot;users.skills.flatten()&quot;);
 </code></pre>
+<p>Output:</p>
+<pre><code>[Java, Selenium, Python, Java, API]
+</code></pre>
+<hr />
 <h2 id="q18-convert-first-user-to-map">Q18 Convert first user to Map<a class="headerlink" href="#q18-convert-first-user-to-map" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">Map&lt;String,Object&gt; user = jp.getMap(&quot;users[0]&quot;);
 </code></pre>
+<p>Output:</p>
+<pre><code>{id=101, name=Umesh, role=ADMIN, salary=90000, active=true, skills=[Java, Selenium]}
+</code></pre>
+<hr />
 <h2 id="q19-convert-users-to-pojo-list">Q19 Convert users to POJO list<a class="headerlink" href="#q19-convert-users-to-pojo-list" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">List&lt;User&gt; users = jp.getList(&quot;users&quot;, User.class);
 </code></pre>
-<h2 id="q20-assert-user-exists">Q20 Assert user exists<a class="headerlink" href="#q20-assert-user-exists" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">assertTrue(jp.getList(&quot;users.name&quot;).contains(&quot;Umesh&quot;));
+<p>Output:</p>
+<pre><code>3 User objects created
 </code></pre>
 <hr />
-<h1 id="interview-one-liner">🎯 Interview One-Liner<a class="headerlink" href="#interview-one-liner" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>jsonPath() converts API response into a queryable structure to extract, filter, and validate JSON fields easily.</p>
-</blockquote>
+<h2 id="q20-assert-user-exists">Q20 Assert user exists<a class="headerlink" href="#q20-assert-user-exists" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">jp.getList(&quot;users.name&quot;).contains(&quot;Umesh&quot;);
+</code></pre>
+<p>Output: <code>true</code></p>
+<hr />
+<h1 id="quick-memory-tip">🎯 Quick Memory Tip<a class="headerlink" href="#quick-memory-tip" title="Permanent link">&para;</a></h1>
+<pre><code>Single → getString/getInt
+Array → getList
+Filter → find/findAll
+Aggregate → max/min/sum/size
+</code></pre>
 <hr />
 <p>Happy Testing 🚀</p>
 
