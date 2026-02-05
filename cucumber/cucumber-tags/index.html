@@ -21,7 +21,7 @@
     
     
       
-        <title>Cucumber Tags – Complete Practical Guide (Beginner → Advanced) - Automation Notes</title>
+        <title>Cucumber Tags + Hooks + Parallel – Crystal Clear Guide (with Execution Order & Output) - Automation Notes</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cucumber-tags-complete-practical-guide-beginner-advanced" class="md-skip">
+        <a href="#cucumber-tags-hooks-parallel-crystal-clear-guide-with-execution-order-output" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cucumber Tags – Complete Practical Guide (Beginner → Advanced)
+              Cucumber Tags + Hooks + Parallel – Crystal Clear Guide (with Execution Order &amp; Output)
             
           </span>
         </div>
@@ -3148,207 +3148,222 @@
 
 
 
-<h1 id="cucumber-tags-complete-practical-guide-beginner-advanced">Cucumber Tags – Complete Practical Guide (Beginner → Advanced)<a class="headerlink" href="#cucumber-tags-complete-practical-guide-beginner-advanced" title="Permanent link">&para;</a></h1>
+<h1 id="cucumber-tags-hooks-parallel-crystal-clear-guide-with-execution-order-output">Cucumber Tags + Hooks + Parallel – Crystal Clear Guide (with Execution Order &amp; Output)<a class="headerlink" href="#cucumber-tags-hooks-parallel-crystal-clear-guide-with-execution-order-output" title="Permanent link">&para;</a></h1>
+<p>This guide explains everything with <strong>small feature examples + exact execution output</strong> so you can visually understand behavior.</p>
 <hr />
-<h1 id="golden-rule-remember-forever">✅ Golden Rule (remember forever)<a class="headerlink" href="#golden-rule-remember-forever" title="Permanent link">&para;</a></h1>
-<h2 id="cucumber-filters-scenarios-not-feature-files">Cucumber filters <strong>SCENARIOS</strong>, not feature files<a class="headerlink" href="#cucumber-filters-scenarios-not-feature-files" title="Permanent link">&para;</a></h2>
-<p>Even if tag is on <strong>Feature → it gets copied to all scenarios automatically</strong>.</p>
-<hr />
-<h1 id="example-1-tag-at-feature-level">🟢 Example 1 — Tag at Feature level<a class="headerlink" href="#example-1-tag-at-feature-level" title="Permanent link">&para;</a></h1>
+<h1 id="hook-tag-combined-examples-clear-practical">✅ Hook + Tag Combined Examples (Clear + Practical)<a class="headerlink" href="#hook-tag-combined-examples-clear-practical" title="Permanent link">&para;</a></h1>
+<h2 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h2>
 <pre><code class="language-gherkin">@smoke
 Feature: Login
 
-  Scenario: Valid login
-  Scenario: Invalid login
-  Scenario: Forgot password
-</code></pre>
-<p>Runner:</p>
-<pre><code class="language-java">tags = &quot;@smoke&quot;
-</code></pre>
-<p>Internally:</p>
-<pre><code>@smoke Valid login
-@smoke Invalid login
-@smoke Forgot password
-</code></pre>
-<p>✅ All run</p>
-<hr />
-<h1 id="example-2-tag-at-scenario-level">🟢 Example 2 — Tag at Scenario level<a class="headerlink" href="#example-2-tag-at-scenario-level" title="Permanent link">&para;</a></h1>
-<pre><code class="language-gherkin">Feature: Login
-
-  @smoke
-  Scenario: Valid login
-
-  Scenario: Invalid login
-</code></pre>
-<p>Runner:</p>
-<pre><code class="language-java">tags = &quot;@smoke&quot;
-</code></pre>
-<p>Execution:</p>
-<pre><code>✔ Valid login
-❌ Invalid login
+  Scenario: Login test
+    Given user opens app
 </code></pre>
 <hr />
-<h1 id="example-3-mixed">🟢 Example 3 — Mixed<a class="headerlink" href="#example-3-mixed" title="Permanent link">&para;</a></h1>
-<pre><code class="language-gherkin">@smoke
-Feature: Login
-
-  Scenario: Valid login
-
-  @regression
-  Scenario: Invalid login
-</code></pre>
-<p>Runner → <code>@regression</code></p>
-<pre><code>❌ Valid login
-✔ Invalid login
-</code></pre>
-<hr />
-<h1 id="example-4-multiple-tag-expression">🟢 Example 4 — Multiple tag expression<a class="headerlink" href="#example-4-multiple-tag-expression" title="Permanent link">&para;</a></h1>
-<p>Runner:</p>
-<pre><code class="language-java">tags = &quot;@smoke and @regression&quot;
-</code></pre>
-<p>Both tags must exist.</p>
-<hr />
-<h1 id="example-5-scenario-outline">🟢 Example 5 — Scenario Outline<a class="headerlink" href="#example-5-scenario-outline" title="Permanent link">&para;</a></h1>
-<pre><code class="language-gherkin">@smoke
-Scenario Outline: login
-Examples:
- | user |
- | A |
- | B |
-</code></pre>
-<p>Internally:</p>
-<pre><code>@smoke Scenario A
-@smoke Scenario B
-</code></pre>
-<hr />
-<hr />
-<h1 id="hook-tag-combined-examples-very-important">✅ Hook + Tag Combined Examples (VERY IMPORTANT)<a class="headerlink" href="#hook-tag-combined-examples-very-important" title="Permanent link">&para;</a></h1>
-<hr />
-<h2 id="hooks-can-also-be-filtered-using-tags">Hooks can also be filtered using tags<a class="headerlink" href="#hooks-can-also-be-filtered-using-tags" title="Permanent link">&para;</a></h2>
-<h3 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h3>
-<pre><code class="language-gherkin">@smoke
-Scenario: Login test
-</code></pre>
-<h3 id="hook">Hook<a class="headerlink" href="#hook" title="Permanent link">&para;</a></h3>
+<h2 id="hook">Hook<a class="headerlink" href="#hook" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@Before(&quot;@smoke&quot;)
 public void smokeSetup() {
     System.out.println(&quot;Smoke setup&quot;);
 }
 </code></pre>
-<p>Runs only for:</p>
-<pre><code>@smoke scenarios
-</code></pre>
 <hr />
-<h2 id="multiple-tag-hook">Multiple tag hook<a class="headerlink" href="#multiple-tag-hook" title="Permanent link">&para;</a></h2>
+<h2 id="execution-order">✅ Execution Order<a class="headerlink" href="#execution-order" title="Permanent link">&para;</a></h2>
+<pre><code>Smoke setup
+Given user opens app
+</code></pre>
+<p>👉 Runs ONLY for @smoke scenarios</p>
+<hr />
+<hr />
+<h1 id="multiple-tag-hook-example">✅ Multiple Tag Hook Example<a class="headerlink" href="#multiple-tag-hook-example" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="hook_1">Hook<a class="headerlink" href="#hook_1" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@Before(&quot;@smoke and not @api&quot;)
+public void smokeOnlyUI() {
+    System.out.println(&quot;Only UI smoke test&quot;);
+}
 </code></pre>
-<p>Meaning:</p>
-<pre><code>Run only smoke but NOT api tests
+<h2 id="feature_1">Feature<a class="headerlink" href="#feature_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-gherkin">@smoke @ui
+Scenario: UI smoke
+
+@smoke @api
+Scenario: API smoke
 </code></pre>
+<h2 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">&para;</a></h2>
+<pre><code>Only UI smoke test   ✔ for UI
+(no hook)            ❌ for API
+</code></pre>
+<p>👉 Hook runs only when BOTH conditions match</p>
 <hr />
-<h2 id="combined-order-tag">Combined order + tag<a class="headerlink" href="#combined-order-tag" title="Permanent link">&para;</a></h2>
+<hr />
+<h1 id="combined-order-tag-very-important">✅ Combined Order + Tag (Very Important)<a class="headerlink" href="#combined-order-tag-very-important" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@Before(order = 1)
-public void globalSetup(){}
+public void globalSetup() {
+    System.out.println(&quot;Global setup&quot;);
+}
 
 @Before(value = &quot;@smoke&quot;, order = 2)
-public void smokeSetup(){}
-</code></pre>
-<p>Execution:</p>
-<pre><code>globalSetup
-smokeSetup
-Scenario
+public void smokeSetup() {
+    System.out.println(&quot;Smoke setup&quot;);
+}
 </code></pre>
 <hr />
+<h2 id="feature_2">Feature<a class="headerlink" href="#feature_2" title="Permanent link">&para;</a></h2>
+<pre><code class="language-gherkin">@smoke
+Scenario: Login
+</code></pre>
 <hr />
-<h1 id="parallel-tags">✅ Parallel + Tags<a class="headerlink" href="#parallel-tags" title="Permanent link">&para;</a></h1>
+<h2 id="actual-execution">✅ Actual Execution<a class="headerlink" href="#actual-execution" title="Permanent link">&para;</a></h2>
+<pre><code>Global setup
+Smoke setup
+Scenario steps
+</code></pre>
+<hr />
+<p>👉 Rule:
+Before → ascending order</p>
+<hr />
+<hr />
+<h1 id="parallel-tags-with-clear-output">✅ Parallel + Tags (with clear output)<a class="headerlink" href="#parallel-tags-with-clear-output" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="enable-parallel">Enable parallel<a class="headerlink" href="#enable-parallel" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@DataProvider(parallel = true)
+<h3 id="runner">Runner<a class="headerlink" href="#runner" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">@Override
+@DataProvider(parallel = true)
+public Object[][] scenarios() {
+    return super.scenarios();
+}
 </code></pre>
 <p>OR</p>
+<h3 id="pomxml">pom.xml<a class="headerlink" href="#pomxml" title="Permanent link">&para;</a></h3>
 <pre><code class="language-xml">&lt;parallel&gt;methods&lt;/parallel&gt;
-&lt;threadCount&gt;4&lt;/threadCount&gt;
+&lt;threadCount&gt;3&lt;/threadCount&gt;
 </code></pre>
 <hr />
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>Feature:</p>
-<pre><code class="language-gherkin">@smoke Scenario A
-@smoke Scenario B
-@smoke Scenario C
+<h2 id="feature_3">Feature<a class="headerlink" href="#feature_3" title="Permanent link">&para;</a></h2>
+<pre><code class="language-gherkin">@smoke Scenario: A
+@smoke Scenario: B
+@smoke Scenario: C
 </code></pre>
-<p>Runner:</p>
+<hr />
+<h2 id="runner_1">Runner<a class="headerlink" href="#runner_1" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">tags=&quot;@smoke&quot;
 </code></pre>
-<h3 id="execution-parallel">Execution (parallel)<a class="headerlink" href="#execution-parallel" title="Permanent link">&para;</a></h3>
-<pre><code>Thread1 → A
-Thread2 → B
-Thread3 → C
+<hr />
+<h2 id="execution-parallel">✅ Execution (parallel)<a class="headerlink" href="#execution-parallel" title="Permanent link">&para;</a></h2>
+<pre><code>Thread-1 → Scenario A
+Thread-2 → Scenario B
+Thread-3 → Scenario C
 </code></pre>
 <p>⚠ Order NOT guaranteed</p>
-<hr />
-<h2 id="best-practice-with-parallel">Best Practice with parallel<a class="headerlink" href="#best-practice-with-parallel" title="Permanent link">&para;</a></h2>
-<p>✔ Avoid shared static variables<br />
-✔ Avoid scenario dependency<br />
-✔ Use ThreadLocal driver<br />
-✔ Use independent test data  </p>
+<p>Sometimes:</p>
+<pre><code>C → A → B
+</code></pre>
+<p>or any order</p>
 <hr />
 <hr />
-<h1 id="multiple-runner-strategy-industry-standard">✅ Multiple Runner Strategy (Industry Standard)<a class="headerlink" href="#multiple-runner-strategy-industry-standard" title="Permanent link">&para;</a></h1>
+<h1 id="parallel-hook-execution-example">✅ Parallel + Hook Execution Example<a class="headerlink" href="#parallel-hook-execution-example" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="hook_2">Hook<a class="headerlink" href="#hook_2" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">@Before
+public void before() {
+    System.out.println(Thread.currentThread().getName());
+}
+</code></pre>
+<hr />
+<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
+<pre><code>Thread-1
+Thread-2
+Thread-3
+</code></pre>
+<p>👉 Shows scenarios running simultaneously</p>
+<hr />
+<hr />
+<h1 id="multiple-runner-strategy-with-calling-examples">✅ Multiple Runner Strategy (with calling examples)<a class="headerlink" href="#multiple-runner-strategy-with-calling-examples" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="smokerunner">SmokeRunner<a class="headerlink" href="#smokerunner" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@CucumberOptions(tags=&quot;@smoke&quot;)
 public class SmokeRunner {}
 </code></pre>
+<p>Run:</p>
+<pre><code>mvn test -Dtest=SmokeRunner
+</code></pre>
+<p>Runs → only smoke tests</p>
+<hr />
 <h2 id="regressionrunner">RegressionRunner<a class="headerlink" href="#regressionrunner" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@CucumberOptions(tags=&quot;@regression&quot;)
 public class RegressionRunner {}
 </code></pre>
+<p>Runs → only regression tests</p>
+<hr />
 <h2 id="fullsuiterunner">FullSuiteRunner<a class="headerlink" href="#fullsuiterunner" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@CucumberOptions(tags=&quot;not @wip&quot;)
 public class FullSuiteRunner {}
 </code></pre>
-<p>Benefits:</p>
-<p>✔ Separate pipelines<br />
-✔ Faster execution<br />
-✔ Easy CI integration<br />
-✔ Clean control  </p>
+<p>Runs → everything except work-in-progress</p>
+<hr />
+<h2 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h2>
+<p>✔ Separate execution<br />
+✔ Faster CI<br />
+✔ Easy debugging<br />
+✔ No manual tag change  </p>
 <hr />
 <hr />
-<h1 id="interview-qa-section">✅ Interview Q&amp;A Section<a class="headerlink" href="#interview-qa-section" title="Permanent link">&para;</a></h1>
+<h1 id="full-execution-timeline-example">✅ Full Execution Timeline Example<a class="headerlink" href="#full-execution-timeline-example" title="Permanent link">&para;</a></h1>
 <hr />
-<h3 id="q1-do-tags-work-at-feature-level-or-scenario-level">Q1. Do tags work at feature level or scenario level?<a class="headerlink" href="#q1-do-tags-work-at-feature-level-or-scenario-level" title="Permanent link">&para;</a></h3>
-<p>👉 Scenario level. Feature tags are inherited.</p>
-<hr />
-<h3 id="q2-can-we-run-multiple-tags">Q2. Can we run multiple tags?<a class="headerlink" href="#q2-can-we-run-multiple-tags" title="Permanent link">&para;</a></h3>
-<p>👉 Yes</p>
-<pre><code>@smoke and @regression
-@smoke or @api
-not @slow
+<h2 id="hooks_1">Hooks<a class="headerlink" href="#hooks_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">@Before(order = 1)  globalSetup
+@Before(order = 2)  smokeSetup
+@After(order = 2)   smokeCleanup
+@After(order = 1)   globalCleanup
+</code></pre>
+<h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
+<pre><code class="language-gherkin">@smoke
+Scenario: Test
 </code></pre>
 <hr />
-<h3 id="q3-what-happens-if-no-tag-is-provided">Q3. What happens if no tag is provided?<a class="headerlink" href="#q3-what-happens-if-no-tag-is-provided" title="Permanent link">&para;</a></h3>
-<p>👉 All scenarios run</p>
+<h2 id="actual-flow">✅ Actual Flow<a class="headerlink" href="#actual-flow" title="Permanent link">&para;</a></h2>
+<pre><code>globalSetup
+smokeSetup
+Scenario steps
+smokeCleanup
+globalCleanup
+</code></pre>
 <hr />
-<h3 id="q4-do-tags-affect-execution-order">Q4. Do tags affect execution order?<a class="headerlink" href="#q4-do-tags-affect-execution-order" title="Permanent link">&para;</a></h3>
-<p>👉 No, only filtering</p>
+<p>👉 After hooks run in reverse order</p>
 <hr />
-<h3 id="q5-can-hooks-use-tags">Q5. Can hooks use tags?<a class="headerlink" href="#q5-can-hooks-use-tags" title="Permanent link">&para;</a></h3>
+<hr />
+<h1 id="interview-qa-section-very-common">✅ Interview Q&amp;A Section (Very Common)<a class="headerlink" href="#interview-qa-section-very-common" title="Permanent link">&para;</a></h1>
+<hr />
+<h3 id="q1-do-tags-run-features-or-scenarios">Q1. Do tags run features or scenarios?<a class="headerlink" href="#q1-do-tags-run-features-or-scenarios" title="Permanent link">&para;</a></h3>
+<p>👉 Scenarios only</p>
+<hr />
+<h3 id="q2-does-feature-tag-apply-to-scenarios">Q2. Does feature tag apply to scenarios?<a class="headerlink" href="#q2-does-feature-tag-apply-to-scenarios" title="Permanent link">&para;</a></h3>
+<p>👉 Yes (inherited)</p>
+<hr />
+<h3 id="q3-does-parallel-maintain-order">Q3. Does parallel maintain order?<a class="headerlink" href="#q3-does-parallel-maintain-order" title="Permanent link">&para;</a></h3>
+<p>👉 No</p>
+<hr />
+<h3 id="q4-can-hooks-use-tags">Q4. Can hooks use tags?<a class="headerlink" href="#q4-can-hooks-use-tags" title="Permanent link">&para;</a></h3>
 <p>👉 Yes</p>
 <pre><code class="language-java">@Before(&quot;@smoke&quot;)
 </code></pre>
 <hr />
-<h3 id="q6-does-parallel-maintain-order">Q6. Does parallel maintain order?<a class="headerlink" href="#q6-does-parallel-maintain-order" title="Permanent link">&para;</a></h3>
-<p>👉 No, order becomes random</p>
+<h3 id="q5-order-of-hooks">Q5. Order of hooks?<a class="headerlink" href="#q5-order-of-hooks" title="Permanent link">&para;</a></h3>
+<p>👉 Before → ascending<br />
+👉 After → descending</p>
 <hr />
-<h3 id="q7-best-tagging-strategy">Q7. Best tagging strategy?<a class="headerlink" href="#q7-best-tagging-strategy" title="Permanent link">&para;</a></h3>
-<p>👉
-Feature → module<br />
-Scenario → test type  </p>
+<h3 id="q6-best-practice-with-parallel">Q6. Best practice with parallel?<a class="headerlink" href="#q6-best-practice-with-parallel" title="Permanent link">&para;</a></h3>
+<p>👉 ThreadLocal, no shared state</p>
 <hr />
 <hr />
-<h1 id="1-line-memory-trick">✅ 1-Line Memory Trick<a class="headerlink" href="#1-line-memory-trick" title="Permanent link">&para;</a></h1>
+<h1 id="memory-trick">✅ Memory Trick<a class="headerlink" href="#memory-trick" title="Permanent link">&para;</a></h1>
 <hr />
-<p>👉 <strong>Tags filter scenarios only. Feature tags are automatically inherited. Hooks can also use tags. Parallel removes order guarantee.</strong></p>
+<p>👉 Tags filter scenarios<br />
+👉 Hooks respect tags<br />
+👉 Parallel breaks order<br />
+👉 Before ↑ After ↓</p>
 
 
 
