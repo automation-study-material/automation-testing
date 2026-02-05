@@ -3151,6 +3151,23 @@
 <h1 id="cucumber-tags-hooks-parallel-crystal-clear-guide-with-execution-order-output">Cucumber Tags + Hooks + Parallel – Crystal Clear Guide (with Execution Order &amp; Output)<a class="headerlink" href="#cucumber-tags-hooks-parallel-crystal-clear-guide-with-execution-order-output" title="Permanent link">&para;</a></h1>
 <p>This guide explains everything with <strong>small feature examples + exact execution output</strong> so you can visually understand behavior.</p>
 <hr />
+<h1 id="tag-example">✅ Tag Example<a class="headerlink" href="#tag-example" title="Permanent link">&para;</a></h1>
+<pre><code class="language-java">@smoke
+Feature: Login
+
+  Scenario: Valid login
+
+  @regression
+  Scenario: Invalid login
+</code></pre>
+<p>Run</p>
+<pre><code class="language-text">tags = &quot;@smoke&quot;
+</code></pre>
+<p>Output</p>
+<pre><code class="language-text">Internally feature level tag applied to scenario
+Scenario: Valid login
+Scenario: Invalid login
+</code></pre>
 <h1 id="hook-tag-combined-examples-clear-practical">✅ Hook + Tag Combined Examples (Clear + Practical)<a class="headerlink" href="#hook-tag-combined-examples-clear-practical" title="Permanent link">&para;</a></h1>
 <h2 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h2>
 <pre><code class="language-gherkin">@smoke
