@@ -3316,10 +3316,58 @@ public class RootResponse {
 <h2 id="deserialize">Deserialize<a class="headerlink" href="#deserialize" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">RootResponse data = response.as(RootResponse.class);
 </code></pre>
-<h2 id="access">Access<a class="headerlink" href="#access" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">String name = data.getUsers().get(0).getProfile().getName();
+<h2 id="agetting-up-values">A)Getting up values<a class="headerlink" href="#agetting-up-values" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">Users user = data.getUsers().get(0);
+
+System.out.println(&quot;Name: &quot; + user.getProfile().getName());
+System.out.println(&quot;Email: &quot; + user.getProfile().getEmail());
+System.out.println(&quot;City: &quot; + user.getProfile().getAddress().getCity());
+System.out.println(&quot;Salary: &quot; + user.getSalary());
+System.out.println(&quot;Active: &quot; + user.isActive());
+
+String name = data.getUsers().get(0).getProfile().getName();
 int zip = data.getUsers().get(0).getProfile().getAddress().getZip();
 String requestId = data.getMeta().getRequestId();
+
+System.out.println(&quot;Name var: &quot; + name);
+System.out.println(&quot;Zip: &quot; + zip);
+System.out.println(&quot;RequestId: &quot; + requestId);
+
+</code></pre>
+<p>Output</p>
+<pre><code class="language-text">Name: Umesh
+Email: umesh@test.com
+City: Pune
+Salary: 90000
+Active: true
+Name var: Umesh
+Zip: 411001
+RequestId: REQ123
+</code></pre>
+<h2 id="bsetting-up-values">B)Setting up values<a class="headerlink" href="#bsetting-up-values" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">System.out.println(&quot;Name: &quot; + user.getProfile().getName());
+System.out.println(&quot;Email: &quot; + user.getProfile().getEmail());
+System.out.println(&quot;City: &quot; + user.getProfile().getAddress().getCity());
+System.out.println(&quot;Salary: &quot; + user.getSalary());
+System.out.println(&quot;Active: &quot; + user.isActive());
+
+String name = data.getUsers().get(0).getProfile().getName();
+int zip = data.getUsers().get(0).getProfile().getAddress().getZip();
+String requestId = data.getMeta().getRequestId();
+
+System.out.println(&quot;Name var: &quot; + name);
+System.out.println(&quot;Zip: &quot; + zip);
+System.out.println(&quot;RequestId: &quot; + requestId);
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">Name: Nitin
+Email: nitin@test.com
+City: Mumbai
+Salary: 120000
+Active: false
+Name var: Nitin
+Zip: 411001
+RequestId: REQ999
 </code></pre>
 <hr />
 <h2 id="recommendation">Recommendation<a class="headerlink" href="#recommendation" title="Permanent link">&para;</a></h2>
