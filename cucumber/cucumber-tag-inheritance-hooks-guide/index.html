@@ -3277,8 +3277,99 @@ Scenario tags: @positive
 <p>👉 Runner filters scenarios<br />
 👉 Feature tags auto-attach<br />
 👉 Hooks self-filter<br />
-👉 Before ↑ order<br />
-👉 After ↓ order  </p>
+👉 Before ↑ order  (ascending order)
+👉 After ↓ order  (descending order)</p>
+<h1 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h1>
+<h2 id="feature-file">Feature File<a class="headerlink" href="#feature-file" title="Permanent link">&para;</a></h2>
+<pre><code class="language-feature">@smoke @login
+Feature: Login functionality
+
+  Background:
+    Given application is launched
+
+  @datatable
+  Scenario: Create multiple users using DataTable
+    When I create users
+      | name  | role |company|
+      | Ram   | admin|Adobe|
+      | Shyam | user |Global Logic|
+    Then users should be created
+</code></pre>
+<h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">
+package hooks;
+
+import io.cucumber.java.*;
+
+public class Hooks {
+
+    @Before (order = 1) 
+    public void before() {
+        System.out.println(&quot;Before Hook - Before Scenario Order-1&quot;);
+    }
+
+    @Before(value=&quot;@smoke&quot;,order=2) 
+    public void smokeOnly() {
+        System.out.println(&quot;Before Hook - Smoke setup order-2&quot;);
+    }
+
+    @Before(value=&quot;@sanity&quot;,order=3)
+    public void sanityOnely() {
+        System.out.println(&quot;Before Hook - Smoke setup order-3&quot;);
+    }
+
+    @After (value=&quot;@sanity&quot;,order=3)
+    public void afterOrderThree() {
+        System.out.println(&quot;After Scenario order-3&quot;);
+    }
+
+    @After (order=1)
+    public void afterOrderone() {
+        System.out.println(&quot;After Scenario order-1&quot;);
+    }
+
+    @After(value = &quot;@sanity or @datatable&quot;, order = 2)
+    public void afterOrderTwo() {
+        System.out.println(&quot;After Scenario order-2&quot;);
+    }
+}
+</code></pre>
+<h2 id="runner-class">Runner Class<a class="headerlink" href="#runner-class" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">
+package runner;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.DataProvider;
+
+@CucumberOptions(
+        features = &quot;src/test/resources/features&quot;,
+        glue = {&quot;steps&quot;,&quot;hooks&quot;},
+        plugin = {
+                &quot;pretty&quot;,      // step-by-step readable
+                &quot;summary&quot;,     // final summary
+                &quot;html:target/cucumber.html&quot;,
+                &quot;json:target/cucumber.json&quot;,
+                &quot;rerun:target/failed.txt&quot;
+                },
+        tags = &quot;@datatable&quot;,
+        monochrome = true 
+)
+public class TestRunner extends AbstractTestNGCucumberTests {
+
+    @Override
+    @DataProvider(parallel = false)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
+}
+</code></pre>
+<h3 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When we call tags from Runner class, Runner class will check for what features have tag same as passed in runner class.</li>
+<li>Example in runner class there is <code>@datatable</code>tag, It can see in feature file where tag matches in out feature file it matches to <code>Create multiple users using DataTable</code> scenario.</li>
+<li>This scenario hold already some tag which defined at feature level. these are <code>@smoke @login &amp; @datatable</code> Now It looks for hooks which matches to this tag and trigger hooks.</li>
+</ul>
 
 
 
