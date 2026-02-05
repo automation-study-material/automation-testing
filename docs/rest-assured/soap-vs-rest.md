@@ -73,7 +73,7 @@ Simple request → simple response.
 
 ### SOAP
 
--   Works with HTTP, HTTPS, SMTP, TCP\
+-   Works with HTTP (HyperText Transfer Protocol), HTTPS (HyperText Transfer Protocol Secure), SMTP (Simple Mail Transfer Protocol), TCP (Transmission Control Protocol)
 -   Not tied to web only
 
 **Why it matters?**\
