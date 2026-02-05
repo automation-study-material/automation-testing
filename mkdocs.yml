@@ -32,6 +32,11 @@ nav:
   
   - BDD Cucumber:
     - Cucumber Notes: cucumber/cucumber.md
+    - CucumberTags: cucumber/cucumber-tags.md
+    - Cucumber Hooks: cucumber/cucumber-hooks.md
+    - CucumberTags & Hooks: cucumber/cucumber-tag-inheritance-hooks-guide.md
+    - Parallel execution: cucumber/cucumber-parallel.md
+    - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
     
   - TestNg :
     - Retry Mechanism: testng/retry-mechanism.md
