@@ -4,7 +4,27 @@
 This guide explains everything with **small feature examples + exact execution output** so you can visually understand behavior.
 
 ---
+# ✅ Tag Example
+```java
+@smoke
+Feature: Login
 
+  Scenario: Valid login
+
+  @regression
+  Scenario: Invalid login
+```
+Run
+```text
+tags = "@smoke"
+```
+
+Output
+```text
+Internally feature level tag applied to scenario
+Scenario: Valid login
+Scenario: Invalid login
+```
 # ✅ Hook + Tag Combined Examples (Clear + Practical)
 
 ## Feature
