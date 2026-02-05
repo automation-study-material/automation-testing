@@ -203,5 +203,102 @@ Run again.
 👉 Runner filters scenarios  
 👉 Feature tags auto-attach  
 👉 Hooks self-filter  
-👉 Before ↑ order  
-👉 After ↓ order  
+👉 Before ↑ order  (ascending order)
+👉 After ↓ order  (descending order)
+
+# Code
+
+## Feature File
+
+```feature
+@smoke @login
+Feature: Login functionality
+
+  Background:
+    Given application is launched
+
+  @datatable
+  Scenario: Create multiple users using DataTable
+    When I create users
+      | name  | role |company|
+      | Ram   | admin|Adobe|
+      | Shyam | user |Global Logic|
+    Then users should be created
+```
+## Hooks
+```java
+
+package hooks;
+
+import io.cucumber.java.*;
+
+public class Hooks {
+
+    @Before (order = 1) 
+    public void before() {
+        System.out.println("Before Hook - Before Scenario Order-1");
+    }
+
+    @Before(value="@smoke",order=2) 
+    public void smokeOnly() {
+        System.out.println("Before Hook - Smoke setup order-2");
+    }
+    
+    @Before(value="@sanity",order=3)
+    public void sanityOnely() {
+        System.out.println("Before Hook - Smoke setup order-3");
+    }
+    
+    @After (value="@sanity",order=3)
+    public void afterOrderThree() {
+        System.out.println("After Scenario order-3");
+    }
+    
+    @After (order=1)
+    public void afterOrderone() {
+        System.out.println("After Scenario order-1");
+    }
+    
+    @After(value = "@sanity or @datatable", order = 2)
+    public void afterOrderTwo() {
+        System.out.println("After Scenario order-2");
+    }
+}
+```
+
+## Runner Class
+```java
+
+package runner;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.DataProvider;
+
+@CucumberOptions(
+        features = "src/test/resources/features",
+        glue = {"steps","hooks"},
+        plugin = {
+        		"pretty",      // step-by-step readable
+                "summary",     // final summary
+                "html:target/cucumber.html",
+                "json:target/cucumber.json",
+                "rerun:target/failed.txt"
+                },
+        tags = "@datatable",
+        monochrome = true 
+)
+public class TestRunner extends AbstractTestNGCucumberTests {
+
+    @Override
+    @DataProvider(parallel = false)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
+}
+```
+
+### Note:
+- When we call tags from Runner class, Runner class will check for what features have tag same as passed in runner class.
+- Example in runner class there is `@datatable`tag, It can see in feature file where tag matches in out feature file it matches to `Create multiple users using DataTable` scenario.
+- This scenario hold already some tag which defined at feature level. these are `@smoke @login & @datatable` Now It looks for hooks which matches to this tag and trigger hooks.
