@@ -153,14 +153,68 @@ public class RootResponse {
 RootResponse data = response.as(RootResponse.class);
 ```
 
-## Access
+## A)Getting up values
 
 ```java
+Users user = data.getUsers().get(0);
+
+System.out.println("Name: " + user.getProfile().getName());
+System.out.println("Email: " + user.getProfile().getEmail());
+System.out.println("City: " + user.getProfile().getAddress().getCity());
+System.out.println("Salary: " + user.getSalary());
+System.out.println("Active: " + user.isActive());
+
 String name = data.getUsers().get(0).getProfile().getName();
 int zip = data.getUsers().get(0).getProfile().getAddress().getZip();
 String requestId = data.getMeta().getRequestId();
+
+System.out.println("Name var: " + name);
+System.out.println("Zip: " + zip);
+System.out.println("RequestId: " + requestId);
+
 ```
 
+Output
+```text
+Name: Umesh
+Email: umesh@test.com
+City: Pune
+Salary: 90000
+Active: true
+Name var: Umesh
+Zip: 411001
+RequestId: REQ123
+```
+
+## B)Setting up values
+```java
+System.out.println("Name: " + user.getProfile().getName());
+System.out.println("Email: " + user.getProfile().getEmail());
+System.out.println("City: " + user.getProfile().getAddress().getCity());
+System.out.println("Salary: " + user.getSalary());
+System.out.println("Active: " + user.isActive());
+
+String name = data.getUsers().get(0).getProfile().getName();
+int zip = data.getUsers().get(0).getProfile().getAddress().getZip();
+String requestId = data.getMeta().getRequestId();
+
+System.out.println("Name var: " + name);
+System.out.println("Zip: " + zip);
+System.out.println("RequestId: " + requestId);
+```
+
+Output:
+
+```text
+Name: Nitin
+Email: nitin@test.com
+City: Mumbai
+Salary: 120000
+Active: false
+Name var: Nitin
+Zip: 411001
+RequestId: REQ999
+```
 ---
 
 ## Recommendation
