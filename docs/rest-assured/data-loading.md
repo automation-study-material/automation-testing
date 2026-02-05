@@ -150,69 +150,86 @@ public class RootResponse {
 ## Deserialize
 
 ```java
-RootResponse data = response.as(RootResponse.class);
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+
+public class DemoTest {
+
+    public static void main(String[] args) throws Exception {
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        // ---------------------------
+        // 1️⃣ JSON → POJO
+        // ---------------------------
+        RootResponse data =
+                mapper.readValue(
+                        new File("src/test/resources/testdata/user.json"),
+                        RootResponse.class);
+
+
+        // ---------------------------
+        // 2️⃣ FETCH VALUES (BEFORE)
+        // ---------------------------
+        System.out.println("====== BEFORE ======");
+
+        User user = data.getUsers().get(0);
+
+        System.out.println("Name: " + user.getProfile().getName());
+        System.out.println("Email: " + user.getProfile().getEmail());
+        System.out.println("City: " + user.getProfile().getAddress().getCity());
+        System.out.println("Salary: " + user.getSalary());
+        System.out.println("Active: " + user.isActive());
+        System.out.println("RequestId: " + data.getMeta().getRequestId());
+
+
+        // ---------------------------
+        // 3️⃣ SET / MODIFY VALUES
+        // ---------------------------
+        user.getProfile().setName("Nitin");
+        user.getProfile().setEmail("nitin@test.com");
+        user.getProfile().getAddress().setCity("Mumbai");
+
+        user.setSalary(120000);
+        user.setActive(false);
+
+        data.getMeta().setRequestId("REQ999");
+        data.setCompany("XYZ Corp");
+
+
+        // ---------------------------
+        // 4️⃣ FETCH VALUES (AFTER)
+        // ---------------------------
+        System.out.println("\n====== AFTER ======");
+
+        System.out.println("Name: " + user.getProfile().getName());
+        System.out.println("Email: " + user.getProfile().getEmail());
+        System.out.println("City: " + user.getProfile().getAddress().getCity());
+        System.out.println("Salary: " + user.getSalary());
+        System.out.println("Active: " + user.isActive());
+        System.out.println("RequestId: " + data.getMeta().getRequestId());
+    }
+}
+
 ```
 
-## A)Getting up values
+✅ Output
 
-```java
-Users user = data.getUsers().get(0);
-
-System.out.println("Name: " + user.getProfile().getName());
-System.out.println("Email: " + user.getProfile().getEmail());
-System.out.println("City: " + user.getProfile().getAddress().getCity());
-System.out.println("Salary: " + user.getSalary());
-System.out.println("Active: " + user.isActive());
-
-String name = data.getUsers().get(0).getProfile().getName();
-int zip = data.getUsers().get(0).getProfile().getAddress().getZip();
-String requestId = data.getMeta().getRequestId();
-
-System.out.println("Name var: " + name);
-System.out.println("Zip: " + zip);
-System.out.println("RequestId: " + requestId);
-
-```
-
-Output
 ```text
+====== BEFORE ======
 Name: Umesh
 Email: umesh@test.com
 City: Pune
 Salary: 90000
 Active: true
-Name var: Umesh
-Zip: 411001
 RequestId: REQ123
-```
 
-## B)Setting up values
-```java
-System.out.println("Name: " + user.getProfile().getName());
-System.out.println("Email: " + user.getProfile().getEmail());
-System.out.println("City: " + user.getProfile().getAddress().getCity());
-System.out.println("Salary: " + user.getSalary());
-System.out.println("Active: " + user.isActive());
-
-String name = data.getUsers().get(0).getProfile().getName();
-int zip = data.getUsers().get(0).getProfile().getAddress().getZip();
-String requestId = data.getMeta().getRequestId();
-
-System.out.println("Name var: " + name);
-System.out.println("Zip: " + zip);
-System.out.println("RequestId: " + requestId);
-```
-
-Output:
-
-```text
+====== AFTER ======
 Name: Nitin
 Email: nitin@test.com
 City: Mumbai
 Salary: 120000
 Active: false
-Name var: Nitin
-Zip: 411001
 RequestId: REQ999
 ```
 ---
