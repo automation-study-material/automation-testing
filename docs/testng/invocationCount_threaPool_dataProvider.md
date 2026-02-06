@@ -20,7 +20,6 @@ Each serves a different purpose.
 
 ---
 
----
 
 # 🔵 1️⃣ invocationCount
 
@@ -156,8 +155,6 @@ If using WebDriver:
 
 ---
 
----
-
 # 🔵 invocationCount + threadPoolSize Together
 
 ---
@@ -178,17 +175,14 @@ Meaning:
 
 ---
 
----
-
 # 🔵 3️⃣ Running Same Test With Different Data
 
+
+## ✅ Best Practice → DataProvider
+
 ---
 
-# ✅ Best Practice → DataProvider
-
----
-
-## Concept
+### Concept
 
 Runs same test multiple times with **different inputs**.
 
@@ -196,7 +190,7 @@ Runs same test multiple times with **different inputs**.
 
 ---
 
-## 🔹 Syntax
+### 🔹 Syntax
 
 ```java
 @DataProvider
@@ -204,7 +198,7 @@ Runs same test multiple times with **different inputs**.
 
 ---
 
-## 🔹 Example
+### 🔹 Example
 
 ```java
 @DataProvider(name = "users")
@@ -224,7 +218,7 @@ public void loginTest(String username, String password) {
 
 ---
 
-## 🔹 Execution
+### 🔹 Execution
 
 ```
 user1 pass1
@@ -234,7 +228,7 @@ user3 pass3
 
 ---
 
-## 🔹 Purpose
+### 🔹 Purpose
 
 - data-driven testing
 - multiple inputs
@@ -245,11 +239,11 @@ user3 pass3
 
 ---
 
-# 🔵 Parallel DataProvider
+## 🔵 Parallel DataProvider
 
 ---
 
-## Example
+### Example
 
 ```java
 @DataProvider(name="users", parallel=true)
