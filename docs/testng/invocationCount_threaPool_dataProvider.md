@@ -20,38 +20,18 @@ Each serves a different purpose.
 
 ---
 
+---
 
 # 🔵 1️⃣ invocationCount
 
----
-
 ## ✅ Concept
-
-`invocationCount` repeats the SAME test multiple times.
+Repeats the SAME test multiple times.
 
 👉 Think: **loop execution**
 
 ---
 
-## 🔹 Syntax
-
-```java
-@Test(invocationCount = 3)
-```
-
----
-
-## 🔹 Use Cases
-
-- retry logic testing
-- stress testing
-- idempotency check
-- repeated API calls
-- load simulation
-
----
-
-## 🔹 Example
+## Example
 
 ```java
 @Test(invocationCount = 3)
@@ -60,22 +40,21 @@ public void testLoginAPI() {
 }
 ```
 
----
-
-## 🔹 Execution
+### Execution
 
 ```
-Running login API test
-Running login API test
-Running login API test
+Run
+Run
+Run
 ```
 
 ---
 
-## ⚠ Important
-
-- Same data each time
-- Sequential by default
+## Use Cases
+- stress testing
+- retry logic
+- idempotency testing
+- repeated API calls
 
 ---
 
@@ -83,45 +62,21 @@ Running login API test
 
 # 🔵 2️⃣ threadPoolSize
 
----
-
 ## ✅ Concept
-
-Runs multiple invocations in **parallel threads**.
-
-👉 Works only with invocationCount
+Runs invocations in **parallel threads** (must be used with invocationCount).
 
 ---
 
-## 🔹 Syntax
-
-```java
-@Test(invocationCount = 5, threadPoolSize = 2)
-```
-
----
-
-## 🔹 Purpose
-
-- speed up execution
-- concurrency testing
-- simulate multiple users
-- API load testing
-
----
-
-## 🔹 Example
+## Example
 
 ```java
 @Test(invocationCount = 5, threadPoolSize = 2)
 public void testPaymentAPI() {
-    System.out.println("Thread: " + Thread.currentThread().getId());
+    System.out.println(Thread.currentThread().getId());
 }
 ```
 
----
-
-## 🔹 Possible Output
+### Execution (parallel)
 
 ```
 Thread 11
@@ -131,140 +86,201 @@ Thread 12
 Thread 11
 ```
 
-👉 Only 2 threads run concurrently
+---
+
+## Use Cases
+- concurrency testing
+- simulate multiple users
+- performance testing
 
 ---
 
-## 🔹 How it works internally
-
-TestNG:
-
-1. Creates thread pool
-2. Submits tasks
-3. Executes in parallel
-4. Waits for completion
+⚠ Selenium Note:
+Use ThreadLocal<WebDriver> for thread safety.
 
 ---
 
-## ⚠ Selenium Warning
-
-If using WebDriver:
-
-❌ Shared driver causes crashes  
-✅ Use ThreadLocal<WebDriver>
-
 ---
 
-# 🔵 invocationCount + threadPoolSize Together
+# 🔵 3️⃣ DataProvider — Run Test with Different Data
 
----
-
-## Example (Load testing scenario)
-
-```java
-@Test(invocationCount = 10, threadPoolSize = 5)
-public void testSearchAPI() {
-    callSearchService();
-}
-```
-
-Meaning:
-
-- run 10 times
-- 5 threads at same time
-
----
-
-# 🔵 3️⃣ Running Same Test With Different Data
-
-
-## ✅ Best Practice → DataProvider
-
----
-
-### Concept
-
+## ✅ Concept
 Runs same test multiple times with **different inputs**.
 
-👉 Think: **parameterized tests**
+👉 Think: **parameterized testing**
 
 ---
 
-### 🔹 Syntax
+## Basic Example
 
 ```java
 @DataProvider
-```
-
----
-
-### 🔹 Example
-
-```java
-@DataProvider(name = "users")
-public Object[][] usersData() {
+public Object[][] users() {
     return new Object[][]{
         {"user1", "pass1"},
-        {"user2", "pass2"},
-        {"user3", "pass3"}
+        {"user2", "pass2"}
     };
 }
 
 @Test(dataProvider = "users")
-public void loginTest(String username, String password) {
-    System.out.println(username + " " + password);
+public void loginTest(String user, String pass) {
+    System.out.println(user);
+}
+```
+
+### Execution
+
+```
+user1
+user2
+```
+
+---
+
+---
+
+# 🔥 NEW — Cross Package DataProvider (Real Framework Use Case)
+
+---
+
+## ✅ Scenario
+
+We have:
+
+```
+xyz package → DataProvider class
+bny.erp package → Test class
+```
+
+We want to reuse common test data across packages.
+
+---
+
+## 📦 Package Structure
+
+```
+src/test/java
+   ├─ xyz
+   │     └─ TestDataProvider.java
+   ├─ bny/erp
+   │     └─ ERPLoginTest.java
+```
+
+---
+
+## Step 1 — Create DataProvider in xyz package
+
+### xyz/TestDataProvider.java
+
+```java
+package xyz;
+
+import org.testng.annotations.DataProvider;
+
+public class TestDataProvider {
+
+    @DataProvider(name = "erpUsers")
+    public static Object[][] erpUsers() {
+        return new Object[][]{
+            {"admin", "admin123"},
+            {"manager", "manager123"},
+            {"user", "user123"}
+        };
+    }
 }
 ```
 
 ---
 
-### 🔹 Execution
+## Step 2 — Use in another package/class
 
-```
-user1 pass1
-user2 pass2
-user3 pass3
-```
-
----
-
-### 🔹 Purpose
-
-- data-driven testing
-- multiple inputs
-- edge cases
-- functional validation
-
----
-
----
-
-## 🔵 Parallel DataProvider
-
----
-
-### Example
+### bny/erp/ERPLoginTest.java
 
 ```java
-@DataProvider(name="users", parallel=true)
+package bny.erp;
+
+import org.testng.annotations.Test;
+import xyz.TestDataProvider;
+
+public class ERPLoginTest {
+
+    @Test(dataProvider = "erpUsers", dataProviderClass = TestDataProvider.class)
+    public void loginERP(String username, String password) {
+        System.out.println(username + " -> " + password);
+    }
+}
 ```
 
-Runs each dataset in parallel threads
+---
+
+## ✅ Important
+
+When DataProvider is in DIFFERENT class/package:
+
+You MUST use:
+
+```
+dataProviderClass = TestDataProvider.class
+```
+
+Otherwise TestNG cannot find it.
+
+---
+
+## 🔥 Execution Flow
+
+TestNG internally:
+
+1. Finds test method
+2. Looks for provider in specified class
+3. Calls erpUsers()
+4. Creates 3 test invocations
+
+---
+
+## Execution Output
+
+```
+admin -> admin123
+manager -> manager123
+user -> user123
+```
+
+---
+
+## ✅ Real Use Cases
+
+- shared test data library
+- common login credentials
+- API payload sets
+- reusable across multiple modules
+- framework centralization
 
 ---
 
 ---
 
-# 🔵 Real Use Cases Comparison
+# 🔵 Parallel DataProvider
+
+```java
+@DataProvider(name="erpUsers", parallel=true)
+```
+
+Runs each dataset in parallel.
+
+---
+
+---
+
+# 🔵 Quick Comparison
 
 | Requirement | Solution |
 |------------|-----------|
-Run same test many times | invocationCount |
-Run same test in parallel | invocationCount + threadPoolSize |
-Run test with different data | DataProvider |
-Parallel different data | DataProvider(parallel=true) |
-Load testing | invocationCount + threadPoolSize |
-Functional validation | DataProvider |
+Repeat same test | invocationCount |
+Repeat in parallel | invocationCount + threadPoolSize |
+Different inputs | DataProvider |
+Cross package reuse | dataProviderClass |
+Parallel different inputs | DataProvider(parallel=true) |
 
 ---
 
@@ -272,16 +288,10 @@ Functional validation | DataProvider |
 
 # 🔵 Best Practices
 
-## Prefer
-
-✅ DataProvider for test data  
-✅ invocationCount for stress/load  
-✅ threadPoolSize for concurrency  
-
-## Avoid
-
-❌ using invocationCount for different inputs  
-❌ sharing WebDriver in parallel tests  
+✅ Keep DataProviders in separate utility package  
+✅ Make them reusable  
+✅ Prefer DataProvider over invocationCount for data testing  
+✅ Use parallel=true for faster execution  
 
 ---
 
@@ -289,20 +299,12 @@ Functional validation | DataProvider |
 
 # 🔵 Interview One-Liners
 
-👉 invocationCount repeats the same test multiple times  
-👉 threadPoolSize runs those invocations in parallel  
-👉 DataProvider is used for running the same test with different data  
-👉 For real frameworks DataProvider is preferred for functional testing  
+👉 invocationCount repeats test  
+👉 threadPoolSize runs repeats in parallel  
+👉 DataProvider runs same test with different data  
+👉 dataProviderClass allows cross-class/package reuse  
 
 ---
-
----
-
-# 🎯 Quick Summary
-
-invocationCount → repeat  
-threadPoolSize → parallel  
-DataProvider → different inputs  
 
 ---
 
