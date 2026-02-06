@@ -2,7 +2,6 @@ site_name: Automation Notes
 site_url:site_url: https://automation-study-material.github.io/automation-testing/
 use_directory_urls: true
 nav:
-
   - Java Concepts:
     - DataTypesBasics: java-concepts/dataTypeVariableBasics.md
     - FlowControl: java-concepts/java-flow-statement.md
