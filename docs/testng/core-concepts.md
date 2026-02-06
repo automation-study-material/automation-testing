@@ -115,8 +115,23 @@ public void cleanup(){}
 ## ✅ Memory Trick
 
 👉 **S → T → C → M → Test → M → C → T → S**
-
+Supposewe have two classes and in both have same annotation example @BeforeSuite or @BeforeTest -> here Question is which one execute first-> internally it check which present more configs and it pick and run.
 ---
+
+## ✅ Real Behavior (Important)
+
+TestNG does **NOT** use class/XML order for:
+
+- @BeforeSuite
+- @BeforeTest
+- @AfterTest
+- @AfterSuite
+
+Instead it uses:
+
+```
+Lifecycle stage → internal grouping → internal sorting (On sorting bases it decde which has more configs it runs)
+```
 
 ## ✅ Practical Meaning
 
@@ -128,7 +143,6 @@ public void cleanup(){}
 | BeforeMethod | Per test | Login, reset data |
 | AfterMethod | Per test | Cleanup |
 | AfterSuite | End of suite | Close reports |
-
 ---
 
 # 🎯 Quick Summary
