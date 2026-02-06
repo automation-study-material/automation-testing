@@ -12,4 +12,3 @@ This documentation site contains tutorials, examples, and references for JavaScr
 ---
 
 > 🚀 Happy Learning! Keep practicing and building your JavaScript and Playwright Automation with Java skills.
-
