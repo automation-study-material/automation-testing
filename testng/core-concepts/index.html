@@ -3408,8 +3408,20 @@ public void cleanup(){}
 </code></pre>
 <hr />
 <h2 id="memory-trick">✅ Memory Trick<a class="headerlink" href="#memory-trick" title="Permanent link">&para;</a></h2>
-<p>👉 <strong>S → T → C → M → Test → M → C → T → S</strong></p>
+<p>👉 <strong>S → T → C → M → Test → M → C → T → S</strong>
+Supposewe have two classes and in both have same annotation example @BeforeSuite or @BeforeTest -&gt; here Question is which one execute first-&gt; internally it check which present more configs and it pick and run.</p>
 <hr />
+<h2 id="real-behavior-important">✅ Real Behavior (Important)<a class="headerlink" href="#real-behavior-important" title="Permanent link">&para;</a></h2>
+<p>TestNG does <strong>NOT</strong> use class/XML order for:</p>
+<ul>
+<li>@BeforeSuite</li>
+<li>@BeforeTest</li>
+<li>@AfterTest</li>
+<li>@AfterSuite</li>
+</ul>
+<p>Instead it uses:</p>
+<pre><code>Lifecycle stage → internal grouping → internal sorting (On sorting bases it decde which has more configs it runs)
+</code></pre>
 <h2 id="practical-meaning">✅ Practical Meaning<a class="headerlink" href="#practical-meaning" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -3450,9 +3462,13 @@ public void cleanup(){}
 <td>End of suite</td>
 <td>Close reports</td>
 </tr>
+<tr>
+<td>---</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<hr />
 <h1 id="quick-summary">🎯 Quick Summary<a class="headerlink" href="#quick-summary" title="Permanent link">&para;</a></h1>
 <ul>
 <li>TestNG uses reflection + annotations + XML</li>
