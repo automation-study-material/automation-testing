@@ -114,8 +114,8 @@ public void cleanup(){}
 
 ## ✅ Memory Trick
 
-👉 **S → T → C → M → Test → M → C → T → S**
-Supposewe have two classes and in both have same annotation example @BeforeSuite or @BeforeTest -> here Question is which one execute first-> internally it check which present more configs and it pick and run.
+### 👉 **S → T → C → M → Test → M → C → T → S**
+### Supposewe have two classes and in both have same annotation example @BeforeSuite or @BeforeTest -> here Question is which one execute first-> internally it check which present more configs and it pick and run.
 ---
 
 ## ✅ Real Behavior (Important)
