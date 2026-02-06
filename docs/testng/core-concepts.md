@@ -59,8 +59,6 @@ Listeners / Reports
 
 ---
 
----
-
 # 2️⃣ What is Lifecycle of TestNG Annotations?
 
 ## ✅ Concept
