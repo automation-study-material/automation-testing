@@ -3303,158 +3303,178 @@
 </ul>
 <p>Each serves a different purpose.</p>
 <hr />
-<h1 id="1-invocationcount">🔵 1️⃣ invocationCount<a class="headerlink" href="#1-invocationcount" title="Permanent link">&para;</a></h1>
 <hr />
+<h1 id="1-invocationcount">🔵 1️⃣ invocationCount<a class="headerlink" href="#1-invocationcount" title="Permanent link">&para;</a></h1>
 <h2 id="concept">✅ Concept<a class="headerlink" href="#concept" title="Permanent link">&para;</a></h2>
-<p><code>invocationCount</code> repeats the SAME test multiple times.</p>
+<p>Repeats the SAME test multiple times.</p>
 <p>👉 Think: <strong>loop execution</strong></p>
 <hr />
-<h2 id="syntax">🔹 Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test(invocationCount = 3)
-</code></pre>
-<hr />
-<h2 id="use-cases">🔹 Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
-<ul>
-<li>retry logic testing</li>
-<li>stress testing</li>
-<li>idempotency check</li>
-<li>repeated API calls</li>
-<li>load simulation</li>
-</ul>
-<hr />
-<h2 id="example">🔹 Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@Test(invocationCount = 3)
 public void testLoginAPI() {
     System.out.println(&quot;Running login API test&quot;);
 }
 </code></pre>
-<hr />
-<h2 id="execution">🔹 Execution<a class="headerlink" href="#execution" title="Permanent link">&para;</a></h2>
-<pre><code>Running login API test
-Running login API test
-Running login API test
+<h3 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">&para;</a></h3>
+<pre><code>Run
+Run
+Run
 </code></pre>
 <hr />
-<h2 id="important">⚠ Important<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Same data each time</li>
-<li>Sequential by default</li>
+<li>stress testing</li>
+<li>retry logic</li>
+<li>idempotency testing</li>
+<li>repeated API calls</li>
 </ul>
 <hr />
 <hr />
 <h1 id="2-threadpoolsize">🔵 2️⃣ threadPoolSize<a class="headerlink" href="#2-threadpoolsize" title="Permanent link">&para;</a></h1>
-<hr />
 <h2 id="concept_1">✅ Concept<a class="headerlink" href="#concept_1" title="Permanent link">&para;</a></h2>
-<p>Runs multiple invocations in <strong>parallel threads</strong>.</p>
-<p>👉 Works only with invocationCount</p>
+<p>Runs invocations in <strong>parallel threads</strong> (must be used with invocationCount).</p>
 <hr />
-<h2 id="syntax_1">🔹 Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test(invocationCount = 5, threadPoolSize = 2)
-</code></pre>
-<hr />
-<h2 id="purpose">🔹 Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<ul>
-<li>speed up execution</li>
-<li>concurrency testing</li>
-<li>simulate multiple users</li>
-<li>API load testing</li>
-</ul>
-<hr />
-<h2 id="example_1">🔹 Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
+<h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@Test(invocationCount = 5, threadPoolSize = 2)
 public void testPaymentAPI() {
-    System.out.println(&quot;Thread: &quot; + Thread.currentThread().getId());
+    System.out.println(Thread.currentThread().getId());
 }
 </code></pre>
-<hr />
-<h2 id="possible-output">🔹 Possible Output<a class="headerlink" href="#possible-output" title="Permanent link">&para;</a></h2>
+<h3 id="execution-parallel">Execution (parallel)<a class="headerlink" href="#execution-parallel" title="Permanent link">&para;</a></h3>
 <pre><code>Thread 11
 Thread 12
 Thread 11
 Thread 12
 Thread 11
 </code></pre>
-<p>👉 Only 2 threads run concurrently</p>
 <hr />
-<h2 id="how-it-works-internally">🔹 How it works internally<a class="headerlink" href="#how-it-works-internally" title="Permanent link">&para;</a></h2>
-<p>TestNG:</p>
-<ol>
-<li>Creates thread pool</li>
-<li>Submits tasks</li>
-<li>Executes in parallel</li>
-<li>Waits for completion</li>
-</ol>
-<hr />
-<h2 id="selenium-warning">⚠ Selenium Warning<a class="headerlink" href="#selenium-warning" title="Permanent link">&para;</a></h2>
-<p>If using WebDriver:</p>
-<p>❌ Shared driver causes crashes<br />
-✅ Use ThreadLocal<WebDriver></p>
-<hr />
-<h1 id="invocationcount-threadpoolsize-together">🔵 invocationCount + threadPoolSize Together<a class="headerlink" href="#invocationcount-threadpoolsize-together" title="Permanent link">&para;</a></h1>
-<hr />
-<h2 id="example-load-testing-scenario">Example (Load testing scenario)<a class="headerlink" href="#example-load-testing-scenario" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test(invocationCount = 10, threadPoolSize = 5)
-public void testSearchAPI() {
-    callSearchService();
-}
-</code></pre>
-<p>Meaning:</p>
+<h2 id="use-cases_1">Use Cases<a class="headerlink" href="#use-cases_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>run 10 times</li>
-<li>5 threads at same time</li>
+<li>concurrency testing</li>
+<li>simulate multiple users</li>
+<li>performance testing</li>
 </ul>
 <hr />
-<h1 id="3-running-same-test-with-different-data">🔵 3️⃣ Running Same Test With Different Data<a class="headerlink" href="#3-running-same-test-with-different-data" title="Permanent link">&para;</a></h1>
-<h2 id="best-practice-dataprovider">✅ Best Practice → DataProvider<a class="headerlink" href="#best-practice-dataprovider" title="Permanent link">&para;</a></h2>
+<p>⚠ Selenium Note:
+Use ThreadLocal<WebDriver> for thread safety.</p>
 <hr />
-<h3 id="concept_2">Concept<a class="headerlink" href="#concept_2" title="Permanent link">&para;</a></h3>
+<hr />
+<h1 id="3-dataprovider-run-test-with-different-data">🔵 3️⃣ DataProvider — Run Test with Different Data<a class="headerlink" href="#3-dataprovider-run-test-with-different-data" title="Permanent link">&para;</a></h1>
+<h2 id="concept_2">✅ Concept<a class="headerlink" href="#concept_2" title="Permanent link">&para;</a></h2>
 <p>Runs same test multiple times with <strong>different inputs</strong>.</p>
-<p>👉 Think: <strong>parameterized tests</strong></p>
+<p>👉 Think: <strong>parameterized testing</strong></p>
 <hr />
-<h3 id="syntax_2">🔹 Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h3>
+<h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@DataProvider
-</code></pre>
-<hr />
-<h3 id="example_2">🔹 Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@DataProvider(name = &quot;users&quot;)
-public Object[][] usersData() {
+public Object[][] users() {
     return new Object[][]{
         {&quot;user1&quot;, &quot;pass1&quot;},
-        {&quot;user2&quot;, &quot;pass2&quot;},
-        {&quot;user3&quot;, &quot;pass3&quot;}
+        {&quot;user2&quot;, &quot;pass2&quot;}
     };
 }
 
 @Test(dataProvider = &quot;users&quot;)
-public void loginTest(String username, String password) {
-    System.out.println(username + &quot; &quot; + password);
+public void loginTest(String user, String pass) {
+    System.out.println(user);
+}
+</code></pre>
+<h3 id="execution_1">Execution<a class="headerlink" href="#execution_1" title="Permanent link">&para;</a></h3>
+<pre><code>user1
+user2
+</code></pre>
+<hr />
+<hr />
+<h1 id="new-cross-package-dataprovider-real-framework-use-case">🔥 NEW — Cross Package DataProvider (Real Framework Use Case)<a class="headerlink" href="#new-cross-package-dataprovider-real-framework-use-case" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="scenario">✅ Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
+<p>We have:</p>
+<pre><code>xyz package → DataProvider class
+bny.erp package → Test class
+</code></pre>
+<p>We want to reuse common test data across packages.</p>
+<hr />
+<h2 id="package-structure">📦 Package Structure<a class="headerlink" href="#package-structure" title="Permanent link">&para;</a></h2>
+<pre><code>src/test/java
+   ├─ xyz
+   │     └─ TestDataProvider.java
+   ├─ bny/erp
+   │     └─ ERPLoginTest.java
+</code></pre>
+<hr />
+<h2 id="step-1-create-dataprovider-in-xyz-package">Step 1 — Create DataProvider in xyz package<a class="headerlink" href="#step-1-create-dataprovider-in-xyz-package" title="Permanent link">&para;</a></h2>
+<h3 id="xyztestdataproviderjava">xyz/TestDataProvider.java<a class="headerlink" href="#xyztestdataproviderjava" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">package xyz;
+
+import org.testng.annotations.DataProvider;
+
+public class TestDataProvider {
+
+    @DataProvider(name = &quot;erpUsers&quot;)
+    public static Object[][] erpUsers() {
+        return new Object[][]{
+            {&quot;admin&quot;, &quot;admin123&quot;},
+            {&quot;manager&quot;, &quot;manager123&quot;},
+            {&quot;user&quot;, &quot;user123&quot;}
+        };
+    }
 }
 </code></pre>
 <hr />
-<h3 id="execution_1">🔹 Execution<a class="headerlink" href="#execution_1" title="Permanent link">&para;</a></h3>
-<pre><code>user1 pass1
-user2 pass2
-user3 pass3
+<h2 id="step-2-use-in-another-packageclass">Step 2 — Use in another package/class<a class="headerlink" href="#step-2-use-in-another-packageclass" title="Permanent link">&para;</a></h2>
+<h3 id="bnyerperplogintestjava">bny/erp/ERPLoginTest.java<a class="headerlink" href="#bnyerperplogintestjava" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">package bny.erp;
+
+import org.testng.annotations.Test;
+import xyz.TestDataProvider;
+
+public class ERPLoginTest {
+
+    @Test(dataProvider = &quot;erpUsers&quot;, dataProviderClass = TestDataProvider.class)
+    public void loginERP(String username, String password) {
+        System.out.println(username + &quot; -&gt; &quot; + password);
+    }
+}
 </code></pre>
 <hr />
-<h3 id="purpose_1">🔹 Purpose<a class="headerlink" href="#purpose_1" title="Permanent link">&para;</a></h3>
+<h2 id="important">✅ Important<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
+<p>When DataProvider is in DIFFERENT class/package:</p>
+<p>You MUST use:</p>
+<pre><code>dataProviderClass = TestDataProvider.class
+</code></pre>
+<p>Otherwise TestNG cannot find it.</p>
+<hr />
+<h2 id="execution-flow">🔥 Execution Flow<a class="headerlink" href="#execution-flow" title="Permanent link">&para;</a></h2>
+<p>TestNG internally:</p>
+<ol>
+<li>Finds test method</li>
+<li>Looks for provider in specified class</li>
+<li>Calls erpUsers()</li>
+<li>Creates 3 test invocations</li>
+</ol>
+<hr />
+<h2 id="execution-output">Execution Output<a class="headerlink" href="#execution-output" title="Permanent link">&para;</a></h2>
+<pre><code>admin -&gt; admin123
+manager -&gt; manager123
+user -&gt; user123
+</code></pre>
+<hr />
+<h2 id="real-use-cases">✅ Real Use Cases<a class="headerlink" href="#real-use-cases" title="Permanent link">&para;</a></h2>
 <ul>
-<li>data-driven testing</li>
-<li>multiple inputs</li>
-<li>edge cases</li>
-<li>functional validation</li>
+<li>shared test data library</li>
+<li>common login credentials</li>
+<li>API payload sets</li>
+<li>reusable across multiple modules</li>
+<li>framework centralization</li>
 </ul>
 <hr />
 <hr />
-<h2 id="parallel-dataprovider">🔵 Parallel DataProvider<a class="headerlink" href="#parallel-dataprovider" title="Permanent link">&para;</a></h2>
-<hr />
-<h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@DataProvider(name=&quot;users&quot;, parallel=true)
+<h1 id="parallel-dataprovider">🔵 Parallel DataProvider<a class="headerlink" href="#parallel-dataprovider" title="Permanent link">&para;</a></h1>
+<pre><code class="language-java">@DataProvider(name=&quot;erpUsers&quot;, parallel=true)
 </code></pre>
-<p>Runs each dataset in parallel threads</p>
+<p>Runs each dataset in parallel.</p>
 <hr />
 <hr />
-<h1 id="real-use-cases-comparison">🔵 Real Use Cases Comparison<a class="headerlink" href="#real-use-cases-comparison" title="Permanent link">&para;</a></h1>
+<h1 id="quick-comparison">🔵 Quick Comparison<a class="headerlink" href="#quick-comparison" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
@@ -3464,54 +3484,42 @@ user3 pass3
 </thead>
 <tbody>
 <tr>
-<td>Run same test many times</td>
+<td>Repeat same test</td>
 <td>invocationCount</td>
 </tr>
 <tr>
-<td>Run same test in parallel</td>
+<td>Repeat in parallel</td>
 <td>invocationCount + threadPoolSize</td>
 </tr>
 <tr>
-<td>Run test with different data</td>
+<td>Different inputs</td>
 <td>DataProvider</td>
 </tr>
 <tr>
-<td>Parallel different data</td>
+<td>Cross package reuse</td>
+<td>dataProviderClass</td>
+</tr>
+<tr>
+<td>Parallel different inputs</td>
 <td>DataProvider(parallel=true)</td>
-</tr>
-<tr>
-<td>Load testing</td>
-<td>invocationCount + threadPoolSize</td>
-</tr>
-<tr>
-<td>Functional validation</td>
-<td>DataProvider</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <hr />
 <h1 id="best-practices">🔵 Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h1>
-<h2 id="prefer">Prefer<a class="headerlink" href="#prefer" title="Permanent link">&para;</a></h2>
-<p>✅ DataProvider for test data<br />
-✅ invocationCount for stress/load<br />
-✅ threadPoolSize for concurrency  </p>
-<h2 id="avoid">Avoid<a class="headerlink" href="#avoid" title="Permanent link">&para;</a></h2>
-<p>❌ using invocationCount for different inputs<br />
-❌ sharing WebDriver in parallel tests  </p>
+<p>✅ Keep DataProviders in separate utility package<br />
+✅ Make them reusable<br />
+✅ Prefer DataProvider over invocationCount for data testing<br />
+✅ Use parallel=true for faster execution  </p>
 <hr />
 <hr />
 <h1 id="interview-one-liners">🔵 Interview One-Liners<a class="headerlink" href="#interview-one-liners" title="Permanent link">&para;</a></h1>
-<p>👉 invocationCount repeats the same test multiple times<br />
-👉 threadPoolSize runs those invocations in parallel<br />
-👉 DataProvider is used for running the same test with different data<br />
-👉 For real frameworks DataProvider is preferred for functional testing  </p>
+<p>👉 invocationCount repeats test<br />
+👉 threadPoolSize runs repeats in parallel<br />
+👉 DataProvider runs same test with different data<br />
+👉 dataProviderClass allows cross-class/package reuse  </p>
 <hr />
-<hr />
-<h1 id="quick-summary">🎯 Quick Summary<a class="headerlink" href="#quick-summary" title="Permanent link">&para;</a></h1>
-<p>invocationCount → repeat<br />
-threadPoolSize → parallel<br />
-DataProvider → different inputs  </p>
 <hr />
 <p>Happy Learning 🚀</p>
 
