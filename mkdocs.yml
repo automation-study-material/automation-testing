@@ -36,12 +36,31 @@ nav:
     - CucumberTags & Hooks: cucumber/cucumber-tag-inheritance-hooks-guide.md
     - Parallel execution: cucumber/cucumber-parallel.md
     - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
+    - Cucumber CLI: cucumber/cucumber-cli.md
     
   - TestNg :
+    - TestNG Questions: testng/testNg-questions.md
+    - Core Concepts: testng/core-concepts.md
+    - Depends on Methode and Groups: testng/dependency-resolve.md
+    - Skipping test: testng/skippingTest.md
+    - Invocation Count and Data Provider: testng/invocationCount_threaPool_dataProvider.md
+    - Test Data Driven: testng/testingDataDriven.md
+    - XMl configuration: testng/xmlConfigs.md
+    - Extend Report: testng/extends-report.md
     - Retry Mechanism: testng/retry-mechanism.md
+    - Sample XML: testng/xml-sample.md
+    
+    
+    
     
   - Rest Assured:
-    - Rest API Notes: rest-assured/rest-assured-nodes.md
+    - Rest vs Soap: 
+      - Rest vs Soap difference one: rest-assured/soap-vs-rest.md
+      - Rest vs Soap difference two: rest-assured/soap-vs-rest2.md
+    - Rest API Notes: rest-assured/rest-assured-notes.md
+    - URI vs URL: rest-assured/URI-vs-URL.md
+    - JsonPath: rest-assured/rest-assured-jsonpath.md
+    - Data Loading: rest-assured/data-loading.md
     - Interview Question: rest-assured/interview-questions.md
     - Framework: rest-assured/framework.md
   
