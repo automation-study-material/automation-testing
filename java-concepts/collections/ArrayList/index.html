@@ -1448,6 +1448,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="10. Commonly Used ArrayList Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4465,6 +4482,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="10. Commonly Used ArrayList Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4742,19 +4776,139 @@ elementData[--size] = null; // avoid memory leak
 </table>
 <hr />
 <h2 id="10-commonly-used-arraylist-methods">10. Commonly Used ArrayList Methods<a class="headerlink" href="#10-commonly-used-arraylist-methods" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+<pre><code class="language-java">import java.util.ArrayList;
+import java.util.List;
 
-list.add(&quot;Java&quot;);
-list.add(&quot;Python&quot;);
-list.add(1, &quot;Go&quot;);
+public class ArrayListAllMethodsDemo {
 
-list.get(0);        // Java
-list.set(1, &quot;Rust&quot;);
-list.remove(0);
+    public static void main(String[] args) {
 
-list.contains(&quot;Java&quot;);
-list.size();
-list.isEmpty();
+        // =====================================================
+        // Create ArrayList
+        // =====================================================
+        ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+
+        // add()
+        list.add(&quot;Java&quot;);
+        list.add(&quot;Python&quot;);
+
+        // add(index, element)
+        list.add(1, &quot;Go&quot;);
+
+        System.out.println(&quot;After add operations: &quot; + list);
+        // [Java, Go, Python]
+
+
+        // =====================================================
+        // get()
+        // =====================================================
+        System.out.println(&quot;\nget(0): &quot; + list.get(0)); // Java
+
+
+        // =====================================================
+        // set()
+        // =====================================================
+        list.set(1, &quot;Rust&quot;);
+        System.out.println(&quot;After set(1, Rust): &quot; + list);
+        // [Java, Rust, Python]
+
+
+        // =====================================================
+        // remove(index)
+        // =====================================================
+        list.remove(0);
+        System.out.println(&quot;After remove(0): &quot; + list);
+        // [Rust, Python]
+
+
+        // =====================================================
+        // contains()
+        // =====================================================
+        System.out.println(&quot;\ncontains(Java): &quot; + list.contains(&quot;Java&quot;));
+
+
+        // =====================================================
+        // size()
+        // =====================================================
+        System.out.println(&quot;size(): &quot; + list.size());
+
+
+        // =====================================================
+        // isEmpty()
+        // =====================================================
+        System.out.println(&quot;isEmpty(): &quot; + list.isEmpty());
+
+
+        // =====================================================
+        // addAll()
+        // =====================================================
+        List&lt;String&gt; list2 = new ArrayList&lt;&gt;();
+        list2.add(&quot;C++&quot;);
+        list2.add(&quot;JavaScript&quot;);
+
+        list.addAll(list2);
+        System.out.println(&quot;\nAfter addAll(): &quot; + list);
+
+
+        // =====================================================
+        // addAll(index, list)
+        // =====================================================
+        list.addAll(1, list2);
+        System.out.println(&quot;After addAll(index, list): &quot; + list);
+
+
+        // =====================================================
+        // manual loop add
+        // =====================================================
+        for (String s : list2) {
+            list.add(s);
+        }
+        System.out.println(&quot;After manual loop add: &quot; + list);
+
+
+        // =====================================================
+        // clear()
+        // =====================================================
+        list.clear();
+        System.out.println(&quot;\nAfter clear(): &quot; + list);
+
+
+        // =====================================================
+        // new ArrayList&lt;&gt;()
+        // =====================================================
+        list = new ArrayList&lt;&gt;();
+        list.add(&quot;NewItem&quot;);
+        System.out.println(&quot;After new ArrayList&lt;&gt;(): &quot; + list);
+
+
+        // =====================================================
+        // removeAll()
+        // =====================================================
+        list.removeAll(list);
+        System.out.println(&quot;After removeAll(): &quot; + list);
+    }
+}
+
+</code></pre>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<pre><code class="language-text">After add operations: [Java, Go, Python]
+
+get(0): Java
+After set(1, Rust): [Java, Rust, Python]
+After remove(0): [Rust, Python]
+
+contains(Java): false
+size(): 2
+isEmpty(): false
+
+After addAll(): [Rust, Python, C++, JavaScript]
+After addAll(index, list): [Rust, C++, JavaScript, Python, C++, JavaScript]
+After manual loop add: [Rust, C++, JavaScript, Python, C++, JavaScript, C++, JavaScript]
+
+After clear(): []
+After new ArrayList&lt;&gt;(): [NewItem]
+After removeAll(): []
+
 </code></pre>
 <hr />
 <h2 id="11-systemarraycopy-important-notes">11. System.arraycopy() – Important Notes<a class="headerlink" href="#11-systemarraycopy-important-notes" title="Permanent link">&para;</a></h2>
