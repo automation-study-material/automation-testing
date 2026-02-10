@@ -4,7 +4,7 @@ This document explains **ArrayList** as a **data structure**, covering **interna
 
 ---
 # Collection Hierarchy 
-<img src="docs/images/java/hierarchy-of-collection-framework.jpg" alt="Collections Framework" width="400"/>
+<img src="../../images/java/hierarchy-of-collection-framework.jpg" alt="Collections Framework" width="400"/>
 
 ## 1. What is ArrayList?
 
