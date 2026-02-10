@@ -200,20 +200,142 @@ Worst scenario during insertion:
 ## 10. Commonly Used ArrayList Methods
 
 ```java
-ArrayList<String> list = new ArrayList<>();
+import java.util.ArrayList;
+import java.util.List;
 
-list.add("Java");
-list.add("Python");
-list.add(1, "Go");
+public class ArrayListAllMethodsDemo {
 
-list.get(0);        // Java
-list.set(1, "Rust");
-list.remove(0);
+    public static void main(String[] args) {
 
-list.contains("Java");
-list.size();
-list.isEmpty();
+        // =====================================================
+        // Create ArrayList
+        // =====================================================
+        ArrayList<String> list = new ArrayList<>();
+
+        // add()
+        list.add("Java");
+        list.add("Python");
+
+        // add(index, element)
+        list.add(1, "Go");
+
+        System.out.println("After add operations: " + list);
+        // [Java, Go, Python]
+
+
+        // =====================================================
+        // get()
+        // =====================================================
+        System.out.println("\nget(0): " + list.get(0)); // Java
+
+
+        // =====================================================
+        // set()
+        // =====================================================
+        list.set(1, "Rust");
+        System.out.println("After set(1, Rust): " + list);
+        // [Java, Rust, Python]
+
+
+        // =====================================================
+        // remove(index)
+        // =====================================================
+        list.remove(0);
+        System.out.println("After remove(0): " + list);
+        // [Rust, Python]
+
+
+        // =====================================================
+        // contains()
+        // =====================================================
+        System.out.println("\ncontains(Java): " + list.contains("Java"));
+
+
+        // =====================================================
+        // size()
+        // =====================================================
+        System.out.println("size(): " + list.size());
+
+
+        // =====================================================
+        // isEmpty()
+        // =====================================================
+        System.out.println("isEmpty(): " + list.isEmpty());
+
+
+        // =====================================================
+        // addAll()
+        // =====================================================
+        List<String> list2 = new ArrayList<>();
+        list2.add("C++");
+        list2.add("JavaScript");
+
+        list.addAll(list2);
+        System.out.println("\nAfter addAll(): " + list);
+
+
+        // =====================================================
+        // addAll(index, list)
+        // =====================================================
+        list.addAll(1, list2);
+        System.out.println("After addAll(index, list): " + list);
+
+
+        // =====================================================
+        // manual loop add
+        // =====================================================
+        for (String s : list2) {
+            list.add(s);
+        }
+        System.out.println("After manual loop add: " + list);
+
+
+        // =====================================================
+        // clear()
+        // =====================================================
+        list.clear();
+        System.out.println("\nAfter clear(): " + list);
+
+
+        // =====================================================
+        // new ArrayList<>()
+        // =====================================================
+        list = new ArrayList<>();
+        list.add("NewItem");
+        System.out.println("After new ArrayList<>(): " + list);
+
+
+        // =====================================================
+        // removeAll()
+        // =====================================================
+        list.removeAll(list);
+        System.out.println("After removeAll(): " + list);
+    }
+}
+
 ```
+### Output
+```text
+After add operations: [Java, Go, Python]
+
+get(0): Java
+After set(1, Rust): [Java, Rust, Python]
+After remove(0): [Rust, Python]
+
+contains(Java): false
+size(): 2
+isEmpty(): false
+
+After addAll(): [Rust, Python, C++, JavaScript]
+After addAll(index, list): [Rust, C++, JavaScript, Python, C++, JavaScript]
+After manual loop add: [Rust, C++, JavaScript, Python, C++, JavaScript, C++, JavaScript]
+
+After clear(): []
+After new ArrayList<>(): [NewItem]
+After removeAll(): []
+
+```
+
 
 ---
 
