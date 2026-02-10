@@ -15,7 +15,7 @@ Custom exceptions tell **WHY it failed in business/framework context**.
 
 ---
 
----
+
 
 # 🧠 Why Selenium Built-in Exceptions Are NOT Enough
 
