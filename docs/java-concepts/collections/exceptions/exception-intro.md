@@ -20,7 +20,7 @@ Examples:
 ---
 
 # ✅ Exception Hierarchy (Diagram)
-<img src="../../images/java/Exceptions.png" alt="Collections Framework" width="400"/>
+<img src="../../../images/java/Exceptions.png" alt="Collections Framework" width="400"/>
 ```
 Object
    ↓
