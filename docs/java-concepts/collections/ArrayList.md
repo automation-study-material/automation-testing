@@ -3,6 +3,8 @@
 This document explains **ArrayList** as a **data structure**, covering **internal working, performance, shifting behavior, and when to use it**, at an interview‑ready level.
 
 ---
+# Collection Hierarchy 
+<img src="docs/images/java/hierarchy-of-collection-framework.jpg" alt="VM vs Container" width="400"/>
 
 ## 1. What is ArrayList?
 
