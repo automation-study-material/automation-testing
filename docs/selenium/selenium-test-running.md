@@ -49,21 +49,26 @@ import java.util.Properties;
 
 public class ConfigManager {
 
-    private static final Properties prop = new Properties();
+    private static Properties prop = new Properties();
 
+    // load config file once
     static {
         try {
-            FileInputStream fis = new FileInputStream(
-                System.getProperty("user.dir") + "/src/test/resources/config.properties");
-            prop.load(fis);
+            prop.load(new FileInputStream("src/test/resources/config.properties"));
         } catch (Exception e) {
-            throw new RuntimeException("Failed to load config.properties");
+            System.out.println("config.properties not found");
         }
     }
 
-    // CLI > config > default
+    // CLI > config
     public static String get(String key) {
-        return System.getProperty(key, prop.getProperty(key));
+        String cli = System.getProperty(key);
+
+        if (cli != null && !cli.isEmpty()) {
+            return cli;
+        }
+
+        return prop.getProperty(key);
     }
 
     public static int getInt(String key) {
@@ -74,6 +79,7 @@ public class ConfigManager {
         return Boolean.parseBoolean(get(key));
     }
 }
+
 ```
 
 ---
