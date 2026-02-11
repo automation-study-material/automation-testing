@@ -3796,21 +3796,26 @@ import java.util.Properties;
 
 public class ConfigManager {
 
-    private static final Properties prop = new Properties();
+    private static Properties prop = new Properties();
 
+    // load config file once
     static {
         try {
-            FileInputStream fis = new FileInputStream(
-                System.getProperty(&quot;user.dir&quot;) + &quot;/src/test/resources/config.properties&quot;);
-            prop.load(fis);
+            prop.load(new FileInputStream(&quot;src/test/resources/config.properties&quot;));
         } catch (Exception e) {
-            throw new RuntimeException(&quot;Failed to load config.properties&quot;);
+            System.out.println(&quot;config.properties not found&quot;);
         }
     }
 
-    // CLI &gt; config &gt; default
+    // CLI &gt; config
     public static String get(String key) {
-        return System.getProperty(key, prop.getProperty(key));
+        String cli = System.getProperty(key);
+
+        if (cli != null &amp;&amp; !cli.isEmpty()) {
+            return cli;
+        }
+
+        return prop.getProperty(key);
     }
 
     public static int getInt(String key) {
@@ -3821,6 +3826,7 @@ public class ConfigManager {
         return Boolean.parseBoolean(get(key));
     }
 }
+
 </code></pre>
 <hr />
 <h1 id="override-logic-explained">🧠 Override Logic Explained<a class="headerlink" href="#override-logic-explained" title="Permanent link">&para;</a></h1>
