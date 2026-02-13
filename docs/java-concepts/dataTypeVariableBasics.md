@@ -10,14 +10,14 @@ Java is a **statically typed** language, meaning variables must have a declared 
 
 ---
 
-### 🔹 Primitive Data Types
+### 🔹 Primitive Data Types || Ascending Order (small → large)
 
-| Data Type | Size | Example | Usage in Testing |
-|---------|------|--------|------------------|
-| `int` | 4 bytes | `int age = 25;` | Status codes, counts |
-| `double` | 8 bytes | `double price = 99.99;` | Decimal values |
-| `boolean` | 1 bit | `boolean result = true;` | Pass/Fail conditions |
-| `char` | 2 bytes | `char grade = 'A';` | Single characters |
+| Order | Type    | Size    | Example                     | Usage                    |
+|-------|---------|----------|-----------------------------|----------------------------|
+| 1 | `boolean` | 1 bit  | `boolean result = true;` | Pass/Fail conditions |
+| 2 | `char`    | 2 bytes | `char grade = 'A';`      | Single characters |
+| 3 | `int`     | 4 bytes | `int age = 25;`          | Status codes, counts |
+| 4 | `double`  | 8 bytes | `double price = 99.99;`  | Decimal values |
 
 ---
 
