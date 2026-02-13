@@ -130,11 +130,12 @@ if (actual == expected) {
 
 Used to combine multiple conditions.
 
-| Operator | Meaning |
-|--------|--------|
-| `&&` | AND |
-| `||` | OR |
-| `!` | NOT |
+| Operator | Meaning | Example |
+|----------|----------|------------|
+| && | AND | (a > 5 && b < 10) |
+| || | OR | (a > 5 || b < 10) |
+| !  | NOT | !(a > 5) |
+
 
 ```java
 if (isLoggedIn && isDashboardVisible) {
