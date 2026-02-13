@@ -164,6 +164,40 @@ class Employee {
   - Cannot be overridden, but can be called using super() in subclass.
 - OOP Concept: Inheritance – super() ensures proper parent class initialization.
 
+✅ Constructor Chaining Example (Summary)
+
+```java
+class Parent {
+    Parent() {
+        System.out.println("Parent constructor");
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        System.out.println("Child constructor");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+
+        new Child();   // object creation
+
+    }
+}
+```
+✅ Output
+```text
+Parent constructor
+Child constructor
+```
+
+✅ What happens?
+- Parent constructor runs first → super()
+- Then Child constructor runs
+- This is constructor chaining, not overriding
+
 ## 10. How are constructors related to encapsulation, inheritance, and polymorphism?
 - Encapsulation: Initialize private fields safely via constructor.
 - Inheritance: Use super() to initialize parent class fields.
