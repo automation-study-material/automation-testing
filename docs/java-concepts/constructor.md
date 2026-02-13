@@ -361,6 +361,18 @@ public class Main {
 }
 
 ```
+#### Validate Code
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        SingleTonePattern s1 = SingleTonePattern.getInstance();
+        SingleTonePattern s2 = SingleTonePattern.getInstance();
+
+        System.out.println(s1 == s2); // true
+    }
+}
+```
 
 ### 6.Static Blocks vs Constructor
 - Static blocks execute once when class loads.
