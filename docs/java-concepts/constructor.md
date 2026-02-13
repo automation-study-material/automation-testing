@@ -125,6 +125,15 @@ public class Main {
 }
 
 ```
+
+✅ Output:
+
+```text
+Name: Unknown, Age: 0, Company: Not Assigned
+Name: Bob, Age: 30, Company: Unknown
+Name: Charlie, Age: 35, Company: TechCorp
+
+```
 ### 4.Constructor Chaining
 
 #### a) Using this() – Within Same Class
