@@ -560,6 +560,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5.Private Constructor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4467,6 +4484,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5.Private Constructor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4898,6 +4932,17 @@ public class Main {
     }
 }
 
+</code></pre>
+<h4 id="validate-code">Validate Code<a class="headerlink" href="#validate-code" title="Permanent link">&para;</a></h4>
+<pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+
+        SingleTonePattern s1 = SingleTonePattern.getInstance();
+        SingleTonePattern s2 = SingleTonePattern.getInstance();
+
+        System.out.println(s1 == s2); // true
+    }
+}
 </code></pre>
 <h3 id="6static-blocks-vs-constructor">6.Static Blocks vs Constructor<a class="headerlink" href="#6static-blocks-vs-constructor" title="Permanent link">&para;</a></h3>
 <ul>
