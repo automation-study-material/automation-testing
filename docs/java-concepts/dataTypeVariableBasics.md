@@ -133,7 +133,7 @@ Used to combine multiple conditions.
 | Operator | Meaning | Example |
 |----------|----------|------------|
 | `&&` | AND | (a > 5 && b < 10) |
-| `"II"` | OR | (a > 5 || b < 10) |
+| `ii` | OR | `(a > 5 ii b < 10)` |
 | `!`  | NOT | !(a > 5) |
 
 
