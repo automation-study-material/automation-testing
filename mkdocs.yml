@@ -25,9 +25,20 @@ nav:
       - code-2: java-concepts/code-oppose-concepts-2.md
       - code-3: java-concepts/code-oppose-3.md
       - Java Selenium Implementaions: java-concepts/Java-SeleniumFramework.md
+    - Error Handling:
+      - Try Vs Catch:  java-concepts/exception/intro.md
+      - Throw vs throws: java-concepts/exception/throw-throws.md
+      - Custome Exception: java-concepts/exception/custome-exception.md
     - Collections:
       - ArrayList: java-concepts/collections/ArrayList.md
       - LinkedList: java-concepts/collections/LinkedList.md
+      - ArrayList vs LinkedList: java-concepts/collections/arrayList-LinkedList-when-we-use.md
+      - Stake: java-concepts/collections/stake.md
+      - HashSet vs LinkedHashSet: java-concepts/collections/HashSet-vs-LinkedHashSet.md
+      - Map: java-concepts/collections/Map-Framework.md
+      - Iterator: java-concepts/collections/Java-Iterator.md
+    - Wrapper Class:
+      - Wrapper class: java-concepts/wrapper-classes/wrapper-classes.md
   
   - BDD Cucumber:
     - Cucumber Notes: cucumber/cucumber.md
