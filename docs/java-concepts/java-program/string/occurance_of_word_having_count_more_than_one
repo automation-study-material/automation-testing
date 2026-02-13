@@ -1,0 +1,23 @@
+import java.util.*;
+public class DuplicateCharacters {    
+     public static void main(String[] args) {    
+       String str="aa bbc xyz aa bbc ddd xyz xyz xyz xyz aa umesh";
+		String [] arr=str.split(" ");
+		Set<String> set=new HashSet<String> (Arrays.asList(arr));
+		int count=0;
+		for(String s:set) {			
+			for(int i=0;i<arr.length;i++) {
+				if(s.equals(arr[i])) {
+					count++;
+				}
+			}
+			if(count>1){
+			System.out.println(s+"--"+count); 
+			}
+			count=0;
+		}
+    }    
+} 
+
+
+// Same as map occurance of word but without using HashMap
