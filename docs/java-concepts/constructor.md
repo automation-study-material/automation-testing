@@ -397,7 +397,23 @@ public class Main {
 }
 
 ```
+✅ Final Output
+```text
+Static block executed
+Constructor executed
+Constructor executed
+```
+
+#### ✅ Rule to Remember
+
+| Block | Runs |
+|-----------|----------------|
+| Static block | Once per class |
+| Constructor | Every object |
+
+
 ## Key Takeaways
+
 #### 1.Constructors & OOP
 - Works with encapsulation (initialize private fields).
 - Works with inheritance (super() to initialize parent).
