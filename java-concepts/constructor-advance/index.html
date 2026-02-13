@@ -4604,6 +4604,35 @@ Example:</li>
 <li>Cannot be overridden, but can be called using super() in subclass.</li>
 <li>OOP Concept: Inheritance – super() ensures proper parent class initialization.</li>
 </ul>
+<p>✅ Constructor Chaining Example (Summary)</p>
+<pre><code class="language-java">class Parent {
+    Parent() {
+        System.out.println(&quot;Parent constructor&quot;);
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        System.out.println(&quot;Child constructor&quot;);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+
+        new Child();   // object creation
+
+    }
+}
+</code></pre>
+<p>✅ Output</p>
+<pre><code class="language-text">Parent constructor
+Child constructor
+</code></pre>
+<p>✅ What happens?
+- Parent constructor runs first → super()
+- Then Child constructor runs
+- This is constructor chaining, not overriding</p>
 <h2 id="10-how-are-constructors-related-to-encapsulation-inheritance-and-polymorphism">10. How are constructors related to encapsulation, inheritance, and polymorphism?<a class="headerlink" href="#10-how-are-constructors-related-to-encapsulation-inheritance-and-polymorphism" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Encapsulation: Initialize private fields safely via constructor.</li>
