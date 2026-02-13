@@ -62,13 +62,15 @@ class Employee {
     String name;
     int age;
 
-    public Employee() { this("Unknown", 0); }
-
-    public Employee(String name) { this(name, 0); }
+    public Employee() {
+      this("Unknown", 0);
+    }
+    public Employee(String name) {
+      this(name, 0);
+    }
 
     public Employee(String name, int age) { 
-        this.name = name;
-        this.age = age;
+        this.name = name;        this.age = age;
     }
 }
 ```
@@ -106,6 +108,8 @@ class Manager extends Employee {
 - **Answer:**
   - No. Constructors cannot be static.
   - Reason: Static belongs to class, constructor belongs to object creation.
+  - Interview answer
+    - 👉 Constructors cannot be static because static members belong to the class, while constructors are used to create and initialize objects.
 - OOP Concept: Encapsulation + Class vs Object – Constructors are object-level initialization, not class-level.
 
 
