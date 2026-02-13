@@ -91,9 +91,17 @@ Operators perform operations on variables and values.
 | `/` | Division | `a / b` |
 | `%` | Modulus | `a % b` |
 
-```java
-int total = 10 + 5;
-```
+
+✅ Java Code Examples for `/` and `%`
+
+| Operator | Purpose | Java Code | Output |
+|------------|------------|-------------------------------|-----------|
+| `/` | Integer Division | `System.out.println(10 / 3);` | 3 |
+| `/` | Exact Division | `System.out.println(10 / 2);` | 5 |
+| `/` | Double Division | `System.out.println(10.0 / 3);` | 3.3333333333333335 |
+| `%` | Remainder | `System.out.println(10 % 3);` | 1 |
+| `%` | Even/Odd Check | `System.out.println(8 % 2);` | 0 |
+| `%` | No Remainder | `System.out.println(15 % 5);` | 0 |
 
 ---
 
