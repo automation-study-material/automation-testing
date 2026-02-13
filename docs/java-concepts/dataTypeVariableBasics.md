@@ -132,9 +132,9 @@ Used to combine multiple conditions.
 
 | Operator | Meaning | Example |
 |----------|----------|------------|
-| && | AND | (a > 5 && b < 10) |
-| || | OR | (a > 5 || b < 10) |
-| !  | NOT | !(a > 5) |
+| `&&` | AND | (a > 5 && b < 10) |
+| `"II"` | OR | (a > 5 || b < 10) |
+| `!`  | NOT | !(a > 5) |
 
 
 ```java
