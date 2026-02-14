@@ -449,7 +449,29 @@ Constructor executed
 | Static block | Once per class |
 | Constructor | Every object |
 
+#### Constructor as default, public, protected, private and static
 
+##### 🎯 Summary Table
+
+  --------------------------------------------------------------------------------
+  Modifier    Allowed?   Accessible From         Main Use Case       Can Be
+                                                                     Overridden?
+  ----------- ---------- ----------------------- ------------------- -------------
+  public      ✅ Yes     Anywhere                General object      ❌ No
+                                                 creation            
+
+  private     ✅ Yes     Same class only         Singleton pattern   ❌ No
+
+  default     ✅ Yes     Same package            Package-level       ❌ No
+                                                 control             
+
+  protected   ✅ Yes     Same package +          Controlled          ❌ No
+                         Subclasses              inheritance         
+
+  static      ❌ No      Not allowed             Invalid for         ❌ No
+                                                 constructor         
+  --------------------------------------------------------------------------------
+  
 ## Key Takeaways
 
 #### 1.Constructors & OOP
