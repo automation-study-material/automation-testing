@@ -4613,92 +4613,78 @@ Map&lt;String,Double&gt; balances = new ConcurrentHashMap&lt;&gt;();
 <pre><code class="language-java">Map&lt;Long,String&gt; txns = new TreeMap&lt;&gt;();
 </code></pre>
 <hr />
+<h1 id="hashmap-vs-linkedhashmap-vs-hashtable-vs-concurrenthashmap-vs-treemap_1">📊 HashMap vs LinkedHashMap vs Hashtable vs ConcurrentHashMap vs TreeMap<a class="headerlink" href="#hashmap-vs-linkedhashmap-vs-hashtable-vs-concurrenthashmap-vs-treemap_1" title="Permanent link">&para;</a></h1>
 <hr />
-<h1 id="thread-safety-comparison">📊 Thread Safety Comparison<a class="headerlink" href="#thread-safety-comparison" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>Map</th>
-<th>Thread-Safe</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HashMap</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>LinkedHashMap</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Hashtable</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>ConcurrentHashMap</td>
-<td>✅</td>
-</tr>
-</tbody>
-</table>
+<p>Feature             HashMap           LinkedHashMap   Hashtable        ConcurrentHashMap   TreeMap</p>
 <hr />
+<p><strong>Order             ❌ No order       ✅ Insertion    ❌ No order      ❌ No order         ✅ Sorted
+  Maintained?</strong>                         order                                                order
+                                                                                             (Natural /
+                                                                                             Comparator)</p>
+<p><strong>Null Key          ✅ 1 null key     ✅ 1 null key   ❌ No            ❌ No               ❌ No
+  Allowed?</strong>                                                                                 </p>
+<p><strong>Null Values       ✅ Yes            ✅ Yes          ❌ No            ❌ No               ✅ Yes
+  Allowed?</strong>                                                                                 </p>
+<p><strong>Thread-Safe?</strong>    ❌ No             ❌ No           ✅ Yes           ✅ Yes (Highly      ❌ No
+                                                        (Synchronized)   Concurrent)         </p>
+<p><strong>Synchronization   None              None            Entire map       Segment-level /     None
+  Type</strong>                                                locked           bucket-level      <br />
+                                                                         locking             </p>
+<p><strong>Performance       🚀 Very Fast      🚀 Slightly     🐢 Slower (sync  🚀 Fast             ⚖ Moderate
+  (Single Thread)</strong>                     slower than     overhead)                          <br />
+                                        HashMap                                              </p>
+<p><strong>Performance       ❌ Unsafe         ❌ Unsafe       🐢 Slow (full    🚀 Best choice      ❌ Unsafe
+  (Multi Thread)</strong>                                      lock)                                </p>
+<p><strong>Underlying Data   Array +           HashMap +       Array +          Array + Node + CAS  Red-Black
+  Structure</strong>         LinkedList/Tree   Doubly Linked   LinkedList                           Tree
+                                        List                                                 </p>
+<p><strong>Sorting           ❌ No             ❌ No           ❌ No            ❌ No               ✅ Yes
+  Capability</strong>                                                                               </p>
+<p><strong>Time Complexity   O(1) avg          O(1) avg        O(1) avg         O(1) avg            O(log n)
+  (get/put)</strong>                                                                                </p>
+<p><strong>Introduced In</strong>   Java 1.2          Java 1.4        Java 1.0         Java 1.5            Java 1.2</p>
+<p><strong>Best Use Case</strong>   General purpose   Maintain        Legacy           High-performance    Sorted data
+                      map               insertion order thread-safe map  concurrent apps     storage</p>
+<h2 id="quick-summary">📌 Quick Summary<a class="headerlink" href="#quick-summary" title="Permanent link">&para;</a></h2>
+<h3 id="hashmap">HashMap<a class="headerlink" href="#hashmap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fast</li>
+<li>No ordering</li>
+<li>Allows one null key</li>
+<li>Not thread-safe</li>
+</ul>
+<h3 id="linkedhashmap">LinkedHashMap<a class="headerlink" href="#linkedhashmap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maintains insertion order</li>
+<li>Slightly slower than HashMap</li>
+<li>Not thread-safe</li>
+</ul>
+<h3 id="hashtable">Hashtable<a class="headerlink" href="#hashtable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Thread-safe</li>
+<li>No null key or value</li>
+<li>Slower due to full synchronization</li>
+<li>Legacy class</li>
+</ul>
+<h3 id="concurrenthashmap">ConcurrentHashMap<a class="headerlink" href="#concurrenthashmap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Thread-safe</li>
+<li>High performance</li>
+<li>No null key or value</li>
+<li>Best for multi-threaded applications</li>
+</ul>
+<h3 id="treemap">TreeMap<a class="headerlink" href="#treemap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Stores keys in sorted order</li>
+<li>Uses Red-Black Tree</li>
+<li>Slower than HashMap</li>
+<li>No null key</li>
+</ul>
 <hr />
-<h1 id="final-comparison-all-maps">📊 Final Comparison (All Maps)<a class="headerlink" href="#final-comparison-all-maps" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>HashMap</th>
-<th>LinkedHashMap</th>
-<th>Hashtable</th>
-<th>ConcurrentHashMap</th>
-<th>TreeMap</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Order</td>
-<td>❌</td>
-<td>Insertion</td>
-<td>❌</td>
-<td>❌</td>
-<td>Sorted</td>
-</tr>
-<tr>
-<td>Thread-safe</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Speed</td>
-<td>⭐⭐⭐⭐⭐</td>
-<td>⭐⭐⭐⭐</td>
-<td>⭐⭐</td>
-<td>⭐⭐⭐⭐</td>
-<td>⭐⭐⭐</td>
-</tr>
-<tr>
-<td>Null key</td>
-<td>1</td>
-<td>1</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Internal DS</td>
-<td>Hash</td>
-<td>Hash+List</td>
-<td>Hash</td>
-<td>Hash+CAS</td>
-<td>Red-Black Tree</td>
-</tr>
-</tbody>
-</table>
-<hr />
+<h2 id="interview-one-line-summary">🎯 Interview One-Line Summary<a class="headerlink" href="#interview-one-line-summary" title="Permanent link">&para;</a></h2>
+<p>HashMap is fast and unordered, LinkedHashMap maintains insertion order,
+TreeMap maintains sorted order, Hashtable is a legacy synchronized map,
+and ConcurrentHashMap is the modern high-performance thread-safe map.</p>
 <hr />
 <h1 id="interview-rule-of-thumb">🎯 Interview Rule of Thumb<a class="headerlink" href="#interview-rule-of-thumb" title="Permanent link">&para;</a></h1>
 <p>👉 Fast lookup → <strong>HashMap</strong>
