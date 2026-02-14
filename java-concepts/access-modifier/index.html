@@ -4330,9 +4330,11 @@ BUT direct access blocked outside class.</p>
 <li>Stored in heap like other variables</li>
 </ul>
 <p>But access rule:</p>
-<p>✔ Same package → Direct access\
-✔ Subclass (even different package) → Access via inheritance\
-❌ Non-subclass outside package → Blocked</p>
+<ul>
+<li>✔ Same package → Direct access</li>
+<li>✔ Subclass (even different package) → Access via inheritance</li>
+<li>❌ Non-subclass outside package → Blocked</li>
+</ul>
 <h3 id="important-internal-detail">Important Internal Detail<a class="headerlink" href="#important-internal-detail" title="Permanent link">&para;</a></h3>
 <p>In different package:</p>
 <p>Protected members are accessible ONLY through inheritance,\
@@ -4383,15 +4385,43 @@ Employee Object
 </ul>
 <p>They simply restrict visibility at compilation level.</p>
 <hr />
-<h1 id="summary-table-memory-perspective">🔥 Summary Table (Memory Perspective)<a class="headerlink" href="#summary-table-memory-perspective" title="Permanent link">&para;</a></h1>
-<p>Modifier    Stored Where?   Who Can Access That Memory?</p>
-<hr />
-<p>public      Heap            Everyone
-  protected   Heap            Same package + subclasses
-  default     Heap            Same package only
-  private     Heap            Same class only
-  static      Method Area     Depends on modifier</p>
-<hr />
+<h1 id="access-modifier-summary-memory-perspective">🔥 Access Modifier Summary (Memory Perspective)<a class="headerlink" href="#access-modifier-summary-memory-perspective" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Stored Where?</th>
+<th>Who Can Access That Memory?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Heap</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Heap</td>
+<td>Same package + subclasses</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Heap</td>
+<td>Same package only</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Heap</td>
+<td>Same class only</td>
+</tr>
+<tr>
+<td>static</td>
+<td>Method Area</td>
+<td>Depends on its access modifier</td>
+</tr>
+</tbody>
+</table>
 <h1 id="final-interview-one-liner">🎯 Final Interview One-Liner<a class="headerlink" href="#final-interview-one-liner" title="Permanent link">&para;</a></h1>
 <p>Access modifiers do not change how memory is allocated.\
 They control visibility of that memory location at compile time.</p>
