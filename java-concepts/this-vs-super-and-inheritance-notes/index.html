@@ -4194,17 +4194,47 @@
     int age;
 
     Employee() {
-        this(&quot;Unknown&quot;, 0);
+        this(&quot;Unknown&quot;, 0);   // must be first statement
+        System.out.println(&quot;Default Constructor Called&quot;);
     }
 
     Employee(String name, int age) {
+        System.out.println(&quot;Parameterized Constructor Called&quot;);
         this.name = name;
         this.age = age;
     }
+
+    void display() {
+        System.out.println(&quot;Name: &quot; + name);
+        System.out.println(&quot;Age: &quot; + age);
+    }
 }
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println(&quot;Creating Employee using default constructor:&quot;);
+        Employee e1 = new Employee();
+        e1.display();
+
+        System.out.println(&quot;\nCreating Employee using parameterized constructor:&quot;);
+        Employee e2 = new Employee(&quot;Nitin&quot;, 28);
+        e2.display();
+    }
+}
+
 </code></pre>
 <p>Output:</p>
-<pre><code>Unknown 0
+<pre><code>Creating Employee using default constructor:
+Parameterized Constructor Called
+Default Constructor Called
+Name: Unknown
+Age: 0
+
+Creating Employee using parameterized constructor:
+Parameterized Constructor Called
+Name: Nitin
+Age: 28
 </code></pre>
 <hr />
 <h1 id="example-2-super">🔹 Example 2 — super()<a class="headerlink" href="#example-2-super" title="Permanent link">&para;</a></h1>
