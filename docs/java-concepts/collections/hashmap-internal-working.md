@@ -31,6 +31,7 @@ Conceptual view:
              []  []  []  []  []  []
 
 Each index is called a **bucket**.
+
 <img src="../../images/java/LinkHashMapInternal.png" alt="collision" width="400"/>
 ------------------------------------------------------------------------
 
@@ -79,7 +80,8 @@ If both keys map to index 5:
 This is called:
 
 👉 **Separate Chaining**
-<img src="../../images/java/hash-collision-en.jpeg.jpg" alt="collision" width="400"/>
+
+<img src="../../images/java/hash-collision-en.jpeg" alt="collision" width="400"/>
 ------------------------------------------------------------------------
 
 # 🔥 Step 4: How Data is Retrieved (get)
