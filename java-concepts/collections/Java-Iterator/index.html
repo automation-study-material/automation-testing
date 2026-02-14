@@ -4282,10 +4282,11 @@ while(it.hasNext()){
 </code></pre>
 <hr />
 <h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
-<p>❌ Only forward
-❌ Cannot add element
-❌ Cannot replace element</p>
-<hr />
+<ul>
+<li>❌ Only forward</li>
+<li>❌ Cannot add element</li>
+<li>❌ Cannot replace element</li>
+</ul>
 <hr />
 <h1 id="listiterator">🔹 ListIterator<a class="headerlink" href="#listiterator" title="Permanent link">&para;</a></h1>
 <h2 id="concept_1">Concept<a class="headerlink" href="#concept_1" title="Permanent link">&para;</a></h2>
@@ -4321,7 +4322,6 @@ while(it.hasPrevious()){
     System.out.println(it.previous());
 }
 </code></pre>
-<hr />
 <hr />
 <h2 id="difference-table-very-important-for-interview">🔥 Difference Table (Very important for interview)<a class="headerlink" href="#difference-table-very-important-for-interview" title="Permanent link">&para;</a></h2>
 <table>
@@ -4394,10 +4394,8 @@ while(it.hasPrevious()){
 <hr />
 <h2 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
 <p>Because iterator detects:</p>
-<pre><code>modCount changed
+<pre><code class="language-text">modCount changed
 </code></pre>
-<hr />
-<hr />
 <h1 id="fail-safe-iterator">🟢 Fail-Safe Iterator<a class="headerlink" href="#fail-safe-iterator" title="Permanent link">&para;</a></h1>
 <h2 id="concept_3">Concept<a class="headerlink" href="#concept_3" title="Permanent link">&para;</a></h2>
 <p>Works on <strong>copy of collection</strong>, so modification is safe.</p>
@@ -4419,8 +4417,6 @@ for(String s : list){
     list.remove(s); // ✅ safe
 }
 </code></pre>
-<hr />
-<hr />
 <h2 id="difference-table">🔥 Difference Table<a class="headerlink" href="#difference-table" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -4459,9 +4455,7 @@ for(String s : list){
 </tbody>
 </table>
 <hr />
-<hr />
 <h1 id="3-foreach-vs-iterator">✅ 3️⃣ forEach vs Iterator<a class="headerlink" href="#3-foreach-vs-iterator" title="Permanent link">&para;</a></h1>
-<hr />
 <h1 id="foreach-loop">🔹 forEach Loop<a class="headerlink" href="#foreach-loop" title="Permanent link">&para;</a></h1>
 <h3 id="concept_4">Concept<a class="headerlink" href="#concept_4" title="Permanent link">&para;</a></h3>
 <p>Simple and readable way to loop.</p>
@@ -4478,9 +4472,10 @@ for(String s : list){
 ✔ less code</p>
 <hr />
 <h3 id="cons">Cons<a class="headerlink" href="#cons" title="Permanent link">&para;</a></h3>
-<p>❌ cannot remove safely
-❌ less control</p>
-<hr />
+<ul>
+<li>❌ cannot remove safely</li>
+<li>❌ less control</li>
+</ul>
 <hr />
 <h1 id="iterator_1">🔹 Iterator<a class="headerlink" href="#iterator_1" title="Permanent link">&para;</a></h1>
 <h3 id="concept_5">Concept<a class="headerlink" href="#concept_5" title="Permanent link">&para;</a></h3>
@@ -4493,7 +4488,6 @@ while(it.hasNext()){
     String s = it.next();
 }
 </code></pre>
-<hr />
 <h3 id="pros_1">Pros<a class="headerlink" href="#pros_1" title="Permanent link">&para;</a></h3>
 <p>✔ safe remove
 ✔ more control
@@ -4501,7 +4495,6 @@ while(it.hasNext()){
 <hr />
 <h3 id="cons_1">Cons<a class="headerlink" href="#cons_1" title="Permanent link">&para;</a></h3>
 <p>❌ more code</p>
-<hr />
 <hr />
 <h2 id="difference-table_1">🔥 Difference Table<a class="headerlink" href="#difference-table_1" title="Permanent link">&para;</a></h2>
 <table>
@@ -4541,7 +4534,6 @@ while(it.hasNext()){
 </tbody>
 </table>
 <hr />
-<hr />
 <h1 id="real-selenium-framework-usage">✅ Real Selenium Framework Usage<a class="headerlink" href="#real-selenium-framework-usage" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="window-handles-set-iterator-needed">Window handles (Set → Iterator needed)<a class="headerlink" href="#window-handles-set-iterator-needed" title="Permanent link">&para;</a></h2>
@@ -4556,8 +4548,6 @@ it.remove();
 <h2 id="simple-read-logs">Simple read logs<a class="headerlink" href="#simple-read-logs" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">for(String log : logs)
 </code></pre>
-<hr />
-<hr />
 <h1 id="interview-quick-answers">✅ Interview Quick Answers<a class="headerlink" href="#interview-quick-answers" title="Permanent link">&para;</a></h1>
 <hr />
 <h3 id="q-difference-between-iterator-and-listiterator">Q: Difference between Iterator and ListIterator?<a class="headerlink" href="#q-difference-between-iterator-and-listiterator" title="Permanent link">&para;</a></h3>
@@ -4572,7 +4562,6 @@ it.remove();
 <h3 id="q-foreach-vs-iterator">Q: forEach vs Iterator?<a class="headerlink" href="#q-foreach-vs-iterator" title="Permanent link">&para;</a></h3>
 <p>forEach for read-only, Iterator for modification.</p>
 <hr />
-<hr />
 <h1 id="memory-tricks">✅ Memory Tricks<a class="headerlink" href="#memory-tricks" title="Permanent link">&para;</a></h1>
 <pre><code>Iterator → forward only
 ListIterator → both ways
@@ -4583,7 +4572,6 @@ Fail-safe → safe but heavy
 forEach → simple read
 Iterator → safe modify
 </code></pre>
-<hr />
 <hr />
 <h1 id="final-summary">✅ Final Summary<a class="headerlink" href="#final-summary" title="Permanent link">&para;</a></h1>
 <p>Use:</p>
