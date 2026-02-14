@@ -119,9 +119,9 @@ Memory:
 
 But access rule:
 
-✔ Same package → Direct access\
-✔ Subclass (even different package) → Access via inheritance\
-❌ Non-subclass outside package → Blocked
+- ✔ Same package → Direct access
+- ✔ Subclass (even different package) → Access via inheritance
+- ❌ Non-subclass outside package → Blocked
 
 ### Important Internal Detail
 
@@ -201,17 +201,17 @@ They simply restrict visibility at compilation level.
 
 ------------------------------------------------------------------------
 
-# 🔥 Summary Table (Memory Perspective)
+# 🔥 Access Modifier Summary (Memory Perspective)
 
-  Modifier    Stored Where?   Who Can Access That Memory?
-  ----------- --------------- -----------------------------
-  public      Heap            Everyone
-  protected   Heap            Same package + subclasses
-  default     Heap            Same package only
-  private     Heap            Same class only
-  static      Method Area     Depends on modifier
+| Modifier  | Stored Where? | Who Can Access That Memory?            |
+|-----------|---------------|----------------------------------------|
+| public    | Heap          | Everyone                               |
+| protected | Heap          | Same package + subclasses              |
+| default   | Heap          | Same package only                      |
+| private   | Heap          | Same class only                        |
+| static    | Method Area   | Depends on its access modifier         |
 
-------------------------------------------------------------------------
+
 
 # 🎯 Final Interview One-Liner
 
