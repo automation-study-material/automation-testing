@@ -4244,6 +4244,14 @@ Array:  A     B     C     D
 <p>When the internal array becomes full:</p>
 <pre><code class="language-java">newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1); // 1.5x growth
 </code></pre>
+<ul>
+<li><code>&gt;&gt; 1</code> : Right shift operator</li>
+<li>means:<ul>
+<li>👉 Divide the number by 2</li>
+<li>👉 (Faster than using / 2)</li>
+</ul>
+</li>
+</ul>
 <h3 id="what-happens-during-resize">What happens during resize?<a class="headerlink" href="#what-happens-during-resize" title="Permanent link">&para;</a></h3>
 <ol>
 <li>New larger array is created</li>
