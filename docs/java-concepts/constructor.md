@@ -453,24 +453,13 @@ Constructor executed
 
 ##### 🎯 Summary Table
 
-  --------------------------------------------------------------------------------
-  Modifier    Allowed?   Accessible From         Main Use Case       Can Be
-                                                                     Overridden?
-  ----------- ---------- ----------------------- ------------------- -------------
-  public      ✅ Yes     Anywhere                General object      ❌ No
-                                                 creation            
-
-  private     ✅ Yes     Same class only         Singleton pattern   ❌ No
-
-  default     ✅ Yes     Same package            Package-level       ❌ No
-                                                 control             
-
-  protected   ✅ Yes     Same package +          Controlled          ❌ No
-                         Subclasses              inheritance         
-
-  static      ❌ No      Not allowed             Invalid for         ❌ No
-                                                 constructor         
-  --------------------------------------------------------------------------------
+| Modifier  | Allowed? | Accessible From              | Main Use Case               | Can Be Overridden? |
+|-----------|----------|-----------------------------|-----------------------------|--------------------|
+| public    | ✅ Yes   | Anywhere                    | General object creation     | ❌ No |
+| private   | ✅ Yes   | Same class only             | Singleton pattern           | ❌ No |
+| default   | ✅ Yes   | Same package                | Package-level control       | ❌ No |
+| protected | ✅ Yes   | Same package + Subclasses   | Controlled inheritance      | ❌ No |
+| static    | ❌ No    | Not allowed                 | Invalid for constructor     | ❌ No |
   
 ## Key Takeaways
 
