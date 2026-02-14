@@ -4527,20 +4527,26 @@
 <li>OOP Concept: Inheritance – super() ensures parent class fields are initialized.</li>
 <li>Example:</li>
 </ul>
-<pre><code class="language-js">class Employee {
-    String name;
-    int age;
-    public Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
+<pre><code class="language-js">class Abc {
+    public Abc() {
+        System.out.println(&quot;ABC constructor - Abc&quot;); //1
     }
 }
 
-class Manager extends Employee {
-    String department;
-    public Manager(String name, int age, String department) {
-        super(name, age); // Parent constructor
-        this.department = department;
+class Xyz extends Abc {
+    public Xyz() {
+        this(2);
+        System.out.println(&quot;Xyz constructor - Xyz&quot;); //3
+    }
+
+    public Xyz(int a) {
+        System.out.println(&quot;Xyz Parametrized constructor - Xyz&quot;);   //2
+    }
+}
+
+public class TestClass2  {
+    public static void main(String[] args) {
+        Xyz Xyz1 = new Xyz();    
     }
 }
 </code></pre>
