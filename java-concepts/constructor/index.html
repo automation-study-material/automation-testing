@@ -5245,20 +5245,54 @@ Constructor executed
 </table>
 <h4 id="constructor-as-default-public-protected-private-and-static">Constructor as default, public, protected, private and static<a class="headerlink" href="#constructor-as-default-public-protected-private-and-static" title="Permanent link">&para;</a></h4>
 <h5 id="summary-table">🎯 Summary Table<a class="headerlink" href="#summary-table" title="Permanent link">&para;</a></h5>
-<hr />
-<p>Modifier    Allowed?   Accessible From         Main Use Case       Can Be
-                                                                     Overridden?</p>
-<hr />
-<p>public      ✅ Yes     Anywhere                General object      ❌ No
-                                                 creation            </p>
-<p>private     ✅ Yes     Same class only         Singleton pattern   ❌ No</p>
-<p>default     ✅ Yes     Same package            Package-level       ❌ No
-                                                 control             </p>
-<p>protected   ✅ Yes     Same package +          Controlled          ❌ No
-                         Subclasses              inheritance         </p>
-<p>static      ❌ No      Not allowed             Invalid for         ❌ No
-                                                 constructor         </p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Allowed?</th>
+<th>Accessible From</th>
+<th>Main Use Case</th>
+<th>Can Be Overridden?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>✅ Yes</td>
+<td>Anywhere</td>
+<td>General object creation</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>private</td>
+<td>✅ Yes</td>
+<td>Same class only</td>
+<td>Singleton pattern</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>default</td>
+<td>✅ Yes</td>
+<td>Same package</td>
+<td>Package-level control</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>✅ Yes</td>
+<td>Same package + Subclasses</td>
+<td>Controlled inheritance</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>static</td>
+<td>❌ No</td>
+<td>Not allowed</td>
+<td>Invalid for constructor</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
 <h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
 <h4 id="1constructors-oop">1.Constructors &amp; OOP<a class="headerlink" href="#1constructors-oop" title="Permanent link">&para;</a></h4>
 <ul>
