@@ -457,32 +457,100 @@ Map<Long,String> txns = new TreeMap<>();
 
 ---
 
----
 
-# 📊 Thread Safety Comparison
+# 📊 HashMap vs LinkedHashMap vs Hashtable vs ConcurrentHashMap vs TreeMap
 
-| Map               | Thread-Safe |
-| ----------------- | ----------- |
-| HashMap           | ❌           |
-| LinkedHashMap     | ❌           |
-| Hashtable         | ✅           |
-| ConcurrentHashMap | ✅           |
+  --------------------------------------------------------------------------------------------------------
+  Feature             HashMap           LinkedHashMap   Hashtable        ConcurrentHashMap   TreeMap
+  ------------------- ----------------- --------------- ---------------- ------------------- -------------
+  **Order             ❌ No order       ✅ Insertion    ❌ No order      ❌ No order         ✅ Sorted
+  Maintained?**                         order                                                order
+                                                                                             (Natural /
+                                                                                             Comparator)
 
----
+  **Null Key          ✅ 1 null key     ✅ 1 null key   ❌ No            ❌ No               ❌ No
+  Allowed?**                                                                                 
 
----
+  **Null Values       ✅ Yes            ✅ Yes          ❌ No            ❌ No               ✅ Yes
+  Allowed?**                                                                                 
 
-# 📊 Final Comparison (All Maps)
+  **Thread-Safe?**    ❌ No             ❌ No           ✅ Yes           ✅ Yes (Highly      ❌ No
+                                                        (Synchronized)   Concurrent)         
 
-| Feature     | HashMap | LinkedHashMap | Hashtable | ConcurrentHashMap | TreeMap        |
-| ----------- | ------- | ------------- | --------- | ----------------- | -------------- |
-| Order       | ❌       | Insertion     | ❌         | ❌                 | Sorted         |
-| Thread-safe | ❌       | ❌             | ✅         | ✅                 | ❌              |
-| Speed       | ⭐⭐⭐⭐⭐   | ⭐⭐⭐⭐          | ⭐⭐        | ⭐⭐⭐⭐              | ⭐⭐⭐            |
-| Null key    | 1       | 1             | ❌         | ❌                 | ❌              |
-| Internal DS | Hash    | Hash+List     | Hash      | Hash+CAS          | Red-Black Tree |
+  **Synchronization   None              None            Entire map       Segment-level /     None
+  Type**                                                locked           bucket-level        
+                                                                         locking             
 
----
+  **Performance       🚀 Very Fast      🚀 Slightly     🐢 Slower (sync  🚀 Fast             ⚖ Moderate
+  (Single Thread)**                     slower than     overhead)                            
+                                        HashMap                                              
+
+  **Performance       ❌ Unsafe         ❌ Unsafe       🐢 Slow (full    🚀 Best choice      ❌ Unsafe
+  (Multi Thread)**                                      lock)                                
+
+  **Underlying Data   Array +           HashMap +       Array +          Array + Node + CAS  Red-Black
+  Structure**         LinkedList/Tree   Doubly Linked   LinkedList                           Tree
+                                        List                                                 
+
+  **Sorting           ❌ No             ❌ No           ❌ No            ❌ No               ✅ Yes
+  Capability**                                                                               
+
+  **Time Complexity   O(1) avg          O(1) avg        O(1) avg         O(1) avg            O(log n)
+  (get/put)**                                                                                
+
+  **Introduced In**   Java 1.2          Java 1.4        Java 1.0         Java 1.5            Java 1.2
+
+  **Best Use Case**   General purpose   Maintain        Legacy           High-performance    Sorted data
+                      map               insertion order thread-safe map  concurrent apps     storage
+
+
+## 📌 Quick Summary
+
+### HashMap
+
+-   Fast
+-   No ordering
+-   Allows one null key
+-   Not thread-safe
+
+### LinkedHashMap
+
+-   Maintains insertion order
+-   Slightly slower than HashMap
+-   Not thread-safe
+
+### Hashtable
+
+-   Thread-safe
+-   No null key or value
+-   Slower due to full synchronization
+-   Legacy class
+
+### ConcurrentHashMap
+
+-   Thread-safe
+-   High performance
+-   No null key or value
+-   Best for multi-threaded applications
+
+### TreeMap
+
+-   Stores keys in sorted order
+-   Uses Red-Black Tree
+-   Slower than HashMap
+-   No null key
+
+------------------------------------------------------------------------
+
+## 🎯 Interview One-Line Summary
+
+HashMap is fast and unordered, LinkedHashMap maintains insertion order,
+TreeMap maintains sorted order, Hashtable is a legacy synchronized map,
+and ConcurrentHashMap is the modern high-performance thread-safe map.
+
+
+
+
 
 ---
 
