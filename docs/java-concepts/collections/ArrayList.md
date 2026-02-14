@@ -62,6 +62,10 @@ When the internal array becomes full:
 ```java
 newCapacity = oldCapacity + (oldCapacity >> 1); // 1.5x growth
 ```
+- `>> 1` : Right shift operator
+  - means:
+    - 👉 Divide the number by 2
+    - 👉 (Faster than using / 2)
 
 ### What happens during resize?
 
