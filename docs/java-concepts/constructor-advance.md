@@ -203,6 +203,8 @@ Total Students Created: 3
   - Cannot be overridden, but can be called using super() in subclass.
 - OOP Concept: Inheritance – super() ensures proper parent class initialization.
 
+- 🔥 Constructors are neither inherited nor overridden, but they participate in inheritance through constructor chaining using super().
+
 ✅ Constructor Chaining Example (Summary)
 
 ```java
