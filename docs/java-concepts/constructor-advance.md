@@ -154,19 +154,48 @@ class Singleton {
 - Example:
   
 ```java
-class Employee {
+package listeners;
+class Student {
     private String name;
-    private static int count = 0;
-
-    public Employee(String name) {
+    private static int totalStudents = 0;
+    private static int rollCounter = 100;
+    private int rollNumber;
+    public Student(String name) {
         this.name = name;
-        count++;
+        totalStudents++;
+        rollCounter++;
+        this.rollNumber = rollCounter;
     }
 
-    public static void showCount() {
-        System.out.println("Total Employees: " + count);
+    public void display() {
+        System.out.println("Name: " + name + ", Roll No: " + rollNumber);
+    }
+
+    public static void showTotalStudents() {
+        System.out.println("Total Students Created: " + totalStudents);
     }
 }
+public class TestClass3 {
+    public static void main(String[] args) {
+        Student s1 = new Student("Nitin");
+        Student s2 = new Student("Rahul");
+        Student s3 = new Student("Amit");
+
+        s1.display();
+        s2.display();
+        s3.display();
+
+        Student.showTotalStudents();
+    }
+}
+```
+
+Output:
+```text
+Name: Nitin, Roll No: 101
+Name: Rahul, Roll No: 102
+Name: Amit, Roll No: 103
+Total Students Created: 3
 ```
 ## 9. Can constructors be inherited or overridden?
 - **Answer:**
