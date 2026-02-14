@@ -24,19 +24,49 @@ class Employee {
     int age;
 
     Employee() {
-        this("Unknown", 0);
+        this("Unknown", 0);   // must be first statement
+        System.out.println("Default Constructor Called");
     }
 
     Employee(String name, int age) {
+        System.out.println("Parameterized Constructor Called");
         this.name = name;
         this.age = age;
     }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
 }
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Creating Employee using default constructor:");
+        Employee e1 = new Employee();
+        e1.display();
+
+        System.out.println("\nCreating Employee using parameterized constructor:");
+        Employee e2 = new Employee("Nitin", 28);
+        e2.display();
+    }
+}
+
 ```
 
 Output:
 ```
-Unknown 0
+Creating Employee using default constructor:
+Parameterized Constructor Called
+Default Constructor Called
+Name: Unknown
+Age: 0
+
+Creating Employee using parameterized constructor:
+Parameterized Constructor Called
+Name: Nitin
+Age: 28
 ```
 
 ---
