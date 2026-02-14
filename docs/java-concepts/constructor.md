@@ -362,7 +362,7 @@ otherwise compilation fails.
 
 ------------------------------------------------------------------------
 
- ######🔹 Rule 3 (Most Important)
+###### 🔹 Rule 2 (Most Important)
 
 👉 Whenever a child object is created,\
 a parent constructor **must execute first**.
