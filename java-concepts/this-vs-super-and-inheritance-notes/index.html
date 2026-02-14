@@ -4332,23 +4332,52 @@ class Dog extends Animal {
         System.out.println(&quot;Dog barks&quot;);
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+
+        Animal a = new Animal();
+        a.sound();
+
+        Animal b = new Dog();
+        b.sound();
+
+        Dog d = new Dog();
+        d.sound();
+    }
+}
 </code></pre>
 <p>Output:</p>
-<pre><code>Dog barks
+<pre><code>Animal sound
+Dog barks
+Dog barks
 </code></pre>
 <hr />
 <h1 id="example-multi-level-inheritance">🔹 Example — Multi-Level Inheritance<a class="headerlink" href="#example-multi-level-inheritance" title="Permanent link">&para;</a></h1>
 <pre><code class="language-java">class A {
-    A() { System.out.println(&quot;A&quot;); }
+    A() { 
+        System.out.println(&quot;A&quot;); 
+    }
 }
 
 class B extends A {
-    B() { System.out.println(&quot;B&quot;); }
+    B() { 
+        System.out.println(&quot;B&quot;); 
+    }
 }
 
 class C extends B {
-    C() { System.out.println(&quot;C&quot;); }
+    C() { 
+        System.out.println(&quot;C&quot;); 
+    }
 }
+
+public class Main {
+    public static void main(String[] args) {
+        C obj = new C();
+    }
+}
+
 </code></pre>
 <p>Output:</p>
 <pre><code>A
