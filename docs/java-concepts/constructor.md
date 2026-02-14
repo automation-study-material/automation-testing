@@ -332,6 +332,44 @@ Output:
 Name: Alice, Age: 35
 Department: IT
 ```
+##### ✅ Golden Rules for Constructor Chaining
+
+###### 🔹 Rule 1
+
+If a child constructor does **not** explicitly call `super(...)`,\
+then the compiler automatically inserts:
+
+``` java
+super();
+```
+
+So the parent class **must have a no-argument (default) constructor**,\
+otherwise compilation fails.
+
+------------------------------------------------------------------------
+
+###### 🔹 Rule 2
+
+If the child constructor explicitly calls:
+
+``` java
+super(parameters);
+```
+
+Then the parent class **must have that matching parameterized
+constructor**,\
+otherwise compilation fails.
+
+------------------------------------------------------------------------
+
+ ######🔹 Rule 3 (Most Important)
+
+👉 Whenever a child object is created,\
+a parent constructor **must execute first**.
+
+Java will not allow object creation without completing constructor
+chaining.
+
 ### 5.Private Constructor
 - Restricts object creation outside the class.
 - Used in Singleton Design Pattern.
