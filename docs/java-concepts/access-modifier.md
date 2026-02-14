@@ -199,7 +199,7 @@ They do NOT:
 
 They simply restrict visibility at compilation level.
 
-------------------------------------------------------------------------
+
 
 # 🔥 Access Modifier Summary (Memory Perspective)
 
