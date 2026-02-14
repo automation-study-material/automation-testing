@@ -43,13 +43,12 @@ while(it.hasNext()){
 
 ### Limitations
 
-❌ Only forward
-❌ Cannot add element
-❌ Cannot replace element
+- ❌ Only forward
+- ❌ Cannot add element
+- ❌ Cannot replace element
 
 ---
 
----
 
 # 🔹 ListIterator
 
@@ -97,8 +96,6 @@ while(it.hasPrevious()){
     System.out.println(it.previous());
 }
 ```
-
----
 
 ---
 
@@ -162,13 +159,11 @@ for(String s : list){
 
 Because iterator detects:
 
-```
+```text
 modCount changed
 ```
 
----
 
----
 
 # 🟢 Fail-Safe Iterator
 
@@ -202,9 +197,7 @@ for(String s : list){
 }
 ```
 
----
 
----
 
 ## 🔥 Difference Table
 
@@ -218,11 +211,11 @@ for(String s : list){
 
 ---
 
----
+
 
 # ✅ 3️⃣ forEach vs Iterator
 
----
+
 
 # 🔹 forEach Loop
 
@@ -252,12 +245,11 @@ for(String s : list){
 
 ### Cons
 
-❌ cannot remove safely
-❌ less control
+- ❌ cannot remove safely
+- ❌ less control
 
 ---
 
----
 
 # 🔹 Iterator
 
@@ -277,8 +269,6 @@ while(it.hasNext()){
 }
 ```
 
----
-
 ### Pros
 
 ✔ safe remove
@@ -293,7 +283,6 @@ while(it.hasNext()){
 
 ---
 
----
 
 ## 🔥 Difference Table
 
@@ -307,7 +296,6 @@ while(it.hasNext()){
 
 ---
 
----
 
 # ✅ Real Selenium Framework Usage
 
@@ -336,9 +324,7 @@ it.remove();
 for(String log : logs)
 ```
 
----
 
----
 
 # ✅ Interview Quick Answers
 
@@ -368,7 +354,7 @@ forEach for read-only, Iterator for modification.
 
 ---
 
----
+
 
 # ✅ Memory Tricks
 
@@ -385,7 +371,7 @@ Iterator → safe modify
 
 ---
 
----
+
 
 # ✅ Final Summary
 
