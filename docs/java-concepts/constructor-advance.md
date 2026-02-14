@@ -86,21 +86,27 @@ class Employee {
 - Example:
 
 ```js
-class Employee {
-    String name;
-    int age;
-    public Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+class Abc {
+	public Abc() {
+		System.out.println("ABC constructor - Abc"); //1
+	}
 }
 
-class Manager extends Employee {
-    String department;
-    public Manager(String name, int age, String department) {
-        super(name, age); // Parent constructor
-        this.department = department;
-    }
+class Xyz extends Abc {
+	public Xyz() {
+		this(2);
+		System.out.println("Xyz constructor - Xyz"); //3
+	}
+	
+	public Xyz(int a) {
+		System.out.println("Xyz Parametrized constructor - Xyz");	//2
+	}
+}
+
+public class TestClass2  {
+	public static void main(String[] args) {
+		Xyz Xyz1 = new Xyz();    
+	}
 }
 ```
 
