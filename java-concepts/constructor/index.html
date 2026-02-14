@@ -544,6 +544,51 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="b) Using super() – Calling Parent Class Constructor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#golden-rules-for-constructor-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Golden Rules for Constructor Chaining
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Golden Rules for Constructor Chaining">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rule-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Rule 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rule-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Rule 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4513,6 +4558,51 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="b) Using super() – Calling Parent Class Constructor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#golden-rules-for-constructor-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Golden Rules for Constructor Chaining
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Golden Rules for Constructor Chaining">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rule-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Rule 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rule-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Rule 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4966,6 +5056,28 @@ public class Main {
 <pre><code class="language-text">Name: Alice, Age: 35
 Department: IT
 </code></pre>
+<h5 id="golden-rules-for-constructor-chaining">✅ Golden Rules for Constructor Chaining<a class="headerlink" href="#golden-rules-for-constructor-chaining" title="Permanent link">&para;</a></h5>
+<h6 id="rule-1">🔹 Rule 1<a class="headerlink" href="#rule-1" title="Permanent link">&para;</a></h6>
+<p>If a child constructor does <strong>not</strong> explicitly call <code>super(...)</code>,\
+then the compiler automatically inserts:</p>
+<pre><code class="language-java">super();
+</code></pre>
+<p>So the parent class <strong>must have a no-argument (default) constructor</strong>,\
+otherwise compilation fails.</p>
+<hr />
+<h6 id="rule-2">🔹 Rule 2<a class="headerlink" href="#rule-2" title="Permanent link">&para;</a></h6>
+<p>If the child constructor explicitly calls:</p>
+<pre><code class="language-java">super(parameters);
+</code></pre>
+<p>Then the parent class <strong>must have that matching parameterized
+constructor</strong>,\
+otherwise compilation fails.</p>
+<hr />
+<p>######🔹 Rule 3 (Most Important)</p>
+<p>👉 Whenever a child object is created,\
+a parent constructor <strong>must execute first</strong>.</p>
+<p>Java will not allow object creation without completing constructor
+chaining.</p>
 <h3 id="5private-constructor">5.Private Constructor<a class="headerlink" href="#5private-constructor" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Restricts object creation outside the class.</li>
