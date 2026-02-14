@@ -39,6 +39,7 @@ nav:
       - Stake: java-concepts/collections/stake.md
       - HashSet vs LinkedHashSet: java-concepts/collections/HashSet-vs-LinkedHashSet.md
       - Map: java-concepts/collections/Map-Framework.md
+      - Map Internal Working: java-concepts/collections/hashmap-internal-working.md
       - Iterator: java-concepts/collections/Java-Iterator.md
     - Wrapper Class:
       - Wrapper class: java-concepts/wrapper-classes/wrapper-classes.md
