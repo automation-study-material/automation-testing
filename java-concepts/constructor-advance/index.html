@@ -4623,19 +4623,46 @@ Example:</li>
 <li>OOP Concept: Encapsulation + Class-level state</li>
 <li>Example:</li>
 </ul>
-<pre><code class="language-java">class Employee {
+<pre><code class="language-java">package listeners;
+class Student {
     private String name;
-    private static int count = 0;
-
-    public Employee(String name) {
+    private static int totalStudents = 0;
+    private static int rollCounter = 100;
+    private int rollNumber;
+    public Student(String name) {
         this.name = name;
-        count++;
+        totalStudents++;
+        rollCounter++;
+        this.rollNumber = rollCounter;
     }
 
-    public static void showCount() {
-        System.out.println(&quot;Total Employees: &quot; + count);
+    public void display() {
+        System.out.println(&quot;Name: &quot; + name + &quot;, Roll No: &quot; + rollNumber);
+    }
+
+    public static void showTotalStudents() {
+        System.out.println(&quot;Total Students Created: &quot; + totalStudents);
     }
 }
+public class TestClass3 {
+    public static void main(String[] args) {
+        Student s1 = new Student(&quot;Nitin&quot;);
+        Student s2 = new Student(&quot;Rahul&quot;);
+        Student s3 = new Student(&quot;Amit&quot;);
+
+        s1.display();
+        s2.display();
+        s3.display();
+
+        Student.showTotalStudents();
+    }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">Name: Nitin, Roll No: 101
+Name: Rahul, Roll No: 102
+Name: Amit, Roll No: 103
+Total Students Created: 3
 </code></pre>
 <h2 id="9-can-constructors-be-inherited-or-overridden">9. Can constructors be inherited or overridden?<a class="headerlink" href="#9-can-constructors-be-inherited-or-overridden" title="Permanent link">&para;</a></h2>
 <ul>
