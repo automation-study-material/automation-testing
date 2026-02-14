@@ -193,10 +193,26 @@ class Dog extends Animal {
         System.out.println("Dog barks");
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+
+        Animal a = new Animal();
+        a.sound();
+
+        Animal b = new Dog();
+        b.sound();
+
+        Dog d = new Dog();
+        d.sound();
+    }
+}
 ```
 
 Output:
 ```
+Animal sound
+Dog barks
 Dog barks
 ```
 
@@ -206,16 +222,29 @@ Dog barks
 
 ```java
 class A {
-    A() { System.out.println("A"); }
+    A() { 
+        System.out.println("A"); 
+    }
 }
 
 class B extends A {
-    B() { System.out.println("B"); }
+    B() { 
+        System.out.println("B"); 
+    }
 }
 
 class C extends B {
-    C() { System.out.println("C"); }
+    C() { 
+        System.out.println("C"); 
+    }
 }
+
+public class Main {
+    public static void main(String[] args) {
+        C obj = new C();
+    }
+}
+
 ```
 
 Output:
