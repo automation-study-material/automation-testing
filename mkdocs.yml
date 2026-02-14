@@ -10,6 +10,7 @@ nav:
       - Advanace: java-concepts/constructor-advance.md
       - Notes: java-concepts/this-vs-super-and-inheritance-notes
     - Access modifier: java-concepts/access-modifier.md
+    - HashCode: java-concepts/hashCode.md
     - Oops Concepts:
       - Encapsulation: 
         - Concept: java-concepts/encapsulation.md
