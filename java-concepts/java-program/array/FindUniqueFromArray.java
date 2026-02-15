@@ -17,12 +17,16 @@ public class FindUniqueFromArray {
 				list.add(ar[i]); 
 				System.out.println(ar[i]);
 			}
-
 		}
-
-
 		System.out.println(list);
-
 	}
-
 }
+
+/*
+Output:
+33
+34
+878
+[33, 34, 878]
+*/
+
