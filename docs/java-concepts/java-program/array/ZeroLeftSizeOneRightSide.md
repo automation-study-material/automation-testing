@@ -1,3 +1,4 @@
+```java
 package listeners;
 import java.util.ArrayList;
 
@@ -27,8 +28,12 @@ public class TestClass4 {
 		return arr;
 	}
 }
+```
 
-/*
+Output:
+
+```
 Output:
 000001111
-*/
+```
+
