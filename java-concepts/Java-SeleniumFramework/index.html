@@ -4753,17 +4753,16 @@
 <p>You can <strong>download this <code>.md</code> file and keep it as notes or documentation</strong>.</p>
 <hr />
 <h2 id="1-folder-structure">1. Folder Structure<a class="headerlink" href="#1-folder-structure" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/automation-study-material/java-selenium-framework/blob/main/pom.xml">pom.xml</a></p>
-<pre><code class="language-text">selenium-oops-framework/ 
-├── [pom.xml](https://github.com/username/repo/blob/main/pom.xml)
+<p>selenium-oops-framework/ 
+├── pom.xml
 ├── testng.xml
 ├── src
 │   ├── main
 │   │   ├── java
-│   │   │   ├── config     
+│   │   │   ├── config   <br />
 │   │   │   │   └── ConfigReader.java // Read Config.properties file and override default properties
 │   │   │   ├── driver
-│   │   │   │   ├── DriverFactory.java
+│   │   │   │   ├── <a href="#b-driver-factory-provide-driver-instance-bases-on-cloud-or-local-provider">DriverFactory.java</a>
 │   │   │   │   ├── DriverManager.java
 │   │   │   │   ├── config
 │   │   │   │   │   ├── BrowserStackConfigLoader.java
@@ -4790,8 +4789,7 @@
 │           ├── base
 │           │   └── BaseTest.java
 │           └── tests
-│               └── GoogleTest.java
-</code></pre>
+│               └── GoogleTest.java</p>
 <h2 id="2-driver-factory-drivermanager-driverfactory">2. Driver Factory -&gt; DriverManager + DriverFactory<a class="headerlink" href="#2-driver-factory-drivermanager-driverfactory" title="Permanent link">&para;</a></h2>
 <h3 id="a-driver-manager-its-create-webdriver-instance">A. Driver Manager: Its Create WebDriver Instance.<a class="headerlink" href="#a-driver-manager-its-create-webdriver-instance" title="Permanent link">&para;</a></h3>
 <pre><code class="language-java">package driver;
