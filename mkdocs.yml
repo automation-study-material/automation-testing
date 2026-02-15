@@ -50,7 +50,7 @@ nav:
       - Find Duplicate From Array By HashSet: java-concepts/java-program/array/docs/java-concepts/java-program/array/DuplicateFromArrayByHashSet.java
       - FInd unique From Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/FindUniqueFromArray.java
       - Find Max & Min from ARray: java-concepts/java-program/array/docs/java-concepts/java-program/array/Min_Max_From_Array.java
-      - Reverse Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/Reverse_Array.java
+      - Reverse Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/Reverse_Array.md
       - Reverse First Half of Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/Reverse_First_Half_Array.java
       - Revrese Second Half of Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/Reverse_Second_Half_Array2.java
       - Move all Zero to left side: java-concepts/java-program/array/docs/java-concepts/java-program/array/ZeroLeftSizeOneRightSide.java
