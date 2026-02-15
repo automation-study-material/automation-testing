@@ -21,3 +21,9 @@ public class Reverse_Array {
 		}
 	}
 }
+
+/*
+Output:
+-5 54 67 54 34 12 
+
+*/
