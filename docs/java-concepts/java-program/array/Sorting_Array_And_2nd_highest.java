@@ -17,5 +17,15 @@ public class Sorting_Array {
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }
-    }
+		// Find 2nd Highest Number
+		int max = array[array.length - 1];
+		int secondHighest = -1;
+
+		for (int i = array.length - 2; i >= 0; i--) {
+    		if (array[i] != max) {
+        		secondHighest = array[i];
+       		 break;
+    		}
+    	}
 }
+
