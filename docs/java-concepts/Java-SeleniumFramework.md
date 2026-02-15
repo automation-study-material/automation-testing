@@ -16,12 +16,9 @@ You can **download this `.md` file and keep it as notes or documentation**.
 ---
 
 ## 1. Folder Structure
-[pom.xml](https://github.com/automation-study-material/java-selenium-framework/blob/main/pom.xml)
 
-
-```text
 selenium-oops-framework/ 
-├── [pom.xml](https://github.com/username/repo/blob/main/pom.xml)
+├── pom.xml
 ├── testng.xml
 ├── src
 │   ├── main
@@ -29,7 +26,7 @@ selenium-oops-framework/
 │   │   │   ├── config     
 │   │   │   │   └── ConfigReader.java // Read Config.properties file and override default properties
 │   │   │   ├── driver
-│   │   │   │   ├── DriverFactory.java
+│   │   │   │   ├── [DriverFactory.java](#b-driver-factory-provide-driver-instance-bases-on-cloud-or-local-provider)
 │   │   │   │   ├── DriverManager.java
 │   │   │   │   ├── config
 │   │   │   │   │   ├── BrowserStackConfigLoader.java
@@ -57,7 +54,7 @@ selenium-oops-framework/
 │           │   └── BaseTest.java
 │           └── tests
 │               └── GoogleTest.java
-```
+
 
 ## 2. Driver Factory -> DriverManager + DriverFactory
 
