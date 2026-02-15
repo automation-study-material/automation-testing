@@ -1,3 +1,4 @@
+```java
 package org.array;
 
 public class Min_Max_From_Array {
@@ -16,3 +17,4 @@ public class Min_Max_From_Array {
 		System.out.println("The minimum number is: " + min);
 	}
 }
+```

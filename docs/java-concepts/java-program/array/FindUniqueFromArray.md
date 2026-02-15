@@ -1,3 +1,4 @@
+```java
 package org.array;
 import java.util.ArrayList;
 public class FindUniqueFromArray {
@@ -21,12 +22,16 @@ public class FindUniqueFromArray {
 		System.out.println(list);
 	}
 }
+```
 
-/*
+Output:
+
+```txt
 Output:
 33
 34
 878
 [33, 34, 878]
-*/
+```
+
 

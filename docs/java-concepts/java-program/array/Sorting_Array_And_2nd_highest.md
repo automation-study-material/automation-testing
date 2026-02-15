@@ -1,3 +1,4 @@
+```java
 package org.array;
 
 public class Sorting_Array {
@@ -28,4 +29,6 @@ public class Sorting_Array {
     		}
     	}
 }
+```
+
 

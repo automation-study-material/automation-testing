@@ -1,3 +1,4 @@
+```java
 package org.array;
 
 public class FindDuplicateFromArray {
@@ -23,3 +24,4 @@ public class FindDuplicateFromArray {
 	
 	}
 }
+```
