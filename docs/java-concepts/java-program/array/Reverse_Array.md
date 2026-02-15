@@ -1,3 +1,4 @@
+```java
 package org.array;
 
 public class Reverse_Array {
@@ -21,9 +22,11 @@ public class Reverse_Array {
 		}
 	}
 }
-
-/*
+```
+Output
+```text
 Output:
--5 54 67 54 34 12 
+-5 54 67 54 34 12
+```
 
-*/
+
