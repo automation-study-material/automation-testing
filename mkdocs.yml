@@ -43,7 +43,18 @@ nav:
       - Iterator: java-concepts/collections/Java-Iterator.md
     - Wrapper Class:
       - Wrapper class: java-concepts/wrapper-classes/wrapper-classes.md
-  
+  - Java Program:
+    - Array:
+      - Sorting Of Array and Find second Largest: java-concepts/java-program/array/docs/java-concepts/java-program/array/Sorting_Array_And_2nd_highest.java
+      - Find Duplicate From Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/FindDuplicateFromArray.java
+      - Find Duplicate From Array By HashSet: java-concepts/java-program/array/docs/java-concepts/java-program/array/DuplicateFromArrayByHashSet.java
+      - FInd unique From Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/FindUniqueFromArray.java
+      - Find Max & Min from ARray: java-concepts/java-program/array/docs/java-concepts/java-program/array/Min_Max_From_Array.java
+      - Reverse Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/Reverse_Array.java
+      - Reverse First Half of Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/Reverse_First_Half_Array.java
+      - Revrese Second Half of Array: java-concepts/java-program/array/docs/java-concepts/java-program/array/Reverse_Second_Half_Array2.java
+      - Move all Zero to left side: java-concepts/java-program/array/docs/java-concepts/java-program/array/ZeroLeftSizeOneRightSide.java
+      
   - BDD Cucumber:
     - Cucumber Notes: cucumber/cucumber.md
     - CucumberTags: cucumber/cucumber-tags.md
