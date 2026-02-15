@@ -16,7 +16,7 @@ You can **download this `.md` file and keep it as notes or documentation**.
 ---
 
 ## 1. Folder Structure
-[pom.xml](https://github.com/username/repo/blob/main/pom.xml)
+[pom.xml](https://github.com/automation-study-material/java-selenium-framework/blob/main/pom.xml)
 
 
 ```text
