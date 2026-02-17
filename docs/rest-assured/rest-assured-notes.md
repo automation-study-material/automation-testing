@@ -203,11 +203,68 @@ given()
 ---
 
 ### 9.2 HashMap Payload
-
+#### Json Reuest
+```json
+{
+  "name": "John",
+  "job": "QA Engineer",
+  "age": 30,
+  "isActive": true,
+  "address": {
+    "street": "MG Road",
+    "city": "Pune",
+    "zip": "411001"
+  },
+  "skills": ["Java", "Selenium", "API"],
+  "projects": [
+    {
+      "projectName": "Banking App",
+      "duration": 12
+    },
+    {
+      "projectName": "E-commerce",
+      "duration": 8
+    }
+  ]
+}
+```
 ```java
-Map<String, String> data = new HashMap<>();
+import java.util.*;
+
+Map<String, Object> data = new HashMap<>();
+
+// Simple fields
 data.put("name", "John");
-data.put("job", "Tester");
+data.put("job", "QA Engineer");
+data.put("age", 30);
+data.put("isActive", true);
+
+// Nested Object (address)
+Map<String, Object> address = new HashMap<>();
+address.put("street", "MG Road");
+address.put("city", "Pune");
+address.put("zip", "411001");
+
+data.put("address", address);
+
+// Array (skills)
+List<String> skills = Arrays.asList("Java", "Selenium", "API");
+data.put("skills", skills);
+
+// Array of Objects (projects)
+Map<String, Object> project1 = new HashMap<>();
+project1.put("projectName", "Banking App");
+project1.put("duration", 12);
+
+Map<String, Object> project2 = new HashMap<>();
+project2.put("projectName", "E-commerce");
+project2.put("duration", 8);
+
+List<Map<String, Object>> projects = new ArrayList<>();
+projects.add(project1);
+projects.add(project2);
+
+data.put("projects", projects);
 
 given()
     .baseUri("https://reqres.in")
@@ -217,6 +274,7 @@ given()
     .post("/api/users")
 .then()
     .statusCode(201);
+
 ```
 
 ---
