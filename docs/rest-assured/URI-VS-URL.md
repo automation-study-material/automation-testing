@@ -57,12 +57,11 @@ It identifies a book using ISBN, but doesn't tell where it is.
 
 ## 🔥 Key Difference Table
 
-  Feature              URI                           URL
-  -------------------- ----------------------------- -------------------------------
-  Full Form            Uniform Resource Identifier   Uniform Resource Locator
-  Purpose              Identifies a resource         Identifies + Locates resource
-  Includes protocol?   Not always                    Yes
-  Includes location?   Not always                    Yes
-  Type                 Parent concept                Subtype of URI
+| Feature            | URI                         | URL                           |
+| ------------------ | --------------------------- | ----------------------------- |
+| Full Form          | Uniform Resource Identifier | Uniform Resource Locator      |
+| Purpose            | Identifies a resource       | Identifies + Locates resource |
+| Includes protocol? | Not always                  | Yes                           |
+| Includes location? | Not always                  | Yes                           |
+| Type               | Parent concept              | Subtype of URI                |
 
-------------------------------------------------------------------------
