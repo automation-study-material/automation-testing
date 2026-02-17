@@ -1,54 +1,61 @@
-# URL vs URI -- Complete Guide
+# URI vs URL vs URN
 
 ------------------------------------------------------------------------
 
-# 1️⃣ Basic Definitions
+## 🔹 URI (Uniform Resource Identifier)
 
-## URI (Uniform Resource Identifier)
+A URI is a generic identifier used to identify a resource.
 
-A URI is a generic identifier used to identify a resource. It can
-identify: - A web page - An API endpoint - A file - An image - A book
-(via ISBN)
+It can identify:
 
-URI = Parent Concept
+-   A web page
+-   A file
+-   An image
+-   An API endpoint
+-   Even a book (via ISBN)
 
-------------------------------------------------------------------------
+👉 URI can be of two types:
 
-## URL (Uniform Resource Locator)
-
-A URL is a type of URI that: - Identifies the resource - Provides its
-location - Specifies how to access it (protocol)
-
-Example: https://example.com/products?id=10
-
-It contains: - Protocol → https - Domain → example.com - Path →
-/products - Query → ?id=10
+-   URL
+-   URN
 
 ------------------------------------------------------------------------
 
-## URN (Uniform Resource Name)
+## 🔹 URL (Uniform Resource Locator)
 
-A URN identifies a resource by name only (not location).
+A URL is a type of URI that tells:
 
-Example: urn:isbn:9780132350884
+-   Where the resource is located
+-   How to access it (protocol)
+
+### Example:
+
+    https://example.com/products?id=10
+
+It contains:
+
+-   Protocol → https\
+-   Domain → example.com\
+-   Path → /products\
+-   Query → ?id=10
+
+So it tells **location + access method**.
 
 ------------------------------------------------------------------------
 
-# 2️⃣ Diagram Explanation
+## 🔹 URN (Uniform Resource Name)
 
-                URI
-               /                 /                URL       URN
+A URN identifies a resource by name only, not location.
 
-URI = Identifier\
-URL = Identifier + Location\
-URN = Identifier by Name
+### Example:
 
-Simple Memory Trick: All URLs are URIs\
-But not all URIs are URLs
+    urn:isbn:9780132350884
+
+It identifies a book using ISBN, but doesn't tell where it is.
 
 ------------------------------------------------------------------------
 
-# 3️⃣ Key Differences Table
+## 🔥 Key Difference Table
 
   Feature              URI                           URL
   -------------------- ----------------------------- -------------------------------
@@ -59,53 +66,3 @@ But not all URIs are URLs
   Type                 Parent concept                Subtype of URI
 
 ------------------------------------------------------------------------
-
-# 4️⃣ Tricky Interview Questions
-
-Q1: Is every URI a URL?\
-Answer: No. URL is a subtype of URI.
-
-Q2: Is every URL a URI?\
-Answer: Yes.
-
-Q3: Is HTTPS mandatory for a URL?\
-Answer: No. URL can use HTTP, FTP, etc.
-
-Q4: Is "mailto:abc@gmail.com" a URL?\
-Answer: Yes. It is a URL because it specifies a scheme.
-
-Q5: What is the difference between URI and endpoint in REST?\
-Answer: Endpoint refers to a specific URI that accepts client requests.
-
-------------------------------------------------------------------------
-
-# 5️⃣ How It Relates to REST API Design
-
-In REST APIs:
-
-Example: https://api.company.com/users/101
-
-This is both: - URI (because it identifies a resource) - URL (because it
-provides location + protocol)
-
-Best Practices in REST:
-
-1.  Use nouns, not verbs Good: /users Bad: /getUsers
-
-2.  Use hierarchical structure /users/101/orders
-
-3.  Keep URIs consistent and predictable
-
-4.  Use query parameters for filtering /users?status=active
-
-------------------------------------------------------------------------
-
-# 6️⃣ Interview Short Answer
-
-URI is a general identifier of a resource. URL is a type of URI that
-also tells where the resource is located and how to access it. All URLs
-are URIs, but not all URIs are URLs.
-
-------------------------------------------------------------------------
-
-End of Document
