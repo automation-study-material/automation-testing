@@ -3129,6 +3129,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="9.2 HashMap Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-reuest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Json Reuest
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -5716,6 +5733,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="9.2 HashMap Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-reuest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Json Reuest
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6348,9 +6382,66 @@ given()
 </code></pre>
 <hr />
 <h3 id="92-hashmap-payload">9.2 HashMap Payload<a class="headerlink" href="#92-hashmap-payload" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Map&lt;String, String&gt; data = new HashMap&lt;&gt;();
+<h4 id="json-reuest">Json Reuest<a class="headerlink" href="#json-reuest" title="Permanent link">&para;</a></h4>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;John&quot;,
+  &quot;job&quot;: &quot;QA Engineer&quot;,
+  &quot;age&quot;: 30,
+  &quot;isActive&quot;: true,
+  &quot;address&quot;: {
+    &quot;street&quot;: &quot;MG Road&quot;,
+    &quot;city&quot;: &quot;Pune&quot;,
+    &quot;zip&quot;: &quot;411001&quot;
+  },
+  &quot;skills&quot;: [&quot;Java&quot;, &quot;Selenium&quot;, &quot;API&quot;],
+  &quot;projects&quot;: [
+    {
+      &quot;projectName&quot;: &quot;Banking App&quot;,
+      &quot;duration&quot;: 12
+    },
+    {
+      &quot;projectName&quot;: &quot;E-commerce&quot;,
+      &quot;duration&quot;: 8
+    }
+  ]
+}
+</code></pre>
+<pre><code class="language-java">import java.util.*;
+
+Map&lt;String, Object&gt; data = new HashMap&lt;&gt;();
+
+// Simple fields
 data.put(&quot;name&quot;, &quot;John&quot;);
-data.put(&quot;job&quot;, &quot;Tester&quot;);
+data.put(&quot;job&quot;, &quot;QA Engineer&quot;);
+data.put(&quot;age&quot;, 30);
+data.put(&quot;isActive&quot;, true);
+
+// Nested Object (address)
+Map&lt;String, Object&gt; address = new HashMap&lt;&gt;();
+address.put(&quot;street&quot;, &quot;MG Road&quot;);
+address.put(&quot;city&quot;, &quot;Pune&quot;);
+address.put(&quot;zip&quot;, &quot;411001&quot;);
+
+data.put(&quot;address&quot;, address);
+
+// Array (skills)
+List&lt;String&gt; skills = Arrays.asList(&quot;Java&quot;, &quot;Selenium&quot;, &quot;API&quot;);
+data.put(&quot;skills&quot;, skills);
+
+// Array of Objects (projects)
+Map&lt;String, Object&gt; project1 = new HashMap&lt;&gt;();
+project1.put(&quot;projectName&quot;, &quot;Banking App&quot;);
+project1.put(&quot;duration&quot;, 12);
+
+Map&lt;String, Object&gt; project2 = new HashMap&lt;&gt;();
+project2.put(&quot;projectName&quot;, &quot;E-commerce&quot;);
+project2.put(&quot;duration&quot;, 8);
+
+List&lt;Map&lt;String, Object&gt;&gt; projects = new ArrayList&lt;&gt;();
+projects.add(project1);
+projects.add(project2);
+
+data.put(&quot;projects&quot;, projects);
 
 given()
     .baseUri(&quot;https://reqres.in&quot;)
@@ -6360,6 +6451,7 @@ given()
     .post(&quot;/api/users&quot;)
 .then()
     .statusCode(201);
+
 </code></pre>
 <hr />
 <h3 id="93-json-file-payload">9.3 JSON File Payload<a class="headerlink" href="#93-json-file-payload" title="Permanent link">&para;</a></h3>
