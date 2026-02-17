@@ -19,7 +19,7 @@
     
     
       
-        <title>URL vs URI -- Complete Guide - Automation Notes</title>
+        <title>URI vs URL vs URN - Automation Notes</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#url-vs-uri-complete-guide" class="md-skip">
+        <a href="#uri-vs-url-vs-urn" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              URL vs URI -- Complete Guide
+              URI vs URL vs URN
             
           </span>
         </div>
@@ -4581,6 +4581,92 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uri-uniform-resource-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 URI (Uniform Resource Identifier)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-uniform-resource-locator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 URL (Uniform Resource Locator)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 URL (Uniform Resource Locator)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urn-uniform-resource-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 URN (Uniform Resource Name)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 URN (Uniform Resource Name)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-difference-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Key Difference Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4596,37 +4682,50 @@
 
 
 
-<h1 id="url-vs-uri-complete-guide">URL vs URI -- Complete Guide<a class="headerlink" href="#url-vs-uri-complete-guide" title="Permanent link">&para;</a></h1>
+<h1 id="uri-vs-url-vs-urn">URI vs URL vs URN<a class="headerlink" href="#uri-vs-url-vs-urn" title="Permanent link">&para;</a></h1>
 <hr />
-<h1 id="1-basic-definitions">1️⃣ Basic Definitions<a class="headerlink" href="#1-basic-definitions" title="Permanent link">&para;</a></h1>
-<h2 id="uri-uniform-resource-identifier">URI (Uniform Resource Identifier)<a class="headerlink" href="#uri-uniform-resource-identifier" title="Permanent link">&para;</a></h2>
-<p>A URI is a generic identifier used to identify a resource. It can
-identify: - A web page - An API endpoint - A file - An image - A book
-(via ISBN)</p>
-<p>URI = Parent Concept</p>
+<h2 id="uri-uniform-resource-identifier">🔹 URI (Uniform Resource Identifier)<a class="headerlink" href="#uri-uniform-resource-identifier" title="Permanent link">&para;</a></h2>
+<p>A URI is a generic identifier used to identify a resource.</p>
+<p>It can identify:</p>
+<ul>
+<li>A web page</li>
+<li>A file</li>
+<li>An image</li>
+<li>An API endpoint</li>
+<li>Even a book (via ISBN)</li>
+</ul>
+<p>👉 URI can be of two types:</p>
+<ul>
+<li>URL</li>
+<li>URN</li>
+</ul>
 <hr />
-<h2 id="url-uniform-resource-locator">URL (Uniform Resource Locator)<a class="headerlink" href="#url-uniform-resource-locator" title="Permanent link">&para;</a></h2>
-<p>A URL is a type of URI that: - Identifies the resource - Provides its
-location - Specifies how to access it (protocol)</p>
-<p>Example: https://example.com/products?id=10</p>
-<p>It contains: - Protocol → https - Domain → example.com - Path →
-/products - Query → ?id=10</p>
-<hr />
-<h2 id="urn-uniform-resource-name">URN (Uniform Resource Name)<a class="headerlink" href="#urn-uniform-resource-name" title="Permanent link">&para;</a></h2>
-<p>A URN identifies a resource by name only (not location).</p>
-<p>Example: urn:isbn:9780132350884</p>
-<hr />
-<h1 id="2-diagram-explanation">2️⃣ Diagram Explanation<a class="headerlink" href="#2-diagram-explanation" title="Permanent link">&para;</a></h1>
-<pre><code>            URI
-           /                 /                URL       URN
+<h2 id="url-uniform-resource-locator">🔹 URL (Uniform Resource Locator)<a class="headerlink" href="#url-uniform-resource-locator" title="Permanent link">&para;</a></h2>
+<p>A URL is a type of URI that tells:</p>
+<ul>
+<li>Where the resource is located</li>
+<li>How to access it (protocol)</li>
+</ul>
+<h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<pre><code>https://example.com/products?id=10
 </code></pre>
-<p>URI = Identifier\
-URL = Identifier + Location\
-URN = Identifier by Name</p>
-<p>Simple Memory Trick: All URLs are URIs\
-But not all URIs are URLs</p>
+<p>It contains:</p>
+<ul>
+<li>Protocol → https\</li>
+<li>Domain → example.com\</li>
+<li>Path → /products\</li>
+<li>Query → ?id=10</li>
+</ul>
+<p>So it tells <strong>location + access method</strong>.</p>
 <hr />
-<h1 id="3-key-differences-table">3️⃣ Key Differences Table<a class="headerlink" href="#3-key-differences-table" title="Permanent link">&para;</a></h1>
+<h2 id="urn-uniform-resource-name">🔹 URN (Uniform Resource Name)<a class="headerlink" href="#urn-uniform-resource-name" title="Permanent link">&para;</a></h2>
+<p>A URN identifies a resource by name only, not location.</p>
+<h3 id="example_1">Example:<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<pre><code>urn:isbn:9780132350884
+</code></pre>
+<p>It identifies a book using ISBN, but doesn't tell where it is.</p>
+<hr />
+<h2 id="key-difference-table">🔥 Key Difference Table<a class="headerlink" href="#key-difference-table" title="Permanent link">&para;</a></h2>
 <p>Feature              URI                           URL</p>
 <hr />
 <p>Full Form            Uniform Resource Identifier   Uniform Resource Locator
@@ -4635,45 +4734,6 @@ But not all URIs are URLs</p>
   Includes location?   Not always                    Yes
   Type                 Parent concept                Subtype of URI</p>
 <hr />
-<h1 id="4-tricky-interview-questions">4️⃣ Tricky Interview Questions<a class="headerlink" href="#4-tricky-interview-questions" title="Permanent link">&para;</a></h1>
-<p>Q1: Is every URI a URL?\
-Answer: No. URL is a subtype of URI.</p>
-<p>Q2: Is every URL a URI?\
-Answer: Yes.</p>
-<p>Q3: Is HTTPS mandatory for a URL?\
-Answer: No. URL can use HTTP, FTP, etc.</p>
-<p>Q4: Is "mailto:abc@gmail.com" a URL?\
-Answer: Yes. It is a URL because it specifies a scheme.</p>
-<p>Q5: What is the difference between URI and endpoint in REST?\
-Answer: Endpoint refers to a specific URI that accepts client requests.</p>
-<hr />
-<h1 id="5-how-it-relates-to-rest-api-design">5️⃣ How It Relates to REST API Design<a class="headerlink" href="#5-how-it-relates-to-rest-api-design" title="Permanent link">&para;</a></h1>
-<p>In REST APIs:</p>
-<p>Example: https://api.company.com/users/101</p>
-<p>This is both: - URI (because it identifies a resource) - URL (because it
-provides location + protocol)</p>
-<p>Best Practices in REST:</p>
-<ol>
-<li>
-<p>Use nouns, not verbs Good: /users Bad: /getUsers</p>
-</li>
-<li>
-<p>Use hierarchical structure /users/101/orders</p>
-</li>
-<li>
-<p>Keep URIs consistent and predictable</p>
-</li>
-<li>
-<p>Use query parameters for filtering /users?status=active</p>
-</li>
-</ol>
-<hr />
-<h1 id="6-interview-short-answer">6️⃣ Interview Short Answer<a class="headerlink" href="#6-interview-short-answer" title="Permanent link">&para;</a></h1>
-<p>URI is a general identifier of a resource. URL is a type of URI that
-also tells where the resource is located and how to access it. All URLs
-are URIs, but not all URIs are URLs.</p>
-<hr />
-<p>End of Document</p>
 
 
 
