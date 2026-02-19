@@ -213,12 +213,10 @@ JVM:
 
 # 📊 Functional Interface vs Normal Interface
 
-  Feature            Functional Interface   Normal Interface
-  ------------------ ---------------------- --------------------
-  Abstract Methods   Exactly 1              0, 1 or many
-  Lambda Support     Yes                    No (if \>1 method)
-  Used For           Behavior passing       General contract
+| Feature          | Functional Interface | Normal Interface  |
+| ---------------- | -------------------- | ----------------- |
+| Abstract Methods | Exactly 1            | 0, 1 or many      |
+| Lambda Support   | Yes                  | No (if >1 method) |
+| Used For         | Behavior passing     | General contract  |
 
-------------------------------------------------------------------------
 
-End of Document
