@@ -55,6 +55,12 @@ public class Test {
 
 # 🔄 What Happens Step-by-Step
 
+<p align="center">
+  <img src="../../images/java/ThreadStatesLifeCycle.png" width="32%" />
+  <img src="../../images/java/thread.jpg" width="32%" />
+  <img src="../../images/java/thread_life_cycle.jpg" width="32%" />
+</p>
+
 ## 🧭 Lifecycle Flow
 
     NEW
