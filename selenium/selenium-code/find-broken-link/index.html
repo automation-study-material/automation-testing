@@ -4591,60 +4591,63 @@
 
   <h1>Find broken link</h1>
 
-<p>import org.openqa.selenium.By;
+<pre><code class="language-java">import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;</p>
-<p>import java.net.HttpURLConnection;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;</p>
-<p>public class BrokenLinkChecker {</p>
-<pre><code>public static void main(String[] args) {
+import java.util.List;
 
-    WebDriver driver = new ChromeDriver();
-    driver.get("https://example.com");
+public class BrokenLinkChecker {
 
-    // Get all anchor tags
-    List&lt;WebElement&gt; links = driver.findElements(By.tagName("a"));
+    public static void main(String[] args) {
 
-    System.out.println("Total Links Found: " + links.size());
+        WebDriver driver = new ChromeDriver();
+        driver.get(&quot;https://example.com&quot;);
 
-    for (WebElement link : links) {
+        // Get all anchor tags
+        List&lt;WebElement&gt; links = driver.findElements(By.tagName(&quot;a&quot;));
 
-        String url = link.getAttribute("href");
+        System.out.println(&quot;Total Links Found: &quot; + links.size());
 
-        if (url == null || url.isEmpty()) {
-            System.out.println("URL is empty or null");
-            continue;
-        }
+        for (WebElement link : links) {
 
-        try {
-            URL linkUrl = new URL(url);
-            HttpURLConnection connection =
-                    (HttpURLConnection) linkUrl.openConnection();
+            String url = link.getAttribute(&quot;href&quot;);
 
-            connection.setRequestMethod("HEAD");
-            connection.connect();
-
-            int responseCode = connection.getResponseCode();
-
-            if (responseCode &gt;= 400) {
-                System.out.println(url + " ---&gt; Broken Link ("
-                        + responseCode + ")");
-            } else {
-                System.out.println(url + " ---&gt; Valid Link ("
-                        + responseCode + ")");
+            if (url == null || url.isEmpty()) {
+                System.out.println(&quot;URL is empty or null&quot;);
+                continue;
             }
 
-        } catch (Exception e) {
-            System.out.println(url + " ---&gt; Error Occurred");
-        }
-    }
+            try {
+                URL linkUrl = new URL(url);
+                HttpURLConnection connection =
+                        (HttpURLConnection) linkUrl.openConnection();
 
-    driver.quit();
+                connection.setRequestMethod(&quot;HEAD&quot;);
+                connection.connect();
+
+                int responseCode = connection.getResponseCode();
+
+                if (responseCode &gt;= 400) {
+                    System.out.println(url + &quot; ---&gt; Broken Link (&quot;
+                            + responseCode + &quot;)&quot;);
+                } else {
+                    System.out.println(url + &quot; ---&gt; Valid Link (&quot;
+                            + responseCode + &quot;)&quot;);
+                }
+
+            } catch (Exception e) {
+                System.out.println(url + &quot; ---&gt; Error Occurred&quot;);
+            }
+        }
+
+        driver.quit();
+    }
 }
 </code></pre>
-<p>}</p>
 
 
 
