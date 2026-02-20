@@ -206,13 +206,13 @@ c.add(10, 20); // Not allowed
 
 ## 🔥 Default vs Static Method (Important Interview Table)
 
-  Feature                        Default Method   Static Method
-  ------------------------------ ---------------- ---------------
-  Has body?                      ✅ Yes           ✅ Yes
-  Can be overridden?             ✅ Yes           ❌ No
-  Called using object?           ✅ Yes           ❌ No
-  Called using interface name?   ❌ No            ✅ Yes
-  Inherited by class?            ✅ Yes           ❌ No
+| Feature                         | Default Method | Static Method |
+|----------------------------------|---------------|--------------|
+| Has body?                        | ✅ Yes        | ✅ Yes       |
+| Can be overridden?               | ✅ Yes        | ❌ No        |
+| Called using object?             | ✅ Yes        | ❌ No        |
+| Called using interface name?     | ❌ No         | ✅ Yes       |
+| Inherited by class?              | ✅ Yes        | ❌ No        |
 
 ------------------------------------------------------------------------
 
