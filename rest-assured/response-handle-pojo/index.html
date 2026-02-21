@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../data-loading/">
+      
+      
+        <link rel="next" href="../interview-questions/">
       
       
         
@@ -19,7 +23,7 @@
     
     
       
-        <title>🚀 Complete Example: GET Request → JSON Response → POJO → Print Data (Without Generic Wrapper) - Automation Notes</title>
+        <title>Convert Resposne into POJO - Automation Notes</title>
       
     
     
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🚀 Complete Example: GET Request → JSON Response → POJO → Print Data (Without Generic Wrapper)
+              Convert Resposne into POJO
             
           </span>
         </div>
@@ -3225,18 +3229,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -3257,7 +3263,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3542,6 +3548,208 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Convert Resposne into POJO
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Convert Resposne into POJO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sample-json-response-output-of-get-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 1️⃣ Sample JSON Response (Output of GET API)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pojo-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 2️⃣ POJO Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 2️⃣ POJO Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Customer.java
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#itemjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Item.java
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderresponsejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ OrderResponse.java
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-hit-get-call-using-rest-assured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 3️⃣ Hit GET Call Using Rest Assured
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-convert-response-to-pojo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 4️⃣ Convert Response to POJO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-print-all-response-data-using-pojo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 5️⃣ Print All Response Data Using POJO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happened-internally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 What Happened Internally?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Interview Answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Best Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
