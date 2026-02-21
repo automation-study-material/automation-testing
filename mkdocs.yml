@@ -79,6 +79,7 @@ nav:
     - CucumberTags: cucumber/cucumber-tags.md
     - Cucumber Hooks: cucumber/cucumber-hooks.md
     - CucumberTags & Hooks: cucumber/cucumber-tag-inheritance-hooks-guide.md
+    - Data Table: cucumber/DataTable.md
     - Parallel execution: cucumber/cucumber-parallel.md
     - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
     - Cucumber CLI: cucumber/cucumber-cli.md
