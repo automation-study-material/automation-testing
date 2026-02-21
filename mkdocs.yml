@@ -43,6 +43,11 @@ nav:
       - Iterator: java-concepts/collections/Java-Iterator.md
     - Wrapper Class:
       - Wrapper class: java-concepts/wrapper-classes/wrapper-classes.md
+    - Java 8 Features:
+      - Lambda: java-concepts/java-8-features/lambda.md
+      - Stream API: java-concepts/java-8-features/stream-api.md
+      - Functional Interface: java-concepts/java-8-features/functional-interface.md
+      - Interface Default and static methods: java-concepts/java-8-features/interface-default-static-methods.md
   - Java Program:
     - Array:
       - Sorting Of Array and Find second Largest: java-concepts/java-program/array/Sorting_Array_And_2nd_highest.md
@@ -54,6 +59,20 @@ nav:
       - Reverse First Half of Array: java-concepts/java-program/array/Reverse_First_Half_Array.md
       - Revrese Second Half of Array: java-concepts/java-program/array/Reverse_Second_Half_Array2.md
       - Move all Zero to left side: java-concepts/java-program/array/ZeroLeftSizeOneRightSide.md
+  - Selenium V4:
+    - Locators: selenium/v4/locator.md
+    - W3C protocall: selenium/v4/w3c-grid.md
+    - WebDriver Manager: selenium/v4/webDriverManager.md
+    - Window Dev tool screen operation: selenium/v4/window-devtool-screen-opertaion.md
+  - Selenium :
+    - Find Broken link from webpage: selenium/selenium-code/find-broken-link.md
+    - Xpath Axes: selenium/x-path-axes.md
+    - Design Pattern:
+      - page factory/ page object model: selenium/design-pattern/page-object-model.md
+      - Driver Factory Pattern: selenium/design-pattern/driver-factory-pattern.md
+      - Singl ton pattern: selenium/design-pattern/singleton-pattern.md
+      - Template Method pattern: selenium/design-pattern/template-method-pattern.md
+    - Selenium Exception: selenium/exception/selenium-exception.md
       
   - BDD Cucumber:
     - Cucumber Notes: cucumber/cucumber.md
@@ -80,6 +99,8 @@ nav:
     
     
   - Rest Assured:
+    - Why API Important to test: rest-assured/why-api-important-how-to-start-test.md
+    - API testing checklist: rest-assured/api-testing-checklist.md
     - Rest vs Soap: 
       - Rest vs Soap difference one: rest-assured/soap-vs-rest.md
       - Rest vs Soap difference two: rest-assured/soap-vs-rest2.md
