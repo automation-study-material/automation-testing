@@ -18,7 +18,7 @@ This document includes:
 
 ------------------------------------------------------------------------
 
-## 1️⃣ Find Odd Numbers
+## 1 Find Odd Numbers
 
 ``` java
 List<Integer> nums = Arrays.asList(1,2,3,4,5);
@@ -33,7 +33,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 2️⃣ Find Sum of Numbers
+## 2 Find Sum of Numbers
 
 ``` java
 int sum = nums.stream().reduce(0, Integer::sum);
@@ -46,7 +46,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 3️⃣ Remove Duplicates
+## 3 Remove Duplicates
 
 ``` java
 Arrays.asList(1,2,2,3,3,4)
@@ -62,7 +62,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 4️⃣ Find Minimum
+## 4 Find Minimum
 
 ``` java
 nums.stream().min(Integer::compare).ifPresent(System.out::println);
@@ -74,7 +74,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 5️⃣ Average of Numbers
+## 5 Average of Numbers
 
 ``` java
 double avg = nums.stream().mapToInt(n->n).average().getAsDouble();
@@ -87,7 +87,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 6️⃣ Convert List to Set
+## 6 Convert List to Set
 
 ``` java
 Set<Integer> set = nums.stream().collect(Collectors.toSet());
@@ -100,7 +100,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 7️⃣ Join Strings
+## 7 Join Strings
 
 ``` java
 List<String> names = Arrays.asList("Java","Stream","API");
@@ -114,7 +114,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 8️⃣ Count Even Numbers
+## 8 Count Even Numbers
 
 ``` java
 long count = nums.stream().filter(n->n%2==0).count();
@@ -127,7 +127,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 9️⃣ First Element Greater Than 3
+## 9 First Element Greater Than 3
 
 ``` java
 nums.stream().filter(n->n>3).findFirst().ifPresent(System.out::println);
@@ -139,7 +139,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 🔟 Check All Positive
+## 10 Check All Positive
 
 ``` java
 boolean allPositive = nums.stream().allMatch(n->n>0);
@@ -152,7 +152,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 11️⃣ Any Number Greater Than 4
+## 11 Any Number Greater Than 4
 
 ``` java
 boolean any = nums.stream().anyMatch(n->n>4);
@@ -165,13 +165,14 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 12️⃣ Sort Descending
+## 12 Sort Descending
 
 ``` java
 nums.stream().sorted(Comparator.reverseOrder())
 .forEach(System.out::println);
 ```
 
+```text
 Output:
 
     5
@@ -179,15 +180,17 @@ Output:
     3
     2
     1
+```
 
 ------------------------------------------------------------------------
 
-## 13️⃣ Square Numbers
+## 13 Square Numbers
 
 ``` java
 nums.stream().map(n->n*n).forEach(System.out::println);
 ```
 
+```text
 Output:
 
     1
@@ -195,10 +198,11 @@ Output:
     9
     16
     25
+```
 
 ------------------------------------------------------------------------
 
-## 14️⃣ Convert to Map (Number → Square)
+## 14 Convert to Map (Number → Square)
 
 ``` java
 Map<Integer,Integer> map =
@@ -206,13 +210,15 @@ nums.stream().collect(Collectors.toMap(n->n,n->n*n));
 System.out.println(map);
 ```
 
+```text
 Output:
 
     {1=1, 2=4, 3=9, 4=16, 5=25}
+```
 
 ------------------------------------------------------------------------
 
-## 15️⃣ Group Strings by Length
+## 15 Group Strings by Length
 
 ``` java
 List<String> list = Arrays.asList("Java","C","Python","Go");
@@ -221,13 +227,15 @@ list.stream().collect(Collectors.groupingBy(String::length));
 System.out.println(grouped);
 ```
 
+```txt
 Output:
 
     {1=[C], 2=[Go], 4=[Java], 6=[Python]}
+```
 
 ------------------------------------------------------------------------
 
-## 16️⃣ Partition Even & Odd
+## 16 Partition Even & Odd
 
 ``` java
 Map<Boolean,List<Integer>> part =
@@ -241,7 +249,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 17️⃣ Frequency Count
+## 17 Frequency Count
 
 ``` java
 List<String> items = Arrays.asList("A","B","A","C","B","A");
@@ -256,7 +264,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 18️⃣ Flatten List of Lists
+## 18 Flatten List of Lists
 
 ``` java
 List<List<Integer>> nested =
@@ -274,7 +282,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 19️⃣ Find Second Highest
+## 19 Find Second Highest
 
 ``` java
 Arrays.asList(10,40,30,50,20)
@@ -288,7 +296,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 20️⃣ Total Salary Example
+## 20 Total Salary Example
 
 ``` java
 double total = employees.stream()
@@ -303,7 +311,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 21️⃣ Convert to Uppercase
+## 21 Convert to Uppercase
 
 ``` java
 names.stream().map(String::toUpperCase)
@@ -318,7 +326,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 22️⃣ Limit First 3 Elements
+## 22 Limit First 3 Elements
 
 ``` java
 nums.stream().limit(3)
@@ -333,7 +341,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 23️⃣ Skip First 2 Elements
+## 23 Skip First 2 Elements
 
 ``` java
 nums.stream().skip(2)
@@ -348,7 +356,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-## 24️⃣ Parallel Stream Example
+## 24 Parallel Stream Example
 
 ``` java
 nums.parallelStream()
@@ -360,7 +368,7 @@ Output: (Order not guaranteed)
 
     ---
 
-    ## 25️⃣ Collect to List
+    ## 25 Collect to List
     ```java
     List<Integer> newList =
     nums.stream().filter(n->n>2)
