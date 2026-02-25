@@ -1,4 +1,4 @@
-````markdown
+
 # 🚀 JAVA STREAM API – COMPLETE MASTER GUIDE (Beginner → Advanced → Interview)
 
 ---
@@ -486,9 +486,3 @@ System.out.println("Total Salary: " + totalSalary);
 ```
 Total Salary: 210000.0
 ```
-
-```
-
-If you want, I can **export this as a downloadable `.md` file** or **merge it into your master Stream API markdown** seamlessly.
-```
-
