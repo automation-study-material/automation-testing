@@ -19,7 +19,7 @@
     
     
       
-        <title>Stream master - Automation Notes</title>
+        <title>🚀 JAVA STREAM API – COMPLETE MASTER GUIDE (Beginner → Advanced → Interview) - Automation Notes</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-a-stream" class="md-skip">
+        <a href="#java-stream-api-complete-master-guide-beginner-advanced-interview" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stream master
+              🚀 JAVA STREAM API – COMPLETE MASTER GUIDE (Beginner → Advanced → Interview)
             
           </span>
         </div>
@@ -5328,622 +5328,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-stream" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 What is a Stream?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 What is a Stream?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#important-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ⚠ Important Points
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-why-stream-api-came-into-picture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2️⃣ Why Stream API Came Into Picture?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2️⃣ Why Stream API Came Into Picture?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#old-way-too-much-boilerplate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ❌ Old Way (Too Much Boilerplate)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="❌ Old Way (Too Much Boilerplate)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problems:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#with-stream-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ✅ With Stream API
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-how-stream-works-very-important" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3️⃣ How Stream Works (Very Important)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3️⃣ How Stream Works (Very Important)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-types-of-stream-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4️⃣ Types of Stream Operations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4️⃣ Types of Stream Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#intermediate-operations-lazy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Intermediate Operations (Lazy)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#terminal-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Terminal Operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-lazy-evaluation-interview-important" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5️⃣ Lazy Evaluation (Interview Important)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-external-vs-internal-iteration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6️⃣ External vs Internal Iteration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6️⃣ External vs Internal Iteration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#before-java-8-external-iteration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Before Java 8 (External Iteration)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream-internal-iteration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stream (Internal Iteration)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-stream-vs-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7️⃣ Stream vs Collection
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-core-stream-functions-with-explanation-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8️⃣ Core Stream Functions (With Explanation + Programs)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8️⃣ Core Stream Functions (With Explanation + Programs)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 1. filter()
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 1. filter()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 2. map()
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 2. map()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#output_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-sorted" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 3. sorted()
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 3. sorted()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#descending" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Descending
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-distinct" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 4. distinct()
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 4. distinct()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#output_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-reduce" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 5. reduce()
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 5. reduce()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-sum-of-numbers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: Sum of Numbers
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-collect" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 6. collect()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-count" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 7. count()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8-anymatch-allmatch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 8. anyMatch() / allMatch()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-findfirst" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 9. findFirst()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#10-flatmap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 10. flatMap()
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 10. flatMap()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#output_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-employee-real-time-examples-interview-important" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9️⃣ Employee Real-Time Examples (Interview Important)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9️⃣ Employee Real-Time Examples (Interview Important)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#employee-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Employee Class
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-employees-with-salary-50000" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Filter Employees with Salary &gt; 50000
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 Filter Employees with Salary &gt; 50000">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#output_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#map-get-only-employee-names" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Map – Get Only Employee Names
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sort-employees-by-salary-ascending" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Sort Employees by Salary (Ascending)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 Sort Employees by Salary (Ascending)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#descending-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Descending Order
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group-employees-by-high-low-salary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Group Employees by High &amp; Low Salary
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find-employee-with-max-salary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Find Employee with Max Salary
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#count-employees-with-salary-40000" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Count Employees with Salary &gt; 40000
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#total-salary-using-reduce" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔹 Total Salary Using reduce()
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 Total Salary Using reduce()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#output_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -5960,41 +5346,43 @@
 
 
 
-<pre><code class="language-markdown"># 🚀 JAVA STREAM API – COMPLETE MASTER GUIDE (Beginner → Advanced → Interview)
+<h1 id="java-stream-api-complete-master-guide-beginner-advanced-interview">🚀 JAVA STREAM API – COMPLETE MASTER GUIDE (Beginner → Advanced → Interview)<a class="headerlink" href="#java-stream-api-complete-master-guide-beginner-advanced-interview" title="Permanent link">&para;</a></h1>
+<hr />
+<h1 id="1-introduction-what-is-stream-api">1️⃣ Introduction – What is Stream API?<a class="headerlink" href="#1-introduction-what-is-stream-api" title="Permanent link">&para;</a></h1>
+<p>Stream API is used to:</p>
+<blockquote>
+<p>Process collections of data in a <strong>functional and declarative way</strong>.</p>
+</blockquote>
+<p>It was introduced in <strong>Java 8</strong>.</p>
+<p>📦 <strong>Package:</strong></p>
+<pre><code class="language-java">java.util.stream
+````
 
 ---
 
-# 1️⃣ Introduction – What is Stream API?
+## 🔹 What is a Stream?
 
-Stream API is used to:
+A Stream is:
 
-&gt; Process collections of data in a **functional and declarative way**.
+&gt; A sequence of elements supporting functional-style operations.
 
-It was introduced in **Java 8**.
+### ⚠ Important Points
 
-📦 **Package:**
+* Stream does NOT store data
+* Stream works on collections
+* Stream does NOT modify original collection
+* Stream is lazy
+
+---
+
+# 2️⃣ Why Stream API Came Into Picture?
+
+Before Java 8 → We used loops.
+
+## ❌ Old Way (Too Much Boilerplate)
 
 ```java
-java.util.stream
-</code></pre>
-<hr />
-<h2 id="what-is-a-stream">🔹 What is a Stream?<a class="headerlink" href="#what-is-a-stream" title="Permanent link">&para;</a></h2>
-<p>A Stream is:</p>
-<blockquote>
-<p>A sequence of elements supporting functional-style operations.</p>
-</blockquote>
-<h3 id="important-points">⚠ Important Points<a class="headerlink" href="#important-points" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Stream does NOT store data</li>
-<li>Stream works on collections</li>
-<li>Stream does NOT modify original collection</li>
-<li>Stream is lazy</li>
-</ul>
-<hr />
-<h1 id="2-why-stream-api-came-into-picture">2️⃣ Why Stream API Came Into Picture?<a class="headerlink" href="#2-why-stream-api-came-into-picture" title="Permanent link">&para;</a></h1>
-<p>Before Java 8 → We used loops.</p>
-<h2 id="old-way-too-much-boilerplate">❌ Old Way (Too Much Boilerplate)<a class="headerlink" href="#old-way-too-much-boilerplate" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5);
+List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5);
 List&lt;Integer&gt; result = new ArrayList&lt;&gt;();
 
 for (Integer i : list) {
@@ -6312,9 +5700,6 @@ System.out.println(&quot;Total Salary: &quot; + totalSalary);
 </code></pre>
 <h3 id="output_6">Output<a class="headerlink" href="#output_6" title="Permanent link">&para;</a></h3>
 <pre><code>Total Salary: 210000.0
-</code></pre>
-<pre><code>
-If you want, I can **export this as a downloadable `.md` file** or **merge it into your master Stream API markdown** seamlessly.
 </code></pre>
 
 
