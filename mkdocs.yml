@@ -45,7 +45,9 @@ nav:
       - Wrapper class: java-concepts/wrapper-classes/wrapper-classes.md
     - Java 8 Features:
       - Lambda: java-concepts/java-8-features/lambda.md
-      - Stream API: java-concepts/java-8-features/stream-api.md
+      - Stream API: 
+        - Stream doc 1: java-concepts/java-8-features/stream-api.md
+        - Stream doc 2: java-concepts/java-8-features/stream-master.md
       - Functional Interface: java-concepts/java-8-features/functional-interface.md
       - Interface Default and static methods: java-concepts/java-8-features/interface-default-static-methods.md
   - Java Program:
