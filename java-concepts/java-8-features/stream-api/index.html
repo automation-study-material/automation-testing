@@ -5651,8 +5651,50 @@ public class MutableListDemo {
 <h1 id="8-reduce-method-advanced">8️⃣ reduce() Method (Advanced)<a class="headerlink" href="#8-reduce-method-advanced" title="Permanent link">&para;</a></h1>
 <p>Used to combine elements.</p>
 <h3 id="example-sum-of-numbers">Example: Sum of numbers<a class="headerlink" href="#example-sum-of-numbers" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">int sum = list.stream()
-              .reduce(0, (a, b) -&gt; a + b);
+<pre><code class="language-java">import java.util.*;
+
+public class ReduceExample {
+
+    public static void main(String[] args) {
+
+        List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5);
+
+        int sum = list.stream()
+                      .reduce(0, (a, b) -&gt; a + b);
+        System.out.println(&quot;Sum: &quot; + sum);
+        // Output: Sum: 15
+
+        int product = list.stream()
+                          .reduce(1, (a, b) -&gt; a * b);
+        System.out.println(&quot;Product: &quot; + product);
+        // Output: Product: 120
+
+        Optional&lt;Integer&gt; max = list.stream()
+                                    .reduce((a, b) -&gt; a &gt; b ? a : b);
+        System.out.println(&quot;Max: &quot; + max.get());
+        // Output: Max: 5
+    }
+}
+</code></pre>
+<pre><code class="language-logic">(a, b) -&gt; a &gt; b ? a : b
+
+✅ This means:
+
+- Compare two numbers.
+
+- If a is greater → return a
+
+- Otherwise → return b
+
+- Compare two numbers.
+If a is greater → return a
+Otherwise → return b
+
+if (a &gt; b) {
+    return a;
+} else {
+    return b;
+}
 </code></pre>
 <hr />
 <h1 id="9-parallel-stream">9️⃣ Parallel Stream<a class="headerlink" href="#9-parallel-stream" title="Permanent link">&para;</a></h1>
