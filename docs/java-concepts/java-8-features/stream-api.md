@@ -23,7 +23,7 @@ Package:
 ## Before Java 8:
 
 ``` java
-List<Integer> list = Arrays.asList(1,2,3,4,5);
+List<Integer> list = Arrays.asList(1,2,3,4,5,25,96,22,9);
 List<Integer> result = new ArrayList<>();
 
 for (Integer i : list) {
@@ -43,6 +43,10 @@ Too much boilerplate 😵
 List<Integer> result = list.stream()
                             .filter(x -> x % 2 == 0)
                             .toList();
+```
+Output
+```
+result list = [2, 4, 96, 22]
 ```
 
 🔥 Cleaner\
@@ -79,6 +83,14 @@ Stream processing has 3 parts:
 list.stream()                   // Source
     .filter(x -> x % 2 == 0)    // Intermediate
     .forEach(System.out::println); // Terminal
+```
+
+output
+```text
+2
+4
+96
+22
 ```
 
 ------------------------------------------------------------------------
@@ -123,6 +135,17 @@ list.stream()
     .forEach(System.out::println);
 ```
 
+Output
+
+```text
+4
+5
+25
+96
+22
+9
+```
+
 ------------------------------------------------------------------------
 
 ## 🔹 map()
@@ -132,7 +155,18 @@ list.stream()
     .map(x -> x * 2)
     .forEach(System.out::println);
 ```
-
+Output
+```text
+2
+4
+6
+8
+10
+50
+192
+44
+18
+```
 ------------------------------------------------------------------------
 
 ## 🔹 sorted()
@@ -141,6 +175,19 @@ list.stream()
 list.stream()
     .sorted()
     .forEach(System.out::println);
+```
+
+Output
+```text
+1
+2
+3
+4
+5
+9
+22
+25
+96
 ```
 
 ------------------------------------------------------------------------
@@ -153,16 +200,94 @@ list.stream()
     .forEach(System.out::println);
 ```
 
+Output
+```
+1
+2
+3
+4
+5
+25
+96
+22
+9
+```
+
 ------------------------------------------------------------------------
 
 ## 🔹 collect()
 
 ``` java
-List<Integer> result = list.stream()
-                            .filter(x -> x % 2 == 0)
-                            .collect(Collectors.toList());
+import java.util.*;
+import java.util.stream.*;
+
+public class MutableListDemo {
+
+    public static void main(String[] args) {
+
+        List<Integer> list = Arrays.asList(1,2,3,4,5,25,96,22,9);
+
+        System.out.println("Original List: " + list);
+        // Output: Original List: [1, 2, 3, 4, 5, 25, 96, 22, 9]
+
+
+        // 1️⃣ Create Mutable List using Collectors.toList()
+        List<Integer> result = list.stream()
+                                   .filter(x -> x % 2 == 0)
+                                   .collect(Collectors.toList());
+
+        System.out.println("After filter (Even Numbers): " + result);
+        // Output: After filter (Even Numbers): [2, 4, 96, 22]
+
+
+        // 2️⃣ Add Element
+        result.add(100);
+        System.out.println("After Adding 100: " + result);
+        // Output: After Adding 100: [2, 4, 96, 22, 100]
+
+
+        // 3️⃣ Remove Element
+        result.remove(Integer.valueOf(4));
+        System.out.println("After Removing 4: " + result);
+        // Output: After Removing 4: [2, 96, 22, 100]
+
+
+        // 4️⃣ Update Element
+        result.set(0, 200);
+        System.out.println("After Updating index 0 to 200: " + result);
+        // Output: After Updating index 0 to 200: [200, 96, 22, 100]
+
+
+        // 5️⃣ Clear List
+        result.clear();
+        System.out.println("After Clearing List: " + result);
+        // Output: After Clearing List: []
+
+
+        // 6️⃣ Guaranteed Mutable List (Best Practice)
+        List<Integer> guaranteedMutable = list.stream()
+                .filter(x -> x % 2 == 0)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        System.out.println("Guaranteed Mutable List: " + guaranteedMutable);
+        // Output: Guaranteed Mutable List: [2, 4, 96, 22]
+
+        guaranteedMutable.add(500);
+        System.out.println("After Adding 500: " + guaranteedMutable);
+        // Output: After Adding 500: [2, 4, 96, 22, 500]
+    }
+}
 ```
 
+------------------------------------------------------------------------
+
+| Feature        | Collectors.toList()      | Stream.toList()             |
+| -------------- | ------------------------ | --------------------------- |
+| Java Version   | Java 8                   | Java 16                     |
+| Mutable        | ✅ Yes                    | ❌ No                        |
+| Can Add/Remove | ✅ Yes                    | ❌ No                        |
+| Readability    | Slightly Verbose         | More Clean                  |
+| Recommended    | When modification needed | When immutability preferred |
 ------------------------------------------------------------------------
 
 # 7️⃣ Real Example with Objects (Interview Important)
