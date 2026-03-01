@@ -327,8 +327,51 @@ Used to combine elements.
 ### Example: Sum of numbers
 
 ``` java
-int sum = list.stream()
-              .reduce(0, (a, b) -> a + b);
+import java.util.*;
+
+public class ReduceExample {
+
+    public static void main(String[] args) {
+
+        List<Integer> list = Arrays.asList(1,2,3,4,5);
+
+        int sum = list.stream()
+                      .reduce(0, (a, b) -> a + b);
+        System.out.println("Sum: " + sum);
+        // Output: Sum: 15
+
+        int product = list.stream()
+                          .reduce(1, (a, b) -> a * b);
+        System.out.println("Product: " + product);
+        // Output: Product: 120
+
+        Optional<Integer> max = list.stream()
+                                    .reduce((a, b) -> a > b ? a : b);
+        System.out.println("Max: " + max.get());
+        // Output: Max: 5
+    }
+}
+```
+```logic
+(a, b) -> a > b ? a : b
+
+✅ This means:
+
+- Compare two numbers.
+
+- If a is greater → return a
+
+- Otherwise → return b
+
+- Compare two numbers.
+If a is greater → return a
+Otherwise → return b
+
+if (a > b) {
+    return a;
+} else {
+    return b;
+}
 ```
 
 ------------------------------------------------------------------------
