@@ -5379,7 +5379,7 @@
 <hr />
 <h1 id="2-why-stream-api-was-introduced">2️⃣ Why Stream API Was Introduced?<a class="headerlink" href="#2-why-stream-api-was-introduced" title="Permanent link">&para;</a></h1>
 <h2 id="before-java-8">Before Java 8:<a class="headerlink" href="#before-java-8" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5);
+<pre><code class="language-java">List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5,25,96,22,9);
 List&lt;Integer&gt; result = new ArrayList&lt;&gt;();
 
 for (Integer i : list) {
@@ -5394,6 +5394,9 @@ for (Integer i : list) {
 <pre><code class="language-java">List&lt;Integer&gt; result = list.stream()
                             .filter(x -&gt; x % 2 == 0)
                             .toList();
+</code></pre>
+<p>Output</p>
+<pre><code>result list = [2, 4, 96, 22]
 </code></pre>
 <p>🔥 Cleaner\
 🔥 Less code\
@@ -5422,6 +5425,12 @@ for (Integer i : list) {
 <pre><code class="language-java">list.stream()                   // Source
     .filter(x -&gt; x % 2 == 0)    // Intermediate
     .forEach(System.out::println); // Terminal
+</code></pre>
+<p>output</p>
+<pre><code class="language-text">2
+4
+96
+22
 </code></pre>
 <hr />
 <h1 id="5-types-of-stream-operations">5️⃣ Types of Stream Operations<a class="headerlink" href="#5-types-of-stream-operations" title="Permanent link">&para;</a></h1>
@@ -5454,11 +5463,30 @@ They are lazy (do not execute immediately).</p>
     .filter(x -&gt; x &gt; 3)
     .forEach(System.out::println);
 </code></pre>
+<p>Output</p>
+<pre><code class="language-text">4
+5
+25
+96
+22
+9
+</code></pre>
 <hr />
 <h2 id="map">🔹 map()<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">list.stream()
     .map(x -&gt; x * 2)
     .forEach(System.out::println);
+</code></pre>
+<p>Output</p>
+<pre><code class="language-text">2
+4
+6
+8
+10
+50
+192
+44
+18
 </code></pre>
 <hr />
 <h2 id="sorted">🔹 sorted()<a class="headerlink" href="#sorted" title="Permanent link">&para;</a></h2>
@@ -5466,19 +5494,138 @@ They are lazy (do not execute immediately).</p>
     .sorted()
     .forEach(System.out::println);
 </code></pre>
+<p>Output</p>
+<pre><code class="language-text">1
+2
+3
+4
+5
+9
+22
+25
+96
+</code></pre>
 <hr />
 <h2 id="distinct">🔹 distinct()<a class="headerlink" href="#distinct" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">list.stream()
     .distinct()
     .forEach(System.out::println);
 </code></pre>
-<hr />
-<h2 id="collect">🔹 collect()<a class="headerlink" href="#collect" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;Integer&gt; result = list.stream()
-                            .filter(x -&gt; x % 2 == 0)
-                            .collect(Collectors.toList());
+<p>Output</p>
+<pre><code>1
+2
+3
+4
+5
+25
+96
+22
+9
 </code></pre>
 <hr />
+<h2 id="collect">🔹 collect()<a class="headerlink" href="#collect" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">import java.util.*;
+import java.util.stream.*;
+
+public class MutableListDemo {
+
+    public static void main(String[] args) {
+
+        List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5,25,96,22,9);
+
+        System.out.println(&quot;Original List: &quot; + list);
+        // Output: Original List: [1, 2, 3, 4, 5, 25, 96, 22, 9]
+
+
+        // 1️⃣ Create Mutable List using Collectors.toList()
+        List&lt;Integer&gt; result = list.stream()
+                                   .filter(x -&gt; x % 2 == 0)
+                                   .collect(Collectors.toList());
+
+        System.out.println(&quot;After filter (Even Numbers): &quot; + result);
+        // Output: After filter (Even Numbers): [2, 4, 96, 22]
+
+
+        // 2️⃣ Add Element
+        result.add(100);
+        System.out.println(&quot;After Adding 100: &quot; + result);
+        // Output: After Adding 100: [2, 4, 96, 22, 100]
+
+
+        // 3️⃣ Remove Element
+        result.remove(Integer.valueOf(4));
+        System.out.println(&quot;After Removing 4: &quot; + result);
+        // Output: After Removing 4: [2, 96, 22, 100]
+
+
+        // 4️⃣ Update Element
+        result.set(0, 200);
+        System.out.println(&quot;After Updating index 0 to 200: &quot; + result);
+        // Output: After Updating index 0 to 200: [200, 96, 22, 100]
+
+
+        // 5️⃣ Clear List
+        result.clear();
+        System.out.println(&quot;After Clearing List: &quot; + result);
+        // Output: After Clearing List: []
+
+
+        // 6️⃣ Guaranteed Mutable List (Best Practice)
+        List&lt;Integer&gt; guaranteedMutable = list.stream()
+                .filter(x -&gt; x % 2 == 0)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        System.out.println(&quot;Guaranteed Mutable List: &quot; + guaranteedMutable);
+        // Output: Guaranteed Mutable List: [2, 4, 96, 22]
+
+        guaranteedMutable.add(500);
+        System.out.println(&quot;After Adding 500: &quot; + guaranteedMutable);
+        // Output: After Adding 500: [2, 4, 96, 22, 500]
+    }
+}
+</code></pre>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Collectors.toList()</th>
+<th>Stream.toList()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java Version</td>
+<td>Java 8</td>
+<td>Java 16</td>
+</tr>
+<tr>
+<td>Mutable</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>Can Add/Remove</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>Readability</td>
+<td>Slightly Verbose</td>
+<td>More Clean</td>
+</tr>
+<tr>
+<td>Recommended</td>
+<td>When modification needed</td>
+<td>When immutability preferred</td>
+</tr>
+<tr>
+<td>------------------------------------------------------------------------</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h1 id="7-real-example-with-objects-interview-important">7️⃣ Real Example with Objects (Interview Important)<a class="headerlink" href="#7-real-example-with-objects-interview-important" title="Permanent link">&para;</a></h1>
 <h3 id="employee-class">Employee class:<a class="headerlink" href="#employee-class" title="Permanent link">&para;</a></h3>
 <pre><code class="language-java">class Employee {
