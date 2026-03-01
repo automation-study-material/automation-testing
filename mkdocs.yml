@@ -50,6 +50,8 @@ nav:
         - Stream doc 2: java-concepts/java-8-features/stream-master.md
       - Functional Interface: java-concepts/java-8-features/functional-interface.md
       - Interface Default and static methods: java-concepts/java-8-features/interface-default-static-methods.md
+      - Base64 encoding decoding: java-concepts/java-8-features/base64-Encodeing-decoding.md
+      - Data Time API: java-concepts/java-8-features/data-time-api.md
   - Java Program:
     - Array:
       - Sorting Of Array and Find second Largest: java-concepts/java-program/array/Sorting_Array_And_2nd_highest.md
