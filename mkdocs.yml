@@ -113,7 +113,7 @@ nav:
     - URI vs URL: rest-assured/URI-vs-URL.md
     - JsonPath: rest-assured/rest-assured-jsonpath.md
     - Data Loading: rest-assured/data-loading.md
-    - Convert Resposne into POJO: rest-assured/response-handle-pojo.md
+    - GET/POST Resposne: rest-assured/response-handle-pojo.md
     - Interview Question: rest-assured/interview-questions.md
     - Framework: rest-assured/framework.md
   
