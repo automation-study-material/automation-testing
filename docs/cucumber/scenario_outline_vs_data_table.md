@@ -40,8 +40,8 @@ Examples:
 
 ## 🔹 How It Works
 
--   Scenario runs once per row\
--   2 rows → 2 executions\
+-   Scenario runs once per row
+-   2 rows → 2 executions
 -   Each execution appears separately in report
 
 ------------------------------------------------------------------------
@@ -73,9 +73,9 @@ public void login_should_be(String status) {
 
 ## 🎯 Key Characteristics
 
--   Multiple executions\
--   Clean reporting\
--   Ideal for positive/negative combinations\
+-   Multiple executions
+-   Clean reporting
+-   Ideal for positive/negative combinations
 -   Best for independent test cases
 
 ------------------------------------------------------------------------
@@ -122,9 +122,9 @@ public void userEntersBelowUserDetails(DataTable table) {
 
 ## 🎯 Key Characteristics
 
--   Single execution\
--   Data handled using DataTable\
--   Used for bulk processing\
+-   Single execution
+-   Data handled using DataTable
+-   Used for bulk processing
 -   One entry in report
 
 ------------------------------------------------------------------------
@@ -161,7 +161,7 @@ for (Map<String, String> user : users) {
 }
 ```
 
-✔ Uses asMaps()\
+✔ Uses asMaps()
 ✔ Most common interview case
 
 ------------------------------------------------------------------------
@@ -214,8 +214,8 @@ List<String> roles = Arrays.asList(data.get("roles").split(","));
 User user = new User(data.get("name"), roles);
 ```
 
-✔ Use split()\
-✔ Convert string to List\
+✔ Use split()
+✔ Convert string to List
 ✔ Advanced parsing
 
 ------------------------------------------------------------------------
@@ -226,14 +226,14 @@ User user = new User(data.get("name"), roles);
 
 ### If using Scenario Outline:
 
--   Opens flow 10 times\
--   10 separate report entries\
+-   Opens flow 10 times
+-   10 separate report entries
 -   3rd user fails → only 3rd test fails
 
 ### If using DataTable:
 
--   Opens flow once\
--   Loops internally\
+-   Opens flow once
+-   Loops internally
 -   3rd user fails → whole scenario fails
 
 ------------------------------------------------------------------------
@@ -242,15 +242,15 @@ User user = new User(data.get("name"), roles);
 
 ## Use Scenario Outline when:
 
--   Each dataset represents independent validation\
--   Reporting separation is important\
+-   Each dataset represents independent validation
+-   Reporting separation is important
 -   Parallel execution is required
 
 ## Use DataTable when:
 
--   Same page\
--   Same business transaction\
--   Bulk operation\
+-   Same page
+-   Same business transaction
+-   Bulk operation
 -   Data is logically grouped
 
 ------------------------------------------------------------------------
@@ -280,7 +280,7 @@ flow.
 
 # 🔥 Ultimate Summary
 
--   🔹 Test Case Driven → Use Scenario Outline\
--   🔹 Data Driven Inside Same Flow → Use DataTable\
--   🔹 Reporting Matters → Scenario Outline\
+-   🔹 Test Case Driven → Use Scenario Outline
+-   🔹 Data Driven Inside Same Flow → Use DataTable
+-   🔹 Reporting Matters → Scenario Outline
 -   🔹 Performance Matters → DataTable
