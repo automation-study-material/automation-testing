@@ -83,7 +83,7 @@ nav:
     - CucumberTags: cucumber/cucumber-tags.md
     - Cucumber Hooks: cucumber/cucumber-hooks.md
     - CucumberTags & Hooks: cucumber/cucumber-tag-inheritance-hooks-guide.md
-    - Data Table: cucumber/DataTable.md
+    - Scenario Outline VS DataTable: cucumber/scenario_outline_vs_data_table.md
     - Parallel execution: cucumber/cucumber-parallel.md
     - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
     - Cucumber CLI: cucumber/cucumber-cli.md
@@ -117,63 +117,63 @@ nav:
     - Interview Question: rest-assured/interview-questions.md
     - Framework: rest-assured/framework.md
   
-  - PlayWright With Java:
-      - Locators: playwright-Java/locator.md
-      - Page Navigation: playwright-Java/page-navigation-actions.md
-      - Inputs And Buttons: playwright-Java/playwright-interaction.md
-      - Checkbox And Radio buttons: playwright-Java/checkbox-radio-button.md
-      - Dropdown Handling: playwright-Java/dropdown_handling.md
-      - iframe: playwright-Java/iframes.md
-      - Mouse Keyboard Actions: playwright-Java/mouse-keyboard-actions.md
-      - Alerts: playwright-Java/alerts-promt.md
-      - Handle Windows: playwright-Java/handling-windows.md
-      - File upload And Download: playwright-Java/file-upload-download.md
-      - ScreenShot: playwright-Java/screenshot.md
-      - Exceptions: playwright-Java/exceptions.md
-      - InterViwe Questions: playwright-Java/interview-question.md
+  #- PlayWright With Java:
+      #- Locators: playwright-Java/locator.md
+      #- Page Navigation: playwright-Java/page-navigation-actions.md
+      #- Inputs And Buttons: playwright-Java/playwright-interaction.md
+      #- Checkbox And Radio buttons: playwright-Java/checkbox-radio-button.md
+      #- Dropdown Handling: playwright-Java/dropdown_handling.md
+      #- iframe: playwright-Java/iframes.md
+      #- Mouse Keyboard Actions: playwright-Java/mouse-keyboard-actions.md
+      #- Alerts: playwright-Java/alerts-promt.md
+      #- Handle Windows: playwright-Java/handling-windows.md
+      #- File upload And Download: playwright-Java/file-upload-download.md
+      #- ScreenShot: playwright-Java/screenshot.md
+      #- Exceptions: playwright-Java/exceptions.md
+      #- InterViwe Questions: playwright-Java/interview-question.md
       
-  - JavaScript Concepts:
-      - RoadMap: javascriptConcepts/30-day-roadmap.md
-      - "Synchronous & ASynchronous":
-        -  concepts: javascriptConcepts/Synchronous-And-Asynchronous.md 
-        -  deep guide: javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide.md
-      - Data Types: javascriptConcepts/dataTypes.md
-      - Variables: javascriptConcepts/variables.md
-      - Var vs Let: javascriptConcepts/var-vs-let-vaiable.md
-      - Vaiables snipped code: javascriptConcepts/variables-code.md
-      - Operator: javascriptConcepts/operator.md
-      - Objects in JS: javascriptConcepts/objects-in-js.md
-      - Flow Statements: javascriptConcepts/flow-statement.md
-      - Arrays & Objects: javascriptConcepts/Arrays.md
-      - String in JS: javascriptConcepts/string-in-js.md
-      - Set & Map: javascriptConcepts/set-map.md
-      - Class & Constructor: javascriptConcepts/class-constructor.md
-      - Functions: javascriptConcepts/functions.md
-      - Arrow Functions: javascriptConcepts/arrow-functions.md
-      - Regular Function vs Arrow Function: javascriptConcepts/regularfunction-vs-arrowFunction.md
-      - JavaScript Promises: javascriptConcepts/js-promises.md
-      - JavaScript Promises – Snippet Code: javascriptConcepts/js-promises-snipped-code.md
-      - Interview code: javascriptConcepts/basics-interview-code.md
+  #- JavaScript Concepts:
+      #- RoadMap: javascriptConcepts/30-day-roadmap.md
+      #- "Synchronous & ASynchronous":
+        #-  concepts: javascriptConcepts/Synchronous-And-Asynchronous.md 
+        #-  deep guide: javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide.md
+      #- Data Types: javascriptConcepts/dataTypes.md
+      #- Variables: javascriptConcepts/variables.md
+      #- Var vs Let: javascriptConcepts/var-vs-let-vaiable.md
+      #- Vaiables snipped code: javascriptConcepts/variables-code.md
+      #- Operator: javascriptConcepts/operator.md
+      #- Objects in JS: javascriptConcepts/objects-in-js.md
+      #- Flow Statements: javascriptConcepts/flow-statement.md
+      #- Arrays & Objects: javascriptConcepts/Arrays.md
+      #- String in JS: javascriptConcepts/string-in-js.md
+      #- Set & Map: javascriptConcepts/set-map.md
+      #- Class & Constructor: javascriptConcepts/class-constructor.md
+      #- Functions: javascriptConcepts/functions.md
+      #- Arrow Functions: javascriptConcepts/arrow-functions.md
+      #- Regular Function vs Arrow Function: javascriptConcepts/regularfunction-vs-arrowFunction.md
+      #- JavaScript Promises: javascriptConcepts/js-promises.md
+      #- JavaScript Promises – Snippet Code: javascriptConcepts/js-promises-snipped-code.md
+      #- Interview code: javascriptConcepts/basics-interview-code.md
       
-  - PlayWright with Javascript:
-    - General: javascriptConcepts/jscode/general.md
-    - Test Package: javascriptConcepts/jscode/test-package.md
-    - Sample Playwright Test: javascriptConcepts/jscode/sample-playwright-test.md
-    - Page vs Browser: javascriptConcepts/jscode/page-vs-browser.md
-    - Locators: javascriptConcepts/jscode/locators.md
-    - Methods in Playwright: javascriptConcepts/jscode/methods-in-playwright.md
-    - SendKeys Command: javascriptConcepts/jscode/sendkeys-command.md
-    - Input Value & Text Content: javascriptConcepts/jscode/inputValue&TextContent.md
-    - Dropdown: javascriptConcepts/jscode/dropdown.md
-    - Auto Suggestion Dropdown: javascriptConcepts/jscode/auto-suggestion-dropdown.md
-    - Radio Buttons: javascriptConcepts/jscode/radio-buttons.md
-    - Alert & Iframe: javascriptConcepts/jscode/alert-iframe.md
-    - Window & Tab Handle: javascriptConcepts/jscode/window-tab-handle.md
-    - Calendar: javascriptConcepts/jscode/calender.md
-    - Playwright Assertions: javascriptConcepts/jscode/playwright-assertion.md
-    - JSON Data Iteration: javascriptConcepts/jscode/json-data-iteration.md
-    - Excel Handling: javascriptConcepts/jscode/excel.md
-    - Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
+  #- PlayWright with Javascript:
+    #- General: javascriptConcepts/jscode/general.md
+    #- Test Package: javascriptConcepts/jscode/test-package.md
+    #- Sample Playwright Test: javascriptConcepts/jscode/sample-playwright-test.md
+    #- Page vs Browser: javascriptConcepts/jscode/page-vs-browser.md
+    #- Locators: javascriptConcepts/jscode/locators.md
+    #- Methods in Playwright: javascriptConcepts/jscode/methods-in-playwright.md
+    #- SendKeys Command: javascriptConcepts/jscode/sendkeys-command.md
+    #- Input Value & Text Content: javascriptConcepts/jscode/inputValue&TextContent.md
+    #- Dropdown: javascriptConcepts/jscode/dropdown.md
+    #- Auto Suggestion Dropdown: javascriptConcepts/jscode/auto-suggestion-dropdown.md
+    #- Radio Buttons: javascriptConcepts/jscode/radio-buttons.md
+    #- Alert & Iframe: javascriptConcepts/jscode/alert-iframe.md
+    #- Window & Tab Handle: javascriptConcepts/jscode/window-tab-handle.md
+    #- Calendar: javascriptConcepts/jscode/calender.md
+    #- Playwright Assertions: javascriptConcepts/jscode/playwright-assertion.md
+    #- JSON Data Iteration: javascriptConcepts/jscode/json-data-iteration.md
+    #- Excel Handling: javascriptConcepts/jscode/excel.md
+    #- Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
     
   
 
