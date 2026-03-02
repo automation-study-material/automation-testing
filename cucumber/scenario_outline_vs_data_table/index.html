@@ -3887,8 +3887,8 @@ Examples:
 <hr />
 <h2 id="how-it-works">🔹 How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Scenario runs once per row\</li>
-<li>2 rows → 2 executions\</li>
+<li>Scenario runs once per row</li>
+<li>2 rows → 2 executions</li>
 <li>Each execution appears separately in report</li>
 </ul>
 <hr />
@@ -3915,9 +3915,9 @@ public void login_should_be(String status) {
 <hr />
 <h2 id="key-characteristics">🎯 Key Characteristics<a class="headerlink" href="#key-characteristics" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Multiple executions\</li>
-<li>Clean reporting\</li>
-<li>Ideal for positive/negative combinations\</li>
+<li>Multiple executions</li>
+<li>Clean reporting</li>
+<li>Ideal for positive/negative combinations</li>
 <li>Best for independent test cases</li>
 </ul>
 <hr />
@@ -3950,9 +3950,9 @@ public void userEntersBelowUserDetails(DataTable table) {
 <hr />
 <h2 id="key-characteristics_1">🎯 Key Characteristics<a class="headerlink" href="#key-characteristics_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Single execution\</li>
-<li>Data handled using DataTable\</li>
-<li>Used for bulk processing\</li>
+<li>Single execution</li>
+<li>Data handled using DataTable</li>
+<li>Used for bulk processing</li>
 <li>One entry in report</li>
 </ul>
 <hr />
@@ -3979,7 +3979,7 @@ for (Map&lt;String, String&gt; user : users) {
     System.out.println(user.get(&quot;name&quot;));
 }
 </code></pre>
-<p>✔ Uses asMaps()\
+<p>✔ Uses asMaps()
 ✔ Most common interview case</p>
 <hr />
 <h2 id="2-convert-datatable-to-pojo-nested-object">2️⃣ Convert DataTable to POJO (Nested Object)<a class="headerlink" href="#2-convert-datatable-to-pojo-nested-object" title="Permanent link">&para;</a></h2>
@@ -4018,37 +4018,37 @@ List&lt;String&gt; roles = Arrays.asList(data.get(&quot;roles&quot;).split(&quot
 
 User user = new User(data.get(&quot;name&quot;), roles);
 </code></pre>
-<p>✔ Use split()\
-✔ Convert string to List\
+<p>✔ Use split()
+✔ Convert string to List
 ✔ Advanced parsing</p>
 <hr />
 <h1 id="real-world-use-case-comparison">🚀 Real-World Use Case Comparison<a class="headerlink" href="#real-world-use-case-comparison" title="Permanent link">&para;</a></h1>
 <h2 id="example-register-10-users">🔹 Example: Register 10 Users<a class="headerlink" href="#example-register-10-users" title="Permanent link">&para;</a></h2>
 <h3 id="if-using-scenario-outline">If using Scenario Outline:<a class="headerlink" href="#if-using-scenario-outline" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Opens flow 10 times\</li>
-<li>10 separate report entries\</li>
+<li>Opens flow 10 times</li>
+<li>10 separate report entries</li>
 <li>3rd user fails → only 3rd test fails</li>
 </ul>
 <h3 id="if-using-datatable">If using DataTable:<a class="headerlink" href="#if-using-datatable" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Opens flow once\</li>
-<li>Loops internally\</li>
+<li>Opens flow once</li>
+<li>Loops internally</li>
 <li>3rd user fails → whole scenario fails</li>
 </ul>
 <hr />
 <h1 id="senior-level-decision-rule">🧠 Senior-Level Decision Rule<a class="headerlink" href="#senior-level-decision-rule" title="Permanent link">&para;</a></h1>
 <h2 id="use-scenario-outline-when">Use Scenario Outline when:<a class="headerlink" href="#use-scenario-outline-when" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Each dataset represents independent validation\</li>
-<li>Reporting separation is important\</li>
+<li>Each dataset represents independent validation</li>
+<li>Reporting separation is important</li>
 <li>Parallel execution is required</li>
 </ul>
 <h2 id="use-datatable-when">Use DataTable when:<a class="headerlink" href="#use-datatable-when" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Same page\</li>
-<li>Same business transaction\</li>
-<li>Bulk operation\</li>
+<li>Same page</li>
+<li>Same business transaction</li>
+<li>Bulk operation</li>
 <li>Data is logically grouped</li>
 </ul>
 <hr />
@@ -4070,9 +4070,9 @@ flow.</p>
 <hr />
 <h1 id="ultimate-summary">🔥 Ultimate Summary<a class="headerlink" href="#ultimate-summary" title="Permanent link">&para;</a></h1>
 <ul>
-<li>🔹 Test Case Driven → Use Scenario Outline\</li>
-<li>🔹 Data Driven Inside Same Flow → Use DataTable\</li>
-<li>🔹 Reporting Matters → Scenario Outline\</li>
+<li>🔹 Test Case Driven → Use Scenario Outline</li>
+<li>🔹 Data Driven Inside Same Flow → Use DataTable</li>
+<li>🔹 Reporting Matters → Scenario Outline</li>
 <li>🔹 Performance Matters → DataTable</li>
 </ul>
 
