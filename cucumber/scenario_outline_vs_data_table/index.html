@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../cucumber-tag-inheritance-hooks-guide/">
-      
-      
-        <link rel="next" href="../cucumber-parallel/">
       
       
         
@@ -23,7 +19,7 @@
     
     
       
-        <title>Data Table - Automation Notes</title>
+        <title>🚀 Scenario Outline vs DataTable (Complete Interview Notes) - Automation Notes</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#complex-datatable-examples-sdet-interview-level" class="md-skip">
+        <a href="#scenario-outline-vs-datatable-complete-interview-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Table
+              🚀 Scenario Outline vs DataTable (Complete Interview Notes)
             
           </span>
         </div>
@@ -2784,20 +2780,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2818,7 +2812,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2945,19 +2939,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../DataTable.md" class="md-nav__link">
         
   
   
@@ -2973,7 +2958,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -5501,187 +5485,225 @@
 
 
 
-<h1 id="complex-datatable-examples-sdet-interview-level">🚀 Complex DataTable Examples (SDET Interview Level)<a class="headerlink" href="#complex-datatable-examples-sdet-interview-level" title="Permanent link">&para;</a></h1>
-<p>Let's do complex DataTable examples like real SDET interview level.</p>
-<p>This guide covers 3 advanced scenarios:</p>
-<p>1️⃣ Multiple users (List of Maps)\
-2️⃣ Nested object (User + Address POJO)\
-3️⃣ List inside List (User with multiple roles)</p>
+<h1 id="scenario-outline-vs-datatable-complete-interview-notes">🚀 Scenario Outline vs DataTable (Complete Interview Notes)<a class="headerlink" href="#scenario-outline-vs-datatable-complete-interview-notes" title="Permanent link">&para;</a></h1>
+<p>This document covers:</p>
+<ul>
+<li>Basic difference</li>
+<li>Execution behavior</li>
+<li>Reporting difference</li>
+<li>Real-time usage</li>
+<li>Complex DataTable examples</li>
+<li>Design decisions (Senior level thinking)</li>
+</ul>
 <hr />
-<h1 id="1-complex-example-multiple-users">🚀 1️⃣ Complex Example -- Multiple Users<a class="headerlink" href="#1-complex-example-multiple-users" title="Permanent link">&para;</a></h1>
-<h2 id="feature-file">✅ Feature File<a class="headerlink" href="#feature-file" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Feature: Create Multiple Users
+<h1 id="1-scenario-outline">✅ 1️⃣ Scenario Outline<a class="headerlink" href="#1-scenario-outline" title="Permanent link">&para;</a></h1>
+<h2 id="definition">🔹 Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p>Scenario Outline is used to execute the same scenario multiple times
+with different datasets.</p>
+<p>Each row in the Examples table creates a new scenario execution.</p>
+<hr />
+<h2 id="structure">✅ Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
+<pre><code class="language-gherkin">Scenario Outline: Login with multiple credentials
+  Given User is on login page
+  When User enters &quot;&lt;username&gt;&quot; and &quot;&lt;password&gt;&quot;
+  Then Login should be &quot;&lt;status&gt;&quot;
 
-Scenario: Create users with full details
-  When user enters below user details
-    | name     | email              | city    | mobile | age |
-    | Nitin    | nitin@gmail.com    | Mumbai  | 98765  | 28  |
-    | Rahul    | rahul@gmail.com    | Pune    | 91234  | 30  |
-    | Sneha    | sneha@gmail.com    | Delhi   | 99887  | 25  |
+Examples:
+  | username | password | status  |
+  | admin    | admin123 | success |
+  | user     | wrong123 | failure |
 </code></pre>
-<h2 id="step-definition">✅ Step Definition<a class="headerlink" href="#step-definition" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="how-it-works">🔹 How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Scenario runs once per row\</li>
+<li>2 rows → 2 executions\</li>
+<li>Each execution appears separately in report</li>
+</ul>
+<hr />
+<h2 id="step-definition">🔹 Step Definition<a class="headerlink" href="#step-definition" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">@When(&quot;User enters {string} and {string}&quot;)
+public void user_enters_credentials(String username, String password) {
+
+    driver.findElement(By.id(&quot;user&quot;)).sendKeys(username);
+    driver.findElement(By.id(&quot;pass&quot;)).sendKeys(password);
+}
+
+@Then(&quot;Login should be {string}&quot;)
+public void login_should_be(String status) {
+
+    boolean isLoggedIn = driver.findElements(By.id(&quot;logout&quot;)).size() &gt; 0;
+
+    if(status.equalsIgnoreCase(&quot;success&quot;)) {
+        Assert.assertTrue(isLoggedIn);
+    } else {
+        Assert.assertFalse(isLoggedIn);
+    }
+}
+</code></pre>
+<hr />
+<h2 id="key-characteristics">🎯 Key Characteristics<a class="headerlink" href="#key-characteristics" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Multiple executions\</li>
+<li>Clean reporting\</li>
+<li>Ideal for positive/negative combinations\</li>
+<li>Best for independent test cases</li>
+</ul>
+<hr />
+<h1 id="2-datatable">✅ 2️⃣ DataTable<a class="headerlink" href="#2-datatable" title="Permanent link">&para;</a></h1>
+<h2 id="definition_1">🔹 Definition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h2>
+<p>DataTable passes multiple data rows inside a single scenario execution.</p>
+<p>Scenario runs only once, but data is iterated inside step definition.</p>
+<hr />
+<h2 id="basic-example">✅ Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
+<pre><code class="language-gherkin">Scenario: Register multiple users
+  When user enters below user details
+    | name  | email           | city   |
+    | Nitin | nitin@gmail.com | Mumbai |
+    | Rahul | rahul@gmail.com | Pune   |
+</code></pre>
+<hr />
+<h2 id="step-definition_1">🔹 Step Definition<a class="headerlink" href="#step-definition_1" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">@When(&quot;user enters below user details&quot;)
 public void userEntersBelowUserDetails(DataTable table) {
 
     List&lt;Map&lt;String, String&gt;&gt; users = table.asMaps(String.class, String.class);
 
     for (Map&lt;String, String&gt; user : users) {
-
-        System.out.println(&quot;Name: &quot; + user.get(&quot;name&quot;));
-        System.out.println(&quot;Email: &quot; + user.get(&quot;email&quot;));
-        System.out.println(&quot;City: &quot; + user.get(&quot;city&quot;));
-        System.out.println(&quot;Mobile: &quot; + user.get(&quot;mobile&quot;));
-        System.out.println(&quot;Age: &quot; + user.get(&quot;age&quot;));
-        System.out.println(&quot;------------------------&quot;);
+        System.out.println(user.get(&quot;name&quot;));
+        System.out.println(user.get(&quot;email&quot;));
+        System.out.println(user.get(&quot;city&quot;));
     }
 }
 </code></pre>
 <hr />
-<h1 id="2-complex-example-convert-datatable-to-pojo-nested-object">🚀 2️⃣ Complex Example -- Convert DataTable to POJO (Nested Object)<a class="headerlink" href="#2-complex-example-convert-datatable-to-pojo-nested-object" title="Permanent link">&para;</a></h1>
-<p>Now we create:</p>
-<p>User\
-→ Address (Nested Object)</p>
-<h2 id="feature-file_1">✅ Feature File<a class="headerlink" href="#feature-file_1" title="Permanent link">&para;</a></h2>
+<h2 id="key-characteristics_1">🎯 Key Characteristics<a class="headerlink" href="#key-characteristics_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Single execution\</li>
+<li>Data handled using DataTable\</li>
+<li>Used for bulk processing\</li>
+<li>One entry in report</li>
+</ul>
+<hr />
+<h1 id="core-difference-interview-table">🔥 Core Difference (Interview Table)<a class="headerlink" href="#core-difference-interview-table" title="Permanent link">&para;</a></h1>
+<p>Feature             Scenario Outline        DataTable</p>
+<hr />
+<p>Execution           Multiple times          Single time
+  Data Location       Examples section        Inside step
+  Reporting           Separate test entries   One entry
+  Failure Isolation   Per dataset             Entire scenario fails
+  Best For            Independent tests       Bulk transactional flow</p>
+<hr />
+<h1 id="advanced-datatable-examples-sdet-level">🚀 Advanced DataTable Examples (SDET Level)<a class="headerlink" href="#advanced-datatable-examples-sdet-level" title="Permanent link">&para;</a></h1>
+<h2 id="1-multiple-users-list-of-maps">1️⃣ Multiple Users (List of Maps)<a class="headerlink" href="#1-multiple-users-list-of-maps" title="Permanent link">&para;</a></h2>
+<pre><code class="language-gherkin">Scenario: Create users with full details
+  When user enters below user details
+    | name   | email            | city   | mobile | age |
+    | Nitin  | nitin@gmail.com  | Mumbai | 98765  | 28  |
+    | Rahul  | rahul@gmail.com  | Pune   | 91234  | 30  |
+</code></pre>
+<pre><code class="language-java">List&lt;Map&lt;String, String&gt;&gt; users = table.asMaps(String.class, String.class);
+
+for (Map&lt;String, String&gt; user : users) {
+    System.out.println(user.get(&quot;name&quot;));
+}
+</code></pre>
+<p>✔ Uses asMaps()\
+✔ Most common interview case</p>
+<hr />
+<h2 id="2-convert-datatable-to-pojo-nested-object">2️⃣ Convert DataTable to POJO (Nested Object)<a class="headerlink" href="#2-convert-datatable-to-pojo-nested-object" title="Permanent link">&para;</a></h2>
 <pre><code class="language-gherkin">Scenario: Create user with address
   When user enters user details with address
-    | name  | email           | street     | city   | pincode |
-    | Nitin | nitin@gmail.com | MG Road    | Mumbai | 400001  |
+    | name  | email           | street  | city   | pincode |
+    | Nitin | nitin@gmail.com | MG Road | Mumbai | 400001  |
 </code></pre>
-<h2 id="pojo-classes">✅ POJO Classes<a class="headerlink" href="#pojo-classes" title="Permanent link">&para;</a></h2>
-<h3 id="userjava">User.java<a class="headerlink" href="#userjava" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class User {
+<pre><code class="language-java">Map&lt;String, String&gt; data = table.asMaps(String.class, String.class).get(0);
 
-    private String name;
-    private String email;
-    private Address address;
+Address address = new Address(
+        data.get(&quot;street&quot;),
+        data.get(&quot;city&quot;),
+        data.get(&quot;pincode&quot;)
+);
 
-    public User(String name, String email, Address address) {
-        this.name = name;
-        this.email = email;
-        this.address = address;
-    }
-
-    public String getName() { return name; }
-    public String getEmail() { return email; }
-    public Address getAddress() { return address; }
-}
+User user = new User(
+        data.get(&quot;name&quot;),
+        data.get(&quot;email&quot;),
+        address
+);
 </code></pre>
-<h3 id="addressjava">Address.java<a class="headerlink" href="#addressjava" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class Address {
-
-    private String street;
-    private String city;
-    private String pincode;
-
-    public Address(String street, String city, String pincode) {
-        this.street = street;
-        this.city = city;
-        this.pincode = pincode;
-    }
-
-    public String getStreet() { return street; }
-    public String getCity() { return city; }
-    public String getPincode() { return pincode; }
-}
-</code></pre>
-<h2 id="step-definition_1">✅ Step Definition<a class="headerlink" href="#step-definition_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@When(&quot;user enters user details with address&quot;)
-public void userDetailsWithAddress(DataTable table) {
-
-    Map&lt;String, String&gt; data = table.asMaps(String.class, String.class).get(0);
-
-    Address address = new Address(
-            data.get(&quot;street&quot;),
-            data.get(&quot;city&quot;),
-            data.get(&quot;pincode&quot;)
-    );
-
-    User user = new User(
-            data.get(&quot;name&quot;),
-            data.get(&quot;email&quot;),
-            address
-    );
-
-    System.out.println(&quot;User Name: &quot; + user.getName());
-    System.out.println(&quot;Street: &quot; + user.getAddress().getStreet());
-}
-</code></pre>
+<p>✔ Manual mapping\
+✔ Nested object handling\
+✔ Frequently asked in SDET interviews</p>
 <hr />
-<h1 id="3-advanced-list-inside-list-user-with-roles">🚀 3️⃣ Advanced -- List Inside List (User with Roles)<a class="headerlink" href="#3-advanced-list-inside-list-user-with-roles" title="Permanent link">&para;</a></h1>
-<h2 id="feature-file_2">✅ Feature File<a class="headerlink" href="#feature-file_2" title="Permanent link">&para;</a></h2>
+<h2 id="3-list-inside-list-user-with-roles">3️⃣ List Inside List (User with Roles)<a class="headerlink" href="#3-list-inside-list-user-with-roles" title="Permanent link">&para;</a></h2>
 <pre><code class="language-gherkin">Scenario: Create user with roles
   When user enters user and roles
-    | name  | roles               |
-    | Nitin | ADMIN,USER,MANAGER  |
+    | name  | roles              |
+    | Nitin | ADMIN,USER,MANAGER |
 </code></pre>
-<h2 id="pojo">✅ POJO<a class="headerlink" href="#pojo" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import java.util.List;
+<pre><code class="language-java">Map&lt;String, String&gt; data = table.asMaps(String.class, String.class).get(0);
 
-public class User {
+List&lt;String&gt; roles = Arrays.asList(data.get(&quot;roles&quot;).split(&quot;,&quot;));
 
-    private String name;
-    private List&lt;String&gt; roles;
-
-    public User(String name, List&lt;String&gt; roles) {
-        this.name = name;
-        this.roles = roles;
-    }
-
-    public String getName() { return name; }
-    public List&lt;String&gt; getRoles() { return roles; }
-}
+User user = new User(data.get(&quot;name&quot;), roles);
 </code></pre>
-<h2 id="step-definition_2">✅ Step Definition<a class="headerlink" href="#step-definition_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@When(&quot;user enters user and roles&quot;)
-public void userWithRoles(DataTable table) {
-
-    Map&lt;String, String&gt; data = table.asMaps(String.class, String.class).get(0);
-
-    List&lt;String&gt; roles = Arrays.asList(data.get(&quot;roles&quot;).split(&quot;,&quot;));
-
-    User user = new User(data.get(&quot;name&quot;), roles);
-
-    System.out.println(&quot;Name: &quot; + user.getName());
-
-    for (String role : user.getRoles()) {
-        System.out.println(&quot;Role: &quot; + role);
-    }
-}
-</code></pre>
+<p>✔ Use split()\
+✔ Convert string to List\
+✔ Advanced parsing</p>
 <hr />
-<h1 id="interview-level-concepts-covered">🎯 Interview-Level Concepts Covered<a class="headerlink" href="#interview-level-concepts-covered" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Method Used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Header + multiple rows</td>
-<td>asMaps()</td>
-</tr>
-<tr>
-<td>Key-value format</td>
-<td>asMap()</td>
-</tr>
-<tr>
-<td>Convert to POJO</td>
-<td>Manual mapping</td>
-</tr>
-<tr>
-<td>Nested object</td>
-<td>Create inner POJO</td>
-</tr>
-<tr>
-<td>List inside list</td>
-<td>split() + List</td>
-</tr>
-</tbody>
-</table>
+<h1 id="real-world-use-case-comparison">🚀 Real-World Use Case Comparison<a class="headerlink" href="#real-world-use-case-comparison" title="Permanent link">&para;</a></h1>
+<h2 id="example-register-10-users">🔹 Example: Register 10 Users<a class="headerlink" href="#example-register-10-users" title="Permanent link">&para;</a></h2>
+<h3 id="if-using-scenario-outline">If using Scenario Outline:<a class="headerlink" href="#if-using-scenario-outline" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Opens flow 10 times\</li>
+<li>10 separate report entries\</li>
+<li>3rd user fails → only 3rd test fails</li>
+</ul>
+<h3 id="if-using-datatable">If using DataTable:<a class="headerlink" href="#if-using-datatable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Opens flow once\</li>
+<li>Loops internally\</li>
+<li>3rd user fails → whole scenario fails</li>
+</ul>
 <hr />
-<p>🔥 These examples are SDET-ready and commonly asked in interviews.</p>
+<h1 id="senior-level-decision-rule">🧠 Senior-Level Decision Rule<a class="headerlink" href="#senior-level-decision-rule" title="Permanent link">&para;</a></h1>
+<h2 id="use-scenario-outline-when">Use Scenario Outline when:<a class="headerlink" href="#use-scenario-outline-when" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Each dataset represents independent validation\</li>
+<li>Reporting separation is important\</li>
+<li>Parallel execution is required</li>
+</ul>
+<h2 id="use-datatable-when">Use DataTable when:<a class="headerlink" href="#use-datatable-when" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Same page\</li>
+<li>Same business transaction\</li>
+<li>Bulk operation\</li>
+<li>Data is logically grouped</li>
+</ul>
+<hr />
+<h1 id="performance-parallel-execution">🎯 Performance &amp; Parallel Execution<a class="headerlink" href="#performance-parallel-execution" title="Permanent link">&para;</a></h1>
+<p>Factor              Scenario Outline         DataTable</p>
+<hr />
+<p>Parallel Friendly   Yes                      No (single scenario)
+  Execution Speed     Slower (repeated flow)   Faster
+  Debugging           Easy                     Harder
+  CI Visibility       Better                   Limited</p>
+<hr />
+<h1 id="final-interview-answer-best-version">🏆 Final Interview Answer (Best Version)<a class="headerlink" href="#final-interview-answer-best-version" title="Permanent link">&para;</a></h1>
+<p>Scenario Outline is used for data-driven testing where the same scenario
+executes multiple times with different datasets and each execution is
+reported separately.</p>
+<p>DataTable is used to pass multiple data rows into a single scenario
+execution, typically for bulk operations within the same transaction
+flow.</p>
+<hr />
+<h1 id="ultimate-summary">🔥 Ultimate Summary<a class="headerlink" href="#ultimate-summary" title="Permanent link">&para;</a></h1>
+<ul>
+<li>🔹 Test Case Driven → Use Scenario Outline\</li>
+<li>🔹 Data Driven Inside Same Flow → Use DataTable\</li>
+<li>🔹 Reporting Matters → Scenario Outline\</li>
+<li>🔹 Performance Matters → DataTable</li>
+</ul>
 
 
 
