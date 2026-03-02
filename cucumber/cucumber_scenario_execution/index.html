@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../Strict-vs-dryRun/">
-      
-      
-        <link rel="next" href="../../testng/testNg-questions/">
       
       
         
@@ -23,7 +19,7 @@
     
     
       
-        <title>Cucumber CLI - Automation Notes</title>
+        <title>🚀 Cucumber Scenario Execution + Maven CLI Cheat Sheet - Automation Notes</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cucumber-maven-cli-cheat-sheet" class="md-skip">
+        <a href="#cucumber-scenario-execution-maven-cli-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cucumber CLI
+              🚀 Cucumber Scenario Execution + Maven CLI Cheat Sheet
             
           </span>
         </div>
@@ -2784,20 +2780,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2818,7 +2812,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3029,37 +3023,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cucumber CLI
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cucumber-cli.md" class="md-nav__link">
         
   
   
@@ -3075,37 +3042,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#java-testng-cucumber-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        (Java + TestNG + Cucumber Framework)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3923,19 +3859,105 @@
 
 
 
-<h1 id="cucumber-maven-cli-cheat-sheet">🚀 Cucumber + Maven CLI Cheat Sheet<a class="headerlink" href="#cucumber-maven-cli-cheat-sheet" title="Permanent link">&para;</a></h1>
+<h1 id="cucumber-scenario-execution-maven-cli-cheat-sheet">🚀 Cucumber Scenario Execution + Maven CLI Cheat Sheet<a class="headerlink" href="#cucumber-scenario-execution-maven-cli-cheat-sheet" title="Permanent link">&para;</a></h1>
 <h3 id="java-testng-cucumber-framework">(Java + TestNG + Cucumber Framework)<a class="headerlink" href="#java-testng-cucumber-framework" title="Permanent link">&para;</a></h3>
+<p>This guide combines:</p>
+<ul>
+<li>Running specific scenarios</li>
+<li>Tag-based execution</li>
+<li>Scenario Outline behavior</li>
+<li>Maven CLI commands</li>
+<li>Reporting commands</li>
+<li>Senior-level best practices</li>
+</ul>
 <hr />
-<h1 id="golden-rule-important-for-your-project">📌 Golden Rule (Important for your project)<a class="headerlink" href="#golden-rule-important-for-your-project" title="Permanent link">&para;</a></h1>
-<p>Since you have <strong>TestNG + Cucumber together</strong>, ALWAYS include:</p>
+<h1 id="golden-rule-very-important">📌 Golden Rule (Very Important)<a class="headerlink" href="#golden-rule-very-important" title="Permanent link">&para;</a></h1>
+<p>If you are using <strong>TestNG + Cucumber together</strong>, ALWAYS include:</p>
 <pre><code class="language-bash">-Dtest=runner.CucumberRunner
 </code></pre>
-<p>Otherwise Maven runs:
-❌ all TestNG @Test
-❌ all features</p>
+<p>Otherwise Maven may execute: - ❌ All TestNG @Test methods - ❌ All
+feature files</p>
 <hr />
+<h1 id="how-to-run-specific-scenario">✅ How To Run Specific Scenario<a class="headerlink" href="#how-to-run-specific-scenario" title="Permanent link">&para;</a></h1>
 <hr />
-<h1 id="basic-commands">✅ Basic Commands<a class="headerlink" href="#basic-commands" title="Permanent link">&para;</a></h1>
+<h2 id="1-run-using-tags-most-recommended">1️⃣ Run Using Tags (Most Recommended)<a class="headerlink" href="#1-run-using-tags-most-recommended" title="Permanent link">&para;</a></h2>
+<h3 id="feature-example">Feature Example<a class="headerlink" href="#feature-example" title="Permanent link">&para;</a></h3>
+<pre><code class="language-gherkin">Feature: Login Feature
+
+@Smoke
+Scenario: Valid Login
+  Given User is on login page
+  When User enters &quot;admin&quot; and &quot;admin123&quot;
+  Then Login should be &quot;success&quot;
+
+@Regression
+Scenario: Invalid Login
+  Given User is on login page
+  When User enters &quot;admin&quot; and &quot;wrong123&quot;
+  Then Login should be &quot;failure&quot;
+</code></pre>
+<h3 id="runner-class-example">Runner Class Example<a class="headerlink" href="#runner-class-example" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">@CucumberOptions(
+    features = &quot;src/test/resources/features&quot;,
+    glue = &quot;stepdefinitions&quot;,
+    tags = &quot;@Smoke&quot;
+)
+</code></pre>
+<p>✔ Clean
+✔ Scalable
+✔ CI/CD Friendly</p>
+<hr />
+<h2 id="2-run-scenario-by-name">2️⃣ Run Scenario by Name<a class="headerlink" href="#2-run-scenario-by-name" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">@CucumberOptions(
+    features = &quot;src/test/resources/features&quot;,
+    glue = &quot;stepdefinitions&quot;,
+    name = &quot;Valid Login&quot;
+)
+</code></pre>
+<p>⚠ Not preferred in large frameworks</p>
+<hr />
+<h2 id="3-run-scenario-by-line-number">3️⃣ Run Scenario by Line Number<a class="headerlink" href="#3-run-scenario-by-line-number" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">@CucumberOptions(
+    features = &quot;src/test/resources/features/Login.feature:10&quot;,
+    glue = &quot;stepdefinitions&quot;
+)
+</code></pre>
+<p>✔ Useful for debugging</p>
+<hr />
+<h2 id="4-run-from-maven-command-line">4️⃣ Run from Maven Command Line<a class="headerlink" href="#4-run-from-maven-command-line" title="Permanent link">&para;</a></h2>
+<h3 id="using-tag">Using Tag<a class="headerlink" href="#using-tag" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">mvn test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;@Smoke&quot;
+</code></pre>
+<h3 id="using-scenario-name">Using Scenario Name<a class="headerlink" href="#using-scenario-name" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">mvn test -Dtest=runner.CucumberRunner -Dcucumber.filter.name=&quot;Valid Login&quot;
+</code></pre>
+<hr />
+<h2 id="5-run-from-ide">5️⃣ Run from IDE<a class="headerlink" href="#5-run-from-ide" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Right click on scenario</li>
+<li>Click Run</li>
+</ul>
+<hr />
+<h1 id="scenario-outline-execution-behavior">🎯 Scenario Outline Execution Behavior<a class="headerlink" href="#scenario-outline-execution-behavior" title="Permanent link">&para;</a></h1>
+<p>If you tag Scenario Outline:</p>
+<pre><code class="language-gherkin">@Smoke
+Scenario Outline: Login test
+</code></pre>
+<p>👉 All example rows execute.</p>
+<p>If you want to run only one row:</p>
+<pre><code class="language-gherkin">Scenario Outline: Login test
+
+  @Row1
+  Examples:
+    | username | password | status |
+    | admin    | admin123 | success |
+</code></pre>
+<p>Then use:</p>
+<pre><code class="language-java">tags = &quot;@Row1&quot;
+</code></pre>
+<hr />
+<h1 id="cucumber-maven-cli-cheat-sheet">🚀 Cucumber + Maven CLI Cheat Sheet<a class="headerlink" href="#cucumber-maven-cli-cheat-sheet" title="Permanent link">&para;</a></h1>
+<hr />
 <h2 id="run-all-cucumber-tests">Run all cucumber tests<a class="headerlink" href="#run-all-cucumber-tests" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner
 </code></pre>
@@ -3955,7 +3977,6 @@
 <h2 id="run-specific-scenario-line-number">Run specific scenario (line number)<a class="headerlink" href="#run-specific-scenario-line-number" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.features=login.feature:25
 </code></pre>
-<hr />
 <hr />
 <h1 id="tag-based-execution">✅ Tag Based Execution<a class="headerlink" href="#tag-based-execution" title="Permanent link">&para;</a></h1>
 <h2 id="run-only-smoke">Run only @smoke<a class="headerlink" href="#run-only-smoke" title="Permanent link">&para;</a></h2>
@@ -3978,15 +3999,48 @@
 <pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;not @slow&quot;
 </code></pre>
 <hr />
-<h2 id="complex-expressions">Complex expressions<a class="headerlink" href="#complex-expressions" title="Permanent link">&para;</a></h2>
+<h2 id="complex-expression">Complex expression<a class="headerlink" href="#complex-expression" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;(@smoke or @sanity) and not @slow&quot;
 </code></pre>
 <hr />
-<hr />
-<h1 id="reports">✅ Reports<a class="headerlink" href="#reports" title="Permanent link">&para;</a></h1>
-<h2 id="pretty-console-html">Pretty console + HTML<a class="headerlink" href="#pretty-console-html" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clea
+<h1 id="reporting-configuration">📊 Reporting Configuration<a class="headerlink" href="#reporting-configuration" title="Permanent link">&para;</a></h1>
+<p>Add in Runner:</p>
+<pre><code class="language-java">@CucumberOptions(
+    plugin = {
+        &quot;pretty&quot;,
+        &quot;html:target/cucumber-report.html&quot;,
+        &quot;json:target/cucumber.json&quot;
+    }
+)
 </code></pre>
+<p>Then run:</p>
+<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner
+</code></pre>
+<p>Reports generated inside:</p>
+<p>target/</p>
+<hr />
+<h1 id="senior-level-best-practices">🧠 Senior-Level Best Practices<a class="headerlink" href="#senior-level-best-practices" title="Permanent link">&para;</a></h1>
+<p>✔ Always use Tags for execution control
+✔ Use tag combinations for CI pipelines
+✔ Keep Smoke suite small
+✔ Separate Smoke / Regression / Sanity
+✔ Avoid running by scenario name in CI
+✔ Use line number only for debugging</p>
+<hr />
+<h1 id="interview-level-final-answer">🏆 Interview-Level Final Answer<a class="headerlink" href="#interview-level-final-answer" title="Permanent link">&para;</a></h1>
+<p>We can run a specific Cucumber scenario using tags, scenario name, line
+number, or Maven command-line filters. Tags are the most recommended and
+scalable approach, especially for CI/CD and enterprise-level automation
+frameworks.</p>
+<hr />
+<h1 id="quick-revision-summary">🔥 Quick Revision Summary<a class="headerlink" href="#quick-revision-summary" title="Permanent link">&para;</a></h1>
+<ul>
+<li>🎯 Debug → Use line number</li>
+<li>🚀 CI/CD → Use tags</li>
+<li>🧪 Local quick run → Right-click in IDE</li>
+<li>📦 TestNG + Cucumber → Always add -Dtest=runner.CucumberRunner</li>
+<li>🏢 Enterprise → Maintain proper tag strategy</li>
+</ul>
 
 
 
