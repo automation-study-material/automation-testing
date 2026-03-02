@@ -86,7 +86,7 @@ nav:
     - Scenario Outline VS DataTable: cucumber/scenario_outline_vs_data_table.md
     - Parallel execution: cucumber/cucumber-parallel.md
     - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
-    - Cucumber CLI: cucumber/cucumber-cli.md
+    - Cucumber Scenario Execution: cucumber/cucumber_scenario_execution.md
     
   - TestNg :
     - TestNG Questions: testng/testNg-questions.md
