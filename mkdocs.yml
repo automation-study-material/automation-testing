@@ -87,6 +87,7 @@ nav:
     - Parallel execution: cucumber/cucumber-parallel.md
     - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
     - Cucumber Scenario Execution: cucumber/cucumber_scenario_execution.md
+    - Extends Reports: cucumber/extends_reports.md
     
   - TestNg :
     - TestNG Questions: testng/testNg-questions.md
