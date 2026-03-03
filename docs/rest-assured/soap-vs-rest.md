@@ -81,7 +81,7 @@ Used in banking & enterprise systems where HTTP may not be enough.
 
 ### REST
 
--   Uses HTTP/HTTPS only\
+-   Uses HTTP/HTTPS only
 -   Designed for the web
 
 **Example**
@@ -94,7 +94,7 @@ Used in banking & enterprise systems where HTTP may not be enough.
 
 ### SOAP
 
--   Only XML\
+-   Only XML
 -   Very verbose
 
 ``` xml
@@ -103,7 +103,7 @@ Used in banking & enterprise systems where HTTP may not be enough.
 
 ### REST
 
--   JSON (most common)\
+-   JSON (most common)
 -   XML, text, HTML also possible
 
 ``` json
@@ -118,16 +118,16 @@ Used in banking & enterprise systems where HTTP may not be enough.
 
 ### SOAP -- WSDL (Mandatory)
 
-WSDL defines: - Methods\
-- Parameters\
-- Data types\
+WSDL defines: - Methods
+- Parameters
+- Data types
 - Response structure
 
 Client and server must match exactly.
 
 ### REST -- OpenAPI / Swagger (Optional)
 
--   Documentation driven\
+-   Documentation driven
 -   Flexible
 
 👉 SOAP = Strict contract\
@@ -139,21 +139,24 @@ Client and server must match exactly.
 
 ### SOAP
 
-Built-in standards: - WS-Security\
-- XML Encryption\
+Built-in standards: 
+- WS-Security
+- XML Encryption
 - Digital Signatures
 
-Used when: - Financial transactions\
+Used when: 
+- Financial transactions
 - High security required
 
 ### REST
 
-Security handled via: - HTTPS\
-- OAuth2\
-- JWT\
+Security handled via: 
+- HTTPS
+- OAuth2
+- JWT
 - API keys
 
-👉 SOAP security is heavy but strong\
+👉 SOAP security is heavy but strong
 👉 REST security is simple and modern
 
 ------------------------------------------------------------------------
@@ -162,10 +165,10 @@ Security handled via: - HTTPS\
 
 ### SOAP
 
--   Can be stateful\
+-   Can be stateful
 -   Maintains session
 
-Example:\
+Example:
 User logs in → session maintained across calls
 
 ### REST
@@ -213,14 +216,14 @@ Uses HTTP status codes
 
 ### SOAP
 
--   Heavy XML\
--   More bandwidth\
+-   Heavy XML
+-   More bandwidth
 -   Slower
 
 ### REST
 
--   Lightweight JSON\
--   Faster\
+-   Lightweight JSON
+-   Faster
 -   Better caching
 
 👉 REST wins for performance 🚀
@@ -231,16 +234,16 @@ Uses HTTP status codes
 
 ### SOAP Used In:
 
--   Banking systems\
--   Payment gateways\
--   Enterprise legacy systems\
+-   Banking systems
+-   Payment gateways
+-   Enterprise legacy systems
 -   Telecom
 
 ### REST Used In:
 
--   Web applications\
--   Mobile apps\
--   Microservices\
+-   Web applications
+-   Mobile apps
+-   Microservices
 -   Public APIs (Google, Twitter, GitHub)
 
 ------------------------------------------------------------------------
@@ -266,16 +269,17 @@ Uses HTTP status codes
 
 State = stored information about a client between requests.
 
-Examples: - Logged-in user\
-- Shopping cart\
-- Session ID\
+Examples: 
+- Logged-in user
+- Shopping cart
+- Session ID
 - Previous request data
 
 ------------------------------------------------------------------------
 
 ## 2️⃣ Stateful System (Concept)
 
-A stateful system remembers the client.\
+A stateful system remembers the client.
 👉 The server stores session data.
 
 Think of it like calling the same bank executive every time 📞
@@ -286,8 +290,9 @@ Think of it like calling the same bank executive every time 📞
 
 **Hotel Front Desk**
 
-You check in → Room 305\
-Next day room service knows: - Room number\
+You check in → Room 305
+Next day room service knows: 
+- Room number
 - Preferences
 
 ➡️ Because they remember you
@@ -327,7 +332,7 @@ Next day room service knows: - Room number\
 
 ## 4️⃣ Stateless System (Concept)
 
-A stateless system does NOT remember the client.\
+A stateless system does NOT remember the client.
 👉 Each request contains all required info.
 
 Street food stall example 🌮
@@ -353,7 +358,7 @@ Street food stall example 🌮
 }
 ```
 
-👉 Server does NOT store session\
+👉 Server does NOT store session
 👉 Token contains identity info
 
 ------------------------------------------------------------------------
@@ -362,22 +367,22 @@ Street food stall example 🌮
 
 ### Stateful (Session-based)
 
--   Session on server\
--   More memory\
+-   Session on server
+-   More memory
 -   Harder to scale
 
 ### Stateless (Token-based)
 
--   No server memory\
--   Token contains user info\
+-   No server memory
+-   Token contains user info
 -   Easy to scale
 
 ------------------------------------------------------------------------
 
 ## 7️⃣ Why REST is Stateless
 
--   Scalability\
--   Microservices\
+-   Scalability
+-   Microservices
 -   Load balancers
 
 **Load Balancer Example**
@@ -390,12 +395,14 @@ Street food stall example 🌮
 
 ## 8️⃣ Where Stateful Fits Better
 
-Used when: - Long transactions\
-- High consistency\
+Used when: 
+- Long transactions
+- High consistency
 - Financial workflows
 
-Examples: - Banking\
-- Legacy enterprise\
+Examples: 
+- Banking
+- Legacy enterprise
 - SOAP services
 
 ------------------------------------------------------------------------
