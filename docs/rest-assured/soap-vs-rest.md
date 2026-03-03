@@ -76,7 +76,18 @@ Simple request → simple response.
 -   Works with HTTP (HyperText Transfer Protocol), HTTPS (HyperText Transfer Protocol Secure), SMTP (Simple Mail Transfer Protocol), TCP (Transmission Control Protocol)
 -   Not tied to web only
 
-**Why it matters?**\
+✅ What is WSDL?
+
+WSDL stands for:
+- Web Services Description Language
+- It is an XML-based document used to describe a SOAP web service.
+
+👉 It tells:
+- What operations are available
+- What request format is required
+
+What response format will be returned
+**Why it matters?**
 Used in banking & enterprise systems where HTTP may not be enough.
 
 ### REST
@@ -118,14 +129,16 @@ Used in banking & enterprise systems where HTTP may not be enough.
 
 ### SOAP -- WSDL (Mandatory)
 
-WSDL defines: - Methods
+WSDL (Web Services Description Language) defines: 
+- Methods
 - Parameters
 - Data types
 - Response structure
 
 Client and server must match exactly.
 
-### REST -- OpenAPI / Swagger (Optional)
+### REST -
+- OpenAPI / Swagger (Optional)
 
 -   Documentation driven
 -   Flexible
