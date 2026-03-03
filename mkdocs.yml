@@ -117,7 +117,9 @@ nav:
     - GET/POST Resposne: rest-assured/response-handle-pojo.md
     - Interview Question: rest-assured/interview-questions.md
     - Framework: rest-assured/framework.md
-  
+
+  - Postman
+    - Postman Script for Validation: rest-assured/postmand_valiodation.md
   #- PlayWright With Java:
       #- Locators: playwright-Java/locator.md
       #- Page Navigation: playwright-Java/page-navigation-actions.md
