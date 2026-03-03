@@ -5,11 +5,11 @@
 SOAP (Simple Object Access Protocol) is a strict, standardized messaging
 protocol used for communication between applications.
 
--   Uses XML only\
--   Has very strict rules\
+-   Uses XML only
+-   Has very strict rules
 -   Works like a formal contract-based system
 
-Think of SOAP like sending a registered legal document 📄\
+Think of SOAP like sending a registered legal document 📄
 Everything must follow a fixed format, otherwise it's rejected.
 
 ### Example (SOAP Request)
@@ -43,7 +43,7 @@ protocol.
 -   Mostly uses JSON\
 -   Uses standard HTTP methods
 
-Think of REST like ordering food on Swiggy/Zomato 🍔\
+Think of REST like ordering food on Swiggy/Zomato 🍔
 Simple request → simple response.
 
 ### Example (REST Request)
@@ -63,8 +63,8 @@ Simple request → simple response.
 
 ### Key Characteristics
 
--   No strict format\
--   Easy to use\
+-   No strict format
+-   Easy to use
 -   Fast and scalable
 
 ------------------------------------------------------------------------
@@ -143,7 +143,7 @@ Client and server must match exactly.
 -   Documentation driven
 -   Flexible
 
-👉 SOAP = Strict contract\
+👉 SOAP = Strict contract
 👉 REST = Flexible agreement
 
 ------------------------------------------------------------------------
@@ -186,7 +186,7 @@ User logs in → session maintained across calls
 
 ### REST
 
--   Stateless\
+-   Stateless
 -   Each request is independent
 
 ```{=html}
@@ -337,8 +337,8 @@ Next day room service knows:
 
 ### Characteristics
 
--   Server stores session\
--   Client sends session ID\
+-   Server stores session
+-   Client sends session ID
 -   Server remembers user state
 
 ------------------------------------------------------------------------
