@@ -64,15 +64,143 @@ JsonPath jp = response.jsonPath();
 
 # 🚀 Basic Extraction
 
-```java
-JsonPath jp = response.jsonPath();
+You are using **Rest Assured + JsonPath**.
+`jp.getList("users.name")` will return a **List of all names** from the `users` array.
 
-int page = jp.getInt("page");
-String company = jp.getString("company");
-String firstUser = jp.getString("users[0].name");
+Below is how you **iterate the list**.
+
+---
+
+# 1️⃣ JSON Structure
+
+Your JSON contains:
+
+* Root keys → `page`, `total`, `company`
+* Array → `users`
+* Inside each user → `id`, `name`, `role`, `salary`, `skills`
+
+Example extraction path:
+
+```
+users.name
+```
+
+This means:
+
+```
+users -> array
+name  -> field inside each object
+```
+
+Result will be:
+
+```
+["Umesh", "Amit", "Neha"]
 ```
 
 ---
+
+# 2️⃣ Java Code – Iterate Using For Loop
+
+```java
+1  Response response = given()
+2      .when()
+3      .get("/users");
+4
+5  JsonPath jp = response.jsonPath();
+6
+7  List<String> names = jp.getList("users.name");
+8
+9  for (int i = 0; i < names.size(); i++) {
+10     System.out.println(names.get(i));
+11 }
+```
+
+### Output
+
+```
+Umesh
+Amit
+Neha
+```
+
+---
+
+# 3️⃣ Iterate Using For-Each Loop (Better Way)
+
+```java
+1  Response response = given().get("/users");
+2
+3  JsonPath jp = response.jsonPath();
+4
+5  List<String> names = jp.getList("users.name");
+6
+7  for(String name : names){
+8      System.out.println(name);
+9  }
+```
+
+---
+
+# 4️⃣ Iterate Complete User Object
+
+If you want **each user object**, use:
+
+```java
+List<Map<String, Object>> users = jp.getList("users");
+
+for(Map<String, Object> user : users){
+    System.out.println(user.get("name"));
+    System.out.println(user.get("role"));
+}
+```
+
+Output
+
+```
+Umesh
+ADMIN
+Amit
+USER
+Neha
+USER
+```
+
+---
+
+# 5️⃣ Extract Specific User
+
+Example: first user name
+
+```java
+String name = jp.getString("users[0].name");
+System.out.println(name);
+```
+
+Output
+
+```
+Umesh
+```
+
+---
+
+# 6️⃣ Interview Tip ⭐
+
+Common Rest Assured JsonPath usages:
+
+| Purpose        | Code                                                |
+| -------------- | --------------------------------------------------- |
+| Get all names  | `jp.getList("users.name")`                          |
+| Get first name | `jp.getString("users[0].name")`                     |
+| Get list size  | `jp.getList("users").size()`                        |
+| Filter data    | `jp.getList("users.findAll{it.role=='USER'}.name")` |
+
+---
+
+If you want, I can also show **10 most important RestAssured JsonPath tricks asked in Automation Testing interviews** (like filtering ADMIN users, highest salary, skill contains Java, etc.).
+
+
 
 # 🚀 Filtering Examples
 
