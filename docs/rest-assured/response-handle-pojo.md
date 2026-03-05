@@ -1,22 +1,18 @@
-# 🚀 Complete Example: GET Request → JSON Response → POJO → Print Data (Without Generic Wrapper)
+For this JSON, we need **4 POJO classes** because the response contains:
 
-This guide covers:
+1. **Order (Main Object)**
+2. **Customer (Nested Object)**
+3. **Item (Inside List)**
+4. **Attributes (Nested Object)**
 
-1️⃣ Sample JSON (GET API response)\
-2️⃣ Create POJO Classes\
-3️⃣ Hit GET call using Rest Assured\
-4️⃣ Convert response to POJO\
-5️⃣ Print full response using POJO
+Below are the POJO classes in **clean Java format with getters/setters**. These are useful when using **Jackson / Rest Assured / Gson** in API automation (which aligns with your testing work).
 
-------------------------------------------------------------------------
+---
 
-## 🔹 1️⃣ Sample JSON Response (Output of GET API)
+# 1️⃣ OrderResponse.java (Main POJO)
 
-Assume this is the response from:
-
-GET /orders/500
-
-``` json
+Below is Sample response Json,
+```json
 {
   "orderId": "ORD500",
   "amount": 75000,
@@ -46,13 +42,79 @@ GET /orders/500
 }
 ```
 
-------------------------------------------------------------------------
+```java
+package pojo;
 
-## 🔹 2️⃣ POJO Classes
+import java.util.List;
 
-### ✅ Customer.java
+public class OrderResponse {
 
-``` java
+    private String orderId;
+    private int amount;
+    private boolean paid;
+    private Customer customer;
+    private List<Item> items;
+    private Attributes attributes;
+
+    public OrderResponse() {}
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public Attributes getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(Attributes attributes) {
+        this.attributes = attributes;
+    }
+}
+```
+
+---
+
+# 2️⃣ Customer.java
+
+```java
+package pojo;
+
 public class Customer {
 
     private int id;
@@ -60,162 +122,156 @@ public class Customer {
 
     public Customer() {}
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 ```
 
-### ✅ Item.java
+---
 
-``` java
+# 3️⃣ Item.java
+
+```java
+package pojo;
+
 import java.util.List;
 
 public class Item {
 
     private int itemId;
     private String name;
-    private double price;
+    private int price;
     private List<String> tags;
 
     public Item() {}
 
-    public int getItemId() { return itemId; }
-    public void setItemId(int itemId) { this.itemId = itemId; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
-
-    public List<String> getTags() { return tags; }
-    public void setTags(List<String> tags) { this.tags = tags; }
-}
-```
-
-### ✅ OrderResponse.java
-
-``` java
-import java.util.List;
-import java.util.Map;
-
-public class OrderResponse {
-
-    private String orderId;
-    private double amount;
-    private boolean paid;
-    private Customer customer;
-    private List<Item> items;
-    private Map<String, String> attributes;
-
-    public OrderResponse() {}
-
-    public String getOrderId() { return orderId; }
-    public void setOrderId(String orderId) { this.orderId = orderId; }
-
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
-
-    public boolean isPaid() { return paid; }
-    public void setPaid(boolean paid) { this.paid = paid; }
-
-    public Customer getCustomer() { return customer; }
-    public void setCustomer(Customer customer) { this.customer = customer; }
-
-    public List<Item> getItems() { return items; }
-    public void setItems(List<Item> items) { this.items = items; }
-
-    public Map<String, String> getAttributes() { return attributes; }
-    public void setAttributes(Map<String, String> attributes) { this.attributes = attributes; }
-}
-```
-
-------------------------------------------------------------------------
-
-## 🔹 3️⃣ Hit GET Call Using Rest Assured
-
-``` java
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-
-Response response = RestAssured
-        .given()
-        .baseUri("https://api.example.com")
-        .when()
-        .get("/orders/500")
-        .then()
-        .statusCode(200)
-        .extract()
-        .response();
-```
-
-------------------------------------------------------------------------
-
-## 🔹 4️⃣ Convert Response to POJO
-
-``` java
-OrderResponse order = response.as(OrderResponse.class);
-```
-
-------------------------------------------------------------------------
-
-## 🔹 5️⃣ Print All Response Data Using POJO
-
-``` java
-System.out.println("OrderId: " + order.getOrderId());
-System.out.println("Amount: " + order.getAmount());
-System.out.println("Paid: " + order.isPaid());
-
-System.out.println("Customer Id: " + order.getCustomer().getId());
-System.out.println("Customer Name: " + order.getCustomer().getName());
-
-for (Item item : order.getItems()) {
-
-    System.out.println("Item Id: " + item.getItemId());
-    System.out.println("Item Name: " + item.getName());
-    System.out.println("Price: " + item.getPrice());
-
-    for (String tag : item.getTags()) {
-        System.out.println("Tag: " + tag);
+    public int getItemId() {
+        return itemId;
     }
 
-    System.out.println("------------------------");
-}
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
 
-System.out.println("Delivery Type: " + order.getAttributes().get("deliveryType"));
-System.out.println("Payment Mode: " + order.getAttributes().get("paymentMode"));
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+}
 ```
 
-------------------------------------------------------------------------
+---
 
-## 🔥 What Happened Internally?
+# 4️⃣ Attributes.java
 
--   Rest Assured received JSON response\
--   Jackson converted JSON → Java Object\
--   Arrays → List\
--   JSON objects → POJO\
--   Key-Value pairs → Map
+```java
+package pojo;
 
-------------------------------------------------------------------------
+public class Attributes {
 
-## 🎯 Interview Answer
+    private String deliveryType;
+    private String paymentMode;
 
-**Q: How do you convert GET API response into POJO?**
+    public Attributes() {}
 
-👉 Answer:
+    public String getDeliveryType() {
+        return deliveryType;
+    }
 
-We create POJO classes matching the JSON structure and use\
-`response.as(OrderResponse.class)`\
-to deserialize JSON into Java object.
+    public void setDeliveryType(String deliveryType) {
+        this.deliveryType = deliveryType;
+    }
 
-------------------------------------------------------------------------
+    public String getPaymentMode() {
+        return paymentMode;
+    }
 
-## 🚀 Best Practice
+    public void setPaymentMode(String paymentMode) {
+        this.paymentMode = paymentMode;
+    }
+}
+```
 
-✔ Validate status code before deserialization\
-✔ Use assertions instead of System.out.println\
-✔ Use response.prettyPrint() only for debugging\
-✔ Keep POJO clean and maintainable
+---
+
+# 5️⃣ How to Use This POJO in Rest Assured
+
+```java
+OrderResponse response = given()
+        .when()
+        .get("/orders/ORD500")
+        .then()
+        .extract()
+        .as(OrderResponse.class);
+
+System.out.println(response.getCustomer().getName());
+System.out.println(response.getItems().get(0).getName());
+```
+
+---
+
+# 6️⃣ Expected Output
+
+```
+Nitin Patil
+Laptop
+```
+
+---
+
+✅ **Interview Tip (Important):**
+
+When creating POJO for JSON:
+
+1. JSON **object → Java class**
+2. JSON **array → List<>**
+3. JSON **primitive → matching Java datatype**
+4. Nested objects require **separate POJO classes**
+
+Example:
+
+```
+customer {}  → Customer class
+items []     → List<Item>
+tags []      → List<String>
+attributes{} → Attributes class
+```
+
+---
+
+If you want, I can also show a **very powerful automation tester trick**:
+
+✅ **How to generate POJO classes automatically from JSON in 5 seconds (used by most QA engineers).**
