@@ -116,7 +116,7 @@ nav:
     - Data Loading: rest-assured/data-loading.md
     - GET/POST Resposne: rest-assured/response-handle-pojo.md
     - Interview Question: rest-assured/interview-questions.md
-    - Framework: rest-assured/rest_assured_framework.md
+    - Framework: rest_assured_framework.md
 
   - Postman:
     - Postman Script for Validation: rest-assured/postmand_valiodation.md
