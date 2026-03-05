@@ -118,7 +118,7 @@ nav:
     - Interview Question: rest-assured/interview-questions.md
     - Framework: rest-assured/framework.md
 
-  - Postman
+  - Postman:
     - Postman Script for Validation: rest-assured/postmand_valiodation.md
   #- PlayWright With Java:
       #- Locators: playwright-Java/locator.md
