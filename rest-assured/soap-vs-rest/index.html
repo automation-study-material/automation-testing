@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -3831,10 +3831,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rest-openapi-swagger-optional" class="md-nav__link">
+  <a href="#rest-" class="md-nav__link">
     <span class="md-ellipsis">
       
-        REST -- OpenAPI / Swagger (Optional)
+        REST -
       
     </span>
   </a>
@@ -4300,6 +4300,88 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postman
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Postman
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postmand_valiodation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postman Script for Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -4517,10 +4599,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rest-openapi-swagger-optional" class="md-nav__link">
+  <a href="#rest-" class="md-nav__link">
     <span class="md-ellipsis">
       
-        REST -- OpenAPI / Swagger (Optional)
+        REST -
       
     </span>
   </a>
@@ -4760,11 +4842,11 @@
 <p>SOAP (Simple Object Access Protocol) is a strict, standardized messaging
 protocol used for communication between applications.</p>
 <ul>
-<li>Uses XML only\</li>
-<li>Has very strict rules\</li>
+<li>Uses XML only</li>
+<li>Has very strict rules</li>
 <li>Works like a formal contract-based system</li>
 </ul>
-<p>Think of SOAP like sending a registered legal document 📄\
+<p>Think of SOAP like sending a registered legal document 📄
 Everything must follow a fixed format, otherwise it's rejected.</p>
 <h3 id="example-soap-request">Example (SOAP Request)<a class="headerlink" href="#example-soap-request" title="Permanent link">&para;</a></h3>
 <pre><code class="language-xml">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
@@ -4792,7 +4874,7 @@ protocol.</p>
 <li>Mostly uses JSON\</li>
 <li>Uses standard HTTP methods</li>
 </ul>
-<p>Think of REST like ordering food on Swiggy/Zomato 🍔\
+<p>Think of REST like ordering food on Swiggy/Zomato 🍔
 Simple request → simple response.</p>
 <h3 id="example-rest-request">Example (REST Request)<a class="headerlink" href="#example-rest-request" title="Permanent link">&para;</a></h3>
 <pre><code>GET /employees/101
@@ -4807,8 +4889,8 @@ Simple request → simple response.</p>
 </code></pre>
 <h3 id="key-characteristics_1">Key Characteristics<a class="headerlink" href="#key-characteristics_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>No strict format\</li>
-<li>Easy to use\</li>
+<li>No strict format</li>
+<li>Easy to use</li>
 <li>Fast and scalable</li>
 </ul>
 <hr />
@@ -4818,11 +4900,19 @@ Simple request → simple response.</p>
 <li>Works with HTTP (HyperText Transfer Protocol), HTTPS (HyperText Transfer Protocol Secure), SMTP (Simple Mail Transfer Protocol), TCP (Transmission Control Protocol)</li>
 <li>Not tied to web only</li>
 </ul>
-<p><strong>Why it matters?</strong>\
+<p>✅ What is WSDL?</p>
+<p>WSDL stands for:
+- Web Services Description Language
+- It is an XML-based document used to describe a SOAP web service.</p>
+<p>👉 It tells:
+- What operations are available
+- What request format is required</p>
+<p>What response format will be returned
+<strong>Why it matters?</strong>
 Used in banking &amp; enterprise systems where HTTP may not be enough.</p>
 <h3 id="rest">REST<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Uses HTTP/HTTPS only\</li>
+<li>Uses HTTP/HTTPS only</li>
 <li>Designed for the web</li>
 </ul>
 <p><strong>Example</strong></p>
@@ -4832,14 +4922,14 @@ Used in banking &amp; enterprise systems where HTTP may not be enough.</p>
 <h2 id="4-data-format">4️⃣ Data Format<a class="headerlink" href="#4-data-format" title="Permanent link">&para;</a></h2>
 <h3 id="soap_1">SOAP<a class="headerlink" href="#soap_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Only XML\</li>
+<li>Only XML</li>
 <li>Very verbose</li>
 </ul>
 <pre><code class="language-xml">&lt;age&gt;30&lt;/age&gt;
 </code></pre>
 <h3 id="rest_1">REST<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>JSON (most common)\</li>
+<li>JSON (most common)</li>
 <li>XML, text, HTML also possible</li>
 </ul>
 <pre><code class="language-json">&quot;age&quot;: 30
@@ -4848,45 +4938,54 @@ Used in banking &amp; enterprise systems where HTTP may not be enough.</p>
 <hr />
 <h2 id="5-contract-wsdl-vs-openapi">5️⃣ Contract (WSDL vs OpenAPI)<a class="headerlink" href="#5-contract-wsdl-vs-openapi" title="Permanent link">&para;</a></h2>
 <h3 id="soap-wsdl-mandatory">SOAP -- WSDL (Mandatory)<a class="headerlink" href="#soap-wsdl-mandatory" title="Permanent link">&para;</a></h3>
-<p>WSDL defines: - Methods\
-- Parameters\
-- Data types\
+<p>WSDL (Web Services Description Language) defines: 
+- Methods
+- Parameters
+- Data types
 - Response structure</p>
 <p>Client and server must match exactly.</p>
-<h3 id="rest-openapi-swagger-optional">REST -- OpenAPI / Swagger (Optional)<a class="headerlink" href="#rest-openapi-swagger-optional" title="Permanent link">&para;</a></h3>
+<h3 id="rest-">REST -<a class="headerlink" href="#rest-" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Documentation driven\</li>
+<li>
+<p>OpenAPI / Swagger (Optional)</p>
+</li>
+<li>
+<p>Documentation driven</p>
+</li>
 <li>Flexible</li>
 </ul>
-<p>👉 SOAP = Strict contract\
+<p>👉 SOAP = Strict contract
 👉 REST = Flexible agreement</p>
 <hr />
 <h2 id="6-security">6️⃣ Security<a class="headerlink" href="#6-security" title="Permanent link">&para;</a></h2>
 <h3 id="soap_2">SOAP<a class="headerlink" href="#soap_2" title="Permanent link">&para;</a></h3>
-<p>Built-in standards: - WS-Security\
-- XML Encryption\
+<p>Built-in standards: 
+- WS-Security
+- XML Encryption
 - Digital Signatures</p>
-<p>Used when: - Financial transactions\
+<p>Used when: 
+- Financial transactions
 - High security required</p>
 <h3 id="rest_2">REST<a class="headerlink" href="#rest_2" title="Permanent link">&para;</a></h3>
-<p>Security handled via: - HTTPS\
-- OAuth2\
-- JWT\
+<p>Security handled via: 
+- HTTPS
+- OAuth2
+- JWT
 - API keys</p>
-<p>👉 SOAP security is heavy but strong\
+<p>👉 SOAP security is heavy but strong
 👉 REST security is simple and modern</p>
 <hr />
 <h2 id="7-state-management">7️⃣ State Management<a class="headerlink" href="#7-state-management" title="Permanent link">&para;</a></h2>
 <h3 id="soap_3">SOAP<a class="headerlink" href="#soap_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Can be stateful\</li>
+<li>Can be stateful</li>
 <li>Maintains session</li>
 </ul>
-<p>Example:\
+<p>Example:
 User logs in → session maintained across calls</p>
 <h3 id="rest_3">REST<a class="headerlink" href="#rest_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Stateless\</li>
+<li>Stateless</li>
 <li>Each request is independent</li>
 </ul>
 <pre><code>&lt;!-- --&gt;
@@ -4915,14 +5014,14 @@ User logs in → session maintained across calls</p>
 <h2 id="9-performance">9️⃣ Performance<a class="headerlink" href="#9-performance" title="Permanent link">&para;</a></h2>
 <h3 id="soap_5">SOAP<a class="headerlink" href="#soap_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Heavy XML\</li>
-<li>More bandwidth\</li>
+<li>Heavy XML</li>
+<li>More bandwidth</li>
 <li>Slower</li>
 </ul>
 <h3 id="rest_5">REST<a class="headerlink" href="#rest_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Lightweight JSON\</li>
-<li>Faster\</li>
+<li>Lightweight JSON</li>
+<li>Faster</li>
 <li>Better caching</li>
 </ul>
 <p>👉 REST wins for performance 🚀</p>
@@ -4930,16 +5029,16 @@ User logs in → session maintained across calls</p>
 <h2 id="real-world-usage">🔟 Real-World Usage<a class="headerlink" href="#real-world-usage" title="Permanent link">&para;</a></h2>
 <h3 id="soap-used-in">SOAP Used In:<a class="headerlink" href="#soap-used-in" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Banking systems\</li>
-<li>Payment gateways\</li>
-<li>Enterprise legacy systems\</li>
+<li>Banking systems</li>
+<li>Payment gateways</li>
+<li>Enterprise legacy systems</li>
 <li>Telecom</li>
 </ul>
 <h3 id="rest-used-in">REST Used In:<a class="headerlink" href="#rest-used-in" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Web applications\</li>
-<li>Mobile apps\</li>
-<li>Microservices\</li>
+<li>Web applications</li>
+<li>Mobile apps</li>
+<li>Microservices</li>
 <li>Public APIs (Google, Twitter, GitHub)</li>
 </ul>
 <hr />
@@ -4958,20 +5057,22 @@ User logs in → session maintained across calls</p>
 <h1 id="stateful-vs-stateless-deep-explanation-with-examples">Stateful vs Stateless (Deep Explanation with Examples)<a class="headerlink" href="#stateful-vs-stateless-deep-explanation-with-examples" title="Permanent link">&para;</a></h1>
 <h2 id="1-what-is-state">1️⃣ What is State?<a class="headerlink" href="#1-what-is-state" title="Permanent link">&para;</a></h2>
 <p>State = stored information about a client between requests.</p>
-<p>Examples: - Logged-in user\
-- Shopping cart\
-- Session ID\
+<p>Examples: 
+- Logged-in user
+- Shopping cart
+- Session ID
 - Previous request data</p>
 <hr />
 <h2 id="2-stateful-system-concept">2️⃣ Stateful System (Concept)<a class="headerlink" href="#2-stateful-system-concept" title="Permanent link">&para;</a></h2>
-<p>A stateful system remembers the client.\
+<p>A stateful system remembers the client.
 👉 The server stores session data.</p>
 <p>Think of it like calling the same bank executive every time 📞</p>
 <hr />
 <h2 id="real-life-example-stateful">🧠 Real-Life Example (Stateful)<a class="headerlink" href="#real-life-example-stateful" title="Permanent link">&para;</a></h2>
 <p><strong>Hotel Front Desk</strong></p>
-<p>You check in → Room 305\
-Next day room service knows: - Room number\
+<p>You check in → Room 305
+Next day room service knows: 
+- Room number
 - Preferences</p>
 <p>➡️ Because they remember you</p>
 <hr />
@@ -4992,13 +5093,13 @@ Next day room service knows: - Room number\
 </code></pre>
 <h3 id="characteristics">Characteristics<a class="headerlink" href="#characteristics" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Server stores session\</li>
-<li>Client sends session ID\</li>
+<li>Server stores session</li>
+<li>Client sends session ID</li>
 <li>Server remembers user state</li>
 </ul>
 <hr />
 <h2 id="4-stateless-system-concept">4️⃣ Stateless System (Concept)<a class="headerlink" href="#4-stateless-system-concept" title="Permanent link">&para;</a></h2>
-<p>A stateless system does NOT remember the client.\
+<p>A stateless system does NOT remember the client.
 👉 Each request contains all required info.</p>
 <p>Street food stall example 🌮</p>
 <hr />
@@ -5016,27 +5117,27 @@ Authorization: Bearer eyJhbGciOi...
   &quot;age&quot;: 30
 }
 </code></pre>
-<p>👉 Server does NOT store session\
+<p>👉 Server does NOT store session
 👉 Token contains identity info</p>
 <hr />
 <h2 id="6-token-vs-session">6️⃣ Token vs Session<a class="headerlink" href="#6-token-vs-session" title="Permanent link">&para;</a></h2>
 <h3 id="stateful-session-based">Stateful (Session-based)<a class="headerlink" href="#stateful-session-based" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Session on server\</li>
-<li>More memory\</li>
+<li>Session on server</li>
+<li>More memory</li>
 <li>Harder to scale</li>
 </ul>
 <h3 id="stateless-token-based">Stateless (Token-based)<a class="headerlink" href="#stateless-token-based" title="Permanent link">&para;</a></h3>
 <ul>
-<li>No server memory\</li>
-<li>Token contains user info\</li>
+<li>No server memory</li>
+<li>Token contains user info</li>
 <li>Easy to scale</li>
 </ul>
 <hr />
 <h2 id="7-why-rest-is-stateless">7️⃣ Why REST is Stateless<a class="headerlink" href="#7-why-rest-is-stateless" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Scalability\</li>
-<li>Microservices\</li>
+<li>Scalability</li>
+<li>Microservices</li>
 <li>Load balancers</li>
 </ul>
 <p><strong>Load Balancer Example</strong></p>
@@ -5046,11 +5147,13 @@ Request 3 → Server C
 </code></pre>
 <hr />
 <h2 id="8-where-stateful-fits-better">8️⃣ Where Stateful Fits Better<a class="headerlink" href="#8-where-stateful-fits-better" title="Permanent link">&para;</a></h2>
-<p>Used when: - Long transactions\
-- High consistency\
+<p>Used when: 
+- Long transactions
+- High consistency
 - Financial workflows</p>
-<p>Examples: - Banking\
-- Legacy enterprise\
+<p>Examples: 
+- Banking
+- Legacy enterprise
 - SOAP services</p>
 <hr />
 <h2 id="stateful-vs-stateless-soap-vs-rest">🔁 Stateful vs Stateless (SOAP vs REST)<a class="headerlink" href="#stateful-vs-stateless-soap-vs-rest" title="Permanent link">&para;</a></h2>

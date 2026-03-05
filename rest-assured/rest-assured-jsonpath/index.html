@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -3897,6 +3897,88 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postman
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Postman
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postmand_valiodation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postman Script for Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -4001,13 +4083,116 @@ JsonPath jp = response.jsonPath();
 </code></pre>
 <hr />
 <h1 id="basic-extraction">🚀 Basic Extraction<a class="headerlink" href="#basic-extraction" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">JsonPath jp = response.jsonPath();
-
-int page = jp.getInt(&quot;page&quot;);
-String company = jp.getString(&quot;company&quot;);
-String firstUser = jp.getString(&quot;users[0].name&quot;);
+<p>You are using <strong>Rest Assured + JsonPath</strong>.
+<code>jp.getList("users.name")</code> will return a <strong>List of all names</strong> from the <code>users</code> array.</p>
+<p>Below is how you <strong>iterate the list</strong>.</p>
+<hr />
+<h1 id="1-json-structure">1️⃣ JSON Structure<a class="headerlink" href="#1-json-structure" title="Permanent link">&para;</a></h1>
+<p>Your JSON contains:</p>
+<ul>
+<li>Root keys → <code>page</code>, <code>total</code>, <code>company</code></li>
+<li>Array → <code>users</code></li>
+<li>Inside each user → <code>id</code>, <code>name</code>, <code>role</code>, <code>salary</code>, <code>skills</code></li>
+</ul>
+<p>Example extraction path:</p>
+<pre><code>users.name
+</code></pre>
+<p>This means:</p>
+<pre><code>users -&gt; array
+name  -&gt; field inside each object
+</code></pre>
+<p>Result will be:</p>
+<pre><code>[&quot;Umesh&quot;, &quot;Amit&quot;, &quot;Neha&quot;]
 </code></pre>
 <hr />
+<h1 id="2-java-code-iterate-using-for-loop">2️⃣ Java Code – Iterate Using For Loop<a class="headerlink" href="#2-java-code-iterate-using-for-loop" title="Permanent link">&para;</a></h1>
+<pre><code class="language-java">1  Response response = given()
+2      .when()
+3      .get(&quot;/users&quot;);
+4
+5  JsonPath jp = response.jsonPath();
+6
+7  List&lt;String&gt; names = jp.getList(&quot;users.name&quot;);
+8
+9  for (int i = 0; i &lt; names.size(); i++) {
+10     System.out.println(names.get(i));
+11 }
+</code></pre>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<pre><code>Umesh
+Amit
+Neha
+</code></pre>
+<hr />
+<h1 id="3-iterate-using-for-each-loop-better-way">3️⃣ Iterate Using For-Each Loop (Better Way)<a class="headerlink" href="#3-iterate-using-for-each-loop-better-way" title="Permanent link">&para;</a></h1>
+<pre><code class="language-java">1  Response response = given().get(&quot;/users&quot;);
+2
+3  JsonPath jp = response.jsonPath();
+4
+5  List&lt;String&gt; names = jp.getList(&quot;users.name&quot;);
+6
+7  for(String name : names){
+8      System.out.println(name);
+9  }
+</code></pre>
+<hr />
+<h1 id="4-iterate-complete-user-object">4️⃣ Iterate Complete User Object<a class="headerlink" href="#4-iterate-complete-user-object" title="Permanent link">&para;</a></h1>
+<p>If you want <strong>each user object</strong>, use:</p>
+<pre><code class="language-java">List&lt;Map&lt;String, Object&gt;&gt; users = jp.getList(&quot;users&quot;);
+
+for(Map&lt;String, Object&gt; user : users){
+    System.out.println(user.get(&quot;name&quot;));
+    System.out.println(user.get(&quot;role&quot;));
+}
+</code></pre>
+<p>Output</p>
+<pre><code>Umesh
+ADMIN
+Amit
+USER
+Neha
+USER
+</code></pre>
+<hr />
+<h1 id="5-extract-specific-user">5️⃣ Extract Specific User<a class="headerlink" href="#5-extract-specific-user" title="Permanent link">&para;</a></h1>
+<p>Example: first user name</p>
+<pre><code class="language-java">String name = jp.getString(&quot;users[0].name&quot;);
+System.out.println(name);
+</code></pre>
+<p>Output</p>
+<pre><code>Umesh
+</code></pre>
+<hr />
+<h1 id="6-interview-tip">6️⃣ Interview Tip ⭐<a class="headerlink" href="#6-interview-tip" title="Permanent link">&para;</a></h1>
+<p>Common Rest Assured JsonPath usages:</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get all names</td>
+<td><code>jp.getList("users.name")</code></td>
+</tr>
+<tr>
+<td>Get first name</td>
+<td><code>jp.getString("users[0].name")</code></td>
+</tr>
+<tr>
+<td>Get list size</td>
+<td><code>jp.getList("users").size()</code></td>
+</tr>
+<tr>
+<td>Filter data</td>
+<td><code>jp.getList("users.findAll{it.role=='USER'}.name")</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>If you want, I can also show <strong>10 most important RestAssured JsonPath tricks asked in Automation Testing interviews</strong> (like filtering ADMIN users, highest salary, skill contains Java, etc.).</p>
 <h1 id="filtering-examples">🚀 Filtering Examples<a class="headerlink" href="#filtering-examples" title="Permanent link">&para;</a></h1>
 <h2 id="example-1-admin-user">Example 1 – ADMIN user<a class="headerlink" href="#example-1-admin-user" title="Permanent link">&para;</a></h2>
 <pre><code class="language-java">jp.getString(&quot;users.find { it.role == 'ADMIN' }.name&quot;);
