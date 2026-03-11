@@ -19,7 +19,7 @@
     
     
       
-        <title>1️⃣ Where to Create Hooks Class - Automation Notes</title>
+        <title>Cucumber Background and Hooks – Interview Notes - Automation Notes</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-where-to-create-hooks-class" class="md-skip">
+        <a href="#cucumber-background-and-hooks-interview-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1️⃣ Where to Create Hooks Class
+              Cucumber Background and Hooks – Interview Notes
             
           </span>
         </div>
@@ -3978,32 +3978,97 @@
 
 
 
-<h1 id="1-where-to-create-hooks-class">1️⃣ Where to Create Hooks Class<a class="headerlink" href="#1-where-to-create-hooks-class" title="Permanent link">&para;</a></h1>
-<p>Hooks class is created inside the <strong>step definition package</strong> (or a hooks package).</p>
-<p>Typical structure:</p>
-<pre><code class="language-text">src/test/java
- ├── runner
- │     TestRunner.java
- │
- ├── stepdefinitions
- │     LoginStepDefinition.java
- │
- ├── hooks
- │     Hooks.java
- │
-src/test/resources
- └── features
-       login.feature
-</code></pre>
-<p>Important point:</p>
-<p>✔ Hooks are automatically detected <strong>if the package is included in <code>glue</code> in Runner class</strong>.</p>
+<h1 id="cucumber-background-and-hooks-interview-notes">Cucumber Background and Hooks – Interview Notes<a class="headerlink" href="#cucumber-background-and-hooks-interview-notes" title="Permanent link">&para;</a></h1>
+<p>These notes cover:</p>
+<ul>
+<li>Background in Cucumber</li>
+<li>Hooks in Cucumber</li>
+<li>Feature file example</li>
+<li>Step Definitions</li>
+<li>Hooks implementation</li>
+<li>Runner configuration</li>
+<li>Execution order</li>
+<li>Console output</li>
+<li>Differences</li>
+<li>Interview answers</li>
+</ul>
 <hr />
-<h1 id="2-feature-file">2️⃣ Feature File<a class="headerlink" href="#2-feature-file" title="Permanent link">&para;</a></h1>
-<p><code>src/test/resources/features/login.feature</code></p>
-<pre><code class="language-gherkin">Feature: Login functionality
+<h1 id="1-background-in-cucumber">1️⃣ Background in Cucumber<a class="headerlink" href="#1-background-in-cucumber" title="Permanent link">&para;</a></h1>
+<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p><code>Background</code> is used to run <strong>common steps before every scenario in a feature file</strong>.</p>
+<p>Instead of repeating steps in each scenario, we define them once in <strong>Background</strong>.</p>
+<h2 id="key-points">Key Points<a class="headerlink" href="#key-points" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Runs <strong>before every scenario</strong> in the feature file</li>
+<li>Defined inside the <strong>Feature file</strong></li>
+<li>Used for <strong>common preconditions</strong></li>
+<li>Improves <strong>readability and avoids duplication</strong></li>
+</ol>
+<hr />
+<h1 id="2-hooks-in-cucumber">2️⃣ Hooks in Cucumber<a class="headerlink" href="#2-hooks-in-cucumber" title="Permanent link">&para;</a></h1>
+<p>Hooks allow execution of code <strong>before or after scenarios</strong>.</p>
+<p>They are used for <strong>test setup and cleanup</strong>.</p>
+<h2 id="types-of-hooks">Types of Hooks<a class="headerlink" href="#types-of-hooks" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Hook</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@Before</code></td>
+<td>Runs before each scenario</td>
+</tr>
+<tr>
+<td><code>@After</code></td>
+<td>Runs after each scenario</td>
+</tr>
+<tr>
+<td><code>@BeforeStep</code></td>
+<td>Runs before every step</td>
+</tr>
+<tr>
+<td><code>@AfterStep</code></td>
+<td>Runs after every step</td>
+</tr>
+</tbody>
+</table>
+<p>Hooks are defined in <strong>Java classes inside the step definition or hooks package</strong>.</p>
+<hr />
+<h1 id="3-project-structure">3️⃣ Project Structure<a class="headerlink" href="#3-project-structure" title="Permanent link">&para;</a></h1>
+<p>Typical Selenium + Cucumber project structure:</p>
+<pre><code>
+src/test/java
+├── runner
+│     TestRunner.java
+│
+├── stepdefinitions
+│     LoginStepDefinition.java
+│
+├── hooks
+│     Hooks.java
+│
+src/test/resources
+└── features
+login.feature
+
+````
+
+Hooks are automatically detected **if the package is included in the Runner class glue option**.
+
+---
+
+# 4️⃣ Feature File
+
+`src/test/resources/features/login.feature`
+
+```gherkin
+Feature: Login functionality
 
 Background:
-  Given user launches browser
+  Given user launches the browser
   And user navigates to login page
 
 Scenario: Successful login
@@ -4015,11 +4080,16 @@ Scenario: Failed login
   When user enters username &quot;admin&quot;
   And user enters password &quot;wrong&quot;
   Then login should fail
-</code></pre>
-<hr />
-<h1 id="3-step-definition-class">3️⃣ Step Definition Class<a class="headerlink" href="#3-step-definition-class" title="Permanent link">&para;</a></h1>
-<p><code>src/test/java/stepdefinitions/LoginStepDefinition.java</code></p>
-<pre><code class="language-java">import io.cucumber.java.en.*;
+````
+
+---
+
+# 5️⃣ Step Definition Class
+
+`src/test/java/stepdefinitions/LoginStepDefinition.java`
+
+```java
+import io.cucumber.java.en.*;
 
 public class LoginStepDefinition {
 
@@ -4064,7 +4134,7 @@ public class LoginStepDefinition {
 }
 </code></pre>
 <hr />
-<h1 id="4-hooks-class">4️⃣ Hooks Class<a class="headerlink" href="#4-hooks-class" title="Permanent link">&para;</a></h1>
+<h1 id="6-hooks-class">6️⃣ Hooks Class<a class="headerlink" href="#6-hooks-class" title="Permanent link">&para;</a></h1>
 <p><code>src/test/java/hooks/Hooks.java</code></p>
 <pre><code class="language-java">import io.cucumber.java.Before;
 import io.cucumber.java.After;
@@ -4082,12 +4152,14 @@ public class Hooks {
     }
 }
 </code></pre>
-<p>Purpose:</p>
-<p>✔ Setup environment
-✔ Launch browser
-✔ Cleanup after test</p>
+<p>Purpose of Hooks:</p>
+<ul>
+<li>Setup environment</li>
+<li>Launch browser</li>
+<li>Close browser after test</li>
+</ul>
 <hr />
-<h1 id="5-runner-class">5️⃣ Runner Class<a class="headerlink" href="#5-runner-class" title="Permanent link">&para;</a></h1>
+<h1 id="7-runner-class">7️⃣ Runner Class<a class="headerlink" href="#7-runner-class" title="Permanent link">&para;</a></h1>
 <p><code>src/test/java/runner/TestRunner.java</code></p>
 <pre><code class="language-java">import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -4102,23 +4174,25 @@ import io.cucumber.testng.CucumberOptions;
 public class TestRunner extends AbstractTestNGCucumberTests {
 }
 </code></pre>
-<p>Important part:</p>
-<pre><code class="language-java">glue = {&quot;stepdefinitions&quot;,&quot;hooks&quot;}
+<p>Important configuration:</p>
+<pre><code>glue = {&quot;stepdefinitions&quot;,&quot;hooks&quot;}
 </code></pre>
 <p>This tells Cucumber to scan:</p>
-<p>✔ Step Definitions
-✔ Hooks</p>
+<ul>
+<li>Step Definitions</li>
+<li>Hooks classes</li>
+</ul>
 <hr />
-<h1 id="6-execution-order">6️⃣ Execution Order<a class="headerlink" href="#6-execution-order" title="Permanent link">&para;</a></h1>
-<p>For <strong>each scenario</strong>, execution order is:</p>
+<h1 id="8-execution-order">8️⃣ Execution Order<a class="headerlink" href="#8-execution-order" title="Permanent link">&para;</a></h1>
+<p>For each scenario execution order is:</p>
 <pre><code>Before Hook
 Background Steps
 Scenario Steps
 After Hook
 </code></pre>
 <hr />
-<h1 id="7-execution-output">7️⃣ Execution Output<a class="headerlink" href="#7-execution-output" title="Permanent link">&para;</a></h1>
-<h3 id="scenario-1">Scenario 1<a class="headerlink" href="#scenario-1" title="Permanent link">&para;</a></h3>
+<h1 id="9-console-output-after-execution">9️⃣ Console Output After Execution<a class="headerlink" href="#9-console-output-after-execution" title="Permanent link">&para;</a></h1>
+<h2 id="scenario-1-successful-login">Scenario 1 (Successful Login)<a class="headerlink" href="#scenario-1-successful-login" title="Permanent link">&para;</a></h2>
 <pre><code>Before Hook → Setup browser
 
 Browser launched
@@ -4132,7 +4206,7 @@ Login Successful
 After Hook → Close browser
 </code></pre>
 <hr />
-<h3 id="scenario-2">Scenario 2<a class="headerlink" href="#scenario-2" title="Permanent link">&para;</a></h3>
+<h2 id="scenario-2-failed-login">Scenario 2 (Failed Login)<a class="headerlink" href="#scenario-2-failed-login" title="Permanent link">&para;</a></h2>
 <pre><code>Before Hook → Setup browser
 
 Browser launched
@@ -4146,7 +4220,7 @@ Login Failed
 After Hook → Close browser
 </code></pre>
 <hr />
-<h1 id="8-execution-flow">8️⃣ Execution Flow<a class="headerlink" href="#8-execution-flow" title="Permanent link">&para;</a></h1>
+<h1 id="execution-flow">🔟 Execution Flow<a class="headerlink" href="#execution-flow" title="Permanent link">&para;</a></h1>
 <pre><code>Scenario 1
 ---------
 Before Hook
@@ -4161,19 +4235,77 @@ Background
 Scenario Steps
 After Hook
 </code></pre>
-<p>Hooks run <strong>before and after every scenario</strong>.</p>
+<p>Background runs <strong>before every scenario</strong>.</p>
 <hr />
-<h1 id="9-short-interview-answer">9️⃣ Short Interview Answer<a class="headerlink" href="#9-short-interview-answer" title="Permanent link">&para;</a></h1>
-<p><strong>Where do we create Hooks in Cucumber?</strong></p>
-<p>Hooks are created in a separate class (usually <code>Hooks.java</code>) inside the <strong>step definition or hooks package</strong>.</p>
+<h1 id="11-difference-between-background-and-hooks">1️⃣1️⃣ Difference Between Background and Hooks<a class="headerlink" href="#11-difference-between-background-and-hooks" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Background</th>
+<th>Hooks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>Feature file</td>
+<td>Java class</td>
+</tr>
+<tr>
+<td>Visibility</td>
+<td>Visible to business</td>
+<td>Hidden implementation</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Common test steps</td>
+<td>Setup &amp; teardown</td>
+</tr>
+<tr>
+<td>Execution</td>
+<td>Before each scenario</td>
+<td>Before/After scenarios</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="12-short-interview-answers">1️⃣2️⃣ Short Interview Answers<a class="headerlink" href="#12-short-interview-answers" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-background-in-cucumber">What is Background in Cucumber?<a class="headerlink" href="#what-is-background-in-cucumber" title="Permanent link">&para;</a></h2>
+<p>Background is used to define common steps that run before every scenario in a feature file.</p>
+<hr />
+<h2 id="what-are-hooks-in-cucumber">What are Hooks in Cucumber?<a class="headerlink" href="#what-are-hooks-in-cucumber" title="Permanent link">&para;</a></h2>
+<p>Hooks are methods annotated with <code>@Before</code> and <code>@After</code> that execute setup and cleanup code before or after each scenario.</p>
+<hr />
+<h2 id="where-do-we-create-hooks-in-cucumber">Where do we create Hooks in Cucumber?<a class="headerlink" href="#where-do-we-create-hooks-in-cucumber" title="Permanent link">&para;</a></h2>
+<p>Hooks are created in a separate Java class (usually <code>Hooks.java</code>) inside the <strong>stepdefinitions or hooks package</strong>.</p>
 <p>They are mapped automatically using the <strong>glue option in the Runner class</strong>.</p>
 <p>Example:</p>
 <pre><code class="language-java">glue = {&quot;stepdefinitions&quot;,&quot;hooks&quot;}
 </code></pre>
 <hr />
-<p>✅ Since you are preparing <strong>BDD + Cucumber topics</strong>, the <strong>next very important interview topic is:</strong></p>
-<p><strong>Scenario Context / Sharing data between Step Definitions</strong></p>
-<p>This is asked in <strong>almost every Selenium + Cucumber interview for 3–5 years experience</strong>, and many candidates struggle with it.</p>
+<h1 id="13-important-advanced-cucumber-topics">1️⃣3️⃣ Important Advanced Cucumber Topics<a class="headerlink" href="#13-important-advanced-cucumber-topics" title="Permanent link">&para;</a></h1>
+<p>Commonly asked in <strong>3–5 years Selenium Automation interviews</strong>:</p>
+<ul>
+<li>Step Definition Ambiguity</li>
+<li>Custom Parameter Types</li>
+<li>DataTableType Mapping</li>
+<li>Parallel Execution with Cucumber + TestNG</li>
+<li>Scenario Context / Dependency Injection</li>
+</ul>
+<hr />
+<pre><code>
+If you want, I can also give you a **very powerful single-page Cucumber cheat sheet (.md)** covering:
+
+- Background  
+- Hooks  
+- Scenario Outline  
+- DataTable  
+- Regex matching  
+- Step Definition mapping  
+
+This **one sheet is enough for most Selenium + Cucumber interviews.**
+</code></pre>
 
 
 
