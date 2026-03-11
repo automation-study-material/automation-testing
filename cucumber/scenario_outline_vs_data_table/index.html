@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -4098,22 +4098,118 @@ for (Map&lt;String, String&gt; user : users) {
     | name  | email           | street  | city   | pincode |
     | Nitin | nitin@gmail.com | MG Road | Mumbai | 400001  |
 </code></pre>
-<pre><code class="language-java">Map&lt;String, String&gt; data = table.asMaps(String.class, String.class).get(0);
-
-Address address = new Address(
-        data.get(&quot;street&quot;),
-        data.get(&quot;city&quot;),
-        data.get(&quot;pincode&quot;)
-);
-
-User user = new User(
-        data.get(&quot;name&quot;),
-        data.get(&quot;email&quot;),
-        address
-);
+<h3 id="address-class">Address Class<a class="headerlink" href="#address-class" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Explanation:</li>
+<li>Address object stores:<ul>
+<li>street</li>
+<li>city</li>
+<li>pincode</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">1  public class Address {
+2
+3      private String street;
+4      private String city;
+5      private String pincode;
+6
+7      public Address(String street, String city, String pincode) {
+8          this.street = street;
+9          this.city = city;
+10         this.pincode = pincode;
+11     }
+12
+13     public String getStreet() {
+14         return street;
+15     }
+16
+17     public String getCity() {
+18         return city;
+19     }
+20
+21     public String getPincode() {
+22         return pincode;
+23     }
+24 }
 </code></pre>
-<p>✔ Manual mapping\
-✔ Nested object handling\
+<h3 id="user-class">User Class<a class="headerlink" href="#user-class" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Explanation:</li>
+<li>User object stores:<ul>
+<li>name</li>
+<li>email</li>
+<li>address (nested object)</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">1  public class User {
+2
+3      private String name;
+4      private String email;
+5      private Address address;
+6
+7      public User(String name, String email, Address address) {
+8          this.name = name;
+9          this.email = email;
+10         this.address = address;
+11     }
+12
+13     public String getName() {
+14         return name;
+15     }
+16
+17     public String getEmail() {
+18         return email;
+19     }
+20
+21     public Address getAddress() {
+22         return address;
+23     }
+24 }
+</code></pre>
+<h3 id="stef-def-class">Stef Def Class<a class="headerlink" href="#stef-def-class" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">1  import io.cucumber.datatable.DataTable;
+2  import io.cucumber.java.en.When;
+3  import java.util.Map;
+4
+5  public class UserStepDefinition {
+6
+7      @When(&quot;user enters user details with address&quot;)
+8      public void user_enters_user_details_with_address(DataTable table) {
+9
+10         Map&lt;String, String&gt; data =
+11                 table.asMaps(String.class, String.class).get(0);
+12
+13         Address address = new Address(
+14                 data.get(&quot;street&quot;),
+15                 data.get(&quot;city&quot;),
+16                 data.get(&quot;pincode&quot;)
+17         );
+18
+19         User user = new User(
+20                 data.get(&quot;name&quot;),
+21                 data.get(&quot;email&quot;),
+22                 address
+23         );
+24
+25         System.out.println(&quot;User Name: &quot; + user.getName());
+26         System.out.println(&quot;Email: &quot; + user.getEmail());
+27         System.out.println(&quot;Street: &quot; + user.getAddress().getStreet());
+28         System.out.println(&quot;City: &quot; + user.getAddress().getCity());
+29         System.out.println(&quot;Pincode: &quot; + user.getAddress().getPincode());
+30     }
+31 }
+</code></pre>
+<p>Output</p>
+<pre><code class="language-text">User Name: Nitin
+Email: nitin@gmail.com
+Street: MG Road
+City: Mumbai
+Pincode: 400001
+</code></pre>
+<p>✔ Manual mapping
+✔ Nested object handling
 ✔ Frequently asked in SDET interviews</p>
 <hr />
 <h2 id="3-list-inside-list-user-with-roles">3️⃣ List Inside List (User with Roles)<a class="headerlink" href="#3-list-inside-list-user-with-roles" title="Permanent link">&para;</a></h2>
