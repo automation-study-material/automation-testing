@@ -72,7 +72,7 @@ src/test/resources
 └── features
 login.feature
 
-````
+```
 
 Hooks are automatically detected **if the package is included in the Runner class glue option**.
 
