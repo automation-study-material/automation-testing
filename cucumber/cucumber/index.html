@@ -5094,12 +5094,12 @@ It integrates with:</p>
         System.out.println(&quot;Application launched&quot;);
     }
 
-    @When(&quot;user enters username \&quot;(.*)\&quot;&quot;)
+    @When(&quot;user enters username {string}&quot;)
     public void enterUsername(String username) {
         System.out.println(&quot;Username: &quot; + username);
     }
 
-    @When(&quot;user enters password \&quot;(.*)\&quot;&quot;)
+    @When(&quot;user enters password {string}&quot;)
     public void enterPassword(String password) {
         System.out.println(&quot;Password: &quot; + password);
     }
