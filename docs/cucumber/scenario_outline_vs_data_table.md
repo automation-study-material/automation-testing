@@ -177,13 +177,13 @@ Age    : 30
 
 # 🔥 Core Difference (Interview Table)
 
-  Feature             Scenario Outline        DataTable
-  ------------------- ----------------------- -------------------------
-  Execution           Multiple times          Single time
-  Data Location       Examples section        Inside step
-  Reporting           Separate test entries   One entry
-  Failure Isolation   Per dataset             Entire scenario fails
-  Best For            Independent tests       Bulk transactional flow
+| Feature           | Scenario Outline      | DataTable              |
+|------------------|----------------------|------------------------|
+| **Execution**     | Multiple times       | Single time            |
+| **Data Location** | Examples section     | Inside step            |
+| **Reporting**     | Separate test entries| One entry              |
+| **Failure Isolation** | Per dataset     | Entire scenario fails  |
+| **Best For**      | Independent tests    | Bulk transactional flow|
 
 ------------------------------------------------------------------------
 
