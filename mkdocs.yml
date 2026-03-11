@@ -79,6 +79,7 @@ nav:
     - Selenium Exception: selenium/exception/selenium-exception.md
       
   - BDD Cucumber:
+    - Why BDD: cucumber/why_bdd.md
     - Cucumber Notes: cucumber/cucumber.md
     - CucumberTags: cucumber/cucumber-tags.md
     - Cucumber Hooks: cucumber/cucumber-hooks.md
