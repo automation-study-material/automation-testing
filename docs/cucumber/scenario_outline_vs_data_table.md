@@ -93,11 +93,12 @@ Scenario runs only once, but data is iterated inside step definition.
 ## ✅ Basic Example
 
 ``` gherkin
-Scenario: Register multiple users
+Scenario: Create users with full details
+  Given user test setup is ready
   When user enters below user details
-    | name  | email           | city   |
-    | Nitin | nitin@gmail.com | Mumbai |
-    | Rahul | rahul@gmail.com | Pune   |
+    | name   | email            | city   | mobile | age |
+    | Nitin  | nitin@gmail.com  | Mumbai | 98765  | 28  |
+    | Rahul  | rahul@gmail.com  | Pune   | 91234  | 30  |
 ```
 
 ------------------------------------------------------------------------
@@ -105,19 +106,64 @@ Scenario: Register multiple users
 ## 🔹 Step Definition
 
 ``` java
-@When("user enters below user details")
-public void userEntersBelowUserDetails(DataTable table) {
-
-    List<Map<String, String>> users = table.asMaps(String.class, String.class);
-
-    for (Map<String, String> user : users) {
-        System.out.println(user.get("name"));
-        System.out.println(user.get("email"));
-        System.out.println(user.get("city"));
-    }
-}
+1  import io.cucumber.datatable.DataTable;
+2  import io.cucumber.java.en.Given;
+3  import io.cucumber.java.en.When;
+4  import java.util.List;
+5  import java.util.Map;
+6
+7  public class UserStepDefinition {
+8
+9      @Given("user test setup is ready")
+10     public void user_test_setup_is_ready() {
+11         System.out.println("Step 1 Executed: GIVEN step - Test setup completed");
+12     }
+13
+14     @When("user enters below user details")
+15     public void user_enters_below_user_details(DataTable table) {
+16
+17         System.out.println("Step 2 Executed: WHEN step - Reading DataTable");
+18
+19         List<Map<String, String>> users =
+20                 table.asMaps(String.class, String.class);
+21
+22         for (Map<String, String> user : users) {
+23
+24             System.out.println("Processing user record...");
+25
+26             System.out.println("Name   : " + user.get("name"));
+27             System.out.println("Email  : " + user.get("email"));
+28             System.out.println("City   : " + user.get("city"));
+29             System.out.println("Mobile : " + user.get("mobile"));
+30             System.out.println("Age    : " + user.get("age"));
+31
+32             System.out.println("-------------------------");
+33         }
+34     }
+35 }
 ```
+Output- When we run scenario
+```text
+Step 1 Executed: GIVEN step - Test setup completed
 
+Step 2 Executed: WHEN step - Reading DataTable
+
+Processing user record...
+Name   : Nitin
+Email  : nitin@gmail.com
+City   : Mumbai
+Mobile : 98765
+Age    : 28
+-------------------------
+
+Processing user record...
+Name   : Rahul
+Email  : rahul@gmail.com
+City   : Pune
+Mobile : 91234
+Age    : 30
+-------------------------
+```
 ------------------------------------------------------------------------
 
 ## 🎯 Key Characteristics
