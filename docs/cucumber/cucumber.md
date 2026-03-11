@@ -113,12 +113,12 @@ public class LoginSteps {
         System.out.println("Application launched");
     }
 
-    @When("user enters username \"(.*)\"")
+    @When("user enters username {string}")
     public void enterUsername(String username) {
         System.out.println("Username: " + username);
     }
 
-    @When("user enters password \"(.*)\"")
+    @When("user enters password {string}")
     public void enterPassword(String password) {
         System.out.println("Password: " + password);
     }
