@@ -1,6 +1,4 @@
-Below is a **clean Markdown (.md) document** you can directly use in notes or interview preparation.
 
-````md
 # BDD (Behavior Driven Development)
 
 ## 1. Why BDD Was Introduced
