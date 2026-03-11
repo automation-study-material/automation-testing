@@ -175,24 +175,119 @@ Scenario: Create user with address
     | Nitin | nitin@gmail.com | MG Road | Mumbai | 400001  |
 ```
 
+### Address Class
+- Explanation:
+  - Address object stores:
+    - street
+    - city
+    - pincode
+      
 ``` java
-Map<String, String> data = table.asMaps(String.class, String.class).get(0);
-
-Address address = new Address(
-        data.get("street"),
-        data.get("city"),
-        data.get("pincode")
-);
-
-User user = new User(
-        data.get("name"),
-        data.get("email"),
-        address
-);
+1  public class Address {
+2
+3      private String street;
+4      private String city;
+5      private String pincode;
+6
+7      public Address(String street, String city, String pincode) {
+8          this.street = street;
+9          this.city = city;
+10         this.pincode = pincode;
+11     }
+12
+13     public String getStreet() {
+14         return street;
+15     }
+16
+17     public String getCity() {
+18         return city;
+19     }
+20
+21     public String getPincode() {
+22         return pincode;
+23     }
+24 }
 ```
 
-✔ Manual mapping\
-✔ Nested object handling\
+### User Class
+- Explanation:
+  - User object stores:
+    - name
+    - email
+    - address (nested object)
+   
+```java
+1  public class User {
+2
+3      private String name;
+4      private String email;
+5      private Address address;
+6
+7      public User(String name, String email, Address address) {
+8          this.name = name;
+9          this.email = email;
+10         this.address = address;
+11     }
+12
+13     public String getName() {
+14         return name;
+15     }
+16
+17     public String getEmail() {
+18         return email;
+19     }
+20
+21     public Address getAddress() {
+22         return address;
+23     }
+24 }
+```
+
+### Stef Def Class
+```java
+1  import io.cucumber.datatable.DataTable;
+2  import io.cucumber.java.en.When;
+3  import java.util.Map;
+4
+5  public class UserStepDefinition {
+6
+7      @When("user enters user details with address")
+8      public void user_enters_user_details_with_address(DataTable table) {
+9
+10         Map<String, String> data =
+11                 table.asMaps(String.class, String.class).get(0);
+12
+13         Address address = new Address(
+14                 data.get("street"),
+15                 data.get("city"),
+16                 data.get("pincode")
+17         );
+18
+19         User user = new User(
+20                 data.get("name"),
+21                 data.get("email"),
+22                 address
+23         );
+24
+25         System.out.println("User Name: " + user.getName());
+26         System.out.println("Email: " + user.getEmail());
+27         System.out.println("Street: " + user.getAddress().getStreet());
+28         System.out.println("City: " + user.getAddress().getCity());
+29         System.out.println("Pincode: " + user.getAddress().getPincode());
+30     }
+31 }
+```
+
+Output
+```text
+User Name: Nitin
+Email: nitin@gmail.com
+Street: MG Road
+City: Mumbai
+Pincode: 400001
+```
+✔ Manual mapping
+✔ Nested object handling
 ✔ Frequently asked in SDET interviews
 
 ------------------------------------------------------------------------
