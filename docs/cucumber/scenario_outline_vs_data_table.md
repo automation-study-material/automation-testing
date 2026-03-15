@@ -398,12 +398,14 @@ User user = new User(data.get("name"), roles);
 
 # 🎯 Performance & Parallel Execution
 
-  Factor              Scenario Outline         DataTable
-  ------------------- ------------------------ ----------------------
-  Parallel Friendly   Yes                      No (single scenario)
-  Execution Speed     Slower (repeated flow)   Faster
-  Debugging           Easy                     Harder
-  CI Visibility       Better                   Limited
+| Factor            | Scenario Outline       | DataTable            |
+| ----------------- | ---------------------- | -------------------- |
+| Parallel Friendly | Yes                    | No (single scenario) |
+| Execution Speed   | Slower (repeated flow) | Faster               |
+| Debugging         | Easy                   | Harder               |
+| CI Visibility     | Better                 | Limited              |
+
+
 
 ------------------------------------------------------------------------
 
