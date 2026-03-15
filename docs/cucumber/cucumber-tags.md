@@ -430,8 +430,36 @@ Thread-3
 ## SmokeRunner
 
 ```java
-@CucumberOptions(tags="@smoke")
-public class SmokeRunner {}
+package runner;
+
+import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+
+    features = "src/test/resources/features",   // path of feature files
+    
+    glue = {"stepDefinitions", "hooks"},        // step definition & hook package
+    
+    plugin = {
+            "pretty",
+            "html:target/cucumber-reports/cucumber.html",
+            "json:target/cucumber-reports/cucumber.json",
+            "junit:target/cucumber-reports/cucumber.xml"
+    },
+    
+    tags = "@smoke",                            // run only smoke tests
+    
+    monochrome = true,                          // cleaner console output
+    
+    dryRun = false                              // true = check step mapping only
+)
+
+public class SmokeRunner {
+
+}
 ```
 
 Run:
@@ -447,8 +475,35 @@ Runs → only smoke tests
 ## RegressionRunner
 
 ```java
-@CucumberOptions(tags="@regression")
-public class RegressionRunner {}
+package runner;
+
+import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+
+    features = "src/test/resources/features",
+    
+    glue = {"stepDefinitions", "hooks"},
+    
+    plugin = {
+            "pretty",
+            "html:target/cucumber-reports/cucumber.html",
+            "json:target/cucumber-reports/cucumber.json"
+    },
+    
+    tags = "@regression",
+    
+    monochrome = true,
+    
+    dryRun = false
+)
+
+public class RegressionRunner {
+
+}
 ```
 
 Runs → only regression tests
