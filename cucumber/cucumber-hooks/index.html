@@ -4184,178 +4184,23 @@ Thread-3
 <h1 id="combined-example-tags-hooks-parallel">✅ Combined Example (Tags + Hooks + Parallel)<a class="headerlink" href="#combined-example-tags-hooks-parallel" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
-<p>Your code is related to <strong>BDD Cucumber Hooks</strong> in <strong>Java + Selenium</strong>.
-<code>@Before</code> hooks run <strong>before every scenario</strong> execution.</p>
-<p>Let’s understand step-by-step.</p>
-<hr />
-<h1 id="1-your-hook-code">1️⃣ Your Hook Code<a class="headerlink" href="#1-your-hook-code" title="Permanent link">&para;</a></h1>
 <pre><code class="language-java">@Before(order = 1)
-public void globalSetup() {
-    System.out.println(&quot;Global setup&quot;);
-}
+public void global(){}
 
-@Before(value = &quot;@smoke&quot;, order = 2)
-public void smokeSetup() {
-    System.out.println(&quot;Smoke setup&quot;);
-}
+@Before(&quot;@smoke&quot;, order = 2)
+public void smoke(){}
 </code></pre>
-<h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
-<h3 id="hook-1">Hook 1<a class="headerlink" href="#hook-1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Before(order = 1)
+<h2 id="feature_1">Feature<a class="headerlink" href="#feature_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-gherkin">@smoke Scenario A
+Scenario B
+@smoke Scenario C
 </code></pre>
-<p><strong>Meaning</strong></p>
-<ol>
-<li>This hook runs <strong>before every scenario</strong>.</li>
-<li><code>order = 1</code> means it will run <strong>first</strong>.</li>
-</ol>
-<p>Method:</p>
-<pre><code class="language-java">public void globalSetup() {
-    System.out.println(&quot;Global setup&quot;);
-}
+<h2 id="execution-parallel_1">Execution (parallel)<a class="headerlink" href="#execution-parallel_1" title="Permanent link">&para;</a></h2>
+<pre><code>Thread-1 → GLOBAL → SMOKE → A
+Thread-2 → GLOBAL → B
+Thread-3 → GLOBAL → SMOKE → C
 </code></pre>
-<p>Example real usage:</p>
-<ul>
-<li>Launch browser</li>
-<li>Load configuration</li>
-<li>Setup test data</li>
-</ul>
-<hr />
-<h3 id="hook-2">Hook 2<a class="headerlink" href="#hook-2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Before(value = &quot;@smoke&quot;, order = 2)
-</code></pre>
-<p><strong>Meaning</strong></p>
-<ol>
-<li>This hook runs <strong>only for scenarios tagged with <code>@smoke</code></strong></li>
-<li><code>order = 2</code> means it runs <strong>after order 1</strong></li>
-</ol>
-<p>Method:</p>
-<pre><code class="language-java">public void smokeSetup() {
-    System.out.println(&quot;Smoke setup&quot;);
-}
-</code></pre>
-<p>Example usage:</p>
-<ul>
-<li>Setup smoke test environment</li>
-<li>Load smoke specific test data</li>
-</ul>
-<hr />
-<h1 id="2-feature-file-example">2️⃣ Feature File Example<a class="headerlink" href="#2-feature-file-example" title="Permanent link">&para;</a></h1>
-<pre><code>Feature: Login functionality
-
-@smoke
-Scenario: Login with valid credentials
-Given user open login page
-When user enter username
-And user enter password
-Then user should login successfully
-</code></pre>
-<hr />
-<h1 id="3-execution-flow">3️⃣ Execution Flow<a class="headerlink" href="#3-execution-flow" title="Permanent link">&para;</a></h1>
-<p>Since scenario has <code>@smoke</code> tag:</p>
-<p>Execution will be:</p>
-<pre><code>Global setup
-Smoke setup
-Scenario steps
-</code></pre>
-<p>Step-by-step:</p>
-<p>1️⃣ <code>@Before(order = 1)</code> → Runs first</p>
-<pre><code>Global setup
-</code></pre>
-<p>2️⃣ <code>@Before(value = "@smoke", order = 2)</code> → Runs second</p>
-<pre><code>Smoke setup
-</code></pre>
-<p>3️⃣ Scenario Steps execute</p>
-<pre><code>Given user open login page
-When user enter username
-Then user click login button
-</code></pre>
-<hr />
-<h1 id="4-feature-file-with-multiple-scenarios">4️⃣ Feature File With Multiple Scenarios<a class="headerlink" href="#4-feature-file-with-multiple-scenarios" title="Permanent link">&para;</a></h1>
-<p>Example:</p>
-<pre><code>Feature: Login functionality
-
-@smoke
-Scenario: Login with valid credentials
-Given user open login page
-When user enter username
-Then user click login button
-
-@regression
-Scenario: Login with invalid password
-Given user open login page
-When user enter wrong password
-Then error message should display
-
-Scenario: Forgot password
-Given user open login page
-When user click forgot password
-Then reset password page should open
-</code></pre>
-<hr />
-<h1 id="5-execution-behavior">5️⃣ Execution Behavior<a class="headerlink" href="#5-execution-behavior" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Hooks Executed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Login with valid credentials</td>
-<td>Global + Smoke</td>
-</tr>
-<tr>
-<td>Login with invalid password</td>
-<td>Only Global</td>
-</tr>
-<tr>
-<td>Forgot password</td>
-<td>Only Global</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="6-console-output">6️⃣ Console Output<a class="headerlink" href="#6-console-output" title="Permanent link">&para;</a></h1>
-<p>Execution order:</p>
-<pre><code>Scenario 1
-Global setup
-Smoke setup
-Scenario steps
-
-Scenario 2
-Global setup
-Scenario steps
-
-Scenario 3
-Global setup
-Scenario steps
-</code></pre>
-<hr />
-<h1 id="7-important-cucumber-hook-rules">7️⃣ Important Cucumber Hook Rules<a class="headerlink" href="#7-important-cucumber-hook-rules" title="Permanent link">&para;</a></h1>
-<p>1️⃣ <code>@Before</code> → runs <strong>before scenario</strong></p>
-<p>2️⃣ <code>@After</code> → runs <strong>after scenario</strong></p>
-<p>3️⃣ <code>order</code> → controls <strong>execution sequence</strong></p>
-<p>4️⃣ <code>value="@tag"</code> → hook runs <strong>only for tagged scenarios</strong></p>
-<hr />
-<h1 id="8-real-selenium-example">8️⃣ Real Selenium Example<a class="headerlink" href="#8-real-selenium-example" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@Before(order = 1)
-public void setupDriver() {
-    driver = new ChromeDriver();
-}
-
-@Before(value=&quot;@smoke&quot;, order=2)
-public void maximizeBrowser() {
-    driver.manage().window().maximize();
-}
-</code></pre>
-<p>Execution for smoke test:</p>
-<pre><code>Driver setup
-Browser maximize
-Scenario steps
-</code></pre>
-<hr />
-<p>✅ Since you are <strong>teaching Selenium + Cucumber candidates</strong>, I can also show a <strong>perfect interview explanation of Hooks + Before + After + Background with real framework example</strong>.</p>
+<p>Only smoke scenarios trigger smoke hook</p>
 <hr />
 <hr />
 <h1 id="interview-quick-answers">✅ Interview Quick Answers<a class="headerlink" href="#interview-quick-answers" title="Permanent link">&para;</a></h1>
