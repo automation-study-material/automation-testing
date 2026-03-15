@@ -4446,12 +4446,37 @@ User user = new User(data.get(&quot;name&quot;), roles);
 </ul>
 <hr />
 <h1 id="performance-parallel-execution">🎯 Performance &amp; Parallel Execution<a class="headerlink" href="#performance-parallel-execution" title="Permanent link">&para;</a></h1>
-<p>Factor              Scenario Outline         DataTable</p>
-<hr />
-<p>Parallel Friendly   Yes                      No (single scenario)
-  Execution Speed     Slower (repeated flow)   Faster
-  Debugging           Easy                     Harder
-  CI Visibility       Better                   Limited</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Scenario Outline</th>
+<th>DataTable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parallel Friendly</td>
+<td>Yes</td>
+<td>No (single scenario)</td>
+</tr>
+<tr>
+<td>Execution Speed</td>
+<td>Slower (repeated flow)</td>
+<td>Faster</td>
+</tr>
+<tr>
+<td>Debugging</td>
+<td>Easy</td>
+<td>Harder</td>
+</tr>
+<tr>
+<td>CI Visibility</td>
+<td>Better</td>
+<td>Limited</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h1 id="final-interview-answer-best-version">🏆 Final Interview Answer (Best Version)<a class="headerlink" href="#final-interview-answer-best-version" title="Permanent link">&para;</a></h1>
 <p>Scenario Outline is used for data-driven testing where the same scenario
