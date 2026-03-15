@@ -180,8 +180,10 @@ Centralized class that executes all API calls.
     DELETE
     PATCH
 
-Benefits: - Avoids repeated RestAssured code - Centralized API
-execution - Easy maintenance
+Benefits: 
+- Avoids repeated RestAssured code
+- Centralized API execution
+- Easy maintenance
 
 ------------------------------------------------------------------------
 
@@ -189,10 +191,16 @@ execution - Easy maintenance
 
 Builds dynamic API requests.
 
-Responsibilities: - Add headers - Add request body - Add query
-parameters - Add authentication token
+Responsibilities: 
+- Add headers
+-  Add request body
+- Add queryparameters
+- Add authentication token
 
-Benefits: - Fluent request building - Clean code - Reusable components
+Benefits: 
+- Fluent request building
+- Clean code
+- Reusable components
 
 ------------------------------------------------------------------------
 
@@ -202,8 +210,10 @@ Handles authentication tokens.
 
     Login API → Get Token → Store Token → Reuse Token
 
-Features: - Token caching - Automatic token refresh - Centralized
-authentication
+Features: 
+- Token caching
+- Automatic token refresh
+- Centralized authentication
 
 ------------------------------------------------------------------------
 
@@ -221,7 +231,9 @@ Framework supports:
 
 DataProvider reads test data and runs multiple API tests.
 
-Benefits: - Run multiple test scenarios - No code change required
+Benefits: 
+- Run multiple test scenarios
+- No code change required
 
 ------------------------------------------------------------------------
 
@@ -263,7 +275,9 @@ Example flow:
          ▼
     Delete User
 
-Benefits: - Real workflow testing - End‑to‑end API validation
+Benefits: 
+- Real workflow testing
+- End‑to‑end API validation
 
 ------------------------------------------------------------------------
 
@@ -275,7 +289,9 @@ Example:
 
     user-schema.json
 
-Benefits: - Ensures contract validation - Detects API changes quickly
+Benefits: 
+- Ensures contract validation
+- Detects API changes quickly
 
 ------------------------------------------------------------------------
 
@@ -285,7 +301,9 @@ Automatically retries failed tests.
 
     Max Retry = 2
 
-Useful for: - Network instability - Temporary API failures
+Useful for: 
+- Network instability
+- Temporary API failures
 
 ------------------------------------------------------------------------
 
@@ -297,7 +315,10 @@ HTML report with: - Step logs - Request/response details - Screenshots
 
 ## Allure Reports
 
-Provides: - Trend analysis - Execution history - Graphical dashboards
+Provides: 
+- Trend analysis
+- Execution history
+- Graphical dashboards
 
 Command:
 
@@ -313,7 +334,9 @@ Configured in **TestNG**.
     thread-count=5
     parallel=tests
 
-Benefits: - Faster execution - CI/CD friendly
+Benefits: 
+- Faster execution
+- CI/CD friendly
 
 ------------------------------------------------------------------------
 
@@ -335,14 +358,15 @@ Properties file automatically loaded.
 
 # 16. Java OOP Concepts Used
 
-  Concept         Implementation
-  --------------- -------------------------------
-  Encapsulation   POJO request/response classes
-  Inheritance     BaseTest class
-  Abstraction     API Engine
-  Polymorphism    Request Builder methods
-  Modularity      Layered architecture
-  Reusability     Utility classes
+| OOP Concept   | Implementation                |
+| ------------- | ----------------------------- |
+| Encapsulation | POJO request/response classes |
+| Inheritance   | BaseTest class                |
+| Abstraction   | Generic API engine            |
+| Polymorphism  | Request builder methods       |
+| Modularity    | Package structure             |
+| Reusability   | Utility classes               |
+
 
 ------------------------------------------------------------------------
 
