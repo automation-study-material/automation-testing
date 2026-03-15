@@ -1,146 +1,119 @@
-# Cucumber Parallel Execution Guide (Java + Selenium)
+Below is the **updated section you can add to your Cucumber + TestNG notes** to include **Feature-Level Parallel Execution** along with Scenario-Level execution.
 
-This guide explains how to run **parallel execution in Cucumber** at:
+---
 
-1.  Feature File Level
-2.  Scenario Level
+# 1️⃣ Feature-Level Parallel Execution (Cucumber + TestNG)
 
-------------------------------------------------------------------------
+Feature-level parallel execution means **each feature file runs in a separate thread**.
 
-# 1. Feature Level Parallel Execution (JUnit + Maven)
+Example:
 
-## Project Structure
+```text
+Thread1 → login.feature
+Thread2 → payment.feature
+Thread3 → order.feature
+```
 
-    src
-     └─ test
-         ├─ java
-         │   ├─ runner
-         │   │   ├─ TestRunner1.java
-         │   │   └─ TestRunner2.java
-         │   ├─ stepDefinitions
-         │   └─ hooks
-         └─ resources
-             └─ features
-                 ├─ login.feature
-                 └─ payment.feature
+---
 
-------------------------------------------------------------------------
+# 2️⃣ Runner Class (Feature Parallel)
 
-## Runner Class Example
+In TestNG, feature-level parallel execution can be achieved by creating **multiple runner classes**, each pointing to a specific feature.
 
-### TestRunner1.java
+### LoginRunner
 
-``` java
+```java
 package runner;
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features/login.feature",
         glue = {"stepDefinitions","hooks"},
-        plugin = {"pretty","html:target/cucumber-reports/login.html"},
+        plugin = {"pretty","html:target/login-report.html"},
         monochrome = true
 )
-public class TestRunner1 {
+
+public class LoginRunner extends AbstractTestNGCucumberTests {
 }
 ```
 
-### TestRunner2.java
+---
 
-``` java
+### PaymentRunner
+
+```java
 package runner;
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features/payment.feature",
         glue = {"stepDefinitions","hooks"},
-        plugin = {"pretty","html:target/cucumber-reports/payment.html"},
+        plugin = {"pretty","html:target/payment-report.html"},
         monochrome = true
 )
-public class TestRunner2 {
+
+public class PaymentRunner extends AbstractTestNGCucumberTests {
 }
 ```
 
-------------------------------------------------------------------------
+---
 
-## Maven Configuration
+# 3️⃣ TestNG Configuration
 
-Add this in **pom.xml**
+Create **testng.xml**
 
-``` xml
-<build>
- <plugins>
+```xml
+<suite name="CucumberSuite" parallel="classes" thread-count="2">
 
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.0.0</version>
+    <test name="FeatureTests">
 
-    <configuration>
-        <parallel>classes</parallel>
-        <threadCount>2</threadCount>
-    </configuration>
+        <classes>
+            <class name="runner.LoginRunner"/>
+            <class name="runner.PaymentRunner"/>
+        </classes>
 
-  </plugin>
+    </test>
 
- </plugins>
-</build>
+</suite>
 ```
 
 ### Meaning
 
-| Property \| Description \|
-
-\|--------\|-------------\| parallel=classes \| Runner classes run in
-parallel \| \| threadCount \| Number of threads \|
+| Property           | Description                    |
+| ------------------ | ------------------------------ |
+| parallel="classes" | runner classes run in parallel |
+| thread-count       | number of parallel threads     |
 
 Execution:
 
-    Thread1 → TestRunner1 → login.feature
-    Thread2 → TestRunner2 → payment.feature
-
-------------------------------------------------------------------------
-
-# 2. Scenario Level Parallel Execution (Cucumber + TestNG)
-
-Scenario-level parallel execution is best implemented using **TestNG**.
-
-------------------------------------------------------------------------
-
-## Dependencies (pom.xml)
-
-``` xml
-<dependency>
- <groupId>io.cucumber</groupId>
- <artifactId>cucumber-java</artifactId>
- <version>7.14.0</version>
-</dependency>
-
-<dependency>
- <groupId>io.cucumber</groupId>
- <artifactId>cucumber-testng</artifactId>
- <version>7.14.0</version>
-</dependency>
-
-<dependency>
- <groupId>org.testng</groupId>
- <artifactId>testng</artifactId>
- <version>7.8.0</version>
-</dependency>
+```text
+Thread1 → LoginRunner → login.feature
+Thread2 → PaymentRunner → payment.feature
 ```
 
-------------------------------------------------------------------------
+---
 
-## Runner Class
+# 4️⃣ Scenario-Level Parallel Execution (Cucumber + TestNG)
 
-``` java
+Scenario-level execution means **each scenario runs in parallel**.
+
+Example:
+
+```text
+Thread1 → Scenario1
+Thread2 → Scenario2
+Thread3 → Scenario3
+```
+
+---
+
+# 5️⃣ Runner Class for Scenario Parallel
+
+```java
 package runner;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -164,92 +137,49 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 }
 ```
 
-Important Line:
+Important line:
 
-    @DataProvider(parallel = true)
-
-This runs **each scenario in parallel threads**.
-
-------------------------------------------------------------------------
-
-## TestNG Configuration
-
-Create **testng.xml**
-
-``` xml
-<suite name="CucumberSuite" parallel="tests" thread-count="3">
-
- <test name="CucumberTests">
-  <classes>
-   <class name="runner.TestRunner"/>
-  </classes>
- </test>
-
-</suite>
+```java
+@DataProvider(parallel = true)
 ```
 
-Meaning:
+This runs **each scenario in a separate thread**.
 
-  Property           Purpose
-  ------------------ -----------------------
-  parallel="tests"   run tests in parallel
-  thread-count       number of threads
+---
 
-------------------------------------------------------------------------
+# 6️⃣ Feature vs Scenario Parallel
 
-# 3. ThreadSafe WebDriver (Important for Selenium)
+| Parallel Type  | Implementation                                 | Thread Behavior                |
+| -------------- | ---------------------------------------------- | ------------------------------ |
+| Feature Level  | Multiple runner classes + `parallel="classes"` | Each feature runs in parallel  |
+| Scenario Level | `@DataProvider(parallel=true)`                 | Each scenario runs in parallel |
 
-Parallel execution requires **ThreadLocal WebDriver**.
+---
 
-    public class DriverManager {
+# 7️⃣ Important Selenium Requirement
 
-     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+For both approaches:
 
-     public static WebDriver getDriver() {
-      return driver.get();
-     }
+✔ WebDriver must be **ThreadSafe**
 
-     public static void setDriver(WebDriver webDriver) {
-      driver.set(webDriver);
-     }
+Example:
 
-    }
+```java
+private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+```
 
-------------------------------------------------------------------------
+Each thread gets its **own browser instance**.
 
-# 4. Hook Example
+---
 
-    @Before
-    public void setup(){
+# ⭐ Interview Summary
 
-     WebDriver driver = new ChromeDriver();
-     DriverManager.setDriver(driver);
+Feature-level parallel execution runs multiple feature files simultaneously using separate runner classes and TestNG class-level parallel execution. Scenario-level parallel execution runs individual scenarios in parallel using the DataProvider with the parallel flag enabled.
 
-    }
+---
 
-------------------------------------------------------------------------
+If you want, I can also show you **a real enterprise automation approach used in companies**:
 
-# 5. Execution
+⚡ **Cucumber Parallel Plugin (Generates 50+ runners automatically)**
 
-Feature level:
-
-    mvn test
-
-Scenario level (TestNG):
-
-Run using **testng.xml**
-
-------------------------------------------------------------------------
-
-# 6. Interview Summary
-
-Feature Level Parallel - Implemented using **JUnit + Maven Surefire** -
-Runner classes execute in parallel
-
-Scenario Level Parallel - Implemented using **Cucumber + TestNG** - Uses
-**@DataProvider(parallel=true)**
-
-Important - WebDriver must be **ThreadSafe using ThreadLocal** - Helps
-reduce automation execution time
-
-------------------------------------------------------------------------
+This is **very powerful and often used in large Selenium frameworks** where there are **hundreds of feature files**.
