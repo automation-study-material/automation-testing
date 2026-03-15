@@ -86,7 +86,7 @@ nav:
     - CucumberTags & Hooks: cucumber/cucumber-tag-inheritance-hooks-guide.md
     - Background VS Hooks: cucumber/Background_vs_Hooks.md
     - Scenario Outline VS DataTable: cucumber/scenario_outline_vs_data_table.md
-    - Parallel execution: cucumber/cucumber-parallel.md
+    - Parallel execution: cucumber/cucumber_parallel_execution.md
     - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
     - Cucumber Scenario Execution: cucumber/cucumber_scenario_execution.md
     - Extends Reports: cucumber/extends_reports.md
