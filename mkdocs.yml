@@ -91,6 +91,7 @@ nav:
     - Cucumber Scenario Execution: cucumber/cucumber_scenario_execution.md
     - Extends Reports: cucumber/extends_reports.md
     - BDD Framework: cucumber/selenium-bdd-cucumber-framework.md
+    - Stef Def Ambiguity: cucumber/stefDefAmbigity.md
     
   - TestNg :
     - TestNG Questions: testng/testNg-questions.md
@@ -103,9 +104,6 @@ nav:
     - Extend Report: testng/extends-report.md
     - Retry Mechanism: testng/retry-mechanism.md
     - Sample XML: testng/xml-sample.md
-    
-    
-    
     
   - Rest Assured:
     - Why API Important to test: rest-assured/why-api-important-how-to-start-test.md
