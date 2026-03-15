@@ -4295,21 +4295,31 @@ PUT
 DELETE
 PATCH
 </code></pre>
-<p>Benefits: - Avoids repeated RestAssured code - Centralized API
-execution - Easy maintenance</p>
+<p>Benefits: 
+- Avoids repeated RestAssured code
+- Centralized API execution
+- Easy maintenance</p>
 <hr />
 <h1 id="6-request-builder-pattern">6. Request Builder Pattern<a class="headerlink" href="#6-request-builder-pattern" title="Permanent link">&para;</a></h1>
 <p>Builds dynamic API requests.</p>
-<p>Responsibilities: - Add headers - Add request body - Add query
-parameters - Add authentication token</p>
-<p>Benefits: - Fluent request building - Clean code - Reusable components</p>
+<p>Responsibilities: 
+- Add headers
+-  Add request body
+- Add queryparameters
+- Add authentication token</p>
+<p>Benefits: 
+- Fluent request building
+- Clean code
+- Reusable components</p>
 <hr />
 <h1 id="7-token-management">7. Token Management<a class="headerlink" href="#7-token-management" title="Permanent link">&para;</a></h1>
 <p>Handles authentication tokens.</p>
 <pre><code>Login API → Get Token → Store Token → Reuse Token
 </code></pre>
-<p>Features: - Token caching - Automatic token refresh - Centralized
-authentication</p>
+<p>Features: 
+- Token caching
+- Automatic token refresh
+- Centralized authentication</p>
 <hr />
 <h1 id="8-data-driven-testing">8. Data Driven Testing<a class="headerlink" href="#8-data-driven-testing" title="Permanent link">&para;</a></h1>
 <p>Framework supports:</p>
@@ -4320,7 +4330,9 @@ authentication</p>
 <pre><code>users.xlsx
 </code></pre>
 <p>DataProvider reads test data and runs multiple API tests.</p>
-<p>Benefits: - Run multiple test scenarios - No code change required</p>
+<p>Benefits: 
+- Run multiple test scenarios
+- No code change required</p>
 <hr />
 <h1 id="9-dynamic-payload-generation">9. Dynamic Payload Generation<a class="headerlink" href="#9-dynamic-payload-generation" title="Permanent link">&para;</a></h1>
 <p>Payloads generated dynamically using:</p>
@@ -4353,26 +4365,35 @@ Update User
      ▼
 Delete User
 </code></pre>
-<p>Benefits: - Real workflow testing - End‑to‑end API validation</p>
+<p>Benefits: 
+- Real workflow testing
+- End‑to‑end API validation</p>
 <hr />
 <h1 id="11-schema-validation">11. Schema Validation<a class="headerlink" href="#11-schema-validation" title="Permanent link">&para;</a></h1>
 <p>Validates response structure using JSON Schema.</p>
 <p>Example:</p>
 <pre><code>user-schema.json
 </code></pre>
-<p>Benefits: - Ensures contract validation - Detects API changes quickly</p>
+<p>Benefits: 
+- Ensures contract validation
+- Detects API changes quickly</p>
 <hr />
 <h1 id="12-retry-analyzer">12. Retry Analyzer<a class="headerlink" href="#12-retry-analyzer" title="Permanent link">&para;</a></h1>
 <p>Automatically retries failed tests.</p>
 <pre><code>Max Retry = 2
 </code></pre>
-<p>Useful for: - Network instability - Temporary API failures</p>
+<p>Useful for: 
+- Network instability
+- Temporary API failures</p>
 <hr />
 <h1 id="13-reporting">13. Reporting<a class="headerlink" href="#13-reporting" title="Permanent link">&para;</a></h1>
 <h2 id="extent-reports">Extent Reports<a class="headerlink" href="#extent-reports" title="Permanent link">&para;</a></h2>
 <p>HTML report with: - Step logs - Request/response details - Screenshots</p>
 <h2 id="allure-reports">Allure Reports<a class="headerlink" href="#allure-reports" title="Permanent link">&para;</a></h2>
-<p>Provides: - Trend analysis - Execution history - Graphical dashboards</p>
+<p>Provides: 
+- Trend analysis
+- Execution history
+- Graphical dashboards</p>
 <p>Command:</p>
 <pre><code>mvn clean test
 allure serve target/allure-results
@@ -4383,7 +4404,9 @@ allure serve target/allure-results
 <pre><code>thread-count=5
 parallel=tests
 </code></pre>
-<p>Benefits: - Faster execution - CI/CD friendly</p>
+<p>Benefits: 
+- Faster execution
+- CI/CD friendly</p>
 <hr />
 <h1 id="15-environment-switching">15. Environment Switching<a class="headerlink" href="#15-environment-switching" title="Permanent link">&para;</a></h1>
 <p>Supports:</p>
@@ -4397,14 +4420,40 @@ prod
 <p>Properties file automatically loaded.</p>
 <hr />
 <h1 id="16-java-oop-concepts-used">16. Java OOP Concepts Used<a class="headerlink" href="#16-java-oop-concepts-used" title="Permanent link">&para;</a></h1>
-<p>Concept         Implementation</p>
-<hr />
-<p>Encapsulation   POJO request/response classes
-  Inheritance     BaseTest class
-  Abstraction     API Engine
-  Polymorphism    Request Builder methods
-  Modularity      Layered architecture
-  Reusability     Utility classes</p>
+<table>
+<thead>
+<tr>
+<th>OOP Concept</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encapsulation</td>
+<td>POJO request/response classes</td>
+</tr>
+<tr>
+<td>Inheritance</td>
+<td>BaseTest class</td>
+</tr>
+<tr>
+<td>Abstraction</td>
+<td>Generic API engine</td>
+</tr>
+<tr>
+<td>Polymorphism</td>
+<td>Request builder methods</td>
+</tr>
+<tr>
+<td>Modularity</td>
+<td>Package structure</td>
+</tr>
+<tr>
+<td>Reusability</td>
+<td>Utility classes</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h1 id="17-advantages-of-the-framework">17. Advantages of the Framework<a class="headerlink" href="#17-advantages-of-the-framework" title="Permanent link">&para;</a></h1>
 <ul>
