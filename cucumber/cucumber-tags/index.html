@@ -4353,8 +4353,36 @@ Thread-3
 <h1 id="multiple-runner-strategy-with-calling-examples">✅ Multiple Runner Strategy (with calling examples)<a class="headerlink" href="#multiple-runner-strategy-with-calling-examples" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="smokerunner">SmokeRunner<a class="headerlink" href="#smokerunner" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@CucumberOptions(tags=&quot;@smoke&quot;)
-public class SmokeRunner {}
+<pre><code class="language-java">package runner;
+
+import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+
+    features = &quot;src/test/resources/features&quot;,   // path of feature files
+
+    glue = {&quot;stepDefinitions&quot;, &quot;hooks&quot;},        // step definition &amp; hook package
+
+    plugin = {
+            &quot;pretty&quot;,
+            &quot;html:target/cucumber-reports/cucumber.html&quot;,
+            &quot;json:target/cucumber-reports/cucumber.json&quot;,
+            &quot;junit:target/cucumber-reports/cucumber.xml&quot;
+    },
+
+    tags = &quot;@smoke&quot;,                            // run only smoke tests
+
+    monochrome = true,                          // cleaner console output
+
+    dryRun = false                              // true = check step mapping only
+)
+
+public class SmokeRunner {
+
+}
 </code></pre>
 <p>Run:</p>
 <pre><code>mvn test -Dtest=SmokeRunner
@@ -4362,8 +4390,35 @@ public class SmokeRunner {}
 <p>Runs → only smoke tests</p>
 <hr />
 <h2 id="regressionrunner">RegressionRunner<a class="headerlink" href="#regressionrunner" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@CucumberOptions(tags=&quot;@regression&quot;)
-public class RegressionRunner {}
+<pre><code class="language-java">package runner;
+
+import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+
+    features = &quot;src/test/resources/features&quot;,
+
+    glue = {&quot;stepDefinitions&quot;, &quot;hooks&quot;},
+
+    plugin = {
+            &quot;pretty&quot;,
+            &quot;html:target/cucumber-reports/cucumber.html&quot;,
+            &quot;json:target/cucumber-reports/cucumber.json&quot;
+    },
+
+    tags = &quot;@regression&quot;,
+
+    monochrome = true,
+
+    dryRun = false
+)
+
+public class RegressionRunner {
+
+}
 </code></pre>
 <p>Runs → only regression tests</p>
 <hr />
