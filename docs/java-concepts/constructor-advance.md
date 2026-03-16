@@ -110,6 +110,13 @@ public class TestClass2  {
 }
 ```
 
+Output
+```
+ABC constructor - Abc
+Xyz Parametrized constructor - Xyz
+Xyz constructor - Xyz
+```
+
 ## 5. Can constructors be static?
 - **Answer:**
   - No. Constructors cannot be static.
