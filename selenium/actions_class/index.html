@@ -4141,199 +4141,133 @@
 
   <h1>Actions class</h1>
 
-<ol>
-<li>import org.openqa.selenium.By;</li>
-<li>import org.openqa.selenium.Keys;</li>
-<li>import org.openqa.selenium.WebDriver;</li>
-<li>import org.openqa.selenium.WebElement;</li>
-<li>import org.openqa.selenium.chrome.ChromeDriver;</li>
-<li>
-<p>import org.openqa.selenium.interactions.Actions;</p>
-</li>
-<li>
-<p>public class KeyboardActionsDemo {</p>
-</li>
-<li>
-<p>public static void main(String[] args) throws InterruptedException {</p>
-</li>
-<li>
-<p>// Launch browser</p>
-</li>
-<li>WebDriver driver = new ChromeDriver();</li>
-<li>
-<p>driver.manage().window().maximize();</p>
-</li>
-<li>
-<p>// Open demo site</p>
-</li>
-<li>
-<p>driver.get("https://demoqa.com/text-box");</p>
-</li>
-<li>
-<p>// Create Actions object</p>
-</li>
-<li>
-<p>Actions actions = new Actions(driver);</p>
-</li>
-<li>
-<p>// Locate elements</p>
-</li>
-<li>WebElement fullName = driver.findElement(By.id("userName"));</li>
-<li>WebElement email = driver.findElement(By.id("userEmail"));</li>
-<li>
-<p>WebElement currentAddress = driver.findElement(By.id("currentAddress"));</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 1. sendKeys() - Type text</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys(fullName, "Nitin Patil").perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 2. TAB - Move to next field</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys(Keys.TAB).perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 3. Type Email</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys("nitin@test.com").perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 4. ENTER key</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys(Keys.ENTER).perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 5. SHIFT + typing (Uppercase)</li>
-<li>// -----------------------------</li>
-<li>actions.keyDown(Keys.SHIFT)</li>
-<li>.sendKeys("selenium")</li>
-<li>.keyUp(Keys.SHIFT)</li>
-<li>
-<p>.perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 6. CTRL + A (Select All)</li>
-<li>// -----------------------------</li>
-<li>actions.keyDown(Keys.CONTROL)</li>
-<li>.sendKeys("a")</li>
-<li>.keyUp(Keys.CONTROL)</li>
-<li>
-<p>.perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 7. CTRL + C (Copy)</li>
-<li>// -----------------------------</li>
-<li>actions.keyDown(Keys.CONTROL)</li>
-<li>.sendKeys("c")</li>
-<li>.keyUp(Keys.CONTROL)</li>
-<li>
-<p>.perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 8. TAB - Move to next field</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys(Keys.TAB).perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 9. CTRL + V (Paste)</li>
-<li>// -----------------------------</li>
-<li>actions.keyDown(Keys.CONTROL)</li>
-<li>.sendKeys("v")</li>
-<li>.keyUp(Keys.CONTROL)</li>
-<li>
-<p>.perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 10. BACKSPACE</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys(Keys.BACK_SPACE).perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 11. DELETE</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys(Keys.DELETE).perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 12. ARROW KEYS</li>
-<li>// -----------------------------</li>
-<li>actions.sendKeys(Keys.ARROW_LEFT).perform();</li>
-<li>actions.sendKeys(Keys.ARROW_RIGHT).perform();</li>
-<li>actions.sendKeys(Keys.ARROW_UP).perform();</li>
-<li>
-<p>actions.sendKeys(Keys.ARROW_DOWN).perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 13. ESCAPE key</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys(Keys.ESCAPE).perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 14. CTRL + X (Cut)</li>
-<li>// -----------------------------</li>
-<li>actions.keyDown(Keys.CONTROL)</li>
-<li>.sendKeys("x")</li>
-<li>.keyUp(Keys.CONTROL)</li>
-<li>
-<p>.perform();</p>
-</li>
-<li>
-<p>// -----------------------------</p>
-</li>
-<li>// 15. Function Key (F5 - Refresh)</li>
-<li>// -----------------------------</li>
-<li>
-<p>actions.sendKeys(Keys.F5).perform();</p>
-</li>
-<li>
-<p>// Wait for observation</p>
-</li>
-<li>
-<p>Thread.sleep(5000);</p>
-</li>
-<li>
-<p>// Close browser</p>
-</li>
-<li>driver.quit();</li>
-<li>}</li>
-<li>}</li>
-</ol>
+<pre><code class="language-java">1. import org.openqa.selenium.By;
+2. import org.openqa.selenium.Keys;
+3. import org.openqa.selenium.WebDriver;
+4. import org.openqa.selenium.WebElement;
+5. import org.openqa.selenium.chrome.ChromeDriver;
+6. import org.openqa.selenium.interactions.Actions;
+
+7. public class KeyboardActionsDemo {
+
+8.     public static void main(String[] args) throws InterruptedException {
+
+9.         // Launch browser
+10.        WebDriver driver = new ChromeDriver();
+11.        driver.manage().window().maximize();
+
+12.        // Open demo site
+13.        driver.get(&quot;https://demoqa.com/text-box&quot;);
+
+14.        // Create Actions object
+15.        Actions actions = new Actions(driver);
+
+16.        // Locate elements
+17.        WebElement fullName = driver.findElement(By.id(&quot;userName&quot;));
+18.        WebElement email = driver.findElement(By.id(&quot;userEmail&quot;));
+19.        WebElement currentAddress = driver.findElement(By.id(&quot;currentAddress&quot;));
+
+20.        // -----------------------------
+21.        // 1. sendKeys() - Type text
+22.        // -----------------------------
+23.        actions.sendKeys(fullName, &quot;Nitin Patil&quot;).perform();
+
+24.        // -----------------------------
+25.        // 2. TAB - Move to next field
+26.        // -----------------------------
+27.        actions.sendKeys(Keys.TAB).perform();
+
+28.        // -----------------------------
+29.        // 3. Type Email
+30.        // -----------------------------
+31.        actions.sendKeys(&quot;nitin@test.com&quot;).perform();
+
+32.        // -----------------------------
+33.        // 4. ENTER key
+34.        // -----------------------------
+35.        actions.sendKeys(Keys.ENTER).perform();
+
+36.        // -----------------------------
+37.        // 5. SHIFT + typing (Uppercase)
+38.        // -----------------------------
+39.        actions.keyDown(Keys.SHIFT)
+40.               .sendKeys(&quot;selenium&quot;)
+41.               .keyUp(Keys.SHIFT)
+42.               .perform();
+
+43.        // -----------------------------
+44.        // 6. CTRL + A (Select All)
+45.        // -----------------------------
+46.        actions.keyDown(Keys.CONTROL)
+47.               .sendKeys(&quot;a&quot;)
+48.               .keyUp(Keys.CONTROL)
+49.               .perform();
+
+50.        // -----------------------------
+51.        // 7. CTRL + C (Copy)
+52.        // -----------------------------
+53.        actions.keyDown(Keys.CONTROL)
+54.               .sendKeys(&quot;c&quot;)
+55.               .keyUp(Keys.CONTROL)
+56.               .perform();
+
+57.        // -----------------------------
+58.        // 8. TAB - Move to next field
+59.        // -----------------------------
+60.        actions.sendKeys(Keys.TAB).perform();
+
+61.        // -----------------------------
+62.        // 9. CTRL + V (Paste)
+63.        // -----------------------------
+64.        actions.keyDown(Keys.CONTROL)
+65.               .sendKeys(&quot;v&quot;)
+66.               .keyUp(Keys.CONTROL)
+67.               .perform();
+
+68.        // -----------------------------
+69.        // 10. BACKSPACE
+70.        // -----------------------------
+71.        actions.sendKeys(Keys.BACK_SPACE).perform();
+
+72.        // -----------------------------
+73.        // 11. DELETE
+74.        // -----------------------------
+75.        actions.sendKeys(Keys.DELETE).perform();
+
+76.        // -----------------------------
+77.        // 12. ARROW KEYS
+78.        // -----------------------------
+79.        actions.sendKeys(Keys.ARROW_LEFT).perform();
+80.        actions.sendKeys(Keys.ARROW_RIGHT).perform();
+81.        actions.sendKeys(Keys.ARROW_UP).perform();
+82.        actions.sendKeys(Keys.ARROW_DOWN).perform();
+
+83.        // -----------------------------
+84.        // 13. ESCAPE key
+85.        // -----------------------------
+86.        actions.sendKeys(Keys.ESCAPE).perform();
+
+87.        // -----------------------------
+88.        // 14. CTRL + X (Cut)
+89.        // -----------------------------
+90.        actions.keyDown(Keys.CONTROL)
+91.               .sendKeys(&quot;x&quot;)
+92.               .keyUp(Keys.CONTROL)
+93.               .perform();
+
+94.        // -----------------------------
+95.        // 15. Function Key (F5 - Refresh)
+96.        // -----------------------------
+97.        actions.sendKeys(Keys.F5).perform();
+
+98.        // Wait for observation
+99.        Thread.sleep(5000);
+
+100.       // Close browser
+101.       driver.quit();
+102.   }
+103. }
+</code></pre>
 
 
 
