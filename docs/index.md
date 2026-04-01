@@ -1,4 +1,4 @@
-# Welcome to JavaScript & Playwright with java Docs
+# Welcome to SDET Docs.
 
 This documentation site contains tutorials, examples, and references for JavaScript concepts and Playwright automation with java.
 
