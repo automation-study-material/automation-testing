@@ -139,28 +139,28 @@ nav:
       #- Exceptions: playwright-Java/exceptions.md
       #- InterViwe Questions: playwright-Java/interview-question.md
       
-  #- JavaScript Concepts:
-      #- RoadMap: javascriptConcepts/30-day-roadmap.md
-      #- "Synchronous & ASynchronous":
-        #-  concepts: javascriptConcepts/Synchronous-And-Asynchronous.md 
-        #-  deep guide: javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide.md
-      #- Data Types: javascriptConcepts/dataTypes.md
-      #- Variables: javascriptConcepts/variables.md
-      #- Var vs Let: javascriptConcepts/var-vs-let-vaiable.md
-      #- Vaiables snipped code: javascriptConcepts/variables-code.md
-      #- Operator: javascriptConcepts/operator.md
-      #- Objects in JS: javascriptConcepts/objects-in-js.md
-      #- Flow Statements: javascriptConcepts/flow-statement.md
-      #- Arrays & Objects: javascriptConcepts/Arrays.md
-      #- String in JS: javascriptConcepts/string-in-js.md
-      #- Set & Map: javascriptConcepts/set-map.md
-      #- Class & Constructor: javascriptConcepts/class-constructor.md
-      #- Functions: javascriptConcepts/functions.md
-      #- Arrow Functions: javascriptConcepts/arrow-functions.md
-      #- Regular Function vs Arrow Function: javascriptConcepts/regularfunction-vs-arrowFunction.md
-      #- JavaScript Promises: javascriptConcepts/js-promises.md
-      #- JavaScript Promises – Snippet Code: javascriptConcepts/js-promises-snipped-code.md
-      #- Interview code: javascriptConcepts/basics-interview-code.md
+  - JavaScript Concepts:
+      - RoadMap: javascriptConcepts/30-day-roadmap.md
+      - "Synchronous & ASynchronous":
+        -  concepts: javascriptConcepts/Synchronous-And-Asynchronous.md 
+        -  deep guide: javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide.md
+      - Data Types: javascriptConcepts/dataTypes.md
+      - Variables: javascriptConcepts/variables.md
+      - Var vs Let: javascriptConcepts/var-vs-let-vaiable.md
+      - Vaiables snipped code: javascriptConcepts/variables-code.md
+      - Operator: javascriptConcepts/operator.md
+      - Objects in JS: javascriptConcepts/objects-in-js.md
+      - Flow Statements: javascriptConcepts/flow-statement.md
+      - Arrays & Objects: javascriptConcepts/Arrays.md
+      - String in JS: javascriptConcepts/string-in-js.md
+      - Set & Map: javascriptConcepts/set-map.md
+      - Class & Constructor: javascriptConcepts/class-constructor.md
+      - Functions: javascriptConcepts/functions.md
+      - Arrow Functions: javascriptConcepts/arrow-functions.md
+      - Regular Function vs Arrow Function: javascriptConcepts/regularfunction-vs-arrowFunction.md
+      - JavaScript Promises: javascriptConcepts/js-promises.md
+      - JavaScript Promises – Snippet Code: javascriptConcepts/js-promises-snipped-code.md
+      - Interview code: javascriptConcepts/basics-interview-code.md
       
   #- PlayWright with Javascript:
     #- General: javascriptConcepts/jscode/general.md
