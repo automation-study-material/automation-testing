@@ -162,25 +162,25 @@ nav:
       - JavaScript Promises – Snippet Code: javascriptConcepts/js-promises-snipped-code.md
       - Interview code: javascriptConcepts/basics-interview-code.md
       
-  #- PlayWright with Javascript:
-    #- General: javascriptConcepts/jscode/general.md
-    #- Test Package: javascriptConcepts/jscode/test-package.md
-    #- Sample Playwright Test: javascriptConcepts/jscode/sample-playwright-test.md
-    #- Page vs Browser: javascriptConcepts/jscode/page-vs-browser.md
-    #- Locators: javascriptConcepts/jscode/locators.md
-    #- Methods in Playwright: javascriptConcepts/jscode/methods-in-playwright.md
-    #- SendKeys Command: javascriptConcepts/jscode/sendkeys-command.md
-    #- Input Value & Text Content: javascriptConcepts/jscode/inputValue&TextContent.md
-    #- Dropdown: javascriptConcepts/jscode/dropdown.md
-    #- Auto Suggestion Dropdown: javascriptConcepts/jscode/auto-suggestion-dropdown.md
-    #- Radio Buttons: javascriptConcepts/jscode/radio-buttons.md
-    #- Alert & Iframe: javascriptConcepts/jscode/alert-iframe.md
-    #- Window & Tab Handle: javascriptConcepts/jscode/window-tab-handle.md
-    #- Calendar: javascriptConcepts/jscode/calender.md
-    #- Playwright Assertions: javascriptConcepts/jscode/playwright-assertion.md
-    #- JSON Data Iteration: javascriptConcepts/jscode/json-data-iteration.md
-    #- Excel Handling: javascriptConcepts/jscode/excel.md
-    #- Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
+  - PlayWright with Javascript:
+    - General: javascriptConcepts/jscode/general.md
+    - Test Package: javascriptConcepts/jscode/test-package.md
+    - Sample Playwright Test: javascriptConcepts/jscode/sample-playwright-test.md
+    - Page vs Browser: javascriptConcepts/jscode/page-vs-browser.md
+    - Locators: javascriptConcepts/jscode/locators.md
+    - Methods in Playwright: javascriptConcepts/jscode/methods-in-playwright.md
+    - SendKeys Command: javascriptConcepts/jscode/sendkeys-command.md
+    - Input Value & Text Content: javascriptConcepts/jscode/inputValue&TextContent.md
+    - Dropdown: javascriptConcepts/jscode/dropdown.md
+    - Auto Suggestion Dropdown: javascriptConcepts/jscode/auto-suggestion-dropdown.md
+    - Radio Buttons: javascriptConcepts/jscode/radio-buttons.md
+    - Alert & Iframe: javascriptConcepts/jscode/alert-iframe.md
+    - Window & Tab Handle: javascriptConcepts/jscode/window-tab-handle.md
+    - Calendar: javascriptConcepts/jscode/calender.md
+    - Playwright Assertions: javascriptConcepts/jscode/playwright-assertion.md
+    - JSON Data Iteration: javascriptConcepts/jscode/json-data-iteration.md
+    - Excel Handling: javascriptConcepts/jscode/excel.md
+    - Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
     
   
 
