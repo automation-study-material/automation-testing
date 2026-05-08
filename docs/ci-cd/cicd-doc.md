@@ -8,7 +8,7 @@
 
 ### In one line
 
-> Automatically run tests whenever code changes and give fast feedback.
+> Automatically run tests whenever code changes and give fast feedback. 
 
 ---
 
