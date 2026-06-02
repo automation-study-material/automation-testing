@@ -124,8 +124,8 @@ nav:
 
   - Postman:
     - Postman Script for Validation: rest-assured/postmand_valiodation.md
-  #- PlayWright With Java:
-      #- Locators: playwright-Java/locator.md
+  - PlayWright With Java:
+      - Locators: playwright-Java/locator.md
       #- Page Navigation: playwright-Java/page-navigation-actions.md
       #- Inputs And Buttons: playwright-Java/playwright-interaction.md
       #- Checkbox And Radio buttons: playwright-Java/checkbox-radio-button.md
