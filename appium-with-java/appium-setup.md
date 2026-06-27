@@ -286,6 +286,60 @@ mac2
 windows
 ```
 
+### View All Available Drivers
+
+Use the following command to display all drivers supported by your Appium installation.
+
+```bash
+appium driver list
+```
+
+Example Output:
+
+```text
+✔ Listing available drivers
+
+- uiautomator2@6.3.0 [installed (npm)]
+- xcuitest@10.6.0 [installed (npm)]
+- espresso [not installed]
+- mac2 [not installed]
+- windows [not installed]
+- safari [not installed]
+- gecko [not installed]
+- chromium [not installed]
+```
+
+### Driver Description
+
+| Driver | Platform | Purpose | Common Use Case |
+|--------|----------|---------|-----------------|
+| **UiAutomator2** | Android | Automates Android native, hybrid, and mobile web applications. | Android Emulator, Real Android Devices |
+| **XCUITest** | iOS | Automates iOS native, hybrid, and mobile web applications. | iPhone, iPad, iOS Simulator |
+| **Espresso** | Android | Uses Google's Espresso framework for Android UI testing. | Native Android application testing |
+| **Mac2** | macOS | Automates native macOS desktop applications. | Finder, Calculator, Notes, Safari Desktop |
+| **Windows** | Windows | Automates native Windows desktop applications. | Notepad, Calculator, Paint, Microsoft Office |
+| **Safari** | Safari Browser | Automates the Safari browser on macOS. | Safari web application testing |
+| **Gecko** | Firefox Browser | Automates Mozilla Firefox browser. | Firefox web application testing |
+| **Chromium** | Chromium Browsers | Automates Chromium-based browsers. | Google Chrome, Microsoft Edge, Brave, Opera |
+
+### Which Driver Should You Use?
+
+| Testing Type | Driver |
+|--------------|--------|
+| Android Native App | ✅ UiAutomator2 |
+| Android Hybrid App | ✅ UiAutomator2 |
+| Android Chrome Browser | ✅ UiAutomator2 |
+| Android Espresso Testing | ✅ Espresso |
+| iOS Native App | ✅ XCUITest |
+| iOS Hybrid App | ✅ XCUITest |
+| Safari Browser (iOS/macOS) | ✅ XCUITest / Safari |
+| Windows Desktop Application | ✅ Windows |
+| macOS Desktop Application | ✅ Mac2 |
+| Firefox Browser | ✅ Gecko |
+| Chrome / Edge / Brave Browser | ✅ Chromium |
+
+> **Note:** For most mobile automation projects, **UiAutomator2** (Android) and **XCUITest** (iOS) are the primary drivers you'll use. The other drivers are intended for specialized scenarios such as desktop application automation or browser-specific automation.
+
 ---
 
 ### What Happens if the Driver is Not Installed?
