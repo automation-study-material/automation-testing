@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5829,10 +5829,10 @@
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT e.name, p.project_name
-FROM employees e
-CROSS JOIN projects p;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">CROSS</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li><code>CROSS JOIN</code> generates all possible combinations between two tables.</li>
@@ -5901,12 +5901,12 @@ CROSS JOIN projects p;
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT e1.name AS emp1, e2.name AS emp2, e1.dept_id
-FROM employees e1
-JOIN employees e2
-  ON e1.dept_id = e2.dept_id
-  AND e1.emp_id &lt; e2.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp1</span><span class="p">,</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp2</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>Self-join compares a table with itself.</li>
@@ -5981,13 +5981,13 @@ JOIN employees e2
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT e1.name AS emp1, e2.name AS emp2, e1.dept_id, e1.manager_id
-FROM employees e1
-JOIN employees e2
-  ON e1.dept_id = e2.dept_id
-  AND e1.manager_id = e2.manager_id
-  AND e1.emp_id &lt; e2.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp1</span><span class="p">,</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp2</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept_id</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">manager_id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">manager_id</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6073,12 +6073,12 @@ JOIN employees e2
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT e.name, p.project_name, p.budget
-FROM employees e
-JOIN projects p
-  ON e.project_id = p.project_id
-WHERE p.budget = (SELECT MAX(budget) FROM projects);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">budget</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">project_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">budget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">projects</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>Subquery <code>(SELECT MAX(budget) FROM projects)</code> returns the largest project budget.</li>
@@ -6169,11 +6169,11 @@ WHERE p.budget = (SELECT MAX(budget) FROM projects);
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT e.name, d.dept_name, p.project_name
-FROM employees e
-JOIN departments d ON e.dept_id = d.dept_id
-JOIN projects p ON e.project_id = p.project_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">project_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>Joining 3 tables to get full contextual information</li>
@@ -6205,12 +6205,12 @@ JOIN projects p ON e.project_id = p.project_id;
 <h2 id="6-join-multiple-tables-with-conditions">6. JOIN MULTIPLE TABLES WITH CONDITIONS<a class="headerlink" href="#6-join-multiple-tables-with-conditions" title="Permanent link">&para;</a></h2>
 <h3 id="q6-employees-in-hr-department-working-on-budget-5000-projects">Q6: Employees in HR department working on budget &gt; 5000 projects<a class="headerlink" href="#q6-employees-in-hr-department-working-on-budget-5000-projects" title="Permanent link">&para;</a></h3>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT e.name, d.dept_name, p.project_name, p.budget
-FROM employees e
-JOIN departments d ON e.dept_id = d.dept_id
-JOIN projects p ON e.project_id = p.project_id
-WHERE d.dept_name = 'HR' AND p.budget &gt; 5000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">budget</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">project_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'HR'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">budget</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6283,6 +6283,10 @@ WHERE d.dept_name = 'HR' AND p.budget &gt; 5000;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

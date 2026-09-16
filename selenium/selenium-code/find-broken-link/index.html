@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5603,63 +5603,63 @@
 
   <h1>Find Broken link from webpage</h1>
 
-<pre><code class="language-java">import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebElement</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
 
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.List;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.HttpURLConnection</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URL</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
 
-public class BrokenLinkChecker {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BrokenLinkChecker</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver = new ChromeDriver();
-        driver.get(&quot;https://example.com&quot;);
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
 
-        // Get all anchor tags
-        List&lt;WebElement&gt; links = driver.findElements(By.tagName(&quot;a&quot;));
+<span class="w">        </span><span class="c1">// Get all anchor tags</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">WebElement</span><span class="o">&gt;</span><span class="w"> </span><span class="n">links</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElements</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">"a"</span><span class="p">));</span>
 
-        System.out.println(&quot;Total Links Found: &quot; + links.size());
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total Links Found: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">links</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
 
-        for (WebElement link : links) {
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">WebElement</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">links</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-            String url = link.getAttribute(&quot;href&quot;);
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">link</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="s">"href"</span><span class="p">);</span>
 
-            if (url == null || url.isEmpty()) {
-                System.out.println(&quot;URL is empty or null&quot;);
-                continue;
-            }
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">url</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"URL is empty or null"</span><span class="p">);</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
 
-            try {
-                URL linkUrl = new URL(url);
-                HttpURLConnection connection =
-                        (HttpURLConnection) linkUrl.openConnection();
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">URL</span><span class="w"> </span><span class="n">linkUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">                </span><span class="n">HttpURLConnection</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                        </span><span class="p">(</span><span class="n">HttpURLConnection</span><span class="p">)</span><span class="w"> </span><span class="n">linkUrl</span><span class="p">.</span><span class="na">openConnection</span><span class="p">();</span>
 
-                connection.setRequestMethod(&quot;HEAD&quot;);
-                connection.connect();
+<span class="w">                </span><span class="n">connection</span><span class="p">.</span><span class="na">setRequestMethod</span><span class="p">(</span><span class="s">"HEAD"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">connection</span><span class="p">.</span><span class="na">connect</span><span class="p">();</span>
 
-                int responseCode = connection.getResponseCode();
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">responseCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connection</span><span class="p">.</span><span class="na">getResponseCode</span><span class="p">();</span>
 
-                if (responseCode &gt;= 400) {
-                    System.out.println(url + &quot; ---&gt; Broken Link (&quot;
-                            + responseCode + &quot;)&quot;);
-                } else {
-                    System.out.println(url + &quot; ---&gt; Valid Link (&quot;
-                            + responseCode + &quot;)&quot;);
-                }
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">responseCode</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">400</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ---&gt; Broken Link ("</span>
+<span class="w">                            </span><span class="o">+</span><span class="w"> </span><span class="n">responseCode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ---&gt; Valid Link ("</span>
+<span class="w">                            </span><span class="o">+</span><span class="w"> </span><span class="n">responseCode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
 
-            } catch (Exception e) {
-                System.out.println(url + &quot; ---&gt; Error Occurred&quot;);
-            }
-        }
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ---&gt; Error Occurred"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
 
-        driver.quit();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -5713,6 +5713,10 @@ public class BrokenLinkChecker {
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

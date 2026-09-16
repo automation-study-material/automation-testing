@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5721,43 +5721,43 @@
 <h2 id="example-tables-without-constraints">🗄️ Example Tables Without Constraints<a class="headerlink" href="#example-tables-without-constraints" title="Permanent link">&para;</a></h2>
 <h3 id="1-without-constraints-messy-data">1. Without Constraints (Messy Data)<a class="headerlink" href="#1-without-constraints-messy-data" title="Permanent link">&para;</a></h3>
 <h4 id="students-table">Students Table<a class="headerlink" href="#students-table" title="Permanent link">&para;</a></h4>
-<pre><code class="language-sql">CREATE TABLE Students (
-    id INT,
-    firstname VARCHAR(50),
-    lastname VARCHAR(50),
-    address VARCHAR(100)
-);
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">firstname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="w">    </span><span class="n">lastname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="w">    </span><span class="n">address</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="p">);</span>
 
-INSERT INTO Students (id, firstname, lastname, address) VALUES
-(1, 'Rahul', 'Sharma', 'Pune'),
-(1, 'Rahul', 'Sharma', 'Pune'),        -- Duplicate ID
-(2, 'Priya', 'Verma', 'Mumbai'),
-(3, NULL, 'Gupta', 'Delhi'),           -- Missing firstname
-(4, 'Sneha', 'Patil', 'Bangalore'),
-(5, 'Vikas', 'Kumar', 'Hyderabad'),
-(5, 'Vikas', 'Kumar', 'Hyderabad');    -- Duplicate ID
-</code></pre>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span><span class="w"> </span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">'Rahul'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sharma'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Pune'</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">'Rahul'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sharma'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Pune'</span><span class="p">),</span><span class="w">        </span><span class="c1">-- Duplicate ID</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">'Priya'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Verma'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mumbai'</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="s1">'Gupta'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Delhi'</span><span class="p">),</span><span class="w">           </span><span class="c1">-- Missing firstname</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sneha'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Patil'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Bangalore'</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">'Vikas'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Kumar'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hyderabad'</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">'Vikas'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Kumar'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hyderabad'</span><span class="p">);</span><span class="w">    </span><span class="c1">-- Duplicate ID</span>
+</code></pre></div>
 <h4 id="marks-table">Marks Table<a class="headerlink" href="#marks-table" title="Permanent link">&para;</a></h4>
-<pre><code class="language-sql">CREATE TABLE Marks (
-    student_id INT,
-    english INT,
-    math INT,
-    science INT,
-    total_marks INT
-);
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Marks</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">student_id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">english</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">math</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">science</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">total_marks</span><span class="w"> </span><span class="nb">INT</span>
+<span class="p">);</span>
 
-INSERT INTO Marks (student_id, english, math, science, total_marks) VALUES
-(1, 80, 90, 85, 255),
-(2, 70, 75, 88, 233),
-(100, 60, 65, 70, 195),                -- Orphan record
-(3, 120, 50, 60, 230),                 -- Invalid marks &gt; 100
-(4, NULL, 40, 50, 90),                 -- Missing marks
-(5, 88, 84, 91, 263),
-(5, 88, 84, 91, 263);                  -- Duplicate row
-</code></pre>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Marks</span><span class="w"> </span><span class="p">(</span><span class="n">student_id</span><span class="p">,</span><span class="w"> </span><span class="n">english</span><span class="p">,</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">science</span><span class="p">,</span><span class="w"> </span><span class="n">total_marks</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w"> </span><span class="mi">233</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w"> </span><span class="mi">195</span><span class="p">),</span><span class="w">                </span><span class="c1">-- Orphan record</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">230</span><span class="p">),</span><span class="w">                 </span><span class="c1">-- Invalid marks &gt; 100</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">),</span><span class="w">                 </span><span class="c1">-- Missing marks</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span><span class="w"> </span><span class="mi">263</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span><span class="w"> </span><span class="mi">263</span><span class="p">);</span><span class="w">                  </span><span class="c1">-- Duplicate row</span>
+</code></pre></div>
 <h4 id="sample-data-preview-messy">Sample Data Preview (Messy)<a class="headerlink" href="#sample-data-preview-messy" title="Permanent link">&para;</a></h4>
-<p><strong>Students Table</strong></p>
-<pre><code>id | firstname | lastname | address
+<p><strong>Students Table</strong>
+<div class="highlight"><pre><span></span><code>id | firstname | lastname | address
 ---+-----------+----------+-----------
 1  | Rahul     | Sharma   | Pune
 1  | Rahul     | Sharma   | Pune       &lt;-- Duplicate
@@ -5766,9 +5766,9 @@ INSERT INTO Marks (student_id, english, math, science, total_marks) VALUES
 4  | Sneha     | Patil    | Bangalore
 5  | Vikas     | Kumar    | Hyderabad
 5  | Vikas     | Kumar    | Hyderabad  &lt;-- Duplicate
-</code></pre>
-<p><strong>Marks Table</strong></p>
-<pre><code>student_id | english | math | science | total_marks
+</code></pre></div></p>
+<p><strong>Marks Table</strong>
+<div class="highlight"><pre><span></span><code>student_id | english | math | science | total_marks
 -----------+---------+------+---------+-------------
 1          | 80      | 90   | 85      | 255
 2          | 70      | 75   | 88      | 233
@@ -5777,59 +5777,59 @@ INSERT INTO Marks (student_id, english, math, science, total_marks) VALUES
 4          | NULL    | 40   | 50      | 90    &lt;-- Missing marks
 5          | 88      | 84   | 91      | 263
 5          | 88      | 84   | 91      | 263   &lt;-- Duplicate
-</code></pre>
+</code></pre></div></p>
 <p>✅ These tables work fine, but without constraints <strong>problems can arise</strong> (duplicates, orphan records, missing data).  </p>
 <h2 id="1-primary-key">1. PRIMARY KEY<a class="headerlink" href="#1-primary-key" title="Permanent link">&para;</a></h2>
 <p>👉 Makes sure each row is <strong>unique and identifiable</strong>.  </p>
-<p><strong>Without Primary Key</strong></p>
-<pre><code class="language-sql">INSERT INTO Students (id, firstname, lastname, address)
-VALUES (1, 'Rahul', 'Sharma', 'Pune');
+<p><strong>Without Primary Key</strong>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span><span class="w"> </span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">'Rahul'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sharma'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Pune'</span><span class="p">);</span>
 
-INSERT INTO Students (id, firstname, lastname, address)
-VALUES (1, 'AnotherRahul', 'Sharma', 'Pune'); -- Duplicate allowed
-</code></pre>
-<p>❌ Now two students with same ID exist → confusion in reports.  </p>
-<p><strong>With Primary Key</strong></p>
-<pre><code class="language-sql">id INT PRIMARY KEY
-</code></pre>
-<p>✅ Database stops duplicate rows.  </p>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span><span class="w"> </span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">'AnotherRahul'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sharma'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Pune'</span><span class="p">);</span><span class="w"> </span><span class="c1">-- Duplicate allowed</span>
+</code></pre></div>
+❌ Now two students with same ID exist → confusion in reports.  </p>
+<p><strong>With Primary Key</strong>
+<div class="highlight"><pre><span></span><code><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+</code></pre></div>
+✅ Database stops duplicate rows.  </p>
 <h2 id="2-foreign-key">2. FOREIGN KEY<a class="headerlink" href="#2-foreign-key" title="Permanent link">&para;</a></h2>
 <p>👉 Ensures that a value in one table <strong>must exist in another</strong>.  </p>
-<p><strong>Without Foreign Key</strong></p>
-<pre><code class="language-sql">INSERT INTO Marks (student_id, english, math, science, total_marks)
-VALUES (100, 80, 90, 85, 255); -- Student 100 doesn't exist
-</code></pre>
-<p>❌ Marks exist for a non-existent student (orphan record).  </p>
-<p><strong>With Foreign Key</strong></p>
-<pre><code class="language-sql">FOREIGN KEY (student_id) REFERENCES Students(id)
-</code></pre>
-<p>✅ Database prevents this.  </p>
+<p><strong>Without Foreign Key</strong>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Marks</span><span class="w"> </span><span class="p">(</span><span class="n">student_id</span><span class="p">,</span><span class="w"> </span><span class="n">english</span><span class="p">,</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">science</span><span class="p">,</span><span class="w"> </span><span class="n">total_marks</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w"> </span><span class="c1">-- Student 100 doesn't exist</span>
+</code></pre></div>
+❌ Marks exist for a non-existent student (orphan record).  </p>
+<p><strong>With Foreign Key</strong>
+<div class="highlight"><pre><span></span><code><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">student_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Students</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+✅ Database prevents this.  </p>
 <hr />
 <h2 id="3-unique">3. UNIQUE<a class="headerlink" href="#3-unique" title="Permanent link">&para;</a></h2>
 <p>👉 Stops duplicate values in a column that should be unique (like email).  </p>
-<p><strong>Without UNIQUE</strong></p>
-<pre><code class="language-sql">INSERT INTO Students (id, firstname, lastname, address)
-VALUES (7, 'Rohit', 'Sharma', 'Mumbai');
+<p><strong>Without UNIQUE</strong>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span><span class="w"> </span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="s1">'Rohit'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sharma'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mumbai'</span><span class="p">);</span>
 
-INSERT INTO Students (id, firstname, lastname, address)
-VALUES (8, 'Rohit', 'Sharma', 'Mumbai'); -- Duplicate allowed
-</code></pre>
-<p><strong>With UNIQUE</strong></p>
-<pre><code class="language-sql">email VARCHAR(100) UNIQUE
-</code></pre>
-<p>✅ Database blocks duplicate emails.  </p>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span><span class="w"> </span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s1">'Rohit'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sharma'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mumbai'</span><span class="p">);</span><span class="w"> </span><span class="c1">-- Duplicate allowed</span>
+</code></pre></div></p>
+<p><strong>With UNIQUE</strong>
+<div class="highlight"><pre><span></span><code><span class="n">email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span>
+</code></pre></div>
+✅ Database blocks duplicate emails.  </p>
 <hr />
 <h2 id="4-not-null">4. NOT NULL<a class="headerlink" href="#4-not-null" title="Permanent link">&para;</a></h2>
 <p>👉 Ensures important data is not left blank.  </p>
-<p><strong>Without NOT NULL</strong></p>
-<pre><code class="language-sql">INSERT INTO Students (id, firstname, lastname, address)
-VALUES (9, NULL, 'Sharma', 'Delhi'); -- Allowed
-</code></pre>
+<p><strong>Without NOT NULL</strong>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span><span class="w"> </span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sharma'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Delhi'</span><span class="p">);</span><span class="w"> </span><span class="c1">-- Allowed</span>
+</code></pre></div></p>
 <p>❌ Student without a name → makes no sense.  </p>
-<p><strong>With NOT NULL</strong></p>
-<pre><code class="language-sql">firstname VARCHAR(50) NOT NULL
-</code></pre>
-<p>✅ Database forces valid data.  </p>
+<p><strong>With NOT NULL</strong>
+<div class="highlight"><pre><span></span><code><span class="n">firstname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+</code></pre></div>
+✅ Database forces valid data.  </p>
 <hr />
 <h1 id="summary-in-easy-words">✅ Summary in Easy Words<a class="headerlink" href="#summary-in-easy-words" title="Permanent link">&para;</a></h1>
 <ul>
@@ -5892,6 +5892,10 @@ VALUES (9, NULL, 'Sharma', 'Delhi'); -- Allowed
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

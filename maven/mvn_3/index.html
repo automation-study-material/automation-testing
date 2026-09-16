@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5626,7 +5626,7 @@
 <p>Instead of developers deciding the order manually, Maven follows a predefined architecture.</p>
 <hr />
 <h1 id="maven-architecture-overview">Maven Architecture Overview<a class="headerlink" href="#maven-architecture-overview" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">                Maven
+<div class="highlight"><pre><span></span><code>                Maven
 
                   │
 
@@ -5636,7 +5636,7 @@
 
      Clean     Default     Site
     Lifecycle  Lifecycle  Lifecycle
-</code></pre>
+</code></pre></div>
 <p>Each lifecycle serves a different purpose.</p>
 <hr />
 <h1 id="2-why-does-maven-have-multiple-lifecycles">2. Why Does Maven Have Multiple Lifecycles?<a class="headerlink" href="#2-why-does-maven-have-multiple-lifecycles" title="Permanent link">&para;</a></h1>
@@ -5675,7 +5675,7 @@
 <hr />
 <h1 id="3-the-three-maven-lifecycles">3. The Three Maven Lifecycles<a class="headerlink" href="#3-the-three-maven-lifecycles" title="Permanent link">&para;</a></h1>
 <p>Maven provides three built-in lifecycles.</p>
-<pre><code class="language-text">                    Maven
+<div class="highlight"><pre><span></span><code>                    Maven
 
                       │
 
@@ -5685,7 +5685,7 @@
 
   Clean          Default          Site
  Lifecycle       Lifecycle       Lifecycle
-</code></pre>
+</code></pre></div>
 <p>Let's understand each one.</p>
 <hr />
 <h1 id="4-clean-lifecycle">4. Clean Lifecycle<a class="headerlink" href="#4-clean-lifecycle" title="Permanent link">&para;</a></h1>
@@ -5695,16 +5695,16 @@
 <p>Without cleaning, old compiled classes or JAR files may remain and cause unexpected behavior.</p>
 <hr />
 <h2 id="main-phase">Main Phase<a class="headerlink" href="#main-phase" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">clean
-</code></pre>
+<div class="highlight"><pre><span></span><code>clean
+</code></pre></div>
 <hr />
 <h2 id="command">Command<a class="headerlink" href="#command" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean
+</code></pre></div>
 <hr />
 <h2 id="what-happens-internally">What Happens Internally?<a class="headerlink" href="#what-happens-internally" title="Permanent link">&para;</a></h2>
 <p>Suppose your project looks like this.</p>
-<pre><code class="language-text">MyProject
+<div class="highlight"><pre><span></span><code>MyProject
 
 ├── src
 ├── pom.xml
@@ -5713,12 +5713,12 @@
      ├── test-classes
      ├── reports
      └── appium-framework.jar
-</code></pre>
+</code></pre></div>
 <p>When you execute:</p>
-<pre><code class="language-bash">mvn clean
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean
+</code></pre></div>
 <p>Maven performs:</p>
-<pre><code class="language-text">Read pom.xml
+<div class="highlight"><pre><span></span><code>Read pom.xml
       │
       ▼
 Locate target/
@@ -5728,39 +5728,39 @@ Delete target/
       │
       ▼
 Build Directory Clean
-</code></pre>
+</code></pre></div>
 <p>Result:</p>
-<pre><code class="language-text">MyProject
+<div class="highlight"><pre><span></span><code>MyProject
 
 ├── src
 └── pom.xml
-</code></pre>
+</code></pre></div>
 <p>The <strong>target</strong> folder is removed.</p>
 <hr />
 <h2 id="why-do-we-need-clean">Why Do We Need Clean?<a class="headerlink" href="#why-do-we-need-clean" title="Permanent link">&para;</a></h2>
 <p>Suppose yesterday's build generated:</p>
-<pre><code class="language-text">DriverFactory.class
-</code></pre>
+<div class="highlight"><pre><span></span><code>DriverFactory.class
+</code></pre></div>
 <p>Today you rename it to:</p>
-<pre><code class="language-text">MobileDriverFactory.java
-</code></pre>
+<div class="highlight"><pre><span></span><code>MobileDriverFactory.java
+</code></pre></div>
 <p>Without cleaning:</p>
-<pre><code class="language-text">target/classes
+<div class="highlight"><pre><span></span><code>target/classes
 
 DriverFactory.class
 MobileDriverFactory.class
-</code></pre>
+</code></pre></div>
 <p>Old files remain.</p>
 <p>This can produce incorrect builds.</p>
 <p>Running:</p>
-<pre><code class="language-bash">mvn clean
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean
+</code></pre></div>
 <p>removes everything and forces Maven to rebuild from scratch.</p>
 <hr />
 <h1 id="real-world-example">Real-World Example<a class="headerlink" href="#real-world-example" title="Permanent link">&para;</a></h1>
 <p>Every Jenkins pipeline usually starts with:</p>
-<pre><code class="language-bash">mvn clean
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean
+</code></pre></div>
 <p>This ensures the previous build does not affect the current one.</p>
 <hr />
 <h1 id="5-default-lifecycle-most-important">5. Default Lifecycle (Most Important)<a class="headerlink" href="#5-default-lifecycle-most-important" title="Permanent link">&para;</a></h1>
@@ -5776,7 +5776,7 @@ MobileDriverFactory.class
 </ul>
 <hr />
 <h2 id="default-lifecycle-phases">Default Lifecycle Phases<a class="headerlink" href="#default-lifecycle-phases" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
      │
      ▼
 compile
@@ -5795,15 +5795,15 @@ install
      │
      ▼
 deploy
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>When you execute:</p>
-<pre><code class="language-bash">mvn package
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>package
+</code></pre></div>
 <p>Maven <strong>does not</strong> execute only the package phase.</p>
 <p>Instead it executes:</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
       │
       ▼
 compile
@@ -5813,7 +5813,7 @@ test
       │
       ▼
 package
-</code></pre>
+</code></pre></div>
 <p>This is one of the most important Maven concepts.</p>
 <hr />
 <h2 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
@@ -5826,7 +5826,7 @@ package
 <p>Without these steps, creating a JAR would not make sense.</p>
 <hr />
 <h2 id="internal-architecture">Internal Architecture<a class="headerlink" href="#internal-architecture" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Developer
+<div class="highlight"><pre><span></span><code>Developer
 
       │
 
@@ -5869,23 +5869,23 @@ package
       ▼
 
 target/app.jar
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="real-world-example_1">Real-World Example<a class="headerlink" href="#real-world-example_1" title="Permanent link">&para;</a></h1>
 <p>Suppose you build an Appium framework.</p>
-<pre><code class="language-text">DriverFactory
+<div class="highlight"><pre><span></span><code>DriverFactory
 
 WaitUtils
 
 ConfigReader
 
 PageObjects
-</code></pre>
+</code></pre></div>
 <p>Running:</p>
-<pre><code class="language-bash">mvn install
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>install
+</code></pre></div>
 <p>Internally performs:</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
 
 ↓
 
@@ -5906,10 +5906,10 @@ verify
 ↓
 
 install
-</code></pre>
+</code></pre></div>
 <p>Then copies the JAR to:</p>
-<pre><code class="language-text">C:\Users\&lt;username&gt;\.m2\repository
-</code></pre>
+<div class="highlight"><pre><span></span><code>C:\Users\&lt;username&gt;\.m2\repository
+</code></pre></div>
 <hr />
 <h1 id="6-site-lifecycle">6. Site Lifecycle<a class="headerlink" href="#6-site-lifecycle" title="Permanent link">&para;</a></h1>
 <p>The Site Lifecycle generates project documentation.</p>
@@ -5917,8 +5917,8 @@ install
 <p>Instead, it creates reports.</p>
 <hr />
 <h2 id="command_1">Command<a class="headerlink" href="#command_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn site
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>site
+</code></pre></div>
 <hr />
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
 <p>Examples of generated documentation:</p>
@@ -5931,7 +5931,7 @@ install
 </ul>
 <hr />
 <h2 id="internal-flow">Internal Flow<a class="headerlink" href="#internal-flow" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Read pom.xml
+<div class="highlight"><pre><span></span><code>Read pom.xml
 
       │
 
@@ -5950,27 +5950,27 @@ Generate Reports
       ▼
 
 Generate HTML Site
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="output-folder">Output Folder<a class="headerlink" href="#output-folder" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">target/site
-</code></pre>
+<div class="highlight"><pre><span></span><code>target/site
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-text">target
+<div class="highlight"><pre><span></span><code>target
 
 └── site
      ├── index.html
      ├── dependencies.html
      ├── plugins.html
      └── javadoc
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="is-site-lifecycle-used-frequently">Is Site Lifecycle Used Frequently?<a class="headerlink" href="#is-site-lifecycle-used-frequently" title="Permanent link">&para;</a></h2>
 <p>For automation projects,</p>
 <p><strong>Not much.</strong></p>
 <p>Most SDET projects rarely execute:</p>
-<pre><code class="language-bash">mvn site
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>site
+</code></pre></div>
 <p>It is more common in enterprise Java applications that require documentation.</p>
 <hr />
 <h1 id="7-lifecycle-vs-phase">7. Lifecycle vs Phase<a class="headerlink" href="#7-lifecycle-vs-phase" title="Permanent link">&para;</a></h1>
@@ -5980,7 +5980,7 @@ Generate HTML Site
 <h2 id="lifecycle">Lifecycle<a class="headerlink" href="#lifecycle" title="Permanent link">&para;</a></h2>
 <p>A lifecycle is a <strong>collection of phases</strong>.</p>
 <p>Example:</p>
-<pre><code class="language-text">Default Lifecycle
+<div class="highlight"><pre><span></span><code>Default Lifecycle
 
 ↓
 
@@ -5997,37 +5997,37 @@ verify
 install
 
 deploy
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="phase">Phase<a class="headerlink" href="#phase" title="Permanent link">&para;</a></h2>
 <p>A phase is a <strong>single step</strong> inside a lifecycle.</p>
 <p>Example:</p>
-<pre><code class="language-text">compile
-</code></pre>
+<div class="highlight"><pre><span></span><code>compile
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-text">package
-</code></pre>
+<div class="highlight"><pre><span></span><code>package
+</code></pre></div>
 <hr />
 <p>Think of it like this.</p>
-<pre><code class="language-text">Book
+<div class="highlight"><pre><span></span><code>Book
  │
  ├── Chapter 1
  ├── Chapter 2
  ├── Chapter 3
-</code></pre>
+</code></pre></div>
 <p>Book = Lifecycle</p>
 <p>Chapter = Phase</p>
 <hr />
 <h1 id="8-how-maven-chooses-a-lifecycle">8. How Maven Chooses a Lifecycle<a class="headerlink" href="#8-how-maven-chooses-a-lifecycle" title="Permanent link">&para;</a></h1>
 <p>Suppose you execute:</p>
-<pre><code class="language-bash">mvn clean package
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>package
+</code></pre></div>
 <p>Does Maven run one lifecycle?</p>
 <p>No.</p>
 <p>It runs two.</p>
 <hr />
 <p>Execution:</p>
-<pre><code class="language-text">Clean Lifecycle
+<div class="highlight"><pre><span></span><code>Clean Lifecycle
 
 ↓
 
@@ -6052,15 +6052,15 @@ test
 ↓
 
 package
-</code></pre>
+</code></pre></div>
 <p>First it removes old files.</p>
 <p>Then it builds the project.</p>
 <hr />
 <p>Another example:</p>
-<pre><code class="language-bash">mvn clean install
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</code></pre></div>
 <p>Execution:</p>
-<pre><code class="language-text">Clean
+<div class="highlight"><pre><span></span><code>Clean
 
 ↓
 
@@ -6093,10 +6093,10 @@ verify
 ↓
 
 install
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="9-complete-lifecycle-architecture">9. Complete Lifecycle Architecture<a class="headerlink" href="#9-complete-lifecycle-architecture" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">                 Maven
+<div class="highlight"><pre><span></span><code>                 Maven
 
                    │
 
@@ -6133,15 +6133,15 @@ install
                   │
 
                 deploy
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="10-real-enterprise-example">10. Real Enterprise Example<a class="headerlink" href="#10-real-enterprise-example" title="Permanent link">&para;</a></h1>
 <p>Suppose Adobe develops an automation framework.</p>
 <p>Developer executes:</p>
-<pre><code class="language-bash">mvn clean deploy
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>deploy
+</code></pre></div>
 <p>Internally:</p>
-<pre><code class="language-text">Clean Lifecycle
+<div class="highlight"><pre><span></span><code>Clean Lifecycle
 
 ↓
 
@@ -6182,18 +6182,18 @@ deploy
 ↓
 
 Upload to Artifactory
-</code></pre>
+</code></pre></div>
 <p>Now every project in the company can use:</p>
-<pre><code class="language-xml">&lt;dependency&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
 
-&lt;groupId&gt;com.adobe.mobile&lt;/groupId&gt;
+<span class="nt">&lt;groupId&gt;</span>com.adobe.mobile<span class="nt">&lt;/groupId&gt;</span>
 
-&lt;artifactId&gt;automation-framework&lt;/artifactId&gt;
+<span class="nt">&lt;artifactId&gt;</span>automation-framework<span class="nt">&lt;/artifactId&gt;</span>
 
-&lt;version&gt;3.2&lt;/version&gt;
+<span class="nt">&lt;version&gt;</span>3.2<span class="nt">&lt;/version&gt;</span>
 
-&lt;/dependency&gt;
-</code></pre>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <hr />
 <h1 id="11-interview-questions">11. Interview Questions<a class="headerlink" href="#11-interview-questions" title="Permanent link">&para;</a></h1>
 <h2 id="q1-how-many-lifecycles-does-maven-have">Q1. How many lifecycles does Maven have?<a class="headerlink" href="#q1-how-many-lifecycles-does-maven-have" title="Permanent link">&para;</a></h2>
@@ -6267,7 +6267,8 @@ Upload to Artifactory
 <li>The <strong>Site Lifecycle</strong> generates project documentation and reports.</li>
 <li>When you execute a Maven command such as <code>mvn package</code> or <code>mvn install</code>, Maven automatically runs all required phases in order, ensuring a consistent and reliable build process.</li>
 </ul>
-<pre><code></code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 
 
 
@@ -6321,6 +6322,10 @@ Upload to Artifactory
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

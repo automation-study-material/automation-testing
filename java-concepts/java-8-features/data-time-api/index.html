@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5725,51 +5725,51 @@
 <hr />
 <h1 id="1-localdate">🔹 1️⃣ LocalDate<a class="headerlink" href="#1-localdate" title="Permanent link">&para;</a></h1>
 <p>Represents <strong>only date</strong> (no time, no timezone).</p>
-<pre><code class="language-java">import java.time.LocalDate;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDate</span><span class="p">;</span>
 
-LocalDate today = LocalDate.now();
-System.out.println(today);
+<span class="n">LocalDate</span><span class="w"> </span><span class="n">today</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">today</span><span class="p">);</span>
 
-// Example Output: 2026-03-01
-</code></pre>
+<span class="c1">// Example Output: 2026-03-01</span>
+</code></pre></div>
 <h3 id="common-methods">Common Methods<a class="headerlink" href="#common-methods" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">today.plusDays(5);
-today.minusMonths(1);
-today.getYear();
-today.isLeapYear();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">today</span><span class="p">.</span><span class="na">plusDays</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">today</span><span class="p">.</span><span class="na">minusMonths</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">today</span><span class="p">.</span><span class="na">getYear</span><span class="p">();</span>
+<span class="n">today</span><span class="p">.</span><span class="na">isLeapYear</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="2-localtime">🔹 2️⃣ LocalTime<a class="headerlink" href="#2-localtime" title="Permanent link">&para;</a></h1>
 <p>Represents <strong>only time</strong> (no date, no timezone).</p>
-<pre><code class="language-java">import java.time.LocalTime;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalTime</span><span class="p">;</span>
 
-LocalTime time = LocalTime.now();
-System.out.println(time);
+<span class="n">LocalTime</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalTime</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">time</span><span class="p">);</span>
 
-// Example Output: 18:45:30.123
-</code></pre>
+<span class="c1">// Example Output: 18:45:30.123</span>
+</code></pre></div>
 <hr />
 <h1 id="3-localdatetime">🔹 3️⃣ LocalDateTime<a class="headerlink" href="#3-localdatetime" title="Permanent link">&para;</a></h1>
 <p>Represents <strong>date + time</strong> (no timezone).</p>
-<pre><code class="language-java">import java.time.LocalDateTime;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
 
-LocalDateTime dateTime = LocalDateTime.now();
-System.out.println(dateTime);
+<span class="n">LocalDateTime</span><span class="w"> </span><span class="n">dateTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dateTime</span><span class="p">);</span>
 
-// Example Output: 2026-03-01T18:45:30.123
-</code></pre>
+<span class="c1">// Example Output: 2026-03-01T18:45:30.123</span>
+</code></pre></div>
 <p>⚠ Does NOT contain timezone information.</p>
 <hr />
 <h1 id="4-zoneddatetime-with-time-zone">🔹 4️⃣ ZonedDateTime (With Time Zone)<a class="headerlink" href="#4-zoneddatetime-with-time-zone" title="Permanent link">&para;</a></h1>
 <p>Represents <strong>date + time + timezone</strong>.</p>
-<pre><code class="language-java">import java.time.ZonedDateTime;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.ZonedDateTime</span><span class="p">;</span>
 
-ZonedDateTime zdt = ZonedDateTime.now();
-System.out.println(zdt);
+<span class="n">ZonedDateTime</span><span class="w"> </span><span class="n">zdt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZonedDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zdt</span><span class="p">);</span>
 
-// Example Output:
-// 2026-03-01T18:45:30.123+05:30[Asia/Kolkata]
-</code></pre>
+<span class="c1">// Example Output:</span>
+<span class="c1">// 2026-03-01T18:45:30.123+05:30[Asia/Kolkata]</span>
+</code></pre></div>
 <h3 id="components-explained">Components Explained:<a class="headerlink" href="#components-explained" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -5799,56 +5799,56 @@ System.out.println(zdt);
 </table>
 <hr />
 <h2 id="creating-specific-time-zone">🔹 Creating Specific Time Zone<a class="headerlink" href="#creating-specific-time-zone" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import java.time.ZoneId;
-import java.time.ZonedDateTime;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.ZoneId</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.ZonedDateTime</span><span class="p">;</span>
 
-ZoneId zone = ZoneId.of(&quot;America/New_York&quot;);
-ZonedDateTime newYorkTime = ZonedDateTime.now(zone);
+<span class="n">ZoneId</span><span class="w"> </span><span class="n">zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZoneId</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"America/New_York"</span><span class="p">);</span>
+<span class="n">ZonedDateTime</span><span class="w"> </span><span class="n">newYorkTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZonedDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(</span><span class="n">zone</span><span class="p">);</span>
 
-System.out.println(newYorkTime);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">newYorkTime</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="convert-between-time-zones">🔹 Convert Between Time Zones<a class="headerlink" href="#convert-between-time-zones" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">ZonedDateTime indiaTime = ZonedDateTime.now(ZoneId.of(&quot;Asia/Kolkata&quot;));
+<div class="highlight"><pre><span></span><code><span class="n">ZonedDateTime</span><span class="w"> </span><span class="n">indiaTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZonedDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(</span><span class="n">ZoneId</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Asia/Kolkata"</span><span class="p">));</span>
 
-ZonedDateTime usTime = indiaTime.withZoneSameInstant(ZoneId.of(&quot;America/New_York&quot;));
+<span class="n">ZonedDateTime</span><span class="w"> </span><span class="n">usTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">indiaTime</span><span class="p">.</span><span class="na">withZoneSameInstant</span><span class="p">(</span><span class="n">ZoneId</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"America/New_York"</span><span class="p">));</span>
 
-System.out.println(&quot;India Time: &quot; + indiaTime);
-System.out.println(&quot;US Time: &quot; + usTime);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"India Time: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">indiaTime</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"US Time: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">usTime</span><span class="p">);</span>
+</code></pre></div>
 <p>✔ Keeps same instant
 ✔ Adjusts time according to timezone</p>
 <hr />
 <h1 id="5-period-date-difference">🔹 5️⃣ Period (Date Difference)<a class="headerlink" href="#5-period-date-difference" title="Permanent link">&para;</a></h1>
 <p>Used for <strong>date-based difference</strong>.</p>
-<pre><code class="language-java">import java.time.LocalDate;
-import java.time.Period;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDate</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.Period</span><span class="p">;</span>
 
-LocalDate start = LocalDate.of(2020, 1, 1);
-LocalDate end = LocalDate.of(2023, 1, 1);
+<span class="n">LocalDate</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">LocalDate</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 
-Period period = Period.between(start, end);
+<span class="n">Period</span><span class="w"> </span><span class="n">period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Period</span><span class="p">.</span><span class="na">between</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
 
-System.out.println(period);
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">period</span><span class="p">);</span>
 
-// Output: P3Y
-</code></pre>
+<span class="c1">// Output: P3Y</span>
+</code></pre></div>
 <p>Meaning → 3 Years</p>
 <hr />
 <h1 id="6-duration-time-difference">🔹 6️⃣ Duration (Time Difference)<a class="headerlink" href="#6-duration-time-difference" title="Permanent link">&para;</a></h1>
 <p>Used for <strong>time-based difference</strong>.</p>
-<pre><code class="language-java">import java.time.LocalTime;
-import java.time.Duration;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalTime</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.Duration</span><span class="p">;</span>
 
-LocalTime t1 = LocalTime.of(10, 0);
-LocalTime t2 = LocalTime.of(12, 30);
+<span class="n">LocalTime</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalTime</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">LocalTime</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalTime</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
 
-Duration duration = Duration.between(t1, t2);
+<span class="n">Duration</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Duration</span><span class="p">.</span><span class="na">between</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="p">);</span>
 
-System.out.println(duration.toMinutes());
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">duration</span><span class="p">.</span><span class="na">toMinutes</span><span class="p">());</span>
 
-// Output: 150
-</code></pre>
+<span class="c1">// Output: 150</span>
+</code></pre></div>
 <p>Meaning → 150 minutes</p>
 <hr />
 <h1 id="difference-period-vs-duration">🔥 Difference: Period vs Duration<a class="headerlink" href="#difference-period-vs-duration" title="Permanent link">&para;</a></h1>
@@ -5896,11 +5896,11 @@ System.out.println(duration.toMinutes());
 <hr />
 <h2 id="why-formatting-is-needed">✅ Why Formatting is Needed?<a class="headerlink" href="#why-formatting-is-needed" title="Permanent link">&para;</a></h2>
 <p>By default:</p>
-<pre><code class="language-java">LocalDate.now()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">()</span>
+</code></pre></div>
 <p>Output:</p>
-<pre><code>2026-03-01
-</code></pre>
+<div class="highlight"><pre><span></span><code>2026-03-01
+</code></pre></div>
 <p>But in real applications, we may need:</p>
 <ul>
 <li><code>01-03-2026</code></li>
@@ -5910,25 +5910,25 @@ System.out.println(duration.toMinutes());
 <li>Log format timestamps</li>
 </ul>
 <p>So we use:</p>
-<pre><code>DateTimeFormatter
-</code></pre>
+<div class="highlight"><pre><span></span><code>DateTimeFormatter
+</code></pre></div>
 <hr />
 <h1 id="1-formatting-using-datetimeformatter">🔹 1️⃣ Formatting Using DateTimeFormatter<a class="headerlink" href="#1-formatting-using-datetimeformatter" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="format-localdate">✅ Format LocalDate<a class="headerlink" href="#format-localdate" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDate</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
 
-LocalDate today = LocalDate.now();
+<span class="n">LocalDate</span><span class="w"> </span><span class="n">today</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
 
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;dd-MM-yyyy&quot;);
+<span class="n">DateTimeFormatter</span><span class="w"> </span><span class="n">formatter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ofPattern</span><span class="p">(</span><span class="s">"dd-MM-yyyy"</span><span class="p">);</span>
 
-String formattedDate = today.format(formatter);
+<span class="n">String</span><span class="w"> </span><span class="n">formattedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">today</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">formatter</span><span class="p">);</span>
 
-System.out.println(formattedDate);
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">formattedDate</span><span class="p">);</span>
 
-// Example Output: 01-03-2026
-</code></pre>
+<span class="c1">// Example Output: 01-03-2026</span>
+</code></pre></div>
 <hr />
 <h2 id="common-pattern-symbols">🔹 Common Pattern Symbols<a class="headerlink" href="#common-pattern-symbols" title="Permanent link">&para;</a></h2>
 <table>
@@ -5984,39 +5984,39 @@ System.out.println(formattedDate);
 </table>
 <hr />
 <h1 id="2-format-localdatetime">🔹 2️⃣ Format LocalDateTime<a class="headerlink" href="#2-format-localdatetime" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
 
-LocalDateTime now = LocalDateTime.now();
+<span class="n">LocalDateTime</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
 
-DateTimeFormatter formatter =
-        DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy hh:mm a&quot;);
+<span class="n">DateTimeFormatter</span><span class="w"> </span><span class="n">formatter</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ofPattern</span><span class="p">(</span><span class="s">"dd/MM/yyyy hh:mm a"</span><span class="p">);</span>
 
-String formatted = now.format(formatter);
+<span class="n">String</span><span class="w"> </span><span class="n">formatted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">now</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">formatter</span><span class="p">);</span>
 
-System.out.println(formatted);
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">formatted</span><span class="p">);</span>
 
-// Example Output: 01/03/2026 06:45 PM
-</code></pre>
+<span class="c1">// Example Output: 01/03/2026 06:45 PM</span>
+</code></pre></div>
 <hr />
 <h1 id="3-format-with-time-zone-zoneddatetime">🔹 3️⃣ Format with Time Zone (ZonedDateTime)<a class="headerlink" href="#3-format-with-time-zone-zoneddatetime" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">import java.time.ZonedDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.ZonedDateTime</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.ZoneId</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
 
-ZonedDateTime indiaTime =
-        ZonedDateTime.now(ZoneId.of(&quot;Asia/Kolkata&quot;));
+<span class="n">ZonedDateTime</span><span class="w"> </span><span class="n">indiaTime</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">ZonedDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(</span><span class="n">ZoneId</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Asia/Kolkata"</span><span class="p">));</span>
 
-DateTimeFormatter formatter =
-        DateTimeFormatter.ofPattern(&quot;dd-MM-yyyy HH:mm:ss z&quot;);
+<span class="n">DateTimeFormatter</span><span class="w"> </span><span class="n">formatter</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ofPattern</span><span class="p">(</span><span class="s">"dd-MM-yyyy HH:mm:ss z"</span><span class="p">);</span>
 
-String formatted = indiaTime.format(formatter);
+<span class="n">String</span><span class="w"> </span><span class="n">formatted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">indiaTime</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">formatter</span><span class="p">);</span>
 
-System.out.println(formatted);
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">formatted</span><span class="p">);</span>
 
-// Example Output:
-// 01-03-2026 18:45:30 IST
-</code></pre>
+<span class="c1">// Example Output:</span>
+<span class="c1">// 01-03-2026 18:45:30 IST</span>
+</code></pre></div>
 <hr />
 <h2 id="timezone-pattern-symbols">🔎 Timezone Pattern Symbols<a class="headerlink" href="#timezone-pattern-symbols" title="Permanent link">&para;</a></h2>
 <table>
@@ -6044,25 +6044,25 @@ System.out.println(formatted);
 <hr />
 <h1 id="4-using-stringformat-for-custom-output">🔹 4️⃣ Using String.format() for Custom Output<a class="headerlink" href="#4-using-stringformat-for-custom-output" title="Permanent link">&para;</a></h1>
 <p>We can also combine values manually.</p>
-<pre><code class="language-java">import java.time.LocalDateTime;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
 
-LocalDateTime now = LocalDateTime.now();
+<span class="n">LocalDateTime</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
 
-String formatted = String.format(
-        &quot;%02d-%02d-%d %02d:%02d:%02d&quot;,
-        now.getDayOfMonth(),
-        now.getMonthValue(),
-        now.getYear(),
-        now.getHour(),
-        now.getMinute(),
-        now.getSecond()
-);
+<span class="n">String</span><span class="w"> </span><span class="n">formatted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span>
+<span class="w">        </span><span class="s">"%02d-%02d-%d %02d:%02d:%02d"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">now</span><span class="p">.</span><span class="na">getDayOfMonth</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">now</span><span class="p">.</span><span class="na">getMonthValue</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">now</span><span class="p">.</span><span class="na">getYear</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">now</span><span class="p">.</span><span class="na">getHour</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">now</span><span class="p">.</span><span class="na">getMinute</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">now</span><span class="p">.</span><span class="na">getSecond</span><span class="p">()</span>
+<span class="p">);</span>
 
-System.out.println(formatted);
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">formatted</span><span class="p">);</span>
 
-// Example Output:
-// 01-03-2026 18:45:30
-</code></pre>
+<span class="c1">// Example Output:</span>
+<span class="c1">// 01-03-2026 18:45:30</span>
+</code></pre></div>
 <hr />
 <h2 id="format-specifiers">🔎 Format Specifiers<a class="headerlink" href="#format-specifiers" title="Permanent link">&para;</a></h2>
 <table>
@@ -6089,17 +6089,17 @@ System.out.println(formatted);
 </table>
 <hr />
 <h1 id="5-parsing-string-to-date">🔥 5️⃣ Parsing String to Date<a class="headerlink" href="#5-parsing-string-to-date" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">String dateStr = &quot;01-03-2026&quot;;
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">dateStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"01-03-2026"</span><span class="p">;</span>
 
-DateTimeFormatter formatter =
-        DateTimeFormatter.ofPattern(&quot;dd-MM-yyyy&quot;);
+<span class="n">DateTimeFormatter</span><span class="w"> </span><span class="n">formatter</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ofPattern</span><span class="p">(</span><span class="s">"dd-MM-yyyy"</span><span class="p">);</span>
 
-LocalDate date = LocalDate.parse(dateStr, formatter);
+<span class="n">LocalDate</span><span class="w"> </span><span class="n">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="n">dateStr</span><span class="p">,</span><span class="w"> </span><span class="n">formatter</span><span class="p">);</span>
 
-System.out.println(date);
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">date</span><span class="p">);</span>
 
-// Output: 2026-03-01
-</code></pre>
+<span class="c1">// Output: 2026-03-01</span>
+</code></pre></div>
 <hr />
 <h1 id="interview-level-points_1">🔥 Interview-Level Points<a class="headerlink" href="#interview-level-points_1" title="Permanent link">&para;</a></h1>
 <ol>
@@ -6168,6 +6168,10 @@ System.out.println(date);
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

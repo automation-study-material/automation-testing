@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6214,19 +6214,19 @@
 <li>Use <strong>CTE (WITH clause)</strong> for multi-step transformations</li>
 </ul>
 <h3 id="5-data-validation-queries">5. Data Validation Queries<a class="headerlink" href="#5-data-validation-queries" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">-- Count comparison
-SELECT COUNT(*) FROM source_table;
-SELECT COUNT(*) FROM target_table;
+<div class="highlight"><pre><span></span><code><span class="c1">-- Count comparison</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_table</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_table</span><span class="p">;</span>
 
--- Null value check
-SELECT * FROM target_table WHERE column_name IS NULL;
+<span class="c1">-- Null value check</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 
--- Duplicate check
-SELECT column_name, COUNT(*)
-FROM target_table
-GROUP BY column_name
-HAVING COUNT(*) &gt; 1;
-</code></pre>
+<span class="c1">-- Duplicate check</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">target_table</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">column_name</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="phase-3-etl-testing-process">⚙️ Phase 3: ETL Testing Process<a class="headerlink" href="#phase-3-etl-testing-process" title="Permanent link">&para;</a></h2>
 <h3 id="1-understanding-etl-workflow">1. Understanding ETL Workflow<a class="headerlink" href="#1-understanding-etl-workflow" title="Permanent link">&para;</a></h3>
@@ -6335,10 +6335,10 @@ HAVING COUNT(*) &gt; 1;
 <li>Date functions (DATEADD, DATEDIFF, EXTRACT)</li>
 </ul>
 <h3 id="3-comparing-source-vs-target">3. Comparing Source vs Target<a class="headerlink" href="#3-comparing-source-vs-target" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM source_table
-MINUS
-SELECT * FROM target_table;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_table</span>
+<span class="n">MINUS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_table</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="phase-6-real-time-etl-testing-scenarios">🧪 Phase 6: Real-Time ETL Testing Scenarios<a class="headerlink" href="#phase-6-real-time-etl-testing-scenarios" title="Permanent link">&para;</a></h2>
 <h3 id="1-full-load-testing">1. Full Load Testing<a class="headerlink" href="#1-full-load-testing" title="Permanent link">&para;</a></h3>
@@ -6496,6 +6496,10 @@ SELECT * FROM target_table;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

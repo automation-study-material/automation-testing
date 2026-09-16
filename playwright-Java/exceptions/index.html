@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5723,12 +5723,12 @@ This guide lists the most common exceptions, their <strong>causes</strong>, and 
 <p><strong>Solution:</strong><br />
 - Increase timeout using <code>setTimeout()</code> or pass custom timeout in action options.<br />
 - Ensure element is visible before interacting.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">page.click(&quot;button#submit&quot;, new Page.ClickOptions().setTimeout(10000)); // 10 sec timeout
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"button#submit"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">ClickOptions</span><span class="p">().</span><span class="na">setTimeout</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span><span class="w"> </span><span class="c1">// 10 sec timeout</span>
 
-// Or set default timeout for the page
-page.setDefaultTimeout(15000);
-</code></pre>
+<span class="c1">// Or set default timeout for the page</span>
+<span class="n">page</span><span class="p">.</span><span class="na">setDefaultTimeout</span><span class="p">(</span><span class="mi">15000</span><span class="p">);</span>
+</code></pre></div></p>
 <hr />
 <h2 id="2-playwrightexception-generic-exception">2. PlaywrightException (Generic Exception)<a class="headerlink" href="#2-playwrightexception-generic-exception" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
@@ -5737,13 +5737,13 @@ page.setDefaultTimeout(15000);
 <p><strong>Solution:</strong><br />
 - Always validate selectors with <code>page.locator()</code> or <code>page.isVisible()</code>.<br />
 - Use <code>waitForSelector()</code> before performing action.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">if (page.isVisible(&quot;input#username&quot;)) {
-    page.fill(&quot;input#username&quot;, &quot;sandesh&quot;);
-} else {
-    System.out.println(&quot;Element not found!&quot;);
-}
-</code></pre>
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">isVisible</span><span class="p">(</span><span class="s">"input#username"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="s">"input#username"</span><span class="p">,</span><span class="w"> </span><span class="s">"sandesh"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Element not found!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <hr />
 <h2 id="3-elementhandleexception">3. ElementHandleException<a class="headerlink" href="#3-elementhandleexception" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
@@ -5752,14 +5752,14 @@ page.setDefaultTimeout(15000);
 <p><strong>Solution:</strong><br />
 - Re-locate the element before interaction.<br />
 - Use <code>locator</code> API instead of <code>elementHandle</code> where possible (auto-handles re-attachment).</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">Locator loginBtn = page.locator(&quot;#login&quot;);
-loginBtn.click(); // safer than elementHandle
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">loginBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#login"</span><span class="p">);</span>
+<span class="n">loginBtn</span><span class="p">.</span><span class="na">click</span><span class="p">();</span><span class="w"> </span><span class="c1">// safer than elementHandle</span>
 
-// If using elementHandle
-ElementHandle handle = page.querySelector(&quot;#login&quot;);
-handle.click(); // might fail if DOM changes
-</code></pre>
+<span class="c1">// If using elementHandle</span>
+<span class="n">ElementHandle</span><span class="w"> </span><span class="n">handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">querySelector</span><span class="p">(</span><span class="s">"#login"</span><span class="p">);</span>
+<span class="n">handle</span><span class="p">.</span><span class="na">click</span><span class="p">();</span><span class="w"> </span><span class="c1">// might fail if DOM changes</span>
+</code></pre></div></p>
 <hr />
 <h2 id="4-downloadfailureexception">4. DownloadFailureException<a class="headerlink" href="#4-downloadfailureexception" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
@@ -5768,13 +5768,13 @@ handle.click(); // might fail if DOM changes
 <p><strong>Solution:</strong><br />
 - Ensure <code>waitForDownload()</code> is used properly.<br />
 - Use <code>download.saveAs()</code> to explicitly save file to desired location.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">Download download = page.waitForDownload(() -&gt; {
-    page.click(&quot;a#downloadLink&quot;);
-});
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">Download</span><span class="w"> </span><span class="n">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">waitForDownload</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"a#downloadLink"</span><span class="p">);</span>
+<span class="p">});</span>
 
-download.saveAs(Paths.get(&quot;C:\\Users\\Sandesh\\Downloads\\file.txt&quot;));
-</code></pre>
+<span class="n">download</span><span class="p">.</span><span class="na">saveAs</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:\\Users\\Sandesh\\Downloads\\file.txt"</span><span class="p">));</span>
+</code></pre></div></p>
 <hr />
 <h2 id="5-navigationexception">5. NavigationException<a class="headerlink" href="#5-navigationexception" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
@@ -5783,9 +5783,9 @@ download.saveAs(Paths.get(&quot;C:\\Users\\Sandesh\\Downloads\\file.txt&quot;));
 <p><strong>Solution:</strong><br />
 - Use <code>page.navigate()</code> with explicit timeout.<br />
 - Add retries for flaky connections.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">page.navigate(&quot;https://example.com&quot;, new Page.NavigateOptions().setTimeout(20000));
-</code></pre>
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">NavigateOptions</span><span class="p">().</span><span class="na">setTimeout</span><span class="p">(</span><span class="mi">20000</span><span class="p">));</span>
+</code></pre></div></p>
 <hr />
 <h2 id="6-websocketexception">6. WebSocketException<a class="headerlink" href="#6-websocketexception" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
@@ -5794,14 +5794,14 @@ download.saveAs(Paths.get(&quot;C:\\Users\\Sandesh\\Downloads\\file.txt&quot;));
 <p><strong>Solution:</strong><br />
 - Restart browser context/session.<br />
 - Add retry logic in test framework.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">try {
-    page.navigate(&quot;https://example.com&quot;);
-} catch (PlaywrightException e) {
-    System.out.println(&quot;Browser disconnected. Restarting...&quot;);
-    // re-launch browser
-}
-</code></pre>
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">PlaywrightException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Browser disconnected. Restarting..."</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// re-launch browser</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <hr />
 <h2 id="7-selectorresolutionexception">7. SelectorResolutionException<a class="headerlink" href="#7-selectorresolutionexception" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
@@ -5810,10 +5810,10 @@ download.saveAs(Paths.get(&quot;C:\\Users\\Sandesh\\Downloads\\file.txt&quot;));
 <p><strong>Solution:</strong><br />
 - Test selector validity in browser dev tools.<br />
 - Use <code>page.locator()</code> instead of <code>page.querySelector()</code> for better debugging.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">Locator button = page.locator(&quot;button:has-text('Login')&quot;);
-button.click();
-</code></pre>
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"button:has-text('Login')"</span><span class="p">);</span>
+<span class="n">button</span><span class="p">.</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div></p>
 <hr />
 <h2 id="8-assertionerror">8. AssertionError<a class="headerlink" href="#8-assertionerror" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
@@ -5822,20 +5822,20 @@ button.click();
 <p><strong>Solution:</strong><br />
 - Print actual vs expected values for debugging.<br />
 - Use retries or waits if data loads asynchronously.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">String title = page.title();
-assert title.equals(&quot;Expected Title&quot;) : &quot;Title mismatch! Actual: &quot; + title;
-</code></pre>
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">title</span><span class="p">();</span>
+<span class="k">assert</span><span class="w"> </span><span class="n">title</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Expected Title"</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"Title mismatch! Actual: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+</code></pre></div></p>
 <hr />
 <h2 id="9-filealreadyexistsexception">9. FileAlreadyExistsException<a class="headerlink" href="#9-filealreadyexistsexception" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
 - While saving downloads/screenshots, file already exists at the same path.</p>
 <p><strong>Solution:</strong><br />
 - Save with a unique name using timestamp or UUID.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">String fileName = &quot;screenshot_&quot; + System.currentTimeMillis() + &quot;.png&quot;;
-page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(fileName)));
-</code></pre>
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"screenshot_"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">".png"</span><span class="p">;</span>
+<span class="n">page</span><span class="p">.</span><span class="na">screenshot</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">ScreenshotOptions</span><span class="p">().</span><span class="na">setPath</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">fileName</span><span class="p">)));</span>
+</code></pre></div></p>
 <hr />
 <h2 id="10-illegalstateexception-playwright-context">10. IllegalStateException (Playwright Context)<a class="headerlink" href="#10-illegalstateexception-playwright-context" title="Permanent link">&para;</a></h2>
 <p><strong>Cause:</strong><br />
@@ -5844,13 +5844,13 @@ page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(fileName)));
 <p><strong>Solution:</strong><br />
 - Ensure context/page is open before using.<br />
 - Wrap in try-catch for cleanup.</p>
-<p><strong>Code Example:</strong></p>
-<pre><code class="language-java">try {
-    page.click(&quot;#btn&quot;);
-} catch (IllegalStateException e) {
-    System.out.println(&quot;Page is already closed.&quot;);
-}
-</code></pre>
+<p><strong>Code Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"#btn"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalStateException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Page is already closed."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <hr />
 <h1 id="summary">📌 Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h1>
 <table>
@@ -5969,6 +5969,10 @@ page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(fileName)));
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

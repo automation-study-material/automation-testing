@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5862,10 +5862,10 @@
 <hr />
 <h2 id="2-row_number">2. ROW_NUMBER()<a class="headerlink" href="#2-row_number" title="Permanent link">&para;</a></h2>
 <h3 id="q1-assign-row-number-per-employee-based-on-sale_date">Q1: Assign row number per employee based on sale_date<a class="headerlink" href="#q1-assign-row-number-per-employee-based-on-sale_date" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT sale_id, emp_id, sale_date,
-       ROW_NUMBER() OVER (PARTITION BY emp_id ORDER BY sale_date) AS row_num
-FROM sales;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_id</span><span class="p">,</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">sale_date</span><span class="p">,</span>
+<span class="w">       </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">emp_id</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sale_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">row_num</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sales</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5918,11 +5918,11 @@ FROM sales;
 <hr />
 <h2 id="3-rank-and-dense_rank">3. RANK() and DENSE_RANK()<a class="headerlink" href="#3-rank-and-dense_rank" title="Permanent link">&para;</a></h2>
 <h3 id="q2-rank-sales-per-department">Q2: Rank sales per department<a class="headerlink" href="#q2-rank-sales-per-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT sale_id, emp_id, dept, sale_amount,
-       RANK() OVER (PARTITION BY dept ORDER BY sale_amount DESC) AS dept_rank,
-       DENSE_RANK() OVER (PARTITION BY dept ORDER BY sale_amount DESC) AS dense_rank
-FROM sales;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_id</span><span class="p">,</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">sale_amount</span><span class="p">,</span>
+<span class="w">       </span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sale_amount</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">dept_rank</span><span class="p">,</span>
+<span class="w">       </span><span class="n">DENSE_RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sale_amount</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">dense_rank</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sales</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5981,11 +5981,11 @@ FROM sales;
 <hr />
 <h2 id="4-ntile">4. NTILE()<a class="headerlink" href="#4-ntile" title="Permanent link">&para;</a></h2>
 <h3 id="q3-divide-it-department-sales-into-2-buckets">Q3: Divide IT department sales into 2 buckets<a class="headerlink" href="#q3-divide-it-department-sales-into-2-buckets" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT sale_id, emp_id, dept, sale_amount,
-       NTILE(2) OVER (PARTITION BY dept ORDER BY sale_amount DESC) AS bucket
-FROM sales
-WHERE dept='IT';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_id</span><span class="p">,</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">sale_amount</span><span class="p">,</span>
+<span class="w">       </span><span class="n">NTILE</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sale_amount</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bucket</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sales</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'IT'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6031,10 +6031,10 @@ WHERE dept='IT';
 <hr />
 <h2 id="5-lag-and-lead">5. LAG() and LEAD()<a class="headerlink" href="#5-lag-and-lead" title="Permanent link">&para;</a></h2>
 <h3 id="q4-previous-sale-amount-per-employee">Q4: Previous sale amount per employee<a class="headerlink" href="#q4-previous-sale-amount-per-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT sale_id, emp_id, sale_amount,
-       LAG(sale_amount,1) OVER (PARTITION BY emp_id ORDER BY sale_date) AS prev_sale
-FROM sales;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_id</span><span class="p">,</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">sale_amount</span><span class="p">,</span>
+<span class="w">       </span><span class="n">LAG</span><span class="p">(</span><span class="n">sale_amount</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">emp_id</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sale_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">prev_sale</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sales</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6085,10 +6085,10 @@ FROM sales;
 </tbody>
 </table>
 <h3 id="q5-next-sale-amount-per-employee">Q5: Next sale amount per employee<a class="headerlink" href="#q5-next-sale-amount-per-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT sale_id, emp_id, sale_amount,
-       LEAD(sale_amount,1) OVER (PARTITION BY emp_id ORDER BY sale_date) AS next_sale
-FROM sales;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_id</span><span class="p">,</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">sale_amount</span><span class="p">,</span>
+<span class="w">       </span><span class="n">LEAD</span><span class="p">(</span><span class="n">sale_amount</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">emp_id</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sale_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">next_sale</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sales</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6141,10 +6141,10 @@ FROM sales;
 <hr />
 <h2 id="6-sumavg-overpartition-by">6. SUM()/AVG() OVER(PARTITION BY …)<a class="headerlink" href="#6-sumavg-overpartition-by" title="Permanent link">&para;</a></h2>
 <h3 id="q6-running-total-per-employee">Q6: Running total per employee<a class="headerlink" href="#q6-running-total-per-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT sale_id, emp_id, sale_amount,
-       SUM(sale_amount) OVER (PARTITION BY emp_id ORDER BY sale_date) AS running_total
-FROM sales;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_id</span><span class="p">,</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">sale_amount</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">sale_amount</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">emp_id</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sale_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">running_total</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sales</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6195,10 +6195,10 @@ FROM sales;
 </tbody>
 </table>
 <h3 id="q7-average-sale-per-department">Q7: Average sale per department<a class="headerlink" href="#q7-average-sale-per-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT sale_id, emp_id, dept, sale_amount,
-       AVG(sale_amount) OVER (PARTITION BY dept) AS avg_dept_sale
-FROM sales;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_id</span><span class="p">,</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">sale_amount</span><span class="p">,</span>
+<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="n">sale_amount</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_dept_sale</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sales</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6325,6 +6325,10 @@ FROM sales;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

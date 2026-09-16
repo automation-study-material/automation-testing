@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5998,81 +5998,81 @@ It means <strong>binding data (fields) and methods (functions) together into a s
 </ol>
 <hr />
 <h2 id="example-without-encapsulation-problem">📝 Example Without Encapsulation (Problem)<a class="headerlink" href="#example-without-encapsulation-problem" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class Student {
-    public int age;   // public field
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w">   </span><span class="c1">// public field</span>
+<span class="p">}</span>
 
-public class Demo {
-    public static void main(String[] args) {
-        Student s = new Student();
-        s.age = -10;   // ❌ invalid, but allowed
-        System.out.println(&quot;Age: &quot; + s.age);
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">;</span><span class="w">   </span><span class="c1">// ❌ invalid, but allowed</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">age</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="example-with-encapsulation-solution">📝 Example With Encapsulation (Solution)<a class="headerlink" href="#example-with-encapsulation-solution" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class Student {
-    private int age;  // private field
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w">  </span><span class="c1">// private field</span>
 
-    // Setter with validation
-    public void setAge(int age) {
-        if(age &gt; 0) {
-            this.age = age;
-        } else {
-            System.out.println(&quot;❌ Age must be positive!&quot;);
-        }
-    }
+<span class="w">    </span><span class="c1">// Setter with validation</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"❌ Age must be positive!"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Getter
-    public int getAge() {
-        return age;
-    }
-}
+<span class="w">    </span><span class="c1">// Getter</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Demo {
-    public static void main(String[] args) {
-        Student s = new Student();
-        s.setAge(-10); // blocked
-        s.setAge(20);  // ✅ valid
-        System.out.println(&quot;Age: &quot; + s.getAge());
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="na">setAge</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// blocked</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="na">setAge</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w">  </span><span class="c1">// ✅ valid</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">getAge</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="real-world-example-bank-account">🌟 Real-World Example: Bank Account<a class="headerlink" href="#real-world-example-bank-account" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class BankAccount {
-    private double balance; // sensitive data
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">BankAccount</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span><span class="w"> </span><span class="c1">// sensitive data</span>
 
-    public BankAccount(double initialBalance) {
-        if(initialBalance &gt;= 0) {
-            this.balance = initialBalance;
-        }
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BankAccount</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">initialBalance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">initialBalance</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">initialBalance</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public double getBalance() {
-        return balance; // read-only access
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getBalance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span><span class="w"> </span><span class="c1">// read-only access</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void deposit(double amount) {
-        if(amount &gt; 0) balance += amount;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deposit</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void withdraw(double amount) {
-        if(amount &gt; 0 &amp;&amp; amount &lt;= balance) balance -= amount;
-        else System.out.println(&quot;❌ Invalid transaction&quot;);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">withdraw</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"❌ Invalid transaction"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class BankDemo {
-    public static void main(String[] args) {
-        BankAccount acc = new BankAccount(1000);
-        acc.deposit(500);
-        acc.withdraw(2000); // ❌ not allowed
-        System.out.println(&quot;Final Balance: &quot; + acc.getBalance());
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BankDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">BankAccount</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BankAccount</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">        </span><span class="n">acc</span><span class="p">.</span><span class="na">deposit</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">        </span><span class="n">acc</span><span class="p">.</span><span class="na">withdraw</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w"> </span><span class="c1">// ❌ not allowed</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Final Balance: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">acc</span><span class="p">.</span><span class="na">getBalance</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="advantages-of-encapsulation">⭐ Advantages of Encapsulation<a class="headerlink" href="#advantages-of-encapsulation" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6095,44 +6095,44 @@ public class BankDemo {
 <h2 id="encapsulation-in-selenium-java-framework">🔹 Encapsulation in Selenium Java Framework<a class="headerlink" href="#encapsulation-in-selenium-java-framework" title="Permanent link">&para;</a></h2>
 <p>In Selenium frameworks, <strong>Encapsulation is heavily used in Page Object Model (POM):</strong></p>
 <h3 id="example-page-object">Example: Page Object<a class="headerlink" href="#example-page-object" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebElement</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.support.FindBy</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.support.PageFactory</span><span class="p">;</span>
 
-public class LoginPage {
-    private WebDriver driver;  // private driver reference
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span><span class="w">  </span><span class="c1">// private driver reference</span>
 
-    // Private WebElements
-    @FindBy(id = &quot;username&quot;)
-    private WebElement usernameField;
+<span class="w">    </span><span class="c1">// Private WebElements</span>
+<span class="w">    </span><span class="nd">@FindBy</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"username"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebElement</span><span class="w"> </span><span class="n">usernameField</span><span class="p">;</span>
 
-    @FindBy(id = &quot;password&quot;)
-    private WebElement passwordField;
+<span class="w">    </span><span class="nd">@FindBy</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"password"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebElement</span><span class="w"> </span><span class="n">passwordField</span><span class="p">;</span>
 
-    @FindBy(id = &quot;loginBtn&quot;)
-    private WebElement loginButton;
+<span class="w">    </span><span class="nd">@FindBy</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"loginBtn"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebElement</span><span class="w"> </span><span class="n">loginButton</span><span class="p">;</span>
 
-    // Constructor
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+<span class="w">    </span><span class="c1">// Constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">        </span><span class="n">PageFactory</span><span class="p">.</span><span class="na">initElements</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Public methods (encapsulation) to interact with elements
-    public void enterUsername(String username) {
-        usernameField.sendKeys(username);
-    }
+<span class="w">    </span><span class="c1">// Public methods (encapsulation) to interact with elements</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">usernameField</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">username</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void enterPassword(String password) {
-        passwordField.sendKeys(password);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterPassword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">passwordField</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void clickLogin() {
-        loginButton.click();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickLogin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">loginButton</span><span class="p">.</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>Fields (<code>WebElement</code>) are private → hidden from test classes.</li>
@@ -6143,35 +6143,35 @@ public class LoginPage {
 <h2 id="encapsulation-in-java-playwright-framework">🔹 Encapsulation in Java Playwright Framework<a class="headerlink" href="#encapsulation-in-java-playwright-framework" title="Permanent link">&para;</a></h2>
 <p>Similarly, in <strong>Playwright (Java)</strong> framework, encapsulation is used for page objects:</p>
 <h3 id="example-login-page">Example: Login Page<a class="headerlink" href="#example-login-page" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.Page;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.Page</span><span class="p">;</span>
 
-public class LoginPage {
-    private Page page;  // private Playwright page object
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">;</span><span class="w">  </span><span class="c1">// private Playwright page object</span>
 
-    // Private locators
-    private final String usernameInput = &quot;#username&quot;;
-    private final String passwordInput = &quot;#password&quot;;
-    private final String loginBtn = &quot;#loginBtn&quot;;
+<span class="w">    </span><span class="c1">// Private locators</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">usernameInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#username"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">passwordInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#password"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">loginBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#loginBtn"</span><span class="p">;</span>
 
-    // Constructor
-    public LoginPage(Page page) {
-        this.page = page;
-    }
+<span class="w">    </span><span class="c1">// Constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Public methods to interact with page
-    public void enterUsername(String username) {
-        page.locator(usernameInput).fill(username);
-    }
+<span class="w">    </span><span class="c1">// Public methods to interact with page</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="n">usernameInput</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="n">username</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void enterPassword(String password) {
-        page.locator(passwordInput).fill(password);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterPassword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="n">passwordInput</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void clickLogin() {
-        page.locator(loginBtn).click();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickLogin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="n">loginBtn</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>Locators are private → hidden from test scripts.</li>
@@ -6239,6 +6239,10 @@ public class LoginPage {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5617,78 +5617,78 @@
 <p>This is the key you’re missing.</p>
 <hr />
 <h1 id="your-feature">✅ Your Feature<a class="headerlink" href="#your-feature" title="Permanent link">&para;</a></h1>
-<pre><code class="language-gherkin">@smoke @login
-Feature: Login functionality
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span><span class="nf"> </span><span class="nt">@login</span>
+<span class="k">Feature:</span><span class="nf"> Login functionality</span>
+</code></pre></div>
 <h3 id="this-means">This means:<a class="headerlink" href="#this-means" title="Permanent link">&para;</a></h3>
 <p>👉 EVERY scenario inside automatically gets:</p>
-<pre><code>@smoke
+<div class="highlight"><pre><span></span><code>@smoke
 @login
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="your-scenario">✅ Your Scenario<a class="headerlink" href="#your-scenario" title="Permanent link">&para;</a></h1>
-<pre><code class="language-gherkin">@positive
-Scenario Outline: Valid login
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">@positive</span>
+<span class="k">Scenario Outline:</span><span class="nf"> Valid login</span>
+</code></pre></div>
 <hr />
 <h1 id="cucumber-internally-merges-tags">✅ Cucumber internally merges tags<a class="headerlink" href="#cucumber-internally-merges-tags" title="Permanent link">&para;</a></h1>
 <h3 id="what-you-wrote">What you wrote:<a class="headerlink" href="#what-you-wrote" title="Permanent link">&para;</a></h3>
-<pre><code>@positive
-</code></pre>
+<div class="highlight"><pre><span></span><code>@positive
+</code></pre></div>
 <h3 id="what-cucumber-sees-internally">What Cucumber sees internally:<a class="headerlink" href="#what-cucumber-sees-internally" title="Permanent link">&para;</a></h3>
-<pre><code>@smoke @login @positive
-</code></pre>
+<div class="highlight"><pre><span></span><code>@smoke @login @positive
+</code></pre></div>
 <p>👉 Feature tags + Scenario tags = Combined tags</p>
 <hr />
 <h1 id="step-by-step-what-happens">✅ Step-by-step what happens<a class="headerlink" href="#step-by-step-what-happens" title="Permanent link">&para;</a></h1>
 <h2 id="runner">Runner<a class="headerlink" href="#runner" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">tags = &quot;@positive&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@positive"</span>
+</code></pre></div>
 <hr />
 <h2 id="step-1-filter-scenarios">Step 1 → Filter scenarios<a class="headerlink" href="#step-1-filter-scenarios" title="Permanent link">&para;</a></h2>
 <p>Cucumber checks:</p>
-<pre><code>Which scenarios contain @positive?
-</code></pre>
+<div class="highlight"><pre><span></span><code>Which scenarios contain @positive?
+</code></pre></div>
 <p>Your scenario contains:</p>
-<pre><code>@smoke @login @positive
-</code></pre>
+<div class="highlight"><pre><span></span><code>@smoke @login @positive
+</code></pre></div>
 <h3 id="result">Result:<a class="headerlink" href="#result" title="Permanent link">&para;</a></h3>
-<pre><code>✅ Scenario selected
-</code></pre>
+<div class="highlight"><pre><span></span><code>✅ Scenario selected
+</code></pre></div>
 <hr />
 <h2 id="step-2-hooks-execution">Step 2 → Hooks execution<a class="headerlink" href="#step-2-hooks-execution" title="Permanent link">&para;</a></h2>
 <p>Now Cucumber checks which hooks apply.</p>
 <hr />
 <h3 id="hook-1">Hook 1<a class="headerlink" href="#hook-1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Before(order=1)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 <p>No tag → runs always</p>
-<pre><code>✅ runs
-</code></pre>
+<div class="highlight"><pre><span></span><code>✅ runs
+</code></pre></div>
 <hr />
 <h3 id="hook-2">Hook 2<a class="headerlink" href="#hook-2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Before(&quot;@smoke&quot;, order=2)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="s">"@smoke"</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
 <p>Scenario has @smoke (inherited)</p>
-<pre><code>✅ runs
-</code></pre>
+<div class="highlight"><pre><span></span><code>✅ runs
+</code></pre></div>
 <hr />
 <h1 id="final-execution-order">✅ Final execution order<a class="headerlink" href="#final-execution-order" title="Permanent link">&para;</a></h1>
 <p>(Remember: Before hooks run in ascending order)</p>
-<pre><code>Before Hook - Before Scenario Order-1
+<div class="highlight"><pre><span></span><code>Before Hook - Before Scenario Order-1
 Before Hook - Smoke setup order-2
 Background steps
 Scenario steps
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="visual-diagram-very-clear">🔥 Visual Diagram (Very Clear)<a class="headerlink" href="#visual-diagram-very-clear" title="Permanent link">&para;</a></h1>
 <h2 id="your-feature_1">Your Feature<a class="headerlink" href="#your-feature_1" title="Permanent link">&para;</a></h2>
-<pre><code>Feature tags:  @smoke @login
+<div class="highlight"><pre><span></span><code>Feature tags:  @smoke @login
 Scenario tags: @positive
-</code></pre>
+</code></pre></div>
 <h2 id="combined-internally">Combined internally<a class="headerlink" href="#combined-internally" title="Permanent link">&para;</a></h2>
-<pre><code>@smoke @login @positive
-</code></pre>
+<div class="highlight"><pre><span></span><code>@smoke @login @positive
+</code></pre></div>
 <hr />
 <h1 id="hook-check-table">Hook check table<a class="headerlink" href="#hook-check-table" title="Permanent link">&para;</a></h1>
 <table>
@@ -5715,11 +5715,11 @@ Scenario tags: @positive
 <hr />
 <h1 id="proof-trick-try-this">✅ Proof Trick (Try this)<a class="headerlink" href="#proof-trick-try-this" title="Permanent link">&para;</a></h1>
 <p>Remove @smoke from feature:</p>
-<pre><code class="language-gherkin">Feature: Login functionality
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> Login functionality</span>
+</code></pre></div>
 <p>Now scenario only has:</p>
-<pre><code>@positive
-</code></pre>
+<div class="highlight"><pre><span></span><code>@positive
+</code></pre></div>
 <p>Run again.</p>
 <p>👉 smoke hook will NOT run.</p>
 <hr />
@@ -5743,7 +5743,7 @@ Scenario tags: @positive
 👉 After ↓ order  (descending order)</p>
 <h1 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h1>
 <h2 id="feature-file">Feature File<a class="headerlink" href="#feature-file" title="Permanent link">&para;</a></h2>
-<pre><code class="language-feature">@smoke @login
+<div class="highlight"><pre><span></span><code>@smoke @login
 Feature: Login functionality
 
   Background:
@@ -5756,76 +5756,74 @@ Feature: Login functionality
       | Ram   | admin|Adobe|
       | Shyam | user |Global Logic|
     Then users should be created
-</code></pre>
+</code></pre></div>
 <h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">
-package hooks;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">hooks</span><span class="p">;</span>
 
-import io.cucumber.java.*;
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.*</span><span class="p">;</span>
 
-public class Hooks {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hooks</span><span class="w"> </span><span class="p">{</span>
 
-    @Before (order = 1) 
-    public void before() {
-        System.out.println(&quot;Before Hook - Before Scenario Order-1&quot;);
-    }
+<span class="w">    </span><span class="nd">@Before</span><span class="w"> </span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">before</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Before Hook - Before Scenario Order-1"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Before(value=&quot;@smoke&quot;,order=2) 
-    public void smokeOnly() {
-        System.out.println(&quot;Before Hook - Smoke setup order-2&quot;);
-    }
+<span class="w">    </span><span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">"@smoke"</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">smokeOnly</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Before Hook - Smoke setup order-2"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Before(value=&quot;@sanity&quot;,order=3)
-    public void sanityOnely() {
-        System.out.println(&quot;Before Hook - Smoke setup order-3&quot;);
-    }
+<span class="w">    </span><span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">"@sanity"</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sanityOnely</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Before Hook - Smoke setup order-3"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @After (value=&quot;@sanity&quot;,order=3)
-    public void afterOrderThree() {
-        System.out.println(&quot;After Scenario order-3&quot;);
-    }
+<span class="w">    </span><span class="nd">@After</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">"@sanity"</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterOrderThree</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After Scenario order-3"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @After (order=1)
-    public void afterOrderone() {
-        System.out.println(&quot;After Scenario order-1&quot;);
-    }
+<span class="w">    </span><span class="nd">@After</span><span class="w"> </span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterOrderone</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After Scenario order-1"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @After(value = &quot;@sanity or @datatable&quot;, order = 2)
-    public void afterOrderTwo() {
-        System.out.println(&quot;After Scenario order-2&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@After</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@sanity or @datatable"</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterOrderTwo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After Scenario order-2"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="runner-class">Runner Class<a class="headerlink" href="#runner-class" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">
-package runner;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">runner</span><span class="p">;</span>
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.DataProvider;
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.AbstractTestNGCucumberTests</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.CucumberOptions</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.DataProvider</span><span class="p">;</span>
 
-@CucumberOptions(
-        features = &quot;src/test/resources/features&quot;,
-        glue = {&quot;steps&quot;,&quot;hooks&quot;},
-        plugin = {
-                &quot;pretty&quot;,      // step-by-step readable
-                &quot;summary&quot;,     // final summary
-                &quot;html:target/cucumber.html&quot;,
-                &quot;json:target/cucumber.json&quot;,
-                &quot;rerun:target/failed.txt&quot;
-                },
-        tags = &quot;@datatable&quot;,
-        monochrome = true 
-)
-public class TestRunner extends AbstractTestNGCucumberTests {
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">        </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"steps"</span><span class="p">,</span><span class="s">"hooks"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="s">"pretty"</span><span class="p">,</span><span class="w">      </span><span class="c1">// step-by-step readable</span>
+<span class="w">                </span><span class="s">"summary"</span><span class="p">,</span><span class="w">     </span><span class="c1">// final summary</span>
+<span class="w">                </span><span class="s">"html:target/cucumber.html"</span><span class="p">,</span>
+<span class="w">                </span><span class="s">"json:target/cucumber.json"</span><span class="p">,</span>
+<span class="w">                </span><span class="s">"rerun:target/failed.txt"</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">        </span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@datatable"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span>
+<span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestRunner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractTestNGCucumberTests</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    @DataProvider(parallel = false)
-    public Object[][] scenarios() {
-        return super.scenarios();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">scenarios</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">scenarios</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">&para;</a></h3>
 <ul>
 <li>When we call tags from Runner class, Runner class will check for what features have tag same as passed in runner class.</li>
@@ -5885,6 +5883,10 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

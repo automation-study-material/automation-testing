@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5617,82 +5617,82 @@
 <h1 id="1-can-we-create-instance-of-abstract-class">1️⃣ Can We Create Instance of Abstract Class?<a class="headerlink" href="#1-can-we-create-instance-of-abstract-class" title="Permanent link">&para;</a></h1>
 <p>❌ <strong>Not allowed</strong></p>
 <p>Example:</p>
-<pre><code class="language-java">abstract class Animal {
-}
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Animal a = new Animal();   // Compile-time error
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">();</span><span class="w">   </span><span class="c1">// Compile-time error</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Error:</p>
-<pre><code class="language-text">Animal is abstract; cannot be instantiated
-</code></pre>
+<div class="highlight"><pre><span></span><code>Animal is abstract; cannot be instantiated
+</code></pre></div>
 <p>Reason:</p>
 <p>Abstract classes may contain <strong>abstract methods (methods without body)</strong>, so Java does not allow creating objects directly.</p>
 <hr />
 <h1 id="2-why-abstract-class-can-have-constructor">2️⃣ Why Abstract Class Can Have Constructor?<a class="headerlink" href="#2-why-abstract-class-can-have-constructor" title="Permanent link">&para;</a></h1>
 <p>Even though we <strong>cannot instantiate an abstract class</strong>, its constructor is used to <strong>initialize common fields when a subclass object is created</strong>.</p>
 <p>Example:</p>
-<pre><code class="language-java">abstract class Animal {
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
 
-    public Animal() {
-        System.out.println(&quot;Animal constructor called&quot;);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Animal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Animal constructor called"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Dog extends Animal {
+<span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
 
-    public Dog() {
-        System.out.println(&quot;Dog constructor called&quot;);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog constructor called"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Dog d = new Dog();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="3-execution-flow">3️⃣ Execution Flow<a class="headerlink" href="#3-execution-flow" title="Permanent link">&para;</a></h1>
 <p>When we create:</p>
-<pre><code class="language-java">Dog d = new Dog();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Dog</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+</code></pre></div>
 <p>Java does:</p>
-<pre><code class="language-text">Dog constructor
+<div class="highlight"><pre><span></span><code>Dog constructor
    ↓
 super()
    ↓
 Animal constructor
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="4-output">4️⃣ Output<a class="headerlink" href="#4-output" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">Animal constructor called
+<div class="highlight"><pre><span></span><code>Animal constructor called
 Dog constructor called
-</code></pre>
+</code></pre></div>
 <p>Because <strong>parent constructor always runs first</strong>.</p>
 <hr />
 <h1 id="5-real-use-case">5️⃣ Real Use Case<a class="headerlink" href="#5-real-use-case" title="Permanent link">&para;</a></h1>
 <p>Abstract classes are used when we want to <strong>initialize common properties</strong>.</p>
 <p>Example:</p>
-<pre><code class="language-java">abstract class Vehicle {
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
 
-    String brand;
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">brand</span><span class="p">;</span>
 
-    public Vehicle(String brand) {
-        this.brand = brand;
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Vehicle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">brand</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">brand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">brand</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Car extends Vehicle {
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
 
-    public Car() {
-        super(&quot;Toyota&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Car</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">"Toyota"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Here constructor initializes <strong>shared data</strong>.</p>
 <hr />
 <h1 id="6-interview-answer-best-short-answer">6️⃣ Interview Answer (Best Short Answer)<a class="headerlink" href="#6-interview-answer-best-short-answer" title="Permanent link">&para;</a></h1>
@@ -5702,29 +5702,29 @@ class Car extends Vehicle {
 <li>These constructors are called <strong>when a subclass object is created</strong>, allowing initialization of shared fields.</li>
 </ul>
 <p>Example:</p>
-<pre><code class="language-java">abstract class A {
-    public A() {
-        System.out.println(&quot;Constructor of abstract class&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">A</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Constructor of abstract class"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class B extends A {
-}
+<span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        B obj = new B();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">B</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">B</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Output:</p>
-<pre><code class="language-text">Constructor of abstract class
-</code></pre>
+<div class="highlight"><pre><span></span><code>Constructor of abstract class
+</code></pre></div>
 <hr />
 <p>✅ <strong>Key Point</strong></p>
-<pre><code class="language-text">Abstract class → Cannot create object
+<div class="highlight"><pre><span></span><code>Abstract class → Cannot create object
 Constructor → Used by child class during object creation
-</code></pre>
+</code></pre></div>
 <hr />
 <p>If you'd like, I can also explain <strong>one tricky interview question</strong>:</p>
 <p>👉 <em>“Can we call an abstract method inside an abstract class constructor?”</em></p>
@@ -5782,6 +5782,10 @@ Constructor → Used by child class during object creation
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

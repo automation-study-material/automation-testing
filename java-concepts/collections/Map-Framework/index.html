@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5685,8 +5685,8 @@
 <h1 id="why-do-we-even-need-map">🎯 Why do we even need Map?<a class="headerlink" href="#why-do-we-even-need-map" title="Permanent link">&para;</a></h1>
 <p><code>List</code> and <code>Set</code> store <strong>only values</strong>.</p>
 <p>But real-world applications require:</p>
-<pre><code>key → value
-</code></pre>
+<div class="highlight"><pre><span></span><code>key → value
+</code></pre></div>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <ul>
 <li>userId → User</li>
@@ -5698,14 +5698,14 @@
 <hr />
 <h1 id="what-is-map">✅ What is Map?<a class="headerlink" href="#what-is-map" title="Permanent link">&para;</a></h1>
 <p>A <strong>Map</strong> stores data in:</p>
-<pre><code>&lt;Key, Value&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>&lt;Key, Value&gt;
+</code></pre></div>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
-map.put(&quot;A&quot;, 10);
-</code></pre>
-<pre><code>A → 10
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"A"</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>A → 10
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="1-hashmap">🟢 1. HashMap<a class="headerlink" href="#1-hashmap" title="Permanent link">&para;</a></h1>
@@ -5715,16 +5715,16 @@ map.put(&quot;A&quot;, 10);
 <p>Most commonly used Map.</p>
 <hr />
 <h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-map.put(&quot;Java&quot;, 1);
-map.put(&quot;Python&quot;, 2);
+<span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Python"</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 
-System.out.println(map);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">map</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<pre><code>{Python=2, Java=1} // random order
-</code></pre>
+<div class="highlight"><pre><span></span><code>{Python=2, Java=1} // random order
+</code></pre></div>
 <hr />
 <h2 id="why-hashmap">✅ Why HashMap?<a class="headerlink" href="#why-hashmap" title="Permanent link">&para;</a></h2>
 <p>✔ Fast lookup
@@ -5734,11 +5734,11 @@ System.out.println(map);
 <hr />
 <h2 id="internal-working">🧠 Internal Working<a class="headerlink" href="#internal-working" title="Permanent link">&para;</a></h2>
 <p>Uses:</p>
-<pre><code>Array of buckets + Hashing
-</code></pre>
+<div class="highlight"><pre><span></span><code>Array of buckets + Hashing
+</code></pre></div>
 <p>Structure:</p>
-<pre><code>Node&lt;K,V&gt;[] table
-</code></pre>
+<div class="highlight"><pre><span></span><code>Node&lt;K,V&gt;[] table
+</code></pre></div>
 <h3 id="flow">Flow<a class="headerlink" href="#flow" title="Permanent link">&para;</a></h3>
 <ol>
 <li><code>hashCode()</code></li>
@@ -5747,10 +5747,10 @@ System.out.println(map);
 <li><code>equals()</code> to avoid duplicate keys</li>
 </ol>
 <h3 id="diagram">Diagram<a class="headerlink" href="#diagram" title="Permanent link">&para;</a></h3>
-<pre><code>index 0 → [A=10]
+<div class="highlight"><pre><span></span><code>index 0 → [A=10]
 index 1 → [B=20]
 index 2 → [C=30]
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="time-complexity">⏱ Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">&para;</a></h2>
 <table>
@@ -5786,9 +5786,9 @@ index 2 → [C=30]
 ❌ No order guarantee</p>
 <hr />
 <h2 id="selenium-banking-examples">✅ Selenium / Banking Examples<a class="headerlink" href="#selenium-banking-examples" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String, String&gt; results = new HashMap&lt;&gt;();
-Map&lt;String, Double&gt; balances = new HashMap&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">balances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="2-linkedhashmap">🟡 2. LinkedHashMap<a class="headerlink" href="#2-linkedhashmap" title="Permanent link">&para;</a></h1>
@@ -5798,24 +5798,24 @@ Map&lt;String, Double&gt; balances = new HashMap&lt;&gt;();
 <p>Maintains <strong>insertion order</strong>.</p>
 <hr />
 <h2 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String, Integer&gt; map = new LinkedHashMap&lt;&gt;();
-map.put(&quot;A&quot;,1);
-map.put(&quot;B&quot;,2);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"A"</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"B"</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
 <p>Output:</p>
-<pre><code>{A=1, B=2}
-</code></pre>
+<div class="highlight"><pre><span></span><code>{A=1, B=2}
+</code></pre></div>
 <hr />
 <h2 id="internal-working_1">🧠 Internal Working<a class="headerlink" href="#internal-working_1" title="Permanent link">&para;</a></h2>
-<pre><code>HashMap + Doubly Linked List
-</code></pre>
+<div class="highlight"><pre><span></span><code>HashMap + Doubly Linked List
+</code></pre></div>
 <ul>
 <li>Hash table → fast lookup</li>
 <li>Linked list → maintain order</li>
 </ul>
 <p>Diagram:</p>
-<pre><code>A &lt;-&gt; B &lt;-&gt; C
-</code></pre>
+<div class="highlight"><pre><span></span><code>A &lt;-&gt; B &lt;-&gt; C
+</code></pre></div>
 <hr />
 <h2 id="advantages_1">✅ Advantages<a class="headerlink" href="#advantages_1" title="Permanent link">&para;</a></h2>
 <p>✔ Maintains order
@@ -5827,8 +5827,8 @@ map.put(&quot;B&quot;,2);
 ❌ Slightly slower</p>
 <hr />
 <h2 id="selenium-examples">✅ Selenium Examples<a class="headerlink" href="#selenium-examples" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String,String&gt; txnHistory = new LinkedHashMap&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">txnHistory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="3-hashtable-legacy">🔴 3. Hashtable (Legacy)<a class="headerlink" href="#3-hashtable-legacy" title="Permanent link">&para;</a></h1>
@@ -5838,13 +5838,13 @@ map.put(&quot;B&quot;,2);
 <p>Old Java 1.0 class.</p>
 <hr />
 <h2 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String,String&gt; map = new Hashtable&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Hashtable</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="internal-working_2">🧠 Internal Working<a class="headerlink" href="#internal-working_2" title="Permanent link">&para;</a></h2>
 <p>All methods synchronized:</p>
-<pre><code class="language-java">public synchronized V put(K key, V value)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h2 id="advantages_2">✅ Advantages<a class="headerlink" href="#advantages_2" title="Permanent link">&para;</a></h2>
 <p>✔ Thread-safe</p>
@@ -5872,16 +5872,16 @@ map.put(&quot;B&quot;,2);
 </blockquote>
 <hr />
 <h2 id="hashmap-unsafe">❌ HashMap (Unsafe)<a class="headerlink" href="#hashmap-unsafe" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String,Integer&gt; map = new HashMap&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <p>Two threads writing → lost updates / inconsistent data.</p>
 <hr />
 <h2 id="hashtable-safe-but-slow">✅ Hashtable (Safe but slow)<a class="headerlink" href="#hashtable-safe-but-slow" title="Permanent link">&para;</a></h2>
 <p>Uses full map lock.</p>
 <hr />
 <h2 id="manual-safe">🟢 Manual Safe<a class="headerlink" href="#manual-safe" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Collections.synchronizedMap(new HashMap&lt;&gt;());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Collections</span><span class="p">.</span><span class="na">synchronizedMap</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="4-concurrenthashmap-modern-thread-safe-map">🟣 4. ConcurrentHashMap (Modern Thread-Safe Map)<a class="headerlink" href="#4-concurrenthashmap-modern-thread-safe-map" title="Permanent link">&para;</a></h1>
@@ -5890,15 +5890,15 @@ map.put(&quot;B&quot;,2);
 <p><strong>Thread-safe + High Performance + Modern replacement for Hashtable</strong></p>
 <hr />
 <h2 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String,Integer&gt; map = new ConcurrentHashMap&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="internal-working_3">🧠 Internal Working<a class="headerlink" href="#internal-working_3" title="Permanent link">&para;</a></h2>
 <h3 id="java-7">Java 7<a class="headerlink" href="#java-7" title="Permanent link">&para;</a></h3>
 <p>Segment-based locking</p>
 <h3 id="java-8">Java 8+<a class="headerlink" href="#java-8" title="Permanent link">&para;</a></h3>
-<pre><code>Bucket-level locking + CAS
-</code></pre>
+<div class="highlight"><pre><span></span><code>Bucket-level locking + CAS
+</code></pre></div>
 <h3 id="flow_1">Flow<a class="headerlink" href="#flow_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>hashCode</li>
@@ -5908,21 +5908,21 @@ map.put(&quot;B&quot;,2);
 </ol>
 <hr />
 <h2 id="why-faster">✅ Why Faster?<a class="headerlink" href="#why-faster" title="Permanent link">&para;</a></h2>
-<pre><code>Hashtable → full lock ❌
+<div class="highlight"><pre><span></span><code>Hashtable → full lock ❌
 ConcurrentHashMap → bucket lock ✅
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="special-features">✅ Special Features<a class="headerlink" href="#special-features" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">putIfAbsent()
-computeIfPresent()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">putIfAbsent</span><span class="p">()</span>
+<span class="n">computeIfPresent</span><span class="p">()</span>
+</code></pre></div>
 <p>✔ Atomic operations
 ✔ No null key/value</p>
 <hr />
 <h2 id="real-world-examples">✅ Real-world Examples<a class="headerlink" href="#real-world-examples" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String,String&gt; results = new ConcurrentHashMap&lt;&gt;();
-Map&lt;String,Double&gt; balances = new ConcurrentHashMap&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">balances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="5-treemap">🌲 5. TreeMap<a class="headerlink" href="#5-treemap" title="Permanent link">&para;</a></h1>
@@ -5932,16 +5932,16 @@ Map&lt;String,Double&gt; balances = new ConcurrentHashMap&lt;&gt;();
 <p>Maintains <strong>sorted order</strong>.</p>
 <hr />
 <h2 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String,Integer&gt; map = new TreeMap&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <p>Output:</p>
-<pre><code>{A=1, B=2, C=3}
-</code></pre>
+<div class="highlight"><pre><span></span><code>{A=1, B=2, C=3}
+</code></pre></div>
 <hr />
 <h2 id="internal-working_4">🧠 Internal Working<a class="headerlink" href="#internal-working_4" title="Permanent link">&para;</a></h2>
 <p>Uses:</p>
-<pre><code>Red-Black Tree (Self-balancing BST)
-</code></pre>
+<div class="highlight"><pre><span></span><code>Red-Black Tree (Self-balancing BST)
+</code></pre></div>
 <hr />
 <h2 id="complexity">⏱ Complexity<a class="headerlink" href="#complexity" title="Permanent link">&para;</a></h2>
 <table>
@@ -5969,8 +5969,8 @@ Map&lt;String,Double&gt; balances = new ConcurrentHashMap&lt;&gt;();
 ❌ No null key</p>
 <hr />
 <h2 id="examples_1">✅ Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;Long,String&gt; txns = new TreeMap&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">Long</span><span class="p">,</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">txns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="hashmap-vs-linkedhashmap-vs-hashtable-vs-concurrenthashmap-vs-treemap_1">📊 HashMap vs LinkedHashMap vs Hashtable vs ConcurrentHashMap vs TreeMap<a class="headerlink" href="#hashmap-vs-linkedhashmap-vs-hashtable-vs-concurrenthashmap-vs-treemap_1" title="Permanent link">&para;</a></h1>
 <table>
@@ -6190,6 +6190,10 @@ and ConcurrentHashMap is the modern high-performance thread-safe map.</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

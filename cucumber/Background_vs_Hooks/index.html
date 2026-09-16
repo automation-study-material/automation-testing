@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5671,8 +5671,7 @@
 <hr />
 <h1 id="3-project-structure">3️⃣ Project Structure<a class="headerlink" href="#3-project-structure" title="Permanent link">&para;</a></h1>
 <p>Typical Selenium + Cucumber project structure:</p>
-<pre><code>
-src/test/java
+<div class="highlight"><pre><span></span><code>src/test/java
 ├── runner
 │     TestRunner.java
 │
@@ -5685,99 +5684,98 @@ src/test/java
 src/test/resources
 └── features
 login.feature
-
-</code></pre>
+</code></pre></div>
 <p>Hooks are automatically detected <strong>if the package is included in the Runner class glue option</strong>.</p>
 <hr />
 <h1 id="4-feature-file">4️⃣ Feature File<a class="headerlink" href="#4-feature-file" title="Permanent link">&para;</a></h1>
 <p><code>src/test/resources/features/login.feature</code></p>
-<pre><code class="language-gherkin">Feature: Login functionality
+<div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> Login functionality</span>
 
-Background:
-  Given user launches the browser
-  And user navigates to login page
+<span class="k">Background:</span>
+<span class="k">  Given </span><span class="nf">user launches the browser</span>
+<span class="nf">  </span><span class="k">And </span><span class="nf">user navigates to login page</span>
 
-Scenario: Successful login
-  When user enters username &quot;admin&quot;
-  And user enters password &quot;admin123&quot;
-  Then login should be successful
+<span class="k">Scenario:</span><span class="nf"> Successful login</span>
+<span class="k">  When </span><span class="nf">user enters username "</span><span class="s">admin</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">And </span><span class="nf">user enters password "</span><span class="s">admin123</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">Then </span><span class="nf">login should be successful</span>
 
-Scenario: Failed login
-  When user enters username &quot;admin&quot;
-  And user enters password &quot;wrong&quot;
-  Then login should fail
-````
+<span class="k">Scenario:</span><span class="nf"> Failed login</span>
+<span class="k">  When </span><span class="nf">user enters username "</span><span class="s">admin</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">And </span><span class="nf">user enters password "</span><span class="s">wrong</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">Then </span><span class="nf">login should fail</span>
+<span class="nf">````</span>
 
----
+<span class="nf">---</span>
 
-# 5️⃣ Step Definition Class
+<span class="c"># 5️⃣ Step Definition Class</span>
 
-`src/test/java/stepdefinitions/LoginStepDefinition.java`
+<span class="nf">`src/test/java/stepdefinitions/LoginStepDefinition.java`</span>
 
-```java
-import io.cucumber.java.en.*;
+<span class="nf">```java</span>
+<span class="nf">import io.cucumber.java.en.*;</span>
 
-public class LoginStepDefinition {
+<span class="nf">public class LoginStepDefinition {</span>
 
-    String username;
-    String password;
+<span class="nf">    String username;</span>
+<span class="nf">    String password;</span>
 
-    @Given(&quot;user launches browser&quot;)
-    public void launch_browser() {
-        System.out.println(&quot;Browser launched&quot;);
-    }
+<span class="nf">    </span><span class="nt">@Given("user</span><span class="nf"> launches browser"</span><span class="s">)</span>
+<span class="s">    public void launch_browser() {</span>
+<span class="s">        System.out.println(</span><span class="nf">"Browser launched"</span><span class="s">);</span>
+<span class="s">    }</span>
 
-    @Given(&quot;user navigates to login page&quot;)
-    public void navigate_login_page() {
-        System.out.println(&quot;Navigated to login page&quot;);
-    }
+<span class="s">    @Given(</span><span class="nf">"user navigates to login page"</span><span class="s">)</span>
+<span class="s">    public void navigate_login_page() {</span>
+<span class="s">        System.out.println(</span><span class="nf">"Navigated to login page"</span><span class="s">);</span>
+<span class="s">    }</span>
 
-    @When(&quot;user enters username {string}&quot;)
-    public void enter_username(String username) {
-        this.username = username;
-        System.out.println(&quot;Entered username: &quot; + username);
-    }
+<span class="s">    @When(</span><span class="nf">"user enters username {string}"</span><span class="s">)</span>
+<span class="s">    public void enter_username(String username) {</span>
+<span class="s">        this.username = username;</span>
+<span class="s">        System.out.println(</span><span class="nf">"Entered username: "</span><span class="s"> + username);</span>
+<span class="s">    }</span>
 
-    @When(&quot;user enters password {string}&quot;)
-    public void enter_password(String password) {
-        this.password = password;
-        System.out.println(&quot;Entered password: &quot; + password);
-    }
+<span class="s">    @When(</span><span class="nf">"user enters password {string}"</span><span class="s">)</span>
+<span class="s">    public void enter_password(String password) {</span>
+<span class="s">        this.password = password;</span>
+<span class="s">        System.out.println(</span><span class="nf">"Entered password: "</span><span class="s"> + password);</span>
+<span class="s">    }</span>
 
-    @Then(&quot;login should be successful&quot;)
-    public void login_success() {
-        if(username.equals(&quot;admin&quot;) &amp;&amp; password.equals(&quot;admin123&quot;)) {
-            System.out.println(&quot;Login Successful&quot;);
-        }
-    }
+<span class="s">    @Then(</span><span class="nf">"login should be successful"</span><span class="s">)</span>
+<span class="s">    public void login_success() {</span>
+<span class="s">        if(username.equals(</span><span class="nf">"admin"</span><span class="s">) &amp;&amp; password.equals(</span><span class="nf">"admin</span><span class="s">123</span><span class="nf">"</span><span class="s">)) {</span>
+<span class="s">            System.out.println(</span><span class="nf">"Login Successful"</span><span class="s">);</span>
+<span class="s">        }</span>
+<span class="s">    }</span>
 
-    @Then(&quot;login should fail&quot;)
-    public void login_fail() {
-        if(!password.equals(&quot;admin123&quot;)) {
-            System.out.println(&quot;Login Failed&quot;);
-        }
-    }
-}
-</code></pre>
+<span class="s">    @Then(</span><span class="nf">"login should fail"</span><span class="s">)</span>
+<span class="s">    public void login_fail() {</span>
+<span class="s">        if(!password.equals(</span><span class="nf">"admin</span><span class="s">123</span><span class="nf">"</span><span class="s">)) {</span>
+<span class="s">            System.out.println(</span><span class="nf">"Login Failed"</span><span class="s">);</span>
+<span class="s">        }</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+</code></pre></div>
 <hr />
 <h1 id="6-hooks-class">6️⃣ Hooks Class<a class="headerlink" href="#6-hooks-class" title="Permanent link">&para;</a></h1>
 <p><code>src/test/java/hooks/Hooks.java</code></p>
-<pre><code class="language-java">import io.cucumber.java.Before;
-import io.cucumber.java.After;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.Before</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.After</span><span class="p">;</span>
 
-public class Hooks {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hooks</span><span class="w"> </span><span class="p">{</span>
 
-    @Before
-    public void beforeScenario() {
-        System.out.println(&quot;Before Hook → Setup browser&quot;);
-    }
+<span class="w">    </span><span class="nd">@Before</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">beforeScenario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Before Hook → Setup browser"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @After
-    public void afterScenario() {
-        System.out.println(&quot;After Hook → Close browser&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@After</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterScenario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After Hook → Close browser"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Purpose of Hooks:</p>
 <ul>
 <li>Setup environment</li>
@@ -5787,22 +5785,22 @@ public class Hooks {
 <hr />
 <h1 id="7-runner-class">7️⃣ Runner Class<a class="headerlink" href="#7-runner-class" title="Permanent link">&para;</a></h1>
 <p><code>src/test/java/runner/TestRunner.java</code></p>
-<pre><code class="language-java">import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.AbstractTestNGCucumberTests</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.CucumberOptions</span><span class="p">;</span>
 
-@CucumberOptions(
-        features = &quot;src/test/resources/features&quot;,
-        glue = {&quot;stepdefinitions&quot;,&quot;hooks&quot;},
-        plugin = {&quot;pretty&quot;,&quot;html:target/cucumber-report.html&quot;},
-        monochrome = true
-)
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">        </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"stepdefinitions"</span><span class="p">,</span><span class="s">"hooks"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"pretty"</span><span class="p">,</span><span class="s">"html:target/cucumber-report.html"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">)</span>
 
-public class TestRunner extends AbstractTestNGCucumberTests {
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestRunner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractTestNGCucumberTests</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Important configuration:</p>
-<pre><code>glue = {&quot;stepdefinitions&quot;,&quot;hooks&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code>glue = {"stepdefinitions","hooks"}
+</code></pre></div>
 <p>This tells Cucumber to scan:</p>
 <ul>
 <li>Step Definitions</li>
@@ -5811,15 +5809,15 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 <hr />
 <h1 id="8-execution-order">8️⃣ Execution Order<a class="headerlink" href="#8-execution-order" title="Permanent link">&para;</a></h1>
 <p>For each scenario execution order is:</p>
-<pre><code>Before Hook
+<div class="highlight"><pre><span></span><code>Before Hook
 Background Steps
 Scenario Steps
 After Hook
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="9-console-output-after-execution">9️⃣ Console Output After Execution<a class="headerlink" href="#9-console-output-after-execution" title="Permanent link">&para;</a></h1>
 <h2 id="scenario-1-successful-login">Scenario 1 (Successful Login)<a class="headerlink" href="#scenario-1-successful-login" title="Permanent link">&para;</a></h2>
-<pre><code>Before Hook → Setup browser
+<div class="highlight"><pre><span></span><code>Before Hook → Setup browser
 
 Browser launched
 Navigated to login page
@@ -5830,10 +5828,10 @@ Entered password: admin123
 Login Successful
 
 After Hook → Close browser
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="scenario-2-failed-login">Scenario 2 (Failed Login)<a class="headerlink" href="#scenario-2-failed-login" title="Permanent link">&para;</a></h2>
-<pre><code>Before Hook → Setup browser
+<div class="highlight"><pre><span></span><code>Before Hook → Setup browser
 
 Browser launched
 Navigated to login page
@@ -5844,10 +5842,10 @@ Entered password: wrong
 Login Failed
 
 After Hook → Close browser
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="execution-flow">🔟 Execution Flow<a class="headerlink" href="#execution-flow" title="Permanent link">&para;</a></h1>
-<pre><code>Scenario 1
+<div class="highlight"><pre><span></span><code>Scenario 1
 ---------
 Before Hook
 Background
@@ -5860,7 +5858,7 @@ Before Hook
 Background
 Scenario Steps
 After Hook
-</code></pre>
+</code></pre></div>
 <p>Background runs <strong>before every scenario</strong>.</p>
 <hr />
 <h1 id="11-difference-between-background-and-hooks">1️⃣1️⃣ Difference Between Background and Hooks<a class="headerlink" href="#11-difference-between-background-and-hooks" title="Permanent link">&para;</a></h1>
@@ -5907,8 +5905,8 @@ After Hook
 <p>Hooks are created in a separate Java class (usually <code>Hooks.java</code>) inside the <strong>stepdefinitions or hooks package</strong>.</p>
 <p>They are mapped automatically using the <strong>glue option in the Runner class</strong>.</p>
 <p>Example:</p>
-<pre><code class="language-java">glue = {&quot;stepdefinitions&quot;,&quot;hooks&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"stepdefinitions"</span><span class="p">,</span><span class="s">"hooks"</span><span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="13-important-advanced-cucumber-topics">1️⃣3️⃣ Important Advanced Cucumber Topics<a class="headerlink" href="#13-important-advanced-cucumber-topics" title="Permanent link">&para;</a></h1>
 <p>Commonly asked in <strong>3–5 years Selenium Automation interviews</strong>:</p>
@@ -5920,8 +5918,7 @@ After Hook
 <li>Scenario Context / Dependency Injection</li>
 </ul>
 <hr />
-<pre><code>
-If you want, I can also give you a **very powerful single-page Cucumber cheat sheet (.md)** covering:
+<div class="highlight"><pre><span></span><code>If you want, I can also give you a **very powerful single-page Cucumber cheat sheet (.md)** covering:
 
 - Background  
 - Hooks  
@@ -5931,7 +5928,7 @@ If you want, I can also give you a **very powerful single-page Cucumber cheat sh
 - Step Definition mapping  
 
 This **one sheet is enough for most Selenium + Cucumber interviews.**
-</code></pre>
+</code></pre></div>
 
 
 
@@ -5985,6 +5982,10 @@ This **one sheet is enough for most Selenium + Cucumber interviews.**
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

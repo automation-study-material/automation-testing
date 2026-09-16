@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5616,29 +5616,29 @@
 <hr />
 <p>Great 👍 this is the exact point where most people get confused.</p>
 <p>You have this interface:</p>
-<pre><code class="language-java">interface Calculator {
-    int add(int a, int b);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Let's see how this interface is implemented in different ways.</p>
 <hr />
 <h1 id="1-normal-class-implementation">1️⃣ Normal Class Implementation<a class="headerlink" href="#1-normal-class-implementation" title="Permanent link">&para;</a></h1>
 <p>Here we create a class and implement the interface.</p>
-<pre><code class="language-java">class MyCalculator implements Calculator {
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyCalculator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Calculator</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    public int add(int a, int b) {
-        return a + b;
-    }
-}
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Calculator c = new MyCalculator();
-        System.out.println(c.add(5, 3));
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Calculator</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCalculator</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="what-is-happening">What is happening?<a class="headerlink" href="#what-is-happening" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>MyCalculator</code> implements <code>Calculator</code></li>
@@ -5648,20 +5648,20 @@ public class Test {
 <hr />
 <h1 id="2-anonymous-class-implementation">2️⃣ Anonymous Class Implementation<a class="headerlink" href="#2-anonymous-class-implementation" title="Permanent link">&para;</a></h1>
 <p>Instead of creating separate class, we implement it directly:</p>
-<pre><code class="language-java">public class Test {
-    public static void main(String[] args) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        Calculator c = new Calculator() {
-            @Override
-            public int add(int a, int b) {
-                return a + b;
-            }
-        };
+<span class="w">        </span><span class="n">Calculator</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Calculator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nd">@Override</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">};</span>
 
-        System.out.println(c.add(5, 3));
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="here">Here:<a class="headerlink" href="#here" title="Permanent link">&para;</a></h2>
 <ul>
 <li>No class name</li>
@@ -5673,20 +5673,20 @@ public class Test {
 <p>Because <code>Calculator</code> has only ONE abstract method,\
 it is a <strong>Functional Interface</strong>.</p>
 <p>Now Lambda can implement it:</p>
-<pre><code class="language-java">public class Test {
-    public static void main(String[] args) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        Calculator c = (a, b) -&gt; a + b;
+<span class="w">        </span><span class="n">Calculator</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 
-        System.out.println(c.add(5, 3));
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="what-exactly-happens-in-lambda">🔥 What Exactly Happens in Lambda?<a class="headerlink" href="#what-exactly-happens-in-lambda" title="Permanent link">&para;</a></h1>
 <p>When you write:</p>
-<pre><code class="language-java">Calculator c = (a, b) -&gt; a + b;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Calculator</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</code></pre></div>
 <p>Java understands:</p>
 <ul>
 <li>Interface = <code>Calculator</code></li>
@@ -5694,12 +5694,12 @@ it is a <strong>Functional Interface</strong>.</p>
 <li>So <code>(a, b) -&gt; a + b</code> must be implementation of <code>add()</code></li>
 </ul>
 <p>Internally it is similar to:</p>
-<pre><code class="language-java">new Calculator() {
-    public int add(int a, int b) {
-        return a + b;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">Calculator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>But Lambda is shorter and more efficient.</p>
 <hr />
 <h1 id="think-like-this">🧠 Think Like This<a class="headerlink" href="#think-like-this" title="Permanent link">&para;</a></h1>
@@ -5714,18 +5714,18 @@ it is a <strong>Functional Interface</strong>.</p>
 <hr />
 <h1 id="important-rule">📌 Important Rule<a class="headerlink" href="#important-rule" title="Permanent link">&para;</a></h1>
 <p>If interface had:</p>
-<pre><code class="language-java">interface Calculator {
-    int add(int a, int b);
-    int subtract(int a, int b);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">subtract</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Then Lambda ❌ will NOT work.</p>
 <p>Because Java wouldn't know which method to implement.</p>
 <hr />
 <h1 id="simple-final-understanding">🎯 Simple Final Understanding<a class="headerlink" href="#simple-final-understanding" title="Permanent link">&para;</a></h1>
 <p>This:</p>
-<pre><code class="language-java">Calculator c = (a, b) -&gt; a + b;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Calculator</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</code></pre></div>
 <p>Means:</p>
 <ul>
 <li>Create an object of <code>Calculator</code></li>
@@ -5787,6 +5787,10 @@ it is a <strong>Functional Interface</strong>.</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

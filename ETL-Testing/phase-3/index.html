@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5670,8 +5670,8 @@
 <li><strong>Reports/Analytics:</strong> Business dashboards or reporting systems consuming the data</li>
 </ul>
 <p><strong>Example Workflow:</strong></p>
-<pre><code>Source Systems (Customer.csv, Sales DB) → Staging Tables → Data Warehouse (DW_CUSTOMER, DW_SALES) → Reports (Power BI / Tableau)
-</code></pre>
+<div class="highlight"><pre><span></span><code>Source Systems (Customer.csv, Sales DB) → Staging Tables → Data Warehouse (DW_CUSTOMER, DW_SALES) → Reports (Power BI / Tableau)
+</code></pre></div>
 <ul>
 <li>
 <p><strong>Identify transformations:</strong></p>
@@ -5753,17 +5753,17 @@
 </li>
 </ul>
 <p><strong>Example SQL Checks:</strong></p>
-<pre><code class="language-sql">-- Row Count Validation
-SELECT COUNT(*) FROM source_customer;
-SELECT COUNT(*) FROM dw_customer;
+<div class="highlight"><pre><span></span><code><span class="c1">-- Row Count Validation</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_customer</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dw_customer</span><span class="p">;</span>
 
--- Transformation Validation (Loyalty Status)
-SELECT Customer_ID, Sales_Amount, Loyalty_Status FROM dw_customer;
--- Check if rules applied correctly
+<span class="c1">-- Transformation Validation (Loyalty Status)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Customer_ID</span><span class="p">,</span><span class="w"> </span><span class="n">Sales_Amount</span><span class="p">,</span><span class="w"> </span><span class="n">Loyalty_Status</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dw_customer</span><span class="p">;</span>
+<span class="c1">-- Check if rules applied correctly</span>
 
--- Data Type Validation
-SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='dw_customer';
-</code></pre>
+<span class="c1">-- Data Type Validation</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COLUMN_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">DATA_TYPE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">COLUMNS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">TABLE_NAME</span><span class="o">=</span><span class="s1">'dw_customer'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Validation Points:</strong></p>
 <ul>
 <li>Counts should match</li>
@@ -5832,6 +5832,10 @@ SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

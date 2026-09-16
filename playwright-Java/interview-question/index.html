@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6074,32 +6074,32 @@ Playwright is an open-source automation library developed by Microsoft for web U
 - Auto-waiting for elements.
 - Network interception and mocking.
 - Headless and headful execution.</p>
-<pre><code class="language-java">import com.microsoft.playwright.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
 
-public class LaunchBrowser {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
-            page.navigate(&quot;https://example.com&quot;);
-            System.out.println(page.title());
-        }
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LaunchBrowser</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">title</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="2-how-do-you-launch-a-browser-in-playwright-with-java">2. How do you launch a browser in Playwright with Java?<a class="headerlink" href="#2-how-do-you-launch-a-browser-in-playwright-with-java" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Playwright playwright = Playwright.create();
-Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-Page page = browser.newPage();
-page.navigate(&quot;https://example.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">();</span>
+<span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="3-how-does-playwright-handle-synchronization-auto-waiting">3. How does Playwright handle synchronization (auto-waiting)?<a class="headerlink" href="#3-how-does-playwright-handle-synchronization-auto-waiting" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 Playwright automatically waits for elements to be actionable before performing actions like <code>click()</code> or <code>fill()</code>. Unlike Selenium, explicit waits are less frequently needed.</p>
-<pre><code class="language-java">page.click(&quot;button#submit&quot;); // Playwright waits until the button is clickable
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"button#submit"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Playwright waits until the button is clickable</span>
+</code></pre></div>
 <hr />
 <h2 id="4-how-do-you-select-elements-in-playwright">4. How do you select elements in Playwright?<a class="headerlink" href="#4-how-do-you-select-elements-in-playwright" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
@@ -6107,288 +6107,288 @@ Selectors can be:
 - CSS selectors
 - XPath
 - Text selectors</p>
-<pre><code class="language-java">page.click(&quot;text=Login&quot;);
-page.fill(&quot;#username&quot;, &quot;admin&quot;);
-page.fill(&quot;input[name='password']&quot;, &quot;pass123&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"text=Login"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="s">"#username"</span><span class="p">,</span><span class="w"> </span><span class="s">"admin"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="s">"input[name='password']"</span><span class="p">,</span><span class="w"> </span><span class="s">"pass123"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="5-how-do-you-handle-multiple-browser-contexts">5. How do you handle multiple browser contexts?<a class="headerlink" href="#5-how-do-you-handle-multiple-browser-contexts" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 Contexts allow isolated sessions, similar to incognito windows.</p>
-<pre><code class="language-java">BrowserContext context1 = browser.newContext();
-Page page1 = context1.newPage();
-page1.navigate(&quot;https://example1.com&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">();</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">page1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context1</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">page1</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example1.com"</span><span class="p">);</span>
 
-BrowserContext context2 = browser.newContext();
-Page page2 = context2.newPage();
-page2.navigate(&quot;https://example2.com&quot;);
-</code></pre>
+<span class="n">BrowserContext</span><span class="w"> </span><span class="n">context2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">();</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">page2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context2</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">page2</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example2.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="6-how-do-you-handle-multiple-pagestabs">6. How do you handle multiple pages/tabs?<a class="headerlink" href="#6-how-do-you-handle-multiple-pagestabs" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Page newPage = page.waitForPopup(() -&gt; page.click(&quot;a[target='_blank']&quot;));
-newPage.waitForLoadState();
-System.out.println(newPage.title());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Page</span><span class="w"> </span><span class="n">newPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">waitForPopup</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"a[target='_blank']"</span><span class="p">));</span>
+<span class="n">newPage</span><span class="p">.</span><span class="na">waitForLoadState</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">newPage</span><span class="p">.</span><span class="na">title</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="7-how-do-you-handle-alerts-in-playwright">7. How do you handle alerts in Playwright?<a class="headerlink" href="#7-how-do-you-handle-alerts-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.onceDialog(dialog -&gt; {
-    System.out.println(&quot;Alert message: &quot; + dialog.message());
-    dialog.accept();
-});
-page.click(&quot;#trigger-alert&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">onceDialog</span><span class="p">(</span><span class="n">dialog</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alert message: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dialog</span><span class="p">.</span><span class="na">message</span><span class="p">());</span>
+<span class="w">    </span><span class="n">dialog</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"#trigger-alert"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="8-how-do-you-perform-assertions-in-playwright-with-java">8. How do you perform assertions in Playwright with Java?<a class="headerlink" href="#8-how-do-you-perform-assertions-in-playwright-with-java" title="Permanent link">&para;</a></h2>
 <p>Playwright provides <code>Assertions</code>.</p>
-<pre><code class="language-java">import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+<div class="highlight"><pre><span></span><code><span class="kn">import static</span><span class="w"> </span><span class="nn">com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat</span><span class="p">;</span>
 
-assertThat(page.locator(&quot;h1&quot;)).hasText(&quot;Welcome&quot;);
-</code></pre>
+<span class="n">assertThat</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"h1"</span><span class="p">)).</span><span class="na">hasText</span><span class="p">(</span><span class="s">"Welcome"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="9-how-do-you-upload-files-in-playwright">9. How do you upload files in Playwright?<a class="headerlink" href="#9-how-do-you-upload-files-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.setInputFiles(&quot;input[type='file']&quot;, Paths.get(&quot;C:/files/sample.txt&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">setInputFiles</span><span class="p">(</span><span class="s">"input[type='file']"</span><span class="p">,</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:/files/sample.txt"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h2 id="10-how-do-you-download-files-in-playwright">10. How do you download files in Playwright?<a class="headerlink" href="#10-how-do-you-download-files-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Download download = page.waitForDownload(() -&gt; {
-    page.click(&quot;a#downloadLink&quot;);
-});
-System.out.println(&quot;Downloaded file: &quot; + download.path());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Download</span><span class="w"> </span><span class="n">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">waitForDownload</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"a#downloadLink"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Downloaded file: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">download</span><span class="p">.</span><span class="na">path</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="11-how-do-you-handle-frames-in-playwright">11. How do you handle frames in Playwright?<a class="headerlink" href="#11-how-do-you-handle-frames-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Frame frame = page.frameByName(&quot;frameName&quot;);
-frame.fill(&quot;#inputField&quot;, &quot;Hello&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Frame</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">frameByName</span><span class="p">(</span><span class="s">"frameName"</span><span class="p">);</span>
+<span class="n">frame</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="s">"#inputField"</span><span class="p">,</span><span class="w"> </span><span class="s">"Hello"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="12-how-do-you-take-screenshots-in-playwright">12. How do you take screenshots in Playwright?<a class="headerlink" href="#12-how-do-you-take-screenshots-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(&quot;screenshot.png&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">screenshot</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">ScreenshotOptions</span><span class="p">().</span><span class="na">setPath</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"screenshot.png"</span><span class="p">)));</span>
+</code></pre></div>
 <hr />
 <h2 id="13-how-do-you-handle-hover-actions-in-playwright">13. How do you handle hover actions in Playwright?<a class="headerlink" href="#13-how-do-you-handle-hover-actions-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.hover(&quot;button#menu&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">hover</span><span class="p">(</span><span class="s">"button#menu"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="14-how-do-you-handle-drag-and-drop-in-playwright">14. How do you handle drag and drop in Playwright?<a class="headerlink" href="#14-how-do-you-handle-drag-and-drop-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.dragAndDrop(&quot;#source&quot;, &quot;#target&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">dragAndDrop</span><span class="p">(</span><span class="s">"#source"</span><span class="p">,</span><span class="w"> </span><span class="s">"#target"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="15-how-do-you-emulate-devices-in-playwright">15. How do you emulate devices in Playwright?<a class="headerlink" href="#15-how-do-you-emulate-devices-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-    .setViewportSize(375, 667)
-    .setUserAgent(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X)&quot;));
-Page mobilePage = context.newPage();
-mobilePage.navigate(&quot;https://example.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setViewportSize</span><span class="p">(</span><span class="mi">375</span><span class="p">,</span><span class="w"> </span><span class="mi">667</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setUserAgent</span><span class="p">(</span><span class="s">"Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X)"</span><span class="p">));</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">mobilePage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">mobilePage</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="16-how-do-you-intercept-and-modify-network-requests">16. How do you intercept and modify network requests?<a class="headerlink" href="#16-how-do-you-intercept-and-modify-network-requests" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.route(&quot;**/api/**&quot;, route -&gt; {
-    route.fulfill(new Route.FulfillOptions().setBody(&quot;{&quot;status&quot;:&quot;mocked&quot;}&quot;));
-});
-page.navigate(&quot;https://example.com/api/test&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">route</span><span class="p">(</span><span class="s">"**/api/**"</span><span class="p">,</span><span class="w"> </span><span class="n">route</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">route</span><span class="p">.</span><span class="na">fulfill</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Route</span><span class="p">.</span><span class="na">FulfillOptions</span><span class="p">().</span><span class="na">setBody</span><span class="p">(</span><span class="s">"{"</span><span class="n">status</span><span class="s">":"</span><span class="n">mocked</span><span class="s">"}"</span><span class="p">));</span>
+<span class="p">});</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com/api/test"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="17-how-do-you-wait-for-specific-network-responses">17. How do you wait for specific network responses?<a class="headerlink" href="#17-how-do-you-wait-for-specific-network-responses" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Response response = page.waitForResponse(&quot;**/api/data&quot;, () -&gt; {
-    page.click(&quot;#fetchData&quot;);
-});
-System.out.println(response.status());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Response</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">waitForResponse</span><span class="p">(</span><span class="s">"**/api/data"</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"#fetchData"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">status</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="18-how-do-you-record-a-video-of-test-execution">18. How do you record a video of test execution?<a class="headerlink" href="#18-how-do-you-record-a-video-of-test-execution" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-    .setRecordVideoDir(Paths.get(&quot;videos/&quot;)));
-Page videoPage = context.newPage();
-videoPage.navigate(&quot;https://example.com&quot;);
-context.close(); // saves video
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setRecordVideoDir</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"videos/"</span><span class="p">)));</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">videoPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">videoPage</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="n">context</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"> </span><span class="c1">// saves video</span>
+</code></pre></div>
 <hr />
 <h2 id="19-how-do-you-mock-geolocation-in-playwright">19. How do you mock geolocation in Playwright?<a class="headerlink" href="#19-how-do-you-mock-geolocation-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-    .setGeolocation(37.7749, -122.4194)
-    .setPermissions(Arrays.asList(&quot;geolocation&quot;)));
-Page page = context.newPage();
-page.navigate(&quot;https://maps.google.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setGeolocation</span><span class="p">(</span><span class="mf">37.7749</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">122.4194</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setPermissions</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"geolocation"</span><span class="p">)));</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://maps.google.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="20-how-do-you-run-tests-in-parallel-with-playwright-testng">20. How do you run tests in parallel with Playwright + TestNG?<a class="headerlink" href="#20-how-do-you-run-tests-in-parallel-with-playwright-testng" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 Each test can run in its own browser context.</p>
-<pre><code class="language-java">import org.testng.annotations.Test;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
 
-public class ParallelTest {
-    @Test
-    public void test1() {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch();
-            BrowserContext context = browser.newContext();
-            Page page = context.newPage();
-            page.navigate(&quot;https://example.com&quot;);
-        }
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ParallelTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">();</span>
+<span class="w">            </span><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">();</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="21-how-do-you-integrate-playwright-with-cicd-pipelines">21. How do you integrate Playwright with CI/CD pipelines?<a class="headerlink" href="#21-how-do-you-integrate-playwright-with-cicd-pipelines" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 - Install Playwright browsers in the pipeline.
 - Run tests using Maven/Gradle.
 - Publish results.</p>
-<p>Example GitHub Actions YAML:</p>
-<pre><code class="language-yaml">name: Playwright Tests
+<p>Example GitHub Actions YAML:
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Playwright Tests</span>
 
-on: [push]
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">]</span>
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-      - name: Install Playwright
-        run: mvn exec:java -Dexec.mainClass=&quot;com.microsoft.playwright.CLI&quot; -Dexec.args=&quot;install&quot;
-      - name: Run Tests
-        run: mvn test
-</code></pre>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Java</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-java@v3</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">java-version</span><span class="p">:</span><span class="w"> </span><span class="s">'17'</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Playwright</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn exec:java -Dexec.mainClass="com.microsoft.playwright.CLI" -Dexec.args="install"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Tests</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn test</span>
+</code></pre></div></p>
 <hr />
 <h2 id="22-how-do-you-handle-cookies-in-playwright">22. How do you handle cookies in Playwright?<a class="headerlink" href="#22-how-do-you-handle-cookies-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">// Get cookies
-System.out.println(context.cookies());
+<div class="highlight"><pre><span></span><code><span class="c1">// Get cookies</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">cookies</span><span class="p">());</span>
 
-// Add cookies
-context.addCookies(Arrays.asList(new BrowserContext.AddCookiesOptions()
-    .setName(&quot;session_id&quot;)
-    .setValue(&quot;12345&quot;)
-    .setUrl(&quot;https://example.com&quot;)));
-</code></pre>
+<span class="c1">// Add cookies</span>
+<span class="n">context</span><span class="p">.</span><span class="na">addCookies</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserContext</span><span class="p">.</span><span class="na">AddCookiesOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">"session_id"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="s">"12345"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setUrl</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">)));</span>
+</code></pre></div>
 <hr />
 <h2 id="23-how-do-you-handle-authentication-in-playwright">23. How do you handle authentication in Playwright?<a class="headerlink" href="#23-how-do-you-handle-authentication-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-    .setHttpCredentials(&quot;username&quot;, &quot;password&quot;));
-Page page = context.newPage();
-page.navigate(&quot;https://secure-site.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setHttpCredentials</span><span class="p">(</span><span class="s">"username"</span><span class="p">,</span><span class="w"> </span><span class="s">"password"</span><span class="p">));</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://secure-site.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="24-how-do-you-handle-shadow-dom-elements">24. How do you handle shadow DOM elements?<a class="headerlink" href="#24-how-do-you-handle-shadow-dom-elements" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.locator(&quot;css=custom-element &gt;&gt;&gt; button&quot;).click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"css=custom-element &gt;&gt;&gt; button"</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="25-how-do-you-handle-slow-networks-in-playwright">25. How do you handle slow networks in Playwright?<a class="headerlink" href="#25-how-do-you-handle-slow-networks-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-    .setOffline(false));
-context.setDefaultNavigationTimeout(10000); // 10 seconds
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setOffline</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="n">context</span><span class="p">.</span><span class="na">setDefaultNavigationTimeout</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10 seconds</span>
+</code></pre></div>
 <hr />
 <h2 id="26-how-do-you-use-playwright-trace-viewer">26. How do you use Playwright Trace Viewer?<a class="headerlink" href="#26-how-do-you-use-playwright-trace-viewer" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-    .setRecordHarPath(Paths.get(&quot;trace.zip&quot;)));
-Page page = context.newPage();
-page.navigate(&quot;https://example.com&quot;);
-context.close(); // trace saved
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setRecordHarPath</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"trace.zip"</span><span class="p">)));</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="n">context</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"> </span><span class="c1">// trace saved</span>
+</code></pre></div>
 <hr />
 <h2 id="27-how-do-you-mock-api-responses-in-playwright">27. How do you mock API responses in Playwright?<a class="headerlink" href="#27-how-do-you-mock-api-responses-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.route(&quot;**/api/data&quot;, route -&gt; {
-    route.fulfill(new Route.FulfillOptions()
-        .setStatus(200)
-        .setContentType(&quot;application/json&quot;)
-        .setBody(&quot;{&quot;message&quot;:&quot;Mocked Response&quot;}&quot;));
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">route</span><span class="p">(</span><span class="s">"**/api/data"</span><span class="p">,</span><span class="w"> </span><span class="n">route</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">route</span><span class="p">.</span><span class="na">fulfill</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Route</span><span class="p">.</span><span class="na">FulfillOptions</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setBody</span><span class="p">(</span><span class="s">"{"</span><span class="n">message</span><span class="s">":"</span><span class="n">Mocked</span><span class="w"> </span><span class="n">Response</span><span class="s">"}"</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div>
 <hr />
 <h2 id="28-how-do-you-retry-failed-tests-in-playwright-with-java">28. How do you retry failed tests in Playwright with Java?<a class="headerlink" href="#28-how-do-you-retry-failed-tests-in-playwright-with-java" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 Use TestNG retry analyzers or JUnit retry rules. Playwright itself retries only locator actions.</p>
-<pre><code class="language-java">for (int i = 0; i &lt; 3; i++) {
-    try {
-        page.click(&quot;#submit&quot;);
-        break;
-    } catch (Exception e) {
-        if (i == 2) throw e;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"#submit"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="29-how-do-you-handle-basic-authentication-popups">29. How do you handle basic authentication popups?<a class="headerlink" href="#29-how-do-you-handle-basic-authentication-popups" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-    .setHttpCredentials(&quot;user&quot;, &quot;pass&quot;));
-Page page = context.newPage();
-page.navigate(&quot;https://auth-site.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setHttpCredentials</span><span class="p">(</span><span class="s">"user"</span><span class="p">,</span><span class="w"> </span><span class="s">"pass"</span><span class="p">));</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://auth-site.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="30-how-do-you-test-responsive-design-with-playwright">30. How do you test responsive design with Playwright?<a class="headerlink" href="#30-how-do-you-test-responsive-design-with-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Page mobilePage = browser.newContext(new Browser.NewContextOptions()
-    .setViewportSize(375, 667)).newPage();
-mobilePage.navigate(&quot;https://example.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Page</span><span class="w"> </span><span class="n">mobilePage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setViewportSize</span><span class="p">(</span><span class="mi">375</span><span class="p">,</span><span class="w"> </span><span class="mi">667</span><span class="p">)).</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">mobilePage</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="31-how-do-you-test-web-accessibility-with-playwright">31. How do you test web accessibility with Playwright?<a class="headerlink" href="#31-how-do-you-test-web-accessibility-with-playwright" title="Permanent link">&para;</a></h2>
 <p>Playwright integrates with <code>axe-core</code> for accessibility testing.</p>
-<pre><code class="language-java">Object accessibilityTree = page.accessibility().snapshot();
-System.out.println(accessibilityTree.toString());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Object</span><span class="w"> </span><span class="n">accessibilityTree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">accessibility</span><span class="p">().</span><span class="na">snapshot</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">accessibilityTree</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="32-how-do-you-handle-retries-and-flaky-tests">32. How do you handle retries and flaky tests?<a class="headerlink" href="#32-how-do-you-handle-retries-and-flaky-tests" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 - Use <code>retry</code> in CI/CD pipelines.
 - Avoid <code>Thread.sleep()</code>, prefer auto-wait or <code>waitForSelector</code>.
 - Stabilize locators.</p>
-<pre><code class="language-java">page.locator(&quot;button#login&quot;).click(new Locator.ClickOptions().setTrial(true));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"button#login"</span><span class="p">).</span><span class="na">click</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Locator</span><span class="p">.</span><span class="na">ClickOptions</span><span class="p">().</span><span class="na">setTrial</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h2 id="33-how-do-you-run-playwright-tests-in-docker">33. How do you run Playwright tests in Docker?<a class="headerlink" href="#33-how-do-you-run-playwright-tests-in-docker" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Create a Dockerfile with Java + Playwright installed.</li>
 <li>Run tests inside container.</li>
 </ul>
-<pre><code class="language-dockerfile">FROM mcr.microsoft.com/playwright/java:v1.49.0-jammy
-COPY . /app
-WORKDIR /app
-RUN mvn test
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/playwright/java:v1.49.0-jammy</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">RUN</span><span class="w"> </span>mvn<span class="w"> </span>test
+</code></pre></div>
 <hr />
 <h2 id="34-how-do-you-debug-playwright-tests">34. How do you debug Playwright tests?<a class="headerlink" href="#34-how-do-you-debug-playwright-tests" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Use <code>setHeadless(false)</code></li>
 <li>Use <code>page.pause()</code> to inspect manually.</li>
 </ul>
-<pre><code class="language-java">page.pause(); // Opens Playwright Inspector
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">pause</span><span class="p">();</span><span class="w"> </span><span class="c1">// Opens Playwright Inspector</span>
+</code></pre></div>
 <hr />
 <h2 id="35-how-do-you-handle-rate-limiting-in-api-calls-during-tests">35. How do you handle rate-limiting in API calls during tests?<a class="headerlink" href="#35-how-do-you-handle-rate-limiting-in-api-calls-during-tests" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 - Add delays using <code>page.waitForTimeout(ms)</code>.
 - Use network interception to simulate rate limits.</p>
-<pre><code class="language-java">page.waitForTimeout(2000); // wait for 2 seconds
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">waitForTimeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w"> </span><span class="c1">// wait for 2 seconds</span>
+</code></pre></div>
 <hr />
 <h2 id="36-how-do-you-capture-console-logs-in-playwright">36. How do you capture console logs in Playwright?<a class="headerlink" href="#36-how-do-you-capture-console-logs-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.onConsoleMessage(msg -&gt; System.out.println(&quot;Console: &quot; + msg.text()));
-page.navigate(&quot;https://example.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">onConsoleMessage</span><span class="p">(</span><span class="n">msg</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Console: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="na">text</span><span class="p">()));</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="37-how-do-you-capture-network-requests-and-responses">37. How do you capture network requests and responses?<a class="headerlink" href="#37-how-do-you-capture-network-requests-and-responses" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">page.onRequest(request -&gt; System.out.println(&quot;Request: &quot; + request.url()));
-page.onResponse(response -&gt; System.out.println(&quot;Response: &quot; + response.url()));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">onRequest</span><span class="p">(</span><span class="n">request</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Request: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">url</span><span class="p">()));</span>
+<span class="n">page</span><span class="p">.</span><span class="na">onResponse</span><span class="p">(</span><span class="n">response</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Response: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">url</span><span class="p">()));</span>
+</code></pre></div>
 <hr />
 <h2 id="38-how-do-you-handle-multiple-downloads-in-playwright">38. How do you handle multiple downloads in Playwright?<a class="headerlink" href="#38-how-do-you-handle-multiple-downloads-in-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Download download = page.waitForDownload(() -&gt; {
-    page.click(&quot;a.download-all&quot;);
-});
-System.out.println(download.path());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Download</span><span class="w"> </span><span class="n">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">waitForDownload</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"a.download-all"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">download</span><span class="p">.</span><span class="na">path</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="39-how-do-you-assert-element-visibility">39. How do you assert element visibility?<a class="headerlink" href="#39-how-do-you-assert-element-visibility" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-assertThat(page.locator(&quot;#logo&quot;)).isVisible();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import static</span><span class="w"> </span><span class="nn">com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat</span><span class="p">;</span>
+<span class="n">assertThat</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#logo"</span><span class="p">)).</span><span class="na">isVisible</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="40-how-do-you-run-playwright-tests-with-gradle">40. How do you run Playwright tests with Gradle?<a class="headerlink" href="#40-how-do-you-run-playwright-tests-with-gradle" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gradle">plugins {
+<div class="highlight"><pre><span></span><code>plugins {
     id 'java'
 }
 
@@ -6400,22 +6400,22 @@ dependencies {
     implementation 'com.microsoft.playwright:playwright:1.49.0'
     testImplementation 'org.testng:testng:7.9.0'
 }
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="41-how-do-you-test-single-page-applications-spas-with-playwright">41. How do you test single-page applications (SPAs) with Playwright?<a class="headerlink" href="#41-how-do-you-test-single-page-applications-spas-with-playwright" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 Use <code>waitForLoadState("networkidle")</code> to ensure all async calls are complete.</p>
-<pre><code class="language-java">page.click(&quot;#loadData&quot;);
-page.waitForLoadState(LoadState.NETWORKIDLE);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"#loadData"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">waitForLoadState</span><span class="p">(</span><span class="n">LoadState</span><span class="p">.</span><span class="na">NETWORKIDLE</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="42-how-do-you-manage-test-data-in-playwright">42. How do you manage test data in Playwright?<a class="headerlink" href="#42-how-do-you-manage-test-data-in-playwright" title="Permanent link">&para;</a></h2>
 <p><strong>Answer:</strong>
 - Use external files (JSON/CSV).
 - Use environment variables.</p>
-<pre><code class="language-java">String username = System.getenv(&quot;TEST_USER&quot;);
-page.fill(&quot;#username&quot;, username);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">"TEST_USER"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="s">"#username"</span><span class="p">,</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 
 
@@ -6470,6 +6470,10 @@ page.fill(&quot;#username&quot;, username);
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

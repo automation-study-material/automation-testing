@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5682,80 +5682,80 @@
 and explains <em>when and why</em> to use each type.</p>
 <hr />
 <h2 id="example-base-html">🔹 Example Base HTML<a class="headerlink" href="#example-base-html" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;input type=&quot;text&quot; id=&quot;email&quot; class=&quot;form-control&quot; placeholder=&quot;Enter email&quot; /&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="na">class</span><span class="o">=</span><span class="s">"form-control"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Enter email"</span> <span class="p">/&gt;</span>
 
-&lt;button id=&quot;submitBtn&quot; class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">"submitBtn"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 
-&lt;span class=&quot;text&quot;&gt;Title&lt;/span&gt;
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"text"</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 
-&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;
-</code></pre>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/home"</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
 <hr />
 <h1 id="locator-types-with-context-html-js-example">🔹 Locator Types (With Context + HTML + JS Example)<a class="headerlink" href="#locator-types-with-context-html-js-example" title="Permanent link">&para;</a></h1>
 <h2 id="1-locate-by-id">1️⃣ Locate by <strong>ID</strong><a class="headerlink" href="#1-locate-by-id" title="Permanent link">&para;</a></h2>
 <p>IDs are unique within a page, making them the most reliable and fastest
 selectors.</p>
 <h3 id="html">🔸 HTML:<a class="headerlink" href="#html" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;input id=&quot;email&quot; /&gt;
-&lt;button id=&quot;submitBtn&quot;&gt;Submit&lt;/button&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">"submitBtn"</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright">🔸 Playwright:<a class="headerlink" href="#playwright" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.locator(&quot;#email&quot;);
-page.locator(&quot;#submitBtn&quot;).click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#email"</span><span class="p">);</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#submitBtn"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="2-locate-by-class">2️⃣ Locate by <strong>Class</strong><a class="headerlink" href="#2-locate-by-class" title="Permanent link">&para;</a></h2>
 <p>Class selectors are useful when elements share styling or behavior.</p>
 <h3 id="html_1">🔸 HTML:<a class="headerlink" href="#html_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;input class=&quot;form-control&quot; /&gt;
-&lt;button class=&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">"form-control"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span><span class="p">&gt;</span>Save<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_1">🔸 Playwright:<a class="headerlink" href="#playwright_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.locator(&quot;.form-control&quot;);
-page.locator(&quot;.btn.btn-primary&quot;).click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".form-control"</span><span class="p">);</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".btn.btn-primary"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="3-locate-by-tag-name">3️⃣ Locate by <strong>Tag Name</strong><a class="headerlink" href="#3-locate-by-tag-name" title="Permanent link">&para;</a></h2>
 <p>Used when selecting elements by their tag type.</p>
 <h3 id="html_2">🔸 HTML:<a class="headerlink" href="#html_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;button&gt;Submit&lt;/button&gt;
-&lt;input type=&quot;text&quot; /&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="p">/&gt;</span>
+</code></pre></div>
 <h3 id="playwright_2">🔸 Playwright:<a class="headerlink" href="#playwright_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.locator(&quot;button&quot;);
-page.locator(&quot;input&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"button"</span><span class="p">);</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="4-locate-by-text-content">4️⃣ Locate by <strong>Text Content</strong><a class="headerlink" href="#4-locate-by-text-content" title="Permanent link">&para;</a></h2>
 <p>Useful for selecting elements based on visible text.</p>
 <h3 id="html_3">🔸 HTML:<a class="headerlink" href="#html_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;button&gt;Submit&lt;/button&gt;
-&lt;a&gt;Home&lt;/a&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_3">🔸 Playwright:<a class="headerlink" href="#playwright_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.getByText(&quot;Submit&quot;).click();
-page.getByText(&quot;Home&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s2">"Submit"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s2">"Home"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="5-locate-by-aria-role-recommended">5️⃣ Locate by <strong>ARIA Role</strong> (Recommended)<a class="headerlink" href="#5-locate-by-aria-role-recommended" title="Permanent link">&para;</a></h2>
 <p>This is Playwright's most powerful and stable locator type.</p>
 <h3 id="html_4">🔸 HTML:<a class="headerlink" href="#html_4" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
-&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/home"</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_4">🔸 Playwright:<a class="headerlink" href="#playwright_4" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.getByRole(&quot;button&quot;, { name: &quot;Submit&quot; }).click();
-page.getByRole(&quot;link&quot;, { name: &quot;Home&quot; });
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Submit"</span><span class="w"> </span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"link"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Home"</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
 <hr />
 <h2 id="6-locate-by-placeholder">6️⃣ Locate by <strong>Placeholder</strong><a class="headerlink" href="#6-locate-by-placeholder" title="Permanent link">&para;</a></h2>
 <p>Great for selecting input elements using placeholder text.</p>
 <h3 id="html_5">🔸 HTML:<a class="headerlink" href="#html_5" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;input placeholder=&quot;Enter email&quot; /&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Enter email"</span> <span class="p">/&gt;</span>
+</code></pre></div>
 <h3 id="playwright_5">🔸 Playwright:<a class="headerlink" href="#playwright_5" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.getByPlaceholder(&quot;Enter email&quot;).fill(&quot;abc@test.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">getByPlaceholder</span><span class="p">(</span><span class="s2">"Enter email"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">"abc@test.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="7-locate-by-label">7️⃣ Locate by <strong>Label</strong><a class="headerlink" href="#7-locate-by-label" title="Permanent link">&para;</a></h2>
 <p>Automatically links <code>&lt;label&gt;</code> to its corresponding <code>&lt;input&gt;</code>.</p>
@@ -5765,143 +5765,142 @@ page.getByRole(&quot;link&quot;, { name: &quot;Home&quot; });
 <li>here you can see email is linked between label and input id.</li>
 <li>In some cases input field is wrapped in labes.</li>
 </ul>
-<pre><code class="language-html">&lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
-&lt;input id=&quot;email&quot; /&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"email"</span><span class="p">&gt;</span>Email<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="p">/&gt;</span>
+</code></pre></div>
 <h3 id="html-not-applicable">🔸 HTML: (NOT Applicable)<a class="headerlink" href="#html-not-applicable" title="Permanent link">&para;</a></h3>
 <ul>
 <li>It will not work  when there is NO association with label and input field see below example.</li>
 </ul>
-<pre><code class="language-html">div class=&quot;form-group&quot;&gt;
-    &lt;label&gt;Name&lt;/label&gt;
-       &lt;input class=&quot;form-control ng-untouched ng-pristine ng-invalid&quot; minlength=&quot;2&quot; name=&quot;name&quot; required=&quot;&quot; type=&quot;text&quot;&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>div class="form-group"&gt;
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">"form-control ng-untouched ng-pristine ng-invalid"</span> <span class="na">minlength</span><span class="o">=</span><span class="s">"2"</span> <span class="na">name</span><span class="o">=</span><span class="s">"name"</span> <span class="na">required</span><span class="o">=</span><span class="s">""</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_6">🔸 Playwright:<a class="headerlink" href="#playwright_6" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.getByLabel(&quot;Email&quot;).fill(&quot;test@domain.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">getByLabel</span><span class="p">(</span><span class="s2">"Email"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">"test@domain.com"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="8-locate-by-alt-text">8️⃣ Locate by <strong>Alt Text</strong><a class="headerlink" href="#8-locate-by-alt-text" title="Permanent link">&para;</a></h2>
 <p>Useful for images.</p>
 <h3 id="html_6">🔸 HTML:<a class="headerlink" href="#html_6" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;img src=&quot;logo.png&quot; alt=&quot;Company Logo&quot;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"logo.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Company Logo"</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_7">🔸 Playwright:<a class="headerlink" href="#playwright_7" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.getByAltText(&quot;Company Logo&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">getByAltText</span><span class="p">(</span><span class="s2">"Company Logo"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="9-locate-by-title-attribute">9️⃣ Locate by <strong>Title Attribute</strong><a class="headerlink" href="#9-locate-by-title-attribute" title="Permanent link">&para;</a></h2>
 <p>Handy when elements do not have visible text.</p>
 <h3 id="html_7">🔸 HTML:<a class="headerlink" href="#html_7" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;button title=&quot;Click to submit&quot;&gt;Submit&lt;/button&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">title</span><span class="o">=</span><span class="s">"Click to submit"</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_8">🔸 Playwright:<a class="headerlink" href="#playwright_8" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.getByTitle(&quot;Click to submit&quot;).click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">"Click to submit"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="locate-using-css-attribute-selectors">🔟 Locate using <strong>CSS Attribute Selectors</strong><a class="headerlink" href="#locate-using-css-attribute-selectors" title="Permanent link">&para;</a></h2>
 <h3 id="html_8">🔸 HTML:<a class="headerlink" href="#html_8" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;input type=&quot;text&quot; /&gt;
-&lt;button type=&quot;submit&quot;&gt;Save&lt;/button&gt;
-&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Save<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/home"</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_9">🔸 Playwright:<a class="headerlink" href="#playwright_9" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.locator(&quot;input[type='text']&quot;);
-page.locator(&quot;button[type='submit']&quot;);
-page.locator(&quot;a[href='/home']&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"input[type='text']"</span><span class="p">);</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"button[type='submit']"</span><span class="p">);</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"a[href='/home']"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="11-locate-using-xpath">1️⃣1️⃣ Locate using <strong>XPath</strong><a class="headerlink" href="#11-locate-using-xpath" title="Permanent link">&para;</a></h2>
 <h3 id="html_9">🔸 HTML:<a class="headerlink" href="#html_9" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;input id=&quot;email&quot; /&gt;
-&lt;button&gt;Submit&lt;/button&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_10">🔸 Playwright:<a class="headerlink" href="#playwright_10" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">page.locator(&quot;//input[@id='email']&quot;);
-page.locator(&quot;//button[text()='Submit']&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"//input[@id='email']"</span><span class="p">);</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"//button[text()='Submit']"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="handling-multiple-elements">🔹 Handling Multiple Elements<a class="headerlink" href="#handling-multiple-elements" title="Permanent link">&para;</a></h1>
 <h3 id="html_10">🔸 HTML:<a class="headerlink" href="#html_10" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;ul&gt;
-  &lt;li class=&quot;item&quot;&gt;Apple&lt;/li&gt;
-  &lt;li class=&quot;item&quot;&gt;Banana&lt;/li&gt;
-  &lt;li class=&quot;item&quot;&gt;Cherry&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="p">&gt;</span>Apple<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="p">&gt;</span>Banana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="p">&gt;</span>Cherry<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="playwright_11">🔸 Playwright:<a class="headerlink" href="#playwright_11" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">const items = page.locator(&quot;.item&quot;);
-const count = await items.count();
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".item"</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">count</span><span class="p">();</span>
 
-await items.nth(0).innerText();
-await items.nth(1).innerText();
-await items.nth(2).innerText();
+<span class="k">await</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">innerText</span><span class="p">();</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">innerText</span><span class="p">();</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">innerText</span><span class="p">();</span>
 
-for (let i = 0; i &lt; count; i++) {
-  console.log(await items.nth(i).innerText());
-}
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">innerText</span><span class="p">());</span>
+<span class="p">}</span>
 
-const banana = page.locator(&quot;.item&quot;).filter({ hasText: &quot;Banana&quot; });
+<span class="kd">const</span><span class="w"> </span><span class="nx">banana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".item"</span><span class="p">).</span><span class="nx">filter</span><span class="p">({</span><span class="w"> </span><span class="nx">hasText</span><span class="o">:</span><span class="w"> </span><span class="s2">"Banana"</span><span class="w"> </span><span class="p">});</span>
 
-page.locator(&quot;.item&quot;).first();
-page.locator(&quot;.item&quot;).last();
-</code></pre>
+<span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".item"</span><span class="p">).</span><span class="nx">first</span><span class="p">();</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".item"</span><span class="p">).</span><span class="nx">last</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="snap-code">🔸 Snap code:<a class="headerlink" href="#snap-code" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">import { test, expect } from '@playwright/test';
+<h2 id="import-test-expect-from-playwrighttest-testplaywright-special-locators-async-page-await-pagegotohttpsrahulshettyacademycomangularpractice-await-pagegetbylabelcheck-me-out-if-you-love-icecreamsclick-await-pagegetbylabelemployedcheck-await-pagegetbylabelgenderselectoptionfemale-await-pagegetbyplaceholderpasswordfillabc123-await-pagegetbyrolebutton-name-submitclick-await-pagegetbytextsuccess-the-form-has-been-submitted-successfullyisvisible-await-pagegetbyrolelinkname-shopclick-await-pagelocatorapp-cardfilterhastext-nokia-edgegetbyrolebuttonclick-locatorcss"><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">test</span><span class="p">,</span><span class="w"> </span><span class="nx">expect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@playwright/test'</span><span class="p">;</span>
 
-test('Playwright Special locators', async ({ page }) =&gt; {
+<span class="nx">test</span><span class="p">(</span><span class="s1">'Playwright Special locators'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 
-    await page.goto(&quot;https://rahulshettyacademy.com/angularpractice/&quot;);
-    await page.getByLabel(&quot;Check me out if you Love IceCreams!&quot;).click();
-    await page.getByLabel(&quot;Employed&quot;).check();
-    await page.getByLabel(&quot;Gender&quot;).selectOption(&quot;Female&quot;);
-    await page.getByPlaceholder(&quot;Password&quot;).fill(&quot;abc123&quot;);
-    await page.getByRole(&quot;button&quot;, {name: 'Submit'}).click();
-    await page.getByText(&quot;Success! The Form has been submitted successfully!.&quot;).isVisible();
-    await page.getByRole(&quot;link&quot;,{name : &quot;Shop&quot;}).click();
-    await page.locator(&quot;app-card&quot;).filter({hasText: 'Nokia Edge'}).getByRole(&quot;button&quot;).click();
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s2">"https://rahulshettyacademy.com/angularpractice/"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByLabel</span><span class="p">(</span><span class="s2">"Check me out if you Love IceCreams!"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByLabel</span><span class="p">(</span><span class="s2">"Employed"</span><span class="p">).</span><span class="nx">check</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByLabel</span><span class="p">(</span><span class="s2">"Gender"</span><span class="p">).</span><span class="nx">selectOption</span><span class="p">(</span><span class="s2">"Female"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByPlaceholder</span><span class="p">(</span><span class="s2">"Password"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">"abc123"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">'Submit'</span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s2">"Success! The Form has been submitted successfully!."</span><span class="p">).</span><span class="nx">isVisible</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"link"</span><span class="p">,{</span><span class="nx">name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"Shop"</span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"app-card"</span><span class="p">).</span><span class="nx">filter</span><span class="p">({</span><span class="nx">hasText</span><span class="o">:</span><span class="w"> </span><span class="s1">'Nokia Edge'</span><span class="p">}).</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
 
-    //locator(css)
+<span class="w">    </span><span class="c1">//locator(css)</span>
 
-});
-</code></pre>
-<hr />
-<pre><code class="language-js">const { test, expect } = require('@playwright/test');
-
+<span class="p">});</span>
+</code></pre></div><a class="headerlink" href="#import-test-expect-from-playwrighttest-testplaywright-special-locators-async-page-await-pagegotohttpsrahulshettyacademycomangularpractice-await-pagegetbylabelcheck-me-out-if-you-love-icecreamsclick-await-pagegetbylabelemployedcheck-await-pagegetbylabelgenderselectoptionfemale-await-pagegetbyplaceholderpasswordfillabc123-await-pagegetbyrolebutton-name-submitclick-await-pagegetbytextsuccess-the-form-has-been-submitted-successfullyisvisible-await-pagegetbyrolelinkname-shopclick-await-pagelocatorapp-cardfilterhastext-nokia-edgegetbyrolebuttonclick-locatorcss" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">test</span><span class="p">,</span><span class="w"> </span><span class="nx">expect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'@playwright/test'</span><span class="p">);</span>
 
 
 
-test('@Webst Client App login', async ({ page }) =&gt; {
-   //js file- Login js, DashboardPage
-   const email = &quot;anshika@gmail.com&quot;;
-   const productName = 'ZARA COAT 3';
-   const products = page.locator(&quot;.card-body&quot;);
-   await page.goto(&quot;https://rahulshettyacademy.com/client&quot;);
-   await page.getByPlaceholder(&quot;email@example.com&quot;).fill(email);
-   await page.getByPlaceholder(&quot;enter your passsword&quot;).fill(&quot;Iamking@000&quot;);
-   await page.getByRole('button',{name:&quot;Login&quot;}).click();
-   await page.waitForLoadState('networkidle');
-   await page.locator(&quot;.card-body b&quot;).first().waitFor();
 
-   await page.locator(&quot;.card-body&quot;).filter({hasText:&quot;ZARA COAT 3&quot;})
-   .getByRole(&quot;button&quot;,{name:&quot;Add to Cart&quot;}).click();
+<span class="nx">test</span><span class="p">(</span><span class="s1">'@Webst Client App login'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">//js file- Login js, DashboardPage</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"anshika@gmail.com"</span><span class="p">;</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">productName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ZARA COAT 3'</span><span class="p">;</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body"</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s2">"https://rahulshettyacademy.com/client"</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByPlaceholder</span><span class="p">(</span><span class="s2">"email@example.com"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByPlaceholder</span><span class="p">(</span><span class="s2">"enter your passsword"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">"Iamking@000"</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">'button'</span><span class="p">,{</span><span class="nx">name</span><span class="o">:</span><span class="s2">"Login"</span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForLoadState</span><span class="p">(</span><span class="s1">'networkidle'</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body b"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">waitFor</span><span class="p">();</span>
 
-   await page.getByRole(&quot;listitem&quot;).getByRole('button',{name:&quot;Cart&quot;}).click();
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body"</span><span class="p">).</span><span class="nx">filter</span><span class="p">({</span><span class="nx">hasText</span><span class="o">:</span><span class="s2">"ZARA COAT 3"</span><span class="p">})</span>
+<span class="w">   </span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,{</span><span class="nx">name</span><span class="o">:</span><span class="s2">"Add to Cart"</span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
 
-   //await page.pause();
-   await page.locator(&quot;div li&quot;).first().waitFor();
-   await expect(page.getByText(&quot;ZARA COAT 3&quot;)).toBeVisible();
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"listitem"</span><span class="p">).</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">'button'</span><span class="p">,{</span><span class="nx">name</span><span class="o">:</span><span class="s2">"Cart"</span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
 
-   await page.getByRole(&quot;button&quot;,{name :&quot;Checkout&quot;}).click();
+<span class="w">   </span><span class="c1">//await page.pause();</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"div li"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">waitFor</span><span class="p">();</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s2">"ZARA COAT 3"</span><span class="p">)).</span><span class="nx">toBeVisible</span><span class="p">();</span>
 
-   await page.getByPlaceholder(&quot;Select Country&quot;).pressSequentially(&quot;ind&quot;);
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,{</span><span class="nx">name</span><span class="w"> </span><span class="o">:</span><span class="s2">"Checkout"</span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
 
-   await page.getByRole(&quot;button&quot;,{name :&quot;India&quot;}).nth(1).click();
-   await page.getByText(&quot;PLACE ORDER&quot;).click();
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByPlaceholder</span><span class="p">(</span><span class="s2">"Select Country"</span><span class="p">).</span><span class="nx">pressSequentially</span><span class="p">(</span><span class="s2">"ind"</span><span class="p">);</span>
 
-   await expect(page.getByText(&quot;Thankyou for the order.&quot;)).toBeVisible();
-})
-</code></pre>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s2">"button"</span><span class="p">,{</span><span class="nx">name</span><span class="w"> </span><span class="o">:</span><span class="s2">"India"</span><span class="p">}).</span><span class="nx">nth</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s2">"PLACE ORDER"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s2">"Thankyou for the order."</span><span class="p">)).</span><span class="nx">toBeVisible</span><span class="p">();</span>
+<span class="p">})</span>
+</code></pre></div>
 <hr />
 <h1 id="summary">🔹 Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h1>
 <ul>
@@ -5963,6 +5962,10 @@ test('@Webst Client App login', async ({ page }) =&gt; {
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

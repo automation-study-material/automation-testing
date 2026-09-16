@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6025,9 +6025,9 @@
 - Does NOT trigger keydown/keyup for each character
 - Only final input/change events fire
 - Fastest common method</p>
-<p>✔ Example</p>
-<pre><code class="language-js">  await page.locator(&quot;#username&quot;).fill(&quot;john&quot;);
-</code></pre>
+<p>✔ Example
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">"john"</span><span class="p">);</span>
+</code></pre></div></p>
 <p>✔ When to Use
 - Standard form filling
 - When old text must be removed
@@ -6039,14 +6039,14 @@
 - Triggers keydown → keypress → keyup for every character
 - Works like a human typing
 - Supports typing delays</p>
-<p>✔ Example</p>
-<pre><code class="language-js">  await page.locator(&quot;#username&quot;).type(&quot;john&quot;); 
-</code></pre>
+<p>✔ Example
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">type</span><span class="p">(</span><span class="s2">"john"</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div></p>
 <p>If field has <code>old</code>:
 ➡️ Result → <code>oldjohn</code></p>
-<p>✔ With delay</p>
-<pre><code class="language-js">await page.locator(&quot;#username&quot;).type(&quot;john&quot;, { delay: 150 });
-</code></pre>
+<p>✔ With delay
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">type</span><span class="p">(</span><span class="s2">"john"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">delay</span><span class="o">:</span><span class="w"> </span><span class="mf">150</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div></p>
 <p>✔ When to Use
 - Autocomplete searches
 - Events tied to keystrokes
@@ -6057,10 +6057,10 @@
 - Requires clicking or focusing element first
 - Triggers full key events
 - Does not clear text</p>
-<p>✔ Example</p>
-<pre><code class="language-js">await page.click(&quot;#username&quot;);
-await page.keyboard.type(&quot;john doe&quot;);
-</code></pre>
+<p>✔ Example
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s2">"john doe"</span><span class="p">);</span>
+</code></pre></div></p>
 <p>✔ When to Use
 - When interacting with dynamic editors (CodeMirror, Monaco)
 - When locator typing fails</p>
@@ -6070,11 +6070,11 @@ await page.keyboard.type(&quot;john doe&quot;);
 - Useful for shortcuts: Enter, Backspace, Tab, ArrowUp
 - Triggers full keydown/keyup events
 - Does not clear text</p>
-<p>✔ Example</p>
-<pre><code class="language-js">await page.locator(&quot;#username&quot;).press(&quot;Control+A&quot;);
-await page.locator(&quot;#username&quot;).press(&quot;Backspace&quot;);
-await page.locator(&quot;#username&quot;).press(&quot;Enter&quot;);
-</code></pre>
+<p>✔ Example
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">press</span><span class="p">(</span><span class="s2">"Control+A"</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">press</span><span class="p">(</span><span class="s2">"Backspace"</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">press</span><span class="p">(</span><span class="s2">"Enter"</span><span class="p">);</span>
+</code></pre></div></p>
 <p>✔ When to Use
 - Submitting forms (Enter)
 - Moving focus (Tab)
@@ -6086,10 +6086,10 @@ await page.locator(&quot;#username&quot;).press(&quot;Enter&quot;);
 - Does not clear text
 - Inserts text directly into DOM
 - Fastest method when keystrokes not needed</p>
-<p>✔ Example</p>
-<pre><code class="language-js">await page.click(&quot;#username&quot;);
-await page.keyboard.insertText(&quot;john&quot;);
-</code></pre>
+<p>✔ Example
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nx">insertText</span><span class="p">(</span><span class="s2">"john"</span><span class="p">);</span>
+</code></pre></div></p>
 <p>✔ When to Use
 - Avoiding event listeners
 - Speed/performance testing
@@ -6101,9 +6101,9 @@ await page.keyboard.insertText(&quot;john&quot;);
 - Does not simulate typing
 - Completely bypasses frontend validations
 - Clears existing text only if you set empty string</p>
-<p>✔ Example</p>
-<pre><code class="language-js">await page.locator(&quot;#username&quot;).evaluate(el =&gt; el.value = 'john');
-</code></pre>
+<p>✔ Example
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">evaluate</span><span class="p">(</span><span class="nx">el</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">el</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'john'</span><span class="p">);</span>
+</code></pre></div></p>
 <p>✔ When to Use
 - When UI blocks typing/filling
 - React/Angular controlled inputs
@@ -6241,6 +6241,10 @@ await page.keyboard.insertText(&quot;john&quot;);
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

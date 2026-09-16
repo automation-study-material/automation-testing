@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5651,8 +5651,8 @@
 <h2 id="hands-on-practice">Hands-on Practice<a class="headerlink" href="#hands-on-practice" title="Permanent link">&para;</a></h2>
 <h3 id="create-freestyle-job">Create Freestyle Job<a class="headerlink" href="#create-freestyle-job" title="Permanent link">&para;</a></h3>
 <p>Run:</p>
-<pre><code class="language-bash">mvn clean test
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
 <h3 id="understand">Understand<a class="headerlink" href="#understand" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Console Output</li>
@@ -5674,18 +5674,18 @@
 <p>Industry standard = <strong>Pipeline as Code</strong></p>
 <hr />
 <h2 id="declarative-pipeline-example">Declarative Pipeline Example<a class="headerlink" href="#declarative-pipeline-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">pipeline {
-    agent any
+<div class="highlight"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
 
-    stages {
-        stage('Build') {
-            steps {
-                sh 'mvn clean test'
-            }
-        }
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn clean test'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h2 id="learn-these-keywords-deeply">Learn these keywords deeply<a class="headerlink" href="#learn-these-keywords-deeply" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5701,8 +5701,8 @@
 <hr />
 <h2 id="practice">Practice<a class="headerlink" href="#practice" title="Permanent link">&para;</a></h2>
 <p>Create pipeline:</p>
-<pre><code>Checkout → Build → Test → Report
-</code></pre>
+<div class="highlight"><pre><span></span><code>Checkout → Build → Test → Report
+</code></pre></div>
 <hr />
 <h2 id="outcome_1">Outcome<a class="headerlink" href="#outcome_1" title="Permanent link">&para;</a></h2>
 <p>✔ Can create Jenkinsfile
@@ -5715,38 +5715,38 @@
 <hr />
 <h2 id="build-parameters">Build Parameters<a class="headerlink" href="#build-parameters" title="Permanent link">&para;</a></h2>
 <h3 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">string(name: 'URL')
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'URL'</span><span class="o">)</span>
+</code></pre></div>
 <h3 id="choice-dropdown">Choice Dropdown<a class="headerlink" href="#choice-dropdown" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">choice(name: 'BROWSER', choices: ['chrome','firefox','edge'])
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">choice</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'BROWSER'</span><span class="o">,</span><span class="w"> </span><span class="nl">choices:</span><span class="w"> </span><span class="o">[</span><span class="s1">'chrome'</span><span class="o">,</span><span class="s1">'firefox'</span><span class="o">,</span><span class="s1">'edge'</span><span class="o">])</span>
+</code></pre></div>
 <h3 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">booleanParam(name: 'HEADLESS')
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">booleanParam</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'HEADLESS'</span><span class="o">)</span>
+</code></pre></div>
 <hr />
 <h2 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">environment {
-    ENV = &quot;staging&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">ENV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"staging"</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h2 id="pass-values-to-selenium">Pass values to Selenium<a class="headerlink" href="#pass-values-to-selenium" title="Permanent link">&para;</a></h2>
 <h3 id="jenkinsfile">Jenkinsfile<a class="headerlink" href="#jenkinsfile" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">sh &quot;mvn test -Dbrowser=${params.BROWSER}&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">sh</span><span class="w"> </span><span class="s2">"mvn test -Dbrowser=${params.BROWSER}"</span>
+</code></pre></div>
 <h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String browser = System.getProperty(&quot;browser&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"browser"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="real-world-use-case">Real-world use case<a class="headerlink" href="#real-world-use-case" title="Permanent link">&para;</a></h2>
 <p>User selects:</p>
-<pre><code>Browser = chrome
+<div class="highlight"><pre><span></span><code>Browser = chrome
 Env = staging
 Tags = @smoke
-</code></pre>
+</code></pre></div>
 <p>Command:</p>
-<pre><code class="language-bash">mvn test -Dbrowser=chrome -Denv=staging -Dcucumber.filter.tags=@smoke
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dbrowser<span class="o">=</span>chrome<span class="w"> </span>-Denv<span class="o">=</span>staging<span class="w"> </span>-Dcucumber.filter.tags<span class="o">=</span>@smoke
+</code></pre></div>
 <hr />
 <h2 id="outcome_2">Outcome<a class="headerlink" href="#outcome_2" title="Permanent link">&para;</a></h2>
 <p>✔ Dynamic test execution
@@ -5757,19 +5757,19 @@ Tags = @smoke
 <p>⏳ Time: 2 weeks</p>
 <hr />
 <h2 id="parallel-execution">Parallel Execution<a class="headerlink" href="#parallel-execution" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">parallel {
-    stage('Chrome') {
-        steps { sh 'mvn test -Dbrowser=chrome' }
-    }
-    stage('Firefox') {
-        steps { sh 'mvn test -Dbrowser=firefox' }
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">parallel</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Chrome'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn test -Dbrowser=chrome'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Firefox'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn test -Dbrowser=firefox'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h2 id="trigger-downstream-jobs">Trigger downstream jobs<a class="headerlink" href="#trigger-downstream-jobs" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">build job: 'deploy-job'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">build</span><span class="w"> </span><span class="nl">job:</span><span class="w"> </span><span class="s1">'deploy-job'</span>
+</code></pre></div>
 <hr />
 <h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h2>
 <p>Store securely:</p>
@@ -5779,12 +5779,12 @@ Tags = @smoke
 <li>API keys</li>
 </ul>
 <p>Use:</p>
-<pre><code class="language-groovy">withCredentials()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">withCredentials</span><span class="o">()</span>
+</code></pre></div>
 <hr />
 <h2 id="webhooks">Webhooks<a class="headerlink" href="#webhooks" title="Permanent link">&para;</a></h2>
-<pre><code>Git push → Jenkins auto trigger
-</code></pre>
+<div class="highlight"><pre><span></span><code>Git push → Jenkins auto trigger
+</code></pre></div>
 <hr />
 <h2 id="reports">Reports<a class="headerlink" href="#reports" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5804,17 +5804,17 @@ Tags = @smoke
 <p>⏳ Time: 3–4 weeks</p>
 <hr />
 <h2 id="jenkins-agents">Jenkins Agents<a class="headerlink" href="#jenkins-agents" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">agent { label 'windows-node' }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">agent</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s1">'windows-node'</span><span class="w"> </span><span class="o">}</span>
+</code></pre></div>
 <p>Run builds on multiple machines.</p>
 <hr />
 <h2 id="docker-agents">Docker Agents<a class="headerlink" href="#docker-agents" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">agent {
-  docker {
-    image 'maven:3.9.6'
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">agent</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="n">docker</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">image</span><span class="w"> </span><span class="s1">'maven:3.9.6'</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h2 id="selenium-grid">Selenium Grid<a class="headerlink" href="#selenium-grid" title="Permanent link">&para;</a></h2>
 <p>Run tests on:</p>
@@ -5858,8 +5858,8 @@ Tags = @smoke
 </ul>
 <hr />
 <h2 id="enterprise-flow">Enterprise Flow<a class="headerlink" href="#enterprise-flow" title="Permanent link">&para;</a></h2>
-<pre><code>Build → Test → Package → Docker → Push → Deploy → Test → Notify
-</code></pre>
+<div class="highlight"><pre><span></span><code>Build → Test → Package → Docker → Push → Deploy → Test → Notify
+</code></pre></div>
 <hr />
 <h2 id="outcome_5">Outcome<a class="headerlink" href="#outcome_5" title="Permanent link">&para;</a></h2>
 <p>✔ Can design enterprise Jenkins architecture
@@ -5867,7 +5867,7 @@ Tags = @smoke
 <hr />
 <hr />
 <h1 id="real-world-selenium-pipeline-example">🎯 Real-World Selenium Pipeline Example<a class="headerlink" href="#real-world-selenium-pipeline-example" title="Permanent link">&para;</a></h1>
-<pre><code>Git Push
+<div class="highlight"><pre><span></span><code>Git Push
    ↓
 Checkout
    ↓
@@ -5880,7 +5880,7 @@ Parallel Selenium Grid Tests
 Generate Allure Report
    ↓
 Slack Notification
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="suggested-timeline">🗓 Suggested Timeline<a class="headerlink" href="#suggested-timeline" title="Permanent link">&para;</a></h1>
@@ -5978,6 +5978,10 @@ Slack Notification
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5626,7 +5626,7 @@
 </ul>
 <hr />
 <h2 id="architecture-flow">✅ Architecture Flow<a class="headerlink" href="#architecture-flow" title="Permanent link">&para;</a></h2>
-<pre><code>testng.xml
+<div class="highlight"><pre><span></span><code>testng.xml
      ↓
 Suite Parser
      ↓
@@ -5639,7 +5639,7 @@ Thread Pool Manager
 Test Executor
      ↓
 Listeners / Reports
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="why-testng-is-better-than-junit">✅ Why TestNG is better than JUnit?<a class="headerlink" href="#why-testng-is-better-than-junit" title="Permanent link">&para;</a></h2>
 <table>
@@ -5695,12 +5695,12 @@ Listeners / Reports
 <h1 id="2-what-is-lifecycle-of-testng-annotations">2️⃣ What is Lifecycle of TestNG Annotations?<a class="headerlink" href="#2-what-is-lifecycle-of-testng-annotations" title="Permanent link">&para;</a></h1>
 <h2 id="concept_1">✅ Concept<a class="headerlink" href="#concept_1" title="Permanent link">&para;</a></h2>
 <p>TestNG runs methods in a <strong>hierarchical execution order</strong>:</p>
-<pre><code>Suite → Test → Class → Method
-</code></pre>
+<div class="highlight"><pre><span></span><code>Suite → Test → Class → Method
+</code></pre></div>
 <p>Each level controls setup/cleanup scope.</p>
 <hr />
 <h2 id="execution-order">✅ Execution Order<a class="headerlink" href="#execution-order" title="Permanent link">&para;</a></h2>
-<pre><code>@BeforeSuite
+<div class="highlight"><pre><span></span><code>@BeforeSuite
    @BeforeTest
       @BeforeClass
          @BeforeMethod
@@ -5709,24 +5709,24 @@ Listeners / Reports
       @AfterClass
    @AfterTest
 @AfterSuite
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="example">✅ Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@BeforeSuite
-public void startSuite(){}
+<div class="highlight"><pre><span></span><code><span class="nd">@BeforeSuite</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">startSuite</span><span class="p">(){}</span>
 
-@BeforeClass
-public void setupClass(){}
+<span class="nd">@BeforeClass</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setupClass</span><span class="p">(){}</span>
 
-@BeforeMethod
-public void setup(){}
+<span class="nd">@BeforeMethod</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){}</span>
 
-@Test
-public void testLogin(){}
+<span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testLogin</span><span class="p">(){}</span>
 
-@AfterMethod
-public void cleanup(){}
-</code></pre>
+<span class="nd">@AfterMethod</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">cleanup</span><span class="p">(){}</span>
+</code></pre></div>
 <hr />
 <h2 id="memory-trick">✅ Memory Trick<a class="headerlink" href="#memory-trick" title="Permanent link">&para;</a></h2>
 <h3 id="s-t-c-m-test-m-c-t-s">👉 <strong>S → T → C → M → Test → M → C → T → S</strong><a class="headerlink" href="#s-t-c-m-test-m-c-t-s" title="Permanent link">&para;</a></h3>
@@ -5741,8 +5741,8 @@ public void cleanup(){}
 <li>@AfterSuite</li>
 </ul>
 <p>Instead it uses:</p>
-<pre><code>Lifecycle stage → internal grouping → internal sorting (On sorting bases it decde which has more configs it runs)
-</code></pre>
+<div class="highlight"><pre><span></span><code>Lifecycle stage → internal grouping → internal sorting (On sorting bases it decde which has more configs it runs)
+</code></pre></div>
 <h2 id="practical-meaning">✅ Practical Meaning<a class="headerlink" href="#practical-meaning" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5853,6 +5853,10 @@ public void cleanup(){}
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

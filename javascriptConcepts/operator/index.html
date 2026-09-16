@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6084,24 +6084,21 @@ Operators can be categorized as <strong>Arithmetic, Assignment, Comparison, Logi
 </tbody>
 </table>
 <h3 id="examples-arithmetic">Examples – Arithmetic<a class="headerlink" href="#examples-arithmetic" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let a = 10;
-let b = 3;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
 
-console.log(a + b);  // 13
-console.log(a - b);  // 7
-console.log(a * b);  // 30
-console.log(a / b);  // 3.3333
-console.log(a % b);  // 1
-console.log(a ** 2); // 100
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 13</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 7</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 30</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 3.3333</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 100</span>
 
-a++;
-console.log(a);      // 11
-b--;
-console.log(b);      // 2
-
-
-
-</code></pre>
+<span class="nx">a</span><span class="o">++</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w">      </span><span class="c1">// 11</span>
+<span class="nx">b</span><span class="o">--</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w">      </span><span class="c1">// 2</span>
+</code></pre></div>
 <p><strong>Playwright Use Case:</strong> Calculating dynamic index for lists of elements or iterations.</p>
 <hr />
 <h2 id="assignment-operators">🔹 Assignment Operators<a class="headerlink" href="#assignment-operators" title="Permanent link">&para;</a></h2>
@@ -6141,62 +6138,61 @@ console.log(b);      // 2
 </tbody>
 </table>
 <h3 id="examples-assignment">Examples – Assignment<a class="headerlink" href="#examples-assignment" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">
-let x;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
 
-// Assignment (=)
-x = 10;
-console.log(x); // 10
+<span class="c1">// Assignment (=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10</span>
 
-// Add and assign (+=)
-x += 5;          // x = x + 5
-console.log(x);  // 15
+<span class="c1">// Add and assign (+=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">          </span><span class="c1">// x = x + 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 15</span>
 
-// Subtract and assign (-=)
-x -= 3;          // x = x - 3
-console.log(x);  // 12
+<span class="c1">// Subtract and assign (-=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">          </span><span class="c1">// x = x - 3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 12</span>
 
-// Multiply and assign (*=)
-x *= 2;          // x = x * 2
-console.log(x);  // 24
+<span class="c1">// Multiply and assign (*=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w">          </span><span class="c1">// x = x * 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 24</span>
 
-// Divide and assign (/=)
-x /= 4;          // x = x / 4
-console.log(x);  // 6
+<span class="c1">// Divide and assign (/=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w">          </span><span class="c1">// x = x / 4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 6</span>
 
-// Modulus and assign (%=)
-x %= 5;          // x = x % 5
-console.log(x);  // 1
+<span class="c1">// Modulus and assign (%=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">          </span><span class="c1">// x = x % 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
 
-// Exponentiate and assign (**=)
-x **= 3;         // x = x ** 3
-console.log(x);  // 1
+<span class="c1">// Exponentiate and assign (**=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">**=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">         </span><span class="c1">// x = x ** 3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
 
-// Bitwise AND and assign (&amp;=)
-x = 5;
-x &amp;= 3;          // x = x &amp; 3
-console.log(x);  // 1
+<span class="c1">// Bitwise AND and assign (&amp;=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">          </span><span class="c1">// x = x &amp; 3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
 
-// Bitwise OR and assign (|=)
-x |= 2;          // x = x | 2
-console.log(x);  // 3
+<span class="c1">// Bitwise OR and assign (|=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w">          </span><span class="c1">// x = x | 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 3</span>
 
-// Bitwise XOR and assign (^=)
-x ^= 1;          // x = x ^ 1
-console.log(x);  // 2
+<span class="c1">// Bitwise XOR and assign (^=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">          </span><span class="c1">// x = x ^ 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 2</span>
 
-// Left shift and assign (&lt;&lt;=)
-x &lt;&lt;= 2;         // x = x &lt;&lt; 2
-console.log(x);  // 8
+<span class="c1">// Left shift and assign (&lt;&lt;=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">&lt;&lt;=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w">         </span><span class="c1">// x = x &lt;&lt; 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 8</span>
 
-// Right shift and assign (&gt;&gt;=)
-x &gt;&gt;= 1;         // x = x &gt;&gt; 1
-console.log(x);  // 4
+<span class="c1">// Right shift and assign (&gt;&gt;=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">         </span><span class="c1">// x = x &gt;&gt; 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 4</span>
 
-// Unsigned right shift and assign (&gt;&gt;&gt;=)
-x &gt;&gt;&gt;= 1;        // x = x &gt;&gt;&gt; 1
-console.log(x);  // 2
-</code></pre>
+<span class="c1">// Unsigned right shift and assign (&gt;&gt;&gt;=)</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">&gt;&gt;&gt;=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">        </span><span class="c1">// x = x &gt;&gt;&gt; 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w">  </span><span class="c1">// 2</span>
+</code></pre></div>
 <hr />
 <h2 id="comparison-operators">🔹 Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permanent link">&para;</a></h2>
 <p>Used to compare values, return <code>true</code> or <code>false</code>.</p>
@@ -6243,16 +6239,16 @@ console.log(x);  // 2
 </tbody>
 </table>
 <h3 id="examples-comparison">Examples – Comparison<a class="headerlink" href="#examples-comparison" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let a = 5;
-let b = &quot;5&quot;;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"5"</span><span class="p">;</span>
 
-console.log(a == b);  // true (value equal)
-console.log(a === b); // false (type mismatch)
-console.log(a != b);  // false
-console.log(a !== b); // true
-console.log(a &gt; 3);   // true
-console.log(a &lt;= 5);  // true
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// true (value equal)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// false (type mismatch)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</code></pre></div>
 <p><strong>Playwright Use Case:</strong> Assertions for element counts, text lengths, or response values.</p>
 <hr />
 <h2 id="logical-operators">🔹 Logical Operators<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h2>
@@ -6280,25 +6276,25 @@ console.log(a &lt;= 5);  // true
 </tbody>
 </table>
 <h3 id="examples-logical">Examples – Logical<a class="headerlink" href="#examples-logical" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let isLoggedIn = true;
-let hasAccess = false;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">hasAccess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 
-console.log(isLoggedIn &amp;&amp; hasAccess); // false
-console.log(isLoggedIn || hasAccess); // true
-console.log(!isLoggedIn);             // false
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isLoggedIn</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">hasAccess</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isLoggedIn</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">hasAccess</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span><span class="nx">isLoggedIn</span><span class="p">);</span><span class="w">             </span><span class="c1">// false</span>
+</code></pre></div>
 <p><strong>Playwright Use Case:</strong> Conditional checks before clicking or filling fields.</p>
 <hr />
 <h2 id="ternary-operator">🔹 Ternary Operator<a class="headerlink" href="#ternary-operator" title="Permanent link">&para;</a></h2>
 <p>A shorthand for <code>if...else</code> statements.</p>
 <h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">condition ? expression_if_true : expression_if_false;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">condition</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">expression_if_true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">expression_if_false</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="examples-ternary">Examples – Ternary<a class="headerlink" href="#examples-ternary" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let age = 18;
-let message = age &gt;= 18 ? &quot;Adult&quot; : &quot;Minor&quot;;
-console.log(message); // &quot;Adult&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">18</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"Adult"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"Minor"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Adult"</span>
+</code></pre></div>
 <p><strong>Playwright Use Case:</strong> Quick decision-making for optional actions, like filling optional forms.</p>
 <hr />
 <h2 id="bitwise-operators">🔹 Bitwise Operators<a class="headerlink" href="#bitwise-operators" title="Permanent link">&para;</a></h2>
@@ -6342,14 +6338,14 @@ console.log(message); // &quot;Adult&quot;
 </tbody>
 </table>
 <h3 id="examples-bitwise">Examples – Bitwise<a class="headerlink" href="#examples-bitwise" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let a = 5;  // 0101
-let b = 3;  // 0011
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// 0101</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// 0011</span>
 
-console.log(a &amp; b); // 1  (0001)
-console.log(a | b); // 7  (0111)
-console.log(a ^ b); // 6  (0110)
-console.log(~a);    // -6
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1  (0001)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 7  (0111)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6  (0110)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">~</span><span class="nx">a</span><span class="p">);</span><span class="w">    </span><span class="c1">// -6</span>
+</code></pre></div>
 <hr />
 <h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6414,6 +6410,10 @@ console.log(~a);    // -6
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

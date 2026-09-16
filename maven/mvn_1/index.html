@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5658,7 +5658,7 @@
 <p>This quickly becomes difficult to maintain.</p>
 <hr />
 <h2 id="without-maven">Without Maven<a class="headerlink" href="#without-maven" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Automation Project
+<div class="highlight"><pre><span></span><code>Automation Project
 
 ├── lib
 │   ├── selenium.jar
@@ -5669,7 +5669,7 @@
 │   └── log4j.jar
 │
 └── src
-</code></pre>
+</code></pre></div>
 <p>Problems:</p>
 <ul>
 <li>Manual downloads</li>
@@ -5680,21 +5680,21 @@
 </ul>
 <hr />
 <h2 id="with-maven">With Maven<a class="headerlink" href="#with-maven" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Automation Project
+<div class="highlight"><pre><span></span><code>Automation Project
 
 ├── pom.xml
 └── src
-</code></pre>
+</code></pre></div>
 <p>Simply add the dependency:</p>
-<pre><code class="language-xml">&lt;dependency&gt;
-    &lt;groupId&gt;io.appium&lt;/groupId&gt;
-    &lt;artifactId&gt;java-client&lt;/artifactId&gt;
-    &lt;version&gt;9.5.0&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>io.appium<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>java-client<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>9.5.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <p>Run:</p>
-<pre><code class="language-bash">mvn clean install
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</code></pre></div>
 <p>Maven automatically downloads:</p>
 <ul>
 <li>Appium Java Client</li>
@@ -5706,7 +5706,7 @@
 <h1 id="3-problems-before-maven">3. Problems Before Maven<a class="headerlink" href="#3-problems-before-maven" title="Permanent link">&para;</a></h1>
 <p>Before Maven, developers managed everything manually.</p>
 <p>Typical workflow:</p>
-<pre><code class="language-text">Download JAR
+<div class="highlight"><pre><span></span><code>Download JAR
       │
       ▼
 Copy to Project
@@ -5716,7 +5716,7 @@ Configure Build Path
       │
       ▼
 Repeat for Every Library
-</code></pre>
+</code></pre></div>
 <p>Problems:</p>
 <ul>
 <li>Missing JAR files</li>
@@ -5739,11 +5739,11 @@ Repeat for Every Library
 <p>Without Maven, developers performed these steps manually.</p>
 <p>With Maven, one command performs the entire process.</p>
 <p>Example:</p>
-<pre><code class="language-bash">mvn clean install
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</code></pre></div>
 <hr />
 <h1 id="5-maven-architecture">5. Maven Architecture<a class="headerlink" href="#5-maven-architecture" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">                Developer
+<div class="highlight"><pre><span></span><code>                Developer
                      │
                      ▼
                mvn clean test
@@ -5765,7 +5765,7 @@ Local Repository (.m2)
         ▼
 Remote Repository
 (Maven Central / Nexus / Artifactory)
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
 <table>
@@ -5806,48 +5806,48 @@ Remote Repository
 <h1 id="6-maven-installation">6. Maven Installation<a class="headerlink" href="#6-maven-installation" title="Permanent link">&para;</a></h1>
 <h2 id="step-1-install-java">Step 1: Install Java<a class="headerlink" href="#step-1-install-java" title="Permanent link">&para;</a></h2>
 <p>Verify Java installation:</p>
-<pre><code class="language-bash">java -version
-</code></pre>
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-version
+</code></pre></div>
 <p>Expected Output:</p>
-<pre><code class="language-text">openjdk version &quot;17&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>openjdk version "17"
+</code></pre></div>
 <hr />
 <h2 id="step-2-install-maven">Step 2: Install Maven<a class="headerlink" href="#step-2-install-maven" title="Permanent link">&para;</a></h2>
 <p>Download Maven from the official Apache website and extract it.</p>
 <p>Example:</p>
-<pre><code class="language-text">C:\Program Files\Apache\maven
-</code></pre>
+<div class="highlight"><pre><span></span><code>C:\Program Files\Apache\maven
+</code></pre></div>
 <hr />
 <h2 id="step-3-configure-environment-variables">Step 3: Configure Environment Variables<a class="headerlink" href="#step-3-configure-environment-variables" title="Permanent link">&para;</a></h2>
 <p>Create:</p>
-<pre><code class="language-text">JAVA_HOME
-</code></pre>
+<div class="highlight"><pre><span></span><code>JAVA_HOME
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-text">C:\Program Files\Java\jdk-17
-</code></pre>
+<div class="highlight"><pre><span></span><code>C:\Program Files\Java\jdk-17
+</code></pre></div>
 <p>Create:</p>
-<pre><code class="language-text">MAVEN_HOME
-</code></pre>
+<div class="highlight"><pre><span></span><code>MAVEN_HOME
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-text">C:\Program Files\Apache\maven
-</code></pre>
+<div class="highlight"><pre><span></span><code>C:\Program Files\Apache\maven
+</code></pre></div>
 <p>Update the system <code>PATH</code>:</p>
-<pre><code class="language-text">%JAVA_HOME%\bin
+<div class="highlight"><pre><span></span><code>%JAVA_HOME%\bin
 %MAVEN_HOME%\bin
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="step-4-verify-installation">Step 4: Verify Installation<a class="headerlink" href="#step-4-verify-installation" title="Permanent link">&para;</a></h2>
 <p>Run:</p>
-<pre><code class="language-bash">mvn -version
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>-version
+</code></pre></div>
 <p>Expected Output:</p>
-<pre><code class="language-text">Apache Maven 3.x.x
+<div class="highlight"><pre><span></span><code>Apache Maven 3.x.x
 
 Java version: 17
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="7-standard-maven-project-structure">7. Standard Maven Project Structure<a class="headerlink" href="#7-standard-maven-project-structure" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">MyProject
+<div class="highlight"><pre><span></span><code>MyProject
 
 ├── src
 │
@@ -5862,7 +5862,7 @@ Java version: 17
 ├── target
 ├── pom.xml
 └── .mvn
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="srcmainjava">src/main/java<a class="headerlink" href="#srcmainjava" title="Permanent link">&para;</a></h2>
 <p>Contains your production code.</p>
@@ -5884,10 +5884,10 @@ Java version: 17
 <li>Configuration files</li>
 </ul>
 <p>Example:</p>
-<pre><code class="language-text">config.properties
+<div class="highlight"><pre><span></span><code>config.properties
 log4j2.xml
 testdata.json
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="srctestjava">src/test/java<a class="headerlink" href="#srctestjava" title="Permanent link">&para;</a></h2>
 <p>Contains:</p>
@@ -5897,12 +5897,12 @@ testdata.json
 <li>Automation Scripts</li>
 </ul>
 <p>Example:</p>
-<pre><code class="language-text">LoginTest
+<div class="highlight"><pre><span></span><code>LoginTest
 
 CheckoutTest
 
 SearchTest
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="srctestresources">src/test/resources<a class="headerlink" href="#srctestresources" title="Permanent link">&para;</a></h2>
 <p>Contains:</p>
@@ -5916,27 +5916,27 @@ SearchTest
 <h2 id="target">target<a class="headerlink" href="#target" title="Permanent link">&para;</a></h2>
 <p>Generated automatically.</p>
 <p>Contains:</p>
-<pre><code class="language-text">Compiled Classes
+<div class="highlight"><pre><span></span><code>Compiled Classes
 
 JAR Files
 
 Reports
 
 Temporary Files
-</code></pre>
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-text">target
+<div class="highlight"><pre><span></span><code>target
 
 ├── classes
 ├── test-classes
 ├── surefire-reports
 └── my-project-1.0.jar
-</code></pre>
+</code></pre></div>
 <p>Never commit the <code>target</code> folder to Git because Maven recreates it during each build.</p>
 <hr />
 <h1 id="8-creating-your-first-maven-project">8. Creating Your First Maven Project<a class="headerlink" href="#8-creating-your-first-maven-project" title="Permanent link">&para;</a></h1>
 <p>Example:</p>
-<pre><code class="language-text">Group Id
+<div class="highlight"><pre><span></span><code>Group Id
 
 com.company.mobile
 
@@ -5947,88 +5947,88 @@ appium-framework
 Version
 
 1.0-SNAPSHOT
-</code></pre>
+</code></pre></div>
 <p>Maven generates:</p>
-<pre><code class="language-text">appium-framework
+<div class="highlight"><pre><span></span><code>appium-framework
 
 ├── pom.xml
 ├── src
 └── target
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="9-understanding-pomxml">9. Understanding pom.xml<a class="headerlink" href="#9-understanding-pomxml" title="Permanent link">&para;</a></h1>
 <p>The <code>pom.xml</code> (<strong>Project Object Model</strong>) is the heart of every Maven project.</p>
 <p>Everything about the project is configured here.</p>
 <p>Example:</p>
-<pre><code class="language-xml">&lt;project&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;project&gt;</span>
 
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+<span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
 
-    &lt;groupId&gt;com.company.mobile&lt;/groupId&gt;
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.company.mobile<span class="nt">&lt;/groupId&gt;</span>
 
-    &lt;artifactId&gt;appium-framework&lt;/artifactId&gt;
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>appium-framework<span class="nt">&lt;/artifactId&gt;</span>
 
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
 
-    &lt;packaging&gt;jar&lt;/packaging&gt;
+<span class="w">    </span><span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
 
-&lt;/project&gt;
-</code></pre>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="what-does-each-tag-mean">What does each tag mean?<a class="headerlink" href="#what-does-each-tag-mean" title="Permanent link">&para;</a></h2>
 <h3 id="modelversion">modelVersion<a class="headerlink" href="#modelversion" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</code></pre></div>
 <p>Defines the POM model version.</p>
 <p>Almost every Maven project uses:</p>
-<pre><code class="language-text">4.0.0
-</code></pre>
+<div class="highlight"><pre><span></span><code>4.0.0
+</code></pre></div>
 <hr />
 <h3 id="groupid">groupId<a class="headerlink" href="#groupid" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;groupId&gt;com.company.mobile&lt;/groupId&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;groupId&gt;</span>com.company.mobile<span class="nt">&lt;/groupId&gt;</span>
+</code></pre></div>
 <p>Represents the organization or company.</p>
 <p>Examples:</p>
-<pre><code class="language-text">org.testng
+<div class="highlight"><pre><span></span><code>org.testng
 
 org.seleniumhq.selenium
 
 io.appium
 
 com.company
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="artifactid">artifactId<a class="headerlink" href="#artifactid" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;artifactId&gt;appium-framework&lt;/artifactId&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;artifactId&gt;</span>appium-framework<span class="nt">&lt;/artifactId&gt;</span>
+</code></pre></div>
 <p>Represents the project or module name.</p>
 <p>Examples:</p>
-<pre><code class="language-text">appium-framework
+<div class="highlight"><pre><span></span><code>appium-framework
 
 common-utils
 
 api-framework
 
 selenium-framework
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</code></pre></div>
 <p>Represents the current version of the artifact.</p>
 <p>Examples:</p>
-<pre><code class="language-text">1.0
+<div class="highlight"><pre><span></span><code>1.0
 
 1.1
 
 2.0
 
 1.0-SNAPSHOT
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="packaging">packaging<a class="headerlink" href="#packaging" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;packaging&gt;jar&lt;/packaging&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+</code></pre></div>
 <p>Specifies the type of artifact Maven should create.</p>
 <p>Common values:</p>
 <table>
@@ -6056,30 +6056,30 @@ selenium-framework
 <hr />
 <h1 id="10-maven-coordinates">10. Maven Coordinates<a class="headerlink" href="#10-maven-coordinates" title="Permanent link">&para;</a></h1>
 <p>Every Maven artifact is uniquely identified by three values:</p>
-<pre><code class="language-text">groupId
+<div class="highlight"><pre><span></span><code>groupId
     +
 artifactId
     +
 version
-</code></pre>
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-text">org.testng
+<div class="highlight"><pre><span></span><code>org.testng
         │
         ▼
 testng
         │
         ▼
 7.11.0
-</code></pre>
+</code></pre></div>
 <p>Another example:</p>
-<pre><code class="language-text">com.company.mobile
+<div class="highlight"><pre><span></span><code>com.company.mobile
         │
         ▼
 appium-framework
         │
         ▼
 1.0
-</code></pre>
+</code></pre></div>
 <p>This combination uniquely identifies a Maven artifact.</p>
 <hr />
 <h1 id="summary">📌 Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h1>
@@ -6166,6 +6166,10 @@ appium-framework
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

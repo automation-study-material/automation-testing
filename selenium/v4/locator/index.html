@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5695,8 +5695,8 @@
 <hr />
 <h1 id="1-relative-locators-new-in-selenium-4">🔥 1️⃣ Relative Locators (New in Selenium 4)<a class="headerlink" href="#1-relative-locators-new-in-selenium-4" title="Permanent link">&para;</a></h1>
 <h3 id="package">Package<a class="headerlink" href="#package" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import static org.openqa.selenium.support.locators.RelativeLocator.with;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import static</span><span class="w"> </span><span class="nn">org.openqa.selenium.support.locators.RelativeLocator.with</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="why-relative-locators-were-introduced">🔹 Why Relative Locators Were Introduced?<a class="headerlink" href="#why-relative-locators-were-introduced" title="Permanent link">&para;</a></h2>
 <p>Problem:</p>
@@ -5707,8 +5707,8 @@
 <li>Complex XPath becomes unreadable</li>
 </ul>
 <p>Example of hard-to-maintain XPath:</p>
-<pre><code class="language-xpath">//div[2]/form/div[1]/input
-</code></pre>
+<div class="highlight"><pre><span></span><code>//div[2]/form/div[1]/input
+</code></pre></div>
 <hr />
 <h2 id="what-are-relative-locators">🔹 What Are Relative Locators?<a class="headerlink" href="#what-are-relative-locators" title="Permanent link">&para;</a></h2>
 <p>They locate elements <strong>based on their position relative to another
@@ -5747,16 +5747,16 @@ element.</strong></p>
 <hr />
 <h1 id="dom-structure-example">🔥 DOM Structure Example<a class="headerlink" href="#dom-structure-example" title="Permanent link">&para;</a></h1>
 <h3 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;form&gt;
-    &lt;label&gt;Username&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;username&quot;&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">id</span><span class="o">=</span><span class="s">"username"</span><span class="p">&gt;</span>
 
-    &lt;label&gt;Password&lt;/label&gt;
-    &lt;input type=&quot;password&quot; id=&quot;password&quot;&gt;
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"password"</span> <span class="na">id</span><span class="o">=</span><span class="s">"password"</span><span class="p">&gt;</span>
 
-    &lt;button id=&quot;login&quot;&gt;Login&lt;/button&gt;
-&lt;/form&gt;
-</code></pre>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">"login"</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="visual-layout">Visual Layout<a class="headerlink" href="#visual-layout" title="Permanent link">&para;</a></h3>
 <pre><code>Username
 [________]
@@ -5770,16 +5770,16 @@ Password
 <h1 id="1-above">🔥 1️⃣ above()<a class="headerlink" href="#1-above" title="Permanent link">&para;</a></h1>
 <h3 id="goal">Goal:<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h3>
 <p>Find Username field using Password as reference.</p>
-<pre><code class="language-java">WebElement password =
-        driver.findElement(By.id(&quot;password&quot;));
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"password"</span><span class="p">));</span>
 
-WebElement username =
-        driver.findElement(
-                with(By.tagName(&quot;input&quot;))
-                        .above(password));
+<span class="n">WebElement</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span>
+<span class="w">                </span><span class="kd">with</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">"input"</span><span class="p">))</span>
+<span class="w">                        </span><span class="p">.</span><span class="na">above</span><span class="p">(</span><span class="n">password</span><span class="p">));</span>
 
-username.sendKeys(&quot;admin&quot;);
-</code></pre>
+<span class="n">username</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"admin"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Selenium finds password element</li>
@@ -5789,84 +5789,84 @@ username.sendKeys(&quot;admin&quot;);
 <hr />
 <h1 id="2-below">🔥 2️⃣ below()<a class="headerlink" href="#2-below" title="Permanent link">&para;</a></h1>
 <p>Find element below reference.</p>
-<pre><code class="language-java">WebElement username =
-        driver.findElement(By.id(&quot;username&quot;));
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"username"</span><span class="p">));</span>
 
-WebElement password =
-        driver.findElement(
-                with(By.tagName(&quot;input&quot;))
-                        .below(username));
-</code></pre>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span>
+<span class="w">                </span><span class="kd">with</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">"input"</span><span class="p">))</span>
+<span class="w">                        </span><span class="p">.</span><span class="na">below</span><span class="p">(</span><span class="n">username</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h1 id="3-toleftof">🔥 3️⃣ toLeftOf()<a class="headerlink" href="#3-toleftof" title="Permanent link">&para;</a></h1>
 <h3 id="dom-example">DOM Example<a class="headerlink" href="#dom-example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;label&gt;Email&lt;/label&gt;
-&lt;input type=&quot;text&quot;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Email<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="visual">Visual<a class="headerlink" href="#visual" title="Permanent link">&para;</a></h3>
 <pre><code>Email    [________]
 </code></pre>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">WebElement label =
-        driver.findElement(By.xpath(&quot;//label[text()='Email']&quot;));
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">"//label[text()='Email']"</span><span class="p">));</span>
 
-WebElement input =
-        driver.findElement(
-                with(By.tagName(&quot;input&quot;))
-                        .toRightOf(label));
-</code></pre>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span>
+<span class="w">                </span><span class="kd">with</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">"input"</span><span class="p">))</span>
+<span class="w">                        </span><span class="p">.</span><span class="na">toRightOf</span><span class="p">(</span><span class="n">label</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h1 id="4-torightof">🔥 4️⃣ toRightOf()<a class="headerlink" href="#4-torightof" title="Permanent link">&para;</a></h1>
 <p>Example:</p>
 <pre><code>[ Remember Me ]  Checkbox
 </code></pre>
-<pre><code class="language-java">WebElement checkbox =
-        driver.findElement(
-                with(By.tagName(&quot;input&quot;))
-                        .toRightOf(
-                                By.xpath(&quot;//label[text()='Remember Me']&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">checkbox</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span>
+<span class="w">                </span><span class="kd">with</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">"input"</span><span class="p">))</span>
+<span class="w">                        </span><span class="p">.</span><span class="na">toRightOf</span><span class="p">(</span>
+<span class="w">                                </span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">"//label[text()='Remember Me']"</span><span class="p">)));</span>
+</code></pre></div>
 <hr />
 <h1 id="5-near">🔥 5️⃣ near()<a class="headerlink" href="#5-near" title="Permanent link">&para;</a></h1>
 <p>Find element near another element (within 50px).</p>
 <p>Example:</p>
 <pre><code>Forgot Password?   Login Button
 </code></pre>
-<pre><code class="language-java">WebElement login =
-        driver.findElement(
-                with(By.tagName(&quot;button&quot;))
-                        .near(By.linkText(&quot;Forgot Password?&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span>
+<span class="w">                </span><span class="kd">with</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">"button"</span><span class="p">))</span>
+<span class="w">                        </span><span class="p">.</span><span class="na">near</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">linkText</span><span class="p">(</span><span class="s">"Forgot Password?"</span><span class="p">)));</span>
+</code></pre></div>
 <hr />
 <h1 id="complete-working-example">🔥 Complete Working Example<a class="headerlink" href="#complete-working-example" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebElement</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
 
-import static org.openqa.selenium.support.locators.RelativeLocator.with;
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.openqa.selenium.support.locators.RelativeLocator.with</span><span class="p">;</span>
 
-public class RelativeLocatorDemo {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RelativeLocatorDemo</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver = new ChromeDriver();
-        driver.get(&quot;file:///C:/test/login.html&quot;);
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"file:///C:/test/login.html"</span><span class="p">);</span>
 
-        WebElement password =
-                driver.findElement(By.id(&quot;password&quot;));
+<span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"password"</span><span class="p">));</span>
 
-        WebElement username =
-                driver.findElement(
-                        with(By.tagName(&quot;input&quot;))
-                                .above(password));
+<span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span>
+<span class="w">                        </span><span class="kd">with</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">"input"</span><span class="p">))</span>
+<span class="w">                                </span><span class="p">.</span><span class="na">above</span><span class="p">(</span><span class="n">password</span><span class="p">));</span>
 
-        username.sendKeys(&quot;admin&quot;);
+<span class="w">        </span><span class="n">username</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"admin"</span><span class="p">);</span>
 
-        driver.quit();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="how-selenium-determines-position">🔥 How Selenium Determines Position?<a class="headerlink" href="#how-selenium-determines-position" title="Permanent link">&para;</a></h1>
 <p>Relative locators work based on:</p>
@@ -5936,8 +5936,8 @@ than only DOM hierarchy.</p>
 <p>Relative Locators were introduced in:</p>
 <p><strong>Selenium 4</strong></p>
 <p>Package:</p>
-<pre><code class="language-java">org.openqa.selenium.support.locators.RelativeLocator
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">org</span><span class="p">.</span><span class="na">openqa</span><span class="p">.</span><span class="na">selenium</span><span class="p">.</span><span class="na">support</span><span class="p">.</span><span class="na">locators</span><span class="p">.</span><span class="na">RelativeLocator</span>
+</code></pre></div>
 
 
 
@@ -5991,6 +5991,10 @@ than only DOM hierarchy.</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

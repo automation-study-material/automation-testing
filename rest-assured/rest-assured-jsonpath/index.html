@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5687,44 +5687,44 @@
 <p>It means:</p>
 <p>👉 This JSON is inside the <strong>Response object</strong></p>
 <p>Example:</p>
-<pre><code class="language-java">Response response = given().get(&quot;/users&quot;);
-JsonPath jp = response.jsonPath();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Response</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">given</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">"/users"</span><span class="p">);</span>
+<span class="n">JsonPath</span><span class="w"> </span><span class="n">jp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">jsonPath</span><span class="p">();</span>
+</code></pre></div>
 <p><code>jsonPath()</code> lets you query the response body like a tree.</p>
 <hr />
 <h1 id="sample-json-used-for-all-examples">📦 Sample JSON (Used for all examples)<a class="headerlink" href="#sample-json-used-for-all-examples" title="Permanent link">&para;</a></h1>
-<pre><code class="language-json">{
-  &quot;page&quot;: 1,
-  &quot;total&quot;: 3,
-  &quot;company&quot;: &quot;ABC Tech&quot;,
-  &quot;users&quot;: [
-    {
-      &quot;id&quot;: 101,
-      &quot;name&quot;: &quot;Umesh&quot;,
-      &quot;role&quot;: &quot;ADMIN&quot;,
-      &quot;salary&quot;: 90000,
-      &quot;active&quot;: true,
-      &quot;skills&quot;: [&quot;Java&quot;, &quot;Selenium&quot;]
-    },
-    {
-      &quot;id&quot;: 102,
-      &quot;name&quot;: &quot;Amit&quot;,
-      &quot;role&quot;: &quot;USER&quot;,
-      &quot;salary&quot;: 50000,
-      &quot;active&quot;: false,
-      &quot;skills&quot;: [&quot;Python&quot;]
-    },
-    {
-      &quot;id&quot;: 103,
-      &quot;name&quot;: &quot;Neha&quot;,
-      &quot;role&quot;: &quot;USER&quot;,
-      &quot;salary&quot;: 60000,
-      &quot;active&quot;: true,
-      &quot;skills&quot;: [&quot;Java&quot;, &quot;API&quot;]
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC Tech"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Umesh"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADMIN"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="mi">90000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"skills"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Selenium"</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amit"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"skills"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Python"</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neha"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"skills"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s2">"API"</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="basic-extraction">🚀 Basic Extraction<a class="headerlink" href="#basic-extraction" title="Permanent link">&para;</a></h1>
 <p>You are using <strong>Rest Assured + JsonPath</strong>.
@@ -5739,73 +5739,73 @@ JsonPath jp = response.jsonPath();
 <li>Inside each user → <code>id</code>, <code>name</code>, <code>role</code>, <code>salary</code>, <code>skills</code></li>
 </ul>
 <p>Example extraction path:</p>
-<pre><code>users.name
-</code></pre>
+<div class="highlight"><pre><span></span><code>users.name
+</code></pre></div>
 <p>This means:</p>
-<pre><code>users -&gt; array
+<div class="highlight"><pre><span></span><code>users -&gt; array
 name  -&gt; field inside each object
-</code></pre>
+</code></pre></div>
 <p>Result will be:</p>
-<pre><code>[&quot;Umesh&quot;, &quot;Amit&quot;, &quot;Neha&quot;]
-</code></pre>
+<div class="highlight"><pre><span></span><code>["Umesh", "Amit", "Neha"]
+</code></pre></div>
 <hr />
 <h1 id="2-java-code-iterate-using-for-loop">2️⃣ Java Code – Iterate Using For Loop<a class="headerlink" href="#2-java-code-iterate-using-for-loop" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">1  Response response = given()
-2      .when()
-3      .get(&quot;/users&quot;);
-4
-5  JsonPath jp = response.jsonPath();
-6
-7  List&lt;String&gt; names = jp.getList(&quot;users.name&quot;);
-8
-9  for (int i = 0; i &lt; names.size(); i++) {
-10     System.out.println(names.get(i));
-11 }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="mi">1</span><span class="w">  </span><span class="n">Response</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">given</span><span class="p">()</span>
+<span class="mi">2</span><span class="w">      </span><span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="mi">3</span><span class="w">      </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/users"</span><span class="p">);</span>
+<span class="mi">4</span>
+<span class="mi">5</span><span class="w">  </span><span class="n">JsonPath</span><span class="w"> </span><span class="n">jp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">jsonPath</span><span class="p">();</span>
+<span class="mi">6</span>
+<span class="mi">7</span><span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.name"</span><span class="p">);</span>
+<span class="mi">8</span>
+<span class="mi">9</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">names</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">10</span><span class="w">     </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="mi">11</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<pre><code>Umesh
+<div class="highlight"><pre><span></span><code>Umesh
 Amit
 Neha
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="3-iterate-using-for-each-loop-better-way">3️⃣ Iterate Using For-Each Loop (Better Way)<a class="headerlink" href="#3-iterate-using-for-each-loop-better-way" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">1  Response response = given().get(&quot;/users&quot;);
-2
-3  JsonPath jp = response.jsonPath();
-4
-5  List&lt;String&gt; names = jp.getList(&quot;users.name&quot;);
-6
-7  for(String name : names){
-8      System.out.println(name);
-9  }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="mi">1</span><span class="w">  </span><span class="n">Response</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">given</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">"/users"</span><span class="p">);</span>
+<span class="mi">2</span>
+<span class="mi">3</span><span class="w">  </span><span class="n">JsonPath</span><span class="w"> </span><span class="n">jp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">jsonPath</span><span class="p">();</span>
+<span class="mi">4</span>
+<span class="mi">5</span><span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.name"</span><span class="p">);</span>
+<span class="mi">6</span>
+<span class="mi">7</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">names</span><span class="p">){</span>
+<span class="mi">8</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="mi">9</span><span class="w">  </span><span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="4-iterate-complete-user-object">4️⃣ Iterate Complete User Object<a class="headerlink" href="#4-iterate-complete-user-object" title="Permanent link">&para;</a></h1>
 <p>If you want <strong>each user object</strong>, use:</p>
-<pre><code class="language-java">List&lt;Map&lt;String, Object&gt;&gt; users = jp.getList(&quot;users&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users"</span><span class="p">);</span>
 
-for(Map&lt;String, Object&gt; user : users){
-    System.out.println(user.get(&quot;name&quot;));
-    System.out.println(user.get(&quot;role&quot;));
-}
-</code></pre>
+<span class="k">for</span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">users</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">));</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"role"</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Output</p>
-<pre><code>Umesh
+<div class="highlight"><pre><span></span><code>Umesh
 ADMIN
 Amit
 USER
 Neha
 USER
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="5-extract-specific-user">5️⃣ Extract Specific User<a class="headerlink" href="#5-extract-specific-user" title="Permanent link">&para;</a></h1>
 <p>Example: first user name</p>
-<pre><code class="language-java">String name = jp.getString(&quot;users[0].name&quot;);
-System.out.println(name);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jp</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"users[0].name"</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+</code></pre></div>
 <p>Output</p>
-<pre><code>Umesh
-</code></pre>
+<div class="highlight"><pre><span></span><code>Umesh
+</code></pre></div>
 <hr />
 <h1 id="6-interview-tip">6️⃣ Interview Tip ⭐<a class="headerlink" href="#6-interview-tip" title="Permanent link">&para;</a></h1>
 <p>Common Rest Assured JsonPath usages:</p>
@@ -5839,147 +5839,147 @@ System.out.println(name);
 <p>If you want, I can also show <strong>10 most important RestAssured JsonPath tricks asked in Automation Testing interviews</strong> (like filtering ADMIN users, highest salary, skill contains Java, etc.).</p>
 <h1 id="filtering-examples">🚀 Filtering Examples<a class="headerlink" href="#filtering-examples" title="Permanent link">&para;</a></h1>
 <h2 id="example-1-admin-user">Example 1 – ADMIN user<a class="headerlink" href="#example-1-admin-user" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getString(&quot;users.find { it.role == 'ADMIN' }.name&quot;);
-</code></pre>
-<p>Output:</p>
-<pre><code>Umesh
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"users.find { it.role == 'ADMIN' }.name"</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>Umesh
+</code></pre></div></p>
 <hr />
 <h2 id="example-2-active-users">Example 2 – Active users<a class="headerlink" href="#example-2-active-users" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getList(&quot;users.findAll { it.active }.name&quot;);
-</code></pre>
-<p>Output:</p>
-<pre><code>[Umesh, Neha]
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.findAll { it.active }.name"</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>[Umesh, Neha]
+</code></pre></div></p>
 <hr />
 <h2 id="example-3-max-salary">Example 3 – Max salary<a class="headerlink" href="#example-3-max-salary" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getInt(&quot;users.salary.max()&quot;);
-</code></pre>
-<p>Output:</p>
-<pre><code>90000
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"users.salary.max()"</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>90000
+</code></pre></div></p>
 <hr />
 <h1 id="20-practice-problems-with-answers-outputs">🔥 20 Practice Problems WITH ANSWERS + OUTPUTS<a class="headerlink" href="#20-practice-problems-with-answers-outputs" title="Permanent link">&para;</a></h1>
 <h2 id="q1-get-company-name">Q1 Get company name<a class="headerlink" href="#q1-get-company-name" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getString(&quot;company&quot;);
-</code></pre>
-<p>Output: <code>ABC Tech</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"company"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>ABC Tech</code></p>
 <hr />
 <h2 id="q2-get-total-users">Q2 Get total users<a class="headerlink" href="#q2-get-total-users" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getInt(&quot;total&quot;);
-</code></pre>
-<p>Output: <code>3</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"total"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>3</code></p>
 <hr />
 <h2 id="q3-get-first-user-id">Q3 Get first user id<a class="headerlink" href="#q3-get-first-user-id" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getInt(&quot;users[0].id&quot;);
-</code></pre>
-<p>Output: <code>101</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"users[0].id"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>101</code></p>
 <hr />
 <h2 id="q4-get-last-user-name">Q4 Get last user name<a class="headerlink" href="#q4-get-last-user-name" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getString(&quot;users[-1].name&quot;);
-</code></pre>
-<p>Output: <code>Neha</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"users[-1].name"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>Neha</code></p>
 <hr />
 <h2 id="q5-get-all-names-list">Q5 Get all names list<a class="headerlink" href="#q5-get-all-names-list" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getList(&quot;users.name&quot;);
-</code></pre>
-<p>Output:</p>
-<pre><code>[Umesh, Amit, Neha]
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.name"</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>[Umesh, Amit, Neha]
+</code></pre></div></p>
 <hr />
 <h2 id="q6-get-all-ids-as-integers">Q6 Get all ids as integers<a class="headerlink" href="#q6-get-all-ids-as-integers" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getList(&quot;users.id&quot;, Integer.class);
-</code></pre>
-<p>Output:</p>
-<pre><code>[101, 102, 103]
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.id"</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>[101, 102, 103]
+</code></pre></div></p>
 <hr />
 <h2 id="q7-count-users">Q7 Count users<a class="headerlink" href="#q7-count-users" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getInt(&quot;users.size()&quot;);
-</code></pre>
-<p>Output: <code>3</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"users.size()"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>3</code></p>
 <hr />
 <h2 id="q8-get-all-active-users">Q8 Get all active users<a class="headerlink" href="#q8-get-all-active-users" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getList(&quot;users.findAll { it.active }.name&quot;);
-</code></pre>
-<p>Output:</p>
-<pre><code>[Umesh, Neha]
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.findAll { it.active }.name"</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>[Umesh, Neha]
+</code></pre></div></p>
 <hr />
 <h2 id="q9-get-first-inactive-user">Q9 Get first inactive user<a class="headerlink" href="#q9-get-first-inactive-user" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getString(&quot;users.find { !it.active }.name&quot;);
-</code></pre>
-<p>Output: <code>Amit</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"users.find { !it.active }.name"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>Amit</code></p>
 <hr />
 <h2 id="q10-get-admin-role-user">Q10 Get ADMIN role user<a class="headerlink" href="#q10-get-admin-role-user" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getString(&quot;users.find { it.role == 'ADMIN' }.name&quot;);
-</code></pre>
-<p>Output: <code>Umesh</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"users.find { it.role == 'ADMIN' }.name"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>Umesh</code></p>
 <hr />
 <h2 id="q11-get-users-with-salary-55000">Q11 Get users with salary &gt; 55000<a class="headerlink" href="#q11-get-users-with-salary-55000" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getList(&quot;users.findAll { it.salary &gt; 55000 }.name&quot;);
-</code></pre>
-<p>Output:</p>
-<pre><code>[Umesh, Neha]
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.findAll { it.salary &gt; 55000 }.name"</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>[Umesh, Neha]
+</code></pre></div></p>
 <hr />
 <h2 id="q12-get-max-salary">Q12 Get max salary<a class="headerlink" href="#q12-get-max-salary" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getInt(&quot;users.salary.max()&quot;);
-</code></pre>
-<p>Output: <code>90000</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"users.salary.max()"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>90000</code></p>
 <hr />
 <h2 id="q13-get-min-salary">Q13 Get min salary<a class="headerlink" href="#q13-get-min-salary" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getInt(&quot;users.salary.min()&quot;);
-</code></pre>
-<p>Output: <code>50000</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"users.salary.min()"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>50000</code></p>
 <hr />
 <h2 id="q14-get-sum-of-salaries">Q14 Get sum of salaries<a class="headerlink" href="#q14-get-sum-of-salaries" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getInt(&quot;users.salary.sum()&quot;);
-</code></pre>
-<p>Output: <code>200000</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"users.salary.sum()"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>200000</code></p>
 <hr />
 <h2 id="q15-check-if-java-skill-exists">Q15 Check if Java skill exists<a class="headerlink" href="#q15-check-if-java-skill-exists" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getList(&quot;users.skills.flatten()&quot;).contains(&quot;Java&quot;);
-</code></pre>
-<p>Output: <code>true</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.skills.flatten()"</span><span class="p">).</span><span class="na">contains</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>true</code></p>
 <hr />
 <h2 id="q16-get-second-users-first-skill">Q16 Get second user's first skill<a class="headerlink" href="#q16-get-second-users-first-skill" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getString(&quot;users[1].skills[0]&quot;);
-</code></pre>
-<p>Output: <code>Python</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"users[1].skills[0]"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>Python</code></p>
 <hr />
 <h2 id="q17-get-all-skills-combined">Q17 Get all skills combined<a class="headerlink" href="#q17-get-all-skills-combined" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getList(&quot;users.skills.flatten()&quot;);
-</code></pre>
-<p>Output:</p>
-<pre><code>[Java, Selenium, Python, Java, API]
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.skills.flatten()"</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>[Java, Selenium, Python, Java, API]
+</code></pre></div></p>
 <hr />
 <h2 id="q18-convert-first-user-to-map">Q18 Convert first user to Map<a class="headerlink" href="#q18-convert-first-user-to-map" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String,Object&gt; user = jp.getMap(&quot;users[0]&quot;);
-</code></pre>
-<p>Output:</p>
-<pre><code>{id=101, name=Umesh, role=ADMIN, salary=90000, active=true, skills=[Java, Selenium]}
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jp</span><span class="p">.</span><span class="na">getMap</span><span class="p">(</span><span class="s">"users[0]"</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>{id=101, name=Umesh, role=ADMIN, salary=90000, active=true, skills=[Java, Selenium]}
+</code></pre></div></p>
 <hr />
 <h2 id="q19-convert-users-to-pojo-list">Q19 Convert users to POJO list<a class="headerlink" href="#q19-convert-users-to-pojo-list" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;User&gt; users = jp.getList(&quot;users&quot;, User.class);
-</code></pre>
-<p>Output:</p>
-<pre><code>3 User objects created
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users"</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>3 User objects created
+</code></pre></div></p>
 <hr />
 <h2 id="q20-assert-user-exists">Q20 Assert user exists<a class="headerlink" href="#q20-assert-user-exists" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">jp.getList(&quot;users.name&quot;).contains(&quot;Umesh&quot;);
-</code></pre>
-<p>Output: <code>true</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">jp</span><span class="p">.</span><span class="na">getList</span><span class="p">(</span><span class="s">"users.name"</span><span class="p">).</span><span class="na">contains</span><span class="p">(</span><span class="s">"Umesh"</span><span class="p">);</span>
+</code></pre></div>
+Output: <code>true</code></p>
 <hr />
 <h1 id="quick-memory-tip">🎯 Quick Memory Tip<a class="headerlink" href="#quick-memory-tip" title="Permanent link">&para;</a></h1>
-<pre><code>Single → getString/getInt
+<div class="highlight"><pre><span></span><code>Single → getString/getInt
 Array → getList
 Filter → find/findAll
 Aggregate → max/min/sum/size
-</code></pre>
+</code></pre></div>
 <hr />
 <p>Happy Testing 🚀</p>
 
@@ -6035,6 +6035,10 @@ Aggregate → max/min/sum/size
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

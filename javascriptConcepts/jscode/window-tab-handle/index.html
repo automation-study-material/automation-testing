@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6526,47 +6526,47 @@ Each scenario includes:
 <hr />
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Install Playwright:</p>
-<pre><code class="language-bash">npm init -y
-npm install playwright
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>init<span class="w"> </span>-y
+npm<span class="w"> </span>install<span class="w"> </span>playwright
+</code></pre></div>
 <p>Import Playwright:</p>
-<pre><code class="language-js">javascript
-Copy code
-const { chromium } = require('@playwright/test');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">javascript</span>
+<span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">chromium</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'@playwright/test'</span><span class="p">);</span>
+</code></pre></div>
 <h2 id="scenario-1-handle-new-tab-opened-by-clicking-a-link">Scenario 1: Handle New Tab Opened by Clicking a Link<a class="headerlink" href="#scenario-1-handle-new-tab-opened-by-clicking-a-link" title="Permanent link">&para;</a></h2>
 <h3 id="use-case">Use Case<a class="headerlink" href="#use-case" title="Permanent link">&para;</a></h3>
 <h4 id="user-clicks-a-link-target_blank-and-a-new-tab-opens">User clicks a link (target="_blank") and a new tab opens.<a class="headerlink" href="#user-clicks-a-link-target_blank-and-a-new-tab-opens" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">Code
-javascript
-Copy code
-// Launch browser
-const browser = await chromium.launch();
+<div class="highlight"><pre><span></span><code><span class="nx">Code</span>
+<span class="nx">javascript</span>
+<span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="c1">// Launch browser</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">chromium</span><span class="p">.</span><span class="nx">launch</span><span class="p">();</span>
 
-// Create isolated browser context
-const context = await browser.newContext();
+<span class="c1">// Create isolated browser context</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">browser</span><span class="p">.</span><span class="nx">newContext</span><span class="p">();</span>
 
-// Open a new tab
-const page = await context.newPage();
+<span class="c1">// Open a new tab</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span>
 
-// Navigate to application
-await page.goto('https://example.com');
+<span class="c1">// Navigate to application</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">'https://example.com'</span><span class="p">);</span>
 
-// Capture the new tab opened on click
-const [newPage] = await Promise.all([
-  context.waitForEvent('page'),  // Waits for new tab
-  page.click('a[target=&quot;_blank&quot;]') // Action that opens new tab
-]);
+<span class="c1">// Capture the new tab opened on click</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">newPage</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+<span class="w">  </span><span class="nx">context</span><span class="p">.</span><span class="nx">waitForEvent</span><span class="p">(</span><span class="s1">'page'</span><span class="p">),</span><span class="w">  </span><span class="c1">// Waits for new tab</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'a[target="_blank"]'</span><span class="p">)</span><span class="w"> </span><span class="c1">// Action that opens new tab</span>
+<span class="p">]);</span>
 
-// Wait until new tab loads completely
-await newPage.waitForLoadState();
+<span class="c1">// Wait until new tab loads completely</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">newPage</span><span class="p">.</span><span class="nx">waitForLoadState</span><span class="p">();</span>
 
-// Print title of new tab
-console.log(await newPage.title());
+<span class="c1">// Print title of new tab</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">newPage</span><span class="p">.</span><span class="nx">title</span><span class="p">());</span>
 
-// Close browser
-await browser.close();
-</code></pre>
+<span class="c1">// Close browser</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">browser</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</code></pre></div>
 <h4 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
@@ -6588,19 +6588,19 @@ await browser.close();
 <h2 id="scenario-2-switch-between-multiple-open-tabs">Scenario 2: Switch Between Multiple Open Tabs<a class="headerlink" href="#scenario-2-switch-between-multiple-open-tabs" title="Permanent link">&para;</a></h2>
 <h3 id="use-case_1">Use Case<a class="headerlink" href="#use-case_1" title="Permanent link">&para;</a></h3>
 <h4 id="application-opens-multiple-tabs-and-user-needs-to-switch-between-them">Application opens multiple tabs and user needs to switch between them.<a class="headerlink" href="#application-opens-multiple-tabs-and-user-needs-to-switch-between-them" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">Code
-javascript
-Copy code
-// Get all open tabs
-const pages = context.pages();
+<div class="highlight"><pre><span></span><code><span class="nx">Code</span>
+<span class="nx">javascript</span>
+<span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="c1">// Get all open tabs</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">pages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">pages</span><span class="p">();</span>
 
-// Switch to second tab
-await pages[1].bringToFront();
-console.log(await pages[1].url());
+<span class="c1">// Switch to second tab</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">pages</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">bringToFront</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">pages</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">url</span><span class="p">());</span>
 
-// Switch back to first tab
-await pages[0].bringToFront();
-</code></pre>
+<span class="c1">// Switch back to first tab</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">pages</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">bringToFront</span><span class="p">();</span>
+</code></pre></div>
 <h4 id="explanation_1">Explanation<a class="headerlink" href="#explanation_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
@@ -6616,20 +6616,20 @@ await pages[0].bringToFront();
 <h2 id="scenario-3-handle-popup-window-windowopen">Scenario 3: Handle Popup Window (window.open)<a class="headerlink" href="#scenario-3-handle-popup-window-windowopen" title="Permanent link">&para;</a></h2>
 <h3 id="use-case_2">Use Case<a class="headerlink" href="#use-case_2" title="Permanent link">&para;</a></h3>
 <h4 id="clicking-a-button-opens-a-popup-window">Clicking a button opens a popup window.<a class="headerlink" href="#clicking-a-button-opens-a-popup-window" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">Code
-javascript
-Copy code
-const [popup] = await Promise.all([
-  page.waitForEvent('popup'), // Waits for popup window
-  page.click('#printInvoice') // Action triggering popup
-]);
+<div class="highlight"><pre><span></span><code><span class="nx">Code</span>
+<span class="nx">javascript</span>
+<span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">popup</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForEvent</span><span class="p">(</span><span class="s1">'popup'</span><span class="p">),</span><span class="w"> </span><span class="c1">// Waits for popup window</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#printInvoice'</span><span class="p">)</span><span class="w"> </span><span class="c1">// Action triggering popup</span>
+<span class="p">]);</span>
 
-// Wait for popup to load
-await popup.waitForLoadState();
+<span class="c1">// Wait for popup to load</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">popup</span><span class="p">.</span><span class="nx">waitForLoadState</span><span class="p">();</span>
 
-// Print popup title
-console.log(await popup.title());
-</code></pre>
+<span class="c1">// Print popup title</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">popup</span><span class="p">.</span><span class="nx">title</span><span class="p">());</span>
+</code></pre></div>
 <h3 id="explanation_2">Explanation<a class="headerlink" href="#explanation_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -6645,27 +6645,27 @@ console.log(await popup.title());
 <h2 id="scenario-4-close-child-tab-and-return-to-parent-tab">Scenario 4: Close Child Tab and Return to Parent Tab<a class="headerlink" href="#scenario-4-close-child-tab-and-return-to-parent-tab" title="Permanent link">&para;</a></h2>
 <h3 id="use-case_3">Use Case<a class="headerlink" href="#use-case_3" title="Permanent link">&para;</a></h3>
 <h4 id="child-tab-opens-perform-action-close-it-return-to-parent">Child tab opens → perform action → close it → return to parent.<a class="headerlink" href="#child-tab-opens-perform-action-close-it-return-to-parent" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">Code
-javascript
-Copy code
-// Store parent tab reference
-const parentPage = page;
+<div class="highlight"><pre><span></span><code><span class="nx">Code</span>
+<span class="nx">javascript</span>
+<span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="c1">// Store parent tab reference</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">parentPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">;</span>
 
-// Open child tab
-const [childPage] = await Promise.all([
-  context.waitForEvent('page'),
-  page.click('#openChildTab')
-]);
+<span class="c1">// Open child tab</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">childPage</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+<span class="w">  </span><span class="nx">context</span><span class="p">.</span><span class="nx">waitForEvent</span><span class="p">(</span><span class="s1">'page'</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#openChildTab'</span><span class="p">)</span>
+<span class="p">]);</span>
 
-// Wait for child tab to load
-await childPage.waitForLoadState();
+<span class="c1">// Wait for child tab to load</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">childPage</span><span class="p">.</span><span class="nx">waitForLoadState</span><span class="p">();</span>
 
-// Close child tab
-await childPage.close();
+<span class="c1">// Close child tab</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">childPage</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
 
-// Bring parent tab back to focus
-await parentPage.bringToFront();
-</code></pre>
+<span class="c1">// Bring parent tab back to focus</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">parentPage</span><span class="p">.</span><span class="nx">bringToFront</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="explanation_3">Explanation<a class="headerlink" href="#explanation_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -6681,18 +6681,18 @@ await parentPage.bringToFront();
 <h2 id="scenario-5-switch-to-a-tab-based-on-title">Scenario 5: Switch to a Tab Based on Title<a class="headerlink" href="#scenario-5-switch-to-a-tab-based-on-title" title="Permanent link">&para;</a></h2>
 <h3 id="use-case_4">Use Case<a class="headerlink" href="#use-case_4" title="Permanent link">&para;</a></h3>
 <h4 id="multiple-tabs-are-open-switch-to-required-one-using-title">Multiple tabs are open → switch to required one using title.<a class="headerlink" href="#multiple-tabs-are-open-switch-to-required-one-using-title" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">Code
-javascript
-Copy code
-for (const p of context.pages()) {
-  const title = await p.title();
+<div class="highlight"><pre><span></span><code><span class="nx">Code</span>
+<span class="nx">javascript</span>
+<span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">pages</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">title</span><span class="p">();</span>
 
-  if (title.includes('Dashboard')) {
-    await p.bringToFront();
-    break;
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'Dashboard'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">bringToFront</span><span class="p">();</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="explanation_4">Explanation<a class="headerlink" href="#explanation_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -6708,18 +6708,18 @@ for (const p of context.pages()) {
 <h2 id="scenario-6-handle-oauth-google-login-window">Scenario 6: Handle OAuth / Google Login Window<a class="headerlink" href="#scenario-6-handle-oauth-google-login-window" title="Permanent link">&para;</a></h2>
 <h3 id="use-case_5">Use Case<a class="headerlink" href="#use-case_5" title="Permanent link">&para;</a></h3>
 <h4 id="clicking-login-with-google-opens-authentication-window">Clicking "Login with Google" opens authentication window.<a class="headerlink" href="#clicking-login-with-google-opens-authentication-window" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">Code
-javascript
-Copy code
-const [loginPage] = await Promise.all([
-  context.waitForEvent('page'), // New OAuth window
-  page.click('#googleLogin')    // Trigger login
-]);
+<div class="highlight"><pre><span></span><code><span class="nx">Code</span>
+<span class="nx">javascript</span>
+<span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">loginPage</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+<span class="w">  </span><span class="nx">context</span><span class="p">.</span><span class="nx">waitForEvent</span><span class="p">(</span><span class="s1">'page'</span><span class="p">),</span><span class="w"> </span><span class="c1">// New OAuth window</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#googleLogin'</span><span class="p">)</span><span class="w">    </span><span class="c1">// Trigger login</span>
+<span class="p">]);</span>
 
-// Interact with login window
-await loginPage.fill('#identifierId', 'test@gmail.com');
-await loginPage.click('#identifierNext');
-</code></pre>
+<span class="c1">// Interact with login window</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">loginPage</span><span class="p">.</span><span class="nx">fill</span><span class="p">(</span><span class="s1">'#identifierId'</span><span class="p">,</span><span class="w"> </span><span class="s1">'test@gmail.com'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">loginPage</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#identifierNext'</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="explanation_5">Explanation<a class="headerlink" href="#explanation_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -6735,15 +6735,15 @@ await loginPage.click('#identifierNext');
 <h2 id="scenario-7-open-new-tab-manually">Scenario 7: Open New Tab Manually<a class="headerlink" href="#scenario-7-open-new-tab-manually" title="Permanent link">&para;</a></h2>
 <h3 id="use-case_6">Use Case<a class="headerlink" href="#use-case_6" title="Permanent link">&para;</a></h3>
 <h4 id="open-admin-reports-page-manually-within-same-session">Open Admin / Reports page manually within same session.<a class="headerlink" href="#open-admin-reports-page-manually-within-same-session" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">Code
-javascript
-Copy code
-// Create new tab manually
-const adminPage = await context.newPage();
+<div class="highlight"><pre><span></span><code><span class="nx">Code</span>
+<span class="nx">javascript</span>
+<span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="c1">// Create new tab manually</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">adminPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span>
 
-// Navigate to admin page
-await adminPage.goto('https://admin.example.com');
-</code></pre>
+<span class="c1">// Navigate to admin page</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">adminPage</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">'https://admin.example.com'</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="explanation_6">Explanation<a class="headerlink" href="#explanation_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -6769,27 +6769,27 @@ await adminPage.goto('https://admin.example.com');
 </li>
 </ul>
 <h2 id="sample-snipped-code">Sample snipped code<a class="headerlink" href="#sample-snipped-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js"> test('@Child windows hadl', async ({browser})=&gt;
- {
-    const context = await browser.newContext();
-    const page =  await context.newPage();
-    const userName = page.locator('#username');
-    await page.goto(&quot;https://rahulshettyacademy.com/loginpagePractise/&quot;);
-    const documentLink = page.locator(&quot;[href*='documents-request']&quot;);
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nx">test</span><span class="p">(</span><span class="s1">'@Child windows hadl'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">({</span><span class="nx">browser</span><span class="p">})=&gt;</span>
+<span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">browser</span><span class="p">.</span><span class="nx">newContext</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">userName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s2">"https://rahulshettyacademy.com/loginpagePractise/"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">documentLink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"[href*='documents-request']"</span><span class="p">);</span>
 
-    const [newPage]=Promise.all(
-   [
-      context.waitForEvent('page'),//listen for any new page pending,rejected,fulfilled
-      documentLink.click(),
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">newPage</span><span class="p">]</span><span class="o">=</span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span>
+<span class="w">   </span><span class="p">[</span>
+<span class="w">      </span><span class="nx">context</span><span class="p">.</span><span class="nx">waitForEvent</span><span class="p">(</span><span class="s1">'page'</span><span class="p">),</span><span class="c1">//listen for any new page pending,rejected,fulfilled</span>
+<span class="w">      </span><span class="nx">documentLink</span><span class="p">.</span><span class="nx">click</span><span class="p">(),</span>
 
-   ])//new page is opened
-    const  text = await newPage.locator(&quot;.red&quot;).textContent();
-    const arrayText = text.split(&quot;@&quot;)
-    const domain =  arrayText[1].split(&quot; &quot;)[0]
-    console.log(domain);
-    await page.locator(&quot;#username&quot;).fill(domain);
-    console.log(await page.locator(&quot;#username&quot;).textContent());
-</code></pre>
+<span class="w">   </span><span class="p">])</span><span class="c1">//new page is opened</span>
+<span class="w">    </span><span class="kd">const</span><span class="w">  </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">newPage</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".red"</span><span class="p">).</span><span class="nx">textContent</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">arrayText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"@"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">domain</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">arrayText</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">)[</span><span class="mf">0</span><span class="p">]</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">domain</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="nx">domain</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">).</span><span class="nx">textContent</span><span class="p">());</span>
+</code></pre></div>
 
 
 
@@ -6843,6 +6843,10 @@ await adminPage.goto('https://admin.example.com');
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

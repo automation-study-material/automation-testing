@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6001,31 +6001,31 @@ While all can store values, they differ in <strong>scope</strong>, <strong>re-de
 <li><strong>Allows re-declaration</strong>: You can declare the same variable again in the same scope (not recommended).  </li>
 </ul>
 <h3 id="example-var-inside-block">Example – var inside block<a class="headerlink" href="#example-var-inside-block" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">if (true) {
-  var x = &quot;Hello&quot;;
-}
-console.log(x); // ✅ Accessible outside block
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// ✅ Accessible outside block</span>
+</code></pre></div>
 <h3 id="example-var-inside-function">Example – var inside function<a class="headerlink" href="#example-var-inside-function" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">function testVar() {
-  if (true) {
-    var inside = &quot;Function scope&quot;;
-  }
-  console.log(inside); // ✅ Accessible anywhere inside the function
-}
-testVar();
-console.log(typeof inside); // ❌ undefined globally
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">testVar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">inside</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Function scope"</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">inside</span><span class="p">);</span><span class="w"> </span><span class="c1">// ✅ Accessible anywhere inside the function</span>
+<span class="p">}</span>
+<span class="nx">testVar</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">inside</span><span class="p">);</span><span class="w"> </span><span class="c1">// ❌ undefined globally</span>
+</code></pre></div>
 <h3 id="example-global-var-usage">Example – global var usage<a class="headerlink" href="#example-global-var-usage" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">var globalVar = &quot;I am global&quot;;
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">globalVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"I am global"</span><span class="p">;</span>
 
-function showGlobal() {
-  console.log(globalVar); // ✅ Accessible inside function
-}
+<span class="kd">function</span><span class="w"> </span><span class="nx">showGlobal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// ✅ Accessible inside function</span>
+<span class="p">}</span>
 
-showGlobal();
-console.log(globalVar); // ✅ Accessible globally
-</code></pre>
+<span class="nx">showGlobal</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// ✅ Accessible globally</span>
+</code></pre></div>
 <hr />
 <h2 id="let">🔹 let<a class="headerlink" href="#let" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6035,17 +6035,17 @@ console.log(globalVar); // ✅ Accessible globally
 <li><strong>Reassignment allowed</strong>.  </li>
 </ul>
 <h3 id="example-let-inside-block">Example – let inside block<a class="headerlink" href="#example-let-inside-block" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">if (true) {
-  let y = &quot;Inside block&quot;;
-  console.log(y); // ✅ Accessible here
-}
-// console.log(y); // ❌ ReferenceError outside block
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Inside block"</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// ✅ Accessible here</span>
+<span class="p">}</span>
+<span class="c1">// console.log(y); // ❌ ReferenceError outside block</span>
+</code></pre></div>
 <h3 id="example-let-reassignment">Example – let reassignment<a class="headerlink" href="#example-let-reassignment" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let age = 25;
-age = 30; // ✅ Reassignment allowed
-// let age = 35; // ❌ Cannot redeclare in same scope
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25</span><span class="p">;</span>
+<span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w"> </span><span class="c1">// ✅ Reassignment allowed</span>
+<span class="c1">// let age = 35; // ❌ Cannot redeclare in same scope</span>
+</code></pre></div>
 <hr />
 <h2 id="const">🔹 const<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6054,13 +6054,13 @@ age = 30; // ✅ Reassignment allowed
 <li><strong>Cannot be reassigned</strong>, but if it’s an object/array, its contents can still be modified.  </li>
 </ul>
 <h3 id="example-const">Example – const<a class="headerlink" href="#example-const" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">const country = &quot;India&quot;;
-// country = &quot;USA&quot;; // ❌ Error: Cannot reassign
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"India"</span><span class="p">;</span>
+<span class="c1">// country = "USA"; // ❌ Error: Cannot reassign</span>
 
-const obj = { name: &quot;Nitin&quot; };
-obj.name = &quot;Patil&quot;; // ✅ Allowed (property changed)
-console.log(obj);   // { name: &quot;Patil&quot; }
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="w"> </span><span class="p">};</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Patil"</span><span class="p">;</span><span class="w"> </span><span class="c1">// ✅ Allowed (property changed)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span><span class="w">   </span><span class="c1">// { name: "Patil" }</span>
+</code></pre></div>
 <hr />
 <h2 id="global-vs-local-with-var">🔹 Global vs Local with var<a class="headerlink" href="#global-vs-local-with-var" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6069,24 +6069,24 @@ console.log(obj);   // { name: &quot;Patil&quot; }
 <li>Re-declaring with <code>var</code> inside a function <strong>shadows the global variable</strong> instead of modifying it.  </li>
 </ul>
 <h3 id="example-reassignment-updates-global">Example – Reassignment updates global<a class="headerlink" href="#example-reassignment-updates-global" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">var name = &quot;Nitin&quot;;  // global
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">;</span><span class="w">  </span><span class="c1">// global</span>
 
-function updateGlobal() {
-  name = &quot;Patil&quot;;   // reassigns global
-}
-updateGlobal();
-console.log(name);  // ✅ Patil (global updated)
-</code></pre>
+<span class="kd">function</span><span class="w"> </span><span class="nx">updateGlobal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Patil"</span><span class="p">;</span><span class="w">   </span><span class="c1">// reassigns global</span>
+<span class="p">}</span>
+<span class="nx">updateGlobal</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// ✅ Patil (global updated)</span>
+</code></pre></div>
 <h3 id="example-shadowing-with-var">Example – Shadowing with var<a class="headerlink" href="#example-shadowing-with-var" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">var name = &quot;Nitin&quot;;  // global
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">;</span><span class="w">  </span><span class="c1">// global</span>
 
-function shadowGlobal() {
-  var name = &quot;Local&quot;;  // new local variable
-  console.log(&quot;Inside:&quot;, name); // Local
-}
-shadowGlobal();
-console.log(&quot;Outside:&quot;, name);  // Nitin (global unchanged)
-</code></pre>
+<span class="kd">function</span><span class="w"> </span><span class="nx">shadowGlobal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Local"</span><span class="p">;</span><span class="w">  </span><span class="c1">// new local variable</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Inside:"</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// Local</span>
+<span class="p">}</span>
+<span class="nx">shadowGlobal</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Outside:"</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Nitin (global unchanged)</span>
+</code></pre></div>
 <hr />
 <h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6149,6 +6149,10 @@ console.log(&quot;Outside:&quot;, name);  // Nitin (global unchanged)
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

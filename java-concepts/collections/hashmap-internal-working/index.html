@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5683,8 +5683,8 @@
 <h2 id="what-is-hashmap">📌 What is HashMap?<a class="headerlink" href="#what-is-hashmap" title="Permanent link">&para;</a></h2>
 <p>HashMap stores data in <strong>key-value pairs</strong>.</p>
 <p>Example:</p>
-<pre><code class="language-java">map.put(&quot;ACC123&quot;, &quot;Nitin&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"ACC123"</span><span class="p">,</span><span class="w"> </span><span class="s">"Nitin"</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li>Key = "ACC123"</li>
 <li>Value = "Nitin"</li>
@@ -5706,8 +5706,8 @@ calculation - Array + LinkedList / Tree structure</p>
 <h2 id="_1"><img src="../../images/java/LinkHashMapInternal.png" alt="collision" width="400"/><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h1 id="step-2-how-data-is-stored-put">🔥 Step 2: How Data is Stored (put)<a class="headerlink" href="#step-2-how-data-is-stored-put" title="Permanent link">&para;</a></h1>
 <p>Example:</p>
-<pre><code class="language-java">map.put(&quot;ACC123&quot;, &quot;Nitin&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"ACC123"</span><span class="p">,</span><span class="w"> </span><span class="s">"Nitin"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="step-by-step">Step-by-Step:<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -5732,9 +5732,9 @@ calculation - Array + LinkedList / Tree structure</p>
 <hr />
 <h1 id="step-3-collision-handling">🔥 Step 3: Collision Handling<a class="headerlink" href="#step-3-collision-handling" title="Permanent link">&para;</a></h1>
 <p>Example:</p>
-<pre><code class="language-java">map.put(&quot;ACC120&quot;, &quot;Rahul&quot;);
-map.put(&quot;ACC121&quot;, &quot;Amit&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"ACC120"</span><span class="p">,</span><span class="w"> </span><span class="s">"Rahul"</span><span class="p">);</span>
+<span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"ACC121"</span><span class="p">,</span><span class="w"> </span><span class="s">"Amit"</span><span class="p">);</span>
+</code></pre></div>
 <p>If both keys map to index 5:</p>
 <pre><code>bucket[5] →
     Node1 (ACC120)
@@ -5746,8 +5746,8 @@ map.put(&quot;ACC121&quot;, &quot;Amit&quot;);
 <h2 id="_2"><img src="../../images/java/hash-collision-en.jpeg" alt="collision" width="400"/><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h1 id="step-4-how-data-is-retrieved-get">🔥 Step 4: How Data is Retrieved (get)<a class="headerlink" href="#step-4-how-data-is-retrieved-get" title="Permanent link">&para;</a></h1>
 <p>Example:</p>
-<pre><code class="language-java">map.get(&quot;ACC121&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"ACC121"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="steps">Steps:<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Calculate hashCode of "ACC121"</li>
@@ -5852,6 +5852,10 @@ recalculates the hash and searches within that bucket using equals().</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

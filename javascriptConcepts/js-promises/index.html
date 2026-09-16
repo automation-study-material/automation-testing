@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5633,11 +5633,11 @@ running other code while waiting. Promises make this possible.</p>
   <strong>Resolved/Fulfilled</strong>   The task completed successfully
   <strong>Rejected</strong>             The task failed</p>
 <h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">let p = new Promise((resolve, reject) =&gt; {
-  // Promise started → pending state
-  resolve(&quot;Success!&quot;);
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Promise started → pending state</span>
+<span class="w">  </span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"Success!"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 <h3 id="explanation">Explanation:<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
 <ul>
 <li>When the Promise is created, it is <strong>pending</strong>.</li>
@@ -5647,10 +5647,10 @@ running other code while waiting. Promises make this possible.</p>
 <hr />
 <h1 id="3-then-catch-finally">3. <code>.then()</code>, <code>.catch()</code>, <code>.finally()</code><a class="headerlink" href="#3-then-catch-finally" title="Permanent link">&para;</a></h1>
 <h3 id="31-then-handle-success">3.1 <code>.then()</code> --- Handle Success<a class="headerlink" href="#31-then-handle-success" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">p.then(result =&gt; {
-  console.log(result);
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">p</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 <h3 id="explanation_1">Explanation:<a class="headerlink" href="#explanation_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>.then()</code> runs <strong>only when the Promise resolves</strong>.</li>
@@ -5658,10 +5658,10 @@ running other code while waiting. Promises make this possible.</p>
 </ul>
 <hr />
 <h3 id="32-catch-handle-errors">3.2 <code>.catch()</code> --- Handle Errors<a class="headerlink" href="#32-catch-handle-errors" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">p.catch(error =&gt; {
-  console.log(&quot;Error:&quot;, error);
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">p</span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Error:"</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 <h3 id="explanation_2">Explanation:<a class="headerlink" href="#explanation_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>.catch()</code> runs when a Promise <strong>rejects</strong>.</li>
@@ -5669,10 +5669,10 @@ running other code while waiting. Promises make this possible.</p>
 </ul>
 <hr />
 <h3 id="33-finally-always-runs">3.3 <code>.finally()</code> --- Always Runs<a class="headerlink" href="#33-finally-always-runs" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">p.finally(() =&gt; {
-  console.log(&quot;Task complete!&quot;);
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">p</span><span class="p">.</span><span class="k">finally</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Task complete!"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 <h3 id="explanation_3">Explanation:<a class="headerlink" href="#explanation_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>.finally()</code> always runs whether resolved or rejected.</li>
@@ -5680,14 +5680,14 @@ running other code while waiting. Promises make this possible.</p>
 </ul>
 <hr />
 <h3 id="full-example-with-all-three">Full Example With All Three<a class="headerlink" href="#full-example-with-all-three" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">let p = new Promise((resolve, reject) =&gt; {
-  setTimeout(() =&gt; resolve(&quot;Loaded!&quot;), 2000);
-});
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"Loaded!"</span><span class="p">),</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+<span class="p">});</span>
 
-p.then(res =&gt; console.log(res))
- .catch(err =&gt; console.log(err))
- .finally(() =&gt; console.log(&quot;Done&quot;));
-</code></pre>
+<span class="nx">p</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">))</span>
+<span class="w"> </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
+<span class="w"> </span><span class="p">.</span><span class="k">finally</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Done"</span><span class="p">));</span>
+</code></pre></div>
 <h3 id="explanation_4">Explanation:<a class="headerlink" href="#explanation_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>After 2 seconds, Promise resolves with <code>"Loaded!"</code>.</li>
@@ -5700,17 +5700,17 @@ p.then(res =&gt; console.log(res))
 <p>The <code>async/await</code> keywords make asynchronous code look like synchronous
 code.</p>
 <h3 id="example_1">Example:<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">async function loadData() {
-  try {
-    const result = await p;
-    console.log(result);
-  } catch (err) {
-    console.log(&quot;Error:&quot;, err);
-  } finally {
-    console.log(&quot;Finished&quot;);
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">loadData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">p</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Error:"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Finished"</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="explanation_5">Explanation:<a class="headerlink" href="#explanation_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>async</code> tells JavaScript that this function contains asynchronous
@@ -5723,12 +5723,12 @@ code.</p>
 <h1 id="5-promiseall-and-promiserace">5. Promise.all() and Promise.race()<a class="headerlink" href="#5-promiseall-and-promiserace" title="Permanent link">&para;</a></h1>
 <h2 id="51-promiseall">5.1 Promise.all()<a class="headerlink" href="#51-promiseall" title="Permanent link">&para;</a></h2>
 <p>Runs multiple Promises <strong>in parallel</strong> and waits for all to complete.</p>
-<pre><code class="language-js">const p1 = new Promise(res =&gt; setTimeout(() =&gt; res(&quot;1 done&quot;), 1000));
-const p2 = new Promise(res =&gt; setTimeout(() =&gt; res(&quot;2 done&quot;), 2000));
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">(</span><span class="s2">"1 done"</span><span class="p">),</span><span class="w"> </span><span class="mf">1000</span><span class="p">));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">(</span><span class="s2">"2 done"</span><span class="p">),</span><span class="w"> </span><span class="mf">2000</span><span class="p">));</span>
 
-const result = await Promise.all([p1, p2]);
-console.log(result);
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">p1</span><span class="p">,</span><span class="w"> </span><span class="nx">p2</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="explanation_6">Explanation:<a class="headerlink" href="#explanation_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>p1</code> resolves in 1 sec.</li>
@@ -5740,12 +5740,12 @@ console.log(result);
 <hr />
 <h2 id="52-promiserace">5.2 Promise.race()<a class="headerlink" href="#52-promiserace" title="Permanent link">&para;</a></h2>
 <p>Resolves or rejects as soon as <strong>any one</strong> Promise completes.</p>
-<pre><code class="language-js">const p1 = new Promise(res =&gt; setTimeout(() =&gt; res(&quot;First!&quot;), 1000));
-const p2 = new Promise(res =&gt; setTimeout(() =&gt; res(&quot;Second!&quot;), 2000));
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">(</span><span class="s2">"First!"</span><span class="p">),</span><span class="w"> </span><span class="mf">1000</span><span class="p">));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">(</span><span class="s2">"Second!"</span><span class="p">),</span><span class="w"> </span><span class="mf">2000</span><span class="p">));</span>
 
-const result = await Promise.race([p1, p2]);
-console.log(result); // First!
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">p1</span><span class="p">,</span><span class="w"> </span><span class="nx">p2</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// First!</span>
+</code></pre></div>
 <h3 id="explanation_7">Explanation:<a class="headerlink" href="#explanation_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>p1</code> resolves first → result becomes <code>"First!"</code>.</li>
@@ -5758,10 +5758,10 @@ timeouts).</p>
 <p>Playwright interacts with a real browser, and real-world browser actions
 take time.</p>
 <p>So every Playwright method returns a Promise:</p>
-<pre><code class="language-js">await page.goto(&quot;https://google.com&quot;); 
-await page.click(&quot;#loginButton&quot;);
-await page.waitForResponse(&quot;**/api/login&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s2">"https://google.com"</span><span class="p">);</span><span class="w"> </span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s2">"#loginButton"</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForResponse</span><span class="p">(</span><span class="s2">"**/api/login"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="explanation_8">Explanation:<a class="headerlink" href="#explanation_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>page.goto()</code> waits for the webpage to load.</li>
@@ -5772,11 +5772,11 @@ await page.waitForResponse(&quot;**/api/login&quot;);
 <hr />
 <h1 id="7-real-playwright-testing-examples-that-use-promises">7. Real Playwright Testing Examples That Use Promises<a class="headerlink" href="#7-real-playwright-testing-examples-that-use-promises" title="Permanent link">&para;</a></h1>
 <h2 id="71-clicking-navigation-promiseall">7.1 Clicking + Navigation (Promise.all)<a class="headerlink" href="#71-clicking-navigation-promiseall" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">await Promise.all([
-  page.waitForNavigation(),
-  page.click(&quot;text=Login&quot;)
-]);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForNavigation</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s2">"text=Login"</span><span class="p">)</span>
+<span class="p">]);</span>
+</code></pre></div>
 <h3 id="explanation_9">Explanation:<a class="headerlink" href="#explanation_9" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Navigation and clicking happen together.</li>
@@ -5784,13 +5784,13 @@ await page.waitForResponse(&quot;**/api/login&quot;);
 </ul>
 <hr />
 <h2 id="72-waiting-for-api-calls">7.2 Waiting for API calls<a class="headerlink" href="#72-waiting-for-api-calls" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const [response] = await Promise.all([
-  page.waitForResponse(res =&gt; res.url().includes(&quot;cart&quot;)),
-  page.click(&quot;#addToCart&quot;)
-]);
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">response</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForResponse</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"cart"</span><span class="p">)),</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s2">"#addToCart"</span><span class="p">)</span>
+<span class="p">]);</span>
 
-console.log(await response.json());
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+</code></pre></div>
 <h3 id="explanation_10">Explanation:<a class="headerlink" href="#explanation_10" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Waits for both the button click and the API response.</li>
@@ -5798,13 +5798,13 @@ console.log(await response.json());
 </ul>
 <hr />
 <h2 id="73-iterating-locators-each-click-returns-a-promise">7.3 Iterating Locators (Each click returns a Promise)<a class="headerlink" href="#73-iterating-locators-each-click-returns-a-promise" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const items = page.locator(&quot;.menu-item&quot;);
-const count = await items.count();
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".menu-item"</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">count</span><span class="p">();</span>
 
-for (let i = 0; i &lt; count; i++) {
-  await items.nth(i).click();
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="explanation_11">Explanation:<a class="headerlink" href="#explanation_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Each <code>.click()</code> is asynchronous.</li>
@@ -5814,15 +5814,15 @@ for (let i = 0; i &lt; count; i++) {
 <hr />
 <h1 id="8-custom-promise-utility">8. Custom Promise Utility<a class="headerlink" href="#8-custom-promise-utility" title="Permanent link">&para;</a></h1>
 <p>A common use case: waiting for some time in tests.</p>
-<pre><code class="language-js">function wait(seconds) {
-  return new Promise(resolve =&gt; {
-    setTimeout(() =&gt; resolve(&quot;Done&quot;), seconds * 1000);
-  });
-}
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">wait</span><span class="p">(</span><span class="nx">seconds</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"Done"</span><span class="p">),</span><span class="w"> </span><span class="nx">seconds</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
 
-await wait(2);
-console.log(&quot;Finished!&quot;);
-</code></pre>
+<span class="k">await</span><span class="w"> </span><span class="nx">wait</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Finished!"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="explanation_12">Explanation:<a class="headerlink" href="#explanation_12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Creates a custom Promise using <code>setTimeout</code>.</li>
@@ -5900,6 +5900,10 @@ and <strong>fully commented code</strong> for real-world understanding.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

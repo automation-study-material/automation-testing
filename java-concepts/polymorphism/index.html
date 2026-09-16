@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5892,29 +5892,29 @@ It allows <strong>a single method, object, or operator to behave differently</st
 <li>Resolved by <strong>compiler</strong>.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code class="language-java">class Calculator {
-    int add(int a, int b) {
-        return a + b;
-    }
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    double add(double a, double b) {
-        return a + b;
-    }
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    int add(int a, int b, int c) {
-        return a + b + c;
-    }
-}
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class OverloadingDemo {
-    public static void main(String[] args) {
-        Calculator calc = new Calculator();
-        System.out.println(calc.add(5, 3));       // int version
-        System.out.println(calc.add(2.5, 3.5));   // double version
-        System.out.println(calc.add(1, 2, 3));    // 3 params
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OverloadingDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Calculator</span><span class="w"> </span><span class="n">calc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Calculator</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calc</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">));</span><span class="w">       </span><span class="c1">// int version</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calc</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">));</span><span class="w">   </span><span class="c1">// double version</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calc</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">));</span><span class="w">    </span><span class="c1">// 3 params</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="2-run-time-polymorphism-method-overriding">2. Run-Time Polymorphism (Method Overriding)<a class="headerlink" href="#2-run-time-polymorphism-method-overriding" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5922,79 +5922,79 @@ public class OverloadingDemo {
 <li>Decided by <strong>JVM at runtime</strong> which method to call.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code class="language-java">class Animal {
-    void sound() {
-        System.out.println(&quot;Animal makes a sound.&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Animal makes a sound."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Dog extends Animal {
-    @Override
-    void sound() {
-        System.out.println(&quot;Dog barks.&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog barks."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class OverridingDemo {
-    public static void main(String[] args) {
-        Animal obj = new Dog();  // Parent reference, child object
-        obj.sound();             // Runtime decides -&gt; Dog barks.
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OverridingDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Animal</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span><span class="w">  </span><span class="c1">// Parent reference, child object</span>
+<span class="w">        </span><span class="n">obj</span><span class="p">.</span><span class="na">sound</span><span class="p">();</span><span class="w">             </span><span class="c1">// Runtime decides -&gt; Dog barks.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="complex-example-polymorphism-in-banking">🔹 Complex Example: Polymorphism in Banking<a class="headerlink" href="#complex-example-polymorphism-in-banking" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">abstract class Account {
-    abstract void calculateInterest();
-}
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Account</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">calculateInterest</span><span class="p">();</span>
+<span class="p">}</span>
 
-class SavingsAccount extends Account {
-    @Override
-    void calculateInterest() {
-        System.out.println(&quot;Savings Account interest: 4%&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">SavingsAccount</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Account</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">calculateInterest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Savings Account interest: 4%"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class FixedDepositAccount extends Account {
-    @Override
-    void calculateInterest() {
-        System.out.println(&quot;Fixed Deposit interest: 6%&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">FixedDepositAccount</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Account</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">calculateInterest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fixed Deposit interest: 6%"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class BankDemo {
-    public static void main(String[] args) {
-        Account acc1 = new SavingsAccount();
-        Account acc2 = new FixedDepositAccount();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BankDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Account</span><span class="w"> </span><span class="n">acc1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SavingsAccount</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Account</span><span class="w"> </span><span class="n">acc2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FixedDepositAccount</span><span class="p">();</span>
 
-        acc1.calculateInterest();  // Savings Account interest: 4%
-        acc2.calculateInterest();  // Fixed Deposit interest: 6%
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">acc1</span><span class="p">.</span><span class="na">calculateInterest</span><span class="p">();</span><span class="w">  </span><span class="c1">// Savings Account interest: 4%</span>
+<span class="w">        </span><span class="n">acc2</span><span class="p">.</span><span class="na">calculateInterest</span><span class="p">();</span><span class="w">  </span><span class="c1">// Fixed Deposit interest: 6%</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong> Same method <code>calculateInterest()</code> behaves differently → <strong>runtime polymorphism</strong>.</p>
 <hr />
 <h2 id="polymorphism-in-selenium-java-framework">🔹 Polymorphism in Selenium Java Framework<a class="headerlink" href="#polymorphism-in-selenium-java-framework" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import org.openqa.selenium.WebDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public class BasePage {
-    protected WebDriver driver;
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Overloaded method example
-    public void openUrl(String url) {
-        driver.get(url);
-    }
+<span class="w">    </span><span class="c1">// Overloaded method example</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openUrl</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void openUrl(String url, boolean maximize) {
-        driver.get(url);
-        if(maximize) driver.manage().window().maximize();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openUrl</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">maximize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">maximize</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">maximize</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li><code>openUrl()</code> is <strong>overloaded</strong> → compile-time polymorphism.</li>
@@ -6002,38 +6002,38 @@ public class BasePage {
 </ul>
 <hr />
 <h2 id="polymorphism-in-java-playwright-framework">🔹 Polymorphism in Java Playwright Framework<a class="headerlink" href="#polymorphism-in-java-playwright-framework" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import com.microsoft.playwright.Page;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.Page</span><span class="p">;</span>
 
-public class BasePage {
-    protected Page page;
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">;</span>
 
-    public BasePage(Page page) {
-        this.page = page;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Compile-time polymorphism
-    public void navigate(String url) {
-        page.navigate(url);
-    }
+<span class="w">    </span><span class="c1">// Compile-time polymorphism</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">navigate</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void navigate(String url, int timeout) {
-        page.navigate(url, new Page.NavigateOptions().setTimeout(timeout));
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">navigate</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">timeout</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">NavigateOptions</span><span class="p">().</span><span class="na">setTimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class LoginPage extends BasePage {
-    public LoginPage(Page page) {
-        super(page);
-    }
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">page</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Runtime polymorphism
-    @Override
-    public void navigate(String url) {
-        System.out.println(&quot;LoginPage custom navigate&quot;);
-        super.navigate(url);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="c1">// Runtime polymorphism</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">navigate</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"LoginPage custom navigate"</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>Overloaded <code>navigate()</code> → compile-time polymorphism.</li>
@@ -6100,6 +6100,10 @@ public class LoginPage extends BasePage {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

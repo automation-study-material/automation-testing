@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6286,166 +6286,166 @@ JavaScript provides control flow statements like <strong>if...else, switch, loop
 <h2 id="if-statement">🔹 <code>if</code> Statement<a class="headerlink" href="#if-statement" title="Permanent link">&para;</a></h2>
 <p>Executes a block of code if a condition is true.</p>
 <h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">if (condition) {
-  // code to run if condition is true
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code to run if condition is true</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="example-if">Example – <code>if</code><a class="headerlink" href="#example-if" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let score = 85;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">85</span><span class="p">;</span>
 
-if (score &gt;= 50) {
-  console.log(&quot;Pass&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">50</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Pass"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Playwright Use Case:</strong> Check if an element exists before performing an action.</p>
 <hr />
 <h2 id="ifelse-statement">🔹 <code>if...else</code> Statement<a class="headerlink" href="#ifelse-statement" title="Permanent link">&para;</a></h2>
 <p>Executes one block if condition is true, another if false.</p>
 <h3 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">if (condition) {
-  // code if true
-} else {
-  // code if false
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code if true</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code if false</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="example-ifelse">Example – <code>if...else</code><a class="headerlink" href="#example-ifelse" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let score = 40;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">40</span><span class="p">;</span>
 
-if (score &gt;= 50) {
-  console.log(&quot;Pass&quot;);
-} else {
-  console.log(&quot;Fail&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">50</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Pass"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Fail"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="ifelse-ifelse-statement">🔹 <code>if...else if...else</code> Statement<a class="headerlink" href="#ifelse-ifelse-statement" title="Permanent link">&para;</a></h2>
 <p>Used when multiple conditions need to be checked sequentially.</p>
 <h3 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">if (condition1) {
-  // code1
-} else if (condition2) {
-  // code2
-} else {
-  // default code
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code1</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code2</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// default code</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="example-ifelse-ifelse">Example – <code>if...else if...else</code><a class="headerlink" href="#example-ifelse-ifelse" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let marks = 75;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">marks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">75</span><span class="p">;</span>
 
-if (marks &gt;= 90) {
-  console.log(&quot;Grade A&quot;);
-} else if (marks &gt;= 75) {
-  console.log(&quot;Grade B&quot;);
-} else if (marks &gt;= 50) {
-  console.log(&quot;Grade C&quot;);
-} else {
-  console.log(&quot;Fail&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">marks</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">90</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Grade A"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">marks</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">75</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Grade B"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">marks</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">50</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Grade C"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Fail"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="switch-statement">🔹 <code>switch</code> Statement<a class="headerlink" href="#switch-statement" title="Permanent link">&para;</a></h2>
 <p>An alternative to multiple <code>if...else if</code> conditions.  </p>
 <h3 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">switch(expression) {
-  case value1:
-    // code
-    break;
-  case value2:
-    // code
-    break;
-  default:
-    // code if no case matches
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="p">(</span><span class="nx">expression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nx">value1</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// code</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nx">value2</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// code</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// code if no case matches</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="example-switch">Example – <code>switch</code><a class="headerlink" href="#example-switch" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let day = 3;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
 
-switch(day) {
-  case 1:
-    console.log(&quot;Monday&quot;);
-    break;
-  case 2:
-    console.log(&quot;Tuesday&quot;);
-    break;
-  case 3:
-    console.log(&quot;Wednesday&quot;);
-    break;
-  default:
-    console.log(&quot;Another day&quot;);
-}
-</code></pre>
+<span class="k">switch</span><span class="p">(</span><span class="nx">day</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mf">1</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Monday"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Tuesday"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mf">3</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Wednesday"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Another day"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Playwright Use Case:</strong> Decide which browser or test scenario to run based on a config variable.</p>
 <hr />
 <h2 id="for-loop">🔹 <code>for</code> Loop<a class="headerlink" href="#for-loop" title="Permanent link">&para;</a></h2>
 <p>Repeats a block of code a fixed number of times.</p>
 <h3 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">for (initialization; condition; increment) {
-  // code block
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">initialization</span><span class="p">;</span><span class="w"> </span><span class="nx">condition</span><span class="p">;</span><span class="w"> </span><span class="nx">increment</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code block</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="example-for">Example – <code>for</code><a class="headerlink" href="#example-for" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">for (let i = 1; i &lt;= 5; i++) {
-  console.log(&quot;Count:&quot;, i);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Count:"</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Playwright Use Case:</strong> Iterate through a list of elements to perform actions like click or validate text.</p>
 <hr />
 <h2 id="while-loop">🔹 <code>while</code> Loop<a class="headerlink" href="#while-loop" title="Permanent link">&para;</a></h2>
 <p>Repeats as long as a condition is true.</p>
 <h3 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">while (condition) {
-  // code block
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code block</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="example-while">Example – <code>while</code><a class="headerlink" href="#example-while" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let i = 1;
-while (i &lt;= 5) {
-  console.log(&quot;Count:&quot;, i);
-  i++;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Count:"</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="dowhile-loop">🔹 <code>do...while</code> Loop<a class="headerlink" href="#dowhile-loop" title="Permanent link">&para;</a></h2>
 <p>Executes the code block <strong>at least once</strong>, then checks the condition.</p>
 <h3 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">do {
-  // code block
-} while (condition);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code block</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="example-dowhile">Example – <code>do...while</code><a class="headerlink" href="#example-dowhile" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let i = 6;
-do {
-  console.log(&quot;Count:&quot;, i);
-  i++;
-} while (i &lt;= 5);  // runs once even though condition is false
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Count:"</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// runs once even though condition is false</span>
+</code></pre></div>
 <hr />
 <h2 id="break-and-continue">🔹 <code>break</code> and <code>continue</code><a class="headerlink" href="#break-and-continue" title="Permanent link">&para;</a></h2>
 <p><strong>JavaScript <code>break</code> and <code>continue</code> work the same way as in Java.</strong>
 - <strong><code>break</code></strong> → exits the loop immediately<br />
 - <strong><code>continue</code></strong> → skips the current iteration and moves to next</p>
 <h3 id="example-break-continue">Example – <code>break</code> &amp; <code>continue</code><a class="headerlink" href="#example-break-continue" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">for (let i = 1; i &lt;= 5; i++) {
-  if (i === 3) break;      // stops loop at 3
-  console.log(i);
-}
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w">      </span><span class="c1">// stops loop at 3</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
 
-for (let i = 1; i &lt;= 5; i++) {
-  if (i === 3) continue;   // skips 3
-  console.log(i);
-}
-</code></pre>
-<p><strong>Java Example (for comparison)</strong></p>
-<pre><code class="language-java">for (int i = 1; i &lt;= 5; i++) {
-    if (i == 3) break; // exits loop at 3
-    System.out.println(i);
-}
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w">   </span><span class="c1">// skips 3</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Java Example (for comparison)</strong>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// exits loop at 3</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
 
-for (int i = 1; i &lt;= 5; i++) {
-    if (i == 3) continue; // skips 3
-    System.out.println(i);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="c1">// skips 3</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <hr />
 <h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6507,6 +6507,10 @@ for (int i = 1; i &lt;= 5; i++) {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

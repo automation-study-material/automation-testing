@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5603,35 +5603,34 @@
 
   <h1>Calendar</h1>
 
-<pre><code class="language-js">const {test,expect} = require(&quot;@playwright/test&quot;);
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">test</span><span class="p">,</span><span class="nx">expect</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"@playwright/test"</span><span class="p">);</span>
 
 
-test(&quot;Calendar validations&quot;,async({page})=&gt;
-{
+<span class="nx">test</span><span class="p">(</span><span class="s2">"Calendar validations"</span><span class="p">,</span><span class="k">async</span><span class="p">({</span><span class="nx">page</span><span class="p">})=&gt;</span>
+<span class="p">{</span>
 
-    const monthNumber = &quot;6&quot;;
-    const date = &quot;15&quot;;
-    const year = &quot;2027&quot;;
-    const expectedList = [monthNumber,date,year];
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">monthNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"6"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"15"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2027"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">expectedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">monthNumber</span><span class="p">,</span><span class="nx">date</span><span class="p">,</span><span class="nx">year</span><span class="p">];</span>
 
-    await page.goto(&quot;https://rahulshettyacademy.com/seleniumPractise/#/offers&quot;);
-    await page.locator(&quot;.react-date-picker__inputGroup&quot;).click();
-    await page.locator(&quot;.react-calendar__navigation__label&quot;).click();
-    await page.locator(&quot;.react-calendar__navigation__label&quot;).click();
-    await page.getByText(year).click();
-    await page.locator(&quot;.react-calendar__year-view__months__month&quot;).nth(Number(monthNumber)-1).click();
-    await page.locator(&quot;//abbr[text()='&quot;+date+&quot;']&quot;).click();
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s2">"https://rahulshettyacademy.com/seleniumPractise/#/offers"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".react-date-picker__inputGroup"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".react-calendar__navigation__label"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".react-calendar__navigation__label"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="nx">year</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".react-calendar__year-view__months__month"</span><span class="p">).</span><span class="nx">nth</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">monthNumber</span><span class="p">)</span><span class="o">-</span><span class="mf">1</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"//abbr[text()='"</span><span class="o">+</span><span class="nx">date</span><span class="o">+</span><span class="s2">"']"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
 
-    const inputs =  page.locator('.react-date-picker__inputGroup__input')
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">inputs</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'.react-date-picker__inputGroup__input'</span><span class="p">)</span>
 
-    for(let i =0; i&lt;expectedList.length;i++)
-    {
-        const value = await inputs.nth(i).inputValue();
-        expect(value).toEqual(expectedList[i]);
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">expectedList</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">inputs</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">inputValue</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">expect</span><span class="p">(</span><span class="nx">value</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">expectedList</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
 
-    }
-
-</code></pre>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -5685,6 +5684,10 @@ test(&quot;Calendar validations&quot;,async({page})=&gt;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

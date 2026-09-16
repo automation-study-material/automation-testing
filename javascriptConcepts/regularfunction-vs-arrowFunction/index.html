@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5791,77 +5791,77 @@
 <p>We will explore the differences between <strong>regular functions</strong> and <strong>arrow functions</strong> using multiple examples.</p>
 <hr />
 <h2 id="1-basic-syntax">1. Basic Syntax<a class="headerlink" href="#1-basic-syntax" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">// Regular function
-function add(a, b) {
-  return a + b;
-}
-console.log(add(2, 3)); // 5
+<div class="highlight"><pre><span></span><code><span class="c1">// Regular function</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
 
-// Arrow function
-const addArrow = (a, b) =&gt; a + b;
-console.log(addArrow(2, 3)); // 5
-</code></pre>
+<span class="c1">// Arrow function</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">addArrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addArrow</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+</code></pre></div>
 <p><strong>Key Difference:</strong> Arrow functions are shorter and automatically return a value if there is only one expression.</p>
 <hr />
 <h2 id="2-single-parameter">2. Single Parameter<a class="headerlink" href="#2-single-parameter" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">// Regular function
-function square(x) {
-  return x * x;
-}
-console.log(square(5)); // 25
+<div class="highlight"><pre><span></span><code><span class="c1">// Regular function</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">square</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 25</span>
 
-// Arrow function
-const squareArrow = x =&gt; x * x;
-console.log(squareArrow(5)); // 25
-</code></pre>
+<span class="c1">// Arrow function</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">squareArrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squareArrow</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 25</span>
+</code></pre></div>
 <ul>
 <li>Parentheses <code>()</code> around a single parameter can be omitted in arrow functions.</li>
 </ul>
 <hr />
 <h2 id="3-multiple-statements">3. Multiple Statements<a class="headerlink" href="#3-multiple-statements" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">// Regular function
-function multiplyAndLog(a, b) {
-  console.log(&quot;Multiplying&quot;, a, b);
-  return a * b;
-}
-console.log(multiplyAndLog(2, 4)); // 8
+<div class="highlight"><pre><span></span><code><span class="c1">// Regular function</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">multiplyAndLog</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Multiplying"</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiplyAndLog</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// 8</span>
 
-// Arrow function
-const multiplyAndLogArrow = (a, b) =&gt; {
-  console.log(&quot;Multiplying&quot;, a, b);
-  return a * b;
-};
-console.log(multiplyAndLogArrow(2, 4)); // 8
-</code></pre>
+<span class="c1">// Arrow function</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">multiplyAndLogArrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Multiplying"</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiplyAndLogArrow</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// 8</span>
+</code></pre></div>
 <ul>
 <li>Curly braces <code>{}</code> are required for multiple statements, and <code>return</code> must be used explicitly.</li>
 </ul>
 <hr />
 <h2 id="4-this-behavior">4. <code>this</code> Behavior<a class="headerlink" href="#4-this-behavior" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">// Regular function
-function PersonRegular() {
-  this.age = 0;
+<div class="highlight"><pre><span></span><code><span class="c1">// Regular function</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">PersonRegular</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-  setInterval(function() {
-    this.age++; // `this` is undefined or global object
-    console.log(&quot;Regular:&quot;, this.age);
-  }, 1000);
-}
+<span class="w">  </span><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// `this` is undefined or global object</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Regular:"</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="p">}</span>
 
-// Arrow function
-function PersonArrow() {
-  this.age = 0;
+<span class="c1">// Arrow function</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">PersonArrow</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-  setInterval(() =&gt; {
-    this.age++; // `this` refers to the PersonArrow instance
-    console.log(&quot;Arrow:&quot;, this.age);
-  }, 1000);
-}
+<span class="w">  </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// `this` refers to the PersonArrow instance</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Arrow:"</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="p">}</span>
 
-// Create instances
-// new PersonRegular(); // won't work as expected
-// new PersonArrow();   // `this` works correctly
-</code></pre>
+<span class="c1">// Create instances</span>
+<span class="c1">// new PersonRegular(); // won't work as expected</span>
+<span class="c1">// new PersonArrow();   // `this` works correctly</span>
+</code></pre></div>
 <p><strong>Key Difference:</strong></p>
 <ul>
 <li>Regular functions have their own <code>this</code>.</li>
@@ -5869,18 +5869,18 @@ function PersonArrow() {
 </ul>
 <hr />
 <h2 id="5-using-with-array-methods">5. Using with Array Methods<a class="headerlink" href="#5-using-with-array-methods" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">const numbers = [1, 2, 3, 4, 5];
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
 
-// Regular function
-const squaredRegular = numbers.map(function(n) {
-  return n * n;
-});
-console.log(squaredRegular); // [1, 4, 9, 16, 25]
+<span class="c1">// Regular function</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">squaredRegular</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squaredRegular</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 4, 9, 16, 25]</span>
 
-// Arrow function
-const squaredArrow = numbers.map(n =&gt; n * n);
-console.log(squaredArrow); // [1, 4, 9, 16, 25]
-</code></pre>
+<span class="c1">// Arrow function</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">squaredArrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">n</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squaredArrow</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 4, 9, 16, 25]</span>
+</code></pre></div>
 <ul>
 <li>Arrow functions make array callbacks more concise.</li>
 </ul>
@@ -5977,6 +5977,10 @@ console.log(squaredArrow); // [1, 4, 9, 16, 25]
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

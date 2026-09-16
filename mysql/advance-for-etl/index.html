@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5792,9 +5792,9 @@
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">EXPLAIN PLAN FOR
-SELECT * FROM employees WHERE dept_id = 10;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">EXPLAIN</span><span class="w"> </span><span class="n">PLAN</span><span class="w"> </span><span class="k">FOR</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li><code>EXPLAIN PLAN</code> shows how the database executes a query.</li>
@@ -5809,9 +5809,9 @@ SELECT * FROM employees WHERE dept_id = 10;
 <h2 id="2-create-index-and-test-performance">2. Create Index and Test Performance<a class="headerlink" href="#2-create-index-and-test-performance" title="Permanent link">&para;</a></h2>
 <h3 id="q2-add-index-on-dept_id-to-improve-query">Q2: Add index on dept_id to improve query<a class="headerlink" href="#q2-add-index-on-dept_id-to-improve-query" title="Permanent link">&para;</a></h3>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">CREATE INDEX idx_dept_id ON employees(dept_id);
-SELECT * FROM employees WHERE dept_id = 10;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_dept_id</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">employees</span><span class="p">(</span><span class="n">dept_id</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>Index improves performance on WHERE filters.</li>
@@ -5830,11 +5830,11 @@ SELECT * FROM employees WHERE dept_id = 10;
 <li>departments (100 rows)</li>
 </ul>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">EXPLAIN PLAN FOR
-SELECT e.name, d.dept_name
-FROM employees e
-JOIN departments d ON e.dept_id = d.dept_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">EXPLAIN</span><span class="w"> </span><span class="n">PLAN</span><span class="w"> </span><span class="k">FOR</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>EXPLAIN PLAN shows estimated rows, join type, cost.</li>
@@ -5848,8 +5848,8 @@ JOIN departments d ON e.dept_id = d.dept_id;
 <h2 id="4-detect-queries-without-indexes">4. Detect Queries Without Indexes<a class="headerlink" href="#4-detect-queries-without-indexes" title="Permanent link">&para;</a></h2>
 <h3 id="q4-check-if-a-query-uses-index">Q4: Check if a query uses index<a class="headerlink" href="#q4-check-if-a-query-uses-index" title="Permanent link">&para;</a></h3>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT * FROM employees WHERE salary &gt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>If no index on salary, query may perform full table scan.</li>
@@ -5864,11 +5864,11 @@ JOIN departments d ON e.dept_id = d.dept_id;
 <h2 id="5-identify-and-optimize-heavy-queries">5. Identify and Optimize Heavy Queries<a class="headerlink" href="#5-identify-and-optimize-heavy-queries" title="Permanent link">&para;</a></h2>
 <h3 id="q5-aggregation-on-large-table">Q5: Aggregation on large table<a class="headerlink" href="#q5-aggregation-on-large-table" title="Permanent link">&para;</a></h3>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">EXPLAIN PLAN FOR
-SELECT dept_id, COUNT(*) AS emp_count, AVG(salary) AS avg_salary
-FROM employees
-GROUP BY dept_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">EXPLAIN</span><span class="w"> </span><span class="n">PLAN</span><span class="w"> </span><span class="k">FOR</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">dept_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp_count</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>EXPLAIN PLAN shows aggregation cost.</li>
@@ -5933,6 +5933,10 @@ GROUP BY dept_id;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

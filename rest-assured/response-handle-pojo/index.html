@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5620,221 +5620,221 @@
 <p>Below are the POJO classes in <strong>clean Java format with getters/setters</strong>. These are useful when using <strong>Jackson / Rest Assured / Gson</strong> in API automation (which aligns with your testing work).</p>
 <hr />
 <h1 id="1-orderresponsejava-main-pojo">1️⃣ OrderResponse.java (Main POJO)<a class="headerlink" href="#1-orderresponsejava-main-pojo" title="Permanent link">&para;</a></h1>
-<p>Below is Sample response Json,</p>
-<pre><code class="language-json">{
-  &quot;orderId&quot;: &quot;ORD500&quot;,
-  &quot;amount&quot;: 75000,
-  &quot;paid&quot;: true,
-  &quot;customer&quot;: {
-    &quot;id&quot;: 10,
-    &quot;name&quot;: &quot;Nitin Patil&quot;
-  },
-  &quot;items&quot;: [
-    {
-      &quot;itemId&quot;: 1,
-      &quot;name&quot;: &quot;Laptop&quot;,
-      &quot;price&quot;: 50000,
-      &quot;tags&quot;: [&quot;Electronics&quot;, &quot;Portable&quot;, &quot;Expensive&quot;]
-    },
-    {
-      &quot;itemId&quot;: 2,
-      &quot;name&quot;: &quot;Book&quot;,
-      &quot;price&quot;: 500,
-      &quot;tags&quot;: [&quot;Education&quot;, &quot;Paper&quot;]
-    }
-  ],
-  &quot;attributes&quot;: {
-    &quot;deliveryType&quot;: &quot;Express&quot;,
-    &quot;paymentMode&quot;: &quot;CreditCard&quot;
-  }
-}
-</code></pre>
-<pre><code class="language-java">package pojo;
+<p>Below is Sample response Json,
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD500"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">75000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nitin Patil"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Laptop"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Electronics"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Portable"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Expensive"</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Education"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Paper"</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"deliveryType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Express"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"paymentMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CreditCard"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pojo</span><span class="p">;</span>
 
-import java.util.List;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
 
-public class OrderResponse {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrderResponse</span><span class="w"> </span><span class="p">{</span>
 
-    private String orderId;
-    private int amount;
-    private boolean paid;
-    private Customer customer;
-    private List&lt;Item&gt; items;
-    private Attributes attributes;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">orderId</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">paid</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Customer</span><span class="w"> </span><span class="n">customer</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">items</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Attributes</span><span class="w"> </span><span class="n">attributes</span><span class="p">;</span>
 
-    public OrderResponse() {}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">OrderResponse</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
-    public String getOrderId() {
-        return orderId;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getOrderId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">orderId</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setOrderId</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">orderId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">orderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orderId</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public int getAmount() {
-        return amount;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAmount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAmount</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public boolean isPaid() {
-        return paid;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPaid</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">paid</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setPaid(boolean paid) {
-        this.paid = paid;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPaid</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">paid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">paid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paid</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public Customer getCustomer() {
-        return customer;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Customer</span><span class="w"> </span><span class="nf">getCustomer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">customer</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCustomer</span><span class="p">(</span><span class="n">Customer</span><span class="w"> </span><span class="n">customer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">customer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">customer</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public List&lt;Item&gt; getItems() {
-        return items;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getItems</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">items</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setItems(List&lt;Item&gt; items) {
-        this.items = items;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setItems</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public Attributes getAttributes() {
-        return attributes;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Attributes</span><span class="w"> </span><span class="nf">getAttributes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">attributes</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setAttributes(Attributes attributes) {
-        this.attributes = attributes;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAttributes</span><span class="p">(</span><span class="n">Attributes</span><span class="w"> </span><span class="n">attributes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attributes</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="2-customerjava">2️⃣ Customer.java<a class="headerlink" href="#2-customerjava" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">package pojo;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pojo</span><span class="p">;</span>
 
-public class Customer {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Customer</span><span class="w"> </span><span class="p">{</span>
 
-    private int id;
-    private String name;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
 
-    public Customer() {}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Customer</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
-    public int getId() {
-        return id;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setId(int id) {
-        this.id = id;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setId</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
 
-    public String getName() {
-        return name;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setName(String name) {
-        this.name = name;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="3-itemjava">3️⃣ Item.java<a class="headerlink" href="#3-itemjava" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">package pojo;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pojo</span><span class="p">;</span>
 
-import java.util.List;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
 
-public class Item {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Item</span><span class="w"> </span><span class="p">{</span>
 
-    private int itemId;
-    private String name;
-    private int price;
-    private List&lt;String&gt; tags;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">itemId</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tags</span><span class="p">;</span>
 
-    public Item() {}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Item</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
-    public int getItemId() {
-        return itemId;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getItemId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">itemId</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setItemId</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">itemId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">itemId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itemId</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public String getName() {
-        return name;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setName(String name) {
-        this.name = name;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public int getPrice() {
-        return price;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPrice</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public List&lt;String&gt; getTags() {
-        return tags;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getTags</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">tags</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setTags(List&lt;String&gt; tags) {
-        this.tags = tags;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTags</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tags</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tags</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="4-attributesjava">4️⃣ Attributes.java<a class="headerlink" href="#4-attributesjava" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">package pojo;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pojo</span><span class="p">;</span>
 
-public class Attributes {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Attributes</span><span class="w"> </span><span class="p">{</span>
 
-    private String deliveryType;
-    private String paymentMode;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">deliveryType</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">paymentMode</span><span class="p">;</span>
 
-    public Attributes() {}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Attributes</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
-    public String getDeliveryType() {
-        return deliveryType;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDeliveryType</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">deliveryType</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setDeliveryType(String deliveryType) {
-        this.deliveryType = deliveryType;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDeliveryType</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">deliveryType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">deliveryType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">deliveryType</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public String getPaymentMode() {
-        return paymentMode;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getPaymentMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">paymentMode</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setPaymentMode(String paymentMode) {
-        this.paymentMode = paymentMode;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPaymentMode</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">paymentMode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">paymentMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paymentMode</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="5-how-to-use-this-pojo-in-rest-assured">5️⃣ How to Use This POJO in Rest Assured<a class="headerlink" href="#5-how-to-use-this-pojo-in-rest-assured" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">OrderResponse response = given()
-        .when()
-        .get(&quot;/orders/ORD500&quot;)
-        .then()
-        .extract()
-        .as(OrderResponse.class);
+<div class="highlight"><pre><span></span><code><span class="n">OrderResponse</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">given</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/orders/ORD500"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">extract</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">as</span><span class="p">(</span><span class="n">OrderResponse</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
 
-System.out.println(response.getCustomer().getName());
-System.out.println(response.getItems().get(0).getName());
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">getCustomer</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">getName</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h1 id="6-expected-output">6️⃣ Expected Output<a class="headerlink" href="#6-expected-output" title="Permanent link">&para;</a></h1>
-<pre><code>Nitin Patil
+<div class="highlight"><pre><span></span><code>Nitin Patil
 Laptop
-</code></pre>
+</code></pre></div>
 <hr />
 <p>✅ <strong>Interview Tip (Important):</strong></p>
 <p>When creating POJO for JSON:</p>
@@ -5845,11 +5845,11 @@ Laptop
 <li>Nested objects require <strong>separate POJO classes</strong></li>
 </ol>
 <p>Example:</p>
-<pre><code>customer {}  → Customer class
+<div class="highlight"><pre><span></span><code>customer {}  → Customer class
 items []     → List&lt;Item&gt;
 tags []      → List&lt;String&gt;
 attributes{} → Attributes class
-</code></pre>
+</code></pre></div>
 <hr />
 <p>If you want, I can also show a <strong>very powerful automation tester trick</strong>:</p>
 <p>✅ <strong>How to generate POJO classes automatically from JSON in 5 seconds (used by most QA engineers).</strong></p>
@@ -5906,6 +5906,10 @@ attributes{} → Attributes class
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

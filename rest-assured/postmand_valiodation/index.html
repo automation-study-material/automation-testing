@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5627,128 +5627,128 @@
 <hr />
 <h1 id="example-api-sample-response">🔹 Example API (Sample Response)<a class="headerlink" href="#example-api-sample-response" title="Permanent link">&para;</a></h1>
 <p>Assume API:</p>
-<pre><code>GET https://reqres.in/api/users?page=2
-</code></pre>
+<div class="highlight"><pre><span></span><code>GET https://reqres.in/api/users?page=2
+</code></pre></div>
 <p>Sample Response:</p>
-<pre><code class="language-json">{
-  &quot;page&quot;: 2,
-  &quot;per_page&quot;: 6,
-  &quot;total&quot;: 12,
-  &quot;data&quot;: [
-    {
-      &quot;id&quot;: 7,
-      &quot;email&quot;: &quot;michael.lawson@reqres.in&quot;,
-      &quot;first_name&quot;: &quot;Michael&quot;,
-      &quot;last_name&quot;: &quot;Lawson&quot;
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"michael.lawson@reqres.in"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Michael"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lawson"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="postman-test-script-put-in-tests-tab">✅ Postman Test Script (Put in "Tests" Tab)<a class="headerlink" href="#postman-test-script-put-in-tests-tab" title="Permanent link">&para;</a></h1>
-<pre><code class="language-javascript">// Parse response
-let jsonData = pm.response.json();
+<div class="highlight"><pre><span></span><code><span class="c1">// Parse response</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">jsonData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
 
 
-// 1️⃣ Validate Status Code
-pm.test(&quot;Status code is 200&quot;, function () {
-    pm.response.to.have.status(200);
-});
+<span class="c1">// 1️⃣ Validate Status Code</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Status code is 200"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">);</span>
+<span class="p">});</span>
 
 
-// 2️⃣ Validate Response Time
-pm.test(&quot;Response time is less than 2 seconds&quot;, function () {
-    pm.expect(pm.response.responseTime).to.be.below(2000);
-});
+<span class="c1">// 2️⃣ Validate Response Time</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Response time is less than 2 seconds"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">responseTime</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">below</span><span class="p">(</span><span class="mf">2000</span><span class="p">);</span>
+<span class="p">});</span>
 
 
-// 3️⃣ Validate Response Header
-pm.test(&quot;Content-Type is application/json&quot;, function () {
-    pm.response.to.have.header(&quot;Content-Type&quot;);
-    pm.expect(pm.response.headers.get(&quot;Content-Type&quot;))
-        .to.include(&quot;application/json&quot;);
-});
+<span class="c1">// 3️⃣ Validate Response Header</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Content-Type is application/json"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">header</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="s2">"application/json"</span><span class="p">);</span>
+<span class="p">});</span>
 
 
-// 4️⃣ Validate Root Keys
-pm.test(&quot;Validate main keys exist&quot;, function () {
-    pm.expect(jsonData).to.have.property(&quot;page&quot;);
-    pm.expect(jsonData).to.have.property(&quot;per_page&quot;);
-    pm.expect(jsonData).to.have.property(&quot;data&quot;);
-});
+<span class="c1">// 4️⃣ Validate Root Keys</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Validate main keys exist"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s2">"page"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s2">"per_page"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s2">"data"</span><span class="p">);</span>
+<span class="p">});</span>
 
 
-// 5️⃣ Validate List is Returned
-pm.test(&quot;Validate data is array and not empty&quot;, function () {
-    pm.expect(jsonData.data).to.be.an(&quot;array&quot;);
-    pm.expect(jsonData.data.length).to.be.above(0);
-});
+<span class="c1">// 5️⃣ Validate List is Returned</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Validate data is array and not empty"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">an</span><span class="p">(</span><span class="s2">"array"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">above</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="p">});</span>
 
 
-// 6️⃣ Validate Specific Keys in Each Object
-pm.test(&quot;Validate keys inside each user object&quot;, function () {
-    jsonData.data.forEach(user =&gt; {
-        pm.expect(user).to.have.property(&quot;id&quot;);
-        pm.expect(user).to.have.property(&quot;email&quot;);
-        pm.expect(user).to.have.property(&quot;first_name&quot;);
-        pm.expect(user).to.have.property(&quot;last_name&quot;);
-    });
-});
+<span class="c1">// 6️⃣ Validate Specific Keys in Each Object</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Validate keys inside each user object"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">user</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">user</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">user</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s2">"email"</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">user</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s2">"first_name"</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">user</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s2">"last_name"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
 
 
-// 7️⃣ Validate Specific Value
-pm.test(&quot;Validate page number is 2&quot;, function () {
-    pm.expect(jsonData.page).to.eql(2);
-});
+<span class="c1">// 7️⃣ Validate Specific Value</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Validate page number is 2"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">page</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">eql</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="p">});</span>
 
 
-// 8️⃣ Validate Email Format
-pm.test(&quot;Validate email format&quot;, function () {
-    jsonData.data.forEach(user =&gt; {
-        pm.expect(user.email).to.match(
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        );
-    });
-});
+<span class="c1">// 8️⃣ Validate Email Format</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Validate email format"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">user</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span>
+<span class="w">            </span><span class="sr">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
 
 
-// 9️⃣ JSON Schema Validation
-let schema = {
-    &quot;type&quot;: &quot;object&quot;,
-    &quot;required&quot;: [&quot;page&quot;, &quot;per_page&quot;, &quot;data&quot;],
-    &quot;properties&quot;: {
-        &quot;page&quot;: {&quot;type&quot;: &quot;number&quot;},
-        &quot;per_page&quot;: {&quot;type&quot;: &quot;number&quot;},
-        &quot;data&quot;: {
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;object&quot;,
-                &quot;required&quot;: [&quot;id&quot;, &quot;email&quot;, &quot;first_name&quot;, &quot;last_name&quot;],
-                &quot;properties&quot;: {
-                    &quot;id&quot;: {&quot;type&quot;: &quot;number&quot;},
-                    &quot;email&quot;: {&quot;type&quot;: &quot;string&quot;},
-                    &quot;first_name&quot;: {&quot;type&quot;: &quot;string&quot;},
-                    &quot;last_name&quot;: {&quot;type&quot;: &quot;string&quot;}
-                }
-            }
-        }
-    }
-};
+<span class="c1">// 9️⃣ JSON Schema Validation</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"required"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"page"</span><span class="p">,</span><span class="w"> </span><span class="s2">"per_page"</span><span class="p">,</span><span class="w"> </span><span class="s2">"data"</span><span class="p">],</span>
+<span class="w">    </span><span class="s2">"properties"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"page"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">},</span>
+<span class="w">        </span><span class="s2">"per_page"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">},</span>
+<span class="w">        </span><span class="s2">"data"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">"items"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">"required"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w"> </span><span class="s2">"first_name"</span><span class="p">,</span><span class="w"> </span><span class="s2">"last_name"</span><span class="p">],</span>
+<span class="w">                </span><span class="s2">"properties"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="s2">"id"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">},</span>
+<span class="w">                    </span><span class="s2">"email"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">},</span>
+<span class="w">                    </span><span class="s2">"first_name"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">},</span>
+<span class="w">                    </span><span class="s2">"last_name"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 
-pm.test(&quot;Schema is valid&quot;, function () {
-    pm.response.to.have.jsonSchema(schema);
-});
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Schema is valid"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">jsonSchema</span><span class="p">(</span><span class="nx">schema</span><span class="p">);</span>
+<span class="p">});</span>
 
 
-// 🔟 Store value into Environment Variable
-pm.environment.set(&quot;userId&quot;, jsonData.data[0].id);
-pm.environment.set(&quot;userEmail&quot;, jsonData.data[0].email);
-</code></pre>
+<span class="c1">// 🔟 Store value into Environment Variable</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">environment</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"userId"</span><span class="p">,</span><span class="w"> </span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">id</span><span class="p">);</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">environment</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"userEmail"</span><span class="p">,</span><span class="w"> </span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">email</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="how-to-use-stored-variable">🔥 How to Use Stored Variable<a class="headerlink" href="#how-to-use-stored-variable" title="Permanent link">&para;</a></h1>
 <p>Next API request:</p>
-<pre><code>GET https://reqres.in/api/users/{{userId}}
-</code></pre>
+<div class="highlight"><pre><span></span><code>GET https://reqres.in/api/users/{{userId}}
+</code></pre></div>
 <p>Postman automatically replaces <code>{{userId}}</code>.</p>
 <hr />
 <h1 id="important-interview-points-very-important">🎯 Important Interview Points (Very Important)<a class="headerlink" href="#important-interview-points-very-important" title="Permanent link">&para;</a></h1>
@@ -5862,6 +5862,10 @@ pm.environment.set(&quot;userEmail&quot;, jsonData.data[0].email);
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

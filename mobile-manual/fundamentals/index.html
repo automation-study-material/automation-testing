@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5656,9 +5656,9 @@
 <h2 id="why-should-a-tester-care">Why Should a Tester Care?<a class="headerlink" href="#why-should-a-tester-care" title="Permanent link">&para;</a></h2>
 <p>Different Android versions behave differently.</p>
 <p>Example:</p>
-<pre><code class="language-text">App works on Android 15
+<div class="highlight"><pre><span></span><code>App works on Android 15
 App crashes on Android 12
-</code></pre>
+</code></pre></div>
 <p>This is called a:</p>
 <p>✅ Compatibility Issue</p>
 <hr />
@@ -5692,18 +5692,18 @@ App crashes on Android 12
 </table>
 <hr />
 <h2 id="how-to-check-android-version">How to Check Android Version<a class="headerlink" href="#how-to-check-android-version" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Settings
+<div class="highlight"><pre><span></span><code>Settings
 → About Phone
 → Software Information
 → Android Version
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="why-test-different-versions">Why Test Different Versions?<a class="headerlink" href="#why-test-different-versions" title="Permanent link">&para;</a></h2>
 <p>Example:</p>
-<pre><code class="language-text">Samsung S24 → Android 15
+<div class="highlight"><pre><span></span><code>Samsung S24 → Android 15
 Samsung A52 → Android 13
 OnePlus → Android 14
-</code></pre>
+</code></pre></div>
 <p>Your application should work correctly on all supported versions.</p>
 <hr />
 <h2 id="interview-question">Interview Question<a class="headerlink" href="#interview-question" title="Permanent link">&para;</a></h2>
@@ -5718,8 +5718,8 @@ OnePlus → Android 14
 <hr />
 <h1 id="3-what-is-an-apk-file">📖 3. What is an APK File?<a class="headerlink" href="#3-what-is-an-apk-file" title="Permanent link">&para;</a></h1>
 <p>APK stands for:</p>
-<pre><code class="language-text">Android Package Kit
-</code></pre>
+<div class="highlight"><pre><span></span><code>Android Package Kit
+</code></pre></div>
 <p>APK is the installation file for Android applications.</p>
 <hr />
 <h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
@@ -5742,10 +5742,10 @@ OnePlus → Android 14
 </tbody>
 </table>
 <p>Examples:</p>
-<pre><code class="language-text">whatsapp.apk
+<div class="highlight"><pre><span></span><code>whatsapp.apk
 amazon.apk
 banking.apk
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="what-does-apk-contain">What Does APK Contain?<a class="headerlink" href="#what-does-apk-contain" title="Permanent link">&para;</a></h2>
 <p>An APK contains:</p>
@@ -5760,8 +5760,8 @@ banking.apk
 <hr />
 <h2 id="real-example">Real Example<a class="headerlink" href="#real-example" title="Permanent link">&para;</a></h2>
 <p>Developer creates:</p>
-<pre><code class="language-text">MyApp_v1.0.apk
-</code></pre>
+<div class="highlight"><pre><span></span><code>MyApp_v1.0.apk
+</code></pre></div>
 <p>Tester receives APK and starts testing.</p>
 <hr />
 <h2 id="interview-question_1">Interview Question<a class="headerlink" href="#interview-question_1" title="Permanent link">&para;</a></h2>
@@ -5771,7 +5771,7 @@ banking.apk
 <hr />
 <h1 id="4-how-apk-is-generated">📖 4. How APK is Generated<a class="headerlink" href="#4-how-apk-is-generated" title="Permanent link">&para;</a></h1>
 <h2 id="complete-flow">Complete Flow<a class="headerlink" href="#complete-flow" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">GitHub Repository
+<div class="highlight"><pre><span></span><code>GitHub Repository
        ↓
 Clone Project
        ↓
@@ -5784,23 +5784,23 @@ APK Stored On Laptop
 Install On Mobile
        ↓
 Testing
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="clone-project">Clone Project<a class="headerlink" href="#clone-project" title="Permanent link">&para;</a></h2>
 <p>Example:</p>
-<pre><code class="language-bash">git clone https://github.com/company/mobile-app.git
-</code></pre>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/company/mobile-app.git
+</code></pre></div>
 <hr />
 <h2 id="build-project">Build Project<a class="headerlink" href="#build-project" title="Permanent link">&para;</a></h2>
 <p>Android projects use Gradle.</p>
-<pre><code class="language-bash">gradlew assembleDebug
-</code></pre>
+<div class="highlight"><pre><span></span><code>gradlew<span class="w"> </span>assembleDebug
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-bash">./gradlew assembleDebug
-</code></pre>
+<div class="highlight"><pre><span></span><code>./gradlew<span class="w"> </span>assembleDebug
+</code></pre></div>
 <hr />
 <h2 id="build-process">Build Process<a class="headerlink" href="#build-process" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Java/Kotlin Source Code
+<div class="highlight"><pre><span></span><code>Java/Kotlin Source Code
           ↓
 Compilation
           ↓
@@ -5809,34 +5809,34 @@ Resource Processing
 APK Packaging
           ↓
 APK Generated
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="5-where-is-apk-stored">📖 5. Where is APK Stored?<a class="headerlink" href="#5-where-is-apk-stored" title="Permanent link">&para;</a></h1>
 <p>After build completes:</p>
-<pre><code class="language-text">project-root
+<div class="highlight"><pre><span></span><code>project-root
 └── app
     └── build
         └── outputs
             └── apk
                 └── debug
                     └── app-debug.apk
-</code></pre>
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-text">C:\Projects\BankingApp\app\build\outputs\apk\debug\app-debug.apk
-</code></pre>
+<div class="highlight"><pre><span></span><code>C:\Projects\BankingApp\app\build\outputs\apk\debug\app-debug.apk
+</code></pre></div>
 <hr />
 <h1 id="6-how-testers-transfer-apk-to-mobile">📖 6. How Testers Transfer APK to Mobile<a class="headerlink" href="#6-how-testers-transfer-apk-to-mobile" title="Permanent link">&para;</a></h1>
 <p>After APK generation, testers need to install it on a real device.</p>
 <hr />
 <h2 id="method-1-whatsapp">Method 1: WhatsApp<a class="headerlink" href="#method-1-whatsapp" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Laptop
+<div class="highlight"><pre><span></span><code>Laptop
    ↓
 WhatsApp Web
    ↓
 Mobile
    ↓
 Install APK
-</code></pre>
+</code></pre></div>
 <h3 id="pros">Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Easy</li>
@@ -5849,12 +5849,12 @@ Install APK
 </ul>
 <hr />
 <h2 id="method-2-bluetooth">Method 2: Bluetooth<a class="headerlink" href="#method-2-bluetooth" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Laptop
+<div class="highlight"><pre><span></span><code>Laptop
    ↓
 Bluetooth
    ↓
 Mobile
-</code></pre>
+</code></pre></div>
 <h3 id="pros_1">Pros<a class="headerlink" href="#pros_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>No internet required</li>
@@ -5865,12 +5865,12 @@ Mobile
 </ul>
 <hr />
 <h2 id="method-3-google-drive">Method 3: Google Drive<a class="headerlink" href="#method-3-google-drive" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Upload APK
+<div class="highlight"><pre><span></span><code>Upload APK
       ↓
 Download On Mobile
       ↓
 Install
-</code></pre>
+</code></pre></div>
 <h3 id="pros_2">Pros<a class="headerlink" href="#pros_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Easy sharing</li>
@@ -5881,12 +5881,12 @@ Install
 </ul>
 <hr />
 <h2 id="method-4-usb-file-transfer">Method 4: USB File Transfer<a class="headerlink" href="#method-4-usb-file-transfer" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Connect Phone
+<div class="highlight"><pre><span></span><code>Connect Phone
       ↓
 Copy APK
       ↓
 Install
-</code></pre>
+</code></pre></div>
 <h3 id="pros_3">Pros<a class="headerlink" href="#pros_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fast</li>
@@ -5902,44 +5902,44 @@ Install
 <p>Most companies use ADB.</p>
 <hr />
 <h3 id="enable-developer-options">Enable Developer Options<a class="headerlink" href="#enable-developer-options" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Settings
+<div class="highlight"><pre><span></span><code>Settings
 → About Phone
 → Tap Build Number 7 Times
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="enable-usb-debugging">Enable USB Debugging<a class="headerlink" href="#enable-usb-debugging" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Settings
+<div class="highlight"><pre><span></span><code>Settings
 → Developer Options
 → USB Debugging
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="connect-device">Connect Device<a class="headerlink" href="#connect-device" title="Permanent link">&para;</a></h3>
 <p>Connect phone using USB cable.</p>
 <p>Allow:</p>
-<pre><code class="language-text">Allow USB Debugging?
-</code></pre>
+<div class="highlight"><pre><span></span><code>Allow USB Debugging?
+</code></pre></div>
 <p>Select:</p>
-<pre><code class="language-text">Allow
-</code></pre>
+<div class="highlight"><pre><span></span><code>Allow
+</code></pre></div>
 <hr />
 <h3 id="verify-device">Verify Device<a class="headerlink" href="#verify-device" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">adb devices
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>devices
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">List of devices attached
+<div class="highlight"><pre><span></span><code>List of devices attached
 
 R58N123456 device
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="install-apk">Install APK<a class="headerlink" href="#install-apk" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">adb install app-debug.apk
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>install<span class="w"> </span>app-debug.apk
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-bash">adb install C:\Projects\BankingApp\app\build\outputs\apk\debug\app-debug.apk
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>install<span class="w"> </span>C:<span class="se">\P</span>rojects<span class="se">\B</span>ankingApp<span class="se">\a</span>pp<span class="se">\b</span>uild<span class="se">\o</span>utputs<span class="se">\a</span>pk<span class="se">\d</span>ebug<span class="se">\a</span>pp-debug.apk
+</code></pre></div>
 <hr />
 <h2 id="how-adb-works">How ADB Works<a class="headerlink" href="#how-adb-works" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Laptop
+<div class="highlight"><pre><span></span><code>Laptop
    ↓
 Read APK
    ↓
@@ -5950,7 +5950,7 @@ Transfer APK
 Android Package Manager
    ↓
 Install App
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="8-app-installation-testing">📖 8. App Installation Testing<a class="headerlink" href="#8-app-installation-testing" title="Permanent link">&para;</a></h1>
 <p>Verify:</p>
@@ -5963,30 +5963,30 @@ Install App
 <hr />
 <h2 id="sample-test-cases">Sample Test Cases<a class="headerlink" href="#sample-test-cases" title="Permanent link">&para;</a></h2>
 <h3 id="test-case-1">Test Case 1<a class="headerlink" href="#test-case-1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Install APK
+<div class="highlight"><pre><span></span><code>Install APK
 Launch App
-</code></pre>
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">Application launches successfully
-</code></pre>
+<div class="highlight"><pre><span></span><code>Application launches successfully
+</code></pre></div>
 <hr />
 <h3 id="test-case-2">Test Case 2<a class="headerlink" href="#test-case-2" title="Permanent link">&para;</a></h3>
 <p>Install with low storage.</p>
 <p>Expected:</p>
-<pre><code class="language-text">Proper error message displayed
-</code></pre>
+<div class="highlight"><pre><span></span><code>Proper error message displayed
+</code></pre></div>
 <hr />
 <h3 id="test-case-3">Test Case 3<a class="headerlink" href="#test-case-3" title="Permanent link">&para;</a></h3>
 <p>Install same APK again.</p>
 <p>Expected:</p>
-<pre><code class="language-text">Upgrade/Reinstall works correctly
-</code></pre>
+<div class="highlight"><pre><span></span><code>Upgrade/Reinstall works correctly
+</code></pre></div>
 <hr />
 <h1 id="9-app-uninstallation-testing">📖 9. App Uninstallation Testing<a class="headerlink" href="#9-app-uninstallation-testing" title="Permanent link">&para;</a></h1>
 <p>Steps:</p>
-<pre><code class="language-text">Long Press App
+<div class="highlight"><pre><span></span><code>Long Press App
 → Uninstall
-</code></pre>
+</code></pre></div>
 <p>Verify:</p>
 <ul>
 <li>App removed</li>
@@ -5996,11 +5996,11 @@ Launch App
 <hr />
 <h1 id="10-reinstallation-testing">📖 10. Reinstallation Testing<a class="headerlink" href="#10-reinstallation-testing" title="Permanent link">&para;</a></h1>
 <p>Scenario:</p>
-<pre><code class="language-text">Install App
+<div class="highlight"><pre><span></span><code>Install App
 Login
 Uninstall
 Install Again
-</code></pre>
+</code></pre></div>
 <p>Verify:</p>
 <ul>
 <li>App opens correctly</li>
@@ -6056,29 +6056,29 @@ Install Again
 <h3 id="scenario-1">Scenario 1<a class="headerlink" href="#scenario-1" title="Permanent link">&para;</a></h3>
 <p>Allow permission.</p>
 <p>Expected:</p>
-<pre><code class="language-text">Feature works successfully
-</code></pre>
+<div class="highlight"><pre><span></span><code>Feature works successfully
+</code></pre></div>
 <h3 id="scenario-2">Scenario 2<a class="headerlink" href="#scenario-2" title="Permanent link">&para;</a></h3>
 <p>Deny permission.</p>
 <p>Expected:</p>
-<pre><code class="language-text">Proper warning displayed
+<div class="highlight"><pre><span></span><code>Proper warning displayed
 Application should not crash
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="common-defect">Common Defect<a class="headerlink" href="#common-defect" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Permission denied
+<div class="highlight"><pre><span></span><code>Permission denied
 Application crashes
-</code></pre>
+</code></pre></div>
 <p>Severity:</p>
-<pre><code class="language-text">High
-</code></pre>
+<div class="highlight"><pre><span></span><code>High
+</code></pre></div>
 <hr />
 <h1 id="12-internal-vs-external-storage">📖 12. Internal vs External Storage<a class="headerlink" href="#12-internal-vs-external-storage" title="Permanent link">&para;</a></h1>
 <h2 id="internal-storage">Internal Storage<a class="headerlink" href="#internal-storage" title="Permanent link">&para;</a></h2>
 <p>Phone memory.</p>
 <p>Example:</p>
-<pre><code class="language-text">128 GB Device Storage
-</code></pre>
+<div class="highlight"><pre><span></span><code>128 GB Device Storage
+</code></pre></div>
 <p>Stores:</p>
 <ul>
 <li>Apps</li>
@@ -6106,21 +6106,21 @@ Application crashes
 <h1 id="practice-exercises">🧪 Practice Exercises<a class="headerlink" href="#practice-exercises" title="Permanent link">&para;</a></h1>
 <h2 id="exercise-1">Exercise 1<a class="headerlink" href="#exercise-1" title="Permanent link">&para;</a></h2>
 <p>Find:</p>
-<pre><code class="language-text">Android Version
+<div class="highlight"><pre><span></span><code>Android Version
 Device Model
-</code></pre>
+</code></pre></div>
 <p>Path:</p>
-<pre><code class="language-text">Settings
+<div class="highlight"><pre><span></span><code>Settings
 → About Phone
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="exercise-2">Exercise 2<a class="headerlink" href="#exercise-2" title="Permanent link">&para;</a></h2>
 <p>Check Permissions</p>
-<pre><code class="language-text">Settings
+<div class="highlight"><pre><span></span><code>Settings
 → Apps
 → WhatsApp
 → Permissions
-</code></pre>
+</code></pre></div>
 <p>Observe:</p>
 <ul>
 <li>Camera</li>
@@ -6131,12 +6131,12 @@ Device Model
 <hr />
 <h2 id="exercise-3">Exercise 3<a class="headerlink" href="#exercise-3" title="Permanent link">&para;</a></h2>
 <p>Install and Reinstall App</p>
-<pre><code class="language-text">Install
+<div class="highlight"><pre><span></span><code>Install
 Open
 Close
 Uninstall
 Install Again
-</code></pre>
+</code></pre></div>
 <p>Observe:</p>
 <ul>
 <li>Installation time</li>
@@ -6177,117 +6177,117 @@ Install Again
 <h1 id="mobile-logging-debugging">🔍 Mobile Logging &amp; Debugging<a class="headerlink" href="#mobile-logging-debugging" title="Permanent link">&para;</a></h1>
 <h2 id="why-are-logs-important">Why Are Logs Important?<a class="headerlink" href="#why-are-logs-important" title="Permanent link">&para;</a></h2>
 <p>Suppose a user reports:</p>
-<pre><code class="language-text">Login is not working
-</code></pre>
+<div class="highlight"><pre><span></span><code>Login is not working
+</code></pre></div>
 <p>Without logs:</p>
-<pre><code class="language-text">Something is broken
-</code></pre>
+<div class="highlight"><pre><span></span><code>Something is broken
+</code></pre></div>
 <p>With logs:</p>
-<pre><code class="language-text">Network Issue
+<div class="highlight"><pre><span></span><code>Network Issue
 Backend Issue
 Permission Issue
 Application Crash
 Database Issue
-</code></pre>
+</code></pre></div>
 <p>Logs help identify the root cause.</p>
 <hr />
 <h1 id="what-is-logcat">📖 What is Logcat?<a class="headerlink" href="#what-is-logcat" title="Permanent link">&para;</a></h1>
 <p>Android continuously generates logs while applications run.</p>
 <p>Example:</p>
-<pre><code class="language-text">User Clicked Login
+<div class="highlight"><pre><span></span><code>User Clicked Login
 
 Calling Login API
 
 Response Received
 
 Login Successful
-</code></pre>
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-text">Camera Permission Denied
+<div class="highlight"><pre><span></span><code>Camera Permission Denied
 
 Application Crashed
-</code></pre>
+</code></pre></div>
 <p>All logs are stored in:</p>
-<pre><code class="language-text">Logcat
-</code></pre>
+<div class="highlight"><pre><span></span><code>Logcat
+</code></pre></div>
 <p>Think of Logcat as:</p>
-<pre><code class="language-text">Application Logs
+<div class="highlight"><pre><span></span><code>Application Logs
 +
 Crash Logs
 +
 Network Logs
 +
 System Logs
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="viewing-logs">🛠️ Viewing Logs<a class="headerlink" href="#viewing-logs" title="Permanent link">&para;</a></h1>
 <h2 id="method-1-android-studio">Method 1: Android Studio<a class="headerlink" href="#method-1-android-studio" title="Permanent link">&para;</a></h2>
 <h3 id="enable">Enable<a class="headerlink" href="#enable" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Developer Options
+<div class="highlight"><pre><span></span><code>Developer Options
 USB Debugging
-</code></pre>
+</code></pre></div>
 <h3 id="open-logcat">Open Logcat<a class="headerlink" href="#open-logcat" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">View
+<div class="highlight"><pre><span></span><code>View
 → Tool Windows
 → Logcat
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="sample-logs">Sample Logs<a class="headerlink" href="#sample-logs" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">LoginActivity Started
+<div class="highlight"><pre><span></span><code>LoginActivity Started
 
 Calling Login API
 
 Response 200 OK
 
 Login Successful
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="method-2-adb">Method 2: ADB<a class="headerlink" href="#method-2-adb" title="Permanent link">&para;</a></h2>
 <h3 id="verify-device_1">Verify Device<a class="headerlink" href="#verify-device_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">adb devices
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>devices
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">List of devices attached
+<div class="highlight"><pre><span></span><code>List of devices attached
 
 R58N123456 device
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="start-logcat">Start Logcat<a class="headerlink" href="#start-logcat" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">adb logcat
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>logcat
+</code></pre></div>
 <hr />
 <h3 id="filter-logs">Filter Logs<a class="headerlink" href="#filter-logs" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">adb logcat | findstr MyApp
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>logcat<span class="w"> </span><span class="p">|</span><span class="w"> </span>findstr<span class="w"> </span>MyApp
+</code></pre></div>
 <hr />
 <h1 id="important-errors-every-tester-should-recognize">🚨 Important Errors Every Tester Should Recognize<a class="headerlink" href="#important-errors-every-tester-should-recognize" title="Permanent link">&para;</a></h1>
 <h2 id="crash">Crash<a class="headerlink" href="#crash" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">FATAL EXCEPTION
-</code></pre>
+<div class="highlight"><pre><span></span><code>FATAL EXCEPTION
+</code></pre></div>
 <p>Meaning:</p>
-<pre><code class="language-text">Application Crash
-</code></pre>
+<div class="highlight"><pre><span></span><code>Application Crash
+</code></pre></div>
 <hr />
 <h2 id="null-pointer">Null Pointer<a class="headerlink" href="#null-pointer" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">NullPointerException
-</code></pre>
+<div class="highlight"><pre><span></span><code>NullPointerException
+</code></pre></div>
 <p>Meaning:</p>
-<pre><code class="language-text">Developer Bug
-</code></pre>
+<div class="highlight"><pre><span></span><code>Developer Bug
+</code></pre></div>
 <hr />
 <h2 id="network-timeout">Network Timeout<a class="headerlink" href="#network-timeout" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">SocketTimeoutException
-</code></pre>
+<div class="highlight"><pre><span></span><code>SocketTimeoutException
+</code></pre></div>
 <p>Meaning:</p>
-<pre><code class="language-text">Server Not Responding
-</code></pre>
+<div class="highlight"><pre><span></span><code>Server Not Responding
+</code></pre></div>
 <hr />
 <h2 id="permission-issue">Permission Issue<a class="headerlink" href="#permission-issue" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">SecurityException
-</code></pre>
+<div class="highlight"><pre><span></span><code>SecurityException
+</code></pre></div>
 <p>Meaning:</p>
-<pre><code class="language-text">Permission Missing
-</code></pre>
+<div class="highlight"><pre><span></span><code>Permission Missing
+</code></pre></div>
 <hr />
 <h1 id="scenario-1-login-works-on-android-15-but-fails-on-android-12">📱 Scenario 1: Login Works on Android 15 But Fails on Android 12<a class="headerlink" href="#scenario-1-login-works-on-android-15-but-fails-on-android-12" title="Permanent link">&para;</a></h1>
 <h2 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h2>
@@ -6306,20 +6306,20 @@ R58N123456 device
 </ol>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Samsung S24 (Android 15)
+<div class="highlight"><pre><span></span><code>Samsung S24 (Android 15)
 Login Successful
 
 Samsung A52 (Android 12)
 Login Failed
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="log-investigation">Log Investigation<a class="headerlink" href="#log-investigation" title="Permanent link">&para;</a></h2>
 <p>Possible Log:</p>
-<pre><code class="language-text">SocketTimeoutException
-</code></pre>
+<div class="highlight"><pre><span></span><code>SocketTimeoutException
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-text">SecurityException
-</code></pre>
+<div class="highlight"><pre><span></span><code>SecurityException
+</code></pre></div>
 <hr />
 <h1 id="scenario-2-camera-permission-crash">📱 Scenario 2: Camera Permission Crash<a class="headerlink" href="#scenario-2-camera-permission-crash" title="Permanent link">&para;</a></h1>
 <h2 id="question_1">Question<a class="headerlink" href="#question_1" title="Permanent link">&para;</a></h2>
@@ -6327,30 +6327,30 @@ Login Failed
 <p>Application crashes.</p>
 <hr />
 <h2 id="expected">Expected<a class="headerlink" href="#expected" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Camera permission required
-</code></pre>
+<div class="highlight"><pre><span></span><code>Camera permission required
+</code></pre></div>
 <hr />
 <h2 id="actual">Actual<a class="headerlink" href="#actual" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Application crashes
-</code></pre>
+<div class="highlight"><pre><span></span><code>Application crashes
+</code></pre></div>
 <hr />
 <h2 id="severity">Severity<a class="headerlink" href="#severity" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">High
-</code></pre>
+<div class="highlight"><pre><span></span><code>High
+</code></pre></div>
 <hr />
 <h2 id="log-output">Log Output<a class="headerlink" href="#log-output" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">SecurityException
+<div class="highlight"><pre><span></span><code>SecurityException
 
 Camera Permission Denied
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="defect-report">Defect Report<a class="headerlink" href="#defect-report" title="Permanent link">&para;</a></h2>
 <h3 id="title">Title<a class="headerlink" href="#title" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Application crashes when camera permission is denied
-</code></pre>
+<div class="highlight"><pre><span></span><code>Application crashes when camera permission is denied
+</code></pre></div>
 <h3 id="evidence">Evidence<a class="headerlink" href="#evidence" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">SecurityException observed in Logcat
-</code></pre>
+<div class="highlight"><pre><span></span><code>SecurityException observed in Logcat
+</code></pre></div>
 <hr />
 <h1 id="scenario-3-storage-full">📱 Scenario 3: Storage Full<a class="headerlink" href="#scenario-3-storage-full" title="Permanent link">&para;</a></h1>
 <h2 id="question_2">Question<a class="headerlink" href="#question_2" title="Permanent link">&para;</a></h2>
@@ -6367,21 +6367,21 @@ Camera Permission Denied
 </ul>
 <hr />
 <h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Storage Used:
+<div class="highlight"><pre><span></span><code>Storage Used:
 
 127.9 GB / 128 GB
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="expected_1">Expected<a class="headerlink" href="#expected_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Proper warning displayed
-</code></pre>
+<div class="highlight"><pre><span></span><code>Proper warning displayed
+</code></pre></div>
 <p>Not:</p>
-<pre><code class="language-text">Application crash
-</code></pre>
+<div class="highlight"><pre><span></span><code>Application crash
+</code></pre></div>
 <hr />
 <h1 id="scenario-4-incoming-call-during-payment">📱 Scenario 4: Incoming Call During Payment<a class="headerlink" href="#scenario-4-incoming-call-during-payment" title="Permanent link">&para;</a></h1>
 <h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Open Google Pay
+<div class="highlight"><pre><span></span><code>Open Google Pay
 
 Enter ₹1000
 
@@ -6390,7 +6390,7 @@ Click Pay
 Incoming Call
 
 Call Ends
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="verify_1">Verify<a class="headerlink" href="#verify_1" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6401,14 +6401,14 @@ Call Ends
 <hr />
 <h1 id="scenario-5-switching-network">📱 Scenario 5: Switching Network<a class="headerlink" href="#scenario-5-switching-network" title="Permanent link">&para;</a></h1>
 <h2 id="scenario_1">Scenario<a class="headerlink" href="#scenario_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Wi-Fi ON
+<div class="highlight"><pre><span></span><code>Wi-Fi ON
 
 Start Payment
 
 Wi-Fi OFF
 
 Mobile Data ON
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="verify_2">Verify<a class="headerlink" href="#verify_2" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6418,18 +6418,18 @@ Mobile Data ON
 </ul>
 <hr />
 <h2 id="possible-logs">Possible Logs<a class="headerlink" href="#possible-logs" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">SocketTimeoutException
-</code></pre>
+<div class="highlight"><pre><span></span><code>SocketTimeoutException
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-text">Connection Lost
-</code></pre>
+<div class="highlight"><pre><span></span><code>Connection Lost
+</code></pre></div>
 <hr />
 <h1 id="scenario-6-application-update">📱 Scenario 6: Application Update<a class="headerlink" href="#scenario-6-application-update" title="Permanent link">&para;</a></h1>
 <h2 id="scenario_2">Scenario<a class="headerlink" href="#scenario_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Version 1.0 Installed
+<div class="highlight"><pre><span></span><code>Version 1.0 Installed
 
 Update to 1.1
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="verify_3">Verify<a class="headerlink" href="#verify_3" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6441,8 +6441,8 @@ Update to 1.1
 <hr />
 <h1 id="scenario-7-notification-testing">📱 Scenario 7: Notification Testing<a class="headerlink" href="#scenario-7-notification-testing" title="Permanent link">&para;</a></h1>
 <h2 id="notification">Notification<a class="headerlink" href="#notification" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Your order has been delivered
-</code></pre>
+<div class="highlight"><pre><span></span><code>Your order has been delivered
+</code></pre></div>
 <hr />
 <h2 id="verify_4">Verify<a class="headerlink" href="#verify_4" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6452,19 +6452,19 @@ Update to 1.1
 </ul>
 <hr />
 <h2 id="expected_2">Expected<a class="headerlink" href="#expected_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Order Details Screen
-</code></pre>
+<div class="highlight"><pre><span></span><code>Order Details Screen
+</code></pre></div>
 <hr />
 <h1 id="scenario-8-reinstallation">📱 Scenario 8: Reinstallation<a class="headerlink" href="#scenario-8-reinstallation" title="Permanent link">&para;</a></h1>
 <h2 id="scenario_3">Scenario<a class="headerlink" href="#scenario_3" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Install App
+<div class="highlight"><pre><span></span><code>Install App
 
 Login
 
 Uninstall
 
 Install Again
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="verify_5">Verify<a class="headerlink" href="#verify_5" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6484,51 +6484,51 @@ Install Again
 </ol>
 <hr />
 <h2 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">OTP API Response = Success
+<div class="highlight"><pre><span></span><code>OTP API Response = Success
 
 SMS Not Received
-</code></pre>
+</code></pre></div>
 <p>Possible integration issue.</p>
 <hr />
 <h1 id="scenario-10-ui-breaks-on-vivo-device">📱 Scenario 10: UI Breaks on Vivo Device<a class="headerlink" href="#scenario-10-ui-breaks-on-vivo-device" title="Permanent link">&para;</a></h1>
 <h2 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Samsung
+<div class="highlight"><pre><span></span><code>Samsung
 
 [ Login ]
-</code></pre>
-<pre><code class="language-text">Vivo
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Vivo
 
 Login Button Hidden
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="defect-type">Defect Type<a class="headerlink" href="#defect-type" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Device Compatibility Issue
-</code></pre>
+<div class="highlight"><pre><span></span><code>Device Compatibility Issue
+</code></pre></div>
 <hr />
 <h1 id="scenario-11-back-button-after-payment">📱 Scenario 11: Back Button After Payment<a class="headerlink" href="#scenario-11-back-button-after-payment" title="Permanent link">&para;</a></h1>
 <h2 id="scenario_4">Scenario<a class="headerlink" href="#scenario_4" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Payment Successful
+<div class="highlight"><pre><span></span><code>Payment Successful
 
 Back Button Pressed
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="expected_3">Expected<a class="headerlink" href="#expected_3" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Order Summary Screen
-</code></pre>
+<div class="highlight"><pre><span></span><code>Order Summary Screen
+</code></pre></div>
 <p>Not:</p>
-<pre><code class="language-text">Payment Screen Again
-</code></pre>
+<div class="highlight"><pre><span></span><code>Payment Screen Again
+</code></pre></div>
 <hr />
 <h1 id="scenario-12-application-in-background">📱 Scenario 12: Application in Background<a class="headerlink" href="#scenario-12-application-in-background" title="Permanent link">&para;</a></h1>
 <h2 id="scenario_5">Scenario<a class="headerlink" href="#scenario_5" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Open Banking App
+<div class="highlight"><pre><span></span><code>Open Banking App
 
 Press Home
 
 Wait 10 Minutes
 
 Open Again
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="verify_6">Verify<a class="headerlink" href="#verify_6" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6538,20 +6538,20 @@ Open Again
 </ul>
 <hr />
 <h1 id="common-adb-commands">📋 Common ADB Commands<a class="headerlink" href="#common-adb-commands" title="Permanent link">&para;</a></h1>
-<pre><code class="language-bash">adb devices
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>devices
+</code></pre></div>
 <p>List connected devices.</p>
 <hr />
-<pre><code class="language-bash">adb logcat
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>logcat
+</code></pre></div>
 <p>View logs.</p>
 <hr />
-<pre><code class="language-bash">adb install app.apk
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>install<span class="w"> </span>app.apk
+</code></pre></div>
 <p>Install APK.</p>
 <hr />
-<pre><code class="language-bash">adb uninstall package_name
-</code></pre>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>uninstall<span class="w"> </span>package_name
+</code></pre></div>
 <p>Remove application.</p>
 <hr />
 <h1 id="frequently-asked-interview-question">🎤 Frequently Asked Interview Question<a class="headerlink" href="#frequently-asked-interview-question" title="Permanent link">&para;</a></h1>
@@ -6570,16 +6570,16 @@ Open Again
 <hr />
 <h1 id="golden-rule-of-mobile-testing">🏆 Golden Rule of Mobile Testing<a class="headerlink" href="#golden-rule-of-mobile-testing" title="Permanent link">&para;</a></h1>
 <p>❌ Weak Defect</p>
-<pre><code class="language-text">App is not working
-</code></pre>
+<div class="highlight"><pre><span></span><code>App is not working
+</code></pre></div>
 <hr />
 <p>✅ Strong Defect</p>
-<pre><code class="language-text">Application crashes when camera permission is denied.
+<div class="highlight"><pre><span></span><code>Application crashes when camera permission is denied.
 
 SecurityException observed in Logcat.
 
 Crash reproduced on Android 14 and Android 15.
-</code></pre>
+</code></pre></div>
 <p>This is the level of detail expected from strong mobile testers.</p>
 
 
@@ -6634,6 +6634,10 @@ Crash reproduced on Android 14 and Android 15.
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5609,42 +5609,43 @@
 <li>textContent() - get text from locator</li>
 <li>
 <p>expect to containText aseertion
-  <code>js
-  await expect(locator).toContainText("expected string");</code></p>
+  <div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">locator</span><span class="p">).</span><span class="nx">toContainText</span><span class="p">(</span><span class="s2">"expected string"</span><span class="p">);</span>
+</code></pre></div></p>
 </li>
 <li>
 <p>if we use lovator which matches to multiple element in dom and we tring to get string we get below error,
-  <code>error
-  STRINCT MODE VIOLATION</code></p>
+  <div class="highlight"><pre><span></span><code>STRINCT MODE VIOLATION
+</code></pre></div></p>
 </li>
 <li>
 <p>How we can travel from parent to child in playwright with css
-  <code>await page.locator(".card-body a").nth(0).textContent  - It return 1st element/index bases
-  OR
-  await page.locator(".card-body a").first().textContent - It return 1st element
-  OR
-  await page.locator(".card-body a").last().textContent - It return last element</code></p>
+  <div class="highlight"><pre><span></span><code>await page.locator(".card-body a").nth(0).textContent  - It return 1st element/index bases
+OR
+await page.locator(".card-body a").first().textContent - It return 1st element
+OR
+await page.locator(".card-body a").last().textContent - It return last element
+</code></pre></div></p>
 </li>
 <li>
 <p>Scenario Want to store all product text in list etc.</p>
 <ul>
 <li>locator.alltextContents();
-  <code>js
-   console.log(await cardTitles.nth(1).textContent()); //textContent() by default have wait mechanism
-   const allTitle=await page.locator(".card-body a").alltextContents(); // It didint not have and It will fail if we run only this line</code></li>
+  <div class="highlight"><pre><span></span><code><span class="w">     </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">cardTitles</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">textContent</span><span class="p">());</span><span class="w"> </span><span class="c1">//textContent() by default have wait mechanism</span>
+<span class="w">     </span><span class="kd">const</span><span class="w"> </span><span class="nx">allTitle</span><span class="o">=</span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body a"</span><span class="p">).</span><span class="nx">alltextContents</span><span class="p">();</span><span class="w"> </span><span class="c1">// It didint not have and It will fail if we run only this line</span>
+</code></pre></div></li>
 <li>To avoid failure in above step we have to add wait till all api network call done.
-  <code>js
-  await page.goto("https://rahulshettyacademy.com/client");
-  await page.locator("#userEmail").fill("anshika@gmail.com");
-  await page.locator("#userPassword").fill("Iamking@000");
-  await page.locator("[value='Login']").click();
-  await page.waitForLoadState('networkidle'); // Sometimes not woks fine- Also mention in playwright official document. so we use below case
-  const titles=await page.locator(".card-body b").allTextContents();
-  concole.log(titles);</code></li>
+  <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s2">"https://rahulshettyacademy.com/client"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#userEmail"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">"anshika@gmail.com"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#userPassword"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">"Iamking@000"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"[value='Login']"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForLoadState</span><span class="p">(</span><span class="s1">'networkidle'</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sometimes not woks fine- Also mention in playwright official document. so we use below case</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">titles</span><span class="o">=</span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body b"</span><span class="p">).</span><span class="nx">allTextContents</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">concole</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">titles</span><span class="p">);</span>
+</code></pre></div></li>
 <li>waitFor() we can use
-  <code>js
-  await page.locator(".card-body b").first().waitFor(); - Waiting for first
-  await page.locator(".card-body b").last().waitFor(); - waiting for last</code></li>
+  <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body b"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">waitFor</span><span class="p">();</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Waiting</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">first</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body b"</span><span class="p">).</span><span class="nx">last</span><span class="p">().</span><span class="nx">waitFor</span><span class="p">();</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">waiting</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">last</span>
+</code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -5701,6 +5702,10 @@
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

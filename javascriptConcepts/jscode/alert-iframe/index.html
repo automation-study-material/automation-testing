@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6182,15 +6182,15 @@ Elements inside an iframe <strong>cannot be accessed directly</strong> from the 
 </ol>
 <hr />
 <h2 id="sample-html-structure-iframe">Sample HTML Structure (iFrame)<a class="headerlink" href="#sample-html-structure-iframe" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;iframe id=&quot;loginFrame&quot; src=&quot;login.html&quot;&gt;&lt;/iframe&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">id</span><span class="o">=</span><span class="s">"loginFrame"</span> <span class="na">src</span><span class="o">=</span><span class="s">"login.html"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="accessing-iframe-using-framelocator-recommended">Accessing iFrame Using <code>frameLocator()</code> (Recommended)<a class="headerlink" href="#accessing-iframe-using-framelocator-recommended" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const frame = page.frameLocator('#loginFrame');
-await frame.locator('#username').fill('admin');
-await frame.locator('#password').fill('password');
-await frame.locator('#loginBtn').click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">frameLocator</span><span class="p">(</span><span class="s1">'#loginFrame'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#password'</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s1">'password'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#loginBtn'</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="why-framelocator">Why <code>frameLocator()</code>?<a class="headerlink" href="#why-framelocator" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Auto-waits for iframe</li>
@@ -6199,30 +6199,30 @@ await frame.locator('#loginBtn').click();
 </ul>
 <hr />
 <h2 id="accessing-iframe-using-frame">Accessing iFrame Using <code>frame()</code><a class="headerlink" href="#accessing-iframe-using-frame" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const frame = page.frame({ name: 'loginFrame' });
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">frame</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">'loginFrame'</span><span class="w"> </span><span class="p">});</span>
 
-await frame.fill('#username', 'admin');
-await frame.fill('#password', 'password');
-await frame.click('#loginBtn');
-</code></pre>
+<span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">fill</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">,</span><span class="w"> </span><span class="s1">'admin'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">fill</span><span class="p">(</span><span class="s1">'#password'</span><span class="p">,</span><span class="w"> </span><span class="s1">'password'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#loginBtn'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="handling-nested-iframes">Handling Nested iFrames<a class="headerlink" href="#handling-nested-iframes" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;iframe id=&quot;outerFrame&quot;&gt;
-  &lt;iframe id=&quot;innerFrame&quot;&gt;&lt;/iframe&gt;
-&lt;/iframe&gt;
-</code></pre>
-<pre><code class="language-js">const innerFrame = page
-  .frameLocator('#outerFrame')
-  .frameLocator('#innerFrame');
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">id</span><span class="o">=</span><span class="s">"outerFrame"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">id</span><span class="o">=</span><span class="s">"innerFrame"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">innerFrame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">frameLocator</span><span class="p">(</span><span class="s1">'#outerFrame'</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">frameLocator</span><span class="p">(</span><span class="s1">'#innerFrame'</span><span class="p">);</span>
 
-await innerFrame.locator('#submit').click();
-</code></pre>
+<span class="k">await</span><span class="w"> </span><span class="nx">innerFrame</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#submit'</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="switching-back-to-main-page">Switching Back to Main Page<a class="headerlink" href="#switching-back-to-main-page" title="Permanent link">&para;</a></h2>
 <p>Playwright automatically switches context.
 Just use <code>page.locator()</code>.</p>
-<pre><code class="language-js">await page.locator('#logout').click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#logout'</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="2-handling-java-based-dialogs-popups">2. Handling Java-Based Dialogs / Popups<a class="headerlink" href="#2-handling-java-based-dialogs-popups" title="Permanent link">&para;</a></h2>
 <p>Java-based or browser dialogs include:
@@ -6233,37 +6233,37 @@ Just use <code>page.locator()</code>.</p>
 <p>These dialogs <strong>cannot be inspected using DOM locators</strong>.</p>
 <hr />
 <h2 id="handling-alert-popup">Handling Alert Popup<a class="headerlink" href="#handling-alert-popup" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">page.on('dialog', async dialog =&gt; {
-  console.log(dialog.message());
-  await dialog.accept();
-});
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">message</span><span class="p">());</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">accept</span><span class="p">();</span>
+<span class="p">});</span>
 
-await page.click('#alertButton');
-</code></pre>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#alertButton'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="handling-confirmation-popup-ok-cancel">Handling Confirmation Popup (OK / Cancel)<a class="headerlink" href="#handling-confirmation-popup-ok-cancel" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">page.on('dialog', async dialog =&gt; {
-  if (dialog.type() === 'confirm') {
-    await dialog.dismiss(); // Click Cancel
-  }
-});
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">type</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'confirm'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">dismiss</span><span class="p">();</span><span class="w"> </span><span class="c1">// Click Cancel</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
 
-await page.click('#confirmButton');
-</code></pre>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#confirmButton'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="handling-prompt-popup-enter-value">Handling Prompt Popup (Enter Value)<a class="headerlink" href="#handling-prompt-popup-enter-value" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">page.on('dialog', async dialog =&gt; {
-  await dialog.accept('Playwright User');
-});
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">accept</span><span class="p">(</span><span class="s1">'Playwright User'</span><span class="p">);</span>
+<span class="p">});</span>
 
-await page.click('#promptButton');
-</code></pre>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#promptButton'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="handling-beforeunload-dialog">Handling BeforeUnload Dialog<a class="headerlink" href="#handling-beforeunload-dialog" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">page.on('dialog', async dialog =&gt; {
-  await dialog.accept();
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">accept</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
 <hr />
 <h2 id="important-dialog-methods">Important Dialog Methods<a class="headerlink" href="#important-dialog-methods" title="Permanent link">&para;</a></h2>
 <table>
@@ -6318,11 +6318,11 @@ await page.click('#promptButton');
 </table>
 <hr />
 <h2 id="handling-multiple-dialogs">Handling Multiple Dialogs<a class="headerlink" href="#handling-multiple-dialogs" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">page.on('dialog', async dialog =&gt; {
-  console.log(`Dialog type: ${dialog.type()}`);
-  await dialog.accept();
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Dialog type: </span><span class="si">${</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">type</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">accept</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6340,24 +6340,24 @@ await page.click('#promptButton');
 <p>✔ Register <code>page.on('dialog')</code> before action  </p>
 <hr />
 <h2 id="complete-example">Complete Example<a class="headerlink" href="#complete-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">import { test } from '@playwright/test';
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@playwright/test'</span><span class="p">;</span>
 
-test('iFrame and dialog handling', async ({ page }) =&gt; {
+<span class="nx">test</span><span class="p">(</span><span class="s1">'iFrame and dialog handling'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 
-  await page.goto('https://example.com');
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">'https://example.com'</span><span class="p">);</span>
 
-  // Handle iframe
-  const frame = page.frameLocator('#loginFrame');
-  await frame.locator('#username').fill('admin');
+<span class="w">  </span><span class="c1">// Handle iframe</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">frameLocator</span><span class="p">(</span><span class="s1">'#loginFrame'</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span>
 
-  // Handle alert dialog
-  page.on('dialog', async dialog =&gt; {
-    await dialog.accept();
-  });
+<span class="w">  </span><span class="c1">// Handle alert dialog</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">accept</span><span class="p">();</span>
+<span class="w">  </span><span class="p">});</span>
 
-  await frame.locator('#submit').click();
-});
-</code></pre>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#submit'</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
 <hr />
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>Playwright provides powerful and reliable APIs to handle:
@@ -6418,6 +6418,10 @@ test('iFrame and dialog handling', async ({ page }) =&gt; {
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

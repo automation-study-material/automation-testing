@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5621,76 +5621,76 @@
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
 <p>Skip test dynamically at runtime based on condition.</p>
 <h2 id="full-working-code">Full Working Code<a class="headerlink" href="#full-working-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package tests;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">tests</span><span class="p">;</span>
 
-import org.testng.SkipException;
-import org.testng.annotations.Test;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.SkipException</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
 
-public class PaymentTest {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PaymentTest</span><span class="w"> </span><span class="p">{</span>
 
-    @Test
-    public void paymentGatewayTest() {
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">paymentGatewayTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        boolean isGatewayDown = true;
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isGatewayDown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 
-        if (isGatewayDown) {
-            throw new SkipException(&quot;Payment gateway is down → skipping test&quot;);
-        }
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isGatewayDown</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SkipException</span><span class="p">(</span><span class="s">"Payment gateway is down → skipping test"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
-        System.out.println(&quot;Payment processed&quot;);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Payment processed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
 <p>SKIPPED: Payment gateway is down → skipping test</p>
 <hr />
 <h1 id="2-how-threadcount-works-internally">🔵 2️⃣ How threadCount Works Internally<a class="headerlink" href="#2-how-threadcount-works-internally" title="Permanent link">&para;</a></h1>
 <p>TestNG internally uses Java ThreadPool similar to:</p>
-<pre><code class="language-java">ExecutorService pool = Executors.newFixedThreadPool(threadCount);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ExecutorService</span><span class="w"> </span><span class="n">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Executors</span><span class="p">.</span><span class="na">newFixedThreadPool</span><span class="p">(</span><span class="n">threadCount</span><span class="p">);</span>
+</code></pre></div>
 <h2 id="simplified-internal-flow">Simplified Internal Flow<a class="headerlink" href="#simplified-internal-flow" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">ExecutorService pool = Executors.newFixedThreadPool(2);
+<div class="highlight"><pre><span></span><code><span class="n">ExecutorService</span><span class="w"> </span><span class="n">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Executors</span><span class="p">.</span><span class="na">newFixedThreadPool</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 
-pool.submit(() -&gt; testA());
-pool.submit(() -&gt; testB());
-pool.submit(() -&gt; testC());
+<span class="n">pool</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">testA</span><span class="p">());</span>
+<span class="n">pool</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">testB</span><span class="p">());</span>
+<span class="n">pool</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">testC</span><span class="p">());</span>
 
-pool.shutdown();
-</code></pre>
+<span class="n">pool</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span>
+</code></pre></div>
 <h2 id="testng-example">TestNG Example<a class="headerlink" href="#testng-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;suite parallel=&quot;methods&quot; thread-count=&quot;2&quot;&gt;
-</code></pre>
-<pre><code class="language-java">@Test
-public void testA() {
-    System.out.println(Thread.currentThread().getId());
-}
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;suite</span><span class="w"> </span><span class="na">parallel=</span><span class="s">"methods"</span><span class="w"> </span><span class="na">thread-count=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testA</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getId</span><span class="p">());</span>
+<span class="p">}</span>
 
-@Test
-public void testB() {
-    System.out.println(Thread.currentThread().getId());
-}
-</code></pre>
+<span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testB</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getId</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="3-excluding-methods-without-modifying-class">🔵 3️⃣ Excluding Methods WITHOUT modifying class<a class="headerlink" href="#3-excluding-methods-without-modifying-class" title="Permanent link">&para;</a></h1>
 <h2 id="option-a">Option A<a class="headerlink" href="#option-a" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test(enabled = false)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="option-b-groups">Option B (Groups)<a class="headerlink" href="#option-b-groups" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test(groups = &quot;slow&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"slow"</span><span class="p">)</span>
+</code></pre></div>
 <p>XML:</p>
-<pre><code class="language-xml">&lt;exclude name=&quot;slow&quot;/&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;exclude</span><span class="w"> </span><span class="na">name=</span><span class="s">"slow"</span><span class="nt">/&gt;</span>
+</code></pre></div>
 <h2 id="option-c-method-exclude">Option C (Method exclude)<a class="headerlink" href="#option-c-method-exclude" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;class name=&quot;tests.LoginTest&quot;&gt;
-    &lt;methods&gt;
-        &lt;exclude name=&quot;testPayment&quot;/&gt;
-    &lt;/methods&gt;
-&lt;/class&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.LoginTest"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;methods&gt;</span>
+<span class="w">        </span><span class="nt">&lt;exclude</span><span class="w"> </span><span class="na">name=</span><span class="s">"testPayment"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/methods&gt;</span>
+<span class="nt">&lt;/class&gt;</span>
+</code></pre></div>
 <h2 id="option-d-runtime">Option D (Runtime)<a class="headerlink" href="#option-d-runtime" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">throw new SkipException(&quot;Skip test&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SkipException</span><span class="p">(</span><span class="s">"Skip test"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <p>Happy Learning 🚀</p>
 
@@ -5746,6 +5746,10 @@ public void testB() {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

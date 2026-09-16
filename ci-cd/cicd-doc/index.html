@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5623,26 +5623,26 @@
 </blockquote>
 <hr />
 <p>Without CI/CD:</p>
-<pre><code>Manual testing → slow → late bugs → risky releases
-</code></pre>
+<div class="highlight"><pre><span></span><code>Manual testing → slow → late bugs → risky releases
+</code></pre></div>
 <p>With CI/CD:</p>
-<pre><code>Commit → Auto build → Auto deploy → Auto test → Report
-</code></pre>
+<div class="highlight"><pre><span></span><code>Commit → Auto build → Auto deploy → Auto test → Report
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="core-idea-golden-rule">🧠 Core Idea (Golden Rule)<a class="headerlink" href="#core-idea-golden-rule" title="Permanent link">&para;</a></h1>
-<pre><code>Application builds &amp; deploys
+<div class="highlight"><pre><span></span><code>Application builds &amp; deploys
 Automation tests validate
-</code></pre>
+</code></pre></div>
 <p>❌ Tests do NOT deploy app
 ✅ Tests only verify</p>
 <hr />
 <hr />
 <h1 id="repo-strategy-industry-standard">🏗 Repo Strategy (Industry Standard)<a class="headerlink" href="#repo-strategy-industry-standard" title="Permanent link">&para;</a></h1>
 <p>Always keep <strong>2 separate repos</strong></p>
-<pre><code>application-repo   → developers
+<div class="highlight"><pre><span></span><code>application-repo   → developers
 automation-repo   → QA/Automation
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="responsibilities">Responsibilities<a class="headerlink" href="#responsibilities" title="Permanent link">&para;</a></h2>
 <h3 id="application-repo">Application Repo<a class="headerlink" href="#application-repo" title="Permanent link">&para;</a></h3>
@@ -5662,7 +5662,7 @@ automation-repo   → QA/Automation
 <hr />
 <hr />
 <h1 id="high-level-flow-big-picture">🔁 High Level Flow (Big Picture)<a class="headerlink" href="#high-level-flow-big-picture" title="Permanent link">&para;</a></h1>
-<pre><code>Developer Commit
+<div class="highlight"><pre><span></span><code>Developer Commit
        ↓
 Build App
        ↓
@@ -5675,11 +5675,11 @@ Trigger Automation
 Run Tests
        ↓
 Reports (Slack/Email)
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="complete-cicd-pipeline-diagram">🧩 Complete CI/CD Pipeline Diagram<a class="headerlink" href="#complete-cicd-pipeline-diagram" title="Permanent link">&para;</a></h1>
-<pre><code>                ┌──────────────┐
+<div class="highlight"><pre><span></span><code>                ┌──────────────┐
                 │  Developer   │
                 └──────┬───────┘
                        ↓
@@ -5702,7 +5702,7 @@ Reports (Slack/Email)
                 ┌──────────────┐
                 │ Reports      │
                 └──────────────┘
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="test-execution-strategy-very-important">🧪 Test Execution Strategy (VERY IMPORTANT)<a class="headerlink" href="#test-execution-strategy-very-important" title="Permanent link">&para;</a></h1>
@@ -5719,100 +5719,100 @@ Time → 2–5 mins</p>
 <li>logout</li>
 </ul>
 <p>Run:</p>
-<pre><code>Every PR / commit
-</code></pre>
+<div class="highlight"><pre><span></span><code>Every PR / commit
+</code></pre></div>
 <p>Command:</p>
-<pre><code>-Dcucumber.filter.tags=@smoke
-</code></pre>
+<div class="highlight"><pre><span></span><code>-Dcucumber.filter.tags=@smoke
+</code></pre></div>
 <hr />
 <h2 id="regression-tests">✅ Regression Tests<a class="headerlink" href="#regression-tests" title="Permanent link">&para;</a></h2>
 <p>Purpose → old + new features
 Time → 20–40 mins</p>
 <p>Run:</p>
-<pre><code>After deploy to QA
-</code></pre>
+<div class="highlight"><pre><span></span><code>After deploy to QA
+</code></pre></div>
 <p>Command:</p>
-<pre><code>-Dcucumber.filter.tags=@regression
-</code></pre>
+<div class="highlight"><pre><span></span><code>-Dcucumber.filter.tags=@regression
+</code></pre></div>
 <hr />
 <h2 id="full-suite">✅ Full Suite<a class="headerlink" href="#full-suite" title="Permanent link">&para;</a></h2>
 <p>Purpose → everything
 Time → 1–2 hours</p>
 <p>Run:</p>
-<pre><code>Nightly
-</code></pre>
+<div class="highlight"><pre><span></span><code>Nightly
+</code></pre></div>
 <p>Command:</p>
-<pre><code>mvn test
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn test
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="when-each-suite-runs">🕒 When Each Suite Runs<a class="headerlink" href="#when-each-suite-runs" title="Permanent link">&para;</a></h1>
-<pre><code>Commit/PR  → Smoke
+<div class="highlight"><pre><span></span><code>Commit/PR  → Smoke
 Deploy QA  → Regression
 Nightly    → Full
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="tag-example-cucumber">🧠 Tag Example (Cucumber)<a class="headerlink" href="#tag-example-cucumber" title="Permanent link">&para;</a></h1>
-<pre><code>@smoke
+<div class="highlight"><pre><span></span><code>@smoke
 @regression
 @slow
-</code></pre>
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-gherkin">@smoke @regression
-Scenario: Login user
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span><span class="nf"> </span><span class="nt">@regression</span>
+<span class="k">Scenario:</span><span class="nf"> Login user</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="jenkins-pipeline-structure">🧰 Jenkins Pipeline Structure<a class="headerlink" href="#jenkins-pipeline-structure" title="Permanent link">&para;</a></h1>
 <p>We create <strong>3 jobs</strong></p>
-<pre><code>automation-smoke
+<div class="highlight"><pre><span></span><code>automation-smoke
 automation-regression
 automation-full
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="smoke-pipeline">🔹 Smoke Pipeline<a class="headerlink" href="#smoke-pipeline" title="Permanent link">&para;</a></h1>
 <p>Trigger:</p>
-<pre><code>Pull request
-</code></pre>
+<div class="highlight"><pre><span></span><code>Pull request
+</code></pre></div>
 <p>Command:</p>
-<pre><code>mvn clean test -Dtest=CucumberRunner -Dcucumber.filter.tags=@smoke
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn clean test -Dtest=CucumberRunner -Dcucumber.filter.tags=@smoke
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="regression-pipeline">🔹 Regression Pipeline<a class="headerlink" href="#regression-pipeline" title="Permanent link">&para;</a></h1>
 <p>Trigger:</p>
-<pre><code>After deployment success
-</code></pre>
+<div class="highlight"><pre><span></span><code>After deployment success
+</code></pre></div>
 <p>Command:</p>
-<pre><code>mvn clean test -Dtest=CucumberRunner -Dcucumber.filter.tags=@regression
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn clean test -Dtest=CucumberRunner -Dcucumber.filter.tags=@regression
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="nightly-pipeline">🔹 Nightly Pipeline<a class="headerlink" href="#nightly-pipeline" title="Permanent link">&para;</a></h1>
 <p>Trigger:</p>
-<pre><code>cron 2 AM
-</code></pre>
+<div class="highlight"><pre><span></span><code>cron 2 AM
+</code></pre></div>
 <p>Command:</p>
-<pre><code>mvn clean test -Dtest=CucumberRunner
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn clean test -Dtest=CucumberRunner
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="how-automation-is-triggered-after-deploy">🔁 How Automation is Triggered After Deploy?<a class="headerlink" href="#how-automation-is-triggered-after-deploy" title="Permanent link">&para;</a></h1>
 <h2 id="best-method-industry">Best method (Industry)<a class="headerlink" href="#best-method-industry" title="Permanent link">&para;</a></h2>
 <p>Application Jenkinsfile:</p>
-<pre><code class="language-groovy">stage('Deploy QA') {
-   sh 'kubectl apply -f deployment.yaml'
-}
+<div class="highlight"><pre><span></span><code><span class="n">stage</span><span class="o">(</span><span class="s1">'Deploy QA'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">   </span><span class="n">sh</span><span class="w"> </span><span class="s1">'kubectl apply -f deployment.yaml'</span>
+<span class="o">}</span>
 
-stage('Trigger Automation') {
-   build job: 'automation-regression'
-}
-</code></pre>
+<span class="n">stage</span><span class="o">(</span><span class="s1">'Trigger Automation'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">   </span><span class="n">build</span><span class="w"> </span><span class="nl">job:</span><span class="w"> </span><span class="s1">'automation-regression'</span>
+<span class="o">}</span>
+</code></pre></div>
 <p>So:</p>
-<pre><code>Deploy success → start tests
-</code></pre>
+<div class="highlight"><pre><span></span><code>Deploy success → start tests
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="reports-in-jenkins-important">📊 Reports in Jenkins (IMPORTANT)<a class="headerlink" href="#reports-in-jenkins-important" title="Permanent link">&para;</a></h1>
@@ -5820,14 +5820,14 @@ stage('Trigger Automation') {
 <p>Pods die → reports disappear</p>
 <h2 id="solution-recommended">Solution (recommended)<a class="headerlink" href="#solution-recommended" title="Permanent link">&para;</a></h2>
 <h3 id="archive-artifacts">Archive Artifacts<a class="headerlink" href="#archive-artifacts" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">archiveArtifacts artifacts: 'target/**/*'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">archiveArtifacts</span><span class="w"> </span><span class="nl">artifacts:</span><span class="w"> </span><span class="s1">'target/**/*'</span>
+</code></pre></div>
 <h3 id="publish-html">Publish HTML<a class="headerlink" href="#publish-html" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">publishHTML(...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">publishHTML</span><span class="o">(...)</span>
+</code></pre></div>
 <h3 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h3>
-<pre><code>Jenkins UI → clickable reports
-</code></pre>
+<div class="highlight"><pre><span></span><code>Jenkins UI → clickable reports
+</code></pre></div>
 <p>No volumes needed.</p>
 <hr />
 <hr />
@@ -5869,14 +5869,14 @@ stage('Trigger Automation') {
 </table>
 <hr />
 <h2 id="each-sprint-flow">Each Sprint Flow<a class="headerlink" href="#each-sprint-flow" title="Permanent link">&para;</a></h2>
-<pre><code>Write scenarios
+<div class="highlight"><pre><span></span><code>Write scenarios
    ↓
 Dev builds feature
    ↓
 QA automates
    ↓
 Add to regression
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="best-practices">🧠 Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h1>
@@ -5896,37 +5896,37 @@ Add to regression
 <hr />
 <h1 id="commands-cheat-sheet">🎯 Commands Cheat Sheet<a class="headerlink" href="#commands-cheat-sheet" title="Permanent link">&para;</a></h1>
 <h2 id="run-smoke">Run smoke<a class="headerlink" href="#run-smoke" title="Permanent link">&para;</a></h2>
-<pre><code>mvn clean test -Dtest=CucumberRunner -Dcucumber.filter.tags=@smoke
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn clean test -Dtest=CucumberRunner -Dcucumber.filter.tags=@smoke
+</code></pre></div>
 <h2 id="run-regression">Run regression<a class="headerlink" href="#run-regression" title="Permanent link">&para;</a></h2>
-<pre><code>mvn clean test -Dtest=CucumberRunner -Dcucumber.filter.tags=@regression
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn clean test -Dtest=CucumberRunner -Dcucumber.filter.tags=@regression
+</code></pre></div>
 <h2 id="run-specific-feature">Run specific feature<a class="headerlink" href="#run-specific-feature" title="Permanent link">&para;</a></h2>
-<pre><code>-Dcucumber.features=login.feature
-</code></pre>
+<div class="highlight"><pre><span></span><code>-Dcucumber.features=login.feature
+</code></pre></div>
 <h2 id="run-scenario">Run scenario<a class="headerlink" href="#run-scenario" title="Permanent link">&para;</a></h2>
-<pre><code>login.feature:25
-</code></pre>
+<div class="highlight"><pre><span></span><code>login.feature:25
+</code></pre></div>
 <h2 id="dry-run">Dry run<a class="headerlink" href="#dry-run" title="Permanent link">&para;</a></h2>
-<pre><code>-Dcucumber.execution.dry-run=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>-Dcucumber.execution.dry-run=true
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="memory-tricks">🧠 Memory Tricks<a class="headerlink" href="#memory-tricks" title="Permanent link">&para;</a></h1>
-<pre><code>App produces artifacts
+<div class="highlight"><pre><span></span><code>App produces artifacts
 Tests consume artifacts
-</code></pre>
-<pre><code>Fast → smoke
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Fast → smoke
 Medium → regression
 Slow → full
-</code></pre>
-<pre><code>Deploy → then Test
-</code></pre>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Deploy → then Test
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="final-summary">🎉 Final Summary<a class="headerlink" href="#final-summary" title="Permanent link">&para;</a></h1>
 <p>CI/CD for automation means:</p>
-<pre><code>Code change
+<div class="highlight"><pre><span></span><code>Code change
    ↓
 Auto build
    ↓
@@ -5935,7 +5935,7 @@ Auto deploy
 Auto test
    ↓
 Auto report
-</code></pre>
+</code></pre></div>
 <p>Fully automatic.
 No manual testing required.</p>
 <hr />
@@ -6001,6 +6001,10 @@ No manual testing required.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

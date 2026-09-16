@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5600,7 +5600,7 @@ We construct the framework <strong>layer by layer</strong>, where each layer int
 <hr />
 <h1 id="final-goal-what-you-will-build">✅ Final Goal (What you will build)<a class="headerlink" href="#final-goal-what-you-will-build" title="Permanent link">&para;</a></h1>
 <p>By the end, your framework will look like:</p>
-<pre><code>Tests
+<div class="highlight"><pre><span></span><code>Tests
    ↓
 Page Objects (POM)
    ↓
@@ -5613,7 +5613,7 @@ DriverManager (Singleton)
 Listeners (Observer)
    ↓
 Strategies (Browser/Env/Login)
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="phase-1-foundation-start-here">🟢 PHASE 1 — Foundation (Start Here)<a class="headerlink" href="#phase-1-foundation-start-here" title="Permanent link">&para;</a></h1>
 <h2 id="step-1-page-object-model-pom">⭐ Step 1 — Page Object Model (POM)<a class="headerlink" href="#step-1-page-object-model-pom" title="Permanent link">&para;</a></h2>
@@ -5628,18 +5628,18 @@ If POM is wrong → the entire framework becomes messy.</p>
 <li>PageFactory (optional)</li>
 </ul>
 <h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
-<pre><code>pages/
+<div class="highlight"><pre><span></span><code>pages/
    LoginPage.java
    HomePage.java
    BasePage.java
-</code></pre>
+</code></pre></div>
 <h3 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h3>
 <p>Convert this:</p>
-<pre><code class="language-java">driver.findElement(By.id(&quot;user&quot;)).sendKeys(&quot;admin&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"user"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"admin"</span><span class="p">);</span>
+</code></pre></div>
 <p>Into:</p>
-<pre><code class="language-java">loginPage.login(&quot;admin&quot;,&quot;123&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">loginPage</span><span class="p">.</span><span class="na">login</span><span class="p">(</span><span class="s">"admin"</span><span class="p">,</span><span class="s">"123"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="outcome">Outcome<a class="headerlink" href="#outcome" title="Permanent link">&para;</a></h3>
 <ul>
 <li>✅ clean tests</li>
@@ -5655,13 +5655,13 @@ If POM is wrong → the entire framework becomes messy.</p>
 <h3 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h3>
 <p>Only <strong>ONE</strong> driver instance</p>
 <h3 id="build_1">Build<a class="headerlink" href="#build_1" title="Permanent link">&para;</a></h3>
-<pre><code>core/
+<div class="highlight"><pre><span></span><code>core/
    DriverManager.java
-</code></pre>
+</code></pre></div>
 <h3 id="responsibility">Responsibility<a class="headerlink" href="#responsibility" title="Permanent link">&para;</a></h3>
-<pre><code>getDriver()
+<div class="highlight"><pre><span></span><code>getDriver()
 quitDriver()
-</code></pre>
+</code></pre></div>
 <h3 id="outcome_1">Outcome<a class="headerlink" href="#outcome_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>✅ single browser session</li>
@@ -5675,13 +5675,13 @@ quitDriver()
 <h3 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h3>
 <p>Dynamic browser creation</p>
 <h3 id="build_2">Build<a class="headerlink" href="#build_2" title="Permanent link">&para;</a></h3>
-<pre><code>factory/
+<div class="highlight"><pre><span></span><code>factory/
    DriverFactory.java
-</code></pre>
+</code></pre></div>
 <h3 id="responsibility_1">Responsibility<a class="headerlink" href="#responsibility_1" title="Permanent link">&para;</a></h3>
-<pre><code>createDriver(&quot;chrome&quot;)
-createDriver(&quot;firefox&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>createDriver("chrome")
+createDriver("firefox")
+</code></pre></div>
 <h3 id="outcome_2">Outcome<a class="headerlink" href="#outcome_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>✅ cross-browser support</li>
@@ -5698,13 +5698,13 @@ Next → structure test lifecycle.</p>
 <h3 id="solution_2">Solution<a class="headerlink" href="#solution_2" title="Permanent link">&para;</a></h3>
 <p>Common parent class</p>
 <h3 id="build_3">Build<a class="headerlink" href="#build_3" title="Permanent link">&para;</a></h3>
-<pre><code>base/
+<div class="highlight"><pre><span></span><code>base/
    BaseTest.java
-</code></pre>
+</code></pre></div>
 <h3 id="responsibility_2">Responsibility<a class="headerlink" href="#responsibility_2" title="Permanent link">&para;</a></h3>
-<pre><code>@BeforeMethod → start driver
+<div class="highlight"><pre><span></span><code>@BeforeMethod → start driver
 @AfterMethod → quit driver
-</code></pre>
+</code></pre></div>
 <h3 id="outcome_3">Outcome<a class="headerlink" href="#outcome_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>✅ clean tests</li>
@@ -5720,14 +5720,14 @@ Next → structure test lifecycle.</p>
 <h3 id="solution_3">Solution<a class="headerlink" href="#solution_3" title="Permanent link">&para;</a></h3>
 <p>Auto trigger on events</p>
 <h3 id="build_4">Build<a class="headerlink" href="#build_4" title="Permanent link">&para;</a></h3>
-<pre><code>listeners/
+<div class="highlight"><pre><span></span><code>listeners/
    TestListener.java
-</code></pre>
+</code></pre></div>
 <h3 id="responsibility_3">Responsibility<a class="headerlink" href="#responsibility_3" title="Permanent link">&para;</a></h3>
-<pre><code>onTestFailure → screenshot
+<div class="highlight"><pre><span></span><code>onTestFailure → screenshot
 onTestSuccess → log
 onStart → report
-</code></pre>
+</code></pre></div>
 <h3 id="outcome_4">Outcome<a class="headerlink" href="#outcome_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>✅ automatic screenshots</li>
@@ -5741,18 +5741,18 @@ onStart → report
 <h2 id="step-6-strategy-pattern">⭐ Step 6 — Strategy Pattern<a class="headerlink" href="#step-6-strategy-pattern" title="Permanent link">&para;</a></h2>
 <h3 id="problem_4">Problem<a class="headerlink" href="#problem_4" title="Permanent link">&para;</a></h3>
 <p>Too many if/else</p>
-<pre><code>if chrome
+<div class="highlight"><pre><span></span><code>if chrome
 if firefox
 if edge
-</code></pre>
+</code></pre></div>
 <h3 id="solution_4">Solution<a class="headerlink" href="#solution_4" title="Permanent link">&para;</a></h3>
 <p>Strategy classes</p>
 <h3 id="build_5">Build<a class="headerlink" href="#build_5" title="Permanent link">&para;</a></h3>
-<pre><code>strategy/
+<div class="highlight"><pre><span></span><code>strategy/
    BrowserStrategy.java
    ChromeStrategy.java
    FirefoxStrategy.java
-</code></pre>
+</code></pre></div>
 <h3 id="responsibility_4">Responsibility<a class="headerlink" href="#responsibility_4" title="Permanent link">&para;</a></h3>
 <p>Different behaviors:
 - browser handling
@@ -5832,6 +5832,10 @@ if edge
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

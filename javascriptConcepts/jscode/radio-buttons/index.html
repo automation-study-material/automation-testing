@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5989,85 +5989,85 @@ Playwright provides clean and reliable APIs to handle radio buttons in both simp
 <hr />
 <h2 id="1-basic-html-radio-button">1️⃣ Basic HTML Radio Button<a class="headerlink" href="#1-basic-html-radio-button" title="Permanent link">&para;</a></h2>
 <h3 id="example-html">Example HTML<a class="headerlink" href="#example-html" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot; id=&quot;male&quot;&gt;
-&lt;label for=&quot;male&quot;&gt;Male&lt;/label&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"gender"</span> <span class="na">value</span><span class="o">=</span><span class="s">"male"</span> <span class="na">id</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>Male<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 
-&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot; id=&quot;female&quot;&gt;
-&lt;label for=&quot;female&quot;&gt;Female&lt;/label&gt;
-</code></pre>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"gender"</span> <span class="na">value</span><span class="o">=</span><span class="s">"female"</span> <span class="na">id</span><span class="o">=</span><span class="s">"female"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"female"</span><span class="p">&gt;</span>Female<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</code></pre></div>
 <hr />
 <h3 id="select-radio-button-by-id">✔ Select radio button by ID<a class="headerlink" href="#select-radio-button-by-id" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">await page.check('#male');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">check</span><span class="p">(</span><span class="s1">'#male'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="select-by-value">✔ Select by value<a class="headerlink" href="#select-by-value" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">await page.locator('input[name=&quot;gender&quot;][value=&quot;female&quot;]').check();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[name="gender"][value="female"]'</span><span class="p">).</span><span class="nx">check</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h3 id="validate-selected-radio-button">✔ Validate selected radio button<a class="headerlink" href="#validate-selected-radio-button" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">await expect(page.locator('#male')).toBeChecked();
-await expect(page.locator('#female')).not.toBeChecked();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#male'</span><span class="p">)).</span><span class="nx">toBeChecked</span><span class="p">();</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#female'</span><span class="p">)).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toBeChecked</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="2-selecting-radio-button-using-label-text">2️⃣ Selecting Radio Button Using Label Text<a class="headerlink" href="#2-selecting-radio-button-using-label-text" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">await page.getByLabel('Male').check();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByLabel</span><span class="p">(</span><span class="s1">'Male'</span><span class="p">).</span><span class="nx">check</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="3-radio-button-group-handling">3️⃣ Radio Button Group Handling<a class="headerlink" href="#3-radio-button-group-handling" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const gender = 'female';
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'female'</span><span class="p">;</span>
 
-await page
-  .locator('input[name=&quot;gender&quot;]')
-  .filter({ has: page.locator(`[value=&quot;${gender}&quot;]`) })
-  .check();
-</code></pre>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[name="gender"]'</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">({</span><span class="w"> </span><span class="nx">has</span><span class="o">:</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="sb">`[value="</span><span class="si">${</span><span class="nx">gender</span><span class="si">}</span><span class="sb">"]`</span><span class="p">)</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">check</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="4-disabled-radio-button">4️⃣ Disabled Radio Button<a class="headerlink" href="#4-disabled-radio-button" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;input type=&quot;radio&quot; name=&quot;status&quot; value=&quot;active&quot; disabled&gt;
-</code></pre>
-<pre><code class="language-js">await expect(page.locator('input[value=&quot;active&quot;]')).toBeDisabled();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"status"</span> <span class="na">value</span><span class="o">=</span><span class="s">"active"</span> <span class="na">disabled</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[value="active"]'</span><span class="p">)).</span><span class="nx">toBeDisabled</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="5-default-selected-radio-button">5️⃣ Default Selected Radio Button<a class="headerlink" href="#5-default-selected-radio-button" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;input type=&quot;radio&quot; name=&quot;payment&quot; value=&quot;upi&quot; checked&gt;
-</code></pre>
-<pre><code class="language-js">await expect(page.locator('input[value=&quot;upi&quot;]')).toBeChecked();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"radio"</span> <span class="na">name</span><span class="o">=</span><span class="s">"payment"</span> <span class="na">value</span><span class="o">=</span><span class="s">"upi"</span> <span class="na">checked</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[value="upi"]'</span><span class="p">)).</span><span class="nx">toBeChecked</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="6-custom-styled-radio-buttons">6️⃣ Custom Styled Radio Buttons<a class="headerlink" href="#6-custom-styled-radio-buttons" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">await page.locator('.radio').filter({ hasText: 'Gold' }).click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'.radio'</span><span class="p">).</span><span class="nx">filter</span><span class="p">({</span><span class="w"> </span><span class="nx">hasText</span><span class="o">:</span><span class="w"> </span><span class="s1">'Gold'</span><span class="w"> </span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="7-dynamically-loaded-radio-buttons">7️⃣ Dynamically Loaded Radio Buttons<a class="headerlink" href="#7-dynamically-loaded-radio-buttons" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">await page.waitForSelector('input[name=&quot;plan&quot;]');
-await page.locator('input[value=&quot;premium&quot;]').check();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForSelector</span><span class="p">(</span><span class="s1">'input[name="plan"]'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[value="premium"]'</span><span class="p">).</span><span class="nx">check</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="8-radio-button-inside-iframe">8️⃣ Radio Button Inside Iframe<a class="headerlink" href="#8-radio-button-inside-iframe" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const frame = page.frameLocator('#settings-frame');
-await frame.getByLabel('Dark Mode').check();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">frameLocator</span><span class="p">(</span><span class="s1">'#settings-frame'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">frame</span><span class="p">.</span><span class="nx">getByLabel</span><span class="p">(</span><span class="s1">'Dark Mode'</span><span class="p">).</span><span class="nx">check</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="9-keyboard-interaction">9️⃣ Keyboard Interaction<a class="headerlink" href="#9-keyboard-interaction" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">await page.focus('#male');
-await page.keyboard.press('ArrowRight');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">focus</span><span class="p">(</span><span class="s1">'#male'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nx">press</span><span class="p">(</span><span class="s1">'ArrowRight'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="complex-real-world-scenario">🚀 Complex Real-World Scenario<a class="headerlink" href="#complex-real-world-scenario" title="Permanent link">&para;</a></h1>
-<pre><code class="language-js">test('Complex radio button flow', async ({ page }) =&gt; {
-  await page.goto('https://example.com/register');
+<div class="highlight"><pre><span></span><code><span class="nx">test</span><span class="p">(</span><span class="s1">'Complex radio button flow'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">'https://example.com/register'</span><span class="p">);</span>
 
-  await page.waitForSelector('input[name=&quot;role&quot;]');
-  await expect(page.locator('input[value=&quot;admin&quot;]')).toBeDisabled();
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForSelector</span><span class="p">(</span><span class="s1">'input[name="role"]'</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[value="admin"]'</span><span class="p">)).</span><span class="nx">toBeDisabled</span><span class="p">();</span>
 
-  await page.locator('input[value=&quot;user&quot;]').check();
-  await expect(page.locator('#subscription')).toBeVisible();
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[value="user"]'</span><span class="p">).</span><span class="nx">check</span><span class="p">();</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#subscription'</span><span class="p">)).</span><span class="nx">toBeVisible</span><span class="p">();</span>
 
-  await page.locator('input[value=&quot;pro&quot;]').check();
-  await expect(page.locator('input[value=&quot;pro&quot;]')).toBeChecked();
-  await expect(page.locator('input[value=&quot;pro&quot;]').isChecked).toBeTruthy();
-});
-</code></pre>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[value="pro"]'</span><span class="p">).</span><span class="nx">check</span><span class="p">();</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[value="pro"]'</span><span class="p">)).</span><span class="nx">toBeChecked</span><span class="p">();</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'input[value="pro"]'</span><span class="p">).</span><span class="nx">isChecked</span><span class="p">).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
 <hr />
 <p>Happy Testing 🚀</p>
 
@@ -6123,6 +6123,10 @@ await page.keyboard.press('ArrowRight');
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5727,64 +5727,60 @@ Playwright provides APIs to <strong>switch context into frames</strong> and inte
 <hr />
 <h2 id="playwright-frame-api">📌 Playwright Frame API<a class="headerlink" href="#playwright-frame-api" title="Permanent link">&para;</a></h2>
 <h3 id="1-access-all-frames">1. Access All Frames<a class="headerlink" href="#1-access-all-frames" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.frames(); // returns List&lt;Frame&gt;
-</code></pre>
-<ul>
-<li>Retrieves all frames in the page, including main frame + nested frames.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">frames</span><span class="p">();</span><span class="w"> </span><span class="c1">// returns List&lt;Frame&gt;</span>
+</code></pre></div>
+- Retrieves all frames in the page, including main frame + nested frames.</p>
 <h3 id="2-access-frame-by-name-url">2. Access Frame by Name / URL<a class="headerlink" href="#2-access-frame-by-name-url" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Frame frameByName = page.frame(&quot;frameName&quot;);
-Frame frameByUrl = page.frameByUrl(&quot;.*someFrameUrl.*&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Frame</span><span class="w"> </span><span class="n">frameByName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">frame</span><span class="p">(</span><span class="s">"frameName"</span><span class="p">);</span>
+<span class="n">Frame</span><span class="w"> </span><span class="n">frameByUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">frameByUrl</span><span class="p">(</span><span class="s">".*someFrameUrl.*"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="3-access-nested-frames-by-index">3. Access Nested Frames by Index<a class="headerlink" href="#3-access-nested-frames-by-index" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">List&lt;Frame&gt; frames = page.frames();
-Frame firstFrame = frames.get(1);   // index 0 is always the main page
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Frame</span><span class="o">&gt;</span><span class="w"> </span><span class="n">frames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">frames</span><span class="p">();</span>
+<span class="n">Frame</span><span class="w"> </span><span class="n">firstFrame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frames</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">// index 0 is always the main page</span>
+</code></pre></div>
 <h3 id="4-locate-frame-element-and-get-frame-object">4. Locate Frame Element and Get Frame Object<a class="headerlink" href="#4-locate-frame-element-and-get-frame-object" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator frameLocator = page.frameLocator(&quot;iframe[name='frame1']&quot;);
-</code></pre>
-<ul>
-<li>Useful for directly chaining locators into frame elements.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">frameLocator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">frameLocator</span><span class="p">(</span><span class="s">"iframe[name='frame1']"</span><span class="p">);</span>
+</code></pre></div>
+- Useful for directly chaining locators into frame elements.</p>
 <hr />
 <h2 id="example-code-java-playwright">📌 Example Code (Java + Playwright)<a class="headerlink" href="#example-code-java-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import com.microsoft.playwright.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
 
-public class FramesExample {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FramesExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            // Navigate to page with frames
-            page.navigate(&quot;https://the-internet.herokuapp.com/nested_frames&quot;);
+<span class="w">            </span><span class="c1">// Navigate to page with frames</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://the-internet.herokuapp.com/nested_frames"</span><span class="p">);</span>
 
-            // --- Get all frames ---
-            for (Frame f : page.frames()) {
-                System.out.println(&quot;Frame: &quot; + f.name() + &quot; | URL: &quot; + f.url());
-            }
+<span class="w">            </span><span class="c1">// --- Get all frames ---</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">frames</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Frame: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">name</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" | URL: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">url</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
 
-            // --- Switch to top frame (by name) ---
-            Frame topFrame = page.frame(&quot;frame-top&quot;);
-            System.out.println(&quot;Inside Top Frame: &quot; + topFrame.name());
+<span class="w">            </span><span class="c1">// --- Switch to top frame (by name) ---</span>
+<span class="w">            </span><span class="n">Frame</span><span class="w"> </span><span class="n">topFrame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">frame</span><span class="p">(</span><span class="s">"frame-top"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inside Top Frame: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">topFrame</span><span class="p">.</span><span class="na">name</span><span class="p">());</span>
 
-            // --- Nested frame (by index) ---
-            Frame nestedLeft = topFrame.childFrames().get(0);
-            System.out.println(&quot;Inside Nested Left Frame: &quot; + nestedLeft.name());
+<span class="w">            </span><span class="c1">// --- Nested frame (by index) ---</span>
+<span class="w">            </span><span class="n">Frame</span><span class="w"> </span><span class="n">nestedLeft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">topFrame</span><span class="p">.</span><span class="na">childFrames</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inside Nested Left Frame: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nestedLeft</span><span class="p">.</span><span class="na">name</span><span class="p">());</span>
 
-            // Example: get text inside nested frame
-            String text = nestedLeft.locator(&quot;body&quot;).innerText();
-            System.out.println(&quot;Nested Frame Text: &quot; + text);
+<span class="w">            </span><span class="c1">// Example: get text inside nested frame</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nestedLeft</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"body"</span><span class="p">).</span><span class="na">innerText</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Nested Frame Text: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">text</span><span class="p">);</span>
 
-            // --- Access frame by locator ---
-            Frame frameExample = page.frameLocator(&quot;iframe[name='mce_0_ifr']&quot;).frame();
-            frameExample.locator(&quot;#tinymce&quot;).fill(&quot;Hello inside iframe!&quot;);
+<span class="w">            </span><span class="c1">// --- Access frame by locator ---</span>
+<span class="w">            </span><span class="n">Frame</span><span class="w"> </span><span class="n">frameExample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">frameLocator</span><span class="p">(</span><span class="s">"iframe[name='mce_0_ifr']"</span><span class="p">).</span><span class="na">frame</span><span class="p">();</span>
+<span class="w">            </span><span class="n">frameExample</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#tinymce"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="s">"Hello inside iframe!"</span><span class="p">);</span>
 
-            browser.close();
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">browser</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="notes">🔑 Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5874,6 +5870,10 @@ public class FramesExample {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

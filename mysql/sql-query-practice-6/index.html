@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5928,10 +5928,10 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees
-WHERE salary = (SELECT MAX(salary) FROM employees);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 Single-row subquery returns MAX(salary). The outer query selects employee(s) with that salary.</p>
 <p><strong>Output:</strong></p>
@@ -5953,10 +5953,10 @@ Single-row subquery returns MAX(salary). The outer query selects employee(s) wit
 </table>
 <hr />
 <h3 id="q2-employees-with-salary-less-than-the-average-salary">Q2: Employees with salary less than the average salary<a class="headerlink" href="#q2-employees-with-salary-less-than-the-average-salary" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees
-WHERE salary &lt; (SELECT AVG(salary) FROM employees);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5981,10 +5981,10 @@ WHERE salary &lt; (SELECT AVG(salary) FROM employees);
 </table>
 <hr />
 <h3 id="q3-employees-with-minimum-salary">Q3: Employee(s) with minimum salary<a class="headerlink" href="#q3-employees-with-minimum-salary" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees
-WHERE salary = (SELECT MIN(salary) FROM employees);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6004,10 +6004,10 @@ WHERE salary = (SELECT MIN(salary) FROM employees);
 </table>
 <hr />
 <h3 id="q4-employees-with-salary-just-above-50000">Q4: Employee(s) with salary just above 50000<a class="headerlink" href="#q4-employees-with-salary-just-above-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees
-WHERE salary = (SELECT MIN(salary) FROM employees WHERE salary &gt; 50000);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6027,10 +6027,10 @@ WHERE salary = (SELECT MIN(salary) FROM employees WHERE salary &gt; 50000);
 </table>
 <hr />
 <h3 id="q5-employees-having-salary-greater-than-60000">Q5: Employee(s) having salary greater than 60000<a class="headerlink" href="#q5-employees-having-salary-greater-than-60000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees
-WHERE salary &gt; (SELECT MAX(salary) - 10000 FROM employees);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6093,15 +6093,15 @@ WHERE salary &gt; (SELECT MAX(salary) - 10000 FROM employees);
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, name, dept
-FROM employees
-WHERE dept IN (
-    SELECT dept
-    FROM employees
-    GROUP BY dept
-    HAVING COUNT(*) &gt; 1
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="w">    </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 Multi-row subquery returns departments with more than 1 employee. Outer query selects employees in those departments.</p>
 <p><strong>Output:</strong></p>
@@ -6138,15 +6138,15 @@ Multi-row subquery returns departments with more than 1 employee. Outer query se
 </table>
 <hr />
 <h3 id="q7-employees-with-salary-in-top-3-salaries">Q7: Employees with salary in top 3 salaries<a class="headerlink" href="#q7-employees-with-salary-in-top-3-salaries" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees
-WHERE salary IN (
-    SELECT DISTINCT salary
-    FROM employees
-    ORDER BY salary DESC
-    LIMIT 3
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">DESC</span>
+<span class="w">    </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">3</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6176,10 +6176,10 @@ WHERE salary IN (
 </table>
 <hr />
 <h3 id="q8-employees-in-departments-hr-or-it">Q8: Employees in departments 'HR' or 'IT'<a class="headerlink" href="#q8-employees-in-departments-hr-or-it" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, dept
-FROM employees
-WHERE dept IN ('HR','IT');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">'HR'</span><span class="p">,</span><span class="s1">'IT'</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6214,15 +6214,15 @@ WHERE dept IN ('HR','IT');
 </table>
 <hr />
 <h3 id="q9-employees-not-in-department-with-only-one-employee">Q9: Employees not in department with only one employee<a class="headerlink" href="#q9-employees-not-in-department-with-only-one-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, dept
-FROM employees
-WHERE dept NOT IN (
-    SELECT dept
-    FROM employees
-    GROUP BY dept
-    HAVING COUNT(*) = 1
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="w">    </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6257,14 +6257,14 @@ WHERE dept NOT IN (
 </table>
 <hr />
 <h3 id="q10-employees-with-salary-greater-than-any-employee-in-hr">Q10: Employees with salary greater than any employee in HR<a class="headerlink" href="#q10-employees-with-salary-greater-than-any-employee-in-hr" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees
-WHERE salary &gt; ANY (
-    SELECT salary
-    FROM employees
-    WHERE dept='HR'
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ANY</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'HR'</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6290,14 +6290,14 @@ WHERE salary &gt; ANY (
 <hr />
 <h2 id="3-correlated-subqueries">3. Correlated Subqueries<a class="headerlink" href="#3-correlated-subqueries" title="Permanent link">&para;</a></h2>
 <h3 id="q11-employees-with-salary-greater-than-average-salary-of-their-department">Q11: Employees with salary greater than average salary of their department<a class="headerlink" href="#q11-employees-with-salary-greater-than-average-salary-of-their-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e1.emp_id, e1.name, e1.salary, e1.dept
-FROM employees e1
-WHERE e1.salary &gt; (
-    SELECT AVG(e2.salary)
-    FROM employees e2
-    WHERE e2.dept = e1.dept
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">e2</span><span class="p">.</span><span class="n">salary</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6325,14 +6325,14 @@ WHERE e1.salary &gt; (
 </table>
 <hr />
 <h3 id="q12-employees-who-earn-the-maximum-salary-in-their-department">Q12: Employees who earn the maximum salary in their department<a class="headerlink" href="#q12-employees-who-earn-the-maximum-salary-in-their-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e1.emp_id, e1.name, e1.salary, e1.dept
-FROM employees e1
-WHERE e1.salary = (
-    SELECT MAX(e2.salary)
-    FROM employees e2
-    WHERE e2.dept = e1.dept
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">e2</span><span class="p">.</span><span class="n">salary</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6366,14 +6366,14 @@ WHERE e1.salary = (
 </table>
 <hr />
 <h3 id="q13-employees-whose-salary-is-greater-than-all-employees-in-hr">Q13: Employees whose salary is greater than all employees in HR<a class="headerlink" href="#q13-employees-whose-salary-is-greater-than-all-employees-in-hr" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees e
-WHERE salary &gt; ALL (
-    SELECT salary
-    FROM employees
-    WHERE dept='HR'
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'HR'</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6398,14 +6398,14 @@ WHERE salary &gt; ALL (
 </table>
 <hr />
 <h3 id="q14-employees-with-salary-less-than-the-maximum-salary-of-it-department">Q14: Employees with salary less than the maximum salary of IT department<a class="headerlink" href="#q14-employees-with-salary-less-than-the-maximum-salary-of-it-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees e
-WHERE salary &lt; (
-    SELECT MAX(salary)
-    FROM employees
-    WHERE dept='IT'
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'IT'</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6435,14 +6435,14 @@ WHERE salary &lt; (
 </table>
 <hr />
 <h3 id="q15-employees-earning-below-average-salary-of-sales-department">Q15: Employees earning below average salary of Sales department<a class="headerlink" href="#q15-employees-earning-below-average-salary-of-sales-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees e
-WHERE salary &lt; (
-    SELECT AVG(salary)
-    FROM employees
-    WHERE dept='Sales'
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'Sales'</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6462,14 +6462,14 @@ WHERE salary &lt; (
 </table>
 <hr />
 <h3 id="q16-employees-who-earn-more-than-any-employee-in-sales">Q16: Employees who earn more than any employee in Sales<a class="headerlink" href="#q16-employees-who-earn-more-than-any-employee-in-sales" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees e
-WHERE salary &gt; ANY (
-    SELECT salary
-    FROM employees
-    WHERE dept='Sales'
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ANY</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'Sales'</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6504,14 +6504,14 @@ WHERE salary &gt; ANY (
 </table>
 <hr />
 <h3 id="q17-employees-who-earn-less-than-any-employee-in-it">Q17: Employees who earn less than any employee in IT<a class="headerlink" href="#q17-employees-who-earn-less-than-any-employee-in-it" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary
-FROM employees e
-WHERE salary &lt; ANY (
-    SELECT salary
-    FROM employees
-    WHERE dept='IT'
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">ANY</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'IT'</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6536,14 +6536,14 @@ WHERE salary &lt; ANY (
 </table>
 <hr />
 <h3 id="q18-employees-earning-equal-to-average-of-their-department">Q18: Employees earning equal to average of their department<a class="headerlink" href="#q18-employees-earning-equal-to-average-of-their-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e1.emp_id, e1.name, e1.salary, e1.dept
-FROM employees e1
-WHERE e1.salary = (
-    SELECT AVG(e2.salary)
-    FROM employees e2
-    WHERE e2.dept = e1.dept
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">e2</span><span class="p">.</span><span class="n">salary</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6565,14 +6565,14 @@ WHERE e1.salary = (
 </table>
 <hr />
 <h3 id="q19-employees-earning-less-than-maximum-salary-in-their-department">Q19: Employees earning less than maximum salary in their department<a class="headerlink" href="#q19-employees-earning-less-than-maximum-salary-in-their-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e1.emp_id, e1.name, e1.salary, e1.dept
-FROM employees e1
-WHERE e1.salary &lt; (
-    SELECT MAX(e2.salary)
-    FROM employees e2
-    WHERE e2.dept = e1.dept
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">e2</span><span class="p">.</span><span class="n">salary</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6600,14 +6600,14 @@ WHERE e1.salary &lt; (
 </table>
 <hr />
 <h3 id="q20-employees-earning-more-than-minimum-salary-in-their-department">Q20: Employees earning more than minimum salary in their department<a class="headerlink" href="#q20-employees-earning-more-than-minimum-salary-in-their-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e1.emp_id, e1.name, e1.salary, e1.dept
-FROM employees e1
-WHERE e1.salary &gt; (
-    SELECT MIN(e2.salary)
-    FROM employees e2
-    WHERE e2.dept = e1.dept
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">e2</span><span class="p">.</span><span class="n">salary</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">dept</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6692,6 +6692,10 @@ WHERE e1.salary &gt; (
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5627,18 +5627,18 @@
 </ul>
 <hr />
 <h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">hasNext()
-next()
-remove()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">hasNext</span><span class="p">()</span>
+<span class="n">next</span><span class="p">()</span>
+<span class="n">remove</span><span class="p">()</span>
+</code></pre></div>
 <hr />
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Iterator&lt;String&gt; it = list.iterator();
+<div class="highlight"><pre><span></span><code><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
 
-while(it.hasNext()){
-    System.out.println(it.next());
-}
-</code></pre>
+<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">()){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5661,26 +5661,26 @@ while(it.hasNext()){
 </ul>
 <hr />
 <h3 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">hasNext()
-next()
-hasPrevious()
-previous()
-add()
-set()
-remove()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">hasNext</span><span class="p">()</span>
+<span class="n">next</span><span class="p">()</span>
+<span class="n">hasPrevious</span><span class="p">()</span>
+<span class="n">previous</span><span class="p">()</span>
+<span class="n">add</span><span class="p">()</span>
+<span class="n">set</span><span class="p">()</span>
+<span class="n">remove</span><span class="p">()</span>
+</code></pre></div>
 <hr />
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">ListIterator&lt;String&gt; it = list.listIterator();
+<div class="highlight"><pre><span></span><code><span class="n">ListIterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">listIterator</span><span class="p">();</span>
 
-while(it.hasNext()){
-    System.out.println(it.next());
-}
+<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">()){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">());</span>
+<span class="p">}</span>
 
-while(it.hasPrevious()){
-    System.out.println(it.previous());
-}
-</code></pre>
+<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasPrevious</span><span class="p">()){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">previous</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="difference-table-very-important-for-interview">🔥 Difference Table (Very important for interview)<a class="headerlink" href="#difference-table-very-important-for-interview" title="Permanent link">&para;</a></h2>
 <table>
@@ -5734,8 +5734,8 @@ while(it.hasPrevious()){
 <p>If collection is modified during iteration → <strong>throws exception immediately</strong></p>
 <hr />
 <h2 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h2>
-<pre><code>ConcurrentModificationException
-</code></pre>
+<div class="highlight"><pre><span></span><code>ConcurrentModificationException
+</code></pre></div>
 <hr />
 <h2 id="used-by">Used by<a class="headerlink" href="#used-by" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5746,15 +5746,15 @@ while(it.hasPrevious()){
 </ul>
 <hr />
 <h2 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">for(String s : list){
-    list.remove(s); // ❌ crash
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">){</span>
+<span class="w">    </span><span class="n">list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// ❌ crash</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
 <p>Because iterator detects:</p>
-<pre><code class="language-text">modCount changed
-</code></pre>
+<div class="highlight"><pre><span></span><code>modCount changed
+</code></pre></div>
 <h1 id="fail-safe-iterator">🟢 Fail-Safe Iterator<a class="headerlink" href="#fail-safe-iterator" title="Permanent link">&para;</a></h1>
 <h2 id="concept_3">Concept<a class="headerlink" href="#concept_3" title="Permanent link">&para;</a></h2>
 <p>Works on <strong>copy of collection</strong>, so modification is safe.</p>
@@ -5770,12 +5770,12 @@ while(it.hasPrevious()){
 </ul>
 <hr />
 <h2 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">CopyOnWriteArrayList&lt;String&gt; list = new CopyOnWriteArrayList&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">CopyOnWriteArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CopyOnWriteArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-for(String s : list){
-    list.remove(s); // ✅ safe
-}
-</code></pre>
+<span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">){</span>
+<span class="w">    </span><span class="n">list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// ✅ safe</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="difference-table">🔥 Difference Table<a class="headerlink" href="#difference-table" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5820,10 +5820,10 @@ for(String s : list){
 <p>Simple and readable way to loop.</p>
 <hr />
 <h3 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">for(String s : list){
-    System.out.println(s);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="pros">Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
 <p>✔ simple
@@ -5841,12 +5841,12 @@ for(String s : list){
 <p>Manual control over iteration.</p>
 <hr />
 <h3 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Iterator&lt;String&gt; it = list.iterator();
+<div class="highlight"><pre><span></span><code><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
 
-while(it.hasNext()){
-    String s = it.next();
-}
-</code></pre>
+<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">()){</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="pros_1">Pros<a class="headerlink" href="#pros_1" title="Permanent link">&para;</a></h3>
 <p>✔ safe remove
 ✔ more control
@@ -5896,17 +5896,17 @@ while(it.hasNext()){
 <h1 id="real-selenium-framework-usage">✅ Real Selenium Framework Usage<a class="headerlink" href="#real-selenium-framework-usage" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="window-handles-set-iterator-needed">Window handles (Set → Iterator needed)<a class="headerlink" href="#window-handles-set-iterator-needed" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Iterator&lt;String&gt; it = driver.getWindowHandles().iterator();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandles</span><span class="p">().</span><span class="na">iterator</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="remove-failed-tests-safely">Remove failed tests safely<a class="headerlink" href="#remove-failed-tests-safely" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Iterator&lt;String&gt; it = failedTests.iterator();
-it.remove();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">failedTests</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="n">it</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="simple-read-logs">Simple read logs<a class="headerlink" href="#simple-read-logs" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">for(String log : logs)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">logs</span><span class="p">)</span>
+</code></pre></div>
 <h1 id="interview-quick-answers">✅ Interview Quick Answers<a class="headerlink" href="#interview-quick-answers" title="Permanent link">&para;</a></h1>
 <hr />
 <h3 id="q-difference-between-iterator-and-listiterator">Q: Difference between Iterator and ListIterator?<a class="headerlink" href="#q-difference-between-iterator-and-listiterator" title="Permanent link">&para;</a></h3>
@@ -5922,7 +5922,7 @@ it.remove();
 <p>forEach for read-only, Iterator for modification.</p>
 <hr />
 <h1 id="memory-tricks">✅ Memory Tricks<a class="headerlink" href="#memory-tricks" title="Permanent link">&para;</a></h1>
-<pre><code>Iterator → forward only
+<div class="highlight"><pre><span></span><code>Iterator → forward only
 ListIterator → both ways
 
 Fail-fast → fast but strict
@@ -5930,7 +5930,7 @@ Fail-safe → safe but heavy
 
 forEach → simple read
 Iterator → safe modify
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="final-summary">✅ Final Summary<a class="headerlink" href="#final-summary" title="Permanent link">&para;</a></h1>
 <p>Use:</p>
@@ -5993,6 +5993,10 @@ Iterator → safe modify
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

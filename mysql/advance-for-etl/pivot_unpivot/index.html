@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5836,15 +5836,15 @@
 <hr />
 <h2 id="2-pivot-examples">2. PIVOT Examples<a class="headerlink" href="#2-pivot-examples" title="Permanent link">&para;</a></h2>
 <h3 id="q1-pivot-sales-per-employee-for-each-month">Q1: Pivot sales per employee for each month<a class="headerlink" href="#q1-pivot-sales-per-employee-for-each-month" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, [Jan], [Feb]
-FROM (
-    SELECT emp_id, month, sales_amount
-    FROM sales_data
-) src
-PIVOT (
-    SUM(sales_amount) FOR month IN ([Jan], [Feb])
-) pvt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="p">)</span><span class="w"> </span><span class="n">pvt</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5873,15 +5873,15 @@ PIVOT (
 </tbody>
 </table>
 <h3 id="q2-pivot-sales-per-department-per-month">Q2: Pivot sales per department per month<a class="headerlink" href="#q2-pivot-sales-per-department-per-month" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, [Jan], [Feb]
-FROM (
-    SELECT dept, month, sales_amount
-    FROM sales_data
-) src
-PIVOT (
-    SUM(sales_amount) FOR month IN ([Jan], [Feb])
-) pvt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="p">)</span><span class="w"> </span><span class="n">pvt</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5905,12 +5905,12 @@ PIVOT (
 </tbody>
 </table>
 <h3 id="q3-pivot-using-case-for-months-alternative">Q3: Pivot using CASE for months (alternative)<a class="headerlink" href="#q3-pivot-using-case-for-months-alternative" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id,
-       SUM(CASE WHEN month='Jan' THEN sales_amount ELSE 0 END) AS Jan,
-       SUM(CASE WHEN month='Feb' THEN sales_amount ELSE 0 END) AS Feb
-FROM sales_data
-GROUP BY emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">month</span><span class="o">=</span><span class="s1">'Jan'</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Jan</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">month</span><span class="o">=</span><span class="s1">'Feb'</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Feb</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5939,16 +5939,16 @@ GROUP BY emp_id;
 </tbody>
 </table>
 <h3 id="q4-pivot-sales-for-it-department-only">Q4: Pivot sales for IT department only<a class="headerlink" href="#q4-pivot-sales-for-it-department-only" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, [Jan], [Feb]
-FROM (
-    SELECT emp_id, month, sales_amount
-    FROM sales_data
-    WHERE dept='IT'
-) src
-PIVOT (
-    SUM(sales_amount) FOR month IN ([Jan], [Feb])
-) pvt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'IT'</span>
+<span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="p">)</span><span class="w"> </span><span class="n">pvt</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5972,15 +5972,15 @@ PIVOT (
 </tbody>
 </table>
 <h3 id="q5-pivot-with-dynamic-aggregation-by-department-and-month">Q5: Pivot with dynamic aggregation by department and month<a class="headerlink" href="#q5-pivot-with-dynamic-aggregation-by-department-and-month" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, [Jan], [Feb]
-FROM (
-    SELECT dept, month, sales_amount
-    FROM sales_data
-) src
-PIVOT (
-    SUM(sales_amount) FOR month IN ([Jan], [Feb])
-) pvt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="p">)</span><span class="w"> </span><span class="n">pvt</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6006,21 +6006,21 @@ PIVOT (
 <hr />
 <h2 id="3-unpivot-examples">3. UNPIVOT Examples<a class="headerlink" href="#3-unpivot-examples" title="Permanent link">&para;</a></h2>
 <h3 id="q6-unpivot-columns-jan-and-feb-into-rows">Q6: Unpivot columns Jan and Feb into rows<a class="headerlink" href="#q6-unpivot-columns-jan-and-feb-into-rows" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, month, sales_amount
-FROM (
-    SELECT emp_id, [Jan], [Feb]
-    FROM (
-        SELECT emp_id, month, sales_amount
-        FROM sales_data
-    ) src
-    PIVOT (
-        SUM(sales_amount) FOR month IN ([Jan], [Feb])
-    ) pvt
-) unpvt
-UNPIVOT (
-    sales_amount FOR month IN ([Jan], [Feb])
-) AS unp;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span>
+<span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="w">    </span><span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="n">pvt</span>
+<span class="p">)</span><span class="w"> </span><span class="n">unpvt</span>
+<span class="n">UNPIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">unp</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6064,18 +6064,18 @@ UNPIVOT (
 </tbody>
 </table>
 <h3 id="q7-unpivot-department-sales-per-month">Q7: Unpivot department sales per month<a class="headerlink" href="#q7-unpivot-department-sales-per-month" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT month, dept, sales_amount
-FROM (
-    SELECT dept, [Jan], [Feb]
-    FROM (
-        SELECT dept, month, sales_amount FROM sales_data
-    ) src
-    PIVOT (SUM(sales_amount) FOR month IN ([Jan], [Feb])) pvt
-) unpvt
-UNPIVOT (
-    sales_amount FOR month IN ([Jan], [Feb])
-) AS u;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="w">    </span><span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]))</span><span class="w"> </span><span class="n">pvt</span>
+<span class="p">)</span><span class="w"> </span><span class="n">unpvt</span>
+<span class="n">UNPIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6109,19 +6109,19 @@ UNPIVOT (
 </tbody>
 </table>
 <h3 id="q8-unpivot-for-a-single-employee">Q8: Unpivot for a single employee<a class="headerlink" href="#q8-unpivot-for-a-single-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, month, sales_amount
-FROM (
-    SELECT emp_id, [Jan], [Feb]
-    FROM (
-        SELECT emp_id, month, sales_amount FROM sales_data
-        WHERE emp_id=101
-    ) src
-    PIVOT (SUM(sales_amount) FOR month IN ([Jan], [Feb])) pvt
-) unpvt
-UNPIVOT (
-    sales_amount FOR month IN ([Jan], [Feb])
-) AS u;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">emp_id</span><span class="o">=</span><span class="mi">101</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="w">    </span><span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]))</span><span class="w"> </span><span class="n">pvt</span>
+<span class="p">)</span><span class="w"> </span><span class="n">unpvt</span>
+<span class="n">UNPIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6145,19 +6145,19 @@ UNPIVOT (
 </tbody>
 </table>
 <h3 id="q9-unpivot-to-calculate-monthly-totals">Q9: Unpivot to calculate monthly totals<a class="headerlink" href="#q9-unpivot-to-calculate-monthly-totals" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT month, SUM(sales_amount) AS total_sales
-FROM (
-    SELECT emp_id, [Jan], [Feb]
-    FROM (
-        SELECT emp_id, month, sales_amount FROM sales_data
-    ) src
-    PIVOT (SUM(sales_amount) FOR month IN ([Jan], [Feb])) pvt
-) unpvt
-UNPIVOT (
-    sales_amount FOR month IN ([Jan], [Feb])
-) AS u
-GROUP BY month;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_sales</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="w">    </span><span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]))</span><span class="w"> </span><span class="n">pvt</span>
+<span class="p">)</span><span class="w"> </span><span class="n">unpvt</span>
+<span class="n">UNPIVOT</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">])</span>
+<span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">month</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6178,16 +6178,16 @@ GROUP BY month;
 </tbody>
 </table>
 <h3 id="q10-alternative-unpivot-using-union-all">Q10: Alternative UNPIVOT using UNION ALL<a class="headerlink" href="#q10-alternative-unpivot-using-union-all" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, 'Jan' AS month, [Jan] AS sales_amount FROM (
-    SELECT emp_id, month, sales_amount FROM sales_data
-) src
-PIVOT (SUM(sales_amount) FOR month IN ([Jan], [Feb])) pvt
-UNION ALL
-SELECT emp_id, 'Feb', [Feb] FROM (
-    SELECT emp_id, month, sales_amount FROM sales_data
-) src
-PIVOT (SUM(sales_amount) FOR month IN ([Jan], [Feb])) pvt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="s1">'Jan'</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Jan</span><span class="p">]</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]))</span><span class="w"> </span><span class="n">pvt</span>
+<span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="s1">'Feb'</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="n">sales_amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sales_data</span>
+<span class="p">)</span><span class="w"> </span><span class="n">src</span>
+<span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">sales_amount</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">month</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">([</span><span class="n">Jan</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">Feb</span><span class="p">]))</span><span class="w"> </span><span class="n">pvt</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong> Same as previous unpivot examples.</p>
 <hr />
 <h3 id="explanation">Explanation:<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
@@ -6256,6 +6256,10 @@ PIVOT (SUM(sales_amount) FOR month IN ([Jan], [Feb])) pvt;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

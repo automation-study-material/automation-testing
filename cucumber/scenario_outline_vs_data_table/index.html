@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5628,16 +5628,16 @@ with different datasets.</p>
 <p>Each row in the Examples table creates a new scenario execution.</p>
 <hr />
 <h2 id="structure">✅ Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Scenario Outline: Login with multiple credentials
-  Given User is on login page
-  When User enters &quot;&lt;username&gt;&quot; and &quot;&lt;password&gt;&quot;
-  Then Login should be &quot;&lt;status&gt;&quot;
+<div class="highlight"><pre><span></span><code><span class="k">Scenario Outline:</span><span class="nf"> Login with multiple credentials</span>
+<span class="k">  Given </span><span class="nf">User is on login page</span>
+<span class="nf">  </span><span class="k">When </span><span class="nf">User enters "</span><span class="nv">&lt;username&gt;</span><span class="nf">" and "</span><span class="nv">&lt;password&gt;</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">Then </span><span class="nf">Login should be "</span><span class="nv">&lt;status&gt;</span><span class="nf">"</span>
 
-Examples:
-  | username | password | status  |
-  | admin    | admin123 | success |
-  | user     | wrong123 | failure |
-</code></pre>
+<span class="k">Examples:</span>
+<span class="k">  |</span><span class="nv"> username</span><span class="k"> |</span><span class="nv"> password</span><span class="k"> |</span><span class="nv"> status</span><span class="k">  |</span>
+<span class="k">  |</span><span class="s"> admin</span><span class="k">    |</span><span class="s"> admin123</span><span class="k"> |</span><span class="s"> success</span><span class="k"> |</span>
+<span class="k">  |</span><span class="s"> user</span><span class="k">     |</span><span class="s"> wrong123</span><span class="k"> |</span><span class="s"> failure</span><span class="k"> |</span>
+</code></pre></div>
 <hr />
 <h2 id="how-it-works">🔹 How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5647,25 +5647,25 @@ Examples:
 </ul>
 <hr />
 <h2 id="step-definition">🔹 Step Definition<a class="headerlink" href="#step-definition" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@When(&quot;User enters {string} and {string}&quot;)
-public void user_enters_credentials(String username, String password) {
+<div class="highlight"><pre><span></span><code><span class="nd">@When</span><span class="p">(</span><span class="s">"User enters {string} and {string}"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">user_enters_credentials</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    driver.findElement(By.id(&quot;user&quot;)).sendKeys(username);
-    driver.findElement(By.id(&quot;pass&quot;)).sendKeys(password);
-}
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"user"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">username</span><span class="p">);</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"pass"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+<span class="p">}</span>
 
-@Then(&quot;Login should be {string}&quot;)
-public void login_should_be(String status) {
+<span class="nd">@Then</span><span class="p">(</span><span class="s">"Login should be {string}"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login_should_be</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    boolean isLoggedIn = driver.findElements(By.id(&quot;logout&quot;)).size() &gt; 0;
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElements</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"logout"</span><span class="p">)).</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-    if(status.equalsIgnoreCase(&quot;success&quot;)) {
-        Assert.assertTrue(isLoggedIn);
-    } else {
-        Assert.assertFalse(isLoggedIn);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"success"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertTrue</span><span class="p">(</span><span class="n">isLoggedIn</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertFalse</span><span class="p">(</span><span class="n">isLoggedIn</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="key-characteristics">🎯 Key Characteristics<a class="headerlink" href="#key-characteristics" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5681,53 +5681,53 @@ public void login_should_be(String status) {
 <p>Scenario runs only once, but data is iterated inside step definition.</p>
 <hr />
 <h2 id="basic-example">✅ Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Scenario: Create users with full details
-  Given user test setup is ready
-  When user enters below user details
-    | name   | email            | city   | mobile | age |
-    | Nitin  | nitin@gmail.com  | Mumbai | 98765  | 28  |
-    | Rahul  | rahul@gmail.com  | Pune   | 91234  | 30  |
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">Scenario:</span><span class="nf"> Create users with full details</span>
+<span class="k">  Given </span><span class="nf">user test setup is ready</span>
+<span class="nf">  </span><span class="k">When </span><span class="nf">user enters below user details</span>
+<span class="k">    |</span><span class="s"> name</span><span class="k">   |</span><span class="s"> email</span><span class="k">            |</span><span class="s"> city</span><span class="k">   |</span><span class="s"> mobile</span><span class="k"> |</span><span class="s"> age</span><span class="k"> |</span>
+<span class="k">    |</span><span class="s"> Nitin</span><span class="k">  |</span><span class="s"> nitin@gmail.com</span><span class="k">  |</span><span class="s"> Mumbai</span><span class="k"> |</span><span class="s"> 98765</span><span class="k">  |</span><span class="s"> 28</span><span class="k">  |</span>
+<span class="k">    |</span><span class="s"> Rahul</span><span class="k">  |</span><span class="s"> rahul@gmail.com</span><span class="k">  |</span><span class="s"> Pune</span><span class="k">   |</span><span class="s"> 91234</span><span class="k">  |</span><span class="s"> 30</span><span class="k">  |</span>
+</code></pre></div>
 <hr />
 <h2 id="step-definition_1">🔹 Step Definition<a class="headerlink" href="#step-definition_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">1  import io.cucumber.datatable.DataTable;
-2  import io.cucumber.java.en.Given;
-3  import io.cucumber.java.en.When;
-4  import java.util.List;
-5  import java.util.Map;
-6
-7  public class UserStepDefinition {
-8
-9      @Given(&quot;user test setup is ready&quot;)
-10     public void user_test_setup_is_ready() {
-11         System.out.println(&quot;Step 1 Executed: GIVEN step - Test setup completed&quot;);
-12     }
-13
-14     @When(&quot;user enters below user details&quot;)
-15     public void user_enters_below_user_details(DataTable table) {
-16
-17         System.out.println(&quot;Step 2 Executed: WHEN step - Reading DataTable&quot;);
-18
-19         List&lt;Map&lt;String, String&gt;&gt; users =
-20                 table.asMaps(String.class, String.class);
-21
-22         for (Map&lt;String, String&gt; user : users) {
-23
-24             System.out.println(&quot;Processing user record...&quot;);
-25
-26             System.out.println(&quot;Name   : &quot; + user.get(&quot;name&quot;));
-27             System.out.println(&quot;Email  : &quot; + user.get(&quot;email&quot;));
-28             System.out.println(&quot;City   : &quot; + user.get(&quot;city&quot;));
-29             System.out.println(&quot;Mobile : &quot; + user.get(&quot;mobile&quot;));
-30             System.out.println(&quot;Age    : &quot; + user.get(&quot;age&quot;));
-31
-32             System.out.println(&quot;-------------------------&quot;);
-33         }
-34     }
-35 }
-</code></pre>
-<p>Output- When we run scenario</p>
-<pre><code class="language-text">Step 1 Executed: GIVEN step - Test setup completed
+<p><div class="highlight"><pre><span></span><code><span class="mi">1</span><span class="w">  </span><span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.datatable.DataTable</span><span class="p">;</span>
+<span class="mi">2</span><span class="w">  </span><span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.en.Given</span><span class="p">;</span>
+<span class="mi">3</span><span class="w">  </span><span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.en.When</span><span class="p">;</span>
+<span class="mi">4</span><span class="w">  </span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="mi">5</span><span class="w">  </span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+<span class="mi">6</span>
+<span class="mi">7</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserStepDefinition</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">8</span>
+<span class="mi">9</span><span class="w">      </span><span class="nd">@Given</span><span class="p">(</span><span class="s">"user test setup is ready"</span><span class="p">)</span>
+<span class="mi">10</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">user_test_setup_is_ready</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">11</span><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Step 1 Executed: GIVEN step - Test setup completed"</span><span class="p">);</span>
+<span class="mi">12</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">13</span>
+<span class="mi">14</span><span class="w">     </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user enters below user details"</span><span class="p">)</span>
+<span class="mi">15</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">user_enters_below_user_details</span><span class="p">(</span><span class="n">DataTable</span><span class="w"> </span><span class="n">table</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">16</span>
+<span class="mi">17</span><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Step 2 Executed: WHEN step - Reading DataTable"</span><span class="p">);</span>
+<span class="mi">18</span>
+<span class="mi">19</span><span class="w">         </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span>
+<span class="mi">20</span><span class="w">                 </span><span class="n">table</span><span class="p">.</span><span class="na">asMaps</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="mi">21</span>
+<span class="mi">22</span><span class="w">         </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">users</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">23</span>
+<span class="mi">24</span><span class="w">             </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Processing user record..."</span><span class="p">);</span>
+<span class="mi">25</span>
+<span class="mi">26</span><span class="w">             </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name   : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">));</span>
+<span class="mi">27</span><span class="w">             </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Email  : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"email"</span><span class="p">));</span>
+<span class="mi">28</span><span class="w">             </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"City   : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"city"</span><span class="p">));</span>
+<span class="mi">29</span><span class="w">             </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mobile : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"mobile"</span><span class="p">));</span>
+<span class="mi">30</span><span class="w">             </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age    : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"age"</span><span class="p">));</span>
+<span class="mi">31</span>
+<span class="mi">32</span><span class="w">             </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------"</span><span class="p">);</span>
+<span class="mi">33</span><span class="w">         </span><span class="p">}</span>
+<span class="mi">34</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">35</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+Output- When we run scenario
+<div class="highlight"><pre><span></span><code>Step 1 Executed: GIVEN step - Test setup completed
 
 Step 2 Executed: WHEN step - Reading DataTable
 
@@ -5746,7 +5746,7 @@ City   : Pune
 Mobile : 91234
 Age    : 30
 -------------------------
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h2 id="key-characteristics_1">🎯 Key Characteristics<a class="headerlink" href="#key-characteristics_1" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5796,27 +5796,27 @@ Age    : 30
 <hr />
 <h1 id="advanced-datatable-examples-sdet-level">🚀 Advanced DataTable Examples (SDET Level)<a class="headerlink" href="#advanced-datatable-examples-sdet-level" title="Permanent link">&para;</a></h1>
 <h2 id="1-multiple-users-list-of-maps">1️⃣ Multiple Users (List of Maps)<a class="headerlink" href="#1-multiple-users-list-of-maps" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Scenario: Create users with full details
-  When user enters below user details
-    | name   | email            | city   | mobile | age |
-    | Nitin  | nitin@gmail.com  | Mumbai | 98765  | 28  |
-    | Rahul  | rahul@gmail.com  | Pune   | 91234  | 30  |
-</code></pre>
-<pre><code class="language-java">List&lt;Map&lt;String, String&gt;&gt; users = table.asMaps(String.class, String.class);
+<div class="highlight"><pre><span></span><code><span class="k">Scenario:</span><span class="nf"> Create users with full details</span>
+<span class="k">  When </span><span class="nf">user enters below user details</span>
+<span class="k">    |</span><span class="s"> name</span><span class="k">   |</span><span class="s"> email</span><span class="k">            |</span><span class="s"> city</span><span class="k">   |</span><span class="s"> mobile</span><span class="k"> |</span><span class="s"> age</span><span class="k"> |</span>
+<span class="k">    |</span><span class="s"> Nitin</span><span class="k">  |</span><span class="s"> nitin@gmail.com</span><span class="k">  |</span><span class="s"> Mumbai</span><span class="k"> |</span><span class="s"> 98765</span><span class="k">  |</span><span class="s"> 28</span><span class="k">  |</span>
+<span class="k">    |</span><span class="s"> Rahul</span><span class="k">  |</span><span class="s"> rahul@gmail.com</span><span class="k">  |</span><span class="s"> Pune</span><span class="k">   |</span><span class="s"> 91234</span><span class="k">  |</span><span class="s"> 30</span><span class="k">  |</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">asMaps</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
 
-for (Map&lt;String, String&gt; user : users) {
-    System.out.println(user.get(&quot;name&quot;));
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">users</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✔ Uses asMaps()
 ✔ Most common interview case</p>
 <hr />
 <h2 id="2-convert-datatable-to-pojo-nested-object">2️⃣ Convert DataTable to POJO (Nested Object)<a class="headerlink" href="#2-convert-datatable-to-pojo-nested-object" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Scenario: Create user with address
-  When user enters user details with address
-    | name  | email           | street  | city   | pincode |
-    | Nitin | nitin@gmail.com | MG Road | Mumbai | 400001  |
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">Scenario:</span><span class="nf"> Create user with address</span>
+<span class="k">  When </span><span class="nf">user enters user details with address</span>
+<span class="k">    |</span><span class="s"> name</span><span class="k">  |</span><span class="s"> email</span><span class="k">           |</span><span class="s"> street</span><span class="k">  |</span><span class="s"> city</span><span class="k">   |</span><span class="s"> pincode</span><span class="k"> |</span>
+<span class="k">    |</span><span class="s"> Nitin</span><span class="k"> |</span><span class="s"> nitin@gmail.com</span><span class="k"> |</span><span class="s"> MG Road</span><span class="k"> |</span><span class="s"> Mumbai</span><span class="k"> |</span><span class="s"> 400001</span><span class="k">  |</span>
+</code></pre></div>
 <h3 id="address-class">Address Class<a class="headerlink" href="#address-class" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Explanation:</li>
@@ -5827,31 +5827,31 @@ for (Map&lt;String, String&gt; user : users) {
 </ul>
 </li>
 </ul>
-<pre><code class="language-java">1  public class Address {
-2
-3      private String street;
-4      private String city;
-5      private String pincode;
-6
-7      public Address(String street, String city, String pincode) {
-8          this.street = street;
-9          this.city = city;
-10         this.pincode = pincode;
-11     }
-12
-13     public String getStreet() {
-14         return street;
-15     }
-16
-17     public String getCity() {
-18         return city;
-19     }
-20
-21     public String getPincode() {
-22         return pincode;
-23     }
-24 }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="mi">1</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Address</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">2</span>
+<span class="mi">3</span><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">street</span><span class="p">;</span>
+<span class="mi">4</span><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<span class="mi">5</span><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pincode</span><span class="p">;</span>
+<span class="mi">6</span>
+<span class="mi">7</span><span class="w">      </span><span class="kd">public</span><span class="w"> </span><span class="nf">Address</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">street</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pincode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">8</span><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="na">street</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">street</span><span class="p">;</span>
+<span class="mi">9</span><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="na">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<span class="mi">10</span><span class="w">         </span><span class="k">this</span><span class="p">.</span><span class="na">pincode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pincode</span><span class="p">;</span>
+<span class="mi">11</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">12</span>
+<span class="mi">13</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getStreet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">14</span><span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">street</span><span class="p">;</span>
+<span class="mi">15</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">16</span>
+<span class="mi">17</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getCity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">18</span><span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<span class="mi">19</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">20</span>
+<span class="mi">21</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getPincode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">22</span><span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">pincode</span><span class="p">;</span>
+<span class="mi">23</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">24</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <h3 id="user-class">User Class<a class="headerlink" href="#user-class" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Explanation:</li>
@@ -5862,87 +5862,87 @@ for (Map&lt;String, String&gt; user : users) {
 </ul>
 </li>
 </ul>
-<pre><code class="language-java">1  public class User {
-2
-3      private String name;
-4      private String email;
-5      private Address address;
-6
-7      public User(String name, String email, Address address) {
-8          this.name = name;
-9          this.email = email;
-10         this.address = address;
-11     }
-12
-13     public String getName() {
-14         return name;
-15     }
-16
-17     public String getEmail() {
-18         return email;
-19     }
-20
-21     public Address getAddress() {
-22         return address;
-23     }
-24 }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="mi">1</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">2</span>
+<span class="mi">3</span><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="mi">4</span><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="mi">5</span><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="mi">6</span>
+<span class="mi">7</span><span class="w">      </span><span class="kd">public</span><span class="w"> </span><span class="nf">User</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">8</span><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="mi">9</span><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="mi">10</span><span class="w">         </span><span class="k">this</span><span class="p">.</span><span class="na">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="mi">11</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">12</span>
+<span class="mi">13</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">14</span><span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="mi">15</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">16</span>
+<span class="mi">17</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getEmail</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">18</span><span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="mi">19</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">20</span>
+<span class="mi">21</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="nf">getAddress</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">22</span><span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="mi">23</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">24</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <h3 id="stef-def-class">Stef Def Class<a class="headerlink" href="#stef-def-class" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">1  import io.cucumber.datatable.DataTable;
-2  import io.cucumber.java.en.When;
-3  import java.util.Map;
-4
-5  public class UserStepDefinition {
-6
-7      @When(&quot;user enters user details with address&quot;)
-8      public void user_enters_user_details_with_address(DataTable table) {
-9
-10         Map&lt;String, String&gt; data =
-11                 table.asMaps(String.class, String.class).get(0);
-12
-13         Address address = new Address(
-14                 data.get(&quot;street&quot;),
-15                 data.get(&quot;city&quot;),
-16                 data.get(&quot;pincode&quot;)
-17         );
-18
-19         User user = new User(
-20                 data.get(&quot;name&quot;),
-21                 data.get(&quot;email&quot;),
-22                 address
-23         );
-24
-25         System.out.println(&quot;User Name: &quot; + user.getName());
-26         System.out.println(&quot;Email: &quot; + user.getEmail());
-27         System.out.println(&quot;Street: &quot; + user.getAddress().getStreet());
-28         System.out.println(&quot;City: &quot; + user.getAddress().getCity());
-29         System.out.println(&quot;Pincode: &quot; + user.getAddress().getPincode());
-30     }
-31 }
-</code></pre>
-<p>Output</p>
-<pre><code class="language-text">User Name: Nitin
+<div class="highlight"><pre><span></span><code><span class="mi">1</span><span class="w">  </span><span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.datatable.DataTable</span><span class="p">;</span>
+<span class="mi">2</span><span class="w">  </span><span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.en.When</span><span class="p">;</span>
+<span class="mi">3</span><span class="w">  </span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+<span class="mi">4</span>
+<span class="mi">5</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserStepDefinition</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">6</span>
+<span class="mi">7</span><span class="w">      </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user enters user details with address"</span><span class="p">)</span>
+<span class="mi">8</span><span class="w">      </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">user_enters_user_details_with_address</span><span class="p">(</span><span class="n">DataTable</span><span class="w"> </span><span class="n">table</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="mi">9</span>
+<span class="mi">10</span><span class="w">         </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span>
+<span class="mi">11</span><span class="w">                 </span><span class="n">table</span><span class="p">.</span><span class="na">asMaps</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="mi">12</span>
+<span class="mi">13</span><span class="w">         </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Address</span><span class="p">(</span>
+<span class="mi">14</span><span class="w">                 </span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"street"</span><span class="p">),</span>
+<span class="mi">15</span><span class="w">                 </span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"city"</span><span class="p">),</span>
+<span class="mi">16</span><span class="w">                 </span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"pincode"</span><span class="p">)</span>
+<span class="mi">17</span><span class="w">         </span><span class="p">);</span>
+<span class="mi">18</span>
+<span class="mi">19</span><span class="w">         </span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span>
+<span class="mi">20</span><span class="w">                 </span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">),</span>
+<span class="mi">21</span><span class="w">                 </span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"email"</span><span class="p">),</span>
+<span class="mi">22</span><span class="w">                 </span><span class="n">address</span>
+<span class="mi">23</span><span class="w">         </span><span class="p">);</span>
+<span class="mi">24</span>
+<span class="mi">25</span><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="mi">26</span><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Email: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getEmail</span><span class="p">());</span>
+<span class="mi">27</span><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Street: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getAddress</span><span class="p">().</span><span class="na">getStreet</span><span class="p">());</span>
+<span class="mi">28</span><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"City: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getAddress</span><span class="p">().</span><span class="na">getCity</span><span class="p">());</span>
+<span class="mi">29</span><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Pincode: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getAddress</span><span class="p">().</span><span class="na">getPincode</span><span class="p">());</span>
+<span class="mi">30</span><span class="w">     </span><span class="p">}</span>
+<span class="mi">31</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>Output
+<div class="highlight"><pre><span></span><code>User Name: Nitin
 Email: nitin@gmail.com
 Street: MG Road
 City: Mumbai
 Pincode: 400001
-</code></pre>
-<p>✔ Manual mapping
+</code></pre></div>
+✔ Manual mapping
 ✔ Nested object handling
 ✔ Frequently asked in SDET interviews</p>
 <hr />
 <h2 id="3-list-inside-list-user-with-roles">3️⃣ List Inside List (User with Roles)<a class="headerlink" href="#3-list-inside-list-user-with-roles" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Scenario: Create user with roles
-  When user enters user and roles
-    | name  | roles              |
-    | Nitin | ADMIN,USER,MANAGER |
-</code></pre>
-<pre><code class="language-java">Map&lt;String, String&gt; data = table.asMaps(String.class, String.class).get(0);
+<div class="highlight"><pre><span></span><code><span class="k">Scenario:</span><span class="nf"> Create user with roles</span>
+<span class="k">  When </span><span class="nf">user enters user and roles</span>
+<span class="k">    |</span><span class="s"> name</span><span class="k">  |</span><span class="s"> roles</span><span class="k">              |</span>
+<span class="k">    |</span><span class="s"> Nitin</span><span class="k"> |</span><span class="s"> ADMIN,USER,MANAGER</span><span class="k"> |</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">asMaps</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
-List&lt;String&gt; roles = Arrays.asList(data.get(&quot;roles&quot;).split(&quot;,&quot;));
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">roles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"roles"</span><span class="p">).</span><span class="na">split</span><span class="p">(</span><span class="s">","</span><span class="p">));</span>
 
-User user = new User(data.get(&quot;name&quot;), roles);
-</code></pre>
+<span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">),</span><span class="w"> </span><span class="n">roles</span><span class="p">);</span>
+</code></pre></div>
 <p>✔ Use split()
 ✔ Convert string to List
 ✔ Advanced parsing</p>
@@ -6078,6 +6078,10 @@ flow.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

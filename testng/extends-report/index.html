@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5681,108 +5681,108 @@
 <hr />
 <h1 id="4-stepbystep-setup">🔷 4️⃣ Step‑by‑Step Setup<a class="headerlink" href="#4-stepbystep-setup" title="Permanent link">&para;</a></h1>
 <h2 id="dependency-pomxml">Dependency (pom.xml)<a class="headerlink" href="#dependency-pomxml" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;dependency&gt;
-   &lt;groupId&gt;com.aventstack&lt;/groupId&gt;
-   &lt;artifactId&gt;extentreports&lt;/artifactId&gt;
-   &lt;version&gt;5.1.1&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+<span class="w">   </span><span class="nt">&lt;groupId&gt;</span>com.aventstack<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">   </span><span class="nt">&lt;artifactId&gt;</span>extentreports<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">   </span><span class="nt">&lt;version&gt;</span>5.1.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="extentmanager">ExtentManager<a class="headerlink" href="#extentmanager" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class ExtentManager {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExtentManager</span><span class="w"> </span><span class="p">{</span>
 
-    private static ExtentReports extent;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ExtentReports</span><span class="w"> </span><span class="n">extent</span><span class="p">;</span>
 
-    public static ExtentReports getInstance(){
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ExtentReports</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">(){</span>
 
-        if(extent == null){
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">extent</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
 
-            ExtentSparkReporter spark =
-                new ExtentSparkReporter(&quot;target/extent-report.html&quot;);
+<span class="w">            </span><span class="n">ExtentSparkReporter</span><span class="w"> </span><span class="n">spark</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">ExtentSparkReporter</span><span class="p">(</span><span class="s">"target/extent-report.html"</span><span class="p">);</span>
 
-            spark.config().setDocumentTitle(&quot;Automation Report&quot;);
-            spark.config().setReportName(&quot;Regression Suite&quot;);
-            spark.config().setTheme(Theme.DARK);
+<span class="w">            </span><span class="n">spark</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">setDocumentTitle</span><span class="p">(</span><span class="s">"Automation Report"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">spark</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">setReportName</span><span class="p">(</span><span class="s">"Regression Suite"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">spark</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">setTheme</span><span class="p">(</span><span class="n">Theme</span><span class="p">.</span><span class="na">DARK</span><span class="p">);</span>
 
-            extent = new ExtentReports();
-            extent.attachReporter(spark);
-        }
+<span class="w">            </span><span class="n">extent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExtentReports</span><span class="p">();</span>
+<span class="w">            </span><span class="n">extent</span><span class="p">.</span><span class="na">attachReporter</span><span class="p">(</span><span class="n">spark</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
-        return extent;
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">extent</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="screenshot-utility">Screenshot Utility<a class="headerlink" href="#screenshot-utility" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public static String capture(String name) throws Exception {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">capture</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
 
-    File src = ((TakesScreenshot)DriverFactory.getDriver())
-            .getScreenshotAs(OutputType.FILE);
+<span class="w">    </span><span class="n">File</span><span class="w"> </span><span class="n">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="n">DriverFactory</span><span class="p">.</span><span class="na">getDriver</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span>
 
-    new File(&quot;target/screenshots&quot;).mkdirs();
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"target/screenshots"</span><span class="p">).</span><span class="na">mkdirs</span><span class="p">();</span>
 
-    String path = &quot;target/screenshots/&quot; + name + &quot;.png&quot;;
-    FileUtils.copyFile(src, new File(path));
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"target/screenshots/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">".png"</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FileUtils</span><span class="p">.</span><span class="na">copyFile</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">path</span><span class="p">));</span>
 
-    return &quot;screenshots/&quot; + name + &quot;.png&quot;;
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">"screenshots/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">".png"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="listener-integration">Listener Integration<a class="headerlink" href="#listener-integration" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class TestListener implements ITestListener {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestListener</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ITestListener</span><span class="w"> </span><span class="p">{</span>
 
-    ExtentReports extent = ExtentManager.getInstance();
-    ThreadLocal&lt;ExtentTest&gt; test = new ThreadLocal&lt;&gt;();
+<span class="w">    </span><span class="n">ExtentReports</span><span class="w"> </span><span class="n">extent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ExtentManager</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">ExtentTest</span><span class="o">&gt;</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    public void onTestStart(ITestResult result){
-        test.set(extent.createTest(result.getName()));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTestStart</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">){</span>
+<span class="w">        </span><span class="n">test</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">extent</span><span class="p">.</span><span class="na">createTest</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">getName</span><span class="p">()));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void onTestSuccess(ITestResult result){
-        test.get().pass(&quot;Passed&quot;);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTestSuccess</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">){</span>
+<span class="w">        </span><span class="n">test</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">pass</span><span class="p">(</span><span class="s">"Passed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void onTestFailure(ITestResult result){
-        String path = ScreenshotUtil.capture(result.getName());
-        test.get().fail(result.getThrowable())
-            .addScreenCaptureFromPath(path);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTestFailure</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">){</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScreenshotUtil</span><span class="p">.</span><span class="na">capture</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="n">test</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">fail</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">getThrowable</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="na">addScreenCaptureFromPath</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void onTestSkipped(ITestResult result){
-        test.get().skip(&quot;Skipped&quot;);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTestSkipped</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">){</span>
+<span class="w">        </span><span class="n">test</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">skip</span><span class="p">(</span><span class="s">"Skipped"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void onFinish(ITestContext context){
-        extent.flush();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onFinish</span><span class="p">(</span><span class="n">ITestContext</span><span class="w"> </span><span class="n">context</span><span class="p">){</span>
+<span class="w">        </span><span class="n">extent</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="register-listener">Register Listener<a class="headerlink" href="#register-listener" title="Permanent link">&para;</a></h2>
 <h3 id="testngxml">testng.xml<a class="headerlink" href="#testngxml" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;listeners&gt;
-   &lt;listener class-name=&quot;listeners.TestListener&quot;/&gt;
-&lt;/listeners&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;listeners&gt;</span>
+<span class="w">   </span><span class="nt">&lt;listener</span><span class="w"> </span><span class="na">class-name=</span><span class="s">"listeners.TestListener"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/listeners&gt;</span>
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-java">@Listeners(TestListener.class)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Listeners</span><span class="p">(</span><span class="n">TestListener</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h2 id="sample-tests">Sample Tests<a class="headerlink" href="#sample-tests" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test public void loginPass(){}
-@Test public void loginFail(){ Assert.fail(); }
-@Test public void loginSkip(){ throw new SkipException(&quot;Skip&quot;); }
-@Test public void loginInfo(){ Assert.assertTrue(true); }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginPass</span><span class="p">(){}</span>
+<span class="nd">@Test</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginFail</span><span class="p">(){</span><span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">fail</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+<span class="nd">@Test</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginSkip</span><span class="p">(){</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SkipException</span><span class="p">(</span><span class="s">"Skip"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="nd">@Test</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginInfo</span><span class="p">(){</span><span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertTrue</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="5-execution-flow">🔷 5️⃣ Execution Flow<a class="headerlink" href="#5-execution-flow" title="Permanent link">&para;</a></h1>
 <p>Test Start → Listener → createTest → capture logs/screenshots → flush → HTML generated</p>
 <hr />
 <h1 id="6-output">🔷 6️⃣ Output<a class="headerlink" href="#6-output" title="Permanent link">&para;</a></h1>
-<pre><code>target/
+<div class="highlight"><pre><span></span><code>target/
    extent-report.html
    screenshots/
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="7-interview-quick-lines">🔷 7️⃣ Interview Quick Lines<a class="headerlink" href="#7-interview-quick-lines" title="Permanent link">&para;</a></h1>
 <ul>
@@ -5846,6 +5846,10 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

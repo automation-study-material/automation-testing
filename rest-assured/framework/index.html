@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5733,7 +5733,7 @@
 </ul>
 <hr />
 <h2 id="folder-structure">📁 Folder Structure<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h2>
-<pre><code>restassured-oops-framework/
+<div class="highlight"><pre><span></span><code>restassured-oops-framework/
 ├── base/
 │   ├── BaseTest.java
 │   └── BaseService.java
@@ -5755,112 +5755,112 @@
 │   └── ResponseValidator.java
 └── tests/
     └── LoginApiTest.java
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="retryanalyzerjava">🔁 RetryAnalyzer.java<a class="headerlink" href="#retryanalyzerjava" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> Retries flaky API tests automatically.</p>
-<pre><code class="language-java">public class RetryAnalyzer implements IRetryAnalyzer {
-    private int count = 0;
-    private static final int MAX_RETRY = 2;
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RetryAnalyzer</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IRetryAnalyzer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_RETRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 
-    public boolean retry(ITestResult result) {
-        if (count &lt; MAX_RETRY) {
-            count++;
-            return true;
-        }
-        return false;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">retry</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MAX_RETRY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="tokenmanagerjava">🔐 TokenManager.java<a class="headerlink" href="#tokenmanagerjava" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> Thread-safe token storage for parallel execution.</p>
-<pre><code class="language-java">public class TokenManager {
-    private static ThreadLocal&lt;String&gt; token = new ThreadLocal&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TokenManager</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    public static void setToken(String authToken) {
-        token.set(authToken);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setToken</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">authToken</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">token</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">authToken</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static String getToken() {
-        return token.get();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getToken</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">token</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static void clear() {
-        token.remove();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">token</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="requestspecutiljava">📦 RequestSpecUtil.java<a class="headerlink" href="#requestspecutiljava" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> Centralized request specification.</p>
-<pre><code class="language-java">public class RequestSpecUtil {
-    public static RequestSpecification getSpec() {
-        return new RequestSpecBuilder()
-            .setBaseUri(&quot;https://example.com&quot;)
-            .addHeader(&quot;Authorization&quot;, &quot;Bearer &quot; + TokenManager.getToken())
-            .setContentType(&quot;application/json&quot;)
-            .build();
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RequestSpecUtil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">RequestSpecification</span><span class="w"> </span><span class="nf">getSpec</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RequestSpecBuilder</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">setBaseUri</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">addHeader</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bearer "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">TokenManager</span><span class="p">.</span><span class="na">getToken</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="responsevalidatorjava">✅ ResponseValidator.java<a class="headerlink" href="#responsevalidatorjava" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> Common response assertions.</p>
-<pre><code class="language-java">public class ResponseValidator {
-    public static void validateStatus(Response response, int code) {
-        Assert.assertEquals(response.statusCode(), code);
-    }
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ResponseValidator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">validateStatus</span><span class="p">(</span><span class="n">Response</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">statusCode</span><span class="p">(),</span><span class="w"> </span><span class="n">code</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static void validateNotNull(Response response, String path) {
-        Assert.assertNotNull(response.jsonPath().get(path));
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">validateNotNull</span><span class="p">(</span><span class="n">Response</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertNotNull</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">jsonPath</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">path</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="httpactionsjava">🧩 HttpActions.java<a class="headerlink" href="#httpactionsjava" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> Abstract HTTP contract.</p>
-<pre><code class="language-java">public interface HttpActions {
-    Response get(RequestSpecification req, String endpoint);
-    Response post(RequestSpecification req, String endpoint);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">HttpActions</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Response</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">RequestSpecification</span><span class="w"> </span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">endpoint</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Response</span><span class="w"> </span><span class="nf">post</span><span class="p">(</span><span class="n">RequestSpecification</span><span class="w"> </span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">endpoint</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="restclientjava">🚀 RestClient.java<a class="headerlink" href="#restclientjava" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> Encapsulates Rest Assured calls.</p>
-<pre><code class="language-java">public class RestClient implements HttpActions {
-    public Response post(RequestSpecification req, String endpoint) {
-        return given(req).when().post(endpoint);
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RestClient</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">HttpActions</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Response</span><span class="w"> </span><span class="nf">post</span><span class="p">(</span><span class="n">RequestSpecification</span><span class="w"> </span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">endpoint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">given</span><span class="p">(</span><span class="n">req</span><span class="p">).</span><span class="na">when</span><span class="p">().</span><span class="na">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="baseservicejava">🧱 BaseService.java<a class="headerlink" href="#baseservicejava" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> Base class for all API services.</p>
-<pre><code class="language-java">public abstract class BaseService {
-    protected RestClient client = new RestClient();
-    protected RequestSpecification request = RequestSpecUtil.getSpec();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BaseService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">RestClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RestClient</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">RequestSpecification</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RequestSpecUtil</span><span class="p">.</span><span class="na">getSpec</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="loginservicejava">🔑 LoginService.java<a class="headerlink" href="#loginservicejava" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> Handles Login API.</p>
-<pre><code class="language-java">public class LoginService extends BaseService {
-    public Response login(LoginRequest payload) {
-        return client.post(request.body(payload), Endpoints.LOGIN);
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginService</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Response</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">LoginRequest</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">payload</span><span class="p">),</span><span class="w"> </span><span class="n">Endpoints</span><span class="p">.</span><span class="na">LOGIN</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="loginapitestjava-bdd">🧪 LoginApiTest.java (BDD)<a class="headerlink" href="#loginapitestjava-bdd" title="Permanent link">&para;</a></h2>
 <p><strong>Purpose:</strong> BDD-style readable API test.</p>
-<pre><code class="language-java">@Test(retryAnalyzer = RetryAnalyzer.class)
-public void loginTest() {
-    givenLoginPayload();
-    whenLoginApiCalled();
-    thenValidateResponse();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">retryAnalyzer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RetryAnalyzer</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">givenLoginPayload</span><span class="p">();</span>
+<span class="w">    </span><span class="n">whenLoginApiCalled</span><span class="p">();</span>
+<span class="w">    </span><span class="n">thenValidateResponse</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="interview-summary">⭐ Interview Summary<a class="headerlink" href="#interview-summary" title="Permanent link">&para;</a></h2>
 <p>"My Rest Assured framework applies OOP principles with service abstraction, ThreadLocal token handling, retry mechanisms for flaky APIs, reusable validators, and BDD-style test readability."</p>
@@ -5917,6 +5917,10 @@ public void loginTest() {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

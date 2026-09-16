@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -6439,14 +6439,14 @@
 2. <strong>Interfaces</strong></p>
 <hr />
 <h2 id="abstract-class-core-concept">🔷 Abstract Class – Core Concept<a class="headerlink" href="#abstract-class-core-concept" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">abstract class Vehicle {
-    abstract void start();   // abstract method
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">();</span><span class="w">   </span><span class="c1">// abstract method</span>
 
-    void stop() {            // concrete method
-        System.out.println(&quot;Vehicle stopped&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">            </span><span class="c1">// concrete method</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vehicle stopped"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="key-points">Key Points<a class="headerlink" href="#key-points" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Cannot be instantiated</li>
@@ -6456,30 +6456,30 @@
 <hr />
 <h2 id="abstract-class-constructor-important">🔷 Abstract Class Constructor (Important)<a class="headerlink" href="#abstract-class-constructor-important" title="Permanent link">&para;</a></h2>
 <p>Abstract classes <strong>DO have constructors</strong>.</p>
-<pre><code class="language-java">abstract class Vehicle {
-    Vehicle() {
-        System.out.println(&quot;Vehicle constructor&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Vehicle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vehicle constructor"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Car extends Vehicle {
-    Car() {
-        System.out.println(&quot;Car constructor&quot;);
-    }
-}
-</code></pre>
-<pre><code class="language-java">Vehicle v = new Car();
-</code></pre>
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Car</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car constructor"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Vehicle</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<pre><code>Vehicle constructor
+<div class="highlight"><pre><span></span><code>Vehicle constructor
 Car constructor
-</code></pre>
+</code></pre></div>
 <p>👉 Constructor is used to initialize <strong>common state</strong>.</p>
 <hr />
 <h2 id="jvm-backend-working-must-know">🔷 JVM / Backend Working (Must-Know)<a class="headerlink" href="#jvm-backend-working-must-know" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Vehicle v = new Car();
-v.start();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Vehicle</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<span class="n">v</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="compile-time">Compile Time<a class="headerlink" href="#compile-time" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Reference type (<code>Vehicle</code>) is checked</li>
@@ -6495,20 +6495,20 @@ v.start();
 <h2 id="abstraction-method-overriding">🔷 Abstraction + Method Overriding<a class="headerlink" href="#abstraction-method-overriding" title="Permanent link">&para;</a></h2>
 <h3 id="concept">Concept<a class="headerlink" href="#concept" title="Permanent link">&para;</a></h3>
 <p>Overriding enables abstraction by forcing subclasses to provide specific behavior.</p>
-<pre><code class="language-java">abstract class Shape {
-    abstract void draw();
-}
-</code></pre>
-<pre><code class="language-java">class Circle extends Shape {
-    @Override
-    void draw() {
-        System.out.println(&quot;Drawing Circle&quot;);
-    }
-}
-</code></pre>
-<pre><code class="language-java">Shape s = new Circle();
-s.draw(); // Drawing Circle
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Shape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Circle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Drawing Circle"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Shape</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Circle</span><span class="p">();</span>
+<span class="n">s</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span><span class="w"> </span><span class="c1">// Drawing Circle</span>
+</code></pre></div>
 <h3 id="interview-line">Interview Line<a class="headerlink" href="#interview-line" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Abstraction is implemented using method overriding at runtime.</p>
@@ -6520,16 +6520,16 @@ s.draw(); // Drawing Circle
 <li>Same method name</li>
 <li>Different parameters</li>
 </ul>
-<pre><code class="language-java">abstract class Calculator {
-    int add(int a, int b) {
-        return a + b;
-    }
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    int add(int a, int b, int c) {
-        return a + b + c;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>👉 Overloading <strong>does NOT achieve abstraction</strong>
 - It is <strong>compile-time polymorphism</strong>
 - Method selection based on reference type</p>
@@ -6583,69 +6583,69 @@ s.draw(); // Drawing Circle
 </table>
 <hr />
 <h2 id="how-interface-achieves-abstraction">🔷 How Interface Achieves Abstraction<a class="headerlink" href="#how-interface-achieves-abstraction" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">interface Payment {
-    void pay();
-}
-</code></pre>
-<pre><code class="language-java">class UpiPayment implements Payment {
-    public void pay() {
-        System.out.println(&quot;Paying via UPI&quot;);
-    }
-}
-</code></pre>
-<pre><code class="language-java">Payment p = new UpiPayment();
-p.pay();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Payment</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">pay</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">UpiPayment</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Payment</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pay</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Paying via UPI"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Payment</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpiPayment</span><span class="p">();</span>
+<span class="n">p</span><span class="p">.</span><span class="na">pay</span><span class="p">();</span>
+</code></pre></div>
 <p>👉 Interface provides <strong>100% abstraction</strong> (before Java 8)</p>
 <hr />
 <h2 id="abstract-class-implementing-interface">🔷 Abstract Class Implementing Interface<a class="headerlink" href="#abstract-class-implementing-interface" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">interface Flyable {
-    void fly();
-}
-</code></pre>
-<pre><code class="language-java">abstract class Bird implements Flyable {
-    // may skip implementation
-}
-</code></pre>
-<pre><code class="language-java">class Sparrow extends Bird {
-    public void fly() {
-        System.out.println(&quot;Sparrow flying&quot;);
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Flyable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">fly</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Bird</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Flyable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// may skip implementation</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Sparrow</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Bird</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fly</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Sparrow flying"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="real-time-interview-questions-with-theory-code">🔷 Real-Time Interview Questions (With Theory + Code)<a class="headerlink" href="#real-time-interview-questions-with-theory-code" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="q1-why-cant-abstract-class-be-instantiated">Q1. Why can’t abstract class be instantiated?<a class="headerlink" href="#q1-why-cant-abstract-class-be-instantiated" title="Permanent link">&para;</a></h3>
 <p><strong>Theory:</strong><br />
 Because it may contain unimplemented methods.</p>
-<pre><code class="language-java">abstract class A {
-    abstract void m1();
-}
-</code></pre>
-<pre><code class="language-java">A a = new A(); // Compile-time error
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">m1</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compile-time error</span>
+</code></pre></div>
 <hr />
 <h3 id="q2-can-abstract-class-have-zero-abstract-methods">Q2. Can abstract class have zero abstract methods?<a class="headerlink" href="#q2-can-abstract-class-have-zero-abstract-methods" title="Permanent link">&para;</a></h3>
 <p>✔️ Yes – used to prevent instantiation.</p>
-<pre><code class="language-java">abstract class Utility {
-    void log() {
-        System.out.println(&quot;Logging&quot;);
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Utility</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">log</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Logging"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="q3-can-constructor-be-abstract">Q3. Can constructor be abstract?<a class="headerlink" href="#q3-can-constructor-be-abstract" title="Permanent link">&para;</a></h3>
 <p>❌ No – constructors cannot be overridden.</p>
 <hr />
 <h3 id="q4-what-happens-if-child-does-not-implement-abstract-method">Q4. What happens if child does not implement abstract method?<a class="headerlink" href="#q4-what-happens-if-child-does-not-implement-abstract-method" title="Permanent link">&para;</a></h3>
 <p>❌ Compile-time error (unless child is abstract).</p>
-<pre><code class="language-java">abstract class A {
-    abstract void m1();
-}
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">m1</span><span class="p">();</span>
+<span class="p">}</span>
 
-class B extends A { } // Error
-</code></pre>
+<span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Error</span>
+</code></pre></div>
 <hr />
 <h3 id="q5-can-abstract-class-have-static-methods">Q5. Can abstract class have static methods?<a class="headerlink" href="#q5-can-abstract-class-have-static-methods" title="Permanent link">&para;</a></h3>
 <p>✔️ Yes<br />
@@ -6687,21 +6687,21 @@ class B extends A { } // Error
 <hr />
 <h2 id="common-interview-traps">🔷 Common Interview Traps<a class="headerlink" href="#common-interview-traps" title="Permanent link">&para;</a></h2>
 <h3 id="trap-1">Trap 1<a class="headerlink" href="#trap-1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">abstract class A {
-    abstract void m1();
-}
+<p><div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">m1</span><span class="p">();</span>
+<span class="p">}</span>
 
-class B extends A {
-}
-</code></pre>
-<p>❌ Compile error<br />
+<span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+❌ Compile error<br />
 ✔️ Fix: Implement method or make class abstract</p>
 <hr />
 <h3 id="trap-2">Trap 2<a class="headerlink" href="#trap-2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">abstract class Test {
-    abstract static void run(); // ❌ Invalid
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">();</span><span class="w"> </span><span class="c1">// ❌ Invalid</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="one-line-interview-definitions">🔷 One-Line Interview Definitions<a class="headerlink" href="#one-line-interview-definitions" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6764,6 +6764,10 @@ class B extends A {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

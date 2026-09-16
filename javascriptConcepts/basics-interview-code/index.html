@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6101,12 +6101,12 @@
 <p>This file contains <strong>popular JavaScript code examples</strong> on variables, loops, and array operations commonly asked in interviews. Each snippet includes <strong>explanation</strong> and <strong>output</strong>.</p>
 <hr />
 <h2 id="1-variable-hoisting-var-vs-let">1️⃣ Variable Hoisting (<code>var</code> vs <code>let</code>)<a class="headerlink" href="#1-variable-hoisting-var-vs-let" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">console.log(a); // undefined
-var a = 10;
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
 
-console.log(b); // ReferenceError: Cannot access 'b' before initialization
-let b = 20;
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// ReferenceError: Cannot access 'b' before initialization</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li><code>var</code> is <strong>hoisted</strong> and initialized with <code>undefined</code>.</li>
@@ -6114,17 +6114,17 @@ let b = 20;
 </ul>
 <hr />
 <h2 id="2-re-declaration-and-re-assignment">2️⃣ Re-declaration and Re-assignment<a class="headerlink" href="#2-re-declaration-and-re-assignment" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">var x = 5;
-var x = 10; // ✅ Allowed
-x = 15;     // ✅ Allowed
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// ✅ Allowed</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15</span><span class="p">;</span><span class="w">     </span><span class="c1">// ✅ Allowed</span>
 
-let y = 20;
-// let y = 25; // ❌ Error
-y = 30;      // ✅ Allowed
+<span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+<span class="c1">// let y = 25; // ❌ Error</span>
+<span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w">      </span><span class="c1">// ✅ Allowed</span>
 
-const z = 50;
-// z = 60; // ❌ Error
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
+<span class="c1">// z = 60; // ❌ Error</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li><code>var</code> allows re-declare + reassign.</li>
@@ -6133,167 +6133,167 @@ const z = 50;
 </ul>
 <hr />
 <h2 id="3-for-loop-basics">3️⃣ For Loop Basics<a class="headerlink" href="#3-for-loop-basics" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">for (let i = 0; i &lt; 5; i++) {
-    console.log(i);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
-<pre><code>0
+<div class="highlight"><pre><span></span><code>0
 1
 2
 3
 4
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="4-loop-over-array">4️⃣ Loop Over Array<a class="headerlink" href="#4-loop-over-array" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const arr = [10, 20, 30, 40];
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">];</span>
 
-// Using traditional for
-for (let i = 0; i &lt; arr.length; i++) console.log(arr[i]);
+<span class="c1">// Using traditional for</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
 
-// Using for...of
-for (let value of arr) console.log(value);
+<span class="c1">// Using for...of</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">arr</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
 
-// Using forEach
-arr.forEach(value =&gt; console.log(value));
-</code></pre>
+<span class="c1">// Using forEach</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
-<pre><code>10 20 30 40 (3 times for each loop)
-</code></pre>
+<div class="highlight"><pre><span></span><code>10 20 30 40 (3 times for each loop)
+</code></pre></div>
 <hr />
 <h2 id="5-sum-of-array-using-loop">5️⃣ Sum of Array Using Loop<a class="headerlink" href="#5-sum-of-array-using-loop" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const nums = [1, 2, 3, 4, 5];
-let sum = 0;
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-for (let i = 0; i &lt; nums.length; i++) sum += nums[i];
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
 
-console.log(&quot;Sum:&quot;, sum);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Sum:"</span><span class="p">,</span><span class="w"> </span><span class="nx">sum</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
-<pre><code>Sum: 15
-</code></pre>
+<div class="highlight"><pre><span></span><code>Sum: 15
+</code></pre></div>
 <hr />
 <h2 id="6-reverse-a-string">6️⃣ Reverse a String<a class="headerlink" href="#6-reverse-a-string" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const str = &quot;Playwright&quot;;
-let reversed = &quot;&quot;;
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Playwright"</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">reversed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 
-for (let i = str.length - 1; i &gt;= 0; i--) reversed += str[i];
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="nx">reversed</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
 
-console.log(reversed);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reversed</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
-<pre><code>thgiryalP
-</code></pre>
+<div class="highlight"><pre><span></span><code>thgiryalP
+</code></pre></div>
 <hr />
 <h2 id="7-nested-loops-multiplication-table">7️⃣ Nested Loops (Multiplication Table)<a class="headerlink" href="#7-nested-loops-multiplication-table" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">for (let i = 1; i &lt;= 3; i++) {
-    let row = &quot;&quot;;
-    for (let j = 1; j &lt;= 3; j++) row += i * j + &quot; &quot;;
-    console.log(row);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="nx">row</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" "</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
-<pre><code>1 2 3
+<div class="highlight"><pre><span></span><code>1 2 3
 2 4 6
 3 6 9
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="8-variable-scope-in-loops-var-vs-let">8️⃣ Variable Scope in Loops (<code>var</code> vs <code>let</code>)<a class="headerlink" href="#8-variable-scope-in-loops-var-vs-let" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">for (var i = 0; i &lt; 3; i++) {}
-console.log(i); // 3 ✅ var is function-scoped
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3 ✅ var is function-scoped</span>
 
-for (let j = 0; j &lt; 3; j++) {}
-// console.log(j); // ❌ ReferenceError
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="c1">// console.log(j); // ❌ ReferenceError</span>
+</code></pre></div>
 <hr />
 <h2 id="9-filtering-even-numbers-using-loops">9️⃣ Filtering Even Numbers Using Loops<a class="headerlink" href="#9-filtering-even-numbers-using-loops" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const numbers = [1,2,3,4,5,6];
-let evens = [];
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">evens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
 
-for (let n of numbers) if (n % 2 === 0) evens.push(n);
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="nx">evens</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
 
-console.log(evens);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evens</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
-<pre><code>[2,4,6]
-</code></pre>
+<div class="highlight"><pre><span></span><code>[2,4,6]
+</code></pre></div>
 <hr />
 <h2 id="10-loop-with-break-and-continue">1️⃣0️⃣ Loop with <code>break</code> and <code>continue</code><a class="headerlink" href="#10-loop-with-break-and-continue" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">for (let i = 0; i &lt;= 5; i++) {
-    if (i === 3) break;      // Stops loop
-    console.log(i);
-}
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w">      </span><span class="c1">// Stops loop</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
 
-for (let i = 0; i &lt;= 5; i++) {
-    if (i === 3) continue;   // Skips current iteration
-    console.log(i);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w">   </span><span class="c1">// Skips current iteration</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
-<pre><code>0 1 2
+<div class="highlight"><pre><span></span><code>0 1 2
 0 1 2 4 5
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="11-array-methods-filter-map-reduce">1️⃣1️⃣ Array Methods – filter(), map(), reduce()<a class="headerlink" href="#11-array-methods-filter-map-reduce" title="Permanent link">&para;</a></h2>
 <h3 id="filter-even-numbers">Filter even numbers<a class="headerlink" href="#filter-even-numbers" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">const nums = [1,2,3,4,5];
-let evens = nums.filter(n =&gt; n % 2 === 0);
-console.log(evens); // [2,4]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">evens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evens</span><span class="p">);</span><span class="w"> </span><span class="c1">// [2,4]</span>
+</code></pre></div>
 <h3 id="sum-using-reduce">Sum using reduce<a class="headerlink" href="#sum-using-reduce" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">let sum = nums.reduce((acc, val) =&gt; acc + val, 0);
-console.log(sum); // 15
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">val</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span><span class="w"> </span><span class="c1">// 15</span>
+</code></pre></div>
 <h3 id="square-of-each-number-using-map">Square of each number using map<a class="headerlink" href="#square-of-each-number-using-map" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">let squares = nums.map(n =&gt; n*n);
-console.log(squares); // [1,4,9,16,25]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">squares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="o">*</span><span class="nx">n</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squares</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1,4,9,16,25]</span>
+</code></pre></div>
 <hr />
 <h2 id="12-arrow-function-vs-traditional-function">1️⃣2️⃣ Arrow Function vs Traditional Function<a class="headerlink" href="#12-arrow-function-vs-traditional-function" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">// Traditional function
-let squares1 = nums.map(function(n) { return n * n; });
+<div class="highlight"><pre><span></span><code><span class="c1">// Traditional function</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">squares1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
 
-// Arrow function
-let squares2 = nums.map(n =&gt; n * n);
+<span class="c1">// Arrow function</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">squares2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">n</span><span class="p">);</span>
 
-console.log(squares1); // [1,4,9,16,25]
-console.log(squares2); // [1,4,9,16,25]
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squares1</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1,4,9,16,25]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squares2</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1,4,9,16,25]</span>
+</code></pre></div>
 <hr />
 <h2 id="13-unique-array-elements">1️⃣3️⃣ Unique Array Elements<a class="headerlink" href="#13-unique-array-elements" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">let arr = [1,2,2,3,4,4,5];
-let unique = arr.filter((n, i, self) =&gt; self.indexOf(n) === i);
-console.log(unique); // [1,2,3,4,5]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">unique</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">self</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">self</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">unique</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1,2,3,4,5]</span>
+</code></pre></div>
 <hr />
 <h2 id="14-nested-loops-2d-array-traversal">1️⃣4️⃣ Nested Loops – 2D Array Traversal<a class="headerlink" href="#14-nested-loops-2d-array-traversal" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const matrix = [
-  [1,2,3],
-  [4,5,6],
-  [7,8,9]
-];
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">],</span>
+<span class="w">  </span><span class="p">[</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">],</span>
+<span class="w">  </span><span class="p">[</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">9</span><span class="p">]</span>
+<span class="p">];</span>
 
-for (let i = 0; i &lt; matrix.length; i++) {
-    for (let j = 0; j &lt; matrix[i].length; j++)
-        console.log(matrix[i][j]);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">matrix</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matrix</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="15-loop-with-objects">1️⃣5️⃣ Loop with Objects<a class="headerlink" href="#15-loop-with-objects" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const users = [
-  {name:&quot;Nitin&quot;, age:25},
-  {name:&quot;Rahul&quot;, age:17},
-  {name:&quot;Sneha&quot;, age:30}
-];
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">"Nitin"</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="mf">25</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">"Rahul"</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="mf">17</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">"Sneha"</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="mf">30</span><span class="p">}</span>
+<span class="p">];</span>
 
-for (let user of users) {
-    if (user.age &gt;= 18) console.log(user.name);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">users</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
-<pre><code>Nitin
+<div class="highlight"><pre><span></span><code>Nitin
 Sneha
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="tips-for-interview-preparation">🎯 Tips for Interview Preparation<a class="headerlink" href="#tips-for-interview-preparation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -6360,6 +6360,10 @@ You can use it as a <strong>cheat sheet</strong> for Playwright automation scrip
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

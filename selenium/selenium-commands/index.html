@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5690,184 +5690,184 @@
 <p>You can <strong>review this quickly before interviews</strong>.</p>
 <hr />
 <h1 id="1-screenshot-syntax">1️⃣ Screenshot Syntax<a class="headerlink" href="#1-screenshot-syntax" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.io.FileHandler;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.OutputType</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.TakesScreenshot</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.io.FileHandler</span><span class="p">;</span>
 
-File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-File dest = new File(&quot;C:\\Screenshots\\test.png&quot;);
+<span class="n">File</span><span class="w"> </span><span class="n">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">).</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span>
+<span class="n">File</span><span class="w"> </span><span class="n">dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"C:\\Screenshots\\test.png"</span><span class="p">);</span>
 
-FileHandler.copy(src, dest);
-</code></pre>
+<span class="n">FileHandler</span><span class="p">.</span><span class="na">copy</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">dest</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="screenshot-of-webelement">Screenshot of WebElement<a class="headerlink" href="#screenshot-of-webelement" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">WebElement element = driver.findElement(By.id(&quot;logo&quot;));
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"logo"</span><span class="p">));</span>
 
-File src = element.getScreenshotAs(OutputType.FILE);
-FileHandler.copy(src, new File(&quot;C:\\Screenshots\\element.png&quot;));
-</code></pre>
+<span class="n">File</span><span class="w"> </span><span class="n">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span>
+<span class="n">FileHandler</span><span class="p">.</span><span class="na">copy</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"C:\\Screenshots\\element.png"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h1 id="2-javascriptexecutor-syntax">2️⃣ JavaScriptExecutor Syntax<a class="headerlink" href="#2-javascriptexecutor-syntax" title="Permanent link">&para;</a></h1>
 <h3 id="create-object">Create object<a class="headerlink" href="#create-object" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">JavascriptExecutor js = (JavascriptExecutor) driver;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">JavascriptExecutor</span><span class="w"> </span><span class="n">js</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="scroll-page">Scroll page<a class="headerlink" href="#scroll-page" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">js.executeScript(&quot;window.scrollBy(0,500)&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">js</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"window.scrollBy(0,500)"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="scroll-to-element">Scroll to element<a class="headerlink" href="#scroll-to-element" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">js.executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, element);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">js</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"arguments[0].scrollIntoView(true);"</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="click-element">Click element<a class="headerlink" href="#click-element" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">js.executeScript(&quot;arguments[0].click();&quot;, element);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">js</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"arguments[0].click();"</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="enter-text">Enter text<a class="headerlink" href="#enter-text" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">js.executeScript(&quot;arguments[0].value='Admin';&quot;, element);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">js</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"arguments[0].value='Admin';"</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="get-page-title">Get page title<a class="headerlink" href="#get-page-title" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String title = js.executeScript(&quot;return document.title&quot;).toString();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"return document.title"</span><span class="p">).</span><span class="na">toString</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="3-actions-class-syntax">3️⃣ Actions Class Syntax<a class="headerlink" href="#3-actions-class-syntax" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">import org.openqa.selenium.interactions.Actions;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.interactions.Actions</span><span class="p">;</span>
 
-Actions actions = new Actions(driver);
-</code></pre>
+<span class="n">Actions</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="mouse-hover">Mouse Hover<a class="headerlink" href="#mouse-hover" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">actions.moveToElement(element).perform();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">actions</span><span class="p">.</span><span class="na">moveToElement</span><span class="p">(</span><span class="n">element</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="double-click">Double Click<a class="headerlink" href="#double-click" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">actions.doubleClick(element).perform();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">actions</span><span class="p">.</span><span class="na">doubleClick</span><span class="p">(</span><span class="n">element</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="right-click">Right Click<a class="headerlink" href="#right-click" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">actions.contextClick(element).perform();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">actions</span><span class="p">.</span><span class="na">contextClick</span><span class="p">(</span><span class="n">element</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="drag-and-drop">Drag and Drop<a class="headerlink" href="#drag-and-drop" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">actions.dragAndDrop(source, target).perform();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">actions</span><span class="p">.</span><span class="na">dragAndDrop</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="click-and-hold">Click and Hold<a class="headerlink" href="#click-and-hold" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">actions.clickAndHold(element).perform();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">actions</span><span class="p">.</span><span class="na">clickAndHold</span><span class="p">(</span><span class="n">element</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="keyboard-actions">Keyboard Actions<a class="headerlink" href="#keyboard-actions" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">actions.sendKeys(Keys.ENTER).perform();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">ENTER</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="4-alert-handling">4️⃣ Alert Handling<a class="headerlink" href="#4-alert-handling" title="Permanent link">&para;</a></h1>
 <h3 id="switch-to-alert">Switch to alert<a class="headerlink" href="#switch-to-alert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Alert alert = driver.switchTo().alert();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Alert</span><span class="w"> </span><span class="n">alert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">alert</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="accept-alert">Accept alert<a class="headerlink" href="#accept-alert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">alert.accept();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">alert</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="dismiss-alert">Dismiss alert<a class="headerlink" href="#dismiss-alert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">alert.dismiss();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">alert</span><span class="p">.</span><span class="na">dismiss</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="get-alert-text">Get alert text<a class="headerlink" href="#get-alert-text" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String text = alert.getText();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alert</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="send-text-to-alert">Send text to alert<a class="headerlink" href="#send-text-to-alert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">alert.sendKeys(&quot;Hello&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">alert</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="5-window-handling">5️⃣ Window Handling<a class="headerlink" href="#5-window-handling" title="Permanent link">&para;</a></h1>
 <h3 id="get-current-window">Get current window<a class="headerlink" href="#get-current-window" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String parent = driver.getWindowHandle();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandle</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="get-all-windows">Get all windows<a class="headerlink" href="#get-all-windows" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; windows = driver.getWindowHandles();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">windows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandles</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="switch-window">Switch window<a class="headerlink" href="#switch-window" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">for(String win : windows)
-{
-    driver.switchTo().window(win);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">win</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">windows</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">win</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="example-switch-to-child-window">Example: Switch to child window<a class="headerlink" href="#example-switch-to-child-window" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String parent = driver.getWindowHandle();
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandle</span><span class="p">();</span>
 
-for(String win : driver.getWindowHandles())
-{
-    if(!win.equals(parent))
-    {
-        driver.switchTo().window(win);
-    }
-}
-</code></pre>
+<span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">win</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandles</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">win</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">parent</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">win</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="6-frame-handling">6️⃣ Frame Handling<a class="headerlink" href="#6-frame-handling" title="Permanent link">&para;</a></h1>
 <h3 id="switch-using-index">Switch using index<a class="headerlink" href="#switch-using-index" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.switchTo().frame(0);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="switch-using-nameid">Switch using name/id<a class="headerlink" href="#switch-using-nameid" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.switchTo().frame(&quot;frameName&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="s">"frameName"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="switch-using-webelement">Switch using WebElement<a class="headerlink" href="#switch-using-webelement" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">WebElement frame = driver.findElement(By.id(&quot;frame1&quot;));
-driver.switchTo().frame(frame);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"frame1"</span><span class="p">));</span>
+<span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="switch-back-to-main-page">Switch back to main page<a class="headerlink" href="#switch-back-to-main-page" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.switchTo().defaultContent();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">defaultContent</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="switch-back-to-parent-frame">Switch back to parent frame<a class="headerlink" href="#switch-back-to-parent-frame" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.switchTo().parentFrame();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">parentFrame</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="7-waits-in-selenium">7️⃣ Waits in Selenium<a class="headerlink" href="#7-waits-in-selenium" title="Permanent link">&para;</a></h1>
 <h2 id="implicit-wait">Implicit Wait<a class="headerlink" href="#implicit-wait" title="Permanent link">&para;</a></h2>
 <p>Applied globally.</p>
-<pre><code class="language-java">driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">timeouts</span><span class="p">().</span><span class="na">implicitlyWait</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h2 id="explicit-wait">Explicit Wait<a class="headerlink" href="#explicit-wait" title="Permanent link">&para;</a></h2>
 <p>Wait for specific element.</p>
-<pre><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+<div class="highlight"><pre><span></span><code><span class="n">WebDriverWait</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
 
-WebElement element =
-wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(&quot;username&quot;)));
-</code></pre>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span>
+<span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"username"</span><span class="p">)));</span>
+</code></pre></div>
 <h3 id="wait-for-clickable-element">Wait for clickable element<a class="headerlink" href="#wait-for-clickable-element" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">wait.until(ExpectedConditions.elementToBeClickable(By.id(&quot;login&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">elementToBeClickable</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">)));</span>
+</code></pre></div>
 <hr />
 <h2 id="fluent-wait">Fluent Wait<a class="headerlink" href="#fluent-wait" title="Permanent link">&para;</a></h2>
 <p>More flexible wait.</p>
-<pre><code class="language-java">Wait&lt;WebDriver&gt; wait = new FluentWait&lt;&gt;(driver)
-        .withTimeout(Duration.ofSeconds(30))
-        .pollingEvery(Duration.ofSeconds(5))
-        .ignoring(NoSuchElementException.class);
+<div class="highlight"><pre><span></span><code><span class="n">Wait</span><span class="o">&lt;</span><span class="n">WebDriver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FluentWait</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">withTimeout</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="na">pollingEvery</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="na">ignoring</span><span class="p">(</span><span class="n">NoSuchElementException</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
 
-WebElement element = wait.until(driver -&gt;
-        driver.findElement(By.id(&quot;username&quot;)));
-</code></pre>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">driver</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"username"</span><span class="p">)));</span>
+</code></pre></div>
 <hr />
 <h1 id="quick-interview-cheat-sheet">⭐ Quick Interview Cheat Sheet<a class="headerlink" href="#quick-interview-cheat-sheet" title="Permanent link">&para;</a></h1>
 <h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="n">driver</span><span class="p">).</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="javascriptexecutor">JavaScriptExecutor<a class="headerlink" href="#javascriptexecutor" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">JavascriptExecutor js = (JavascriptExecutor) driver;
-js.executeScript(&quot;arguments[0].click();&quot;, element);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">JavascriptExecutor</span><span class="w"> </span><span class="n">js</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="n">js</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"arguments[0].click();"</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Actions actions = new Actions(driver);
-actions.moveToElement(element).perform();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Actions</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="n">actions</span><span class="p">.</span><span class="na">moveToElement</span><span class="p">(</span><span class="n">element</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h3 id="alert">Alert<a class="headerlink" href="#alert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.switchTo().alert().accept();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">alert</span><span class="p">().</span><span class="na">accept</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h3 id="window">Window<a class="headerlink" href="#window" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.switchTo().window(windowID);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">windowID</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="frame">Frame<a class="headerlink" href="#frame" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.switchTo().frame(&quot;frameName&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="s">"frameName"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="wait">Wait<a class="headerlink" href="#wait" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriverWait</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <p>💡 Since you have <strong>3+ years QA + DevOps experience</strong>, interviewers often also ask:</p>
 <p><strong>“How do you design a Selenium framework from scratch?”</strong></p>
@@ -5925,6 +5925,10 @@ actions.moveToElement(element).perform();
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

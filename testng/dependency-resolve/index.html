@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5628,15 +5628,15 @@ Child runs ONLY if parent PASSES.</p>
 <p>method → method</p>
 <hr />
 <h2 id="example-same-class">✅ Example (Same Class)<a class="headerlink" href="#example-same-class" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class OrderTest {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrderTest</span><span class="w"> </span><span class="p">{</span>
 
-    @Test
-    public void login() {}
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
-    @Test(dependsOnMethods = &quot;login&quot;)
-    public void placeOrder() {}
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Test</span><span class="p">(</span><span class="n">dependsOnMethods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"login"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">placeOrder</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h2>
 <p>If parent fails → dependent is SKIPPED</p>
@@ -5666,13 +5666,13 @@ Child runs only after ALL tests in group pass.</p>
 <hr />
 <h2 id="cross-class-example">✅ Cross-Class Example<a class="headerlink" href="#cross-class-example" title="Permanent link">&para;</a></h2>
 <p>LoginTest</p>
-<pre><code class="language-java">@Test(groups = &quot;cleanup&quot;)
-public void cleanup() {}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"cleanup"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">cleanup</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
 <p>OrderTest</p>
-<pre><code class="language-java">@Test(dependsOnGroups = &quot;cleanup&quot;)
-public void placeOrder() {}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">dependsOnGroups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"cleanup"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">placeOrder</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
 <p>Execution:
 cleanup → placeOrder</p>
 <hr />
@@ -5792,6 +5792,10 @@ For cross-class dependency always prefer dependsOnGroups.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5674,22 +5674,22 @@
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <h3 id="runner-dry-run">Runner (dry run)<a class="headerlink" href="#runner-dry-run" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@CucumberOptions(dryRun = true)
-</code></pre>
-<p>Output:</p>
-<pre><code>Undefined step found
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span><span class="n">dryRun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>Undefined step found
 Snippet generated
 Execution stopped
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h3 id="runner-strict-default-behavior">Runner (strict / default behavior)<a class="headerlink" href="#runner-strict-default-behavior" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@CucumberOptions(dryRun = false)
-</code></pre>
-<p>Output:</p>
-<pre><code>Hooks executed
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span><span class="n">dryRun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>Hooks executed
 Steps executed
 Build FAILED if step missing
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h1 id="important-note-cucumber-7">✅ Important Note (Cucumber 7+)<a class="headerlink" href="#important-note-cucumber-7" title="Permanent link">&para;</a></h1>
 <p>strict mode is ENABLED by default.</p>
@@ -5707,8 +5707,8 @@ Status → FAIL</p>
 <hr />
 <h2 id="2-pending">2️⃣ Pending<a class="headerlink" href="#2-pending" title="Permanent link">&para;</a></h2>
 <p>Meaning → Step exists but not completed  </p>
-<pre><code class="language-java">throw new PendingException();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PendingException</span><span class="p">();</span>
+</code></pre></div>
 <p>Status → FAIL</p>
 <hr />
 <h2 id="3-skipped">3️⃣ Skipped<a class="headerlink" href="#3-skipped" title="Permanent link">&para;</a></h2>
@@ -5751,7 +5751,7 @@ Status → SKIPPED</p>
 <h1 id="execution-lifecycle-diagram">✅ Execution Lifecycle Diagram<a class="headerlink" href="#execution-lifecycle-diagram" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="normal-execution">Normal Execution<a class="headerlink" href="#normal-execution" title="Permanent link">&para;</a></h2>
-<pre><code>Runner
+<div class="highlight"><pre><span></span><code>Runner
   ↓
 Before hooks
   ↓
@@ -5762,25 +5762,25 @@ Scenario steps
 After hooks
   ↓
 Report
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="dryrun-mode">dryRun Mode<a class="headerlink" href="#dryrun-mode" title="Permanent link">&para;</a></h2>
-<pre><code>Runner
+<div class="highlight"><pre><span></span><code>Runner
   ↓
 Parse features
   ↓
 Match steps
   ↓
 STOP
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="failure-flow">Failure Flow<a class="headerlink" href="#failure-flow" title="Permanent link">&para;</a></h2>
-<pre><code>Before
+<div class="highlight"><pre><span></span><code>Before
 Step PASS
 Step FAIL
 Remaining steps SKIPPED
 After hooks still run
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="interview-quick-answers">✅ Interview Quick Answers<a class="headerlink" href="#interview-quick-answers" title="Permanent link">&para;</a></h1>
@@ -5856,6 +5856,10 @@ Hooks → always run After  </p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5649,44 +5649,43 @@
 </table>
 <hr />
 <h1 id="example-1-this-constructor-chaining">🔹 Example 1 — this() (Constructor Chaining)<a class="headerlink" href="#example-1-this-constructor-chaining" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">class Employee {
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
 
-    String name;
-    int age;
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
 
-    Employee() {
-        this(&quot;Unknown&quot;, 0);   // must be first statement
-        System.out.println(&quot;Default Constructor Called&quot;);
-    }
+<span class="w">    </span><span class="n">Employee</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="s">"Unknown"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// must be first statement</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Default Constructor Called"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    Employee(String name, int age) {
-        System.out.println(&quot;Parameterized Constructor Called&quot;);
-        this.name = name;
-        this.age = age;
-    }
+<span class="w">    </span><span class="n">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Parameterized Constructor Called"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    void display() {
-        System.out.println(&quot;Name: &quot; + name);
-        System.out.println(&quot;Age: &quot; + age);
-    }
-}
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">display</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        System.out.println(&quot;Creating Employee using default constructor:&quot;);
-        Employee e1 = new Employee();
-        e1.display();
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Creating Employee using default constructor:"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">e1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">();</span>
+<span class="w">        </span><span class="n">e1</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
 
-        System.out.println(&quot;\nCreating Employee using parameterized constructor:&quot;);
-        Employee e2 = new Employee(&quot;Nitin&quot;, 28);
-        e2.display();
-    }
-}
-
-</code></pre>
-<p>Output:</p>
-<pre><code>Creating Employee using default constructor:
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nCreating Employee using parameterized constructor:"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Nitin"</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">);</span>
+<span class="w">        </span><span class="n">e2</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>Creating Employee using default constructor:
 Parameterized Constructor Called
 Default Constructor Called
 Name: Unknown
@@ -5696,58 +5695,58 @@ Creating Employee using parameterized constructor:
 Parameterized Constructor Called
 Name: Nitin
 Age: 28
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h1 id="example-2-super">🔹 Example 2 — super()<a class="headerlink" href="#example-2-super" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">class Parent {
-    Parent() {
-        System.out.println(&quot;Parent Constructor&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Parent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Parent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Parent Constructor"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Child extends Parent {
-    Child() {
-        super();
-        System.out.println(&quot;Child Constructor&quot;);
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code>Parent Constructor
+<span class="kd">class</span> <span class="nc">Child</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Child</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Child Constructor"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>Parent Constructor
 Child Constructor
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h1 id="rule-cannot-use-both-together">🔴 Rule — Cannot use both together<a class="headerlink" href="#rule-cannot-use-both-together" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">Child() {
-    this();   // ❌
-    super();  // ❌
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Child</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">();</span><span class="w">   </span><span class="c1">// ❌</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">();</span><span class="w">  </span><span class="c1">// ❌</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Only ONE can be first statement.</p>
 <hr />
 <h1 id="example-3-this-super-chaining">🔹 Example 3 — this() + super() (Chaining)<a class="headerlink" href="#example-3-this-super-chaining" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">class Parent {
-    Parent(int x) {
-        System.out.println(&quot;Parent &quot; + x);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Parent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Parent</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Parent "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Child extends Parent {
+<span class="kd">class</span> <span class="nc">Child</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="p">{</span>
 
-    Child() {
-        this(10);
-    }
+<span class="w">    </span><span class="n">Child</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    Child(int x) {
-        super(x);
-        System.out.println(&quot;Child &quot; + x);
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code>Parent 10
+<span class="w">    </span><span class="n">Child</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Child "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>Parent 10
 Child 10
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h1 id="_1">================================<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h1 id="inheritance-rules-java">🔹 Inheritance Rules (Java)<a class="headerlink" href="#inheritance-rules-java" title="Permanent link">&para;</a></h1>
@@ -5763,88 +5762,87 @@ Child 10
 </ul>
 <hr />
 <h1 id="example-basic-inheritance">🔹 Example — Basic Inheritance<a class="headerlink" href="#example-basic-inheritance" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">class Animal {
-    void sound() {
-        System.out.println(&quot;Animal makes sound&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Animal makes sound"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Dog extends Animal {
-    void bark() {
-        System.out.println(&quot;Dog barks&quot;);
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code>Animal makes sound
+<span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">bark</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog barks"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>Animal makes sound
 Dog barks
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h1 id="example-method-overriding">🔹 Example — Method Overriding<a class="headerlink" href="#example-method-overriding" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">class Animal {
-    void sound() {
-        System.out.println(&quot;Animal sound&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Animal sound"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Dog extends Animal {
-    @Override
-    void sound() {
-        System.out.println(&quot;Dog barks&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog barks"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        Animal a = new Animal();
-        a.sound();
+<span class="w">        </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">();</span>
+<span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="na">sound</span><span class="p">();</span>
 
-        Animal b = new Dog();
-        b.sound();
+<span class="w">        </span><span class="n">Animal</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="w">        </span><span class="n">b</span><span class="p">.</span><span class="na">sound</span><span class="p">();</span>
 
-        Dog d = new Dog();
-        d.sound();
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code>Animal sound
+<span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="na">sound</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>Animal sound
 Dog barks
 Dog barks
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h1 id="example-multi-level-inheritance">🔹 Example — Multi-Level Inheritance<a class="headerlink" href="#example-multi-level-inheritance" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">class A {
-    A() { 
-        System.out.println(&quot;A&quot;); 
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">A</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class B extends A {
-    B() { 
-        System.out.println(&quot;B&quot;); 
-    }
-}
+<span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">B</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class C extends B {
-    C() { 
-        System.out.println(&quot;C&quot;); 
-    }
-}
+<span class="kd">class</span> <span class="nc">C</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">C</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
-        C obj = new C();
-    }
-}
-
-</code></pre>
-<p>Output:</p>
-<pre><code>A
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">C</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">C</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>A
 B
 C
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h1 id="access-modifier-rules">🔹 Access Modifier Rules<a class="headerlink" href="#access-modifier-rules" title="Permanent link">&para;</a></h1>
 <table>
@@ -5934,6 +5932,10 @@ C
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -6286,224 +6286,220 @@
 <li>Automatically provided by Java if no constructor is defined.</li>
 <li>No parameters and initializes objects with default values.</li>
 </ul>
-<pre><code class="language-java">class Test{
-    String name=&quot;xyz&quot;;
-    int age=55;
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Test</span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">"xyz"</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="o">=</span><span class="mi">55</span><span class="p">;</span>
 
-    public Test() {
-        name = name;
-        age = age;
-    }
-    public void displayInfo() {
-        System.out.println(&quot;Name: &quot; + name + &quot;, Age: &quot; + age);
-    }
-}
-class Main {
-    public static void main(String[] args) {
-        Test obj=new Test();
-        obj.displayInfo();
-        obj.name=&quot;Umesh&quot;;
-        obj.displayInfo();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Test</span><span class="w"> </span><span class="n">obj</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Test</span><span class="p">();</span>
+<span class="w">        </span><span class="n">obj</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">        </span><span class="n">obj</span><span class="p">.</span><span class="na">name</span><span class="o">=</span><span class="s">"Umesh"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">obj</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="2parameterized-constructor">2.Parameterized Constructor<a class="headerlink" href="#2parameterized-constructor" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Takes arguments to initialize object with specific values.</li>
 </ul>
-<pre><code class="language-java">class Employee {
-    String name;
-    int age;
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
 
-    // Parameterized constructor
-    public Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+<span class="w">    </span><span class="c1">// Parameterized constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void displayInfo() {
-        System.out.println(&quot;Name: &quot; + name + &quot;, Age: &quot; + age);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
-        Employee emp = new Employee(&quot;Alice&quot;, 28); // Parameterized constructor called
-        emp.displayInfo(); // Output: Name: Alice, Age: 28
-    }
-}
-
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Alice"</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">);</span><span class="w"> </span><span class="c1">// Parameterized constructor called</span>
+<span class="w">        </span><span class="n">emp</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Output: Name: Alice, Age: 28</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="3constructor-overloading">3.Constructor Overloading<a class="headerlink" href="#3constructor-overloading" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Multiple constructors with different parameters in the same class.</li>
 <li>Provides flexibility in object creation.</li>
 </ul>
-<pre><code class="language-java">class Employee {
-    String name;
-    int age;
-    String company;
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
 
-    // Default constructor
-    public Employee() {
-        this.name = &quot;Unknown&quot;;
-        this.age = 0;
-        this.company = &quot;Not Assigned&quot;;
-    }
+<span class="w">    </span><span class="c1">// Default constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Unknown"</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Not Assigned"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Parameterized constructor
-    public Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
-        this.company = &quot;Unknown&quot;;
-    }
+<span class="w">    </span><span class="c1">// Parameterized constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Unknown"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Parameterized constructor with all fields
-    public Employee(String name, int age, String company) {
-        this.name = name;
-        this.age = age;
-        this.company = company;
-    }
+<span class="w">    </span><span class="c1">// Parameterized constructor with all fields</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void displayInfo() {
-        System.out.println(&quot;Name: &quot; + name + &quot;, Age: &quot; + age + &quot;, Company: &quot; + company);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Company: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">company</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
-        Employee e1 = new Employee();
-        Employee e2 = new Employee(&quot;Bob&quot;, 30);
-        Employee e3 = new Employee(&quot;Charlie&quot;, 35, &quot;TechCorp&quot;);
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">e1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Bob"</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">e3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Charlie"</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="s">"TechCorp"</span><span class="p">);</span>
 
-        e1.displayInfo();
-        e2.displayInfo();
-        e3.displayInfo();
-    }
-}
-
-</code></pre>
+<span class="w">        </span><span class="n">e1</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">        </span><span class="n">e2</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">        </span><span class="n">e3</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✅ Output:</p>
-<pre><code class="language-text">Name: Unknown, Age: 0, Company: Not Assigned
+<div class="highlight"><pre><span></span><code>Name: Unknown, Age: 0, Company: Not Assigned
 Name: Bob, Age: 30, Company: Unknown
 Name: Charlie, Age: 35, Company: TechCorp
-
-</code></pre>
+</code></pre></div>
 <h3 id="4constructor-chaining">4.Constructor Chaining<a class="headerlink" href="#4constructor-chaining" title="Permanent link">&para;</a></h3>
 <h4 id="a-using-this-within-same-class">a) Using this() – Within Same Class<a class="headerlink" href="#a-using-this-within-same-class" title="Permanent link">&para;</a></h4>
-<pre><code class="language-java">class Employee {
-    String name;
-    int age;
-    String company;
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
 
-    public Employee() {
-        this(&quot;Unknown&quot;, 0, &quot;Not Assigned&quot;); // Call another constructor
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="s">"Unknown"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">"Not Assigned"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Call another constructor</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public Employee(String name, int age, String company) {
-        this.name = name;
-        this.age = age;
-        this.company = company;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void displayInfo() {
-        System.out.println(name + &quot;, &quot; + age + &quot;, &quot; + company);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">company</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
-        Employee e = new Employee(); // Calls default, which chains to parameterized
-        e.displayInfo(); // Output: Unknown, 0, Not Assigned
-    }
-}
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">();</span><span class="w"> </span><span class="c1">// Calls default, which chains to parameterized</span>
+<span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Output: Unknown, 0, Not Assigned</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
 
-</code></pre>
-<pre><code class="language-java">class Employee {
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Instance Variables</span>
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
 
-    // =========================
-    // Instance Variables
-    // =========================
-    int id;
-    String name;
-    int age;
-    String company;
-    double salary;
+<span class="w">    </span><span class="c1">// ==================================================</span>
+<span class="w">    </span><span class="c1">// 1️⃣ DEFAULT CONSTRUCTOR (NO ARG)</span>
+<span class="w">    </span><span class="c1">// ==================================================</span>
+<span class="w">    </span><span class="c1">// Entry point if no data is provided</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Calls 2-arg constructor</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">"Unknown"</span><span class="p">);</span>
 
-    // ==================================================
-    // 1️⃣ DEFAULT CONSTRUCTOR (NO ARG)
-    // ==================================================
-    // Entry point if no data is provided
-    public Employee() {
-        // Calls 2-arg constructor
-        this(0, &quot;Unknown&quot;);
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1️⃣ Default constructor executed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-        System.out.println(&quot;1️⃣ Default constructor executed&quot;);
-    }
+<span class="w">    </span><span class="c1">// ==================================================</span>
+<span class="w">    </span><span class="c1">// 2️⃣ TWO-PARAMETER CONSTRUCTOR</span>
+<span class="w">    </span><span class="c1">// ==================================================</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Calls 3-arg constructor</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span>
 
-    // ==================================================
-    // 2️⃣ TWO-PARAMETER CONSTRUCTOR
-    // ==================================================
-    public Employee(int id, String name) {
-        // Calls 3-arg constructor
-        this(id, name, 18);
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2️⃣ Two-parameter constructor executed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-        System.out.println(&quot;2️⃣ Two-parameter constructor executed&quot;);
-    }
+<span class="w">    </span><span class="c1">// ==================================================</span>
+<span class="w">    </span><span class="c1">// 3️⃣ THREE-PARAMETER CONSTRUCTOR</span>
+<span class="w">    </span><span class="c1">// ==================================================</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Calls 5-arg constructor</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="s">"Not Assigned"</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
 
-    // ==================================================
-    // 3️⃣ THREE-PARAMETER CONSTRUCTOR
-    // ==================================================
-    public Employee(int id, String name, int age) {
-        // Calls 5-arg constructor
-        this(id, name, age, &quot;Not Assigned&quot;, 0.0);
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3️⃣ Three-parameter constructor executed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-        System.out.println(&quot;3️⃣ Three-parameter constructor executed&quot;);
-    }
+<span class="w">    </span><span class="c1">// ==================================================</span>
+<span class="w">    </span><span class="c1">// 4️⃣ FULL CONSTRUCTOR (MASTER)</span>
+<span class="w">    </span><span class="c1">// ==================================================</span>
+<span class="w">    </span><span class="c1">// This constructor does actual initialization</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    // ==================================================
-    // 4️⃣ FULL CONSTRUCTOR (MASTER)
-    // ==================================================
-    // This constructor does actual initialization
-    public Employee(int id, String name, int age, String company, double salary) {
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"4️⃣ Full constructor START"</span><span class="p">);</span>
 
-        System.out.println(&quot;4️⃣ Full constructor START&quot;);
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
 
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.company = company;
-        this.salary = salary;
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"4️⃣ Full constructor END"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-        System.out.println(&quot;4️⃣ Full constructor END&quot;);
-    }
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Utility Method</span>
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n📌 Employee Details"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"ID      : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name    : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age     : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Company : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">company</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Salary  : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">salary</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Main Class calling-
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    // =========================
-    // Utility Method
-    // =========================
-    public void displayInfo() {
-        System.out.println(&quot;\n📌 Employee Details&quot;);
-        System.out.println(&quot;ID      : &quot; + id);
-        System.out.println(&quot;Name    : &quot; + name);
-        System.out.println(&quot;Age     : &quot; + age);
-        System.out.println(&quot;Company : &quot; + company);
-        System.out.println(&quot;Salary  : &quot; + salary);
-    }
-}
-</code></pre>
-<p>Main Class calling-</p>
-<pre><code class="language-java">public class Main {
-    public static void main(String[] args) {
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"🚀 Creating Employee Object\n"</span><span class="p">);</span>
 
-        System.out.println(&quot;🚀 Creating Employee Object\n&quot;);
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">();</span>
 
-        Employee emp = new Employee();
-
-        emp.displayInfo();
-    }
-}
-</code></pre>
-<pre><code class="language-txt">🚀 Creating Employee Object
+<span class="w">        </span><span class="n">emp</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>🚀 Creating Employee Object
 
 4️⃣ Full constructor START
 4️⃣ Full constructor END
@@ -6523,73 +6519,72 @@ When you do:
 Employee emp = new Employee();
 Call chain:
 Employee()
-   ↓ this(0, &quot;Unknown&quot;)
+   ↓ this(0, "Unknown")
 Employee(int, String)
    ↓ this(id, name, 18)
 Employee(int, String, int)
-   ↓ this(id, name, age, &quot;Not Assigned&quot;, 0.0)
+   ↓ this(id, name, age, "Not Assigned", 0.0)
 Employee(int, String, int, String, double)
 Execution order (reverse):
 4️⃣ Full constructor
 3️⃣ Three-param constructor
 2️⃣ Two-param constructor
 1️⃣ Default constructor
-</code></pre>
+</code></pre></div></p>
 <h4 id="b-using-super-calling-parent-class-constructor">b) Using super() – Calling Parent Class Constructor<a class="headerlink" href="#b-using-super-calling-parent-class-constructor" title="Permanent link">&para;</a></h4>
-<pre><code class="language-java">class Employee {
-    String name;
-    int age;
+<p><div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
 
-    public Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void displayInfo() {
-        System.out.println(&quot;Name: &quot; + name + &quot;, Age: &quot; + age);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Manager extends Employee {
-    String department;
+<span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">department</span><span class="p">;</span>
 
-    public Manager(String name, int age, String department) {
-        super(name, age); // Call superclass constructor
-        this.department = department;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Manager</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">department</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span><span class="w"> </span><span class="c1">// Call superclass constructor</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">department</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">department</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    public void displayInfo() {
-        super.displayInfo();
-        System.out.println(&quot;Department: &quot; + department);
-    }
-}
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Department: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">department</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
-        Manager mgr = new Manager(&quot;Alice&quot;, 35, &quot;IT&quot;);
-        mgr.displayInfo();
-    }
-}
-
-</code></pre>
-<p>Output:</p>
-<pre><code class="language-text">Name: Alice, Age: 35
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Manager</span><span class="w"> </span><span class="n">mgr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Alice"</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="s">"IT"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mgr</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>Name: Alice, Age: 35
 Department: IT
-</code></pre>
+</code></pre></div></p>
 <h5 id="golden-rules-for-constructor-chaining">✅ Golden Rules for Constructor Chaining<a class="headerlink" href="#golden-rules-for-constructor-chaining" title="Permanent link">&para;</a></h5>
 <h6 id="rule-1">🔹 Rule 1<a class="headerlink" href="#rule-1" title="Permanent link">&para;</a></h6>
 <p>If a child constructor does <strong>not</strong> explicitly call <code>super(...)</code>,\
 then the compiler automatically inserts:</p>
-<pre><code class="language-java">super();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">super</span><span class="p">();</span>
+</code></pre></div>
 <p>So the parent class <strong>must have a no-argument (default) constructor</strong>,\
 otherwise compilation fails.</p>
 <hr />
 <h6 id="rule-2">🔹 Rule 2<a class="headerlink" href="#rule-2" title="Permanent link">&para;</a></h6>
 <p>If the child constructor explicitly calls:</p>
-<pre><code class="language-java">super(parameters);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">super</span><span class="p">(</span><span class="n">parameters</span><span class="p">);</span>
+</code></pre></div>
 <p>Then the parent class <strong>must have that matching parameterized
 constructor</strong>,\
 otherwise compilation fails.</p>
@@ -6604,69 +6599,67 @@ chaining.</p>
 <li>Restricts object creation outside the class.</li>
 <li>Used in Singleton Design Pattern.</li>
 </ul>
-<pre><code class="language-java">class Singleton {
-    private static Singleton instance;
-    private Singleton() {} // Private constructor
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Singleton</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Singleton</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">Singleton</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// Private constructor</span>
 
-    public static Singleton getInstance() {
-        if(instance == null) {
-            instance = new Singleton();
-        }
-        return instance;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Singleton</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Singleton</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void showMessage() {
-        System.out.println(&quot;Singleton instance&quot;);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">showMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Singleton instance"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
-        Singleton s1 = Singleton.getInstance();
-        s1.showMessage();
-    }
-}
-
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Singleton</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Singleton</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+<span class="w">        </span><span class="n">s1</span><span class="p">.</span><span class="na">showMessage</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h4 id="validate-code">Validate Code<a class="headerlink" href="#validate-code" title="Permanent link">&para;</a></h4>
-<pre><code class="language-java">public class Main {
-    public static void main(String[] args) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        SingleTonePattern s1 = SingleTonePattern.getInstance();
-        SingleTonePattern s2 = SingleTonePattern.getInstance();
+<span class="w">        </span><span class="n">SingleTonePattern</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SingleTonePattern</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+<span class="w">        </span><span class="n">SingleTonePattern</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SingleTonePattern</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
 
-        System.out.println(s1 == s2); // true
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="6static-blocks-vs-constructor">6.Static Blocks vs Constructor<a class="headerlink" href="#6static-blocks-vs-constructor" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Static blocks execute once when class loads.</li>
 <li>Constructor executes each time object is created.</li>
 </ul>
-<pre><code class="language-java">class Demo {
-    static {
-        System.out.println(&quot;Static block executed&quot;);
-    }
+<p><div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Static block executed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public Demo() {
-        System.out.println(&quot;Constructor executed&quot;);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Demo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Constructor executed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Main {
-    public static void main(String[] args) {
-        Demo d1 = new Demo(); // Static block runs once, constructor runs every object
-        Demo d2 = new Demo();
-    }
-}
-
-</code></pre>
-<p>✅ Final Output</p>
-<pre><code class="language-text">Static block executed
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Demo</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Demo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Static block runs once, constructor runs every object</span>
+<span class="w">        </span><span class="n">Demo</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Demo</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+✅ Final Output
+<div class="highlight"><pre><span></span><code>Static block executed
 Constructor executed
 Constructor executed
-</code></pre>
+</code></pre></div></p>
 <h4 id="rule-to-remember">✅ Rule to Remember<a class="headerlink" href="#rule-to-remember" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -6810,6 +6803,10 @@ Constructor executed
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

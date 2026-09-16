@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5743,37 +5743,37 @@ Unlike DDL, which defines the schema, <strong>DML works on the actual rows (reco
 <h2 id="key-dml-commands-in-depth">🔹 Key DML Commands (in depth)<a class="headerlink" href="#key-dml-commands-in-depth" title="Permanent link">&para;</a></h2>
 <h3 id="1-insert">1. INSERT<a class="headerlink" href="#1-insert" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Adds new records into a table.</li>
+<li>Adds new records into a table.
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">(</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="s1">'Amit Sharma'</span><span class="p">,</span><span class="w"> </span><span class="mi">55000</span><span class="p">.</span><span class="mi">00</span><span class="p">);</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">INSERT INTO Employee (EmpID, Name, Salary)
-VALUES (101, 'Amit Sharma', 55000.00);
-</code></pre>
 <h3 id="2-update">2. UPDATE<a class="headerlink" href="#2-update" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Modifies existing records.</li>
+<li>Modifies existing records.
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5000</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">EmpID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">UPDATE Employee
-SET Salary = Salary + 5000
-WHERE EmpID = 101;
-</code></pre>
 <h3 id="3-delete">3. DELETE<a class="headerlink" href="#3-delete" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Removes records from a table.</li>
+<li>Removes records from a table.
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">EmpID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">DELETE FROM Employee WHERE EmpID = 101;
-</code></pre>
 <h3 id="4-merge-upsert">4. MERGE (UPSERT)<a class="headerlink" href="#4-merge-upsert" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Combines INSERT + UPDATE + DELETE in one.</li>
+<li>Combines INSERT + UPDATE + DELETE in one.
+<div class="highlight"><pre><span></span><code><span class="n">MERGE</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">E</span>
+<span class="k">USING</span><span class="w"> </span><span class="n">NewEmployee</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">N</span>
+<span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">E</span><span class="p">.</span><span class="n">EmpID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">.</span><span class="n">EmpID</span><span class="p">)</span>
+<span class="k">WHEN</span><span class="w"> </span><span class="n">MATCHED</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">    </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">Salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">.</span><span class="n">Salary</span>
+<span class="k">WHEN</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">MATCHED</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="p">(</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">N</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">.</span><span class="n">Salary</span><span class="p">);</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">MERGE INTO Employee AS E
-USING NewEmployee AS N
-ON (E.EmpID = N.EmpID)
-WHEN MATCHED THEN
-    UPDATE SET E.Salary = N.Salary
-WHEN NOT MATCHED THEN
-    INSERT (EmpID, Name, Salary) VALUES (N.EmpID, N.Name, N.Salary);
-</code></pre>
 <hr />
 <h2 id="pros-cons-of-dml">🔹 Pros &amp; Cons of DML<a class="headerlink" href="#pros-cons-of-dml" title="Permanent link">&para;</a></h2>
 <h3 id="pros">✅ Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
@@ -5924,6 +5924,10 @@ WHEN NOT MATCHED THEN
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

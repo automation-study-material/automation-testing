@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5915,9 +5915,9 @@
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT emp_id, TRIM(name) AS name_clean
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">TRIM</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">name_clean</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>TRIM</code> removes leading and trailing spaces.</p>
 <p><strong>Output:</strong></p>
@@ -5968,9 +5968,9 @@ FROM employees;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, SUBSTR(name,1,3) AS short_name
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">short_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6023,9 +6023,9 @@ FROM employees;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, CONCAT(name, ' - ', dept) AS name_dept
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">' - '</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">name_dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6074,9 +6074,9 @@ FROM employees;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, LENGTH(name) AS name_length
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">LENGTH</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">name_length</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6125,9 +6125,9 @@ FROM employees;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, UPPER(name) AS upper_name, LOWER(name) AS lower_name
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">UPPER</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">upper_name</span><span class="p">,</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">lower_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6158,9 +6158,9 @@ FROM employees;
 <hr />
 <h2 id="2-date-functions">2. Date Functions<a class="headerlink" href="#2-date-functions" title="Permanent link">&para;</a></h2>
 <h3 id="q6-get-current-date-using-now-mysql-getdate-sql-server">Q6: Get current date using NOW (MySQL) / GETDATE (SQL Server)<a class="headerlink" href="#q6-get-current-date-using-now-mysql-getdate-sql-server" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT NOW() AS current_date; -- MySQL
--- SELECT GETDATE() AS current_date; -- SQL Server
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">current_date</span><span class="p">;</span><span class="w"> </span><span class="c1">-- MySQL</span>
+<span class="c1">-- SELECT GETDATE() AS current_date; -- SQL Server</span>
+</code></pre></div>
 <p><strong>Output Example:</strong></p>
 <table>
 <thead>
@@ -6176,8 +6176,8 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q7-add-5-days-to-current-date">Q7: Add 5 days to current date<a class="headerlink" href="#q7-add-5-days-to-current-date" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT DATEADD(day, 5, GETDATE()) AS future_date; -- SQL Server
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">DATEADD</span><span class="p">(</span><span class="k">day</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">GETDATE</span><span class="p">())</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">future_date</span><span class="p">;</span><span class="w"> </span><span class="c1">-- SQL Server</span>
+</code></pre></div>
 <p><strong>Output Example:</strong></p>
 <table>
 <thead>
@@ -6215,9 +6215,9 @@ FROM employees;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT project_id, DATEDIFF(day, start_date, end_date) AS duration_days
-FROM projects; -- SQL Server
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">project_id</span><span class="p">,</span><span class="w"> </span><span class="n">DATEDIFF</span><span class="p">(</span><span class="k">day</span><span class="p">,</span><span class="w"> </span><span class="n">start_date</span><span class="p">,</span><span class="w"> </span><span class="n">end_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">duration_days</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">projects</span><span class="p">;</span><span class="w"> </span><span class="c1">-- SQL Server</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6239,8 +6239,8 @@ FROM projects; -- SQL Server
 </table>
 <hr />
 <h3 id="q9-convert-string-to-date-using-to_date-oracle">Q9: Convert string to date using TO_DATE (Oracle)<a class="headerlink" href="#q9-convert-string-to-date-using-to_date-oracle" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT TO_DATE('20-09-2025','DD-MM-YYYY') AS date_val FROM dual;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'20-09-2025'</span><span class="p">,</span><span class="s1">'DD-MM-YYYY'</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">date_val</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dual</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6283,9 +6283,9 @@ FROM projects; -- SQL Server
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, YEAR(joining_date) AS year_joined, MONTH(joining_date) AS month_joined
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">YEAR</span><span class="p">(</span><span class="n">joining_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">year_joined</span><span class="p">,</span><span class="w"> </span><span class="k">MONTH</span><span class="p">(</span><span class="n">joining_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">month_joined</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6339,9 +6339,9 @@ FROM employees;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, ROUND(salary, -3) AS rounded_salary
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">ROUND</span><span class="p">(</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rounded_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6367,9 +6367,9 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q12-ceiling-function">Q12: Ceiling function<a class="headerlink" href="#q12-ceiling-function" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, CEIL(salary/1000.0) AS ceil_k_salary
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">CEIL</span><span class="p">(</span><span class="n">salary</span><span class="o">/</span><span class="mi">1000</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ceil_k_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6395,9 +6395,9 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q13-floor-function">Q13: Floor function<a class="headerlink" href="#q13-floor-function" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, FLOOR(salary/1000.0) AS floor_k_salary
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">FLOOR</span><span class="p">(</span><span class="n">salary</span><span class="o">/</span><span class="mi">1000</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">floor_k_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6446,9 +6446,9 @@ FROM employees;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT trans_id, ABS(amount) AS abs_amount
-FROM transactions;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">trans_id</span><span class="p">,</span><span class="w"> </span><span class="k">ABS</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">abs_amount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">transactions</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6474,9 +6474,9 @@ FROM transactions;
 </table>
 <hr />
 <h3 id="q15-multiply-salary-by-11-and-round">Q15: Multiply salary by 1.1 and round<a class="headerlink" href="#q15-multiply-salary-by-11-and-round" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, ROUND(salary*1.1,0) AS increased_salary
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">ROUND</span><span class="p">(</span><span class="n">salary</span><span class="o">*</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">increased_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6502,9 +6502,9 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q16-add-7-days-to-date-using-dateadd">Q16: Add 7 days to date using DATEADD<a class="headerlink" href="#q16-add-7-days-to-date-using-dateadd" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, DATEADD(day,7,joining_date) AS next_week
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">DATEADD</span><span class="p">(</span><span class="k">day</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="n">joining_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">next_week</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6530,9 +6530,9 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q17-difference-in-years-from-today">Q17: Difference in years from today<a class="headerlink" href="#q17-difference-in-years-from-today" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, DATEDIFF(year, joining_date, GETDATE()) AS years_with_company
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">DATEDIFF</span><span class="p">(</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">joining_date</span><span class="p">,</span><span class="w"> </span><span class="n">GETDATE</span><span class="p">())</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">years_with_company</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output Example:</strong></p>
 <table>
 <thead>
@@ -6558,9 +6558,9 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q18-concatenate-numeric-and-string">Q18: Concatenate numeric and string<a class="headerlink" href="#q18-concatenate-numeric-and-string" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, CONCAT('Salary: ', salary) AS salary_text
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="s1">'Salary: '</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">salary_text</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6609,9 +6609,9 @@ FROM employees;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT emp_id, LOWER(dept) AS lower_dept
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">dept</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">lower_dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6637,9 +6637,9 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q20-uppercase-department">Q20: Uppercase department<a class="headerlink" href="#q20-uppercase-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, UPPER(dept) AS upper_dept
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="k">UPPER</span><span class="p">(</span><span class="n">dept</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">upper_dept</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6716,6 +6716,10 @@ FROM employees;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5667,68 +5667,68 @@
 <hr />
 <h1 id="2-real-time-api-testing-scenarios-with-rest-assured">2️⃣ Real-Time API Testing Scenarios with Rest Assured<a class="headerlink" href="#2-real-time-api-testing-scenarios-with-rest-assured" title="Permanent link">&para;</a></h1>
 <h2 id="setup-dependency-maven">🔹 Setup Dependency (Maven)<a class="headerlink" href="#setup-dependency-maven" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;dependency&gt;
-    &lt;groupId&gt;io.rest-assured&lt;/groupId&gt;
-    &lt;artifactId&gt;rest-assured&lt;/artifactId&gt;
-    &lt;version&gt;5.3.0&lt;/version&gt;
-    &lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>io.rest-assured<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>rest-assured<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>5.3.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="scenario-1-validate-get-api">🔹 Scenario 1: Validate GET API<a class="headerlink" href="#scenario-1-validate-get-api" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import static</span><span class="w"> </span><span class="nn">io.restassured.RestAssured.*</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.hamcrest.Matchers.*</span><span class="p">;</span>
 
-@Test
-public void getUserTest() {
-    given()
-        .baseUri(&quot;https://api.example.com&quot;)
-    .when()
-        .get(&quot;/users/101&quot;)
-    .then()
-        .statusCode(200)
-        .body(&quot;id&quot;, equalTo(101));
-}
-</code></pre>
+<span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getUserTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">given</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://api.example.com"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/users/101"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"id"</span><span class="p">,</span><span class="w"> </span><span class="n">equalTo</span><span class="p">(</span><span class="mi">101</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="scenario-2-post-api-with-body-validation">🔹 Scenario 2: POST API with Body Validation<a class="headerlink" href="#scenario-2-post-api-with-body-validation" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test
-public void createUserTest() {
-    String requestBody = &quot;{ &quot;name&quot;: &quot;Nitin&quot;, &quot;role&quot;: &quot;QA&quot; }&quot;;
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createUserTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">requestBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"{ "</span><span class="n">name</span><span class="s">": "</span><span class="n">Nitin</span><span class="s">", "</span><span class="n">role</span><span class="s">": "</span><span class="n">QA</span><span class="s">" }"</span><span class="p">;</span>
 
-    given()
-        .header(&quot;Content-Type&quot;, &quot;application/json&quot;)
-        .body(requestBody)
-    .when()
-        .post(&quot;/users&quot;)
-    .then()
-        .statusCode(201)
-        .body(&quot;name&quot;, equalTo(&quot;Nitin&quot;));
-}
-</code></pre>
+<span class="w">    </span><span class="n">given</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"Content-Type"</span><span class="p">,</span><span class="w"> </span><span class="s">"application/json"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">requestBody</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">"/users"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">201</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"name"</span><span class="p">,</span><span class="w"> </span><span class="n">equalTo</span><span class="p">(</span><span class="s">"Nitin"</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="scenario-3-token-based-authentication">🔹 Scenario 3: Token-Based Authentication<a class="headerlink" href="#scenario-3-token-based-authentication" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test
-public void secureApiTest() {
-    given()
-        .header(&quot;Authorization&quot;, &quot;Bearer &quot; + token)
-    .when()
-        .get(&quot;/secure-data&quot;)
-    .then()
-        .statusCode(200);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">secureApiTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">given</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bearer "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">token</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/secure-data"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="scenario-4-response-time-validation">🔹 Scenario 4: Response Time Validation<a class="headerlink" href="#scenario-4-response-time-validation" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test
-public void responseTimeTest() {
-    given()
-    .when()
-        .get(&quot;/users&quot;)
-    .then()
-        .time(lessThan(2000L));
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">responseTimeTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/users"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">time</span><span class="p">(</span><span class="n">lessThan</span><span class="p">(</span><span class="mi">2000L</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="3-cicd-pipeline-integration-for-api-testing-devops-focused">3️⃣ CI/CD Pipeline Integration for API Testing (DevOps Focused)<a class="headerlink" href="#3-cicd-pipeline-integration-for-api-testing-devops-focused" title="Permanent link">&para;</a></h1>
 <h2 id="why-integrate-api-tests-in-cicd">🔹 Why Integrate API Tests in CI/CD?<a class="headerlink" href="#why-integrate-api-tests-in-cicd" title="Permanent link">&para;</a></h2>
@@ -5740,36 +5740,36 @@ public void responseTimeTest() {
 </ul>
 <hr />
 <h2 id="jenkins-pipeline-example">🔹 Jenkins Pipeline Example<a class="headerlink" href="#jenkins-pipeline-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">pipeline {
-    agent any
+<div class="highlight"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/org/repo.git'
-            }
-        }
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Checkout'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">git</span><span class="w"> </span><span class="s1">'https://github.com/org/repo.git'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
 
-        stage('Build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn clean install'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
 
-        stage('Run API Tests') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-    }
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Run API Tests'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn test'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
 
-    post {
-        always {
-            junit 'target/surefire-reports/*.xml'
-        }
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="n">post</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">always</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">junit</span><span class="w"> </span><span class="s1">'target/surefire-reports/*.xml'</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h2 id="best-practices-for-devops-integration">🔹 Best Practices for DevOps Integration<a class="headerlink" href="#best-practices-for-devops-integration" title="Permanent link">&para;</a></h2>
 <h3 id="1-run-tests-in-different-environments">1️⃣ Run Tests in Different Environments<a class="headerlink" href="#1-run-tests-in-different-environments" title="Permanent link">&para;</a></h3>
@@ -5786,11 +5786,11 @@ public void responseTimeTest() {
 </ul>
 <h3 id="3-dockerized-api-testing">3️⃣ Dockerized API Testing<a class="headerlink" href="#3-dockerized-api-testing" title="Permanent link">&para;</a></h3>
 <p>Example Dockerfile:</p>
-<pre><code class="language-dockerfile">FROM maven:3.9.6-eclipse-temurin-17
-WORKDIR /app
-COPY . .
-RUN mvn clean test
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">maven:3.9.6-eclipse-temurin-17</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>mvn<span class="w"> </span>clean<span class="w"> </span>test
+</code></pre></div>
 <hr />
 <h3 id="4-trigger-tests-after-deployment">4️⃣ Trigger Tests After Deployment<a class="headerlink" href="#4-trigger-tests-after-deployment" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5870,6 +5870,10 @@ RUN mvn clean test
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

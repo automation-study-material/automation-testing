@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5626,16 +5626,16 @@ They control <strong>who is allowed to access that memory location</strong>.</p>
 <h1 id="1-public-memory-level-view">🧠 1️⃣ public -- Memory-Level View<a class="headerlink" href="#1-public-memory-level-view" title="Permanent link">&para;</a></h1>
 <h2 id="what-happens-in-memory">What Happens in Memory?<a class="headerlink" href="#what-happens-in-memory" title="Permanent link">&para;</a></h2>
 <p>When an object is created:</p>
-<pre><code class="language-java">Employee emp = new Employee(&quot;Nitin&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Employee</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Nitin"</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li><code>emp</code> reference is stored in <strong>stack</strong></li>
 <li><code>Employee</code> object is stored in <strong>heap</strong></li>
 <li><code>name</code> variable exists inside heap object</li>
 </ul>
 <p>If <code>name</code> is public:</p>
-<pre><code class="language-java">public String name;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</code></pre></div>
 <p>👉 Any class with access to the reference can access that heap memory.</p>
 <h3 id="memory-flow">Memory Flow:<a class="headerlink" href="#memory-flow" title="Permanent link">&para;</a></h3>
 <p>Stack → Reference → Heap Object → public variable → Accessible
@@ -5645,8 +5645,8 @@ everywhere</p>
 It only removes access restrictions.</p>
 <hr />
 <h1 id="2-private-memory-level-view">🧠 2️⃣ private -- Memory-Level View<a class="headerlink" href="#2-private-memory-level-view" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">private String name;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</code></pre></div>
 <p>Memory storage is SAME as public:</p>
 <ul>
 <li>Stored inside heap object</li>
@@ -5664,8 +5664,8 @@ BUT direct access blocked outside class.</p>
 <hr />
 <h1 id="3-default-package-private-memory-level-view">🧠 3️⃣ default (Package-Private) -- Memory-Level View<a class="headerlink" href="#3-default-package-private-memory-level-view" title="Permanent link">&para;</a></h1>
 <p>No modifier:</p>
-<pre><code class="language-java">String name;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</code></pre></div>
 <p>Memory:</p>
 <ul>
 <li>Stored inside heap object</li>
@@ -5682,8 +5682,8 @@ BUT direct access blocked outside class.</p>
 <p>Default access = package-level visibility filter.</p>
 <hr />
 <h1 id="4-protected-memory-level-view">🧠 4️⃣ protected -- Memory-Level View<a class="headerlink" href="#4-protected-memory-level-view" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">protected String name;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</code></pre></div>
 <p>Memory:</p>
 <ul>
 <li>Stored in heap like other variables</li>
@@ -5699,12 +5699,12 @@ BUT direct access blocked outside class.</p>
 <p>Protected members are accessible ONLY through inheritance,\
 not through object reference.</p>
 <p>Example:</p>
-<pre><code class="language-java">Employee e = new Employee(&quot;Nitin&quot;);
-e.name;   // ❌ Not allowed outside package
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Employee</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Nitin"</span><span class="p">);</span>
+<span class="n">e</span><span class="p">.</span><span class="na">name</span><span class="p">;</span><span class="w">   </span><span class="c1">// ❌ Not allowed outside package</span>
+</code></pre></div>
 <p>But inside subclass:</p>
-<pre><code class="language-java">super.name;   // ✅ Allowed
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">super</span><span class="p">.</span><span class="na">name</span><span class="p">;</span><span class="w">   </span><span class="c1">// ✅ Allowed</span>
+</code></pre></div>
 <p>Because subclass inherits memory structure.</p>
 <hr />
 <h1 id="visual-memory-representation">🧠 Visual Memory Representation<a class="headerlink" href="#visual-memory-representation" title="Permanent link">&para;</a></h1>
@@ -5727,8 +5727,8 @@ Employee Object
 <hr />
 <h1 id="static-variables-and-memory">🧠 Static Variables and Memory<a class="headerlink" href="#static-variables-and-memory" title="Permanent link">&para;</a></h1>
 <p>Static variables:</p>
-<pre><code class="language-java">public static int count;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+</code></pre></div>
 <p>Stored in:</p>
 <p>Method Area (MetaSpace), not heap.</p>
 <p>All objects share same static memory.</p>
@@ -5836,6 +5836,10 @@ They control visibility of that memory location at compile time.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

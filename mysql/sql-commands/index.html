@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5835,23 +5835,23 @@
 <li><code>RENAME</code> → Rename objects  </li>
 </ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">-- Create a new table
-CREATE TABLE Employee (
-    EmpID INT PRIMARY KEY,
-    Name VARCHAR(50),
-    Salary DECIMAL(10,2),
-    Department VARCHAR(30)
-);
+<div class="highlight"><pre><span></span><code><span class="c1">-- Create a new table</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">EmpID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Salary</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Department</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="p">);</span>
 
--- Alter the table
-ALTER TABLE Employee ADD Age INT;
+<span class="c1">-- Alter the table</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">Age</span><span class="w"> </span><span class="nb">INT</span><span class="p">;</span>
 
--- Drop the table
-DROP TABLE Employee;
+<span class="c1">-- Drop the table</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
 
--- Remove all records but keep structure
-TRUNCATE TABLE Employee;
-</code></pre>
+<span class="c1">-- Remove all records but keep structure</span>
+<span class="k">TRUNCATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="2-dml-data-manipulation-language">2. DML (Data Manipulation Language)<a class="headerlink" href="#2-dml-data-manipulation-language" title="Permanent link">&para;</a></h2>
 <p>👉 Used to manage and modify the data inside tables.  </p>
@@ -5863,18 +5863,18 @@ TRUNCATE TABLE Employee;
 <li><code>MERGE</code> (in some DBs) → Insert/Update simultaneously  </li>
 </ul>
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">-- Insert data
-INSERT INTO Employee (EmpID, Name, Salary, Department, Age)
-VALUES (101, 'John Doe', 55000, 'IT', 28);
+<div class="highlight"><pre><span></span><code><span class="c1">-- Insert data</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">(</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span><span class="p">,</span><span class="w"> </span><span class="n">Department</span><span class="p">,</span><span class="w"> </span><span class="n">Age</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="s1">'John Doe'</span><span class="p">,</span><span class="w"> </span><span class="mi">55000</span><span class="p">,</span><span class="w"> </span><span class="s1">'IT'</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">);</span>
 
--- Update data
-UPDATE Employee
-SET Salary = 60000
-WHERE EmpID = 101;
+<span class="c1">-- Update data</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60000</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">EmpID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
 
--- Delete a record
-DELETE FROM Employee WHERE EmpID = 101;
-</code></pre>
+<span class="c1">-- Delete a record</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">EmpID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="3-dql-data-query-language">3. DQL (Data Query Language)<a class="headerlink" href="#3-dql-data-query-language" title="Permanent link">&para;</a></h2>
 <p>👉 Used to fetch/query data from database.  </p>
@@ -5883,15 +5883,15 @@ DELETE FROM Employee WHERE EmpID = 101;
 <li><code>SELECT</code>  </li>
 </ul>
 <h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">-- Select all data
-SELECT * FROM Employee;
+<div class="highlight"><pre><span></span><code><span class="c1">-- Select all data</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
 
--- Select specific columns
-SELECT Name, Salary FROM Employee;
+<span class="c1">-- Select specific columns</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
 
--- Select with condition
-SELECT * FROM Employee WHERE Department = 'IT';
-</code></pre>
+<span class="c1">-- Select with condition</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Department</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'IT'</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="4-tcl-transaction-control-language">4. TCL (Transaction Control Language)<a class="headerlink" href="#4-tcl-transaction-control-language" title="Permanent link">&para;</a></h2>
 <p>👉 Used to manage transactions (groups of SQL statements).  </p>
@@ -5903,16 +5903,16 @@ SELECT * FROM Employee WHERE Department = 'IT';
 <li><code>SET TRANSACTION</code> → Set transaction properties  </li>
 </ul>
 <h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">BEGIN TRANSACTION;
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
 
-UPDATE Employee SET Salary = Salary + 5000 WHERE Department = 'IT';
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Department</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'IT'</span><span class="p">;</span>
 
--- If everything is fine
-COMMIT;
+<span class="c1">-- If everything is fine</span>
+<span class="k">COMMIT</span><span class="p">;</span>
 
--- If error, rollback
-ROLLBACK;
-</code></pre>
+<span class="c1">-- If error, rollback</span>
+<span class="k">ROLLBACK</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="5-dcl-data-control-language">5. DCL (Data Control Language)<a class="headerlink" href="#5-dcl-data-control-language" title="Permanent link">&para;</a></h2>
 <p>👉 Used to control access (security/permissions).  </p>
@@ -5922,12 +5922,12 @@ ROLLBACK;
 <li><code>REVOKE</code> → Take back permissions  </li>
 </ul>
 <h3 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">-- Grant permission
-GRANT SELECT, INSERT ON Employee TO user1;
+<div class="highlight"><pre><span></span><code><span class="c1">-- Grant permission</span>
+<span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="p">,</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">user1</span><span class="p">;</span>
 
--- Revoke permission
-REVOKE INSERT ON Employee FROM user1;
-</code></pre>
+<span class="c1">-- Revoke permission</span>
+<span class="k">REVOKE</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user1</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="quick-summary-table">✅ Quick Summary Table<a class="headerlink" href="#quick-summary-table" title="Permanent link">&para;</a></h2>
 <table>
@@ -6025,6 +6025,10 @@ REVOKE INSERT ON Employee FROM user1;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

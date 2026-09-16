@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../som/stress/" class="md-nav__link">
+      <a href="../../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5605,49 +5605,49 @@
 
   <h1>Revrese Second Half of Array</h1>
 
-<pre><code class="language-java">package org.array;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">org.array</span><span class="p">;</span>
 
-public class Reverse_Second_Half_Array2 {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Reverse_Second_Half_Array2</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args){
-        int [] a= {1,2,3,4,5,6};
-        int [] a1= {1,2,3,4,5,6};
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">};</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">a1</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">};</span>
 
-        test(a);
-        System.out.println();
-        test2(a1);
+<span class="w">        </span><span class="n">test</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">        </span><span class="n">test2</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
 
-    }
-    public static void test(int [] arr) {       
-        int start =arr.length/2;        
-        int end = arr.length-1;     
-        int temp1;
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">       </span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w">        </span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w">     </span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">temp1</span><span class="p">;</span>
 
-        while(start&lt;end){
-            temp1 = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp1;
-            start++;
-            end--;
-        }
-        System.out.println();
-        for(int i=0;i&lt;arr.length;i++) {
-            System.out.print(arr[i]+&quot; &quot;);
-        }
-    }
-    public static void test2(int [] a) {
-        int size=a.length;
-        for(int i=(size/2),j=size-1;i&lt;j;i++,j--){
-            int temp=a[i];
-            a[i]=a[j];
-            a[j]=temp;
-        }       
-        for(int i=0;i&lt;a.length;i++) {
-            System.out.print(a[i]+&quot; &quot;);
-        }
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">start</span><span class="o">&lt;</span><span class="n">end</span><span class="p">){</span>
+<span class="w">            </span><span class="n">temp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">start</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="n">arr</span><span class="o">[</span><span class="n">start</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">end</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="n">arr</span><span class="o">[</span><span class="n">end</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp1</span><span class="p">;</span>
+<span class="w">            </span><span class="n">start</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="n">end</span><span class="o">--</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="s">" "</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test2</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">j</span><span class="o">=</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="n">j</span><span class="o">--</span><span class="p">){</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="o">=</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]=</span><span class="n">temp</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w">       </span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="s">" "</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -5701,6 +5701,10 @@ public class Reverse_Second_Half_Array2 {
     
     
       <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6678,23 +6678,23 @@ It integrates with:</p>
 </ul>
 <hr />
 <h2 id="4-feature-file-structure-complete-example">4. Feature File Structure (Complete Example)<a class="headerlink" href="#4-feature-file-structure-complete-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Feature: Login functionality
+<div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> Login functionality</span>
 
-  Background:
-    Given user launches application
+<span class="nf">  </span><span class="k">Background:</span>
+<span class="k">    Given </span><span class="nf">user launches application</span>
 
-  Scenario: Valid login
-    When user enters username &quot;admin&quot;
-    And user enters password &quot;admin123&quot;
-    And user clicks login
-    Then user should see homepage
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Valid login</span>
+<span class="k">    When </span><span class="nf">user enters username "</span><span class="s">admin</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">user enters password "</span><span class="s">admin123</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">user clicks login</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">user should see homepage</span>
 
-  Scenario: Invalid login
-    When user enters username &quot;admin&quot;
-    And user enters password &quot;wrong&quot;
-    And user clicks login
-    Then error message should be displayed
-</code></pre>
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Invalid login</span>
+<span class="k">    When </span><span class="nf">user enters username "</span><span class="s">admin</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">user enters password "</span><span class="s">wrong</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">user clicks login</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">error message should be displayed</span>
+</code></pre></div>
 <h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Feature</strong> → High-level business functionality</li>
@@ -6703,71 +6703,71 @@ It integrates with:</p>
 </ul>
 <hr />
 <h2 id="5-step-definitions-glue-between-feature-code">5. Step Definitions (Glue Between Feature &amp; Code)<a class="headerlink" href="#5-step-definitions-glue-between-feature-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class LoginSteps {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginSteps</span><span class="w"> </span><span class="p">{</span>
 
-    @Given(&quot;user launches application&quot;)
-    public void launchApp() {
-        System.out.println(&quot;Application launched&quot;);
-    }
+<span class="w">    </span><span class="nd">@Given</span><span class="p">(</span><span class="s">"user launches application"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">launchApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Application launched"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @When(&quot;user enters username {string}&quot;)
-    public void enterUsername(String username) {
-        System.out.println(&quot;Username: &quot; + username);
-    }
+<span class="w">    </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user enters username {string}"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Username: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @When(&quot;user enters password {string}&quot;)
-    public void enterPassword(String password) {
-        System.out.println(&quot;Password: &quot; + password);
-    }
+<span class="w">    </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user enters password {string}"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterPassword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Password: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @When(&quot;user clicks login&quot;)
-    public void clickLogin() {
-        System.out.println(&quot;Login clicked&quot;);
-    }
+<span class="w">    </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user clicks login"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickLogin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Login clicked"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Then(&quot;user should see homepage&quot;)
-    public void verifyHome() {
-        System.out.println(&quot;Homepage displayed&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Then</span><span class="p">(</span><span class="s">"user should see homepage"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">verifyHome</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Homepage displayed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="6-scenario-outline-data-driven-testing">6. Scenario Outline (Data Driven Testing)<a class="headerlink" href="#6-scenario-outline-data-driven-testing" title="Permanent link">&para;</a></h2>
 <p>Used when <strong>same scenario runs with multiple data sets</strong>.</p>
-<pre><code class="language-gherkin">Scenario Outline: Login with multiple users
-  When user enters username &quot;&lt;username&gt;&quot;
-  And user enters password &quot;&lt;password&gt;&quot;
-  And user clicks login
-  Then login result should be &quot;&lt;result&gt;&quot;
+<div class="highlight"><pre><span></span><code><span class="k">Scenario Outline:</span><span class="nf"> Login with multiple users</span>
+<span class="k">  When </span><span class="nf">user enters username "</span><span class="nv">&lt;username&gt;</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">And </span><span class="nf">user enters password "</span><span class="nv">&lt;password&gt;</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">And </span><span class="nf">user clicks login</span>
+<span class="nf">  </span><span class="k">Then </span><span class="nf">login result should be "</span><span class="nv">&lt;result&gt;</span><span class="nf">"</span>
 
-Examples:
-| username | password | result  |
-| admin    | admin123 | success |
-| admin    | wrong    | failure |
-</code></pre>
+<span class="k">Examples:</span>
+<span class="k">|</span><span class="nv"> username</span><span class="k"> |</span><span class="nv"> password</span><span class="k"> |</span><span class="nv"> result</span><span class="k">  |</span>
+<span class="nf">| admin</span><span class="k">    |</span><span class="s"> admin123</span><span class="k"> |</span><span class="s"> success</span><span class="k"> |</span>
+<span class="nf">| admin</span><span class="k">    |</span><span class="s"> wrong</span><span class="k">    |</span><span class="s"> failure</span><span class="k"> |</span>
+</code></pre></div>
 <h3 id="step-definition">Step Definition<a class="headerlink" href="#step-definition" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Then(&quot;login result should be \&quot;(.*)\&quot;&quot;)
-public void verifyResult(String result) {
-    System.out.println(&quot;Result: &quot; + result);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Then</span><span class="p">(</span><span class="s">"login result should be \"(.*)\""</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">verifyResult</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Result: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="7-datatable-multiple-data-in-one-step">7. DataTable (Multiple Data in One Step)<a class="headerlink" href="#7-datatable-multiple-data-in-one-step" title="Permanent link">&para;</a></h2>
 <p>Used when <strong>structured data</strong> is required.</p>
 <h3 id="feature-file">Feature File<a class="headerlink" href="#feature-file" title="Permanent link">&para;</a></h3>
-<pre><code class="language-gherkin">Scenario: Create user
-  When user enters user details
-    | name | John |
-    | role | QA   |
-    | age  | 30   |
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">Scenario:</span><span class="nf"> Create user</span>
+<span class="k">  When </span><span class="nf">user enters user details</span>
+<span class="k">    |</span><span class="s"> name</span><span class="k"> |</span><span class="s"> John</span><span class="k"> |</span>
+<span class="k">    |</span><span class="s"> role</span><span class="k"> |</span><span class="s"> QA</span><span class="k">   |</span>
+<span class="k">    |</span><span class="s"> age</span><span class="k">  |</span><span class="s"> 30</span><span class="k">   |</span>
+</code></pre></div>
 <h3 id="step-definition_1">Step Definition<a class="headerlink" href="#step-definition_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@When(&quot;user enters user details&quot;)
-public void userDetails(DataTable table) {
-    Map&lt;String, String&gt; data = table.asMap(String.class, String.class);
-    System.out.println(data.get(&quot;name&quot;));
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@When</span><span class="p">(</span><span class="s">"user enters user details"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">userDetails</span><span class="p">(</span><span class="n">DataTable</span><span class="w"> </span><span class="n">table</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">asMap</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="8-background-pre-condition">8. Background (Pre-condition)<a class="headerlink" href="#8-background-pre-condition" title="Permanent link">&para;</a></h2>
 <p>Runs <strong>before every scenario</strong> in the feature file.</p>
@@ -6781,48 +6781,48 @@ public void userDetails(DataTable table) {
 <hr />
 <h2 id="9-hooks-before-after">9. Hooks (@Before, @After)<a class="headerlink" href="#9-hooks-before-after" title="Permanent link">&para;</a></h2>
 <p>Used for <strong>setup and teardown</strong>.</p>
-<pre><code class="language-java">public class Hooks {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hooks</span><span class="w"> </span><span class="p">{</span>
 
-    @Before
-    public void setup() {
-        System.out.println(&quot;Before scenario&quot;);
-    }
+<span class="w">    </span><span class="nd">@Before</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Before scenario"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @After
-    public void tearDown() {
-        System.out.println(&quot;After scenario&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@After</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tearDown</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After scenario"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="10-tags-selective-execution">10. Tags (Selective Execution)<a class="headerlink" href="#10-tags-selective-execution" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">@smoke
-Scenario: Valid login
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span>
+<span class="k">Scenario:</span><span class="nf"> Valid login</span>
 
-@regression
-Scenario: Invalid login
-</code></pre>
+<span class="nf">@regression</span>
+<span class="nf">Scenario: Invalid login</span>
+</code></pre></div>
 <h3 id="run-using-tags">Run using tags<a class="headerlink" href="#run-using-tags" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@CucumberOptions(tags = &quot;@smoke&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke"</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h2 id="11-runner-class-in-depth-very-important">11. Runner Class (IN DEPTH – VERY IMPORTANT)<a class="headerlink" href="#11-runner-class-in-depth-very-important" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@RunWith(Cucumber.class)
-@CucumberOptions(
-    features = &quot;src/test/resources/features&quot;,
-    glue = &quot;stepdefinitions&quot;,
-    plugin = {
-        &quot;pretty&quot;,
-        &quot;html:target/cucumber-report.html&quot;,
-        &quot;json:target/cucumber.json&quot;
-    },
-    monochrome = true,
-    dryRun = false,
-    tags = &quot;@smoke&quot;
-)
-public class TestRunner {
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@RunWith</span><span class="p">(</span><span class="n">Cucumber</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">    </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"stepdefinitions"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s">"pretty"</span><span class="p">,</span>
+<span class="w">        </span><span class="s">"html:target/cucumber-report.html"</span><span class="p">,</span>
+<span class="w">        </span><span class="s">"json:target/cucumber.json"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dryRun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke"</span>
+<span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestRunner</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="meaning-of-each-keyword">Meaning of Each Keyword<a class="headerlink" href="#meaning-of-each-keyword" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>features</strong> → Feature file location</li>
@@ -6836,44 +6836,44 @@ public class TestRunner {
 <h2 id="12-retry-failed-scenarios-real-time">12. Retry Failed Scenarios (Real Time)<a class="headerlink" href="#12-retry-failed-scenarios-real-time" title="Permanent link">&para;</a></h2>
 <p>Cucumber doesn’t support retry directly. We integrate with <strong>TestNG</strong>.</p>
 <h3 id="retry-analyzer">Retry Analyzer<a class="headerlink" href="#retry-analyzer" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class Retry implements IRetryAnalyzer {
-    int count = 0;
-    int maxRetry = 2;
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Retry</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IRetryAnalyzer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">maxRetry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 
-    public boolean retry(ITestResult result) {
-        if (count &lt; maxRetry) {
-            count++;
-            return true;
-        }
-        return false;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">retry</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">maxRetry</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="13-rerun-failed-scenarios">13. Rerun Failed Scenarios<a class="headerlink" href="#13-rerun-failed-scenarios" title="Permanent link">&para;</a></h2>
 <h3 id="plugin">plugin<a class="headerlink" href="#plugin" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">plugin = {&quot;rerun:target/failed.txt&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"rerun:target/failed.txt"</span><span class="p">}</span>
+</code></pre></div>
 <h3 id="runner-for-failed">Runner for Failed<a class="headerlink" href="#runner-for-failed" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@CucumberOptions(features = &quot;@target/failed.txt&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@target/failed.txt"</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h2 id="14-parallel-execution-4-years-interview-topic">14. Parallel Execution (4 Years Interview Topic)<a class="headerlink" href="#14-parallel-execution-4-years-interview-topic" title="Permanent link">&para;</a></h2>
 <h3 id="scenario-level-parallel-testng">Scenario Level Parallel – TestNG<a class="headerlink" href="#scenario-level-parallel-testng" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;suite parallel=&quot;tests&quot; thread-count=&quot;4&quot;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;suite</span><span class="w"> </span><span class="na">parallel=</span><span class="s">"tests"</span><span class="w"> </span><span class="na">thread-count=</span><span class="s">"4"</span><span class="nt">&gt;</span>
+</code></pre></div>
 <h3 id="feature-level-parallel">Feature Level Parallel<a class="headerlink" href="#feature-level-parallel" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@CucumberOptions(parallel = true)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span><span class="n">parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h2 id="15-real-time-framework-structure">15. Real-Time Framework Structure<a class="headerlink" href="#15-real-time-framework-structure" title="Permanent link">&para;</a></h2>
-<pre><code>src/test/java
+<div class="highlight"><pre><span></span><code>src/test/java
  ├── runners
  ├── stepdefinitions
  ├── hooks
  ├── pages
  └── utils
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="16-common-interview-questions-4-years-level">16. Common Interview Questions (4 Years Level)<a class="headerlink" href="#16-common-interview-questions-4-years-level" title="Permanent link">&para;</a></h2>
 <h3 id="q1-why-cucumber-if-we-already-have-testng">Q1. Why Cucumber if we already have TestNG?<a class="headerlink" href="#q1-why-cucumber-if-we-already-have-testng" title="Permanent link">&para;</a></h3>
@@ -6916,7 +6916,7 @@ public class TestRunner {
 <p>Below framework is <strong>real-project structured</strong>, but Selenium actions are replaced with <strong>print statements</strong> so you clearly understand <strong>execution flow</strong>.</p>
 <hr />
 <h2 id="191-framework-structure">19.1 Framework Structure<a class="headerlink" href="#191-framework-structure" title="Permanent link">&para;</a></h2>
-<pre><code>src/test/java
+<div class="highlight"><pre><span></span><code>src/test/java
  ├── runners
  │    └── TestRunner.java
  ├── stepdefinitions
@@ -6927,161 +6927,161 @@ public class TestRunner {
  │    └── DriverFactory.java
  └── pages
       └── LoginPage.java
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="20-endtoend-login-scenario-error-message-implemented">20. End‑to‑End Login Scenario (Error Message – Implemented)<a class="headerlink" href="#20-endtoend-login-scenario-error-message-implemented" title="Permanent link">&para;</a></h2>
 <h3 id="feature-file_1">Feature File<a class="headerlink" href="#feature-file_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-gherkin">Feature: Login validation
+<div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> Login validation</span>
 
-  Background:
-    Given browser is launched
-    And application is opened
+<span class="nf">  </span><span class="k">Background:</span>
+<span class="k">    Given </span><span class="nf">browser is launched</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">application is opened</span>
 
-  Scenario: Invalid login
-    When user enters username &quot;admin&quot;
-    And user enters password &quot;wrong&quot;
-    And user clicks login
-    Then error message should be displayed
-</code></pre>
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Invalid login</span>
+<span class="k">    When </span><span class="nf">user enters username "</span><span class="s">admin</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">user enters password "</span><span class="s">wrong</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">user clicks login</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">error message should be displayed</span>
+</code></pre></div>
 <hr />
 <h3 id="step-definition-with-print-flow">Step Definition (With Print Flow)<a class="headerlink" href="#step-definition-with-print-flow" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class LoginSteps {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginSteps</span><span class="w"> </span><span class="p">{</span>
 
-    @Given(&quot;browser is launched&quot;)
-    public void launchBrowser() {
-        System.out.println(&quot;[BACKGROUND] Browser launched&quot;);
-    }
+<span class="w">    </span><span class="nd">@Given</span><span class="p">(</span><span class="s">"browser is launched"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">launchBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[BACKGROUND] Browser launched"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Given(&quot;application is opened&quot;)
-    public void openApp() {
-        System.out.println(&quot;[BACKGROUND] Application opened&quot;);
-    }
+<span class="w">    </span><span class="nd">@Given</span><span class="p">(</span><span class="s">"application is opened"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[BACKGROUND] Application opened"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @When(&quot;user enters username \&quot;(.*)\&quot;&quot;)
-    public void enterUsername(String user) {
-        System.out.println(&quot;[STEP] Enter username: &quot; + user);
-    }
+<span class="w">    </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user enters username \"(.*)\""</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[STEP] Enter username: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @When(&quot;user enters password \&quot;(.*)\&quot;&quot;)
-    public void enterPassword(String pass) {
-        System.out.println(&quot;[STEP] Enter password: &quot; + pass);
-    }
+<span class="w">    </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user enters password \"(.*)\""</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterPassword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[STEP] Enter password: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @When(&quot;user clicks login&quot;)
-    public void clickLogin() {
-        System.out.println(&quot;[STEP] Click login button&quot;);
-    }
+<span class="w">    </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user clicks login"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickLogin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[STEP] Click login button"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Then(&quot;error message should be displayed&quot;)
-    public void errorMessage() {
-        System.out.println(&quot;[ASSERTION] Error message displayed ❌&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Then</span><span class="p">(</span><span class="s">"error message should be displayed"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">errorMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[ASSERTION] Error message displayed ❌"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="execution-output-console-flow">Execution Output (Console Flow)<a class="headerlink" href="#execution-output-console-flow" title="Permanent link">&para;</a></h3>
-<pre><code>[BACKGROUND] Browser launched
+<div class="highlight"><pre><span></span><code>[BACKGROUND] Browser launched
 [BACKGROUND] Application opened
 [STEP] Enter username: admin
 [STEP] Enter password: wrong
 [STEP] Click login button
 [ASSERTION] Error message displayed ❌
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="21-datatable-complete-scenario-background-output">21. DataTable – Complete Scenario + Background + Output<a class="headerlink" href="#21-datatable-complete-scenario-background-output" title="Permanent link">&para;</a></h1>
 <h3 id="feature-file_2">Feature File<a class="headerlink" href="#feature-file_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-gherkin">Feature: User creation
+<div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> User creation</span>
 
-  Background:
-    Given admin is logged in
+<span class="nf">  </span><span class="k">Background:</span>
+<span class="k">    Given </span><span class="nf">admin is logged in</span>
 
-  Scenario: Create user with details
-    When admin enters user details
-      | name | John |
-      | role | QA   |
-      | age  | 30   |
-    Then user should be created
-</code></pre>
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Create user with details</span>
+<span class="k">    When </span><span class="nf">admin enters user details</span>
+<span class="k">      |</span><span class="s"> name</span><span class="k"> |</span><span class="s"> John</span><span class="k"> |</span>
+<span class="k">      |</span><span class="s"> role</span><span class="k"> |</span><span class="s"> QA</span><span class="k">   |</span>
+<span class="k">      |</span><span class="s"> age</span><span class="k">  |</span><span class="s"> 30</span><span class="k">   |</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">user should be created</span>
+</code></pre></div>
 <hr />
 <h3 id="step-definition_2">Step Definition<a class="headerlink" href="#step-definition_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Given(&quot;admin is logged in&quot;)
-public void adminLogin() {
-    System.out.println(&quot;[BACKGROUND] Admin logged in&quot;);
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"admin is logged in"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">adminLogin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[BACKGROUND] Admin logged in"</span><span class="p">);</span>
+<span class="p">}</span>
 
-@When(&quot;admin enters user details&quot;)
-public void enterDetails(DataTable table) {
-    Map&lt;String, String&gt; data = table.asMap(String.class, String.class);
-    System.out.println(&quot;[STEP] Name: &quot; + data.get(&quot;name&quot;));
-    System.out.println(&quot;[STEP] Role: &quot; + data.get(&quot;role&quot;));
-    System.out.println(&quot;[STEP] Age: &quot; + data.get(&quot;age&quot;));
-}
+<span class="nd">@When</span><span class="p">(</span><span class="s">"admin enters user details"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterDetails</span><span class="p">(</span><span class="n">DataTable</span><span class="w"> </span><span class="n">table</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">asMap</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[STEP] Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">));</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[STEP] Role: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"role"</span><span class="p">));</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[STEP] Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"age"</span><span class="p">));</span>
+<span class="p">}</span>
 
-@Then(&quot;user should be created&quot;)
-public void verifyUser() {
-    System.out.println(&quot;[ASSERTION] User created successfully ✅&quot;);
-}
-</code></pre>
+<span class="nd">@Then</span><span class="p">(</span><span class="s">"user should be created"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">verifyUser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[ASSERTION] User created successfully ✅"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<pre><code>[BACKGROUND] Admin logged in
+<div class="highlight"><pre><span></span><code>[BACKGROUND] Admin logged in
 [STEP] Name: John
 [STEP] Role: QA
 [STEP] Age: 30
 [ASSERTION] User created successfully ✅
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="22-hooks-execution-order-explained-very-important">22. Hooks – Execution Order Explained (Very Important)<a class="headerlink" href="#22-hooks-execution-order-explained-very-important" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">public class Hooks {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hooks</span><span class="w"> </span><span class="p">{</span>
 
-    @Before
-    public void beforeScenario() {
-        System.out.println(&quot;[HOOK] Before Scenario&quot;);
-    }
+<span class="w">    </span><span class="nd">@Before</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">beforeScenario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[HOOK] Before Scenario"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @After
-    public void afterScenario() {
-        System.out.println(&quot;[HOOK] After Scenario&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@After</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterScenario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"[HOOK] After Scenario"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="execution-order">Execution Order<a class="headerlink" href="#execution-order" title="Permanent link">&para;</a></h3>
-<pre><code>[HOOK] Before Scenario
+<div class="highlight"><pre><span></span><code>[HOOK] Before Scenario
 [BACKGROUND] ...
 [STEP] ...
 [ASSERTION] ...
 [HOOK] After Scenario
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="23-tags-skip-multiple-tags-combination">23. Tags – Skip, Multiple Tags, Combination<a class="headerlink" href="#23-tags-skip-multiple-tags-combination" title="Permanent link">&para;</a></h1>
 <h3 id="feature-file_3">Feature File<a class="headerlink" href="#feature-file_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-gherkin">@smoke @login
-Scenario: Valid login
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span><span class="nf"> </span><span class="nt">@login</span>
+<span class="k">Scenario:</span><span class="nf"> Valid login</span>
 
-@regression @skip
-Scenario: Invalid login
-</code></pre>
+<span class="nf">@regression @skip</span>
+<span class="nf">Scenario: Invalid login</span>
+</code></pre></div>
 <hr />
 <h3 id="runner-examples">Runner Examples<a class="headerlink" href="#runner-examples" title="Permanent link">&para;</a></h3>
 <h4 id="run-single-tag">Run Single Tag<a class="headerlink" href="#run-single-tag" title="Permanent link">&para;</a></h4>
-<pre><code class="language-java">tags = &quot;@smoke&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke"</span>
+</code></pre></div>
 <h4 id="run-multiple-tags-or">Run Multiple Tags (OR)<a class="headerlink" href="#run-multiple-tags-or" title="Permanent link">&para;</a></h4>
-<pre><code class="language-java">tags = &quot;@smoke or @regression&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke or @regression"</span>
+</code></pre></div>
 <h4 id="run-multiple-tags-and">Run Multiple Tags (AND)<a class="headerlink" href="#run-multiple-tags-and" title="Permanent link">&para;</a></h4>
-<pre><code class="language-java">tags = &quot;@smoke and @login&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke and @login"</span>
+</code></pre></div>
 <h4 id="skip-tag">Skip Tag<a class="headerlink" href="#skip-tag" title="Permanent link">&para;</a></h4>
-<pre><code class="language-java">tags = &quot;not @skip&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"not @skip"</span>
+</code></pre></div>
 <hr />
 <h1 id="24-extent-reports-with-cucumber-conceptual">24. Extent Reports with Cucumber (Conceptual)<a class="headerlink" href="#24-extent-reports-with-cucumber-conceptual" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">plugin = {
-  &quot;pretty&quot;,
-  &quot;com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="s">"pretty"</span><span class="p">,</span>
+<span class="w">  </span><span class="s">"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Output:</p>
 <ul>
 <li>Step wise report</li>
@@ -7090,18 +7090,18 @@ Scenario: Invalid login
 </ul>
 <hr />
 <h1 id="25-jenkins-cucumber-pipeline-realtime">25. Jenkins + Cucumber Pipeline (Real‑Time)<a class="headerlink" href="#25-jenkins-cucumber-pipeline-realtime" title="Permanent link">&para;</a></h1>
-<pre><code class="language-groovy">pipeline {
-  agent any
-  stages {
-    stage('Checkout') {
-      steps { git 'repo-url' }
-    }
-    stage('Run Tests') {
-      steps { sh 'mvn clean test' }
-    }
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
+<span class="w">  </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Checkout'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">      </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="s1">'repo-url'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Run Tests'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">      </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn clean test'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h1 id="26-mock-interview-qa-4-years-real">26. Mock Interview Q&amp;A (4 Years – Real)<a class="headerlink" href="#26-mock-interview-qa-4-years-real" title="Permanent link">&para;</a></h1>
 <h3 id="q1-explain-cucumber-execution-flow">Q1. Explain Cucumber execution flow<a class="headerlink" href="#q1-explain-cucumber-execution-flow" title="Permanent link">&para;</a></h3>
@@ -7174,6 +7174,10 @@ Scenario: Invalid login
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

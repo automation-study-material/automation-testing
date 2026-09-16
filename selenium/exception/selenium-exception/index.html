@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5635,14 +5635,14 @@ It means the element is not present in the DOM at the time of search.</p>
 <li>Validate locator in DevTools.</li>
 <li>Use Explicit Wait:</li>
 </ul>
-<pre><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(&quot;username&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriverWait</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"username"</span><span class="p">)));</span>
+</code></pre></div>
 <ul>
 <li>Switch to frame if required:</li>
 </ul>
-<pre><code class="language-java">driver.switchTo().frame(&quot;frameName&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="s">"frameName"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="2-staleelementreferenceexception">2️⃣ StaleElementReferenceException<a class="headerlink" href="#2-staleelementreferenceexception" title="Permanent link">&para;</a></h1>
 <h2 id="description_1">✅ Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h2>
@@ -5660,9 +5660,9 @@ the DOM has refreshed or changed.</p>
 <li>Re-locate element before interacting.</li>
 <li>Use refreshed condition:</li>
 </ul>
-<pre><code class="language-java">wait.until(ExpectedConditions.refreshed(
-    ExpectedConditions.presenceOfElementLocated(By.id(&quot;submit&quot;))));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">refreshed</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">presenceOfElementLocated</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"submit"</span><span class="p">))));</span>
+</code></pre></div>
 <hr />
 <h1 id="3-timeoutexception">3️⃣ TimeoutException<a class="headerlink" href="#3-timeoutexception" title="Permanent link">&para;</a></h1>
 <h2 id="description_2">✅ Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h2>
@@ -5679,8 +5679,8 @@ the DOM has refreshed or changed.</p>
 <li>Increase wait duration.</li>
 <li>Use correct ExpectedCondition:</li>
 </ul>
-<pre><code class="language-java">wait.until(ExpectedConditions.elementToBeClickable(By.id(&quot;login&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">elementToBeClickable</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">)));</span>
+</code></pre></div>
 <hr />
 <h1 id="4-elementnotinteractableexception">4️⃣ ElementNotInteractableException<a class="headerlink" href="#4-elementnotinteractableexception" title="Permanent link">&para;</a></h1>
 <h2 id="description_3">✅ Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h2>
@@ -5694,9 +5694,9 @@ the DOM has refreshed or changed.</p>
 </ol>
 <h2 id="solutions_3">🛠 Solutions<a class="headerlink" href="#solutions_3" title="Permanent link">&para;</a></h2>
 <p>Scroll into view:</p>
-<pre><code class="language-java">((JavascriptExecutor)driver)
-.executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, element);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">((</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="n">driver</span><span class="p">)</span>
+<span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"arguments[0].scrollIntoView(true);"</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+</code></pre></div>
 <p>Use explicit wait for clickability.</p>
 <hr />
 <h1 id="5-elementclickinterceptedexception">5️⃣ ElementClickInterceptedException<a class="headerlink" href="#5-elementclickinterceptedexception" title="Permanent link">&para;</a></h1>
@@ -5715,9 +5715,9 @@ clicked.</p>
 <li>Wait for overlay to disappear.</li>
 <li>Use JavaScript click as fallback:</li>
 </ul>
-<pre><code class="language-java">((JavascriptExecutor)driver)
-.executeScript(&quot;arguments[0].click();&quot;, element);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">((</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="n">driver</span><span class="p">)</span>
+<span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"arguments[0].click();"</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="6-invalidselectorexception">6️⃣ InvalidSelectorException<a class="headerlink" href="#6-invalidselectorexception" title="Permanent link">&para;</a></h1>
 <h2 id="description_5">✅ Description<a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h2>
@@ -5745,8 +5745,8 @@ clicked.</p>
 <li>Switching before frame is available.</li>
 </ol>
 <h2 id="solutions_6">🛠 Solutions<a class="headerlink" href="#solutions_6" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(&quot;frameName&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">frameToBeAvailableAndSwitchToIt</span><span class="p">(</span><span class="s">"frameName"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h1 id="8-nosuchwindowexception">8️⃣ NoSuchWindowException<a class="headerlink" href="#8-nosuchwindowexception" title="Permanent link">&para;</a></h1>
 <h2 id="description_7">✅ Description<a class="headerlink" href="#description_7" title="Permanent link">&para;</a></h2>
@@ -5758,8 +5758,8 @@ clicked.</p>
 <li>Switching too early.</li>
 </ol>
 <h2 id="solutions_7">🛠 Solutions<a class="headerlink" href="#solutions_7" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Set&lt;String&gt; handles = driver.getWindowHandles();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">handles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandles</span><span class="p">();</span>
+</code></pre></div>
 <p>Validate before switching.</p>
 <hr />
 <h1 id="9-sessionnotcreatedexception">9️⃣ SessionNotCreatedException<a class="headerlink" href="#9-sessionnotcreatedexception" title="Permanent link">&para;</a></h1>
@@ -5800,15 +5800,15 @@ clicked.</p>
 <h2 id="scenario">🔎 Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
 <p>Alert present but not handled before performing next action.</p>
 <h2 id="solution">🛠 Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">driver.switchTo().alert().accept();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">alert</span><span class="p">().</span><span class="na">accept</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="12-noalertpresentexception">1️⃣2️⃣ NoAlertPresentException<a class="headerlink" href="#12-noalertpresentexception" title="Permanent link">&para;</a></h1>
 <h2 id="scenario_1">🔎 Scenario<a class="headerlink" href="#scenario_1" title="Permanent link">&para;</a></h2>
 <p>Attempting to switch to alert when none is present.</p>
 <h2 id="solution_1">🛠 Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">wait.until(ExpectedConditions.alertIsPresent());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">alertIsPresent</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h1 id="most-common-exceptions-in-real-projects">🎯 Most Common Exceptions in Real Projects<a class="headerlink" href="#most-common-exceptions-in-real-projects" title="Permanent link">&para;</a></h1>
 <ul>
@@ -5888,6 +5888,10 @@ clicked.</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

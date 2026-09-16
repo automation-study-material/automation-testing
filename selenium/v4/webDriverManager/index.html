@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5797,11 +5797,11 @@
 <li>Download <code>chromedriver.exe</code></li>
 <li>Add path in code:</li>
 </ul>
-<pre><code class="language-java">System.setProperty(&quot;webdriver.chrome.driver&quot;,
-                   &quot;C:\\drivers\\chromedriver.exe&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="s">"webdriver.chrome.driver"</span><span class="p">,</span>
+<span class="w">                   </span><span class="s">"C:\\drivers\\chromedriver.exe"</span><span class="p">);</span>
 
-WebDriver driver = new ChromeDriver();
-</code></pre>
+<span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Manual download</li>
@@ -5812,9 +5812,9 @@ WebDriver driver = new ChromeDriver();
 <hr />
 <h2 id="webdrivermanager-how-it-works-internally">🔥 WebDriverManager (How It Works Internally)<a class="headerlink" href="#webdrivermanager-how-it-works-internally" title="Permanent link">&para;</a></h2>
 <p>When you write:</p>
-<pre><code class="language-java">WebDriverManager.chromedriver().setup();
-WebDriver driver = new ChromeDriver();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriverManager</span><span class="p">.</span><span class="na">chromedriver</span><span class="p">().</span><span class="na">setup</span><span class="p">();</span>
+<span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="internally-it">Internally it:<a class="headerlink" href="#internally-it" title="Permanent link">&para;</a></h3>
 <p>1️⃣ Detects OS\
 2️⃣ Detects browser version\
@@ -5838,12 +5838,12 @@ WebDriver driver = new ChromeDriver();
 <p>Starting Selenium 4.6, Selenium includes:</p>
 <p>🔹 <strong>Selenium Manager (Built-in driver management)</strong></p>
 <p>That means you can now write:</p>
-<pre><code class="language-java">WebDriver driver = new ChromeDriver();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="without">WITHOUT:<a class="headerlink" href="#without" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">System.setProperty(...);
-WebDriverManager.chromedriver().setup();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(...);</span>
+<span class="n">WebDriverManager</span><span class="p">.</span><span class="na">chromedriver</span><span class="p">().</span><span class="na">setup</span><span class="p">();</span>
+</code></pre></div>
 <p>Selenium itself will:</p>
 <p>1️⃣ Detect browser\
 2️⃣ Download matching driver\
@@ -5876,53 +5876,53 @@ WebDriverManager.chromedriver().setup();
   Version control flexibility   High               Basic</p>
 <hr />
 <h2 id="example-selenium-46-without-webdrivermanager">🔥 Example -- Selenium 4.6+ Without WebDriverManager<a class="headerlink" href="#example-selenium-46-without-webdrivermanager" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
 
-public class SeleniumManagerExample {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SeleniumManagerExample</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver = new ChromeDriver();
-        driver.get(&quot;https://example.com&quot;);
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
 
-        System.out.println(driver.getTitle());
-        driver.quit();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>That's it. No driver setup required.</p>
 <hr />
 <h2 id="example-using-webdrivermanager-in-selenium-4">🔥 Example -- Using WebDriverManager in Selenium 4<a class="headerlink" href="#example-using-webdrivermanager-in-selenium-4" title="Permanent link">&para;</a></h2>
 <h3 id="add-dependency">Add Dependency<a class="headerlink" href="#add-dependency" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;dependency&gt;
-   &lt;groupId&gt;io.github.bonigarcia&lt;/groupId&gt;
-   &lt;artifactId&gt;webdrivermanager&lt;/artifactId&gt;
-   &lt;version&gt;5.8.0&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+<span class="w">   </span><span class="nt">&lt;groupId&gt;</span>io.github.bonigarcia<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">   </span><span class="nt">&lt;artifactId&gt;</span>webdrivermanager<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">   </span><span class="nt">&lt;version&gt;</span>5.8.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">io.github.bonigarcia.wdm.WebDriverManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
 
-public class WDMExample {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WDMExample</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+<span class="w">        </span><span class="n">WebDriverManager</span><span class="p">.</span><span class="na">chromedriver</span><span class="p">().</span><span class="na">setup</span><span class="p">();</span>
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
 
-        driver.get(&quot;https://example.com&quot;);
-        driver.quit();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="internally-how-selenium-manager-works">🔥 Internally How Selenium Manager Works<a class="headerlink" href="#internally-how-selenium-manager-works" title="Permanent link">&para;</a></h2>
 <p>When you run:</p>
-<pre><code class="language-java">new ChromeDriver();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+</code></pre></div>
 <p>Selenium:</p>
 <p>1️⃣ Calls Selenium Manager binary\
 2️⃣ Detects installed browser version\
@@ -6036,6 +6036,10 @@ environments.</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

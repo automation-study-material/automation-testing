@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -6593,10 +6593,10 @@ Copy code</p>
 Copy code</p>
 <hr />
 <h2 id="4-java-linkedlist-class">4. Java LinkedList Class<a class="headerlink" href="#4-java-linkedlist-class" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class LinkedList&lt;E&gt;
-    extends AbstractSequentialList&lt;E&gt;
-    implements List&lt;E&gt;, Deque&lt;E&gt;, Queue&lt;E&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LinkedList</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractSequentialList</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Deque</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span>
+</code></pre></div>
 <p>LinkedList can act as:
   - List
   - Queue
@@ -6604,22 +6604,22 @@ Copy code</p>
   - Stack (not recommended)</p>
 <h2 id="5-internal-structure-very-important">5. Internal Structure (Very Important)<a class="headerlink" href="#5-internal-structure-very-important" title="Permanent link">&para;</a></h2>
 <h3 id="node-class-simplified">Node Class (Simplified)<a class="headerlink" href="#node-class-simplified" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">private static class Node&lt;E&gt; {
-    E item;
-    Node&lt;E&gt; next;
-    Node&lt;E&gt; prev;
-}
-</code></pre>
-<p>LinkedList Maintains</p>
-<pre><code class="language-java">Node&lt;E&gt; first; // head
-Node&lt;E&gt; last;  // tail
-int size;
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+LinkedList Maintains
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">first</span><span class="p">;</span><span class="w"> </span><span class="c1">// head</span>
+<span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">last</span><span class="p">;</span><span class="w">  </span><span class="c1">// tail</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+</code></pre></div></p>
 <h2 id="6-visual-representation">6. Visual Representation<a class="headerlink" href="#6-visual-representation" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">first                         last
+<div class="highlight"><pre><span></span><code>first                         last
  ↓                             ↓
 null ← A ⇄ B ⇄ C ⇄ D → null
-</code></pre>
+</code></pre></div>
 <p>Each node knows:
  - Its previous node
  - Its next node</p>
@@ -6664,57 +6664,57 @@ Moves node-by-node until index is reached</p>
 <hr />
 <h2 id="9-adding-elements">9. Adding Elements<a class="headerlink" href="#9-adding-elements" title="Permanent link">&para;</a></h2>
 <h3 id="add-at-end">➕ Add at End<a class="headerlink" href="#add-at-end" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">list.add(&quot;A&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
 
+<span class="nl">Steps</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">node</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">newNode</span><span class="p">.</span><span class="na">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">last</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">last</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Update</span><span class="w"> </span><span class="n">last</span>
+
+<span class="err">⏱</span><span class="w"> </span><span class="n">Time</span><span class="w"> </span><span class="n">Complexity</span><span class="p">:</span><span class="w"> </span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="err">##</span><span class="w"> </span><span class="mf">8.</span><span class="w"> </span><span class="n">Why</span><span class="w"> </span><span class="n">Indexing</span><span class="w"> </span><span class="n">Is</span><span class="w"> </span><span class="n">Slow</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">LinkedList</span>
+<span class="n">Requires</span><span class="w"> </span><span class="n">traversal</span>
+
+<span class="n">Pointer</span><span class="w"> </span><span class="n">dereferencing</span>
+
+<span class="n">No</span><span class="w"> </span><span class="n">cache</span><span class="w"> </span><span class="n">locality</span>
+
+<span class="n">Nodes</span><span class="w"> </span><span class="n">scattered</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">memory</span>
+
+<span class="err">📌</span><span class="w"> </span><span class="n">Indexing</span><span class="w"> </span><span class="n">exists</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="n">consistency</span>
+
+<span class="err">##</span><span class="w"> </span><span class="mf">9.</span><span class="w"> </span><span class="n">Adding</span><span class="w"> </span><span class="n">Elements</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">LinkedList</span>
+
+<span class="o">---</span>
+
+<span class="err">###</span><span class="w"> </span><span class="err">➕</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">End</span>
+
+<span class="o">**</span><span class="n">Method</span><span class="w"> </span><span class="n">Used</span><span class="p">:</span><span class="o">**</span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+
+
+<span class="err">```</span><span class="n">java</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AddAtEndExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>[A, B]
+</code></pre></div>
 Steps:
-- Create new node
-- Set newNode.prev = last
-- Set last.next = newNode
-- Update last
-
-⏱ Time Complexity: O(1)
-
-
-## 8. Why Indexing Is Slow in LinkedList
-Requires traversal
-
-Pointer dereferencing
-
-No cache locality
-
-Nodes scattered in memory
-
-📌 Indexing exists only for API consistency
-
-## 9. Adding Elements in LinkedList
-
----
-
-### ➕ Add at End
-
-**Method Used:**
-
-  - list.add(&quot;A&quot;);
-
-
-```java
-import java.util.LinkedList;
-
-public class AddAtEndExample {
-    public static void main(String[] args) {
-        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
-
-        list.add(&quot;A&quot;);
-        list.add(&quot;B&quot;);
-
-        System.out.println(list);
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code>[A, B]
-</code></pre>
-<p>Steps:
  - Create new node
  - Set newNode.prev = last
  - Set last.next = newNode
@@ -6725,23 +6725,23 @@ public class AddAtEndExample {
 <ul>
 <li>list.addFirst("B");</li>
 </ul>
-<pre><code class="language-java">import java.util.LinkedList;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
 
-public class AddAtBeginningExample {
-    public static void main(String[] args) {
-        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AddAtBeginningExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        list.add(&quot;A&quot;);
-        list.addFirst(&quot;B&quot;);
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
 
-        System.out.println(list);
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code class="language-text">[B, A]
-</code></pre>
-<p>Steps:
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>[B, A]
+</code></pre></div>
+Steps:
   - Create new node
   - Set newNode.next = first
   - Update first.prev
@@ -6752,27 +6752,27 @@ public class AddAtBeginningExample {
 <ul>
 <li>list.add(2, "X");</li>
 </ul>
-<pre><code class="language-java">java
-Copy code
-import java.util.LinkedList;
+<div class="highlight"><pre><span></span><code><span class="n">java</span>
+<span class="n">Copy</span><span class="w"> </span><span class="n">code</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
 
-public class AddAtIndexExample {
-    public static void main(String[] args) {
-        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AddAtIndexExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        list.add(&quot;A&quot;);
-        list.add(&quot;B&quot;);
-        list.add(&quot;C&quot;);
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span>
 
-        list.add(2, &quot;X&quot;);
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"X"</span><span class="p">);</span>
 
-        System.out.println(list);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Output:</p>
-<pre><code class="language-text">[A, B, X, C]
-</code></pre>
+<div class="highlight"><pre><span></span><code>[A, B, X, C]
+</code></pre></div>
 <p>Steps:
   - Traverse to index → O(n)
   - Update node links → O(1)
@@ -6816,64 +6816,64 @@ No direct access</p>
 <p>This is why LinkedList is often slower than ArrayList in practice.</p>
 <h2 id="14-linkedlist-as-queue-deque-stack">14. LinkedList as Queue, Deque, Stack<a class="headerlink" href="#14-linkedlist-as-queue-deque-stack" title="Permanent link">&para;</a></h2>
 <h3 id="queue-fifo">🔹 Queue (FIFO)<a class="headerlink" href="#queue-fifo" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import java.util.LinkedList;
-import java.util.Queue;
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Queue</span><span class="p">;</span>
 
-public class QueueExample {
-    public static void main(String[] args) {
-        Queue&lt;String&gt; list = new LinkedList&lt;&gt;();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">QueueExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        list.offer(&quot;A&quot;);
-        list.offer(&quot;B&quot;);
-        list.offer(&quot;C&quot;);
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span>
 
-        System.out.println(list.poll());
-        System.out.println(list.peek());
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code>A
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>A
 B
-</code></pre>
+</code></pre></div></p>
 <h3 id="deque-double-ended-queue">🔹 Deque (Double-Ended Queue)<a class="headerlink" href="#deque-double-ended-queue" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import java.util.Deque;
-import java.util.LinkedList;
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Deque</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
 
-public class DequeExample {
-    public static void main(String[] args) {
-        Deque&lt;String&gt; list = new LinkedList&lt;&gt;();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DequeExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Deque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        list.addFirst(&quot;X&quot;);
-        list.addLast(&quot;Y&quot;);
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">"X"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">"Y"</span><span class="p">);</span>
 
-        System.out.println(list);
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code>[X, Y]
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Output:
+<div class="highlight"><pre><span></span><code>[X, Y]
+</code></pre></div></p>
 <h3 id="stack-not-recommended">🔹 Stack (Not Recommended)<a class="headerlink" href="#stack-not-recommended" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import java.util.LinkedList;
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
 
-public class StackExample {
-    public static void main(String[] args) {
-        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StackExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        list.push(&quot;A&quot;);
-        list.push(&quot;B&quot;);
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
 
-        System.out.println(list.pop());
-        System.out.println(list);
-    }
-}
-</code></pre>
-<p>Output:</p>
-<pre><code>B
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Output:</p>
+<p><div class="highlight"><pre><span></span><code>B
 [A]
-</code></pre>
-<p>⚠️ Note: Stack operations using LinkedList are allowed, but ArrayDeque is preferred.</p>
+</code></pre></div>
+⚠️ Note: Stack operations using LinkedList are allowed, but ArrayDeque is preferred.</p>
 <h2 id="15-time-complexity-summary-linkedlist">15. Time Complexity Summary (LinkedList)<a class="headerlink" href="#15-time-complexity-summary-linkedlist" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -7110,6 +7110,10 @@ public class StackExample {
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

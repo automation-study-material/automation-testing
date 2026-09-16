@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5664,48 +5664,48 @@ Playwright treats each <strong>new tab/window</strong> as a <code>Page</code> ob
 <hr />
 <h2 id="opening-a-new-window-tab">🔹 Opening a New Window / Tab<a class="headerlink" href="#opening-a-new-window-tab" title="Permanent link">&para;</a></h2>
 <p>When a link opens a new window or tab, Playwright can <strong>listen for it</strong>.</p>
-<pre><code class="language-java">// Example: Click link that opens new tab/window
-Page newPage = page.waitForPopup(() -&gt; {
-    page.locator(&quot;a#openNewTab&quot;).click();
-});
+<div class="highlight"><pre><span></span><code><span class="c1">// Example: Click link that opens new tab/window</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">newPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">waitForPopup</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"a#openNewTab"</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+<span class="p">});</span>
 
-System.out.println(&quot;New Page Title: &quot; + newPage.title());
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"New Page Title: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newPage</span><span class="p">.</span><span class="na">title</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="switching-window-by-title">🔹 Switching Window by Title<a class="headerlink" href="#switching-window-by-title" title="Permanent link">&para;</a></h2>
 <p>Suppose you want to switch to a tab/window with title <strong>"hellpword"</strong>.</p>
-<pre><code class="language-java">for (Page p : page.context().pages()) {
-    if (p.title().equalsIgnoreCase(&quot;hellpword&quot;)) {
-        System.out.println(&quot;Switched to page with title: &quot; + p.title());
-        p.bringToFront();   // Make it active
-        break;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">context</span><span class="p">().</span><span class="na">pages</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">title</span><span class="p">().</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"hellpword"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Switched to page with title: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">title</span><span class="p">());</span>
+<span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="na">bringToFront</span><span class="p">();</span><span class="w">   </span><span class="c1">// Make it active</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="switching-by-index-of-tab">🔹 Switching by Index of Tab<a class="headerlink" href="#switching-by-index-of-tab" title="Permanent link">&para;</a></h2>
 <p>Each window/tab is stored in a list using <code>context.pages()</code>.\
 You can switch by <strong>index position</strong>.</p>
-<pre><code class="language-java">// Get all pages
-List&lt;Page&gt; allPages = page.context().pages();
+<div class="highlight"><pre><span></span><code><span class="c1">// Get all pages</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Page</span><span class="o">&gt;</span><span class="w"> </span><span class="n">allPages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">context</span><span class="p">().</span><span class="na">pages</span><span class="p">();</span>
 
-// Switch to second tab (index starts at 0)
-Page secondTab = allPages.get(1);
-secondTab.bringToFront();
+<span class="c1">// Switch to second tab (index starts at 0)</span>
+<span class="n">Page</span><span class="w"> </span><span class="n">secondTab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allPages</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">secondTab</span><span class="p">.</span><span class="na">bringToFront</span><span class="p">();</span>
 
-System.out.println(&quot;Now on Tab: &quot; + secondTab.title());
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Now on Tab: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">secondTab</span><span class="p">.</span><span class="na">title</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="switching-using-keyboard-tab-key">🔹 Switching Using Keyboard (Tab Key)<a class="headerlink" href="#switching-using-keyboard-tab-key" title="Permanent link">&para;</a></h2>
 <p>Playwright supports <strong>keyboard actions</strong>.\
 If you want to simulate switching tabs using <strong>Ctrl + Tab</strong>, you can
 send key presses.</p>
-<pre><code class="language-java">// Press CTRL + TAB to switch to next tab (browser level)
-page.keyboard().press(&quot;Control+Tab&quot;);
+<div class="highlight"><pre><span></span><code><span class="c1">// Press CTRL + TAB to switch to next tab (browser level)</span>
+<span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">press</span><span class="p">(</span><span class="s">"Control+Tab"</span><span class="p">);</span>
 
-// Or Shift+Control+Tab to move backwards
-page.keyboard().press(&quot;Control+Shift+Tab&quot;);
-</code></pre>
+<span class="c1">// Or Shift+Control+Tab to move backwards</span>
+<span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">press</span><span class="p">(</span><span class="s">"Control+Shift+Tab"</span><span class="p">);</span>
+</code></pre></div>
 <p>⚠️ <strong>Note:</strong> Keyboard tab switching works only if the browser supports
 shortcut handling.\
 Preferred way is using <code>context().pages()</code>.</p>
@@ -5718,12 +5718,12 @@ Preferred way is using <code>context().pages()</code>.</p>
     reliable.\</li>
 <li>Clean up by closing unused tabs:\</li>
 </ul>
-<pre><code class="language-java">for (Page p : page.context().pages()) {
-    if (!p.title().equals(&quot;Main Page&quot;)) {
-        p.close();
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">context</span><span class="p">().</span><span class="na">pages</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">.</span><span class="na">title</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">"Main Page"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <p>✅ With these methods, you can reliably handle <strong>multiple windows/tabs</strong>
 in Playwright with Java.</p>
@@ -5780,6 +5780,10 @@ in Playwright with Java.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

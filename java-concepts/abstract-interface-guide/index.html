@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5699,17 +5699,17 @@ abstract methods</strong>,\
 unless the child class is also declared <code>abstract</code>.</p>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">abstract class Animal {
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
 
-    abstract void eat();
-    abstract void sleep();
-    abstract void sound();
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">();</span>
 
-    void walk() {   // concrete method
-        System.out.println(&quot;Animal is walking&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">walk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">// concrete method</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Animal is walking"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="here">📌 Here:<a class="headerlink" href="#here" title="Permanent link">&para;</a></h3>
 <ul>
 <li>3 abstract methods → <code>eat()</code>, <code>sleep()</code>, <code>sound()</code></li>
@@ -5717,57 +5717,57 @@ unless the child class is also declared <code>abstract</code>.</p>
 </ul>
 <hr />
 <h2 id="case-1-concrete-child-class">Case 1: Concrete Child Class<a class="headerlink" href="#case-1-concrete-child-class" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class Dog extends Animal {
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    void eat() {
-        System.out.println(&quot;Dog eats food&quot;);
-    }
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog eats food"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    void sleep() {
-        System.out.println(&quot;Dog sleeps&quot;);
-    }
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog sleeps"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    void sound() {
-        System.out.println(&quot;Dog barks&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog barks"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✅ <strong>Rule:</strong> You MUST implement all abstract methods.\
 Otherwise, compiler error:</p>
 <pre><code>Dog is not abstract and does not override abstract method...
 </code></pre>
 <hr />
 <h2 id="case-2-child-class-is-also-abstract">Case 2: Child Class is Also Abstract<a class="headerlink" href="#case-2-child-class-is-also-abstract" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">abstract class Dog extends Animal {
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    void eat() {
-        System.out.println(&quot;Dog eats food&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog eats food"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>Only <code>eat()</code> implemented</li>
 <li><code>sleep()</code> and <code>sound()</code> not implemented</li>
 <li>Compiles because <code>Dog</code> is abstract</li>
 </ul>
 <p>Next concrete class:</p>
-<pre><code class="language-java">class Labrador extends Dog {
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Labrador</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Dog</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    void sleep() {
-        System.out.println(&quot;Labrador sleeps&quot;);
-    }
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Labrador sleeps"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    void sound() {
-        System.out.println(&quot;Labrador barks&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Labrador barks"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="important-interview-table">Important Interview Table<a class="headerlink" href="#important-interview-table" title="Permanent link">&para;</a></h2>
 <table>
@@ -5791,11 +5791,11 @@ Otherwise, compiler error:</p>
 <hr />
 <h1 id="interface-implementation-rules">📘 Interface -- Implementation Rules<a class="headerlink" href="#interface-implementation-rules" title="Permanent link">&para;</a></h1>
 <h2 id="before-java-8">Before Java 8<a class="headerlink" href="#before-java-8" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">interface Vehicle {
-    void start();
-    void stop();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>Only abstract methods allowed</li>
 <li>No method body allowed</li>
@@ -5804,47 +5804,47 @@ Otherwise, compiler error:</p>
 <li>abstract</li>
 </ul>
 <p>Implementation:</p>
-<pre><code class="language-java">class Car implements Vehicle {
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    public void start() {
-        System.out.println(&quot;Car starts&quot;);
-    }
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car starts"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    public void stop() {
-        System.out.println(&quot;Car stops&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car stops"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✅ Must implement ALL methods.</p>
 <hr />
 <h2 id="after-java-8">After Java 8 🚀<a class="headerlink" href="#after-java-8" title="Permanent link">&para;</a></h2>
 <p>Java 8 introduced: 
   - <code>default</code> methods
   - - <code>static</code> methods</p>
-<pre><code class="language-java">interface Vehicle {
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
 
-    void start();
-    void stop();
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">();</span>
 
-    default void fuelType() {
-        System.out.println(&quot;Petrol or Diesel&quot;);
-    }
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fuelType</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Petrol or Diesel"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    static void category() {
-        System.out.println(&quot;Transport Vehicle&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">category</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Transport Vehicle"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="important">📌 Important:<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Must implement abstract methods</li>
 <li>Default methods are optional</li>
 <li>Static methods are called using interface name:</li>
 </ul>
-<pre><code class="language-java">Vehicle.category();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Vehicle</span><span class="p">.</span><span class="na">category</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="after-java-9">After Java 9<a class="headerlink" href="#after-java-9" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5959,6 +5959,10 @@ Otherwise, compiler error:</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

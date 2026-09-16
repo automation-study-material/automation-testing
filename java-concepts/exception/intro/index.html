@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5628,7 +5628,7 @@
 <hr />
 <h1 id="exception-hierarchy-diagram">✅ Exception Hierarchy (Diagram)<a class="headerlink" href="#exception-hierarchy-diagram" title="Permanent link">&para;</a></h1>
 <p><img src="../../images/java/Exceptions.png" alt="Collections Framework" width="400"/></p>
-<pre><code class="language-text">Object
+<div class="highlight"><pre><span></span><code>Object
    ↓
 Throwable
    ├── Error                  (Serious, system level)
@@ -5649,7 +5649,7 @@ Throwable
                 ├── ArrayIndexOutOfBoundsException
                 ├── IllegalArgumentException
                 └── NumberFormatException
-</code></pre>
+</code></pre></div>
 <h1 id="throwable">✅ Throwable<a class="headerlink" href="#throwable" title="Permanent link">&para;</a></h1>
 <p>Root class of all errors and exceptions.</p>
 <p>Two main types:</p>
@@ -5695,8 +5695,8 @@ Throwable
 <li>FileNotFoundException</li>
 </ul>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">FileReader f = new FileReader(&quot;test.txt&quot;); // compile error if not handled
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">FileReader</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">"test.txt"</span><span class="p">);</span><span class="w"> </span><span class="c1">// compile error if not handled</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="runtime-exceptions-unchecked">✅ Runtime Exceptions (Unchecked)<a class="headerlink" href="#runtime-exceptions-unchecked" title="Permanent link">&para;</a></h1>
@@ -5709,8 +5709,8 @@ Throwable
 <li>IndexOutOfBoundsException</li>
 </ul>
 <h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">int a = 10 / 0; // runtime crash
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// runtime crash</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="checked-vs-runtime-interview-table">🔥 Checked vs Runtime (Interview Table)<a class="headerlink" href="#checked-vs-runtime-interview-table" title="Permanent link">&para;</a></h1>
@@ -5752,68 +5752,68 @@ Throwable
 </table>
 <hr />
 <h3 id="easy-memory">Easy Memory<a class="headerlink" href="#easy-memory" title="Permanent link">&para;</a></h3>
-<pre><code>Checked → outside problems (file/db/network)
+<div class="highlight"><pre><span></span><code>Checked → outside problems (file/db/network)
 Runtime → coding mistakes
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="try-catch-finally">✅ try-catch-finally<a class="headerlink" href="#try-catch-finally" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="basic-syntax">Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">try {
-   risky code
-}
-catch(Exception e){
-   handle
-}
-finally{
-   cleanup
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">risky</span><span class="w"> </span><span class="n">code</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">   </span><span class="n">handle</span>
+<span class="p">}</span>
+<span class="k">finally</span><span class="p">{</span>
+<span class="w">   </span><span class="n">cleanup</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="try-block">✅ try Block<a class="headerlink" href="#try-block" title="Permanent link">&para;</a></h1>
 <p>Contains code that may throw exception.</p>
-<pre><code class="language-java">try {
-    int a = 10/0;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="catch-block">✅ catch Block<a class="headerlink" href="#catch-block" title="Permanent link">&para;</a></h1>
 <p>Handles exception.</p>
-<pre><code class="language-java">catch(ArithmeticException e){
-    System.out.println(&quot;Divide by zero&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">catch</span><span class="p">(</span><span class="n">ArithmeticException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Divide by zero"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="multiple-catch-yes-allowed">✅ Multiple Catch (YES allowed)<a class="headerlink" href="#multiple-catch-yes-allowed" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">try {
-    int a = 10/0;
-}
-catch(ArithmeticException e){
-    System.out.println(&quot;Math error&quot;);
-}
-catch(NullPointerException e){
-    System.out.println(&quot;Null error&quot;);
-}
-catch(Exception e){
-    System.out.println(&quot;Generic error&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="n">ArithmeticException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Math error"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="n">NullPointerException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Null error"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Generic error"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="rule">Rule<a class="headerlink" href="#rule" title="Permanent link">&para;</a></h2>
 <p>Always:</p>
-<pre><code>Specific → General
-</code></pre>
+<div class="highlight"><pre><span></span><code>Specific → General
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="multi-catch-java-7">✅ Multi-Catch (Java 7+)<a class="headerlink" href="#multi-catch-java-7" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">catch(IOException | SQLException e){
-    System.out.println(&quot;DB or IO error&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">catch</span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"DB or IO error"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="finally-block">✅ finally Block<a class="headerlink" href="#finally-block" title="Permanent link">&para;</a></h1>
@@ -5828,10 +5828,10 @@ catch(Exception e){
 </ul>
 <hr />
 <h2 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">finally{
-   System.out.println(&quot;Always runs&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">finally</span><span class="p">{</span>
+<span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Always runs"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="finally-does-not-run-if">finally does NOT run if<a class="headerlink" href="#finally-does-not-run-if" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5844,35 +5844,35 @@ catch(Exception e){
 <h1 id="can-we-write-only-try">✅ Can we write only try?<a class="headerlink" href="#can-we-write-only-try" title="Permanent link">&para;</a></h1>
 <p>❌ No</p>
 <p>Must have:</p>
-<pre><code>try + catch OR try + finally
-</code></pre>
+<div class="highlight"><pre><span></span><code>try + catch OR try + finally
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="throw-vs-throws">✅ throw vs throws<a class="headerlink" href="#throw-vs-throws" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="throw-manual-exception">throw (manual exception)<a class="headerlink" href="#throw-manual-exception" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">throw new IllegalArgumentException(&quot;Invalid age&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"Invalid age"</span><span class="p">);</span>
+</code></pre></div>
 <p>Used to explicitly throw exception.</p>
 <hr />
 <h2 id="throws-delegate-exception">throws (delegate exception)<a class="headerlink" href="#throws-delegate-exception" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public void readFile() throws IOException {
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">readFile</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Caller must handle.</p>
 <hr />
 <hr />
 <h1 id="real-selenium-example">✅ Real Selenium Example<a class="headerlink" href="#real-selenium-example" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">try {
-    driver.findElement(By.id(&quot;login&quot;)).click();
-}
-catch(NoSuchElementException e){
-    System.out.println(&quot;Element not found&quot;);
-}
-finally{
-    driver.quit();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">)).</span><span class="na">click</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="n">NoSuchElementException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Element not found"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">finally</span><span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="best-practices">✅ Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h1>
@@ -5898,7 +5898,7 @@ finally{
 <hr />
 <hr />
 <h1 id="cheatsheet">✅ Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h1>
-<pre><code>Throwable
+<div class="highlight"><pre><span></span><code>Throwable
    ├── Error
    └── Exception
          ├── Checked
@@ -5909,7 +5909,7 @@ catch → handle
 finally → cleanup
 throw → create
 throws → declare
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="one-line-interview-answer">🎯 One-Line Interview Answer<a class="headerlink" href="#one-line-interview-answer" title="Permanent link">&para;</a></h1>
@@ -5969,6 +5969,10 @@ throws → declare
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

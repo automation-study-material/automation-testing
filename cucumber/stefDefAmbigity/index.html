@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5618,48 +5618,48 @@
 <hr />
 <h1 id="2-example-of-ambiguity">2️⃣ Example of Ambiguity<a class="headerlink" href="#2-example-of-ambiguity" title="Permanent link">&para;</a></h1>
 <h3 id="feature-file">Feature File<a class="headerlink" href="#feature-file" title="Permanent link">&para;</a></h3>
-<pre><code class="language-gherkin">Scenario: Login test
-Given user enters username
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">Scenario:</span><span class="nf"> Login test</span>
+<span class="k">Given </span><span class="nf">user enters username</span>
+</code></pre></div>
 <hr />
 <h3 id="step-definition-1">Step Definition 1<a class="headerlink" href="#step-definition-1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Given(&quot;user enters username&quot;)
-public void enterUsername() {
-    System.out.println(&quot;Enter username&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"user enters username"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterUsername</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter username"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="step-definition-2">Step Definition 2<a class="headerlink" href="#step-definition-2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Given(&quot;user enters (.*)&quot;)
-public void enterValue(String value) {
-    System.out.println(&quot;Enter value&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"user enters (.*)"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterValue</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter value"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
 <p>The step:</p>
-<pre><code>Given user enters username
-</code></pre>
+<div class="highlight"><pre><span></span><code>Given user enters username
+</code></pre></div>
 <p>matches <strong>both step definitions</strong>.</p>
 <p>So Cucumber cannot decide which method to run.</p>
 <hr />
 <h3 id="error-example">Error Example<a class="headerlink" href="#error-example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">AmbiguousStepDefinitionsException:
+<div class="highlight"><pre><span></span><code>AmbiguousStepDefinitionsException:
 Multiple step definitions match:
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="3-how-to-fix-step-ambiguity">3️⃣ How to Fix Step Ambiguity<a class="headerlink" href="#3-how-to-fix-step-ambiguity" title="Permanent link">&para;</a></h1>
 <h3 id="method-1-make-step-definitions-more-specific">Method 1 — Make Step Definitions More Specific<a class="headerlink" href="#method-1-make-step-definitions-more-specific" title="Permanent link">&para;</a></h3>
 <p>❌ Ambiguous</p>
-<pre><code class="language-java">@Given(&quot;user enters (.*)&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"user enters (.*)"</span><span class="p">)</span>
+</code></pre></div>
 <p>✔ Correct</p>
-<pre><code class="language-java">@Given(&quot;user enters username&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"user enters username"</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h3 id="method-2-use-better-regex">Method 2 — Use Better Regex<a class="headerlink" href="#method-2-use-better-regex" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Given(&quot;user enters username (.*)&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"user enters username (.*)"</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h3 id="method-3-avoid-duplicate-steps">Method 3 — Avoid Duplicate Steps<a class="headerlink" href="#method-3-avoid-duplicate-steps" title="Permanent link">&para;</a></h3>
 <p>Remove duplicate or overlapping step definitions.</p>
@@ -5667,11 +5667,11 @@ Multiple step definitions match:
 <h1 id="4-best-practice">4️⃣ Best Practice<a class="headerlink" href="#4-best-practice" title="Permanent link">&para;</a></h1>
 <p>Steps should be <strong>unique and clearly defined</strong>.</p>
 <p>Example:</p>
-<pre><code class="language-java">@Given(&quot;user enters valid username&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"user enters valid username"</span><span class="p">)</span>
+</code></pre></div>
 <p>instead of</p>
-<pre><code class="language-java">@Given(&quot;user enters (.*)&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"user enters (.*)"</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h1 id="5-interview-answer-short">5️⃣ Interview Answer (Short)<a class="headerlink" href="#5-interview-answer-short" title="Permanent link">&para;</a></h1>
 <p><strong>Step Definition Ambiguity occurs when a single step in a Cucumber feature file matches multiple step definition methods. This creates confusion for Cucumber about which method to execute, resulting in an Ambiguous Step Definition error. This issue can be resolved by making step definitions more specific and avoiding overlapping patterns.</strong></p>
@@ -5729,6 +5729,10 @@ Multiple step definitions match:
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

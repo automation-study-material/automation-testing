@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5753,174 +5753,173 @@
 - Which is best</p>
 <hr />
 <h2 id="sample-json">📦 Sample JSON<a class="headerlink" href="#sample-json" title="Permanent link">&para;</a></h2>
-<pre><code class="language-json">{
-  &quot;meta&quot;: {
-    &quot;requestId&quot;: &quot;REQ123&quot;,
-    &quot;status&quot;: &quot;SUCCESS&quot;
-  },
-  &quot;company&quot;: &quot;ABC Tech&quot;,
-  &quot;users&quot;: [
-    {
-      &quot;id&quot;: 101,
-      &quot;profile&quot;: {
-        &quot;name&quot;: &quot;Umesh&quot;,
-        &quot;email&quot;: &quot;umesh@test.com&quot;,
-        &quot;address&quot;: {
-          &quot;city&quot;: &quot;Pune&quot;,
-          &quot;zip&quot;: 411001
-        }
-      },
-      &quot;roles&quot;: [&quot;ADMIN&quot;, &quot;DEV&quot;],
-      &quot;salary&quot;: 90000,
-      &quot;active&quot;: true
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REQ123"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC Tech"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Umesh"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"umesh@test.com"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pune"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"zip"</span><span class="p">:</span><span class="w"> </span><span class="mi">411001</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"ADMIN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"DEV"</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="mi">90000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="jsonpath">✅ JsonPath<a class="headerlink" href="#jsonpath" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">JsonPath jp = response.jsonPath();
-String name = jp.getString(&quot;users[0].profile.name&quot;);
-int zip = jp.getInt(&quot;users[0].profile.address.zip&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">JsonPath</span><span class="w"> </span><span class="n">jp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">jsonPath</span><span class="p">();</span>
+<span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jp</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"users[0].profile.name"</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">zip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jp</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"users[0].profile.address.zip"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="path">✅ path()<a class="headerlink" href="#path" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">String name = response.then().extract().path(&quot;users[0].profile.name&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">then</span><span class="p">().</span><span class="na">extract</span><span class="p">().</span><span class="na">path</span><span class="p">(</span><span class="s">"users[0].profile.name"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="maplist">✅ Map/List<a class="headerlink" href="#maplist" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;Map&lt;String,Object&gt;&gt; users = response.jsonPath().getList(&quot;users&quot;);
-System.out.println(users.get(0).get(&quot;salary&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Object</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">jsonPath</span><span class="p">().</span><span class="na">getList</span><span class="p">(</span><span class="s">"users"</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">users</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="s">"salary"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h1 id="lombok-pojo-best-practice">🔥 Lombok POJO (BEST PRACTICE)<a class="headerlink" href="#lombok-pojo-best-practice" title="Permanent link">&para;</a></h1>
 <h2 id="maven">Maven<a class="headerlink" href="#maven" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;dependency&gt;
-  &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
-  &lt;artifactId&gt;lombok&lt;/artifactId&gt;
-  &lt;version&gt;1.18.30&lt;/version&gt;
-  &lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+<span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;version&gt;</span>1.18.30<span class="nt">&lt;/version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="addressjava">Address.java<a class="headerlink" href="#addressjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import lombok.Data;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Data</span><span class="p">;</span>
 
-@Data
-public class Address {
-    private String city;
-    private int zip;
-}
-</code></pre>
+<span class="nd">@Data</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Address</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">zip</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="profilejava">Profile.java<a class="headerlink" href="#profilejava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import lombok.Data;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Data</span><span class="p">;</span>
 
-@Data
-public class Profile {
-    private String name;
-    private String email;
-    private Address address;
-}
-</code></pre>
+<span class="nd">@Data</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Profile</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="userjava">User.java<a class="headerlink" href="#userjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import lombok.Data;
-import java.util.List;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Data</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
 
-@Data
-public class User {
-    private int id;
-    private Profile profile;
-    private List&lt;String&gt; roles;
-    private int salary;
-    private boolean active;
-}
-</code></pre>
+<span class="nd">@Data</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Profile</span><span class="w"> </span><span class="n">profile</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">roles</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">active</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="metajava">Meta.java<a class="headerlink" href="#metajava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import lombok.Data;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Data</span><span class="p">;</span>
 
-@Data
-public class Meta {
-    private String requestId;
-    private String status;
-}
-</code></pre>
+<span class="nd">@Data</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Meta</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">requestId</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="rootresponsejava">RootResponse.java<a class="headerlink" href="#rootresponsejava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import lombok.Data;
-import java.util.List;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Data</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
 
-@Data
-public class RootResponse {
-    private Meta meta;
-    private String company;
-    private List&lt;User&gt; users;
-}
-</code></pre>
+<span class="nd">@Data</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RootResponse</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Meta</span><span class="w"> </span><span class="n">meta</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="deserialize">Deserialize<a class="headerlink" href="#deserialize" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.ObjectMapper</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
 
-public class DemoTest {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DemoTest</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) throws Exception {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
 
-        ObjectMapper mapper = new ObjectMapper();
+<span class="w">        </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span>
 
-        // ---------------------------
-        // 1️⃣ JSON → POJO
-        // ---------------------------
-        RootResponse data =
-                mapper.readValue(
-                        new File(&quot;src/test/resources/testdata/user.json&quot;),
-                        RootResponse.class);
-
-
-        // ---------------------------
-        // 2️⃣ FETCH VALUES (BEFORE)
-        // ---------------------------
-        System.out.println(&quot;====== BEFORE ======&quot;);
-
-        User user = data.getUsers().get(0);
-
-        System.out.println(&quot;Name: &quot; + user.getProfile().getName());
-        System.out.println(&quot;Email: &quot; + user.getProfile().getEmail());
-        System.out.println(&quot;City: &quot; + user.getProfile().getAddress().getCity());
-        System.out.println(&quot;Salary: &quot; + user.getSalary());
-        System.out.println(&quot;Active: &quot; + user.isActive());
-        System.out.println(&quot;RequestId: &quot; + data.getMeta().getRequestId());
+<span class="w">        </span><span class="c1">// ---------------------------</span>
+<span class="w">        </span><span class="c1">// 1️⃣ JSON → POJO</span>
+<span class="w">        </span><span class="c1">// ---------------------------</span>
+<span class="w">        </span><span class="n">RootResponse</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="n">mapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span>
+<span class="w">                        </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"src/test/resources/testdata/user.json"</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">RootResponse</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
 
 
-        // ---------------------------
-        // 3️⃣ SET / MODIFY VALUES
-        // ---------------------------
-        user.getProfile().setName(&quot;Nitin&quot;);
-        user.getProfile().setEmail(&quot;nitin@test.com&quot;);
-        user.getProfile().getAddress().setCity(&quot;Mumbai&quot;);
+<span class="w">        </span><span class="c1">// ---------------------------</span>
+<span class="w">        </span><span class="c1">// 2️⃣ FETCH VALUES (BEFORE)</span>
+<span class="w">        </span><span class="c1">// ---------------------------</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"====== BEFORE ======"</span><span class="p">);</span>
 
-        user.setSalary(120000);
-        user.setActive(false);
+<span class="w">        </span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">getUsers</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
-        data.getMeta().setRequestId(&quot;REQ999&quot;);
-        data.setCompany(&quot;XYZ Corp&quot;);
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Email: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">getEmail</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"City: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">getAddress</span><span class="p">().</span><span class="na">getCity</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Salary: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getSalary</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Active: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">isActive</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"RequestId: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">getMeta</span><span class="p">().</span><span class="na">getRequestId</span><span class="p">());</span>
 
 
-        // ---------------------------
-        // 4️⃣ FETCH VALUES (AFTER)
-        // ---------------------------
-        System.out.println(&quot;\n====== AFTER ======&quot;);
+<span class="w">        </span><span class="c1">// ---------------------------</span>
+<span class="w">        </span><span class="c1">// 3️⃣ SET / MODIFY VALUES</span>
+<span class="w">        </span><span class="c1">// ---------------------------</span>
+<span class="w">        </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">setName</span><span class="p">(</span><span class="s">"Nitin"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">setEmail</span><span class="p">(</span><span class="s">"nitin@test.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">getAddress</span><span class="p">().</span><span class="na">setCity</span><span class="p">(</span><span class="s">"Mumbai"</span><span class="p">);</span>
 
-        System.out.println(&quot;Name: &quot; + user.getProfile().getName());
-        System.out.println(&quot;Email: &quot; + user.getProfile().getEmail());
-        System.out.println(&quot;City: &quot; + user.getProfile().getAddress().getCity());
-        System.out.println(&quot;Salary: &quot; + user.getSalary());
-        System.out.println(&quot;Active: &quot; + user.isActive());
-        System.out.println(&quot;RequestId: &quot; + data.getMeta().getRequestId());
-    }
-}
+<span class="w">        </span><span class="n">user</span><span class="p">.</span><span class="na">setSalary</span><span class="p">(</span><span class="mi">120000</span><span class="p">);</span>
+<span class="w">        </span><span class="n">user</span><span class="p">.</span><span class="na">setActive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 
-</code></pre>
+<span class="w">        </span><span class="n">data</span><span class="p">.</span><span class="na">getMeta</span><span class="p">().</span><span class="na">setRequestId</span><span class="p">(</span><span class="s">"REQ999"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">data</span><span class="p">.</span><span class="na">setCompany</span><span class="p">(</span><span class="s">"XYZ Corp"</span><span class="p">);</span>
+
+
+<span class="w">        </span><span class="c1">// ---------------------------</span>
+<span class="w">        </span><span class="c1">// 4️⃣ FETCH VALUES (AFTER)</span>
+<span class="w">        </span><span class="c1">// ---------------------------</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n====== AFTER ======"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Email: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">getEmail</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"City: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getProfile</span><span class="p">().</span><span class="na">getAddress</span><span class="p">().</span><span class="na">getCity</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Salary: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getSalary</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Active: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">isActive</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"RequestId: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">getMeta</span><span class="p">().</span><span class="na">getRequestId</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✅ Output</p>
-<pre><code class="language-text">====== BEFORE ======
+<h2 id="before-name-umesh-email-umeshtestcom-city-pune-salary-90000-active-true-requestid-req123-after-name-nitin-email-nitintestcom-city-mumbai-salary-120000-active-false-requestid-req999"><div class="highlight"><pre><span></span><code>====== BEFORE ======
 Name: Umesh
 Email: umesh@test.com
 City: Pune
@@ -5935,8 +5934,7 @@ City: Mumbai
 Salary: 120000
 Active: false
 RequestId: REQ999
-</code></pre>
-<hr />
+</code></pre></div><a class="headerlink" href="#before-name-umesh-email-umeshtestcom-city-pune-salary-90000-active-true-requestid-req123-after-name-nitin-email-nitintestcom-city-mumbai-salary-120000-active-false-requestid-req999" title="Permanent link">&para;</a></h2>
 <h2 id="recommendation">Recommendation<a class="headerlink" href="#recommendation" title="Permanent link">&para;</a></h2>
 <p>Small → JsonPath<br />
 Complex → ⭐ POJO + Lombok ⭐  </p>
@@ -5995,6 +5993,10 @@ Complex → ⭐ POJO + Lombok ⭐  </p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

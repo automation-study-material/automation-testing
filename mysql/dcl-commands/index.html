@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5732,22 +5732,22 @@ They define who can access, modify, or manage database objects.</p>
 <h2 id="key-dcl-commands-in-depth">🔹 Key DCL Commands (in depth)<a class="headerlink" href="#key-dcl-commands-in-depth" title="Permanent link">&para;</a></h2>
 <h3 id="1-grant">1. GRANT<a class="headerlink" href="#1-grant" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Provides privileges to a user.</li>
+<li>Provides privileges to a user.
+<div class="highlight"><pre><span></span><code><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="p">,</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">user1</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">GRANT SELECT, INSERT ON Employee TO user1;
-</code></pre>
 <h3 id="2-revoke">2. REVOKE<a class="headerlink" href="#2-revoke" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Removes previously granted privileges.</li>
+<li>Removes previously granted privileges.
+<div class="highlight"><pre><span></span><code><span class="k">REVOKE</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user1</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">REVOKE INSERT ON Employee FROM user1;
-</code></pre>
 <h3 id="3-deny-sql-server">3. DENY (SQL Server)<a class="headerlink" href="#3-deny-sql-server" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Explicitly denies permission to users.</li>
+<li>Explicitly denies permission to users.
+<div class="highlight"><pre><span></span><code><span class="n">DENY</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">user1</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">DENY DELETE ON Employee TO user1;
-</code></pre>
 <hr />
 <h2 id="pros-cons-of-dcl">🔹 Pros &amp; Cons of DCL<a class="headerlink" href="#pros-cons-of-dcl" title="Permanent link">&para;</a></h2>
 <h3 id="pros">✅ Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
@@ -5885,6 +5885,10 @@ They define who can access, modify, or manage database objects.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

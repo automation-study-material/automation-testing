@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -7221,8 +7221,8 @@
 <li>API sends only required data back</li>
 </ul>
 <p>The UI never talks directly to the database.</p>
-<pre><code>Mobile App / Web UI → API → Backend Logic → Database
-</code></pre>
+<div class="highlight"><pre><span></span><code>Mobile App / Web UI → API → Backend Logic → Database
+</code></pre></div>
 <h3 id="why-apis-are-critical">Why APIs are critical<a class="headerlink" href="#why-apis-are-critical" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Same backend supports <strong>Web, Mobile, Third-party apps</strong></li>
@@ -7314,50 +7314,50 @@
 </ul>
 <hr />
 <h2 id="7-maven-dependencies-complete">7. Maven Dependencies (Complete)<a class="headerlink" href="#7-maven-dependencies-complete" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;io.rest-assured&lt;/groupId&gt;
-        &lt;artifactId&gt;rest-assured&lt;/artifactId&gt;
-        &lt;version&gt;5.3.0&lt;/version&gt;
-    &lt;/dependency&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependencies&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>io.rest-assured<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>rest-assured<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>5.3.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
 
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.testng&lt;/groupId&gt;
-        &lt;artifactId&gt;testng&lt;/artifactId&gt;
-        &lt;version&gt;7.8.0&lt;/version&gt;
-        &lt;scope&gt;test&lt;/scope&gt;
-    &lt;/dependency&gt;
+<span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.testng<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>testng<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>7.8.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">        </span><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
 
-    &lt;dependency&gt;
-        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
-        &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
-        &lt;version&gt;2.15.2&lt;/version&gt;
-    &lt;/dependency&gt;
-&lt;/dependencies&gt;
-</code></pre>
+<span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>2.15.2<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="8-first-complete-rest-assured-test">8. First Complete REST Assured Test<a class="headerlink" href="#8-first-complete-rest-assured-test" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import static</span><span class="w"> </span><span class="nn">io.restassured.RestAssured.*</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.hamcrest.Matchers.*</span><span class="p">;</span>
 
-import org.testng.annotations.Test;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
 
-public class GetUsersTest {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GetUsersTest</span><span class="w"> </span><span class="p">{</span>
 
-    @Test
-    public void getUsers() {
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getUsers</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        given()
-            .baseUri(&quot;https://reqres.in&quot;)
-        .when()
-            .get(&quot;/api/users?page=2&quot;)
-        .then()
-            .statusCode(200)
-            .body(&quot;page&quot;, equalTo(2))
-            .body(&quot;data.size()&quot;, greaterThan(0));
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">given</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users?page=2"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"page"</span><span class="p">,</span><span class="w"> </span><span class="n">equalTo</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.size()"</span><span class="p">,</span><span class="w"> </span><span class="n">greaterThan</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="explanation-line-by-line">Explanation (Line by line)<a class="headerlink" href="#explanation-line-by-line" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>given()</code> → request setup</li>
@@ -7367,207 +7367,206 @@ public class GetUsersTest {
 <hr />
 <h2 id="9-sending-request-body-all-ways">9. Sending Request Body (All Ways)<a class="headerlink" href="#9-sending-request-body-all-ways" title="Permanent link">&para;</a></h2>
 <h3 id="91-string-payload">9.1 String Payload<a class="headerlink" href="#91-string-payload" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String payload = &quot;{\&quot;name\&quot;:\&quot;John\&quot;,\&quot;job\&quot;:\&quot;Tester\&quot;}&quot;;
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"{\"name\":\"John\",\"job\":\"Tester\"}"</span><span class="p">;</span>
 
-given()
-    .baseUri(&quot;https://reqres.in&quot;)
-    .contentType(&quot;application/json&quot;)
-    .body(payload)
-.when()
-    .post(&quot;/api/users&quot;)
-.then()
-    .statusCode(201);
-</code></pre>
+<span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">contentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">"/api/users"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="92-hashmap-payload">9.2 HashMap Payload<a class="headerlink" href="#92-hashmap-payload" title="Permanent link">&para;</a></h3>
 <h4 id="json-reuest">Json Reuest<a class="headerlink" href="#json-reuest" title="Permanent link">&para;</a></h4>
-<pre><code class="language-json">{
-  &quot;name&quot;: &quot;John&quot;,
-  &quot;job&quot;: &quot;QA Engineer&quot;,
-  &quot;age&quot;: 30,
-  &quot;isActive&quot;: true,
-  &quot;address&quot;: {
-    &quot;street&quot;: &quot;MG Road&quot;,
-    &quot;city&quot;: &quot;Pune&quot;,
-    &quot;zip&quot;: &quot;411001&quot;
-  },
-  &quot;skills&quot;: [&quot;Java&quot;, &quot;Selenium&quot;, &quot;API&quot;],
-  &quot;projects&quot;: [
-    {
-      &quot;projectName&quot;: &quot;Banking App&quot;,
-      &quot;duration&quot;: 12
-    },
-    {
-      &quot;projectName&quot;: &quot;E-commerce&quot;,
-      &quot;duration&quot;: 8
-    }
-  ]
-}
-</code></pre>
-<pre><code class="language-java">import java.util.*;
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"job"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QA Engineer"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MG Road"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pune"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"411001"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"skills"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Selenium"</span><span class="p">,</span><span class="w"> </span><span class="s2">"API"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"projectName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banking App"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"projectName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-commerce"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
 
-Map&lt;String, Object&gt; data = new HashMap&lt;&gt;();
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-// Simple fields
-data.put(&quot;name&quot;, &quot;John&quot;);
-data.put(&quot;job&quot;, &quot;QA Engineer&quot;);
-data.put(&quot;age&quot;, 30);
-data.put(&quot;isActive&quot;, true);
+<span class="c1">// Simple fields</span>
+<span class="n">data</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"name"</span><span class="p">,</span><span class="w"> </span><span class="s">"John"</span><span class="p">);</span>
+<span class="n">data</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"job"</span><span class="p">,</span><span class="w"> </span><span class="s">"QA Engineer"</span><span class="p">);</span>
+<span class="n">data</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"age"</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="n">data</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"isActive"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 
-// Nested Object (address)
-Map&lt;String, Object&gt; address = new HashMap&lt;&gt;();
-address.put(&quot;street&quot;, &quot;MG Road&quot;);
-address.put(&quot;city&quot;, &quot;Pune&quot;);
-address.put(&quot;zip&quot;, &quot;411001&quot;);
+<span class="c1">// Nested Object (address)</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">address</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"street"</span><span class="p">,</span><span class="w"> </span><span class="s">"MG Road"</span><span class="p">);</span>
+<span class="n">address</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"city"</span><span class="p">,</span><span class="w"> </span><span class="s">"Pune"</span><span class="p">);</span>
+<span class="n">address</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"zip"</span><span class="p">,</span><span class="w"> </span><span class="s">"411001"</span><span class="p">);</span>
 
-data.put(&quot;address&quot;, address);
+<span class="n">data</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"address"</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">);</span>
 
-// Array (skills)
-List&lt;String&gt; skills = Arrays.asList(&quot;Java&quot;, &quot;Selenium&quot;, &quot;API&quot;);
-data.put(&quot;skills&quot;, skills);
+<span class="c1">// Array (skills)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">skills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s">"Selenium"</span><span class="p">,</span><span class="w"> </span><span class="s">"API"</span><span class="p">);</span>
+<span class="n">data</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"skills"</span><span class="p">,</span><span class="w"> </span><span class="n">skills</span><span class="p">);</span>
 
-// Array of Objects (projects)
-Map&lt;String, Object&gt; project1 = new HashMap&lt;&gt;();
-project1.put(&quot;projectName&quot;, &quot;Banking App&quot;);
-project1.put(&quot;duration&quot;, 12);
+<span class="c1">// Array of Objects (projects)</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">project1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">project1</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"projectName"</span><span class="p">,</span><span class="w"> </span><span class="s">"Banking App"</span><span class="p">);</span>
+<span class="n">project1</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"duration"</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
 
-Map&lt;String, Object&gt; project2 = new HashMap&lt;&gt;();
-project2.put(&quot;projectName&quot;, &quot;E-commerce&quot;);
-project2.put(&quot;duration&quot;, 8);
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">project2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">project2</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"projectName"</span><span class="p">,</span><span class="w"> </span><span class="s">"E-commerce"</span><span class="p">);</span>
+<span class="n">project2</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"duration"</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
 
-List&lt;Map&lt;String, Object&gt;&gt; projects = new ArrayList&lt;&gt;();
-projects.add(project1);
-projects.add(project2);
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">projects</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">project1</span><span class="p">);</span>
+<span class="n">projects</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">project2</span><span class="p">);</span>
 
-data.put(&quot;projects&quot;, projects);
+<span class="n">data</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"projects"</span><span class="p">,</span><span class="w"> </span><span class="n">projects</span><span class="p">);</span>
 
-given()
-    .baseUri(&quot;https://reqres.in&quot;)
-    .contentType(&quot;application/json&quot;)
-    .body(data)
-.when()
-    .post(&quot;/api/users&quot;)
-.then()
-    .statusCode(201);
-
-</code></pre>
+<span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">contentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">"/api/users"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span>
+</code></pre></div></p>
 <hr />
 <h3 id="93-json-file-payload">9.3 JSON File Payload<a class="headerlink" href="#93-json-file-payload" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">File file = new File(&quot;src/test/resources/user.json&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"src/test/resources/user.json"</span><span class="p">);</span>
 
-given()
-    .baseUri(&quot;https://reqres.in&quot;)
-    .contentType(&quot;application/json&quot;)
-    .body(file)
-.when()
-    .post(&quot;/api/users&quot;)
-.then()
-    .statusCode(201);
-</code></pre>
+<span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">contentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">"/api/users"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="10-pojo-concept-very-important">10. POJO Concept (Very Important)<a class="headerlink" href="#10-pojo-concept-very-important" title="Permanent link">&para;</a></h2>
 <h3 id="pojo-class">POJO Class<a class="headerlink" href="#pojo-class" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class User {
-    private String name;
-    private String job;
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">job</span><span class="p">;</span>
 
-    public User() {}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">User</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
-    public User(String name, String job) {
-        this.name = name;
-        this.job = job;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">User</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">job</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">job</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-    public String getJob() { return job; }
-    public void setJob(String job) { this.job = job; }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getJob</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">job</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setJob</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">job</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">job</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="using-pojo-in-test">Using POJO in Test<a class="headerlink" href="#using-pojo-in-test" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">User user = new User(&quot;John&quot;, &quot;Tester&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span><span class="w"> </span><span class="s">"Tester"</span><span class="p">);</span>
 
-given()
-    .baseUri(&quot;https://reqres.in&quot;)
-    .contentType(&quot;application/json&quot;)
-    .body(user)
-.when()
-    .post(&quot;/api/users&quot;)
-.then()
-    .statusCode(201);
-</code></pre>
+<span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">contentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">"/api/users"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="11-json-path-complete-usage">11. JSON Path – Complete Usage<a class="headerlink" href="#11-json-path-complete-usage" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">String response = given()
-    .baseUri(&quot;https://reqres.in&quot;)
-.when()
-    .get(&quot;/api/users?page=2&quot;)
-.then()
-    .extract().response().asString();
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users?page=2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">extract</span><span class="p">().</span><span class="na">response</span><span class="p">().</span><span class="na">asString</span><span class="p">();</span>
 
-JsonPath js = new JsonPath(response);
+<span class="n">JsonPath</span><span class="w"> </span><span class="n">js</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JsonPath</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
 
-int totalPages = js.getInt(&quot;total_pages&quot;);
-int userCount = js.getInt(&quot;data.size()&quot;);
-String firstEmail = js.getString(&quot;data[0].email&quot;);
-</code></pre>
+<span class="kt">int</span><span class="w"> </span><span class="n">totalPages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"total_pages"</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">userCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"data.size()"</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">firstEmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"data[0].email"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="12-requestspecification-framework-level">12. RequestSpecification (Framework Level)<a class="headerlink" href="#12-requestspecification-framework-level" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import io.restassured.specification.RequestSpecification;
-import org.testng.annotations.BeforeClass;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">io.restassured.specification.RequestSpecification</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.BeforeClass</span><span class="p">;</span>
 
-public class BaseTest {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BaseTest</span><span class="w"> </span><span class="p">{</span>
 
-    protected RequestSpecification request;
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">RequestSpecification</span><span class="w"> </span><span class="n">request</span><span class="p">;</span>
 
-    @BeforeClass
-    public void setup() {
-        request = given()
-            .baseUri(&quot;https://reqres.in&quot;)
-            .contentType(&quot;application/json&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@BeforeClass</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">given</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">contentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="using-it">Using It<a class="headerlink" href="#using-it" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class CreateUserTest extends BaseTest {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CreateUserTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseTest</span><span class="w"> </span><span class="p">{</span>
 
-    @Test
-    public void createUser() {
-        request
-            .body(new User(&quot;Alex&quot;, &quot;QA&quot;))
-        .when()
-            .post(&quot;/api/users&quot;)
-        .then()
-            .statusCode(201);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createUser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">request</span>
+<span class="w">            </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">"Alex"</span><span class="p">,</span><span class="w"> </span><span class="s">"QA"</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">"/api/users"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="13-logging-debugging-like-a-pro">13. Logging (Debugging Like a Pro)<a class="headerlink" href="#13-logging-debugging-like-a-pro" title="Permanent link">&para;</a></h2>
 <p>Logging helps understand <strong>what was sent</strong> and <strong>what was received</strong> when tests fail.</p>
-<pre><code class="language-java">given()
-    .baseUri(&quot;https://reqres.in&quot;)
-    .log().all()              // logs request details
-.when()
-    .get(&quot;/api/users/2&quot;)
-.then()
-    .log().status()           // logs status code
-    .log().body()             // logs response body
-    .statusCode(200);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">log</span><span class="p">().</span><span class="na">all</span><span class="p">()</span><span class="w">              </span><span class="c1">// logs request details</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">log</span><span class="p">().</span><span class="na">status</span><span class="p">()</span><span class="w">           </span><span class="c1">// logs status code</span>
+<span class="w">    </span><span class="p">.</span><span class="na">log</span><span class="p">().</span><span class="na">body</span><span class="p">()</span><span class="w">             </span><span class="c1">// logs response body</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="14-authentication-bearer-token-full-example">14. Authentication – Bearer Token (Full Example)<a class="headerlink" href="#14-authentication-bearer-token-full-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">String token = &quot;your_token_here&quot;;
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"your_token_here"</span><span class="p">;</span>
 
-given()
-    .baseUri(&quot;https://api.example.com&quot;)
-    .header(&quot;Authorization&quot;, &quot;Bearer &quot; + token)
-.when()
-    .get(&quot;/profile&quot;)
-.then()
-    .statusCode(200);
-</code></pre>
+<span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://api.example.com"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bearer "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">token</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/profile"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="15-best-practices-industry-standard">15. Best Practices (Industry Standard)<a class="headerlink" href="#15-best-practices-industry-standard" title="Permanent link">&para;</a></h2>
 <ul>
@@ -7583,65 +7582,65 @@ given()
 <h2 id="16-assertion-validation-very-important-for-interviews-projects">16. Assertion Validation (Very Important for Interviews &amp; Projects)<a class="headerlink" href="#16-assertion-validation-very-important-for-interviews-projects" title="Permanent link">&para;</a></h2>
 <p>Assertions decide <strong>pass or fail</strong> of a test. Interviewers expect you to know <strong>what you validate and why</strong>.</p>
 <h3 id="161-status-code-assertion">16.1 Status Code Assertion<a class="headerlink" href="#161-status-code-assertion" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">given()
-    .baseUri(&quot;https://reqres.in&quot;)
-.when()
-    .get(&quot;/api/users/2&quot;)
-.then()
-    .statusCode(200);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</code></pre></div>
 <p>Why: Confirms request succeeded.</p>
 <hr />
 <h3 id="162-response-body-field-validation">16.2 Response Body Field Validation<a class="headerlink" href="#162-response-body-field-validation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">given()
-    .baseUri(&quot;https://reqres.in&quot;)
-.when()
-    .get(&quot;/api/users/2&quot;)
-.then()
-    .body(&quot;data.id&quot;, equalTo(2))
-    .body(&quot;data.email&quot;, containsString(&quot;@&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.id"</span><span class="p">,</span><span class="w"> </span><span class="n">equalTo</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.email"</span><span class="p">,</span><span class="w"> </span><span class="n">containsString</span><span class="p">(</span><span class="s">"@"</span><span class="p">));</span>
+</code></pre></div>
 <p>Why: Ensures correct data returned.</p>
 <hr />
 <h3 id="163-multiple-assertions-together">16.3 Multiple Assertions Together<a class="headerlink" href="#163-multiple-assertions-together" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">given()
-    .baseUri(&quot;https://reqres.in&quot;)
-.when()
-    .get(&quot;/api/users/2&quot;)
-.then()
-    .statusCode(200)
-    .body(&quot;data.first_name&quot;, notNullValue())
-    .body(&quot;data.last_name&quot;, notNullValue());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.first_name"</span><span class="p">,</span><span class="w"> </span><span class="n">notNullValue</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.last_name"</span><span class="p">,</span><span class="w"> </span><span class="n">notNullValue</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h3 id="164-header-validation">16.4 Header Validation<a class="headerlink" href="#164-header-validation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">given()
-    .baseUri(&quot;https://reqres.in&quot;)
-.when()
-    .get(&quot;/api/users/2&quot;)
-.then()
-    .header(&quot;Content-Type&quot;, containsString(&quot;application/json&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"Content-Type"</span><span class="p">,</span><span class="w"> </span><span class="n">containsString</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h3 id="165-response-time-validation">16.5 Response Time Validation<a class="headerlink" href="#165-response-time-validation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">given()
-    .baseUri(&quot;https://reqres.in&quot;)
-.when()
-    .get(&quot;/api/users/2&quot;)
-.then()
-    .time(lessThan(2000L));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">time</span><span class="p">(</span><span class="n">lessThan</span><span class="p">(</span><span class="mi">2000L</span><span class="p">));</span>
+</code></pre></div>
 <p>Why: Basic performance validation.</p>
 <hr />
 <h3 id="166-schema-validation-interview-favorite">16.6 Schema Validation (Interview Favorite)<a class="headerlink" href="#166-schema-validation-interview-favorite" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">given()
-    .baseUri(&quot;https://reqres.in&quot;)
-.when()
-    .get(&quot;/api/users/2&quot;)
-.then()
-    .assertThat()
-    .body(matchesJsonSchemaInClasspath(&quot;userSchema.json&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">assertThat</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">matchesJsonSchemaInClasspath</span><span class="p">(</span><span class="s">"userSchema.json"</span><span class="p">));</span>
+</code></pre></div>
 <p>Why: Validates complete response structure.</p>
 <hr />
 <h2 id="17-how-to-revise-these-notes">17. How to Revise These Notes<a class="headerlink" href="#17-how-to-revise-these-notes" title="Permanent link">&para;</a></h2>
@@ -7666,36 +7665,36 @@ given()
 <h3 id="q1-how-do-you-validate-an-api-response">Q1. How do you validate an API response?<a class="headerlink" href="#q1-how-do-you-validate-an-api-response" title="Permanent link">&para;</a></h3>
 <p><strong>Answer:</strong>
 I validate status code, response body, headers, schema, and response time.</p>
-<pre><code class="language-java">given()
-    .baseUri(&quot;https://reqres.in&quot;)
-.when()
-    .get(&quot;/api/users/2&quot;)
-.then()
-    .statusCode(200)
-    .body(&quot;data.id&quot;, equalTo(2));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">baseUri</span><span class="p">(</span><span class="s">"https://reqres.in"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.id"</span><span class="p">,</span><span class="w"> </span><span class="n">equalTo</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h3 id="q2-how-do-you-validate-json-response-fields">Q2. How do you validate JSON response fields?<a class="headerlink" href="#q2-how-do-you-validate-json-response-fields" title="Permanent link">&para;</a></h3>
 <p><strong>Answer:</strong>
 Using JSON Path with Hamcrest matchers.</p>
-<pre><code class="language-java">.body(&quot;data.email&quot;, containsString(&quot;@&quot;))
-.body(&quot;data.first_name&quot;, notNullValue());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.email"</span><span class="p">,</span><span class="w"> </span><span class="n">containsString</span><span class="p">(</span><span class="s">"@"</span><span class="p">))</span>
+<span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.first_name"</span><span class="p">,</span><span class="w"> </span><span class="n">notNullValue</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h3 id="q3-how-do-you-pass-data-from-one-api-to-another">Q3. How do you pass data from one API to another?<a class="headerlink" href="#q3-how-do-you-pass-data-from-one-api-to-another" title="Permanent link">&para;</a></h3>
 <p><strong>Answer:</strong>
 By extracting response values using JsonPath.</p>
-<pre><code class="language-java">String response = given().get(&quot;/api/users/2&quot;).asString();
-JsonPath js = new JsonPath(response);
-int userId = js.getInt(&quot;data.id&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">given</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/2"</span><span class="p">).</span><span class="na">asString</span><span class="p">();</span>
+<span class="n">JsonPath</span><span class="w"> </span><span class="n">js</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JsonPath</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">userId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"data.id"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="q4-how-do-you-handle-assertions-in-rest-assured">Q4. How do you handle assertions in REST Assured?<a class="headerlink" href="#q4-how-do-you-handle-assertions-in-rest-assured" title="Permanent link">&para;</a></h3>
 <p><strong>Answer:</strong>
 REST Assured uses Hamcrest assertions for readable and fluent validations.</p>
-<pre><code class="language-java">.body(&quot;data.id&quot;, equalTo(2))
-.body(&quot;data.email&quot;, containsString(&quot;reqres&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.id"</span><span class="p">,</span><span class="w"> </span><span class="n">equalTo</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"data.email"</span><span class="p">,</span><span class="w"> </span><span class="n">containsString</span><span class="p">(</span><span class="s">"reqres"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h3 id="q5-what-validations-do-you-perform-in-real-projects">Q5. What validations do you perform in real projects?<a class="headerlink" href="#q5-what-validations-do-you-perform-in-real-projects" title="Permanent link">&para;</a></h3>
 <p><strong>Answer:</strong>
@@ -7708,11 +7707,11 @@ Test execution stops for that test and the framework marks it as failed with a d
 <h3 id="q7-how-do-you-validate-error-responses">Q7. How do you validate error responses?<a class="headerlink" href="#q7-how-do-you-validate-error-responses" title="Permanent link">&para;</a></h3>
 <p><strong>Answer:</strong>
 By asserting error status codes and messages.</p>
-<pre><code class="language-java">given()
-    .get(&quot;/api/users/999&quot;)
-.then()
-    .statusCode(404);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/api/users/999"</span><span class="p">)</span>
+<span class="p">.</span><span class="na">then</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">statusCode</span><span class="p">(</span><span class="mi">404</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="18-cicd-execution-jenkins-complete-beginner-friendly-explanation">18. CI/CD Execution – Jenkins (Complete Beginner-Friendly Explanation)<a class="headerlink" href="#18-cicd-execution-jenkins-complete-beginner-friendly-explanation" title="Permanent link">&para;</a></h2>
 <p>– Jenkins (Complete Beginner-Friendly Explanation)</p>
@@ -7732,8 +7731,8 @@ By asserting error status codes and messages.</p>
 </ul>
 <hr />
 <h3 id="jenkins-job-flow-for-api-automation">Jenkins Job Flow for API Automation<a class="headerlink" href="#jenkins-job-flow-for-api-automation" title="Permanent link">&para;</a></h3>
-<pre><code>Developer Commit → GitHub → Jenkins → Maven Build → REST Assured Tests → Report
-</code></pre>
+<div class="highlight"><pre><span></span><code>Developer Commit → GitHub → Jenkins → Maven Build → REST Assured Tests → Report
+</code></pre></div>
 <hr />
 <h3 id="step-1-prerequisites">Step 1. Prerequisites<a class="headerlink" href="#step-1-prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
@@ -7744,26 +7743,26 @@ By asserting error status codes and messages.</p>
 </ul>
 <hr />
 <h3 id="step-2-maven-project-structure-industry-standard">Step 2. Maven Project Structure (Industry Standard)<a class="headerlink" href="#step-2-maven-project-structure-industry-standard" title="Permanent link">&para;</a></h3>
-<pre><code>api-automation
+<div class="highlight"><pre><span></span><code>api-automation
  ├── pom.xml
  ├── src/test/java
  │    ├── tests
  │    ├── base
  │    └── utils
  └── src/test/resources
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="step-3-testng-configuration-testngxml">Step 3. TestNG Configuration (testng.xml)<a class="headerlink" href="#step-3-testng-configuration-testngxml" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;API Suite&quot;&gt;
-    &lt;test name=&quot;API Tests&quot;&gt;
-        &lt;classes&gt;
-            &lt;class name=&quot;tests.GetUsersTest&quot;/&gt;
-            &lt;class name=&quot;tests.CreateUserTest&quot;/&gt;
-        &lt;/classes&gt;
-    &lt;/test&gt;
-&lt;/suite&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"&gt;</span>
+<span class="nt">&lt;suite</span><span class="w"> </span><span class="na">name=</span><span class="s">"API Suite"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;test</span><span class="w"> </span><span class="na">name=</span><span class="s">"API Tests"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;classes&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.GetUsersTest"</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.CreateUserTest"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/classes&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/suite&gt;</span>
+</code></pre></div>
 <hr />
 <h3 id="step-4-jenkins-job-configuration-freestyle-job">Step 4. Jenkins Job Configuration (Freestyle Job)<a class="headerlink" href="#step-4-jenkins-job-configuration-freestyle-job" title="Permanent link">&para;</a></h3>
 <ol>
@@ -7774,8 +7773,8 @@ By asserting error status codes and messages.</p>
 <li>Add Maven build step</li>
 </ol>
 <p><strong>Maven Command:</strong></p>
-<pre><code>mvn clean test
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn clean test
+</code></pre></div>
 <hr />
 <h3 id="step-5-jenkins-execution-result">Step 5. Jenkins Execution Result<a class="headerlink" href="#step-5-jenkins-execution-result" title="Permanent link">&para;</a></h3>
 <ul>
@@ -7853,6 +7852,10 @@ A. Yes, API tests don’t need UI or browser.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

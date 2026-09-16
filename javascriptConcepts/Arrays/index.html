@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6182,121 +6182,121 @@
 <h2 id="arrays">🔹 Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h2>
 <p>Arrays store multiple values in an ordered list.</p>
 <h3 id="creating-arrays">Creating Arrays<a class="headerlink" href="#creating-arrays" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let numbers = [1, 2, 3, 4, 5];
-let fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;mango&quot;];
-let mixed = [1, &quot;apple&quot;, true, 'c']; // mixed data types
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span><span class="w"> </span><span class="s2">"banana"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mango"</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mixed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"apple"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">];</span><span class="w"> </span><span class="c1">// mixed data types</span>
 
-== OR ==
-let marks = Array(6);
-console.log(marks);   // [ &lt;6 empty items&gt; ]
-console.log(marks.length);  // 6
+<span class="o">==</span><span class="w"> </span><span class="nx">OR</span><span class="w"> </span><span class="o">==</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">marks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="mf">6</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marks</span><span class="p">);</span><span class="w">   </span><span class="c1">// [ &lt;6 empty items&gt; ]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marks</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">  </span><span class="c1">// 6</span>
 
-for (let i = 0; i &lt; marks.length; i++) {
-  marks[i] = i * 10;
-}
-console.log(marks); // [0, 10, 20, 30, 40, 50]
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">marks</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">marks</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marks</span><span class="p">);</span><span class="w"> </span><span class="c1">// [0, 10, 20, 30, 40, 50]</span>
+</code></pre></div>
 <h3 id="accessing-elements">Accessing Elements<a class="headerlink" href="#accessing-elements" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">console.log(numbers[0]); // 1
-console.log(fruits[2]);  // mango
-console.log(mixed[1]);   // apple
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruits</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span><span class="w">  </span><span class="c1">// mango</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mixed</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w">   </span><span class="c1">// apple</span>
+</code></pre></div>
 <h3 id="array-length">Array Length<a class="headerlink" href="#array-length" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">console.log(numbers.length); // 5
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</code></pre></div>
 <h3 id="adding-elements">Adding Elements<a class="headerlink" href="#adding-elements" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">numbers.push(6);   // add at end
-numbers.unshift(0); // add at beginning
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">numbers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">6</span><span class="p">);</span><span class="w">   </span><span class="c1">// add at end</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// add at beginning</span>
+</code></pre></div>
 <h3 id="removing-elements">Removing Elements<a class="headerlink" href="#removing-elements" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">numbers.pop();    // remove last
-numbers.shift();  // remove first
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">numbers</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span><span class="w">    </span><span class="c1">// remove last</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span><span class="w">  </span><span class="c1">// remove first</span>
+</code></pre></div>
 <h3 id="iterating-over-an-array">Iterating Over an Array<a class="headerlink" href="#iterating-over-an-array" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let arr = [10, 20, 30, 40];
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">];</span>
 
-// Using for loop
-for(let i = 0; i &lt; arr.length; i++) {
-  console.log(arr[i]);
-}
+<span class="c1">// Using for loop</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
 
-// Using for...of loop
-for(let value of arr) {
-  console.log(value);
-}
+<span class="c1">// Using for...of loop</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
 
-// Using forEach
-arr.forEach(value =&gt; console.log(value));
-</code></pre>
+<span class="c1">// Using forEach</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h2 id="common-array-programs-interview-questions">🔹 Common Array Programs (Interview Questions)<a class="headerlink" href="#common-array-programs-interview-questions" title="Permanent link">&para;</a></h2>
 <h3 id="1-reverse-an-array">1. Reverse an Array<a class="headerlink" href="#1-reverse-an-array" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let arr = [1, 2, 3, 4, 5];
-arr.reverse();
-console.log(arr); // [5,4,3,2,1]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="w"> </span><span class="c1">// [5,4,3,2,1]</span>
+</code></pre></div>
 <h3 id="2-find-maximum-minimum">2. Find Maximum &amp; Minimum<a class="headerlink" href="#2-find-maximum-minimum" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let arr = [5, 12, 7, 1, 19];
-let max = Math.max(...arr);
-let min = Math.min(...arr);
-console.log(max); // 19
-console.log(min); // 1
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">19</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">arr</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(...</span><span class="nx">arr</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">max</span><span class="p">);</span><span class="w"> </span><span class="c1">// 19</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">min</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+</code></pre></div>
 <h3 id="3-sum-of-array-elements">3. Sum of Array Elements<a class="headerlink" href="#3-sum-of-array-elements" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let arr = [1,2,3,4,5];
-let sum = arr.reduce((acc, val) =&gt; acc + val, 0);
-console.log(sum); // 15
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">val</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span><span class="w"> </span><span class="c1">// 15</span>
+</code></pre></div>
 <h3 id="4-find-average-of-array">4. Find Average of Array<a class="headerlink" href="#4-find-average-of-array" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let arr = [10,20,30,40];
-let avg = arr.reduce((a,b) =&gt; a+b,0)/arr.length;
-console.log(avg); // 25
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="mf">30</span><span class="p">,</span><span class="mf">40</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span><span class="o">/</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">avg</span><span class="p">);</span><span class="w"> </span><span class="c1">// 25</span>
+</code></pre></div>
 <h3 id="5-find-even-and-odd-numbers">5. Find Even and Odd Numbers<a class="headerlink" href="#5-find-even-and-odd-numbers" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let arr = [1,2,3,4,5,6];
-let even = arr.filter(x =&gt; x % 2 === 0);
-let odd = arr.filter(x =&gt; x % 2 !== 0);
-console.log(even); // [2,4,6]
-console.log(odd);  // [1,3,5]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">odd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">even</span><span class="p">);</span><span class="w"> </span><span class="c1">// [2,4,6]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">odd</span><span class="p">);</span><span class="w">  </span><span class="c1">// [1,3,5]</span>
+</code></pre></div>
 <h3 id="6-sort-array">6. Sort Array<a class="headerlink" href="#6-sort-array" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let arr = [5,1,8,3];
-arr.sort((a,b) =&gt; a-b);
-console.log(arr); // [1,3,5,8]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1,3,5,8]</span>
+</code></pre></div>
 <h3 id="7-find-string-with-max-and-min-length">7. Find String with Max and Min Length<a class="headerlink" href="#7-find-string-with-max-and-min-length" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;, &quot;mango&quot;];
-let maxLen = fruits.reduce((a,b) =&gt; a.length &gt;= b.length ? a : b);
-let minLen = fruits.reduce((a,b) =&gt; a.length &lt;= b.length ? a : b);
-console.log(maxLen); // banana
-console.log(minLen); // kiwi
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span><span class="w"> </span><span class="s2">"banana"</span><span class="p">,</span><span class="w"> </span><span class="s2">"kiwi"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mango"</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">maxLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fruits</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">minLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fruits</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">maxLen</span><span class="p">);</span><span class="w"> </span><span class="c1">// banana</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">minLen</span><span class="p">);</span><span class="w"> </span><span class="c1">// kiwi</span>
+</code></pre></div>
 <hr />
 <h2 id="objects">🔹 Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
 <p>Objects store data in <strong>key-value pairs</strong>.</p>
 <h3 id="creating-objects">Creating Objects<a class="headerlink" href="#creating-objects" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let person = {
-  name: &quot;Nitin&quot;,
-  age: 25,
-  city: &quot;Mumbai&quot;
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">"Mumbai"</span>
+<span class="p">};</span>
+</code></pre></div>
 <h3 id="accessing-properties">Accessing Properties<a class="headerlink" href="#accessing-properties" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">console.log(person.name);  // Nitin
-console.log(person['age']); // 25
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Nitin</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 25</span>
+</code></pre></div>
 <h3 id="adding-updating-properties">Adding &amp; Updating Properties<a class="headerlink" href="#adding-updating-properties" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">person.country = &quot;India&quot;; // add
-person.age = 26;            // update
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">person</span><span class="p">.</span><span class="nx">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"India"</span><span class="p">;</span><span class="w"> </span><span class="c1">// add</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">26</span><span class="p">;</span><span class="w">            </span><span class="c1">// update</span>
+</code></pre></div>
 <h3 id="deleting-properties">Deleting Properties<a class="headerlink" href="#deleting-properties" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">delete person.city;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="ow">delete</span><span class="w"> </span><span class="nx">person</span><span class="p">.</span><span class="nx">city</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="iterating-over-object">Iterating Over Object<a class="headerlink" href="#iterating-over-object" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">for (let key in person) {
-  console.log(key, person[key]);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">person</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">person</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6359,6 +6359,10 @@ person.age = 26;            // update
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

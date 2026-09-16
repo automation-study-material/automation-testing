@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5615,11 +5615,11 @@
 <h1 id="1-what-is-shadow-dom">1️⃣ What is Shadow DOM?<a class="headerlink" href="#1-what-is-shadow-dom" title="Permanent link">&para;</a></h1>
 <p><strong>Shadow DOM</strong> is a technique used in modern web applications where elements are <strong>encapsulated inside a shadow root</strong> and cannot be accessed directly using normal locators.</p>
 <p>Example HTML:</p>
-<pre><code class="language-html">&lt;book-app&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">book-app</span><span class="p">&gt;</span>
    #shadow-root
-      &lt;input id=&quot;searchBox&quot;&gt;
-&lt;/book-app&gt;
-</code></pre>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"searchBox"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">book-app</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Here:</p>
 <ul>
 <li><code>book-app</code> → Shadow Host</li>
@@ -5628,70 +5628,70 @@
 </ul>
 <p>Normal Selenium locator <strong>will not work</strong>.</p>
 <p>❌ This will fail:</p>
-<pre><code class="language-java">driver.findElement(By.id(&quot;searchBox&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"searchBox"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h1 id="2-how-selenium-4-handles-shadow-dom">2️⃣ How Selenium 4 Handles Shadow DOM<a class="headerlink" href="#2-how-selenium-4-handles-shadow-dom" title="Permanent link">&para;</a></h1>
 <p>Selenium 4 introduced <strong>getShadowRoot()</strong> method.</p>
 <p>Flow:</p>
-<pre><code>Driver
+<div class="highlight"><pre><span></span><code>Driver
    ↓
 Shadow Host
    ↓
 Shadow Root
    ↓
 Target Element
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="3-example-code-java-selenium-4">3️⃣ Example Code (Java Selenium 4)<a class="headerlink" href="#3-example-code-java-selenium-4" title="Permanent link">&para;</a></h1>
 <h3 id="step-1-locate-shadow-host">Step 1 — Locate Shadow Host<a class="headerlink" href="#step-1-locate-shadow-host" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">WebElement shadowHost = driver.findElement(By.cssSelector(&quot;book-app&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">shadowHost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"book-app"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h3 id="step-2-get-shadow-root">Step 2 — Get Shadow Root<a class="headerlink" href="#step-2-get-shadow-root" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">SearchContext shadowRoot = shadowHost.getShadowRoot();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">SearchContext</span><span class="w"> </span><span class="n">shadowRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shadowHost</span><span class="p">.</span><span class="na">getShadowRoot</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h3 id="step-3-locate-element-inside-shadow-dom">Step 3 — Locate Element inside Shadow DOM<a class="headerlink" href="#step-3-locate-element-inside-shadow-dom" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">WebElement searchBox = shadowRoot.findElement(By.cssSelector(&quot;#searchBox&quot;));
-searchBox.sendKeys(&quot;Selenium&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">searchBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shadowRoot</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">));</span>
+<span class="n">searchBox</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"Selenium"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="4-complete-code-example">4️⃣ Complete Code Example<a class="headerlink" href="#4-complete-code-example" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.SearchContext;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebElement</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.SearchContext</span><span class="p">;</span>
 
-public class ShadowDOMExample {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ShadowDOMExample</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver = new ChromeDriver();
-        driver.get(&quot;https://books-pwakit.appspot.com/&quot;);
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://books-pwakit.appspot.com/"</span><span class="p">);</span>
 
-        // Step 1: Locate Shadow Host
-        WebElement host = driver.findElement(By.cssSelector(&quot;book-app&quot;));
+<span class="w">        </span><span class="c1">// Step 1: Locate Shadow Host</span>
+<span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"book-app"</span><span class="p">));</span>
 
-        // Step 2: Get Shadow Root
-        SearchContext shadowRoot = host.getShadowRoot();
+<span class="w">        </span><span class="c1">// Step 2: Get Shadow Root</span>
+<span class="w">        </span><span class="n">SearchContext</span><span class="w"> </span><span class="n">shadowRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="na">getShadowRoot</span><span class="p">();</span>
 
-        // Step 3: Locate element inside Shadow DOM
-        WebElement search = shadowRoot.findElement(By.cssSelector(&quot;#input&quot;));
+<span class="w">        </span><span class="c1">// Step 3: Locate element inside Shadow DOM</span>
+<span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">search</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shadowRoot</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"#input"</span><span class="p">));</span>
 
-        // Step 4: Perform action
-        search.sendKeys(&quot;Selenium&quot;);
+<span class="w">        </span><span class="c1">// Step 4: Perform action</span>
+<span class="w">        </span><span class="n">search</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"Selenium"</span><span class="p">);</span>
 
-        driver.quit();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="5-multiple-shadow-dom-handling">5️⃣ Multiple Shadow DOM Handling<a class="headerlink" href="#5-multiple-shadow-dom-handling" title="Permanent link">&para;</a></h1>
 <p>Sometimes <strong>Shadow DOM is nested</strong>.</p>
 <p>Example:</p>
-<pre><code>Shadow Host 1
+<div class="highlight"><pre><span></span><code>Shadow Host 1
    ↓
 Shadow Root 1
    ↓
@@ -5700,30 +5700,30 @@ Shadow Host 2
 Shadow Root 2
    ↓
 Element
-</code></pre>
+</code></pre></div>
 <p>Example code:</p>
-<pre><code class="language-java">WebElement host1 = driver.findElement(By.cssSelector(&quot;app-root&quot;));
-SearchContext root1 = host1.getShadowRoot();
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">host1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"app-root"</span><span class="p">));</span>
+<span class="n">SearchContext</span><span class="w"> </span><span class="n">root1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host1</span><span class="p">.</span><span class="na">getShadowRoot</span><span class="p">();</span>
 
-WebElement host2 = root1.findElement(By.cssSelector(&quot;app-toolbar&quot;));
-SearchContext root2 = host2.getShadowRoot();
+<span class="n">WebElement</span><span class="w"> </span><span class="n">host2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root1</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"app-toolbar"</span><span class="p">));</span>
+<span class="n">SearchContext</span><span class="w"> </span><span class="n">root2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host2</span><span class="p">.</span><span class="na">getShadowRoot</span><span class="p">();</span>
 
-WebElement element = root2.findElement(By.cssSelector(&quot;#menuButton&quot;));
-element.click();
-</code></pre>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root2</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"#menuButton"</span><span class="p">));</span>
+<span class="n">element</span><span class="p">.</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="6-selenium-3-workaround-before-selenium-4">6️⃣ Selenium 3 Workaround (Before Selenium 4)<a class="headerlink" href="#6-selenium-3-workaround-before-selenium-4" title="Permanent link">&para;</a></h1>
 <p>Before Selenium 4 we used <strong>JavaScriptExecutor</strong>.</p>
-<pre><code class="language-java">JavascriptExecutor js = (JavascriptExecutor) driver;
+<div class="highlight"><pre><span></span><code><span class="n">JavascriptExecutor</span><span class="w"> </span><span class="n">js</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-WebElement shadowHost = driver.findElement(By.cssSelector(&quot;book-app&quot;));
+<span class="n">WebElement</span><span class="w"> </span><span class="n">shadowHost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"book-app"</span><span class="p">));</span>
 
-WebElement shadowRoot = (WebElement) js.executeScript(
-&quot;return arguments[0].shadowRoot&quot;, shadowHost);
+<span class="n">WebElement</span><span class="w"> </span><span class="n">shadowRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">WebElement</span><span class="p">)</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span>
+<span class="s">"return arguments[0].shadowRoot"</span><span class="p">,</span><span class="w"> </span><span class="n">shadowHost</span><span class="p">);</span>
 
-WebElement element = shadowRoot.findElement(By.cssSelector(&quot;#input&quot;));
-element.sendKeys(&quot;Selenium&quot;);
-</code></pre>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shadowRoot</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"#input"</span><span class="p">));</span>
+<span class="n">element</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"Selenium"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="7-interview-answer-best-format">7️⃣ Interview Answer (Best Format)<a class="headerlink" href="#7-interview-answer-best-format" title="Permanent link">&para;</a></h1>
 <p><strong>Shadow DOM</strong> is a browser feature used to encapsulate DOM elements.
@@ -5735,10 +5735,10 @@ Elements inside Shadow DOM cannot be accessed using normal Selenium locators.</p
 <li>Find elements inside the shadow root</li>
 </ol>
 <p>Example:</p>
-<pre><code class="language-java">WebElement host = driver.findElement(By.cssSelector(&quot;book-app&quot;));
-SearchContext shadowRoot = host.getShadowRoot();
-WebElement element = shadowRoot.findElement(By.cssSelector(&quot;#input&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"book-app"</span><span class="p">));</span>
+<span class="n">SearchContext</span><span class="w"> </span><span class="n">shadowRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="na">getShadowRoot</span><span class="p">();</span>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shadowRoot</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">"#input"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <p>✅ If you want, I can also show <strong>one advanced Shadow DOM trick used in automation frameworks</strong> (handles <strong>multiple nested shadow roots automatically</strong>).
 Most <strong>Selenium engineers don't know this trick.</strong></p>
@@ -5795,6 +5795,10 @@ Most <strong>Selenium engineers don't know this trick.</strong></p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

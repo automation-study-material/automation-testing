@@ -319,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5589,133 +5589,133 @@
 
   <h1>Actions class</h1>
 
-<pre><code class="language-java">1. import org.openqa.selenium.By;
-2. import org.openqa.selenium.Keys;
-3. import org.openqa.selenium.WebDriver;
-4. import org.openqa.selenium.WebElement;
-5. import org.openqa.selenium.chrome.ChromeDriver;
-6. import org.openqa.selenium.interactions.Actions;
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span><span class="p">;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.Keys</span><span class="p">;</span>
+<span class="mf">3.</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="mf">4.</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebElement</span><span class="p">;</span>
+<span class="mf">5.</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
+<span class="mf">6.</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.interactions.Actions</span><span class="p">;</span>
 
-7. public class KeyboardActionsDemo {
+<span class="mf">7.</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">KeyboardActionsDemo</span><span class="w"> </span><span class="p">{</span>
 
-8.     public static void main(String[] args) throws InterruptedException {
+<span class="mf">8.</span><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InterruptedException</span><span class="w"> </span><span class="p">{</span>
 
-9.         // Launch browser
-10.        WebDriver driver = new ChromeDriver();
-11.        driver.manage().window().maximize();
+<span class="mf">9.</span><span class="w">         </span><span class="c1">// Launch browser</span>
+<span class="mf">10.</span><span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="mf">11.</span><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">maximize</span><span class="p">();</span>
 
-12.        // Open demo site
-13.        driver.get(&quot;https://demoqa.com/text-box&quot;);
+<span class="mf">12.</span><span class="w">        </span><span class="c1">// Open demo site</span>
+<span class="mf">13.</span><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://demoqa.com/text-box"</span><span class="p">);</span>
 
-14.        // Create Actions object
-15.        Actions actions = new Actions(driver);
+<span class="mf">14.</span><span class="w">        </span><span class="c1">// Create Actions object</span>
+<span class="mf">15.</span><span class="w">        </span><span class="n">Actions</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
 
-16.        // Locate elements
-17.        WebElement fullName = driver.findElement(By.id(&quot;userName&quot;));
-18.        WebElement email = driver.findElement(By.id(&quot;userEmail&quot;));
-19.        WebElement currentAddress = driver.findElement(By.id(&quot;currentAddress&quot;));
+<span class="mf">16.</span><span class="w">        </span><span class="c1">// Locate elements</span>
+<span class="mf">17.</span><span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">fullName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"userName"</span><span class="p">));</span>
+<span class="mf">18.</span><span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"userEmail"</span><span class="p">));</span>
+<span class="mf">19.</span><span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">currentAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"currentAddress"</span><span class="p">));</span>
 
-20.        // -----------------------------
-21.        // 1. sendKeys() - Type text
-22.        // -----------------------------
-23.        actions.sendKeys(fullName, &quot;Nitin Patil&quot;).perform();
+<span class="mf">20.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">21.</span><span class="w">        </span><span class="c1">// 1. sendKeys() - Type text</span>
+<span class="mf">22.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">23.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">fullName</span><span class="p">,</span><span class="w"> </span><span class="s">"Nitin Patil"</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-24.        // -----------------------------
-25.        // 2. TAB - Move to next field
-26.        // -----------------------------
-27.        actions.sendKeys(Keys.TAB).perform();
+<span class="mf">24.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">25.</span><span class="w">        </span><span class="c1">// 2. TAB - Move to next field</span>
+<span class="mf">26.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">27.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">TAB</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-28.        // -----------------------------
-29.        // 3. Type Email
-30.        // -----------------------------
-31.        actions.sendKeys(&quot;nitin@test.com&quot;).perform();
+<span class="mf">28.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">29.</span><span class="w">        </span><span class="c1">// 3. Type Email</span>
+<span class="mf">30.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">31.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"nitin@test.com"</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-32.        // -----------------------------
-33.        // 4. ENTER key
-34.        // -----------------------------
-35.        actions.sendKeys(Keys.ENTER).perform();
+<span class="mf">32.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">33.</span><span class="w">        </span><span class="c1">// 4. ENTER key</span>
+<span class="mf">34.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">35.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">ENTER</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-36.        // -----------------------------
-37.        // 5. SHIFT + typing (Uppercase)
-38.        // -----------------------------
-39.        actions.keyDown(Keys.SHIFT)
-40.               .sendKeys(&quot;selenium&quot;)
-41.               .keyUp(Keys.SHIFT)
-42.               .perform();
+<span class="mf">36.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">37.</span><span class="w">        </span><span class="c1">// 5. SHIFT + typing (Uppercase)</span>
+<span class="mf">38.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">39.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">keyDown</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">SHIFT</span><span class="p">)</span>
+<span class="mf">40.</span><span class="w">               </span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"selenium"</span><span class="p">)</span>
+<span class="mf">41.</span><span class="w">               </span><span class="p">.</span><span class="na">keyUp</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">SHIFT</span><span class="p">)</span>
+<span class="mf">42.</span><span class="w">               </span><span class="p">.</span><span class="na">perform</span><span class="p">();</span>
 
-43.        // -----------------------------
-44.        // 6. CTRL + A (Select All)
-45.        // -----------------------------
-46.        actions.keyDown(Keys.CONTROL)
-47.               .sendKeys(&quot;a&quot;)
-48.               .keyUp(Keys.CONTROL)
-49.               .perform();
+<span class="mf">43.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">44.</span><span class="w">        </span><span class="c1">// 6. CTRL + A (Select All)</span>
+<span class="mf">45.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">46.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">keyDown</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">)</span>
+<span class="mf">47.</span><span class="w">               </span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"a"</span><span class="p">)</span>
+<span class="mf">48.</span><span class="w">               </span><span class="p">.</span><span class="na">keyUp</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">)</span>
+<span class="mf">49.</span><span class="w">               </span><span class="p">.</span><span class="na">perform</span><span class="p">();</span>
 
-50.        // -----------------------------
-51.        // 7. CTRL + C (Copy)
-52.        // -----------------------------
-53.        actions.keyDown(Keys.CONTROL)
-54.               .sendKeys(&quot;c&quot;)
-55.               .keyUp(Keys.CONTROL)
-56.               .perform();
+<span class="mf">50.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">51.</span><span class="w">        </span><span class="c1">// 7. CTRL + C (Copy)</span>
+<span class="mf">52.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">53.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">keyDown</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">)</span>
+<span class="mf">54.</span><span class="w">               </span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"c"</span><span class="p">)</span>
+<span class="mf">55.</span><span class="w">               </span><span class="p">.</span><span class="na">keyUp</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">)</span>
+<span class="mf">56.</span><span class="w">               </span><span class="p">.</span><span class="na">perform</span><span class="p">();</span>
 
-57.        // -----------------------------
-58.        // 8. TAB - Move to next field
-59.        // -----------------------------
-60.        actions.sendKeys(Keys.TAB).perform();
+<span class="mf">57.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">58.</span><span class="w">        </span><span class="c1">// 8. TAB - Move to next field</span>
+<span class="mf">59.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">60.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">TAB</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-61.        // -----------------------------
-62.        // 9. CTRL + V (Paste)
-63.        // -----------------------------
-64.        actions.keyDown(Keys.CONTROL)
-65.               .sendKeys(&quot;v&quot;)
-66.               .keyUp(Keys.CONTROL)
-67.               .perform();
+<span class="mf">61.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">62.</span><span class="w">        </span><span class="c1">// 9. CTRL + V (Paste)</span>
+<span class="mf">63.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">64.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">keyDown</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">)</span>
+<span class="mf">65.</span><span class="w">               </span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"v"</span><span class="p">)</span>
+<span class="mf">66.</span><span class="w">               </span><span class="p">.</span><span class="na">keyUp</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">)</span>
+<span class="mf">67.</span><span class="w">               </span><span class="p">.</span><span class="na">perform</span><span class="p">();</span>
 
-68.        // -----------------------------
-69.        // 10. BACKSPACE
-70.        // -----------------------------
-71.        actions.sendKeys(Keys.BACK_SPACE).perform();
+<span class="mf">68.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">69.</span><span class="w">        </span><span class="c1">// 10. BACKSPACE</span>
+<span class="mf">70.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">71.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">BACK_SPACE</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-72.        // -----------------------------
-73.        // 11. DELETE
-74.        // -----------------------------
-75.        actions.sendKeys(Keys.DELETE).perform();
+<span class="mf">72.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">73.</span><span class="w">        </span><span class="c1">// 11. DELETE</span>
+<span class="mf">74.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">75.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">DELETE</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-76.        // -----------------------------
-77.        // 12. ARROW KEYS
-78.        // -----------------------------
-79.        actions.sendKeys(Keys.ARROW_LEFT).perform();
-80.        actions.sendKeys(Keys.ARROW_RIGHT).perform();
-81.        actions.sendKeys(Keys.ARROW_UP).perform();
-82.        actions.sendKeys(Keys.ARROW_DOWN).perform();
+<span class="mf">76.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">77.</span><span class="w">        </span><span class="c1">// 12. ARROW KEYS</span>
+<span class="mf">78.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">79.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">ARROW_LEFT</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+<span class="mf">80.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">ARROW_RIGHT</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+<span class="mf">81.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">ARROW_UP</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
+<span class="mf">82.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">ARROW_DOWN</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-83.        // -----------------------------
-84.        // 13. ESCAPE key
-85.        // -----------------------------
-86.        actions.sendKeys(Keys.ESCAPE).perform();
+<span class="mf">83.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">84.</span><span class="w">        </span><span class="c1">// 13. ESCAPE key</span>
+<span class="mf">85.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">86.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">ESCAPE</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-87.        // -----------------------------
-88.        // 14. CTRL + X (Cut)
-89.        // -----------------------------
-90.        actions.keyDown(Keys.CONTROL)
-91.               .sendKeys(&quot;x&quot;)
-92.               .keyUp(Keys.CONTROL)
-93.               .perform();
+<span class="mf">87.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">88.</span><span class="w">        </span><span class="c1">// 14. CTRL + X (Cut)</span>
+<span class="mf">89.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">90.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">keyDown</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">)</span>
+<span class="mf">91.</span><span class="w">               </span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"x"</span><span class="p">)</span>
+<span class="mf">92.</span><span class="w">               </span><span class="p">.</span><span class="na">keyUp</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">)</span>
+<span class="mf">93.</span><span class="w">               </span><span class="p">.</span><span class="na">perform</span><span class="p">();</span>
 
-94.        // -----------------------------
-95.        // 15. Function Key (F5 - Refresh)
-96.        // -----------------------------
-97.        actions.sendKeys(Keys.F5).perform();
+<span class="mf">94.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">95.</span><span class="w">        </span><span class="c1">// 15. Function Key (F5 - Refresh)</span>
+<span class="mf">96.</span><span class="w">        </span><span class="c1">// -----------------------------</span>
+<span class="mf">97.</span><span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">F5</span><span class="p">).</span><span class="na">perform</span><span class="p">();</span>
 
-98.        // Wait for observation
-99.        Thread.sleep(5000);
+<span class="mf">98.</span><span class="w">        </span><span class="c1">// Wait for observation</span>
+<span class="mf">99.</span><span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
 
-100.       // Close browser
-101.       driver.quit();
-102.   }
-103. }
-</code></pre>
+<span class="mf">100.</span><span class="w">       </span><span class="c1">// Close browser</span>
+<span class="mf">101.</span><span class="w">       </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="mf">102.</span><span class="w">   </span><span class="p">}</span>
+<span class="mf">103.</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -5769,6 +5769,10 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

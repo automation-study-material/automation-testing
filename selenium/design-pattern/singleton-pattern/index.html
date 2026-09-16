@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5617,8 +5617,8 @@
 <h1 id="why-do-we-need-singleton">🧠 Why do we need Singleton?<a class="headerlink" href="#why-do-we-need-singleton" title="Permanent link">&para;</a></h1>
 <h2 id="problem-without-singleton">Problem (Without Singleton)<a class="headerlink" href="#problem-without-singleton" title="Permanent link">&para;</a></h2>
 <p>If every test creates its own driver like this:</p>
-<pre><code class="language-java">WebDriver driver = new ChromeDriver();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+</code></pre></div>
 <p>Problems:</p>
 <ul>
 <li>Multiple browsers open unexpectedly</li>
@@ -5638,33 +5638,33 @@
 <hr />
 <h1 id="basic-singleton-structure">✅ Basic Singleton Structure<a class="headerlink" href="#basic-singleton-structure" title="Permanent link">&para;</a></h1>
 <h2 id="drivermanagerjava">DriverManager.java<a class="headerlink" href="#drivermanagerjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class DriverManager {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverManager</span><span class="w"> </span><span class="p">{</span>
 
-    private static WebDriver driver;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-    private DriverManager() {}
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">DriverManager</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
-    public static WebDriver getDriver() {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">getDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        if (driver == null) {
-            driver = new ChromeDriver();
-        }
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driver</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
 
-        return driver;
-    }
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static void quitDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
-        }
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">quitDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driver</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">            </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">WebDriver driver = DriverManager.getDriver();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getDriver</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="what-singleton-solves">✅ What Singleton Solves<a class="headerlink" href="#what-singleton-solves" title="Permanent link">&para;</a></h1>
 <ul>
@@ -5694,9 +5694,9 @@
 <p>Thread 1 → Chrome<br />
 Thread 2 → Firefox  </p>
 <p>If driver is global:</p>
-<pre><code>driver = Chrome
+<div class="highlight"><pre><span></span><code>driver = Chrome
 driver = Firefox
-</code></pre>
+</code></pre></div>
 <p>Both threads fight for same object.</p>
 <hr />
 <h2 id="threadlocal-concept">ThreadLocal Concept<a class="headerlink" href="#threadlocal-concept" title="Permanent link">&para;</a></h2>
@@ -5711,66 +5711,66 @@ Thread 3 → Driver C  </p>
 <hr />
 <h1 id="real-world-singleton-threadlocal-industry-standard">✅ Real-World Singleton + ThreadLocal (Industry Standard)<a class="headerlink" href="#real-world-singleton-threadlocal-industry-standard" title="Permanent link">&para;</a></h1>
 <h2 id="drivermanagerjava_1">DriverManager.java<a class="headerlink" href="#drivermanagerjava_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class DriverManager {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverManager</span><span class="w"> </span><span class="p">{</span>
 
-    private static ThreadLocal&lt;WebDriver&gt; driver = new ThreadLocal&lt;&gt;();
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">WebDriver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    private DriverManager() {}
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">DriverManager</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
-    public static WebDriver getDriver() {
-        return driver.get();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">getDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static void setDriver(WebDriver driverInstance) {
-        driver.set(driverInstance);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDriver</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driverInstance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">driverInstance</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static void quitDriver() {
-        driver.get().quit();
-        driver.remove();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">quitDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="driverfactoryjava">DriverFactory.java<a class="headerlink" href="#driverfactoryjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class DriverFactory {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverFactory</span><span class="w"> </span><span class="p">{</span>
 
-    public static void initDriver(String browser) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initDriver</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">browser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver;
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-        switch(browser) {
-            case &quot;firefox&quot;:
-                driver = new FirefoxDriver();
-                break;
+<span class="w">        </span><span class="k">switch</span><span class="p">(</span><span class="n">browser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"firefox"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">();</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
 
-            default:
-                driver = new ChromeDriver();
-        }
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
 
-        DriverManager.setDriver(driver);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">setDriver</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="basetestjava">BaseTest.java<a class="headerlink" href="#basetestjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@BeforeMethod
-public void setup() {
-    DriverFactory.initDriver(&quot;chrome&quot;);
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@BeforeMethod</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">DriverFactory</span><span class="p">.</span><span class="na">initDriver</span><span class="p">(</span><span class="s">"chrome"</span><span class="p">);</span>
+<span class="p">}</span>
 
-@AfterMethod
-public void tearDown() {
-    DriverManager.quitDriver();
-}
-</code></pre>
+<span class="nd">@AfterMethod</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tearDown</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">quitDriver</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="now-what-happens">🎯 Now What Happens?<a class="headerlink" href="#now-what-happens" title="Permanent link">&para;</a></h1>
 <p>If threadCount = 3:</p>
-<pre><code>Thread 1 → Chrome
+<div class="highlight"><pre><span></span><code>Thread 1 → Chrome
 Thread 2 → Chrome
 Thread 3 → Chrome
-</code></pre>
+</code></pre></div>
 <p>Each has separate driver.</p>
 <p>✅ Safe parallel execution.</p>
 <hr />
@@ -5787,10 +5787,10 @@ Thread 3 → Chrome
 <li>But drivers stored per thread</li>
 </ul>
 <p>So:</p>
-<pre><code>Singleton manager
+<div class="highlight"><pre><span></span><code>Singleton manager
     ↓
 ThreadLocal drivers
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="difference-summary">✅ Difference Summary<a class="headerlink" href="#difference-summary" title="Permanent link">&para;</a></h1>
 <table>
@@ -5905,6 +5905,10 @@ Factory → Create  </p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

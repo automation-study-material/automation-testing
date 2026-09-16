@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6250,41 +6250,41 @@ not <em>how</em> or <em>who</em> entered it.</p>
 - Playwright (<code>fill()</code>, <code>type()</code>)
 - HTML default value
 - JavaScript updates</p>
-<p>Internally, Playwright reads:</p>
-<pre><code class="language-js">element.value
-</code></pre>
+<p>Internally, Playwright reads:
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">value</span>
+</code></pre></div></p>
 <hr />
 <h2 id="inputvalue-examples">🧪 <code>inputValue()</code> Examples<a class="headerlink" href="#inputvalue-examples" title="Permanent link">&para;</a></h2>
 <h3 id="1-user-types-manually">1️⃣ User types manually<a class="headerlink" href="#1-user-types-manually" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;input id=&quot;name&quot;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"name"</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>User types <code>Nitin</code></p>
-<pre><code class="language-js">await page.locator('#name').inputValue();
-// &quot;Nitin&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#name'</span><span class="p">).</span><span class="nx">inputValue</span><span class="p">();</span>
+<span class="c1">// "Nitin"</span>
+</code></pre></div>
 <hr />
 <h3 id="2-playwright-fills-the-value">2️⃣ Playwright fills the value<a class="headerlink" href="#2-playwright-fills-the-value" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">await page.locator('#name').fill('Patil');
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#name'</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s1">'Patil'</span><span class="p">);</span>
 
-await page.locator('#name').inputValue();
-// &quot;Patil&quot;
-</code></pre>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#name'</span><span class="p">).</span><span class="nx">inputValue</span><span class="p">();</span>
+<span class="c1">// "Patil"</span>
+</code></pre></div>
 <hr />
 <h3 id="3-value-set-via-html">3️⃣ Value set via HTML<a class="headerlink" href="#3-value-set-via-html" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;input id=&quot;city&quot; value=&quot;Pune&quot;&gt;
-</code></pre>
-<pre><code class="language-js">await page.locator('#city').inputValue();
-// &quot;Pune&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"city"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Pune"</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#city'</span><span class="p">).</span><span class="nx">inputValue</span><span class="p">();</span>
+<span class="c1">// "Pune"</span>
+</code></pre></div>
 <hr />
 <h3 id="4-value-changed-via-javascript">4️⃣ Value changed via JavaScript<a class="headerlink" href="#4-value-changed-via-javascript" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">await page.evaluate(() =&gt; {
-  document.querySelector('#name').value = 'Mumbai';
-});
-</code></pre>
-<pre><code class="language-js">await page.locator('#name').inputValue();
-// &quot;Mumbai&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#name'</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Mumbai'</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#name'</span><span class="p">).</span><span class="nx">inputValue</span><span class="p">();</span>
+<span class="c1">// "Mumbai"</span>
+</code></pre></div>
 <hr />
 <h2 id="what-inputvalue-does-not-do">❌ What <code>inputValue()</code> Does NOT Do<a class="headerlink" href="#what-inputvalue-does-not-do" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6305,31 +6305,31 @@ await page.locator('#name').inputValue();
 - <code>&lt;label&gt;</code>
 - <code>&lt;button&gt;</code></p>
 <p>❌ It does <strong>NOT</strong> work for <code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code></p>
-<p>Internally, Playwright reads:</p>
-<pre><code class="language-js">element.textContent
-</code></pre>
+<p>Internally, Playwright reads:
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">textContent</span>
+</code></pre></div></p>
 <hr />
 <h2 id="textcontent-examples">🧪 <code>textContent()</code> Examples<a class="headerlink" href="#textcontent-examples" title="Permanent link">&para;</a></h2>
 <h3 id="1-reading-visible-text">1️⃣ Reading visible text<a class="headerlink" href="#1-reading-visible-text" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;div id=&quot;msg&quot;&gt;Welcome Nitin&lt;/div&gt;
-</code></pre>
-<pre><code class="language-js">await page.locator('#msg').textContent();
-// &quot;Welcome Nitin&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"msg"</span><span class="p">&gt;</span>Welcome Nitin<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#msg'</span><span class="p">).</span><span class="nx">textContent</span><span class="p">();</span>
+<span class="c1">// "Welcome Nitin"</span>
+</code></pre></div>
 <hr />
 <h3 id="2-hidden-text-is-included">2️⃣ Hidden text is included<a class="headerlink" href="#2-hidden-text-is-included" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;div id=&quot;status&quot;&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"status"</span><span class="p">&gt;</span>
   Success
-  &lt;span style=&quot;display:none&quot;&gt;Hidden&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="language-js">await page.locator('#status').textContent();
-// &quot;SuccessHidden&quot;
-</code></pre>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">"display:none"</span><span class="p">&gt;</span>Hidden<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#status'</span><span class="p">).</span><span class="nx">textContent</span><span class="p">();</span>
+<span class="c1">// "SuccessHidden"</span>
+</code></pre></div>
 <hr />
 <h3 id="3-common-mistake">3️⃣ ❌ Common mistake<a class="headerlink" href="#3-common-mistake" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">await page.locator('#name').textContent(); // ❌ WRONG
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#name'</span><span class="p">).</span><span class="nx">textContent</span><span class="p">();</span><span class="w"> </span><span class="c1">// ❌ WRONG</span>
+</code></pre></div>
 <p>Reason:</p>
 <blockquote>
 <p><code>&lt;input&gt;</code> elements do not have inner text — only a <code>value</code>.</p>
@@ -6374,8 +6374,8 @@ await page.locator('#name').inputValue();
 </table>
 <hr />
 <h2 id="inputvalue-vs-getattributevalue">🆚 <code>inputValue()</code> vs <code>getAttribute('value')</code><a class="headerlink" href="#inputvalue-vs-getattributevalue" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;input id=&quot;email&quot; value=&quot;initial@mail.com&quot;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="na">value</span><span class="o">=</span><span class="s">"initial@mail.com"</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>User types <code>changed@mail.com</code></p>
 <table>
 <thead>
@@ -6397,9 +6397,9 @@ await page.locator('#name').inputValue();
 </table>
 <hr />
 <h2 id="best-practice-in-playwright-recommended">✅ Best Practice in Playwright (Recommended)<a class="headerlink" href="#best-practice-in-playwright-recommended" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">await expect(page.locator('#email')).toHaveValue('changed@mail.com');
-await expect(page.locator('#msg')).toHaveText('Welcome Nitin');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#email'</span><span class="p">)).</span><span class="nx">toHaveValue</span><span class="p">(</span><span class="s1">'changed@mail.com'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#msg'</span><span class="p">)).</span><span class="nx">toHaveText</span><span class="p">(</span><span class="s1">'Welcome Nitin'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="easy-rule-to-remember">🧠 Easy Rule to Remember<a class="headerlink" href="#easy-rule-to-remember" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -6465,6 +6465,10 @@ await expect(page.locator('#msg')).toHaveText('Welcome Nitin');
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

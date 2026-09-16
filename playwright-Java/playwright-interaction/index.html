@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5727,39 +5727,33 @@
 <h1 id="playwright-interactions-input-buttons-java">Playwright Interactions – Input &amp; Buttons (Java)<a class="headerlink" href="#playwright-interactions-input-buttons-java" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="1-typing-entering-text-into-input-boxes">1️⃣ Typing / Entering Text into Input Boxes<a class="headerlink" href="#1-typing-entering-text-into-input-boxes" title="Permanent link">&para;</a></h2>
-<p><strong>Selenium Equivalent:</strong></p>
-<pre><code class="language-java">driver.findElement(By.id(&quot;searchBox&quot;)).sendKeys(&quot;Playwright&quot;);
-</code></pre>
+<p><strong>Selenium Equivalent:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"searchBox"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"Playwright"</span><span class="p">);</span>
+</code></pre></div></p>
 <h3 id="a-using-fill">a) Using <code>fill()</code><a class="headerlink" href="#a-using-fill" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#searchBox&quot;).fill(&quot;Playwright&quot;);
-</code></pre>
-<ul>
-<li><strong>What it does:</strong> Clears any existing text and sets the new value.</li>
-<li><strong>Auto-waiting:</strong> Waits until the element is visible and enabled.</li>
-<li><strong>Best for:</strong> Setting values directly in forms.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="s">"Playwright"</span><span class="p">);</span>
+</code></pre></div>
+- <strong>What it does:</strong> Clears any existing text and sets the new value.
+- <strong>Auto-waiting:</strong> Waits until the element is visible and enabled.
+- <strong>Best for:</strong> Setting values directly in forms.</p>
 <h3 id="b-using-type">b) Using <code>type()</code><a class="headerlink" href="#b-using-type" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#searchBox&quot;).type(&quot;Playwright&quot;);
-</code></pre>
-<ul>
-<li><strong>What it does:</strong> Types character by character, simulating real user typing.</li>
-<li><strong>Difference from <code>fill()</code>:</strong>  </li>
-<li><code>fill()</code> instantly sets the value.  </li>
-<li><code>type()</code> simulates typing and triggers keyboard events.  </li>
-<li><strong>Best for:</strong> Autocomplete, search boxes, or typing behavior testing.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">type</span><span class="p">(</span><span class="s">"Playwright"</span><span class="p">);</span>
+</code></pre></div>
+- <strong>What it does:</strong> Types character by character, simulating real user typing.
+- <strong>Difference from <code>fill()</code>:</strong><br />
+  1. <code>fill()</code> instantly sets the value.<br />
+  2. <code>type()</code> simulates typing and triggers keyboard events.<br />
+- <strong>Best for:</strong> Autocomplete, search boxes, or typing behavior testing.</p>
 <h3 id="c-pressing-keys">c) Pressing Keys<a class="headerlink" href="#c-pressing-keys" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#searchBox&quot;).fill(&quot;Playwright&quot;);
-page.locator(&quot;#searchBox&quot;).press(&quot;Enter&quot;);
-</code></pre>
-<ul>
-<li><strong>Equivalent to:</strong> <code>sendKeys(Keys.ENTER)</code> in Selenium.</li>
-<li><strong>Use case:</strong> Submitting forms via keyboard.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="s">"Playwright"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">press</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">);</span>
+</code></pre></div>
+- <strong>Equivalent to:</strong> <code>sendKeys(Keys.ENTER)</code> in Selenium.
+- <strong>Use case:</strong> Submitting forms via keyboard.</p>
 <h3 id="d-example-full-search-box-flow">d) Example Full Search Box Flow<a class="headerlink" href="#d-example-full-search-box-flow" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#searchBox&quot;).fill(&quot;Playwright&quot;);  // Type text instantly
-page.locator(&quot;#searchBox&quot;).press(&quot;Enter&quot;);      // Submit by Enter key
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="s">"Playwright"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Type text instantly</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">press</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">);</span><span class="w">      </span><span class="c1">// Submit by Enter key</span>
+</code></pre></div>
 <h3 id="difference-between-fill-and-type">Difference Between <code>fill()</code> and <code>type()</code><a class="headerlink" href="#difference-between-fill-and-type" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -5799,31 +5793,25 @@ page.locator(&quot;#searchBox&quot;).press(&quot;Enter&quot;);      // Submit by
 </table>
 <hr />
 <h2 id="2-clicking-on-buttons">2️⃣ Clicking on Buttons<a class="headerlink" href="#2-clicking-on-buttons" title="Permanent link">&para;</a></h2>
-<p><strong>Selenium Equivalent:</strong></p>
-<pre><code class="language-java">driver.findElement(By.id(&quot;submitBtn&quot;)).click();
-</code></pre>
+<p><strong>Selenium Equivalent:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"submitBtn"</span><span class="p">)).</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div></p>
 <h3 id="a-simple-click">a) Simple Click<a class="headerlink" href="#a-simple-click" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#submitBtn&quot;).click();
-</code></pre>
-<ul>
-<li>Waits automatically for the button to be visible and enabled.</li>
-<li>No need for <code>Thread.sleep()</code> or explicit waits.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#submitBtn"</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div>
+- Waits automatically for the button to be visible and enabled.
+- No need for <code>Thread.sleep()</code> or explicit waits.</p>
 <h3 id="b-click-by-text">b) Click by Text<a class="headerlink" href="#b-click-by-text" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.getByText(&quot;Submit&quot;).click();
-</code></pre>
-<ul>
-<li>Finds element by visible text.</li>
-<li>Useful if ID or class is not available.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">getByText</span><span class="p">(</span><span class="s">"Submit"</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div>
+- Finds element by visible text.
+- Useful if ID or class is not available.</p>
 <h3 id="c-click-by-role-aria">c) Click by Role (ARIA)<a class="headerlink" href="#c-click-by-role-aria" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(&quot;Submit&quot;)).click();
-</code></pre>
-<ul>
-<li>Uses <strong>accessibility info</strong> (semantic role).</li>
-<li>Very <strong>stable</strong>; less likely to break if HTML changes.</li>
-<li>Recommended for <strong>modern accessible web apps</strong>.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">getByRole</span><span class="p">(</span><span class="n">AriaRole</span><span class="p">.</span><span class="na">BUTTON</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">GetByRoleOptions</span><span class="p">().</span><span class="na">setName</span><span class="p">(</span><span class="s">"Submit"</span><span class="p">)).</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div>
+- Uses <strong>accessibility info</strong> (semantic role).
+- Very <strong>stable</strong>; less likely to break if HTML changes.
+- Recommended for <strong>modern accessible web apps</strong>.</p>
 
 
 
@@ -5877,6 +5865,10 @@ page.locator(&quot;#searchBox&quot;).press(&quot;Enter&quot;);      // Submit by
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

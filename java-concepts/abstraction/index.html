@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5884,123 +5884,123 @@ It allows developers to focus on <strong>what an object does</strong> instead of
 </ol>
 <hr />
 <h2 id="example-abstract-class">📝 Example: Abstract Class<a class="headerlink" href="#example-abstract-class" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">abstract class Vehicle {
-    abstract void start();  // abstract method
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">();</span><span class="w">  </span><span class="c1">// abstract method</span>
 
-    void stop() {           // concrete method
-        System.out.println(&quot;Vehicle stopped&quot;);
-    }
-}
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">           </span><span class="c1">// concrete method</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vehicle stopped"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Car extends Vehicle {
-    @Override
-    void start() {
-        System.out.println(&quot;Car started&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car started"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class AbstractionDemo {
-    public static void main(String[] args) {
-        Vehicle myCar = new Car();
-        myCar.start(); // Car started
-        myCar.stop();  // Vehicle stopped
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AbstractionDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Vehicle</span><span class="w"> </span><span class="n">myCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<span class="w">        </span><span class="n">myCar</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w"> </span><span class="c1">// Car started</span>
+<span class="w">        </span><span class="n">myCar</span><span class="p">.</span><span class="na">stop</span><span class="p">();</span><span class="w">  </span><span class="c1">// Vehicle stopped</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong> Abstract method <code>start()</code> is implemented in child class, while <code>stop()</code> can be used as is.</p>
 <hr />
 <h2 id="example-interface">📝 Example: Interface<a class="headerlink" href="#example-interface" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">interface Drawable {
-    void draw();  // method signature only
-}
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Drawable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">();</span><span class="w">  </span><span class="c1">// method signature only</span>
+<span class="p">}</span>
 
-class Circle implements Drawable {
-    @Override
-    public void draw() {
-        System.out.println(&quot;Drawing Circle&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">Circle</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Drawable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Drawing Circle"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Rectangle implements Drawable {
-    @Override
-    public void draw() {
-        System.out.println(&quot;Drawing Rectangle&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Drawable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Drawing Rectangle"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class InterfaceDemo {
-    public static void main(String[] args) {
-        Drawable c = new Circle();
-        Drawable r = new Rectangle();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InterfaceDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Drawable</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Circle</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Drawable</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">();</span>
 
-        c.draw(); // Drawing Circle
-        r.draw(); // Drawing Rectangle
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">c</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span><span class="w"> </span><span class="c1">// Drawing Circle</span>
+<span class="w">        </span><span class="n">r</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span><span class="w"> </span><span class="c1">// Drawing Rectangle</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong> Users can call <code>draw()</code> without knowing implementation details.</p>
 <hr />
 <h2 id="real-world-example-in-selenium-java-framework">🔹 Real-World Example in Selenium Java Framework<a class="headerlink" href="#real-world-example-in-selenium-java-framework" title="Permanent link">&para;</a></h2>
 <p>In Selenium Page Object Model, <strong>Abstraction is used in BasePage / Page Objects</strong>.</p>
-<pre><code class="language-java">import org.openqa.selenium.WebDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public abstract class BasePage {
-    protected WebDriver driver;
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public abstract void openPage();  // abstract method
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openPage</span><span class="p">();</span><span class="w">  </span><span class="c1">// abstract method</span>
+<span class="p">}</span>
 
-public class LoginPage extends BasePage {
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    public void openPage() {
-        driver.get(&quot;https://example.com/login&quot;);
-    }
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openPage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com/login"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void login(String user, String pass) {
-        // enter username/password and click login
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// enter username/password and click login</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong> Test scripts interact with <code>openPage()</code> and <code>login()</code> without worrying about implementation.</p>
 <hr />
 <h2 id="real-world-example-in-java-playwright-framework">🔹 Real-World Example in Java Playwright Framework<a class="headerlink" href="#real-world-example-in-java-playwright-framework" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import com.microsoft.playwright.Page;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.Page</span><span class="p">;</span>
 
-public abstract class BasePage {
-    protected Page page;
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">;</span>
 
-    public BasePage(Page page) {
-        this.page = page;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public abstract void openPage();
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openPage</span><span class="p">();</span>
+<span class="p">}</span>
 
-public class LoginPage extends BasePage {
-    public LoginPage(Page page) {
-        super(page);
-    }
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">page</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    public void openPage() {
-        page.navigate(&quot;https://example.com/login&quot;);
-    }
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openPage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com/login"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void login(String user, String pass) {
-        page.locator(&quot;#username&quot;).fill(user);
-        page.locator(&quot;#password&quot;).fill(pass);
-        page.locator(&quot;#loginBtn&quot;).click();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#username"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#password"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="n">pass</span><span class="p">);</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#loginBtn"</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong> Users can call <code>openPage()</code> and <code>login()</code> without knowing underlying Playwright code.</p>
 <hr />
 <h2 id="advantages-of-abstraction">⭐ Advantages of Abstraction<a class="headerlink" href="#advantages-of-abstraction" title="Permanent link">&para;</a></h2>
@@ -6071,6 +6071,10 @@ public class LoginPage extends BasePage {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

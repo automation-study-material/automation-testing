@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5836,13 +5836,13 @@
 <hr />
 <h2 id="2-simple-ctes-with-clause">2. Simple CTEs (WITH clause)<a class="headerlink" href="#2-simple-ctes-with-clause" title="Permanent link">&para;</a></h2>
 <h3 id="q1-list-all-employees-with-salary-above-50000">Q1: List all employees with salary above 50000<a class="headerlink" href="#q1-list-all-employees-with-salary-above-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH high_salary AS (
-    SELECT emp_id, name, salary
-    FROM employees
-    WHERE salary &gt; 50000
-)
-SELECT * FROM high_salary;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">high_salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">high_salary</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5871,15 +5871,15 @@ SELECT * FROM high_salary;
 </tbody>
 </table>
 <h3 id="q2-calculate-average-salary-per-department-using-cte">Q2: Calculate average salary per department using CTE<a class="headerlink" href="#q2-calculate-average-salary-per-department-using-cte" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH dept_avg AS (
-    SELECT dept, AVG(salary) AS avg_salary
-    FROM employees
-    GROUP BY dept
-)
-SELECT e.name, e.dept, e.salary, d.avg_salary
-FROM employees e
-JOIN dept_avg d ON e.dept = d.dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">dept_avg</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">avg_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">dept_avg</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5924,16 +5924,16 @@ JOIN dept_avg d ON e.dept = d.dept;
 </tbody>
 </table>
 <h3 id="q3-employees-earning-more-than-department-average">Q3: Employees earning more than department average<a class="headerlink" href="#q3-employees-earning-more-than-department-average" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH dept_avg AS (
-    SELECT dept, AVG(salary) AS avg_salary
-    FROM employees
-    GROUP BY dept
-)
-SELECT e.name, e.dept, e.salary
-FROM employees e
-JOIN dept_avg d ON e.dept = d.dept
-WHERE e.salary &gt; d.avg_salary;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">dept_avg</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">dept_avg</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">avg_salary</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5957,18 +5957,18 @@ WHERE e.salary &gt; d.avg_salary;
 </tbody>
 </table>
 <h3 id="q4-using-multiple-ctes">Q4: Using multiple CTEs<a class="headerlink" href="#q4-using-multiple-ctes" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH dept_avg AS (
-    SELECT dept, AVG(salary) AS avg_salary
-    FROM employees
-    GROUP BY dept
-),
-high_salary AS (
-    SELECT * FROM employees WHERE salary &gt; 50000
-)
-SELECT h.name, h.salary, d.avg_salary
-FROM high_salary h
-JOIN dept_avg d ON h.dept = d.dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">dept_avg</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="p">),</span>
+<span class="n">high_salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">avg_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">high_salary</span><span class="w"> </span><span class="n">h</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">dept_avg</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5997,13 +5997,13 @@ JOIN dept_avg d ON h.dept = d.dept;
 </tbody>
 </table>
 <h3 id="q5-using-cte-for-filtering-employees-with-manager">Q5: Using CTE for filtering employees with manager<a class="headerlink" href="#q5-using-cte-for-filtering-employees-with-manager" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH has_manager AS (
-    SELECT emp_id, name, manager_id
-    FROM employees
-    WHERE manager_id IS NOT NULL
-)
-SELECT * FROM has_manager;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">has_manager</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">manager_id</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">manager_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">has_manager</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6039,17 +6039,17 @@ SELECT * FROM has_manager;
 <hr />
 <h2 id="3-recursive-ctes">3. Recursive CTEs<a class="headerlink" href="#3-recursive-ctes" title="Permanent link">&para;</a></h2>
 <h3 id="q6-hierarchy-list-employees-under-manager-alice">Q6: Hierarchy - List employees under manager Alice<a class="headerlink" href="#q6-hierarchy-list-employees-under-manager-alice" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH RECURSIVE emp_hierarchy AS (
-    SELECT emp_id, name, manager_id
-    FROM employees
-    WHERE manager_id IS NULL  -- top-level manager
-    UNION ALL
-    SELECT e.emp_id, e.name, e.manager_id
-    FROM employees e
-    JOIN emp_hierarchy h ON e.manager_id = h.emp_id
-)
-SELECT * FROM emp_hierarchy;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">manager_id</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">manager_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w">  </span><span class="c1">-- top-level manager</span>
+<span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6088,19 +6088,19 @@ SELECT * FROM emp_hierarchy;
 </tbody>
 </table>
 <h3 id="q7-calculate-cumulative-salary-under-each-manager">Q7: Calculate cumulative salary under each manager<a class="headerlink" href="#q7-calculate-cumulative-salary-under-each-manager" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH RECURSIVE emp_hierarchy AS (
-    SELECT emp_id, name, salary, manager_id
-    FROM employees
-    WHERE manager_id IS NULL
-    UNION ALL
-    SELECT e.emp_id, e.name, e.salary, e.manager_id
-    FROM employees e
-    JOIN emp_hierarchy h ON e.manager_id = h.emp_id
-)
-SELECT manager_id, SUM(salary) AS total_salary
-FROM emp_hierarchy
-GROUP BY manager_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">manager_id</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">manager_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">emp_hierarchy</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">manager_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6125,17 +6125,17 @@ GROUP BY manager_id;
 </tbody>
 </table>
 <h3 id="q8-depth-of-hierarchy-per-employee">Q8: Depth of hierarchy per employee<a class="headerlink" href="#q8-depth-of-hierarchy-per-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH RECURSIVE emp_hierarchy AS (
-    SELECT emp_id, name, manager_id, 1 AS level
-    FROM employees
-    WHERE manager_id IS NULL
-    UNION ALL
-    SELECT e.emp_id, e.name, e.manager_id, h.level + 1
-    FROM employees e
-    JOIN emp_hierarchy h ON e.manager_id = h.emp_id
-)
-SELECT * FROM emp_hierarchy;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">level</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">manager_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="k">level</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6180,18 +6180,18 @@ SELECT * FROM emp_hierarchy;
 </tbody>
 </table>
 <h3 id="q9-employees-at-level-2-or-deeper">Q9: Employees at level 2 or deeper<a class="headerlink" href="#q9-employees-at-level-2-or-deeper" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH RECURSIVE emp_hierarchy AS (
-    SELECT emp_id, name, manager_id, 1 AS level
-    FROM employees
-    WHERE manager_id IS NULL
-    UNION ALL
-    SELECT e.emp_id, e.name, e.manager_id, h.level + 1
-    FROM employees e
-    JOIN emp_hierarchy h ON e.manager_id = h.emp_id
-)
-SELECT * FROM emp_hierarchy
-WHERE level &gt;= 2;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">level</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">manager_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="k">level</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp_hierarchy</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">level</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6230,19 +6230,19 @@ WHERE level &gt;= 2;
 </tbody>
 </table>
 <h3 id="q10-total-salary-per-hierarchy-level">Q10: Total salary per hierarchy level<a class="headerlink" href="#q10-total-salary-per-hierarchy-level" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">WITH RECURSIVE emp_hierarchy AS (
-    SELECT emp_id, name, salary, manager_id, 1 AS level
-    FROM employees
-    WHERE manager_id IS NULL
-    UNION ALL
-    SELECT e.emp_id, e.name, e.salary, e.manager_id, h.level + 1
-    FROM employees e
-    JOIN emp_hierarchy h ON e.manager_id = h.emp_id
-)
-SELECT level, SUM(salary) AS total_salary
-FROM emp_hierarchy
-GROUP BY level;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">level</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">manager_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="k">level</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">emp_hierarchy</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">level</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">emp_hierarchy</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">level</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6333,6 +6333,10 @@ GROUP BY level;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

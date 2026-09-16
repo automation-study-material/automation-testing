@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5627,7 +5627,7 @@
 <h1 id="real-world-scenario">Real-World Scenario<a class="headerlink" href="#real-world-scenario" title="Permanent link">&para;</a></h1>
 <p>Suppose you're working at <strong>Adobe</strong>.</p>
 <p>Your team has developed several common utility classes that are used across multiple automation frameworks.</p>
-<pre><code class="language-text">Common Utilities
+<div class="highlight"><pre><span></span><code>Common Utilities
 
 ├── DriverFactory.java
 ├── WaitUtils.java
@@ -5635,7 +5635,7 @@
 ├── ExcelUtils.java
 ├── DatabaseUtils.java
 └── ConfigReader.java
-</code></pre>
+</code></pre></div>
 <p>Now another team asks:</p>
 <blockquote>
 <p><strong>"Can we use these utilities in our automation framework?"</strong></p>
@@ -5652,7 +5652,7 @@
 <hr />
 <h1 id="step-1-create-a-maven-project">Step 1: Create a Maven Project<a class="headerlink" href="#step-1-create-a-maven-project" title="Permanent link">&para;</a></h1>
 <p>Create a Maven project called <strong>automation-common</strong>.</p>
-<pre><code class="language-text">automation-common
+<div class="highlight"><pre><span></span><code>automation-common
 
 ├── pom.xml
 └── src
@@ -5661,37 +5661,37 @@
             └── com
                 └── company
                     └── utils
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="step-2-add-utility-classes">Step 2: Add Utility Classes<a class="headerlink" href="#step-2-add-utility-classes" title="Permanent link">&para;</a></h1>
 <p>Example: <code>WaitUtils.java</code></p>
-<pre><code class="language-java">package com.company.utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.company.utils</span><span class="p">;</span>
 
-public class WaitUtils {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WaitUtils</span><span class="w"> </span><span class="p">{</span>
 
-    public static void waitForFiveSeconds() {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForFiveSeconds</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Example: <code>ScreenshotUtils.java</code></p>
-<pre><code class="language-java">package com.company.utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.company.utils</span><span class="p">;</span>
 
-public class ScreenshotUtils {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScreenshotUtils</span><span class="w"> </span><span class="p">{</span>
 
-    public static void capture() {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">capture</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        System.out.println(&quot;Taking Screenshot&quot;);
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Taking Screenshot"</span><span class="p">);</span>
 
-    }
+<span class="w">    </span><span class="p">}</span>
 
-}
-</code></pre>
+<span class="p">}</span>
+</code></pre></div>
 <p>You can continue adding more reusable classes such as:</p>
 <ul>
 <li>DriverFactory</li>
@@ -5702,41 +5702,41 @@ public class ScreenshotUtils {
 </ul>
 <hr />
 <h1 id="step-3-configure-pomxml">Step 3: Configure <code>pom.xml</code><a class="headerlink" href="#step-3-configure-pomxml" title="Permanent link">&para;</a></h1>
-<pre><code class="language-xml">&lt;groupId&gt;com.company.automation&lt;/groupId&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;groupId&gt;</span>com.company.automation<span class="nt">&lt;/groupId&gt;</span>
 
-&lt;artifactId&gt;automation-common&lt;/artifactId&gt;
+<span class="nt">&lt;artifactId&gt;</span>automation-common<span class="nt">&lt;/artifactId&gt;</span>
 
-&lt;version&gt;1.0&lt;/version&gt;
+<span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
 
-&lt;packaging&gt;jar&lt;/packaging&gt;
-</code></pre>
+<span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+</code></pre></div>
 <h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
 <h4 id="groupid">groupId<a class="headerlink" href="#groupid" title="Permanent link">&para;</a></h4>
-<pre><code class="language-text">com.company.automation
-</code></pre>
+<div class="highlight"><pre><span></span><code>com.company.automation
+</code></pre></div>
 <p>Represents the organization or company.</p>
 <hr />
 <h4 id="artifactid">artifactId<a class="headerlink" href="#artifactid" title="Permanent link">&para;</a></h4>
-<pre><code class="language-text">automation-common
-</code></pre>
+<div class="highlight"><pre><span></span><code>automation-common
+</code></pre></div>
 <p>Represents the library name.</p>
 <hr />
 <h4 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h4>
-<pre><code class="language-text">1.0
-</code></pre>
+<div class="highlight"><pre><span></span><code>1.0
+</code></pre></div>
 <p>Represents the current release version.</p>
 <hr />
 <h4 id="packaging">packaging<a class="headerlink" href="#packaging" title="Permanent link">&para;</a></h4>
-<pre><code class="language-text">jar
-</code></pre>
+<div class="highlight"><pre><span></span><code>jar
+</code></pre></div>
 <p>Tells Maven to generate a <strong>JAR</strong> file.</p>
 <hr />
 <h1 id="step-4-build-the-library">Step 4: Build the Library<a class="headerlink" href="#step-4-build-the-library" title="Permanent link">&para;</a></h1>
 <p>Execute:</p>
-<pre><code class="language-bash">mvn clean package
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>package
+</code></pre></div>
 <p>Internally Maven performs:</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
       │
       ▼
 compile
@@ -5746,17 +5746,17 @@ test
       │
       ▼
 package
-</code></pre>
+</code></pre></div>
 <p>Finally, Maven creates:</p>
-<pre><code class="language-text">target
+<div class="highlight"><pre><span></span><code>target
 
 ↓
 
 automation-common-1.0.jar
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="whats-inside-the-jar">What's Inside the JAR?<a class="headerlink" href="#whats-inside-the-jar" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">automation-common-1.0.jar
+<div class="highlight"><pre><span></span><code>automation-common-1.0.jar
 
 ↓
 
@@ -5767,30 +5767,30 @@ ScreenshotUtils.class
 ConfigReader.class
 
 DatabaseUtils.class
-</code></pre>
+</code></pre></div>
 <p>Notice:</p>
-<pre><code class="language-text">src/main/java
+<div class="highlight"><pre><span></span><code>src/main/java
 
 ↓
 
 Included ✅
-</code></pre>
+</code></pre></div>
 <p>But:</p>
-<pre><code class="language-text">src/test/java
+<div class="highlight"><pre><span></span><code>src/test/java
 
 ↓
 
 Not Included ❌
-</code></pre>
+</code></pre></div>
 <p>Only production code is packaged into the JAR.</p>
 <hr />
 <h1 id="step-5-install-the-library-into-your-local-repository">Step 5: Install the Library into Your Local Repository<a class="headerlink" href="#step-5-install-the-library-into-your-local-repository" title="Permanent link">&para;</a></h1>
 <p>Suppose you only want to use this library on your own laptop.</p>
 <p>Run:</p>
-<pre><code class="language-bash">mvn install
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>install
+</code></pre></div>
 <p>Maven copies the generated JAR to your local Maven repository.</p>
-<pre><code class="language-text">C:\Users\&lt;username&gt;\.m2\repository
+<div class="highlight"><pre><span></span><code>C:\Users\&lt;username&gt;\.m2\repository
 
 ↓
 
@@ -5811,10 +5811,10 @@ automation-common
 ↓
 
 1.0
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="local-repository-flow">Local Repository Flow<a class="headerlink" href="#local-repository-flow" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">Developer
+<div class="highlight"><pre><span></span><code>Developer
 
 ↓
 
@@ -5835,47 +5835,47 @@ Copy
 ↓
 
 .m2 Repository
-</code></pre>
+</code></pre></div>
 <p>Now the library is available on <strong>your local machine</strong>.</p>
 <hr />
 <h1 id="step-6-use-the-library-in-another-local-project">Step 6: Use the Library in Another Local Project<a class="headerlink" href="#step-6-use-the-library-in-another-local-project" title="Permanent link">&para;</a></h1>
 <p>Suppose another project called <strong>Appium Framework</strong> needs these utilities.</p>
 <p>Simply add the dependency:</p>
-<pre><code class="language-xml">&lt;dependency&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
 
-    &lt;groupId&gt;com.company.automation&lt;/groupId&gt;
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.company.automation<span class="nt">&lt;/groupId&gt;</span>
 
-    &lt;artifactId&gt;automation-common&lt;/artifactId&gt;
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>automation-common<span class="nt">&lt;/artifactId&gt;</span>
 
-    &lt;version&gt;1.0&lt;/version&gt;
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
 
-&lt;/dependency&gt;
-</code></pre>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <p>Now you can directly use the classes.</p>
-<pre><code class="language-java">import com.company.utils.WaitUtils;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.company.utils.WaitUtils</span><span class="p">;</span>
 
-public class LoginTest {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginTest</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WaitUtils.waitForFiveSeconds();
+<span class="w">        </span><span class="n">WaitUtils</span><span class="p">.</span><span class="na">waitForFiveSeconds</span><span class="p">();</span>
 
-    }
+<span class="w">    </span><span class="p">}</span>
 
-}
-</code></pre>
+<span class="p">}</span>
+</code></pre></div>
 <p>No Java files are copied.</p>
 <hr />
 <h1 id="but-theres-a-limitation">But There's a Limitation<a class="headerlink" href="#but-theres-a-limitation" title="Permanent link">&para;</a></h1>
 <p>Only <strong>you</strong> can use this library.</p>
 <p>Why?</p>
 <p>Because it exists only in:</p>
-<pre><code class="language-text">.m2
+<div class="highlight"><pre><span></span><code>.m2
 
 ↓
 
 Your Laptop
-</code></pre>
+</code></pre></div>
 <p>Other developers don't have your local repository.</p>
 <hr />
 <h1 id="step-7-publish-the-library-to-a-company-repository">Step 7: Publish the Library to a Company Repository<a class="headerlink" href="#step-7-publish-the-library-to-a-company-repository" title="Permanent link">&para;</a></h1>
@@ -5887,10 +5887,10 @@ Your Laptop
 <li>Azure Artifacts</li>
 </ul>
 <p>Run:</p>
-<pre><code class="language-bash">mvn deploy
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>deploy
+</code></pre></div>
 <p>Internally Maven performs:</p>
-<pre><code class="language-text">Build Library
+<div class="highlight"><pre><span></span><code>Build Library
 
 ↓
 
@@ -5907,9 +5907,9 @@ Authenticate
 ↓
 
 Upload to Nexus
-</code></pre>
+</code></pre></div>
 <p>Repository structure:</p>
-<pre><code class="language-text">Nexus
+<div class="highlight"><pre><span></span><code>Nexus
 
 ↓
 
@@ -5926,29 +5926,29 @@ automation-common
 ↓
 
 automation-common-1.0.jar
-</code></pre>
+</code></pre></div>
 <p>Now the library is available to the entire organization.</p>
 <hr />
 <h1 id="step-8-another-developer-uses-the-library">Step 8: Another Developer Uses the Library<a class="headerlink" href="#step-8-another-developer-uses-the-library" title="Permanent link">&para;</a></h1>
 <p>Suppose your teammate creates a project called:</p>
-<pre><code class="language-text">Mobile Automation
-</code></pre>
+<div class="highlight"><pre><span></span><code>Mobile Automation
+</code></pre></div>
 <p>He adds:</p>
-<pre><code class="language-xml">&lt;dependency&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
 
-&lt;groupId&gt;com.company.automation&lt;/groupId&gt;
+<span class="nt">&lt;groupId&gt;</span>com.company.automation<span class="nt">&lt;/groupId&gt;</span>
 
-&lt;artifactId&gt;automation-common&lt;/artifactId&gt;
+<span class="nt">&lt;artifactId&gt;</span>automation-common<span class="nt">&lt;/artifactId&gt;</span>
 
-&lt;version&gt;1.0&lt;/version&gt;
+<span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
 
-&lt;/dependency&gt;
-</code></pre>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <p>Then executes:</p>
-<pre><code class="language-bash">mvn clean install
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</code></pre></div>
 <p>Internally Maven performs:</p>
-<pre><code class="language-text">Read pom.xml
+<div class="highlight"><pre><span></span><code>Read pom.xml
 
 ↓
 
@@ -5977,11 +5977,11 @@ Store in .m2
 ↓
 
 Compile Project
-</code></pre>
+</code></pre></div>
 <p>Everything happens automatically.</p>
 <hr />
 <h1 id="complete-enterprise-flow">Complete Enterprise Flow<a class="headerlink" href="#complete-enterprise-flow" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">Developer A
+<div class="highlight"><pre><span></span><code>Developer A
 
 Writes Utility Classes
 
@@ -6042,37 +6042,37 @@ Downloads Library
         ▼
 
 Uses WaitUtils
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="real-example">Real Example<a class="headerlink" href="#real-example" title="Permanent link">&para;</a></h1>
 <p>The Selenium library works exactly the same way.</p>
 <p>You never download Selenium source code manually.</p>
 <p>You simply add the dependency:</p>
-<pre><code class="language-xml">&lt;dependency&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
 
-&lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+<span class="nt">&lt;groupId&gt;</span>org.seleniumhq.selenium<span class="nt">&lt;/groupId&gt;</span>
 
-&lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+<span class="nt">&lt;artifactId&gt;</span>selenium-java<span class="nt">&lt;/artifactId&gt;</span>
 
-&lt;version&gt;4.35.0&lt;/version&gt;
+<span class="nt">&lt;version&gt;</span>4.35.0<span class="nt">&lt;/version&gt;</span>
 
-&lt;/dependency&gt;
-</code></pre>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <p>Maven downloads:</p>
-<pre><code class="language-text">selenium-java.jar
-</code></pre>
+<div class="highlight"><pre><span></span><code>selenium-java.jar
+</code></pre></div>
 <p>Inside the JAR are classes such as:</p>
-<pre><code class="language-text">WebDriver
+<div class="highlight"><pre><span></span><code>WebDriver
 
 ChromeDriver
 
 FirefoxDriver
 
 WebElement
-</code></pre>
+</code></pre></div>
 <p>You simply import them:</p>
-<pre><code class="language-java">import org.openqa.selenium.WebDriver;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+</code></pre></div>
 <p>Your own library works in exactly the same way.</p>
 <hr />
 <h1 id="difference-between-install-and-deploy">Difference Between <code>install</code> and <code>deploy</code><a class="headerlink" href="#difference-between-install-and-deploy" title="Permanent link">&para;</a></h1>
@@ -6173,6 +6173,10 @@ WebElement
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5801,8 +5801,8 @@
 </table>
 <hr />
 <h2 id="1-select-fetch-all-columns">1. SELECT – Fetch All Columns<a class="headerlink" href="#1-select-fetch-all-columns" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT * FROM Employee;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 | EmpID | Name        | Department | Salary | HireDate   |
 |-------|-------------|------------|--------|------------|
@@ -5814,10 +5814,10 @@
 | 106   | Priya Nair  | IT         | 65000  | 2020-12-11 |</p>
 <hr />
 <h2 id="2-where-filter-rows">2. WHERE – Filter Rows<a class="headerlink" href="#2-where-filter-rows" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT Name, Department, Salary
-FROM Employee
-WHERE Department = 'IT';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Department</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Department</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'IT'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 | Name       | Department | Salary |
 |------------|------------|--------|
@@ -5827,58 +5827,58 @@ WHERE Department = 'IT';
 <hr />
 <h2 id="3-like-pattern-matching">3. LIKE – Pattern Matching<a class="headerlink" href="#3-like-pattern-matching" title="Permanent link">&para;</a></h2>
 <h3 id="a-starts-with-pattern">a) Starts With Pattern<a class="headerlink" href="#a-starts-with-pattern" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT Name FROM Employee
-WHERE Name LIKE 'R%';
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'R%'</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Name        |
 |-------------|
 | Riya Mehta  |
 | Rohit Verma |</p>
 <hr />
 <h3 id="b-ends-with-pattern">b) Ends With Pattern<a class="headerlink" href="#b-ends-with-pattern" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT Name FROM Employee
-WHERE Name LIKE '%a';
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%a'</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Name       |
 |------------|
 | Riya Mehta |
 | Priya Nair |</p>
 <hr />
 <h3 id="c-contains-substring">c) Contains Substring<a class="headerlink" href="#c-contains-substring" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT Name FROM Employee
-WHERE Name LIKE '%Singh%';
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%Singh%'</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Name       |
 |------------|
 | Neha Singh |</p>
 <hr />
 <h3 id="d-single-character-wildcard-_">d) Single Character Wildcard (_)<a class="headerlink" href="#d-single-character-wildcard-_" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT Name FROM Employee
-WHERE Name LIKE '_mit%';
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'_mit%'</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Name        |
 |-------------|
 | Amit Sharma |</p>
 <hr />
 <h3 id="e-combined-pattern">e) Combined Pattern<a class="headerlink" href="#e-combined-pattern" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT Name FROM Employee
-WHERE Name LIKE 'R%a';
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'R%a'</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Name       |
 |------------|
 | Riya Mehta |
 | Priya Nair |</p>
 <hr />
 <h2 id="4-order-by-sort-results">4. ORDER BY – Sort Results<a class="headerlink" href="#4-order-by-sort-results" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT Name, Salary
-FROM Employee
-ORDER BY Salary DESC;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 | Name       | Salary |
 |------------|--------|
@@ -5890,9 +5890,9 @@ ORDER BY Salary DESC;
 | Rohit Verma| 48000  |</p>
 <hr />
 <h2 id="5-distinct-unique-values">5. DISTINCT – Unique Values<a class="headerlink" href="#5-distinct-unique-values" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT DISTINCT Department
-FROM Employee;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">Department</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 | Department |
 |------------|
@@ -5901,10 +5901,10 @@ FROM Employee;
 | Finance    |</p>
 <hr />
 <h2 id="6-aliases-renaming-columns">6. ALIASES – Renaming Columns<a class="headerlink" href="#6-aliases-renaming-columns" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT Name AS EmployeeName,
-       Salary AS MonthlySalary
-FROM Employee;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">EmployeeName</span><span class="p">,</span>
+<span class="w">       </span><span class="n">Salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">MonthlySalary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 | EmployeeName | MonthlySalary |
 |--------------|---------------|
@@ -5976,6 +5976,10 @@ FROM Employee;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

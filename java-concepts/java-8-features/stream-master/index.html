@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5623,42 +5623,42 @@
 </blockquote>
 <p>It was introduced in <strong>Java 8</strong>.</p>
 <p>📦 <strong>Package:</strong></p>
-<pre><code class="language-java">java.util.stream
-````
+<div class="highlight"><pre><span></span><code><span class="n">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">stream</span>
+<span class="err">````</span>
 
----
+<span class="o">---</span>
 
-## 🔹 What is a Stream?
+<span class="err">##</span><span class="w"> </span><span class="err">🔹</span><span class="w"> </span><span class="n">What</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Stream</span><span class="o">?</span>
 
-A Stream is:
+<span class="n">A</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="n">is</span><span class="p">:</span>
 
-&gt; A sequence of elements supporting functional-style operations.
+<span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">supporting</span><span class="w"> </span><span class="n">functional</span><span class="o">-</span><span class="n">style</span><span class="w"> </span><span class="n">operations</span><span class="p">.</span>
 
-### ⚠ Important Points
+<span class="err">###</span><span class="w"> </span><span class="err">⚠</span><span class="w"> </span><span class="n">Important</span><span class="w"> </span><span class="n">Points</span>
 
-* Stream does NOT store data
-* Stream works on collections
-* Stream does NOT modify original collection
-* Stream is lazy
+<span class="o">*</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">NOT</span><span class="w"> </span><span class="n">store</span><span class="w"> </span><span class="n">data</span>
+<span class="o">*</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="n">works</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">collections</span>
+<span class="o">*</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">NOT</span><span class="w"> </span><span class="n">modify</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="n">collection</span>
+<span class="o">*</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">lazy</span>
 
----
+<span class="o">---</span>
 
-# 2️⃣ Why Stream API Came Into Picture?
+<span class="err">#</span><span class="w"> </span><span class="mi">2</span><span class="err">️⃣</span><span class="w"> </span><span class="n">Why</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="n">Came</span><span class="w"> </span><span class="n">Into</span><span class="w"> </span><span class="n">Picture</span><span class="o">?</span>
 
-Before Java 8 → We used loops.
+<span class="n">Before</span><span class="w"> </span><span class="n">Java</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">We</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">loops</span><span class="p">.</span>
 
-## ❌ Old Way (Too Much Boilerplate)
+<span class="err">##</span><span class="w"> </span><span class="err">❌</span><span class="w"> </span><span class="n">Old</span><span class="w"> </span><span class="nf">Way</span><span class="w"> </span><span class="p">(</span><span class="n">Too</span><span class="w"> </span><span class="n">Much</span><span class="w"> </span><span class="n">Boilerplate</span><span class="p">)</span>
 
-```java
-List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5);
-List&lt;Integer&gt; result = new ArrayList&lt;&gt;();
+<span class="err">```</span><span class="n">java</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-for (Integer i : list) {
-    if (i % 2 == 0) {
-        result.add(i);
-    }
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">result</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="problems">Problems:<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h3>
 <ul>
 <li>More code</li>
@@ -5668,10 +5668,10 @@ for (Integer i : list) {
 </ul>
 <hr />
 <h2 id="with-stream-api">✅ With Stream API<a class="headerlink" href="#with-stream-api" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;Integer&gt; result = list.stream()
-                            .filter(x -&gt; x % 2 == 0)
-                            .toList();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">                            </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                            </span><span class="p">.</span><span class="na">toList</span><span class="p">();</span>
+</code></pre></div>
 <p>🔥 Cleaner
 🔥 Less code
 🔥 More readable
@@ -5679,13 +5679,13 @@ for (Integer i : list) {
 <hr />
 <h1 id="3-how-stream-works-very-important">3️⃣ How Stream Works (Very Important)<a class="headerlink" href="#3-how-stream-works-very-important" title="Permanent link">&para;</a></h1>
 <p>Stream has 3 Parts:</p>
-<pre><code>Source → Intermediate → Terminal
-</code></pre>
+<div class="highlight"><pre><span></span><code>Source → Intermediate → Terminal
+</code></pre></div>
 <h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">list.stream()                    // Source
-    .filter(x -&gt; x % 2 == 0)     // Intermediate
-    .forEach(System.out::println); // Terminal
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">                    </span><span class="c1">// Source</span>
+<span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">     </span><span class="c1">// Intermediate</span>
+<span class="w">    </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w"> </span><span class="c1">// Terminal</span>
+</code></pre></div>
 <hr />
 <h1 id="4-types-of-stream-operations">4️⃣ Types of Stream Operations<a class="headerlink" href="#4-types-of-stream-operations" title="Permanent link">&para;</a></h1>
 <h2 id="intermediate-operations-lazy">🔹 Intermediate Operations (Lazy)<a class="headerlink" href="#intermediate-operations-lazy" title="Permanent link">&para;</a></h2>
@@ -5716,24 +5716,24 @@ for (Integer i : list) {
 <hr />
 <h1 id="5-lazy-evaluation-interview-important">5️⃣ Lazy Evaluation (Interview Important)<a class="headerlink" href="#5-lazy-evaluation-interview-important" title="Permanent link">&para;</a></h1>
 <p>This will NOT execute:</p>
-<pre><code class="language-java">list.stream()
-    .filter(x -&gt; x &gt; 3);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
 <p>It executes only when terminal operation added:</p>
-<pre><code class="language-java">list.stream()
-    .filter(x -&gt; x &gt; 3)
-    .count();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="6-external-vs-internal-iteration">6️⃣ External vs Internal Iteration<a class="headerlink" href="#6-external-vs-internal-iteration" title="Permanent link">&para;</a></h1>
 <h2 id="before-java-8-external-iteration">Before Java 8 (External Iteration)<a class="headerlink" href="#before-java-8-external-iteration" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">for (Integer i : list) {
-    System.out.println(i);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="stream-internal-iteration">Stream (Internal Iteration)<a class="headerlink" href="#stream-internal-iteration" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">list.stream().forEach(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <p>Stream controls the loop internally.</p>
 <hr />
 <h1 id="7-stream-vs-collection">7️⃣ Stream vs Collection<a class="headerlink" href="#7-stream-vs-collection" title="Permanent link">&para;</a></h1>
@@ -5773,202 +5773,202 @@ for (Integer i : list) {
 <hr />
 <h2 id="1-filter">🔹 1. <code>filter()</code><a class="headerlink" href="#1-filter" title="Permanent link">&para;</a></h2>
 <p>Used to filter elements based on condition.</p>
-<pre><code class="language-java">List&lt;Integer&gt; nums = Arrays.asList(1,2,3,4,5);
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
 
-// filter even numbers
-nums.stream()
-    .filter(n -&gt; n % 2 == 0)   // keep only even numbers
-    .forEach(System.out::println);
-</code></pre>
+<span class="c1">// filter even numbers</span>
+<span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">   </span><span class="c1">// keep only even numbers</span>
+<span class="w">    </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<pre><code>2
+<div class="highlight"><pre><span></span><code>2
 4
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="2-map">🔹 2. <code>map()</code><a class="headerlink" href="#2-map" title="Permanent link">&para;</a></h2>
 <p>Transforms data.</p>
-<pre><code class="language-java">nums.stream()
-    .map(n -&gt; n * n)   // square each number
-    .forEach(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">   </span><span class="c1">// square each number</span>
+<span class="w">    </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="output_1">Output<a class="headerlink" href="#output_1" title="Permanent link">&para;</a></h3>
-<pre><code>1
+<div class="highlight"><pre><span></span><code>1
 4
 9
 16
 25
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="3-sorted">🔹 3. <code>sorted()</code><a class="headerlink" href="#3-sorted" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">nums.stream()
-    .sorted()
-    .forEach(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="descending">Descending<a class="headerlink" href="#descending" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">nums.stream()
-    .sorted(Comparator.reverseOrder())
-    .forEach(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">reverseOrder</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="4-distinct">🔹 4. <code>distinct()</code><a class="headerlink" href="#4-distinct" title="Permanent link">&para;</a></h2>
 <p>Remove duplicates.</p>
-<pre><code class="language-java">Arrays.asList(1,2,2,3,3,4)
-      .stream()
-      .distinct()
-      .forEach(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">      </span><span class="p">.</span><span class="na">distinct</span><span class="p">()</span>
+<span class="w">      </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="output_2">Output<a class="headerlink" href="#output_2" title="Permanent link">&para;</a></h3>
-<pre><code>1
+<div class="highlight"><pre><span></span><code>1
 2
 3
-</code></pre>
+</code></pre></div>
 <h2 id="5-reduce">🔹 5. <code>reduce()</code><a class="headerlink" href="#5-reduce" title="Permanent link">&para;</a></h2>
 <p>Used to combine multiple elements into a single result.</p>
 <h3 id="example-sum-of-numbers">Example: Sum of Numbers<a class="headerlink" href="#example-sum-of-numbers" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">int sum = nums.stream()
-              .reduce(0, Integer::sum);
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">              </span><span class="p">.</span><span class="na">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">::</span><span class="n">sum</span><span class="p">);</span>
 
-System.out.println(sum);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="output_3">Output<a class="headerlink" href="#output_3" title="Permanent link">&para;</a></h3>
-<pre><code>15
-</code></pre>
+<div class="highlight"><pre><span></span><code>15
+</code></pre></div>
 <hr />
 <h2 id="6-collect">🔹 6. <code>collect()</code><a class="headerlink" href="#6-collect" title="Permanent link">&para;</a></h2>
 <p>Used to convert a stream into a <strong>List</strong>, <strong>Set</strong>, or <strong>Map</strong>.</p>
-<pre><code class="language-java">Set&lt;Integer&gt; set = nums.stream()
-                       .collect(Collectors.toSet());
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">                       </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toSet</span><span class="p">());</span>
 
-System.out.println(set);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">set</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="7-count">🔹 7. <code>count()</code><a class="headerlink" href="#7-count" title="Permanent link">&para;</a></h2>
 <p>Returns the number of elements matching a condition.</p>
-<pre><code class="language-java">long count = nums.stream()
-                 .filter(n -&gt; n % 2 == 0)
-                 .count();
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">                 </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                 </span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
 
-System.out.println(count);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="8-anymatch-allmatch">🔹 8. <code>anyMatch()</code> / <code>allMatch()</code><a class="headerlink" href="#8-anymatch-allmatch" title="Permanent link">&para;</a></h2>
 <p>Used for condition checking.</p>
-<pre><code class="language-java">boolean allPositive = nums.stream().allMatch(n -&gt; n &gt; 0);
-boolean anyGreater  = nums.stream().anyMatch(n -&gt; n &gt; 4);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span><span class="w"> </span><span class="n">allPositive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">allMatch</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">anyGreater</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">anyMatch</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="9-findfirst">🔹 9. <code>findFirst()</code><a class="headerlink" href="#9-findfirst" title="Permanent link">&para;</a></h2>
 <p>Finds the first element matching a condition.</p>
-<pre><code class="language-java">nums.stream()
-    .filter(n -&gt; n &gt; 3)
-    .findFirst()
-    .ifPresent(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">nums</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">findFirst</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="10-flatmap">🔹 10. <code>flatMap()</code><a class="headerlink" href="#10-flatmap" title="Permanent link">&para;</a></h2>
 <p>Used to flatten nested collections.</p>
-<pre><code class="language-java">List&lt;List&lt;Integer&gt;&gt; nested =
-        Arrays.asList(Arrays.asList(1,2), Arrays.asList(3,4));
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">nested</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">));</span>
 
-nested.stream()
-      .flatMap(List::stream)
-      .forEach(System.out::println);
-</code></pre>
+<span class="n">nested</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">      </span><span class="p">.</span><span class="na">flatMap</span><span class="p">(</span><span class="n">List</span><span class="p">::</span><span class="n">stream</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="output_4">Output<a class="headerlink" href="#output_4" title="Permanent link">&para;</a></h3>
-<pre><code>1
+<div class="highlight"><pre><span></span><code>1
 2
 3
 4
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="9-employee-real-time-examples-interview-important">9️⃣ Employee Real-Time Examples (Interview Important)<a class="headerlink" href="#9-employee-real-time-examples-interview-important" title="Permanent link">&para;</a></h1>
 <h2 id="employee-class">Employee Class<a class="headerlink" href="#employee-class" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class Employee {
-    int id;
-    String name;
-    double salary;
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
 
-    Employee(int id, String name, double salary) {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
-    }
+<span class="w">    </span><span class="n">Employee</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public String toString() {
-        return id + &quot; - &quot; + name + &quot; - &quot; + salary;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" - "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" - "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="filter-employees-with-salary-50000">🔹 Filter Employees with Salary &gt; 50000<a class="headerlink" href="#filter-employees-with-salary-50000" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;Employee&gt; highSalary = employees.stream()
-        .filter(emp -&gt; emp.salary &gt; 50000)
-        .collect(Collectors.toList());
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="w"> </span><span class="n">highSalary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employees</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">emp</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
 
-highSalary.forEach(System.out::println);
-</code></pre>
+<span class="n">highSalary</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="output_5">Output<a class="headerlink" href="#output_5" title="Permanent link">&para;</a></h3>
-<pre><code>1 - Nitin - 60000.0
+<div class="highlight"><pre><span></span><code>1 - Nitin - 60000.0
 3 - Meena - 75000.0
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="map-get-only-employee-names">🔹 Map – Get Only Employee Names<a class="headerlink" href="#map-get-only-employee-names" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">employees.stream()
-        .map(emp -&gt; emp.name)
-        .forEach(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">employees</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">emp</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">name</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="sort-employees-by-salary-ascending">🔹 Sort Employees by Salary (Ascending)<a class="headerlink" href="#sort-employees-by-salary-ascending" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">employees.stream()
-        .sorted(Comparator.comparingDouble(emp -&gt; emp.salary))
-        .forEach(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">employees</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingDouble</span><span class="p">(</span><span class="n">emp</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">salary</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="descending-order">Descending Order<a class="headerlink" href="#descending-order" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">employees.stream()
-        .sorted(
-            Comparator.comparingDouble((Employee emp) -&gt; emp.salary)
-                      .reversed()
-        )
-        .forEach(System.out::println);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">employees</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span>
+<span class="w">            </span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingDouble</span><span class="p">((</span><span class="n">Employee</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">salary</span><span class="p">)</span>
+<span class="w">                      </span><span class="p">.</span><span class="na">reversed</span><span class="p">()</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="group-employees-by-high-low-salary">🔹 Group Employees by High &amp; Low Salary<a class="headerlink" href="#group-employees-by-high-low-salary" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String, List&lt;Employee&gt;&gt; grouped =
-        employees.stream()
-                .collect(Collectors.groupingBy(
-                        emp -&gt; emp.salary &gt; 50000 ? &quot;High&quot; : &quot;Low&quot;
-                ));
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">grouped</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">employees</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">groupingBy</span><span class="p">(</span>
+<span class="w">                        </span><span class="n">emp</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"High"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"Low"</span>
+<span class="w">                </span><span class="p">));</span>
 
-grouped.forEach((key, value) -&gt;
-        System.out.println(key + &quot; =&gt; &quot; + value));
-</code></pre>
+<span class="n">grouped</span><span class="p">.</span><span class="na">forEach</span><span class="p">((</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" =&gt; "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">value</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h2 id="find-employee-with-max-salary">🔹 Find Employee with Max Salary<a class="headerlink" href="#find-employee-with-max-salary" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Optional&lt;Employee&gt; maxSalaryEmp =
-        employees.stream()
-                .max(Comparator.comparingDouble(emp -&gt; emp.salary));
+<div class="highlight"><pre><span></span><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="w"> </span><span class="n">maxSalaryEmp</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">employees</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingDouble</span><span class="p">(</span><span class="n">emp</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">salary</span><span class="p">));</span>
 
-maxSalaryEmp.ifPresent(System.out::println);
-</code></pre>
+<span class="n">maxSalaryEmp</span><span class="p">.</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="count-employees-with-salary-40000">🔹 Count Employees with Salary &gt; 40000<a class="headerlink" href="#count-employees-with-salary-40000" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">long count = employees.stream()
-        .filter(emp -&gt; emp.salary &gt; 40000)
-        .count();
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employees</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">emp</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">40000</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
 
-System.out.println(&quot;Count: &quot; + count);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Count: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="total-salary-using-reduce">🔹 Total Salary Using <code>reduce()</code><a class="headerlink" href="#total-salary-using-reduce" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">double totalSalary = employees.stream()
-        .map(emp -&gt; emp.salary)
-        .reduce(0.0, Double::sum);
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">totalSalary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employees</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">emp</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">salary</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">reduce</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">Double</span><span class="p">::</span><span class="n">sum</span><span class="p">);</span>
 
-System.out.println(&quot;Total Salary: &quot; + totalSalary);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total Salary: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">totalSalary</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="output_6">Output<a class="headerlink" href="#output_6" title="Permanent link">&para;</a></h3>
-<pre><code>Total Salary: 210000.0
-</code></pre>
+<div class="highlight"><pre><span></span><code>Total Salary: 210000.0
+</code></pre></div>
 
 
 
@@ -6022,6 +6022,10 @@ System.out.println(&quot;Total Salary: &quot; + totalSalary);
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

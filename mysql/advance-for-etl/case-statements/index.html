@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5830,14 +5830,14 @@
 <hr />
 <h2 id="2-simple-case-statements">2. Simple CASE Statements<a class="headerlink" href="#2-simple-case-statements" title="Permanent link">&para;</a></h2>
 <h3 id="q1-assign-salary-grade-based-on-salary">Q1: Assign salary grade based on salary<a class="headerlink" href="#q1-assign-salary-grade-based-on-salary" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary,
-       CASE
-           WHEN salary &lt; 50000 THEN 'Low'
-           WHEN salary BETWEEN 50000 AND 60000 THEN 'Medium'
-           ELSE 'High'
-       END AS salary_grade
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">,</span>
+<span class="w">       </span><span class="k">CASE</span>
+<span class="w">           </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Low'</span>
+<span class="w">           </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">60000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Medium'</span>
+<span class="w">           </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">'High'</span>
+<span class="w">       </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">salary_grade</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5882,14 +5882,14 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q2-mark-department-type">Q2: Mark department type<a class="headerlink" href="#q2-mark-department-type" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, dept,
-       CASE dept
-           WHEN 'HR' THEN 'Admin'
-           WHEN 'IT' THEN 'Technical'
-           ELSE 'Business'
-       END AS dept_type
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span>
+<span class="w">       </span><span class="k">CASE</span><span class="w"> </span><span class="n">dept</span>
+<span class="w">           </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">'HR'</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Admin'</span>
+<span class="w">           </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">'IT'</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Technical'</span>
+<span class="w">           </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">'Business'</span>
+<span class="w">       </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">dept_type</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5934,10 +5934,10 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q3-flag-high-earners">Q3: Flag high earners<a class="headerlink" href="#q3-flag-high-earners" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, salary,
-       CASE WHEN salary &gt; 60000 THEN 'Yes' ELSE 'No' END AS high_earner
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">,</span>
+<span class="w">       </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">60000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Yes'</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">'No'</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">high_earner</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5982,14 +5982,14 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q4-combine-multiple-conditions">Q4: Combine multiple conditions<a class="headerlink" href="#q4-combine-multiple-conditions" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, dept, salary,
-       CASE
-           WHEN dept='IT' AND salary &gt; 50000 THEN 'Tech High'
-           WHEN dept='IT' THEN 'Tech Low'
-           ELSE 'Other'
-       END AS category
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">,</span>
+<span class="w">       </span><span class="k">CASE</span>
+<span class="w">           </span><span class="k">WHEN</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'IT'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Tech High'</span>
+<span class="w">           </span><span class="k">WHEN</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'IT'</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Tech Low'</span>
+<span class="w">           </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">'Other'</span>
+<span class="w">       </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">category</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6040,10 +6040,10 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q5-case-with-null-check">Q5: CASE with NULL check<a class="headerlink" href="#q5-case-with-null-check" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, dept, salary,
-       CASE WHEN salary IS NULL THEN 'Missing' ELSE 'Available' END AS salary_status
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">,</span>
+<span class="w">       </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Missing'</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">'Available'</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">salary_status</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6096,11 +6096,11 @@ FROM employees;
 <hr />
 <h2 id="3-using-case-inside-aggregations">3. Using CASE inside Aggregations<a class="headerlink" href="#3-using-case-inside-aggregations" title="Permanent link">&para;</a></h2>
 <h3 id="q6-count-high-and-low-salary-employees">Q6: Count high and low salary employees<a class="headerlink" href="#q6-count-high-and-low-salary-employees" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT
-       SUM(CASE WHEN salary &gt; 60000 THEN 1 ELSE 0 END) AS high_salary_count,
-       SUM(CASE WHEN salary &lt;= 60000 THEN 1 ELSE 0 END) AS low_salary_count
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">60000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">high_salary_count</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">60000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">low_salary_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6117,11 +6117,11 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q7-total-salary-per-dept-with-conditional-bonus">Q7: Total salary per dept with conditional bonus<a class="headerlink" href="#q7-total-salary-per-dept-with-conditional-bonus" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept,
-       SUM(salary + CASE WHEN salary &gt; 50000 THEN 500 ELSE 200 END) AS total_with_bonus
-FROM employees
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_with_bonus</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6146,13 +6146,13 @@ GROUP BY dept;
 </tbody>
 </table>
 <h3 id="q8-average-salary-grade-calculation">Q8: Average salary grade calculation<a class="headerlink" href="#q8-average-salary-grade-calculation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept,
-       AVG(CASE WHEN salary &gt; 60000 THEN 3
-                WHEN salary BETWEEN 50000 AND 60000 THEN 2
-                ELSE 1 END) AS avg_salary_grade
-FROM employees
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span>
+<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">60000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">                </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">60000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">                </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary_grade</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6177,12 +6177,12 @@ GROUP BY dept;
 </tbody>
 </table>
 <h3 id="q9-count-employees-by-category-using-case">Q9: Count employees by category using CASE<a class="headerlink" href="#q9-count-employees-by-category-using-case" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT
-       SUM(CASE WHEN dept='IT' THEN 1 ELSE 0 END) AS IT_count,
-       SUM(CASE WHEN dept='HR' THEN 1 ELSE 0 END) AS HR_count,
-       SUM(CASE WHEN dept='Sales' THEN 1 ELSE 0 END) AS Sales_count
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'IT'</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">IT_count</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'HR'</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">HR_count</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'Sales'</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Sales_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6201,11 +6201,11 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q10-conditional-max-salary-per-dept">Q10: Conditional MAX salary per dept<a class="headerlink" href="#q10-conditional-max-salary-per-dept" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept,
-       MAX(CASE WHEN salary &gt; 50000 THEN salary ELSE 0 END) AS max_high_salary
-FROM employees
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span>
+<span class="w">       </span><span class="k">MAX</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_high_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6295,6 +6295,10 @@ GROUP BY dept;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

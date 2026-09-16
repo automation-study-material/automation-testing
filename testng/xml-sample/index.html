@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5674,92 +5674,92 @@
   <h1>Sample XML</h1>
 
 <h2 id="xml-sample-file">XML Sample file.<a class="headerlink" href="#xml-sample-file" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"&gt;</span>
 
-&lt;suite name=&quot;EcommerceSuite&quot; parallel=&quot;methods&quot; thread-count=&quot;3&quot;&gt;
+<span class="nt">&lt;suite</span><span class="w"> </span><span class="na">name=</span><span class="s">"EcommerceSuite"</span><span class="w"> </span><span class="na">parallel=</span><span class="s">"methods"</span><span class="w"> </span><span class="na">thread-count=</span><span class="s">"3"</span><span class="nt">&gt;</span>
 
-    &lt;!-- ================================================= --&gt;
-    &lt;!-- TEST BLOCK 1 → Smoke Only --&gt;
-    &lt;!-- ================================================= --&gt;
+<span class="w">    </span><span class="cm">&lt;!-- ================================================= --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- TEST BLOCK 1 → Smoke Only --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- ================================================= --&gt;</span>
 
-    &lt;test name=&quot;SmokeTests&quot;&gt;
+<span class="w">    </span><span class="nt">&lt;test</span><span class="w"> </span><span class="na">name=</span><span class="s">"SmokeTests"</span><span class="nt">&gt;</span>
 
-        &lt;!-- Group include/exclude --&gt;
-        &lt;groups&gt;
-            &lt;run&gt;
-                &lt;include name=&quot;smoke&quot;/&gt;
-                &lt;exclude name=&quot;slow&quot;/&gt;
-            &lt;/run&gt;
-        &lt;/groups&gt;
+<span class="w">        </span><span class="cm">&lt;!-- Group include/exclude --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groups&gt;</span>
+<span class="w">            </span><span class="nt">&lt;run&gt;</span>
+<span class="w">                </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">name=</span><span class="s">"smoke"</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;exclude</span><span class="w"> </span><span class="na">name=</span><span class="s">"slow"</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/run&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/groups&gt;</span>
 
-        &lt;classes&gt;
+<span class="w">        </span><span class="nt">&lt;classes&gt;</span>
 
-            &lt;!-- Include entire class --&gt;
-            &lt;class name=&quot;tests.LoginTest&quot;/&gt;
+<span class="w">            </span><span class="cm">&lt;!-- Include entire class --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.LoginTest"</span><span class="nt">/&gt;</span>
 
-            &lt;!-- Include class but exclude one method --&gt;
-            &lt;class name=&quot;tests.PaymentTest&quot;&gt;
-                &lt;methods&gt;
-                    &lt;exclude name=&quot;paymentFailureTest&quot;/&gt;
-                &lt;/methods&gt;
-            &lt;/class&gt;
+<span class="w">            </span><span class="cm">&lt;!-- Include class but exclude one method --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.PaymentTest"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;methods&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;exclude</span><span class="w"> </span><span class="na">name=</span><span class="s">"paymentFailureTest"</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/methods&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/class&gt;</span>
 
-        &lt;/classes&gt;
+<span class="w">        </span><span class="nt">&lt;/classes&gt;</span>
 
-    &lt;/test&gt;
-
-
-    &lt;!-- ================================================= --&gt;
-    &lt;!-- TEST BLOCK 2 → Regression --&gt;
-    &lt;!-- ================================================= --&gt;
-
-    &lt;test name=&quot;RegressionTests&quot;&gt;
-
-        &lt;groups&gt;
-            &lt;run&gt;
-                &lt;include name=&quot;regression&quot;/&gt;
-            &lt;/run&gt;
-        &lt;/groups&gt;
-
-        &lt;classes&gt;
-
-            &lt;!-- Include only specific methods --&gt;
-            &lt;class name=&quot;tests.OrderTest&quot;&gt;
-                &lt;methods&gt;
-                    &lt;include name=&quot;placeOrder&quot;/&gt;
-                    &lt;include name=&quot;cancelOrder&quot;/&gt;
-                &lt;/methods&gt;
-            &lt;/class&gt;
-
-            &lt;!-- Completely exclude class --&gt;
-            &lt;class name=&quot;tests.LegacyTest&quot;&gt;
-                &lt;methods&gt;
-                    &lt;exclude name=&quot;.*&quot;/&gt;
-                &lt;/methods&gt;
-            &lt;/class&gt;
-
-        &lt;/classes&gt;
-
-    &lt;/test&gt;
+<span class="w">    </span><span class="nt">&lt;/test&gt;</span>
 
 
-    &lt;!-- ================================================= --&gt;
-    &lt;!-- TEST BLOCK 3 → Full Suite --&gt;
-    &lt;!-- ================================================= --&gt;
+<span class="w">    </span><span class="cm">&lt;!-- ================================================= --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- TEST BLOCK 2 → Regression --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- ================================================= --&gt;</span>
 
-    &lt;test name=&quot;FullSuite&quot;&gt;
+<span class="w">    </span><span class="nt">&lt;test</span><span class="w"> </span><span class="na">name=</span><span class="s">"RegressionTests"</span><span class="nt">&gt;</span>
 
-        &lt;classes&gt;
+<span class="w">        </span><span class="nt">&lt;groups&gt;</span>
+<span class="w">            </span><span class="nt">&lt;run&gt;</span>
+<span class="w">                </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">name=</span><span class="s">"regression"</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/run&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/groups&gt;</span>
 
-            &lt;!-- Run everything --&gt;
-            &lt;class name=&quot;tests.*&quot;/&gt;
+<span class="w">        </span><span class="nt">&lt;classes&gt;</span>
 
-        &lt;/classes&gt;
+<span class="w">            </span><span class="cm">&lt;!-- Include only specific methods --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.OrderTest"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;methods&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">name=</span><span class="s">"placeOrder"</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">name=</span><span class="s">"cancelOrder"</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/methods&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/class&gt;</span>
 
-    &lt;/test&gt;
+<span class="w">            </span><span class="cm">&lt;!-- Completely exclude class --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.LegacyTest"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;methods&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;exclude</span><span class="w"> </span><span class="na">name=</span><span class="s">".*"</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/methods&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/class&gt;</span>
 
-&lt;/suite&gt;
-</code></pre>
+<span class="w">        </span><span class="nt">&lt;/classes&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;/test&gt;</span>
+
+
+<span class="w">    </span><span class="cm">&lt;!-- ================================================= --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- TEST BLOCK 3 → Full Suite --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- ================================================= --&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;test</span><span class="w"> </span><span class="na">name=</span><span class="s">"FullSuite"</span><span class="nt">&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;classes&gt;</span>
+
+<span class="w">            </span><span class="cm">&lt;!-- Run everything --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.*"</span><span class="nt">/&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;/classes&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;/test&gt;</span>
+
+<span class="nt">&lt;/suite&gt;</span>
+</code></pre></div>
 
 
 
@@ -5813,6 +5813,10 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

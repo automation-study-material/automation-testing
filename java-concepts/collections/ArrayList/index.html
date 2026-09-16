@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5629,27 +5629,27 @@
 <hr />
 <h2 id="2-internal-structure">2. Internal Structure<a class="headerlink" href="#2-internal-structure" title="Permanent link">&para;</a></h2>
 <p>Internally, ArrayList looks like this:</p>
-<pre><code class="language-java">public class ArrayList&lt;E&gt; {
-    transient Object[] elementData; // internal array
-    private int size;               // number of elements
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">transient</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">elementData</span><span class="p">;</span><span class="w"> </span><span class="c1">// internal array</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w">               </span><span class="c1">// number of elements</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><code>elementData</code> stores <strong>references to objects</strong>, not actual objects</li>
 <li>Each slot holds a <strong>reference (4 or 8 bytes depending on JVM)</strong></li>
 </ul>
 <h3 id="logical-view">Logical View<a class="headerlink" href="#logical-view" title="Permanent link">&para;</a></h3>
-<pre><code>Index:   0     1     2     3
+<div class="highlight"><pre><span></span><code>Index:   0     1     2     3
 Array:  A     B     C     D
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="3-capacity-vs-size">3. Capacity vs Size<a class="headerlink" href="#3-capacity-vs-size" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Size</strong> → Number of elements actually stored</li>
 <li><strong>Capacity</strong> → Length of internal array</li>
 </ul>
-<pre><code class="language-java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <ul>
 <li>Initial capacity = <strong>10</strong> (created lazily)</li>
 <li>Size starts from <strong>0</strong></li>
@@ -5657,16 +5657,12 @@ Array:  A     B     C     D
 <hr />
 <h2 id="4-how-arraylist-grows-resizing">4. How ArrayList Grows (Resizing)<a class="headerlink" href="#4-how-arraylist-grows-resizing" title="Permanent link">&para;</a></h2>
 <p>When the internal array becomes full:</p>
-<pre><code class="language-java">newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1); // 1.5x growth
-</code></pre>
-<ul>
-<li><code>&gt;&gt; 1</code> : Right shift operator</li>
-<li>means:<ul>
-<li>👉 Divide the number by 2</li>
-<li>👉 (Faster than using / 2)</li>
-</ul>
-</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">newCapacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oldCapacity</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">oldCapacity</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1.5x growth</span>
+</code></pre></div>
+- <code>&gt;&gt; 1</code> : Right shift operator
+  - means:
+    - 👉 Divide the number by 2
+    - 👉 (Faster than using / 2)</p>
 <h3 id="what-happens-during-resize">What happens during resize?<a class="headerlink" href="#what-happens-during-resize" title="Permanent link">&para;</a></h3>
 <ol>
 <li>New larger array is created</li>
@@ -5677,51 +5673,51 @@ Array:  A     B     C     D
 <hr />
 <h2 id="5-insertion-in-arraylist-shifting-explained">5. Insertion in ArrayList (Shifting Explained)<a class="headerlink" href="#5-insertion-in-arraylist-shifting-explained" title="Permanent link">&para;</a></h2>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">list.add(1, &quot;X&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"X"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="before-insertion">Before insertion<a class="headerlink" href="#before-insertion" title="Permanent link">&para;</a></h3>
-<pre><code>Index:  0   1   2   3
+<div class="highlight"><pre><span></span><code>Index:  0   1   2   3
         A   B   C   D
-</code></pre>
+</code></pre></div>
 <h3 id="after-insertion">After insertion<a class="headerlink" href="#after-insertion" title="Permanent link">&para;</a></h3>
-<pre><code>Index:  0   1   2   3   4
+<div class="highlight"><pre><span></span><code>Index:  0   1   2   3   4
         A   X   B   C   D
-</code></pre>
+</code></pre></div>
 <h3 id="what-actually-shifts">What actually shifts?<a class="headerlink" href="#what-actually-shifts" title="Permanent link">&para;</a></h3>
 <p>⚠️ <strong>Not raw memory bytes</strong></p>
 <p>✔ Java shifts <strong>object references</strong> inside the <code>Object[]</code></p>
 <h3 id="internal-operation">Internal operation<a class="headerlink" href="#internal-operation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">System.arraycopy(
-    elementData,   // source
-    index,         // start position
-    elementData,   // destination
-    index + 1,     // shift right
-    size - index   // number of references
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span>
+<span class="w">    </span><span class="n">elementData</span><span class="p">,</span><span class="w">   </span><span class="c1">// source</span>
+<span class="w">    </span><span class="n">index</span><span class="p">,</span><span class="w">         </span><span class="c1">// start position</span>
+<span class="w">    </span><span class="n">elementData</span><span class="p">,</span><span class="w">   </span><span class="c1">// destination</span>
+<span class="w">    </span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="c1">// shift right</span>
+<span class="w">    </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">index</span><span class="w">   </span><span class="c1">// number of references</span>
+<span class="p">);</span>
+</code></pre></div>
 <p>📌 This is an <strong>O(n)</strong> operation</p>
 <hr />
 <h2 id="6-removal-in-arraylist-left-shift">6. Removal in ArrayList (Left Shift)<a class="headerlink" href="#6-removal-in-arraylist-left-shift" title="Permanent link">&para;</a></h2>
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">list.remove(1);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="before-removal">Before removal<a class="headerlink" href="#before-removal" title="Permanent link">&para;</a></h3>
-<pre><code>A   B   C   D
-</code></pre>
+<div class="highlight"><pre><span></span><code>A   B   C   D
+</code></pre></div>
 <h3 id="after-removal">After removal<a class="headerlink" href="#after-removal" title="Permanent link">&para;</a></h3>
-<pre><code>A   C   D
-</code></pre>
+<div class="highlight"><pre><span></span><code>A   C   D
+</code></pre></div>
 <h3 id="internal-behavior">Internal behavior<a class="headerlink" href="#internal-behavior" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">System.arraycopy(
-    elementData,
-    index + 1,
-    elementData,
-    index,
-    size - index - 1
-);
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span>
+<span class="w">    </span><span class="n">elementData</span><span class="p">,</span>
+<span class="w">    </span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">elementData</span><span class="p">,</span>
+<span class="w">    </span><span class="n">index</span><span class="p">,</span>
+<span class="w">    </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">);</span>
 
-elementData[--size] = null; // avoid memory leak
-</code></pre>
+<span class="n">elementData</span><span class="o">[--</span><span class="n">size</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// avoid memory leak</span>
+</code></pre></div>
 <p>✔ Last reference is set to <code>null</code> to help <strong>Garbage Collection</strong></p>
 <hr />
 <h2 id="7-why-shifting-affects-performance">7. Why Shifting Affects Performance<a class="headerlink" href="#7-why-shifting-affects-performance" title="Permanent link">&para;</a></h2>
@@ -5733,10 +5729,10 @@ elementData[--size] = null; // avoid memory leak
 <li>Frequent insert/remove → high CPU usage</li>
 </ul>
 <h3 id="worst-case-example">Worst case example<a class="headerlink" href="#worst-case-example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">for (int i = 0; i &lt; 100000; i++) {
-    list.add(0, i); // worst case
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// worst case</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>📉 Time complexity becomes <strong>O(n²)</strong></p>
 <hr />
 <h2 id="8-resize-shift-double-cost">8. Resize + Shift = Double Cost<a class="headerlink" href="#8-resize-shift-double-cost" title="Permanent link">&para;</a></h2>
@@ -5786,122 +5782,121 @@ elementData[--size] = null; // avoid memory leak
 </table>
 <hr />
 <h2 id="10-commonly-used-arraylist-methods">10. Commonly Used ArrayList Methods<a class="headerlink" href="#10-commonly-used-arraylist-methods" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import java.util.ArrayList;
-import java.util.List;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
 
-public class ArrayListAllMethodsDemo {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ArrayListAllMethodsDemo</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        // =====================================================
-        // Create ArrayList
-        // =====================================================
-        ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// Create ArrayList</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        // add()
-        list.add(&quot;Java&quot;);
-        list.add(&quot;Python&quot;);
+<span class="w">        </span><span class="c1">// add()</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Python"</span><span class="p">);</span>
 
-        // add(index, element)
-        list.add(1, &quot;Go&quot;);
+<span class="w">        </span><span class="c1">// add(index, element)</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Go"</span><span class="p">);</span>
 
-        System.out.println(&quot;After add operations: &quot; + list);
-        // [Java, Go, Python]
-
-
-        // =====================================================
-        // get()
-        // =====================================================
-        System.out.println(&quot;\nget(0): &quot; + list.get(0)); // Java
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After add operations: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// [Java, Go, Python]</span>
 
 
-        // =====================================================
-        // set()
-        // =====================================================
-        list.set(1, &quot;Rust&quot;);
-        System.out.println(&quot;After set(1, Rust): &quot; + list);
-        // [Java, Rust, Python]
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// get()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nget(0): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span><span class="w"> </span><span class="c1">// Java</span>
 
 
-        // =====================================================
-        // remove(index)
-        // =====================================================
-        list.remove(0);
-        System.out.println(&quot;After remove(0): &quot; + list);
-        // [Rust, Python]
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// set()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Rust"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After set(1, Rust): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// [Java, Rust, Python]</span>
 
 
-        // =====================================================
-        // contains()
-        // =====================================================
-        System.out.println(&quot;\ncontains(Java): &quot; + list.contains(&quot;Java&quot;));
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// remove(index)</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After remove(0): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// [Rust, Python]</span>
 
 
-        // =====================================================
-        // size()
-        // =====================================================
-        System.out.println(&quot;size(): &quot; + list.size());
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// contains()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\ncontains(Java): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"Java"</span><span class="p">));</span>
 
 
-        // =====================================================
-        // isEmpty()
-        // =====================================================
-        System.out.println(&quot;isEmpty(): &quot; + list.isEmpty());
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// size()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"size(): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
 
 
-        // =====================================================
-        // addAll()
-        // =====================================================
-        List&lt;String&gt; list2 = new ArrayList&lt;&gt;();
-        list2.add(&quot;C++&quot;);
-        list2.add(&quot;JavaScript&quot;);
-
-        list.addAll(list2);
-        System.out.println(&quot;\nAfter addAll(): &quot; + list);
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// isEmpty()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"isEmpty(): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">());</span>
 
 
-        // =====================================================
-        // addAll(index, list)
-        // =====================================================
-        list.addAll(1, list2);
-        System.out.println(&quot;After addAll(index, list): &quot; + list);
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// addAll()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">list2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"C++"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">list2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"JavaScript"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">list2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nAfter addAll(): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
 
 
-        // =====================================================
-        // manual loop add
-        // =====================================================
-        for (String s : list2) {
-            list.add(s);
-        }
-        System.out.println(&quot;After manual loop add: &quot; + list);
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// addAll(index, list)</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">list2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After addAll(index, list): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
 
 
-        // =====================================================
-        // clear()
-        // =====================================================
-        list.clear();
-        System.out.println(&quot;\nAfter clear(): &quot; + list);
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// manual loop add</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After manual loop add: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
 
 
-        // =====================================================
-        // new ArrayList&lt;&gt;()
-        // =====================================================
-        list = new ArrayList&lt;&gt;();
-        list.add(&quot;NewItem&quot;);
-        System.out.println(&quot;After new ArrayList&lt;&gt;(): &quot; + list);
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// clear()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nAfter clear(): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
 
 
-        // =====================================================
-        // removeAll()
-        // =====================================================
-        list.removeAll(list);
-        System.out.println(&quot;After removeAll(): &quot; + list);
-    }
-}
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// new ArrayList&lt;&gt;()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"NewItem"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After new ArrayList&lt;&gt;(): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
 
-</code></pre>
+
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="c1">// removeAll()</span>
+<span class="w">        </span><span class="c1">// =====================================================</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"After removeAll(): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">After add operations: [Java, Go, Python]
+<div class="highlight"><pre><span></span><code>After add operations: [Java, Go, Python]
 
 get(0): Java
 After set(1, Rust): [Java, Rust, Python]
@@ -5918,12 +5913,11 @@ After manual loop add: [Rust, C++, JavaScript, Python, C++, JavaScript, C++, Jav
 After clear(): []
 After new ArrayList&lt;&gt;(): [NewItem]
 After removeAll(): []
-
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="11-systemarraycopy-important-notes">11. System.arraycopy() – Important Notes<a class="headerlink" href="#11-systemarraycopy-important-notes" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public static native void arraycopy(...);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">native</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">arraycopy</span><span class="p">(...);</span>
+</code></pre></div>
 <ul>
 <li>Implemented in <strong>JVM (C/C++)</strong>, not Java</li>
 <li>Uses optimized native memory copy</li>
@@ -6061,6 +6055,10 @@ After removeAll(): []
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

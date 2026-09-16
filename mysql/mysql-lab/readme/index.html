@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5683,43 +5683,43 @@
 <p>This guide explains how to spin up a MySQL Docker container and access the MySQL shell to practice SQL queries.</p>
 <hr />
 <h2 id="step-1-clone-the-repository">📥 Step 1: Clone the Repository<a class="headerlink" href="#step-1-clone-the-repository" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">git clone mysql-lab
-cd mysql-lab
-</code></pre>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>mysql-lab
+<span class="nb">cd</span><span class="w"> </span>mysql-lab
+</code></pre></div>
 <hr />
 <h2 id="step-2-make-startup-script-executable">🔐 Step 2: Make Startup Script Executable<a class="headerlink" href="#step-2-make-startup-script-executable" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">chmod +x start-mysql.sh
-</code></pre>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>start-mysql.sh
+</code></pre></div>
 <hr />
 <h2 id="step-3-run-mysql-environment">▶️ Step 3: Run MySQL Environment<a class="headerlink" href="#step-3-run-mysql-environment" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">./start-mysql.sh
-</code></pre>
+<div class="highlight"><pre><span></span><code>./start-mysql.sh
+</code></pre></div>
 <p>This command will:
 - Start the MySQL Docker container
 - Automatically create tables
 - Insert sample data</p>
 <hr />
 <h2 id="step-4-enter-mysql-container">🔑 Step 4: Enter MySQL Container<a class="headerlink" href="#step-4-enter-mysql-container" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">docker exec -it mysql-practice mysql -u dev -pdev123 practice_db
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mysql-practice<span class="w"> </span>mysql<span class="w"> </span>-u<span class="w"> </span>dev<span class="w"> </span>-pdev123<span class="w"> </span>practice_db
+</code></pre></div>
 <hr />
 <h2 id="successful-login">✅ Successful Login<a class="headerlink" href="#successful-login" title="Permanent link">&para;</a></h2>
 <p>After running the above command, you should see:</p>
-<pre><code class="language-text">mysql&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mysql&gt;
+</code></pre></div>
 <p>This means you are now inside the MySQL shell and ready to execute queries.</p>
 <hr />
 <h2 id="example-query">🧪 Example Query<a class="headerlink" href="#example-query" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SHOW TABLES;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="cleanup-reset-optional">🔄 Cleanup / Reset (Optional)<a class="headerlink" href="#cleanup-reset-optional" title="Permanent link">&para;</a></h2>
 <p>To stop and remove the container along with data:</p>
-<pre><code class="language-bash">docker-compose down -v
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down<span class="w"> </span>-v
+</code></pre></div>
 <p>To start again:</p>
-<pre><code class="language-bash">./start-mysql.sh
-</code></pre>
+<div class="highlight"><pre><span></span><code>./start-mysql.sh
+</code></pre></div>
 <hr />
 <p>Happy querying 🚀<br />
 This setup is ideal for learning <strong>basic to advanced MySQL concepts</strong>.</p>
@@ -5776,6 +5776,10 @@ This setup is ideal for learning <strong>basic to advanced MySQL concepts</stron
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5857,44 +5857,44 @@
 <li>Used to create <strong>database objects</strong> such as tables, schemas, views, or indexes.  </li>
 <li>You must define the structure (columns, data types, constraints).  </li>
 </ul>
-<p><strong>Example</strong>  </p>
-<pre><code class="language-sql">CREATE TABLE Employee (
-    EmpID INT PRIMARY KEY,
-    Name VARCHAR(100) NOT NULL,
-    Salary DECIMAL(10,2) CHECK (Salary &gt; 0),
-    DepartmentID INT,
-    HireDate DATE DEFAULT CURRENT_DATE
-);
-</code></pre>
+<p><strong>Example</strong><br />
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">EmpID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Salary</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">Salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">DepartmentID</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">HireDate</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_DATE</span>
+<span class="p">);</span>
+</code></pre></div></p>
 <hr />
 <h3 id="2-alter">2. ALTER<a class="headerlink" href="#2-alter" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Used to <strong>modify existing objects</strong> (add/remove/rename columns, change data types, add constraints).  </li>
 </ul>
-<p><strong>Example</strong>  </p>
-<pre><code class="language-sql">-- Add a new column
-ALTER TABLE Employee ADD Age INT;
+<p><strong>Example</strong><br />
+<div class="highlight"><pre><span></span><code><span class="c1">-- Add a new column</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">Age</span><span class="w"> </span><span class="nb">INT</span><span class="p">;</span>
 
--- Modify column type
-ALTER TABLE Employee MODIFY Salary DECIMAL(12,2);
+<span class="c1">-- Modify column type</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">MODIFY</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
 
--- Drop a column
-ALTER TABLE Employee DROP COLUMN Age;
+<span class="c1">-- Drop a column</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">Age</span><span class="p">;</span>
 
--- Add a foreign key
-ALTER TABLE Employee
-ADD CONSTRAINT fk_dept FOREIGN KEY (DepartmentID) REFERENCES Department(DeptID);
-</code></pre>
+<span class="c1">-- Add a foreign key</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">fk_dept</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">DepartmentID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Department</span><span class="p">(</span><span class="n">DeptID</span><span class="p">);</span>
+</code></pre></div></p>
 <hr />
 <h3 id="3-drop">3. DROP<a class="headerlink" href="#3-drop" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Deletes a database object completely (table, view, database, index).  </li>
 <li>⚠️ Removes structure <strong>and</strong> all data.  </li>
 </ul>
-<p><strong>Example</strong>  </p>
-<pre><code class="language-sql">DROP TABLE Employee;
-DROP DATABASE HR;
-</code></pre>
+<p><strong>Example</strong><br />
+<div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">HR</span><span class="p">;</span>
+</code></pre></div></p>
 <hr />
 <h3 id="4-truncate">4. TRUNCATE<a class="headerlink" href="#4-truncate" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5902,26 +5902,26 @@ DROP DATABASE HR;
 <li>Much faster than <code>DELETE</code> (no logging of each row).  </li>
 <li>Cannot be rolled back in some DBs.  </li>
 </ul>
-<p><strong>Example</strong>  </p>
-<pre><code class="language-sql">TRUNCATE TABLE Employee;
-</code></pre>
+<p><strong>Example</strong><br />
+<div class="highlight"><pre><span></span><code><span class="k">TRUNCATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
+</code></pre></div></p>
 <hr />
 <h3 id="5-rename">5. RENAME<a class="headerlink" href="#5-rename" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Renames a database object (varies slightly across RDBMS).  </li>
 </ul>
-<p><strong>Example</strong> (MySQL / Oracle)  </p>
-<pre><code class="language-sql">RENAME TABLE Employee TO Staff;
-</code></pre>
+<p><strong>Example</strong> (MySQL / Oracle)<br />
+<div class="highlight"><pre><span></span><code><span class="k">RENAME</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">Staff</span><span class="p">;</span>
+</code></pre></div></p>
 <hr />
 <h3 id="6-comment">6. COMMENT<a class="headerlink" href="#6-comment" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Add descriptions to database objects. (Supported in Oracle, PostgreSQL, etc.)  </li>
 </ul>
-<p><strong>Example</strong>  </p>
-<pre><code class="language-sql">COMMENT ON TABLE Employee IS 'Stores employee details';
-COMMENT ON COLUMN Employee.Salary IS 'Monthly Salary in INR';
-</code></pre>
+<p><strong>Example</strong><br />
+<div class="highlight"><pre><span></span><code><span class="k">COMMENT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="s1">'Stores employee details'</span><span class="p">;</span>
+<span class="k">COMMENT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">Employee</span><span class="p">.</span><span class="n">Salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="s1">'Monthly Salary in INR'</span><span class="p">;</span>
+</code></pre></div></p>
 <hr />
 <h2 id="pros-cons-of-ddl">🔹 Pros &amp; Cons of DDL<a class="headerlink" href="#pros-cons-of-ddl" title="Permanent link">&para;</a></h2>
 <h3 id="pros">✅ Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
@@ -5966,63 +5966,63 @@ COMMENT ON COLUMN Employee.Salary IS 'Monthly Salary in INR';
 <h2 id="advantages-explained-with-examples">🔹 Advantages Explained with Examples<a class="headerlink" href="#advantages-explained-with-examples" title="Permanent link">&para;</a></h2>
 <h3 id="1-schema-control">1. Schema Control<a class="headerlink" href="#1-schema-control" title="Permanent link">&para;</a></h3>
 <p>DDL lets you define strong structures with relationships.</p>
-<pre><code class="language-sql">CREATE TABLE Department (
-    DeptID INT PRIMARY KEY,
-    DeptName VARCHAR(50) UNIQUE
-);
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Department</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">DeptID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DeptName</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span>
+<span class="p">);</span>
 
-CREATE TABLE Employee (
-    EmpID INT PRIMARY KEY,
-    Name VARCHAR(100) NOT NULL,
-    Salary DECIMAL(10,2),
-    DeptID INT,
-    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
-);
-</code></pre>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">EmpID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Salary</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<span class="w">    </span><span class="n">DeptID</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">DeptID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Department</span><span class="p">(</span><span class="n">DeptID</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
 <p>👉 Employees must belong to a valid department.</p>
 <hr />
 <h3 id="2-integrity-enforcement">2. Integrity Enforcement<a class="headerlink" href="#2-integrity-enforcement" title="Permanent link">&para;</a></h3>
 <p>Constraints enforce data accuracy.</p>
-<pre><code class="language-sql">CREATE TABLE Employee (
-    EmpID INT PRIMARY KEY,
-    Name VARCHAR(100) NOT NULL,
-    Salary DECIMAL(10,2) CHECK (Salary &gt; 0),
-    DeptID INT NOT NULL,
-    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">EmpID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Salary</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">Salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">DeptID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">DeptID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Department</span><span class="p">(</span><span class="n">DeptID</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
 <p>👉 Prevents negative salaries and missing departments.</p>
 <hr />
 <h3 id="3-performance-indexes-partitions">3. Performance (Indexes &amp; Partitions)<a class="headerlink" href="#3-performance-indexes-partitions" title="Permanent link">&para;</a></h3>
 <p>Indexes and partitions improve query speed.</p>
-<pre><code class="language-sql">-- Index for faster salary searches
-CREATE INDEX idx_salary ON Employee(Salary);
+<div class="highlight"><pre><span></span><code><span class="c1">-- Index for faster salary searches</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_salary</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="n">Salary</span><span class="p">);</span>
 
--- Partition sales table by year
-CREATE TABLE Sales (
-    SaleID INT PRIMARY KEY,
-    SaleDate DATE,
-    Amount DECIMAL(10,2)
-)
-PARTITION BY RANGE (YEAR(SaleDate)) (
-    PARTITION p2023 VALUES LESS THAN (2024),
-    PARTITION p2024 VALUES LESS THAN (2025)
-);
-</code></pre>
+<span class="c1">-- Partition sales table by year</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Sales</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">SaleID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">SaleDate</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Amount</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">RANGE</span><span class="w"> </span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">SaleDate</span><span class="p">))</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="n">p2023</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">LESS</span><span class="w"> </span><span class="k">THAN</span><span class="w"> </span><span class="p">(</span><span class="mi">2024</span><span class="p">),</span>
+<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="n">p2024</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">LESS</span><span class="w"> </span><span class="k">THAN</span><span class="w"> </span><span class="p">(</span><span class="mi">2025</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
 <p>👉 Queries on salaries or specific years run faster.</p>
 <hr />
 <h3 id="4-automation-friendly-cicd">4. Automation Friendly (CI/CD)<a class="headerlink" href="#4-automation-friendly-cicd" title="Permanent link">&para;</a></h3>
 <p>DDL scripts can be stored and executed in deployments.</p>
-<pre><code class="language-sql">-- migration_v2.sql
-ALTER TABLE Employee ADD COLUMN Email VARCHAR(100);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">-- migration_v2.sql</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">Email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</code></pre></div>
 <p>👉 Keeps dev, test, and prod in sync automatically.</p>
 <hr />
 <h3 id="5-flexibility-evolving-structures">5. Flexibility (Evolving Structures)<a class="headerlink" href="#5-flexibility-evolving-structures" title="Permanent link">&para;</a></h3>
 <p>Easily adapt schema to new business needs.</p>
-<pre><code class="language-sql">ALTER TABLE Employee ADD COLUMN PhoneNumber VARCHAR(15);
-ALTER TABLE Employee RENAME COLUMN Name TO FullName;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">PhoneNumber</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">RENAME</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">FullName</span><span class="p">;</span>
+</code></pre></div>
 <p>👉 Business changes are easily handled.</p>
 <hr />
 <h2 id="summary-table">✅ Summary Table<a class="headerlink" href="#summary-table" title="Permanent link">&para;</a></h2>
@@ -6193,6 +6193,10 @@ ALTER TABLE Employee RENAME COLUMN Name TO FullName;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5617,13 +5617,13 @@
 <h1 id="why-did-pom-come-into-picture">🧠 Why did POM come into picture?<a class="headerlink" href="#why-did-pom-come-into-picture" title="Permanent link">&para;</a></h1>
 <p>Early Selenium tests directly interacted with WebDriver inside test methods.</p>
 <h2 id="without-pom">❌ Without POM<a class="headerlink" href="#without-pom" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test
-public void loginTest() {
-    driver.findElement(By.id(&quot;username&quot;)).sendKeys(&quot;admin&quot;);
-    driver.findElement(By.id(&quot;password&quot;)).sendKeys(&quot;123&quot;);
-    driver.findElement(By.id(&quot;loginBtn&quot;)).click();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"username"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"admin"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"password"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"123"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"loginBtn"</span><span class="p">)).</span><span class="na">click</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Looks fine for 1–2 tests…</p>
 <p>But imagine:</p>
 <ul>
@@ -5651,80 +5651,80 @@ Tests should talk to <strong>Page methods</strong>.</p>
 <hr />
 <h1 id="big-idea">✅ Big Idea<a class="headerlink" href="#big-idea" title="Permanent link">&para;</a></h1>
 <h3 id="tests-should-never-do">Tests should NEVER do:<a class="headerlink" href="#tests-should-never-do" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.findElement()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">()</span>
+</code></pre></div>
 <h3 id="tests-should-always-do">Tests should ALWAYS do:<a class="headerlink" href="#tests-should-always-do" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">loginPage.login()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">loginPage</span><span class="p">.</span><span class="na">login</span><span class="p">()</span>
+</code></pre></div>
 <hr />
 <h1 id="framework-structure">📦 Framework Structure<a class="headerlink" href="#framework-structure" title="Permanent link">&para;</a></h1>
-<pre><code>src
+<div class="highlight"><pre><span></span><code>src
  ├── tests
  ├── pages
  └── base
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="step-by-step-implementation">✅ Step-by-Step Implementation<a class="headerlink" href="#step-by-step-implementation" title="Permanent link">&para;</a></h1>
 <hr />
 <h1 id="step-1-create-page-class">🟢 Step 1 — Create Page Class<a class="headerlink" href="#step-1-create-page-class" title="Permanent link">&para;</a></h1>
 <h2 id="loginpagejava">LoginPage.java<a class="headerlink" href="#loginpagejava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package pages;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pages</span><span class="p">;</span>
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public class LoginPage {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="p">{</span>
 
-    WebDriver driver;
+<span class="w">    </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-    private By username = By.id(&quot;user&quot;);
-    private By password = By.id(&quot;pass&quot;);
-    private By loginBtn = By.id(&quot;login&quot;);
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">By</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"user"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">By</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"pass"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">By</span><span class="w"> </span><span class="n">loginBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">);</span>
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void enterUsername(String user) {
-        driver.findElement(username).sendKeys(user);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">username</span><span class="p">).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void enterPassword(String pass) {
-        driver.findElement(password).sendKeys(pass);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enterPassword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">password</span><span class="p">).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">pass</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void clickLogin() {
-        driver.findElement(loginBtn).click();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickLogin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">loginBtn</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void login(String user, String pass) {
-        enterUsername(user);
-        enterPassword(pass);
-        clickLogin();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">enterUsername</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">        </span><span class="n">enterPassword</span><span class="p">(</span><span class="n">pass</span><span class="p">);</span>
+<span class="w">        </span><span class="n">clickLogin</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="step-2-write-test">🟢 Step 2 — Write Test<a class="headerlink" href="#step-2-write-test" title="Permanent link">&para;</a></h1>
 <h2 id="logintestjava">LoginTest.java<a class="headerlink" href="#logintestjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test
-public void loginTest() {
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-    LoginPage loginPage = new LoginPage(driver);
+<span class="w">    </span><span class="n">LoginPage</span><span class="w"> </span><span class="n">loginPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LoginPage</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
 
-    loginPage.login(&quot;admin&quot;, &quot;123&quot;);
-}
-</code></pre>
+<span class="w">    </span><span class="n">loginPage</span><span class="p">.</span><span class="na">login</span><span class="p">(</span><span class="s">"admin"</span><span class="p">,</span><span class="w"> </span><span class="s">"123"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="compare">🧠 Compare<a class="headerlink" href="#compare" title="Permanent link">&para;</a></h1>
 <h2 id="before">❌ Before<a class="headerlink" href="#before" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">driver.findElement(By.id(&quot;user&quot;))
-driver.findElement(By.id(&quot;pass&quot;))
-driver.findElement(By.id(&quot;login&quot;))
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"user"</span><span class="p">))</span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"pass"</span><span class="p">))</span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">))</span>
+</code></pre></div>
 <h2 id="after">✅ After<a class="headerlink" href="#after" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">loginPage.login()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">loginPage</span><span class="p">.</span><span class="na">login</span><span class="p">()</span>
+</code></pre></div>
 <p>Cleaner + readable + maintainable</p>
 <hr />
 <h1 id="benefits-of-pom">🎯 Benefits of POM<a class="headerlink" href="#benefits-of-pom" title="Permanent link">&para;</a></h1>
@@ -5739,56 +5739,56 @@ driver.findElement(By.id(&quot;login&quot;))
 <hr />
 <h2 id="readable-tests">✅ Readable Tests<a class="headerlink" href="#readable-tests" title="Permanent link">&para;</a></h2>
 <p>Tests look like business flow</p>
-<pre><code>loginPage.login()
+<div class="highlight"><pre><span></span><code>loginPage.login()
 homePage.search()
 cartPage.checkout()
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="scalable">✅ Scalable<a class="headerlink" href="#scalable" title="Permanent link">&para;</a></h2>
 <p>Works for 1000+ tests</p>
 <hr />
 <h1 id="real-world-enhancement-basepage">⭐ Real-World Enhancement (BasePage)<a class="headerlink" href="#real-world-enhancement-basepage" title="Permanent link">&para;</a></h1>
 <h2 id="basepagejava">BasePage.java<a class="headerlink" href="#basepagejava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class BasePage {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
 
-    WebDriver driver;
+<span class="w">    </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void click(By locator) {
-        driver.findElement(locator).click();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">click</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void type(By locator, String text) {
-        driver.findElement(locator).sendKeys(text);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">type</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="loginpage-extends-basepage">LoginPage extends BasePage<a class="headerlink" href="#loginpage-extends-basepage" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class LoginPage extends BasePage {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasePage</span><span class="w"> </span><span class="p">{</span>
 
-    private By username = By.id(&quot;user&quot;);
-    private By password = By.id(&quot;pass&quot;);
-    private By loginBtn = By.id(&quot;login&quot;);
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">By</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"user"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">By</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"pass"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">By</span><span class="w"> </span><span class="n">loginBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">);</span>
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void login(String user, String pass) {
-        type(username, user);
-        type(password, pass);
-        click(loginBtn);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">type</span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">);</span>
+<span class="w">        </span><span class="n">type</span><span class="p">(</span><span class="n">password</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">        </span><span class="n">click</span><span class="p">(</span><span class="n">loginBtn</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="flow-diagram">🎯 Flow Diagram<a class="headerlink" href="#flow-diagram" title="Permanent link">&para;</a></h1>
-<pre><code>Test → Page Object → Selenium
-</code></pre>
+<div class="highlight"><pre><span></span><code>Test → Page Object → Selenium
+</code></pre></div>
 <hr />
 <h1 id="interview-answer">🧠 Interview Answer<a class="headerlink" href="#interview-answer" title="Permanent link">&para;</a></h1>
 <p>POM separates UI locators and page actions from tests.<br />
@@ -5852,6 +5852,10 @@ It improves maintainability, readability, and reusability while reducing duplica
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

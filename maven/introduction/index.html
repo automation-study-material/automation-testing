@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5620,7 +5620,7 @@
 <p>In simple terms, Maven automates the entire build process so developers don't have to manually compile code, manage libraries, run tests, or package applications.</p>
 <hr />
 <h1 id="maven-working-flow">Maven Working Flow<a class="headerlink" href="#maven-working-flow" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">Developer
+<div class="highlight"><pre><span></span><code>Developer
     │
     ▼
 Run Maven Command
@@ -5645,10 +5645,10 @@ Generate Artifact (JAR/WAR)
     │
     ▼
 Install or Deploy Artifact
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="stages-phases-of-maven-default-lifecycle">Stages (Phases) of Maven Default Lifecycle<a class="headerlink" href="#stages-phases-of-maven-default-lifecycle" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
     │
     ▼
 compile
@@ -5667,7 +5667,7 @@ install
     │
     ▼
 deploy
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="what-each-stage-does">What Each Stage Does<a class="headerlink" href="#what-each-stage-does" title="Permanent link">&para;</a></h1>
 <table>
@@ -5710,7 +5710,7 @@ deploy
 </table>
 <hr />
 <h1 id="simple-end-to-end-flow">Simple End-to-End Flow<a class="headerlink" href="#simple-end-to-end-flow" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">Write Java Code
+<div class="highlight"><pre><span></span><code>Write Java Code
       │
       ▼
 mvn install
@@ -5735,13 +5735,13 @@ Verify Artifact
       │
       ▼
 Copy JAR to .m2 Repository
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p><strong>Note:</strong> Since the command is <code>mvn install</code>, Maven automatically executes all the previous lifecycle phases (<code>validate → compile → test → package → verify</code>) before performing the <code>install</code> phase.</p>
 </blockquote>
 <hr />
 <h1 id="maven-lifecycle-execution-order">Maven Lifecycle Execution Order<a class="headerlink" href="#maven-lifecycle-execution-order" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">mvn validate
+<div class="highlight"><pre><span></span><code>mvn validate
       │
       ▼
 validate
@@ -5831,7 +5831,7 @@ install
       │
       ▼
 deploy
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="key-points-to-remember">Key Points to Remember<a class="headerlink" href="#key-points-to-remember" title="Permanent link">&para;</a></h1>
 <ul>
@@ -5902,6 +5902,10 @@ deploy
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

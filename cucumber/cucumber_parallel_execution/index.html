@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5615,62 +5615,62 @@
 <h1 id="1-feature-level-parallel-execution-cucumber-testng">1️⃣ Feature-Level Parallel Execution (Cucumber + TestNG)<a class="headerlink" href="#1-feature-level-parallel-execution-cucumber-testng" title="Permanent link">&para;</a></h1>
 <p>Feature-level parallel execution means <strong>each feature file runs in a separate thread</strong>.</p>
 <p>Example:</p>
-<pre><code class="language-text">Thread1 → login.feature
+<div class="highlight"><pre><span></span><code>Thread1 → login.feature
 Thread2 → payment.feature
 Thread3 → order.feature
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="2-runner-class-feature-parallel">2️⃣ Runner Class (Feature Parallel)<a class="headerlink" href="#2-runner-class-feature-parallel" title="Permanent link">&para;</a></h1>
 <p>In TestNG, feature-level parallel execution can be achieved by creating <strong>multiple runner classes</strong>, each pointing to a specific feature.</p>
 <h3 id="loginrunner">LoginRunner<a class="headerlink" href="#loginrunner" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package runner;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">runner</span><span class="p">;</span>
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.AbstractTestNGCucumberTests</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.CucumberOptions</span><span class="p">;</span>
 
-@CucumberOptions(
-        features = &quot;src/test/resources/features/login.feature&quot;,
-        glue = {&quot;stepDefinitions&quot;,&quot;hooks&quot;},
-        plugin = {&quot;pretty&quot;,&quot;html:target/login-report.html&quot;},
-        monochrome = true
-)
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">        </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features/login.feature"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"stepDefinitions"</span><span class="p">,</span><span class="s">"hooks"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"pretty"</span><span class="p">,</span><span class="s">"html:target/login-report.html"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">)</span>
 
-public class LoginRunner extends AbstractTestNGCucumberTests {
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginRunner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractTestNGCucumberTests</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="paymentrunner">PaymentRunner<a class="headerlink" href="#paymentrunner" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package runner;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">runner</span><span class="p">;</span>
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.AbstractTestNGCucumberTests</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.CucumberOptions</span><span class="p">;</span>
 
-@CucumberOptions(
-        features = &quot;src/test/resources/features/payment.feature&quot;,
-        glue = {&quot;stepDefinitions&quot;,&quot;hooks&quot;},
-        plugin = {&quot;pretty&quot;,&quot;html:target/payment-report.html&quot;},
-        monochrome = true
-)
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">        </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features/payment.feature"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"stepDefinitions"</span><span class="p">,</span><span class="s">"hooks"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"pretty"</span><span class="p">,</span><span class="s">"html:target/payment-report.html"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">)</span>
 
-public class PaymentRunner extends AbstractTestNGCucumberTests {
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PaymentRunner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractTestNGCucumberTests</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="3-testng-configuration">3️⃣ TestNG Configuration<a class="headerlink" href="#3-testng-configuration" title="Permanent link">&para;</a></h1>
 <p>Create <strong>testng.xml</strong></p>
-<pre><code class="language-xml">&lt;suite name=&quot;CucumberSuite&quot; parallel=&quot;classes&quot; thread-count=&quot;2&quot;&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;suite</span><span class="w"> </span><span class="na">name=</span><span class="s">"CucumberSuite"</span><span class="w"> </span><span class="na">parallel=</span><span class="s">"classes"</span><span class="w"> </span><span class="na">thread-count=</span><span class="s">"2"</span><span class="nt">&gt;</span>
 
-    &lt;test name=&quot;FeatureTests&quot;&gt;
+<span class="w">    </span><span class="nt">&lt;test</span><span class="w"> </span><span class="na">name=</span><span class="s">"FeatureTests"</span><span class="nt">&gt;</span>
 
-        &lt;classes&gt;
-            &lt;class name=&quot;runner.LoginRunner&quot;/&gt;
-            &lt;class name=&quot;runner.PaymentRunner&quot;/&gt;
-        &lt;/classes&gt;
+<span class="w">        </span><span class="nt">&lt;classes&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"runner.LoginRunner"</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"runner.PaymentRunner"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/classes&gt;</span>
 
-    &lt;/test&gt;
+<span class="w">    </span><span class="nt">&lt;/test&gt;</span>
 
-&lt;/suite&gt;
-</code></pre>
+<span class="nt">&lt;/suite&gt;</span>
+</code></pre></div>
 <h3 id="meaning">Meaning<a class="headerlink" href="#meaning" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -5691,44 +5691,44 @@ public class PaymentRunner extends AbstractTestNGCucumberTests {
 </tbody>
 </table>
 <p>Execution:</p>
-<pre><code class="language-text">Thread1 → LoginRunner → login.feature
+<div class="highlight"><pre><span></span><code>Thread1 → LoginRunner → login.feature
 Thread2 → PaymentRunner → payment.feature
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="4-scenario-level-parallel-execution-cucumber-testng">4️⃣ Scenario-Level Parallel Execution (Cucumber + TestNG)<a class="headerlink" href="#4-scenario-level-parallel-execution-cucumber-testng" title="Permanent link">&para;</a></h1>
 <p>Scenario-level execution means <strong>each scenario runs in parallel</strong>.</p>
 <p>Example:</p>
-<pre><code class="language-text">Thread1 → Scenario1
+<div class="highlight"><pre><span></span><code>Thread1 → Scenario1
 Thread2 → Scenario2
 Thread3 → Scenario3
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="5-runner-class-for-scenario-parallel">5️⃣ Runner Class for Scenario Parallel<a class="headerlink" href="#5-runner-class-for-scenario-parallel" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">package runner;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">runner</span><span class="p">;</span>
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.DataProvider;
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.AbstractTestNGCucumberTests</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.CucumberOptions</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.DataProvider</span><span class="p">;</span>
 
-@CucumberOptions(
-        features = &quot;src/test/resources/features&quot;,
-        glue = {&quot;stepDefinitions&quot;,&quot;hooks&quot;},
-        plugin = {&quot;pretty&quot;,&quot;html:target/cucumber-report.html&quot;},
-        monochrome = true
-)
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">        </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"stepDefinitions"</span><span class="p">,</span><span class="s">"hooks"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"pretty"</span><span class="p">,</span><span class="s">"html:target/cucumber-report.html"</span><span class="p">},</span>
+<span class="w">        </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">)</span>
 
-public class TestRunner extends AbstractTestNGCucumberTests {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestRunner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractTestNGCucumberTests</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    @DataProvider(parallel = true)
-    public Object[][] scenarios() {
-        return super.scenarios();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">scenarios</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">scenarios</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Important line:</p>
-<pre><code class="language-java">@DataProvider(parallel = true)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
 <p>This runs <strong>each scenario in a separate thread</strong>.</p>
 <hr />
 <h1 id="6-feature-vs-scenario-parallel">6️⃣ Feature vs Scenario Parallel<a class="headerlink" href="#6-feature-vs-scenario-parallel" title="Permanent link">&para;</a></h1>
@@ -5758,8 +5758,8 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 <p>For both approaches:</p>
 <p>✔ WebDriver must be <strong>ThreadSafe</strong></p>
 <p>Example:</p>
-<pre><code class="language-java">private static ThreadLocal&lt;WebDriver&gt; driver = new ThreadLocal&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">WebDriver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <p>Each thread gets its <strong>own browser instance</strong>.</p>
 <hr />
 <h1 id="interview-summary">⭐ Interview Summary<a class="headerlink" href="#interview-summary" title="Permanent link">&para;</a></h1>
@@ -5821,6 +5821,10 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

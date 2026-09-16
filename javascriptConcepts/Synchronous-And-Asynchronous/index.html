@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6062,7 +6062,7 @@
 <p>Playwright actions (click, goto, fill, wait) are <strong>asynchronous</strong> because each operation returns a Promise.<br />
 We use <code>await</code> to make them execute <strong>sequentially</strong>, giving a synchronous feel.</p>
 <h2 id="3-diagram-how-asyncawait-makes-playwright-look-synchronous">3. Diagram — How Async/Await Makes Playwright Look Synchronous<a class="headerlink" href="#3-diagram-how-asyncawait-makes-playwright-look-synchronous" title="Permanent link">&para;</a></h2>
-<pre><code>┌──────────────────────────────┐
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────┐
 │  Developer Code (sequential) │
 └───────────────┬──────────────┘
                 │ await
@@ -6075,19 +6075,19 @@ We use <code>await</code> to make them execute <strong>sequentially</strong>, gi
         ┌─────────────────┐
         │ Browser Action  │ (click, fill, wait)
         └─────────────────┘
-</code></pre>
+</code></pre></div>
 <h3 id="without-await-async-chaos">Without await (async chaos)<a class="headerlink" href="#without-await-async-chaos" title="Permanent link">&para;</a></h3>
-<pre><code>page.click()  ----&gt; Promise starts
+<div class="highlight"><pre><span></span><code>page.click()  ----&gt; Promise starts
 page.fill()   ----&gt; Promise starts
 page.goto()   ----&gt; Promise starts
 
 (No waiting… operations overlap)
-</code></pre>
+</code></pre></div>
 <h3 id="with-await-synchronous-flow-feel">With await (synchronous flow feel)<a class="headerlink" href="#with-await-synchronous-flow-feel" title="Permanent link">&para;</a></h3>
-<pre><code>await page.click()  ---- waits until complete
+<div class="highlight"><pre><span></span><code>await page.click()  ---- waits until complete
 await page.fill()   ---- waits
 await page.goto()   ---- waits
-</code></pre>
+</code></pre></div>
 <h2 id="4-correct-summary-table">4. Correct Summary Table<a class="headerlink" href="#4-correct-summary-table" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -6144,10 +6144,10 @@ await page.goto()   ---- waits
 <h3 id="q7-can-playwright-execute-steps-in-strict-sequence"><strong>Q7. Can Playwright execute steps in strict sequence?</strong><a class="headerlink" href="#q7-can-playwright-execute-steps-in-strict-sequence" title="Permanent link">&para;</a></h3>
 <p><strong>A:</strong> Yes, using <code>await</code>.<br />
 Example:</p>
-<pre><code class="language-js">await page.goto(url);
-await page.fill('#username', 'nitin');
-await page.click('#submit');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">fill</span><span class="p">(</span><span class="s1">'#username'</span><span class="p">,</span><span class="w"> </span><span class="s1">'nitin'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'#submit'</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="q8-how-does-playwright-handle-auto-waiting"><strong>Q8. How does Playwright handle auto-waiting?</strong><a class="headerlink" href="#q8-how-does-playwright-handle-auto-waiting" title="Permanent link">&para;</a></h3>
 <p><strong>A:</strong> Playwright waits for:<br />
 - element to be visible<br />
@@ -6218,6 +6218,10 @@ await page.click('#submit');
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

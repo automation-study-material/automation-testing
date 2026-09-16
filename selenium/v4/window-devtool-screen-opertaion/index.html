@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5621,9 +5621,9 @@
 </ul>
 <p>Without manually handling window handles.</p>
 <h2 id="new-methods">New Methods:<a class="headerlink" href="#new-methods" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">driver.switchTo().newWindow(WindowType.TAB);
-driver.switchTo().newWindow(WindowType.WINDOW);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">newWindow</span><span class="p">(</span><span class="n">WindowType</span><span class="p">.</span><span class="na">TAB</span><span class="p">);</span>
+<span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">newWindow</span><span class="p">(</span><span class="n">WindowType</span><span class="p">.</span><span class="na">WINDOW</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="problem-in-selenium-3-old-way">🔹 Problem in Selenium 3 (Old Way)<a class="headerlink" href="#problem-in-selenium-3-old-way" title="Permanent link">&para;</a></h2>
 <p>Before Selenium 4:</p>
@@ -5635,26 +5635,26 @@ driver.switchTo().newWindow(WindowType.WINDOW);
 <li>Switch manually</li>
 </ul>
 <h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String parent = driver.getWindowHandle();
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandle</span><span class="p">();</span>
 
-driver.findElement(By.linkText(&quot;Open&quot;)).click();
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">linkText</span><span class="p">(</span><span class="s">"Open"</span><span class="p">)).</span><span class="na">click</span><span class="p">();</span>
 
-Set&lt;String&gt; handles = driver.getWindowHandles();
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">handles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandles</span><span class="p">();</span>
 
-for (String handle : handles) {
-    if (!handle.equals(parent)) {
-        driver.switchTo().window(handle);
-    }
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">handle</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">handles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">handle</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">parent</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>❌ Complex\
 ❌ Error-prone\
 ❌ Hard to maintain</p>
 <hr />
 <h2 id="what-selenium-4-improved">🔹 What Selenium 4 Improved<a class="headerlink" href="#what-selenium-4-improved" title="Permanent link">&para;</a></h2>
 <p>Now you can directly create and switch:</p>
-<pre><code class="language-java">driver.switchTo().newWindow(WindowType.TAB);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">newWindow</span><span class="p">(</span><span class="n">WindowType</span><span class="p">.</span><span class="na">TAB</span><span class="p">);</span>
+</code></pre></div>
 <p>No looping required.</p>
 <hr />
 <h2 id="real-time-scenario">🔥 Real-Time Scenario<a class="headerlink" href="#real-time-scenario" title="Permanent link">&para;</a></h2>
@@ -5668,39 +5668,39 @@ for (String handle : handles) {
 </ul>
 <hr />
 <h2 id="complete-working-example">✅ Complete Working Example<a class="headerlink" href="#complete-working-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import java.time.Duration;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.Duration</span><span class="p">;</span>
 
-public class NewWindowExample {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NewWindowExample</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">timeouts</span><span class="p">().</span><span class="na">implicitlyWait</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
 
-        driver.get(&quot;https://example.com&quot;);
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
 
-        String parentWindow = driver.getWindowHandle();
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">parentWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandle</span><span class="p">();</span>
 
-        // Open new tab
-        driver.switchTo().newWindow(WindowType.TAB);
-        driver.get(&quot;https://google.com&quot;);
+<span class="w">        </span><span class="c1">// Open new tab</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">newWindow</span><span class="p">(</span><span class="n">WindowType</span><span class="p">.</span><span class="na">TAB</span><span class="p">);</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://google.com"</span><span class="p">);</span>
 
-        System.out.println(&quot;Title of new tab: &quot; + driver.getTitle());
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Title of new tab: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span>
 
-        // Close new tab
-        driver.close();
+<span class="w">        </span><span class="c1">// Close new tab</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
 
-        // Switch back to parent
-        driver.switchTo().window(parentWindow);
+<span class="w">        </span><span class="c1">// Switch back to parent</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">parentWindow</span><span class="p">);</span>
 
-        System.out.println(&quot;Back to parent: &quot; + driver.getTitle());
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Back to parent: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span>
 
-        driver.quit();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="5-improved-devtools-support-cdp">✅ 5️⃣ Improved DevTools Support (CDP)<a class="headerlink" href="#5-improved-devtools-support-cdp" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-cdp">🔹 What Is CDP?<a class="headerlink" href="#what-is-cdp" title="Permanent link">&para;</a></h2>
@@ -5722,56 +5722,56 @@ public class NewWindowExample {
 <p>🔥 You can do all this.</p>
 <hr />
 <h2 id="create-devtools-session">🔹 Create DevTools Session<a class="headerlink" href="#create-devtools-session" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">DevTools devTools = ((ChromeDriver) driver).getDevTools();
-devTools.createSession();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">DevTools</span><span class="w"> </span><span class="n">devTools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">ChromeDriver</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">).</span><span class="na">getDevTools</span><span class="p">();</span>
+<span class="n">devTools</span><span class="p">.</span><span class="na">createSession</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h1 id="scenario-1-capture-network-logs">🔥 Scenario 1: Capture Network Logs<a class="headerlink" href="#scenario-1-capture-network-logs" title="Permanent link">&para;</a></h1>
 <h2 id="complete-example">✅ Complete Example<a class="headerlink" href="#complete-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v114.network.Network;
-import org.openqa.selenium.devtools.v114.network.model.Request;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.devtools.DevTools</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.devtools.v114.network.Network</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.devtools.v114.network.model.Request</span><span class="p">;</span>
 
-import java.util.Optional;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Optional</span><span class="p">;</span>
 
-public class CaptureNetwork {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CaptureNetwork</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        ChromeDriver driver = new ChromeDriver();
-        DevTools devTools = driver.getDevTools();
-        devTools.createSession();
+<span class="w">        </span><span class="n">ChromeDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="n">DevTools</span><span class="w"> </span><span class="n">devTools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getDevTools</span><span class="p">();</span>
+<span class="w">        </span><span class="n">devTools</span><span class="p">.</span><span class="na">createSession</span><span class="p">();</span>
 
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+<span class="w">        </span><span class="n">devTools</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="na">enable</span><span class="p">(</span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">()));</span>
 
-        devTools.addListener(Network.requestWillBeSent(),
-                request -&gt; {
-                    Request req = request.getRequest();
-                    System.out.println(&quot;Request URL: &quot; + req.getUrl());
-                });
+<span class="w">        </span><span class="n">devTools</span><span class="p">.</span><span class="na">addListener</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="na">requestWillBeSent</span><span class="p">(),</span>
+<span class="w">                </span><span class="n">request</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Request</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getRequest</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Request URL: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">getUrl</span><span class="p">());</span>
+<span class="w">                </span><span class="p">});</span>
 
-        driver.get(&quot;https://example.com&quot;);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="scenario-2-block-urls">🔥 Scenario 2: Block URLs<a class="headerlink" href="#scenario-2-block-urls" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">devTools.send(Network.setBlockedURLs(List.of(&quot;*.png&quot;, &quot;*.jpg&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">devTools</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">Network</span><span class="p">.</span><span class="na">setBlockedURLs</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"*.png"</span><span class="p">,</span><span class="w"> </span><span class="s">"*.jpg"</span><span class="p">)));</span>
+</code></pre></div>
 <hr />
 <h1 id="scenario-3-emulate-mobile-device">🔥 Scenario 3: Emulate Mobile Device<a class="headerlink" href="#scenario-3-emulate-mobile-device" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">devTools.send(Emulation.setDeviceMetricsOverride(
-        375, 812, 50, true,
-        Optional.empty(), Optional.empty(),
-        Optional.empty(), Optional.empty(),
-        Optional.empty(), Optional.empty(),
-        Optional.empty(), Optional.empty()
-));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">devTools</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">Emulation</span><span class="p">.</span><span class="na">setDeviceMetricsOverride</span><span class="p">(</span>
+<span class="w">        </span><span class="mi">375</span><span class="p">,</span><span class="w"> </span><span class="mi">812</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">(),</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">()</span>
+<span class="p">));</span>
+</code></pre></div>
 <hr />
 <h1 id="scenario-4-performance-monitoring">🔥 Scenario 4: Performance Monitoring<a class="headerlink" href="#scenario-4-performance-monitoring" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">devTools.send(Performance.enable(Optional.empty()));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">devTools</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">Performance</span><span class="p">.</span><span class="na">enable</span><span class="p">(</span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">()));</span>
+</code></pre></div>
 <hr />
 <h2 id="interview-point">🎯 Interview Point<a class="headerlink" href="#interview-point" title="Permanent link">&para;</a></h2>
 <p>CDP allows:</p>
@@ -5785,12 +5785,12 @@ public class CaptureNetwork {
 <h1 id="6-full-screen-and-minimize-window-support">✅ 6️⃣ Full-Screen and Minimize Window Support<a class="headerlink" href="#6-full-screen-and-minimize-window-support" title="Permanent link">&para;</a></h1>
 <h2 id="what-changed">🔹 What Changed?<a class="headerlink" href="#what-changed" title="Permanent link">&para;</a></h2>
 <p>Selenium 4 added:</p>
-<pre><code class="language-java">driver.manage().window().fullscreen();
-driver.manage().window().minimize();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">fullscreen</span><span class="p">();</span>
+<span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">minimize</span><span class="p">();</span>
+</code></pre></div>
 <p>Earlier only:</p>
-<pre><code class="language-java">driver.manage().window().maximize();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">maximize</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="real-scenario">🔥 Real Scenario<a class="headerlink" href="#real-scenario" title="Permanent link">&para;</a></h2>
 <p>Test case:</p>
@@ -5801,32 +5801,32 @@ driver.manage().window().minimize();
 </ul>
 <hr />
 <h2 id="complete-example_1">✅ Complete Example<a class="headerlink" href="#complete-example_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
 
-public class WindowStateExample {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WindowStateExample</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) throws InterruptedException {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InterruptedException</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver = new ChromeDriver();
-        driver.get(&quot;https://example.com&quot;);
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
 
-        // Fullscreen
-        driver.manage().window().fullscreen();
-        Thread.sleep(2000);
+<span class="w">        </span><span class="c1">// Fullscreen</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">fullscreen</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
 
-        // Minimize
-        driver.manage().window().minimize();
-        Thread.sleep(2000);
+<span class="w">        </span><span class="c1">// Minimize</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">minimize</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
 
-        // Maximize
-        driver.manage().window().maximize();
-        Thread.sleep(2000);
+<span class="w">        </span><span class="c1">// Maximize</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">maximize</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
 
-        driver.quit();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="interview-summary-table">📊 Interview Summary Table<a class="headerlink" href="#interview-summary-table" title="Permanent link">&para;</a></h1>
 <table>
@@ -5910,6 +5910,10 @@ public class WindowStateExample {
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

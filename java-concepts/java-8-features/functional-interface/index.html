@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5821,18 +5821,18 @@
 <p>That's it.</p>
 <hr />
 <h2 id="simple-example">🔹 Simple Example<a class="headerlink" href="#simple-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@FunctionalInterface
-interface Calculator {
-    int add(int a, int b);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">interface</span> <span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✔ Only one abstract method → So it is a Functional Interface.</p>
 <hr />
 <h2 id="why-functional-interface-is-needed">🎯 Why Functional Interface Is Needed?<a class="headerlink" href="#why-functional-interface-is-needed" title="Permanent link">&para;</a></h2>
 <p>Because Lambda expression implements only one method.</p>
 <p>Since Lambda does not mention method name:</p>
-<pre><code class="language-java">(a, b) -&gt; a + b
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+</code></pre></div>
 <p>Java must know:</p>
 <ul>
 <li>Which interface?</li>
@@ -5855,42 +5855,42 @@ If interface has 2 methods → Java confused 😵</p>
 </ul>
 <hr />
 <h2 id="example-with-default-method">🧠 Example With Default Method<a class="headerlink" href="#example-with-default-method" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@FunctionalInterface
-interface MyInterface {
+<div class="highlight"><pre><span></span><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">interface</span> <span class="nc">MyInterface</span><span class="w"> </span><span class="p">{</span>
 
-    void sayHello();   // Only abstract method
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">();</span><span class="w">   </span><span class="c1">// Only abstract method</span>
 
-    default void print() {
-        System.out.println(&quot;Default method&quot;);
-    }
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Default method"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    static void info() {
-        System.out.println(&quot;Static method&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">info</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Static method"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✔ Still Functional Interface\
 Because only ONE abstract method.</p>
 <hr />
 <h2 id="invalid-functional-interface">❌ Invalid Functional Interface<a class="headerlink" href="#invalid-functional-interface" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">interface WrongInterface {
-    void method1();
-    void method2();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">WrongInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">method1</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">method2</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>❌ Not functional\
 Because it has 2 abstract methods.</p>
 <hr />
 <h2 id="what-is-functionalinterface-annotation">📌 What is @FunctionalInterface Annotation?<a class="headerlink" href="#what-is-functionalinterface-annotation" title="Permanent link">&para;</a></h2>
 <p>It is optional but recommended.</p>
-<pre><code class="language-java">@FunctionalInterface
-interface MyInterface {
-    void test();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">interface</span> <span class="nc">MyInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>If you accidentally add second abstract method:</p>
-<pre><code class="language-java">void test2();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">test2</span><span class="p">();</span>
+</code></pre></div>
 <p>Compiler error ❌</p>
 <p>So annotation ensures safety.</p>
 <hr />
@@ -5904,51 +5904,51 @@ interface MyInterface {
 <li>Takes input\</li>
 <li>Returns boolean</li>
 </ul>
-<pre><code class="language-java">Predicate&lt;Integer&gt; isEven = x -&gt; x % 2 == 0;
-System.out.println(isEven.test(4));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">isEven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isEven</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h2 id="2-functiont-r">🔹 2. Function\&lt;T, R&gt;<a class="headerlink" href="#2-functiont-r" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Takes input\</li>
 <li>Returns output</li>
 </ul>
-<pre><code class="language-java">Function&lt;String, Integer&gt; length = s -&gt; s.length();
-System.out.println(length.apply(&quot;Java&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">length</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="s">"Java"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h2 id="3-consumerthtml">🔹 3. Consumer<code>&lt;T&gt;</code>{=html}<a class="headerlink" href="#3-consumerthtml" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Takes input\</li>
 <li>Returns nothing</li>
 </ul>
-<pre><code class="language-java">Consumer&lt;String&gt; print = s -&gt; System.out.println(s);
-print.accept(&quot;Hello&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="n">print</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="4-supplierthtml">🔹 4. Supplier<code>&lt;T&gt;</code>{=html}<a class="headerlink" href="#4-supplierthtml" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Takes no input\</li>
 <li>Returns value</li>
 </ul>
-<pre><code class="language-java">Supplier&lt;Double&gt; random = () -&gt; Math.random();
-System.out.println(random.get());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="na">get</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h1 id="real-example-runnable">🔥 Real Example: Runnable<a class="headerlink" href="#real-example-runnable" title="Permanent link">&para;</a></h1>
 <p>Runnable is a Functional Interface:</p>
-<pre><code class="language-java">public interface Runnable {
-    void run();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Runnable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>That's why Lambda works:</p>
-<pre><code class="language-java">Runnable r = () -&gt; System.out.println(&quot;Running&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Runnable</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Running"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="internally-what-happens">🧠 Internally What Happens?<a class="headerlink" href="#internally-what-happens" title="Permanent link">&para;</a></h1>
 <p>When you write:</p>
-<pre><code class="language-java">Calculator c = (a, b) -&gt; a + b;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Calculator</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</code></pre></div>
 <p>JVM:</p>
 <ul>
 <li>Knows Calculator is functional interface</li>
@@ -6039,6 +6039,10 @@ System.out.println(random.get());
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

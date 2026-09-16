@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5625,9 +5625,9 @@
 </ul>
 <h2 id="first-freestyle-job">First Freestyle Job<a class="headerlink" href="#first-freestyle-job" title="Permanent link">&para;</a></h2>
 <p>Build Step → Execute Shell</p>
-<pre><code class="language-bash">echo &quot;Hello Jenkins&quot;
-mvn clean package
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"Hello Jenkins"</span>
+mvn<span class="w"> </span>clean<span class="w"> </span>package
+</code></pre></div>
 <hr />
 <h1 id="level-2-pipeline-basics">📌 Level 2 – Pipeline Basics<a class="headerlink" href="#level-2-pipeline-basics" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-pipeline">What is Pipeline?<a class="headerlink" href="#what-is-pipeline" title="Permanent link">&para;</a></h2>
@@ -5638,45 +5638,45 @@ mvn clean package
 <hr />
 <h1 id="pipeline-using-ui">✅ Pipeline using UI<a class="headerlink" href="#pipeline-using-ui" title="Permanent link">&para;</a></h1>
 <p>New Item → Pipeline → Pipeline Script</p>
-<pre><code class="language-groovy">pipeline {
-    agent any
+<div class="highlight"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building project'
-            }
-        }
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Building project'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
 
-        stage('Test') {
-            steps {
-                echo 'Running tests'
-            }
-        }
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Test'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Running tests'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h1 id="pipeline-using-jenkinsfile-best-practice">✅ Pipeline using Jenkinsfile (Best Practice)<a class="headerlink" href="#pipeline-using-jenkinsfile-best-practice" title="Permanent link">&para;</a></h1>
 <p>Create <code>Jenkinsfile</code> in repo:</p>
-<pre><code class="language-groovy">pipeline {
-    agent any
+<div class="highlight"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/your/repo.git'
-            }
-        }
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Checkout'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">git</span><span class="w"> </span><span class="s1">'https://github.com/your/repo.git'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
 
-        stage('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn clean package'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <p>Pipeline → Pipeline script from SCM</p>
 <hr />
 <h1 id="level-3-advanced-pipeline">📌 Level 3 – Advanced Pipeline<a class="headerlink" href="#level-3-advanced-pipeline" title="Permanent link">&para;</a></h1>
@@ -5685,14 +5685,14 @@ mvn clean package
 <h3 id="ui">UI<a class="headerlink" href="#ui" title="Permanent link">&para;</a></h3>
 <p>"This build is parameterized"</p>
 <h3 id="jenkinsfile">Jenkinsfile<a class="headerlink" href="#jenkinsfile" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">parameters {
-    string(name: 'ENV', defaultValue: 'dev')
-    booleanParam(name: 'RUN_TESTS', defaultValue: true)
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">string</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'ENV'</span><span class="o">,</span><span class="w"> </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">'dev'</span><span class="o">)</span>
+<span class="w">    </span><span class="n">booleanParam</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'RUN_TESTS'</span><span class="o">,</span><span class="w"> </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
 <p>Use:</p>
-<pre><code class="language-groovy">echo &quot;Env = ${params.ENV}&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">echo</span><span class="w"> </span><span class="s2">"Env = ${params.ENV}"</span>
+</code></pre></div>
 <hr />
 <h2 id="credentials-secrets">🔹 Credentials / Secrets<a class="headerlink" href="#credentials-secrets" title="Permanent link">&para;</a></h2>
 <p>Manage Jenkins → Credentials → Add</p>
@@ -5701,126 +5701,126 @@ mvn clean package
 - Secret Text
 - SSH key</p>
 <h3 id="use-in-pipeline">Use in Pipeline<a class="headerlink" href="#use-in-pipeline" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">withCredentials([
-    string(credentialsId: 'my-token', variable: 'TOKEN')
-]) {
-    sh 'echo $TOKEN'
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">withCredentials</span><span class="o">([</span>
+<span class="w">    </span><span class="n">string</span><span class="o">(</span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s1">'my-token'</span><span class="o">,</span><span class="w"> </span><span class="nl">variable:</span><span class="w"> </span><span class="s1">'TOKEN'</span><span class="o">)</span>
+<span class="o">])</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">sh</span><span class="w"> </span><span class="s1">'echo $TOKEN'</span>
+<span class="o">}</span>
+</code></pre></div>
 <p>OR</p>
-<pre><code class="language-groovy">environment {
-    MY_PASS = credentials('cred-id')
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">MY_PASS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">credentials</span><span class="o">(</span><span class="s1">'cred-id'</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h2 id="parallel-tests">🔹 Parallel Tests<a class="headerlink" href="#parallel-tests" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">stage('Parallel Tests') {
-    parallel {
-        stage('Unit') {
-            steps { sh 'mvn test' }
-        }
-        stage('API') {
-            steps { sh 'mvn verify' }
-        }
-        stage('UI') {
-            steps { sh 'mvn test -Dtest=ui' }
-        }
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">stage</span><span class="o">(</span><span class="s1">'Parallel Tests'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">parallel</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Unit'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn test'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'API'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn verify'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'UI'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn test -Dtest=ui'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h2 id="pre-post-actions">🔹 Pre &amp; Post Actions<a class="headerlink" href="#pre-post-actions" title="Permanent link">&para;</a></h2>
-<pre><code class="language-groovy">post {
-    always {
-        echo 'Cleanup'
-    }
-    success {
-        echo 'Build successful'
-    }
-    failure {
-        echo 'Build failed'
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">post</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">always</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Cleanup'</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="n">success</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Build successful'</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="n">failure</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Build failed'</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h2 id="trigger-another-job">🔹 Trigger Another Job<a class="headerlink" href="#trigger-another-job" title="Permanent link">&para;</a></h2>
 <h3 id="simple">Simple<a class="headerlink" href="#simple" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">post {
-    success {
-        build job: 'Deploy-Job'
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">post</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">success</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="nl">job:</span><span class="w"> </span><span class="s1">'Deploy-Job'</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <h3 id="with-parameters">With parameters<a class="headerlink" href="#with-parameters" title="Permanent link">&para;</a></h3>
-<pre><code class="language-groovy">post {
-    success {
-        build job: 'Deploy-Job',
-        parameters: [
-            string(name: 'ENV', value: 'prod')
-        ]
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">post</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">success</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="nl">job:</span><span class="w"> </span><span class="s1">'Deploy-Job'</span><span class="o">,</span>
+<span class="w">        </span><span class="nl">parameters:</span><span class="w"> </span><span class="o">[</span>
+<span class="w">            </span><span class="n">string</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'ENV'</span><span class="o">,</span><span class="w"> </span><span class="nl">value:</span><span class="w"> </span><span class="s1">'prod'</span><span class="o">)</span>
+<span class="w">        </span><span class="o">]</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h1 id="level-4-real-project-example">📌 Level 4 – Real Project Example<a class="headerlink" href="#level-4-real-project-example" title="Permanent link">&para;</a></h1>
 <p>Spring Boot + Maven + Tests + Docker + Deployment</p>
-<pre><code class="language-groovy">pipeline {
-    agent any
+<div class="highlight"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
 
-    parameters {
-        string(name: 'ENV', defaultValue: 'dev')
-    }
+<span class="w">    </span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">string</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'ENV'</span><span class="o">,</span><span class="w"> </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">'dev'</span><span class="o">)</span>
+<span class="w">    </span><span class="o">}</span>
 
-    environment {
-        DOCKER_PASS = credentials('docker-pass')
-    }
+<span class="w">    </span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">DOCKER_PASS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">credentials</span><span class="o">(</span><span class="s1">'docker-pass'</span><span class="o">)</span>
+<span class="w">    </span><span class="o">}</span>
 
-    stages {
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/your/repo.git'
-            }
-        }
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Checkout'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">git</span><span class="w"> </span><span class="s1">'https://github.com/your/repo.git'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
 
-        stage('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn clean package'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
 
-        stage('Parallel Tests') {
-            parallel {
-                stage('API') {
-                    steps { sh 'mvn test -Dtest=api' }
-                }
-                stage('UI') {
-                    steps { sh 'mvn test -Dtest=ui' }
-                }
-            }
-        }
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Parallel Tests'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">parallel</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">stage</span><span class="o">(</span><span class="s1">'API'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                    </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn test -Dtest=api'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">                </span><span class="o">}</span>
+<span class="w">                </span><span class="n">stage</span><span class="o">(</span><span class="s1">'UI'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                    </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sh</span><span class="w"> </span><span class="s1">'mvn test -Dtest=ui'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">                </span><span class="o">}</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
 
-        stage('Docker Build') {
-            steps {
-                sh 'docker build -t myapp .'
-            }
-        }
-    }
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Docker Build'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'docker build -t myapp .'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
 
-    post {
-        success {
-            build job: 'Deploy-Job',
-                  parameters: [string(name: 'ENV', value: params.ENV)]
-        }
-        failure {
-            echo 'Build failed'
-        }
-        always {
-            cleanWs()
-        }
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="n">post</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">success</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">build</span><span class="w"> </span><span class="nl">job:</span><span class="w"> </span><span class="s1">'Deploy-Job'</span><span class="o">,</span>
+<span class="w">                  </span><span class="nl">parameters:</span><span class="w"> </span><span class="o">[</span><span class="n">string</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'ENV'</span><span class="o">,</span><span class="w"> </span><span class="nl">value:</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">ENV</span><span class="o">)]</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="n">failure</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Build failed'</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="n">always</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">cleanWs</span><span class="o">()</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <hr />
 <h1 id="level-5-expert-topics">📌 Level 5 – Expert Topics<a class="headerlink" href="#level-5-expert-topics" title="Permanent link">&para;</a></h1>
 <p>Must learn:</p>
@@ -5920,6 +5920,10 @@ Day 14 → Full CI/CD  </p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

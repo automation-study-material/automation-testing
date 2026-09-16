@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5672,23 +5672,23 @@
 <h2 id="concept">Concept<a class="headerlink" href="#concept" title="Permanent link">&para;</a></h2>
 <p>Simple, fast, in‑code data.</p>
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@DataProvider(name=&quot;users&quot;)
-public Object[][] users(){
-    return new Object[][]{
-        {&quot;admin&quot;,&quot;123&quot;},
-        {&quot;manager&quot;,&quot;456&quot;}
-    };
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"users"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">users</span><span class="p">(){</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="p">{</span>
+<span class="w">        </span><span class="p">{</span><span class="s">"admin"</span><span class="p">,</span><span class="s">"123"</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">"manager"</span><span class="p">,</span><span class="s">"456"</span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
 
-@Test(dataProvider=&quot;users&quot;)
-public void login(String user, String pass){
-    System.out.println(user + &quot;:&quot; + pass);
-}
-</code></pre>
+<span class="nd">@Test</span><span class="p">(</span><span class="n">dataProvider</span><span class="o">=</span><span class="s">"users"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">){</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">":"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
-<pre><code>admin:123
+<div class="highlight"><pre><span></span><code>admin:123
 manager:456
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="3-b-excel-apache-poi-full-practical-example">🔵 3️⃣ B. Excel (Apache POI) — FULL PRACTICAL EXAMPLE<a class="headerlink" href="#3-b-excel-apache-poi-full-practical-example" title="Permanent link">&para;</a></h1>
 <hr />
@@ -5733,53 +5733,53 @@ manager:456
 <p>👉 Multiple columns = realistic scenario</p>
 <hr />
 <h2 id="maven-dependency">✅ Maven Dependency<a class="headerlink" href="#maven-dependency" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;dependency&gt;
-  &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
-  &lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt;
-  &lt;version&gt;5.2.5&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+<span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.apache.poi<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>poi-ooxml<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;version&gt;</span>5.2.5<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="excel-dataprovider-code">✅ Excel → DataProvider Code<a class="headerlink" href="#excel-dataprovider-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@DataProvider(name=&quot;excelUsers&quot;)
-public Object[][] excelUsers() throws Exception {
+<div class="highlight"><pre><span></span><code><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"excelUsers"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">excelUsers</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
 
-    FileInputStream fis = new FileInputStream(&quot;src/test/resources/users.xlsx&quot;);
-    Workbook wb = new XSSFWorkbook(fis);
-    Sheet sheet = wb.getSheetAt(0);
+<span class="w">    </span><span class="n">FileInputStream</span><span class="w"> </span><span class="n">fis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">"src/test/resources/users.xlsx"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Workbook</span><span class="w"> </span><span class="n">wb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">XSSFWorkbook</span><span class="p">(</span><span class="n">fis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Sheet</span><span class="w"> </span><span class="n">sheet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wb</span><span class="p">.</span><span class="na">getSheetAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
-    int rows = sheet.getPhysicalNumberOfRows();
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sheet</span><span class="p">.</span><span class="na">getPhysicalNumberOfRows</span><span class="p">();</span>
 
-    Object[][] data = new Object[rows-1][4]; // 4 columns
+<span class="w">    </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[</span><span class="n">rows</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">// 4 columns</span>
 
-    for(int i = 1; i &lt; rows; i++) {
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        Row row = sheet.getRow(i);
+<span class="w">        </span><span class="n">Row</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sheet</span><span class="p">.</span><span class="na">getRow</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 
-        data[i-1][0] = row.getCell(0).getStringCellValue();
-        data[i-1][1] = row.getCell(1).getStringCellValue();
-        data[i-1][2] = row.getCell(2).getStringCellValue();
-        data[i-1][3] = row.getCell(3).getBooleanCellValue();
-    }
+<span class="w">        </span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="na">getCell</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">getStringCellValue</span><span class="p">();</span>
+<span class="w">        </span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="na">getCell</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="na">getStringCellValue</span><span class="p">();</span>
+<span class="w">        </span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="na">getCell</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="na">getStringCellValue</span><span class="p">();</span>
+<span class="w">        </span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="na">getCell</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="na">getBooleanCellValue</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    wb.close();
-    return data;
-}
-</code></pre>
+<span class="w">    </span><span class="n">wb</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="test-using-excel-data">✅ Test Using Excel Data<a class="headerlink" href="#test-using-excel-data" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test(dataProvider=&quot;excelUsers&quot;)
-public void loginTest(String user, String pass, String role, boolean active){
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">dataProvider</span><span class="o">=</span><span class="s">"excelUsers"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginTest</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">active</span><span class="p">){</span>
 
-    System.out.println(user + &quot; | &quot; + pass + &quot; | &quot; + role + &quot; | &quot; + active);
-}
-</code></pre>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" | "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" | "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">role</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" | "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">active</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="output_1">✅ Output<a class="headerlink" href="#output_1" title="Permanent link">&para;</a></h2>
-<pre><code>admin | 123 | ADMIN | true
+<div class="highlight"><pre><span></span><code>admin | 123 | ADMIN | true
 manager | 456 | MANAGER | true
 guest | 789 | USER | false
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="key-learnings">✅ Key Learnings<a class="headerlink" href="#key-learnings" title="Permanent link">&para;</a></h2>
 <p>✔ Supports many columns<br />
@@ -5789,63 +5789,63 @@ guest | 789 | USER | false
 <hr />
 <h1 id="4-json-example">🔵 4️⃣ JSON Example<a class="headerlink" href="#4-json-example" title="Permanent link">&para;</a></h1>
 <h2 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
-<pre><code class="language-json">[
- {&quot;user&quot;:&quot;admin&quot;,&quot;pass&quot;:&quot;123&quot;},
- {&quot;user&quot;:&quot;manager&quot;,&quot;pass&quot;:&quot;456&quot;}
-]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w"> </span><span class="p">{</span><span class="nt">"user"</span><span class="p">:</span><span class="s2">"admin"</span><span class="p">,</span><span class="nt">"pass"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">},</span>
+<span class="w"> </span><span class="p">{</span><span class="nt">"user"</span><span class="p">:</span><span class="s2">"manager"</span><span class="p">,</span><span class="nt">"pass"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
 <h2 id="code_1">Code<a class="headerlink" href="#code_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">ObjectMapper mapper = new ObjectMapper();
-User[] users = mapper.readValue(file, User[].class);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span>
+<span class="n">User</span><span class="o">[]</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="o">[]</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="5-db-example">🔵 5️⃣ DB Example<a class="headerlink" href="#5-db-example" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">Connection con = DriverManager.getConnection(url);
-Statement st = con.createStatement();
-ResultSet rs = st.executeQuery(&quot;select user,pass from users&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Connection</span><span class="w"> </span><span class="n">con</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="n">Statement</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">con</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="s">"select user,pass from users"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="6-dataprovider-in-parallel-mode">🔵 6️⃣ DataProvider in Parallel Mode<a class="headerlink" href="#6-dataprovider-in-parallel-mode" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@DataProvider(name=&quot;users&quot;, parallel=true)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"users"</span><span class="p">,</span><span class="w"> </span><span class="n">parallel</span><span class="o">=</span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="output_2">Output<a class="headerlink" href="#output_2" title="Permanent link">&para;</a></h2>
-<pre><code>Thread11 user1
+<div class="highlight"><pre><span></span><code>Thread11 user1
 Thread12 user2
 Thread13 user3
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="7-null-return-from-dataprovider">🔵 7️⃣ Null return from DataProvider<a class="headerlink" href="#7-null-return-from-dataprovider" title="Permanent link">&para;</a></h1>
 <p>❌ Bad:</p>
-<pre><code class="language-java">return null;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</code></pre></div>
 <p>Throws NPE</p>
 <p>✅ Correct:</p>
-<pre><code class="language-java">return new Object[0][0];
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h1 id="8-can-dataprovider-depend-on-another-test">🔵 8️⃣ Can DataProvider depend on another test?<a class="headerlink" href="#8-can-dataprovider-depend-on-another-test" title="Permanent link">&para;</a></h1>
 <p>❌ NO</p>
 <p>Flow:</p>
-<pre><code>DataProvider → Test
-</code></pre>
+<div class="highlight"><pre><span></span><code>DataProvider → Test
+</code></pre></div>
 <p>Use @BeforeClass instead.</p>
 <hr />
 <h1 id="9-passing-objects">🔵 9️⃣ Passing Objects<a class="headerlink" href="#9-passing-objects" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@DataProvider
-public Object[][] users(){
-    return new Object[][]{
-        { new User(&quot;John&quot;,30) }
-    };
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@DataProvider</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">users</span><span class="p">(){</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="p">{</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="sharing-dataprovider-across-classes">🔵 🔟 Sharing DataProvider Across Classes<a class="headerlink" href="#sharing-dataprovider-across-classes" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@Test(dataProvider=&quot;users&quot;, dataProviderClass=TestDataProvider.class)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">dataProvider</span><span class="o">=</span><span class="s">"users"</span><span class="p">,</span><span class="w"> </span><span class="n">dataProviderClass</span><span class="o">=</span><span class="n">TestDataProvider</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h1 id="11-retry-only-failed-data-rows">🔵 1️⃣1️⃣ Retry Only Failed Data Rows<a class="headerlink" href="#11-retry-only-failed-data-rows" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@Test(dataProvider=&quot;users&quot;, retryAnalyzer=Retry.class)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">dataProvider</span><span class="o">=</span><span class="s">"users"</span><span class="p">,</span><span class="w"> </span><span class="n">retryAnalyzer</span><span class="o">=</span><span class="n">Retry</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+</code></pre></div>
 <p>Only failed dataset retries.</p>
 <hr />
 <h1 id="best-practices">🔥 Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h1>
@@ -5924,6 +5924,10 @@ public Object[][] users(){
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

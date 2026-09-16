@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5929,12 +5929,12 @@ Each example shows <strong>input tables</strong>, the <strong>SQL query</strong>
 </table>
 <hr />
 <h2 id="1-scalar-subquery-employees-earning-above-company-average">1) Scalar Subquery – Employees earning above company average<a class="headerlink" href="#1-scalar-subquery-employees-earning-above-company-average" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT EmpID, Name, Salary
-FROM Employees
-WHERE Salary &gt; (SELECT AVG(Salary) FROM Employees)
-ORDER BY Salary DESC;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 |   EmpID | Name       |   Salary |
 |--------:|:-----------|---------:|
 |     104 | Neha Singh |    80000 |
@@ -5942,18 +5942,18 @@ ORDER BY Salary DESC;
 |     106 | Priya Nair |    65000 |</p>
 <hr />
 <h2 id="2-in-subquery-employees-in-departments-having-more-than-1-employee">2) IN Subquery – Employees in departments having more than 1 employee<a class="headerlink" href="#2-in-subquery-employees-in-departments-having-more-than-1-employee" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT e.EmpID, e.Name, e.DeptID, d.DeptName
-FROM Employees e
-JOIN Departments d ON e.DeptID = d.DeptID
-WHERE e.DeptID IN (
-  SELECT DeptID
-  FROM Employees
-  GROUP BY DeptID
-  HAVING COUNT(*) &gt; 1
-)
-ORDER BY e.DeptID, e.Name;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">DeptID</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span>
+<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DeptID</span>
+<span class="w">  </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 |   EmpID | Name        |   DeptID | DeptName   |
 |--------:|:------------|---------:|:-----------|
 |     101 | Amit Sharma |        1 | HR         |
@@ -5963,16 +5963,16 @@ ORDER BY e.DeptID, e.Name;
 |     102 | Riya Mehta  |        2 | IT         |</p>
 <hr />
 <h2 id="3-exists-correlated-employees-who-have-placed-at-least-one-order">3) EXISTS (Correlated) – Employees who have placed at least one order<a class="headerlink" href="#3-exists-correlated-employees-who-have-placed-at-least-one-order" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT e.EmpID, e.Name
-FROM Employees e
-WHERE EXISTS (
-  SELECT 1
-  FROM Orders o
-  WHERE o.EmpID = e.EmpID
-)
-ORDER BY e.EmpID;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="n">o</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">EmpID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span>
+<span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 |   EmpID | Name       |
 |--------:|:-----------|
 |     102 | Riya Mehta |
@@ -5981,31 +5981,31 @@ ORDER BY e.EmpID;
 |     106 | Priya Nair |</p>
 <hr />
 <h2 id="4-not-exists-departments-with-no-employees">4) NOT EXISTS – Departments with no employees<a class="headerlink" href="#4-not-exists-departments-with-no-employees" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT d.DeptID, d.DeptName
-FROM Departments d
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM Employees e
-  WHERE e.DeptID = d.DeptID
-)
-ORDER BY d.DeptID;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 |   DeptID | DeptName   |
 |---------:|:-----------|
 |        4 | Marketing  |</p>
 <hr />
 <h2 id="5-subquery-in-from-derived-table-revenue-by-product">5) Subquery in FROM (Derived Table) – Revenue by product<a class="headerlink" href="#5-subquery-in-from-derived-table-revenue-by-product" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT t.Product, t.TotalRevenue
-FROM (
-  SELECT oi.Product,
-         SUM(oi.Qty * oi.UnitPrice) AS TotalRevenue
-  FROM OrderItems oi
-  GROUP BY oi.Product
-) AS t
-ORDER BY t.TotalRevenue DESC;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">Product</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">TotalRevenue</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">Product</span><span class="p">,</span>
+<span class="w">         </span><span class="k">SUM</span><span class="p">(</span><span class="n">oi</span><span class="p">.</span><span class="n">Qty</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">UnitPrice</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TotalRevenue</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">OrderItems</span><span class="w"> </span><span class="n">oi</span>
+<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">Product</span>
+<span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">TotalRevenue</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Product   |   TotalRevenue |
 |:----------|---------------:|
 | Laptop    |         180000 |
@@ -6014,14 +6014,14 @@ ORDER BY t.TotalRevenue DESC;
 | Mouse     |           7000 |</p>
 <hr />
 <h2 id="6-anyall-salary-greater-than-all-salaries-in-hr">6) ANY/ALL – Salary greater than ALL salaries in HR<a class="headerlink" href="#6-anyall-salary-greater-than-all-salaries-in-hr" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">SELECT Name, Salary
-FROM Employees
-WHERE Salary &gt; ALL (
-  SELECT Salary FROM Employees WHERE DeptID = 1
-)
-ORDER BY Salary DESC;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Name       |   Salary |
 |:-----------|---------:|
 | Neha Singh |    80000 |
@@ -6031,19 +6031,19 @@ ORDER BY Salary DESC;
 <hr />
 <h1 id="ctes-with-clause">CTEs (WITH clause)<a class="headerlink" href="#ctes-with-clause" title="Permanent link">&para;</a></h1>
 <h2 id="7-cte-revenue-per-employee">7) CTE – Revenue per employee<a class="headerlink" href="#7-cte-revenue-per-employee" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">WITH OrderTotals AS (
-  SELECT oi.OrderID, SUM(oi.Qty * oi.UnitPrice) AS OrderTotal
-  FROM OrderItems oi
-  GROUP BY oi.OrderID
-)
-SELECT e.Name, SUM(ot.OrderTotal) AS Revenue
-FROM Orders o
-JOIN OrderTotals ot ON o.OrderID = ot.OrderID
-JOIN Employees e ON o.EmpID = e.EmpID
-GROUP BY e.Name
-ORDER BY Revenue DESC;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">OrderTotals</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">OrderID</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">oi</span><span class="p">.</span><span class="n">Qty</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">UnitPrice</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">OrderTotal</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">OrderItems</span><span class="w"> </span><span class="n">oi</span>
+<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">OrderID</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">ot</span><span class="p">.</span><span class="n">OrderTotal</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Revenue</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="n">o</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">OrderTotals</span><span class="w"> </span><span class="n">ot</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">OrderID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ot</span><span class="p">.</span><span class="n">OrderID</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">EmpID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Revenue</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Name       |   Revenue |
 |:-----------|----------:|
 | Riya Mehta |    162000 |
@@ -6052,24 +6052,24 @@ ORDER BY Revenue DESC;
 | Priya Nair |     25000 |</p>
 <hr />
 <h2 id="8-multiple-ctes-per-customer-orders-revenue">8) Multiple CTEs – Per-customer orders &amp; revenue<a class="headerlink" href="#8-multiple-ctes-per-customer-orders-revenue" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">WITH OrderTotals AS (
-  SELECT oi.OrderID, SUM(oi.Qty * oi.UnitPrice) AS OrderTotal
-  FROM OrderItems oi
-  GROUP BY oi.OrderID
-),
-CustomerOrders AS (
-  SELECT o.Customer, o.OrderID, ot.OrderTotal
-  FROM Orders o
-  JOIN OrderTotals ot ON o.OrderID = ot.OrderID
-)
-SELECT Customer,
-       COUNT(DISTINCT OrderID) AS Orders,
-       SUM(OrderTotal)         AS Revenue
-FROM CustomerOrders
-GROUP BY Customer
-ORDER BY Revenue DESC;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">OrderTotals</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">OrderID</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">oi</span><span class="p">.</span><span class="n">Qty</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">UnitPrice</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">OrderTotal</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">OrderItems</span><span class="w"> </span><span class="n">oi</span>
+<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">OrderID</span>
+<span class="p">),</span>
+<span class="n">CustomerOrders</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">Customer</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">OrderID</span><span class="p">,</span><span class="w"> </span><span class="n">ot</span><span class="p">.</span><span class="n">OrderTotal</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="n">o</span>
+<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">OrderTotals</span><span class="w"> </span><span class="n">ot</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">OrderID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ot</span><span class="p">.</span><span class="n">OrderID</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Customer</span><span class="p">,</span>
+<span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">OrderID</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Orders</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">OrderTotal</span><span class="p">)</span><span class="w">         </span><span class="k">AS</span><span class="w"> </span><span class="n">Revenue</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">CustomerOrders</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Customer</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Revenue</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Customer   |   Orders |   Revenue |
 |:-----------|---------:|----------:|
 | Crown      |        1 |    100000 |
@@ -6078,20 +6078,20 @@ ORDER BY Revenue DESC;
 | Bolt       |        1 |     45000 |</p>
 <hr />
 <h2 id="9-recursive-cte-organization-levels">9) Recursive CTE – Organization levels<a class="headerlink" href="#9-recursive-cte-organization-levels" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">WITH RECURSIVE Org AS (
-  SELECT EmpID, Name, ManagerID, 0 AS Level
-  FROM Employees
-  WHERE ManagerID IS NULL
-  UNION ALL
-  SELECT e.EmpID, e.Name, e.ManagerID, o.Level + 1
-  FROM Employees e
-  JOIN Org o ON e.ManagerID = o.EmpID
-)
-SELECT EmpID, Name, Level
-FROM Org
-ORDER BY Level, EmpID;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">Org</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">ManagerID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">Level</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ManagerID</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">  </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">ManagerID</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="k">Level</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Org</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">ManagerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">EmpID</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="k">Level</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Org</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">Level</span><span class="p">,</span><span class="w"> </span><span class="n">EmpID</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 |   EmpID | Name        |   Level |
 |--------:|:------------|--------:|
 |     101 | Amit Sharma |       0 |
@@ -6103,18 +6103,18 @@ ORDER BY Level, EmpID;
 <hr />
 <h1 id="complex-examples">Complex Examples<a class="headerlink" href="#complex-examples" title="Permanent link">&para;</a></h1>
 <h2 id="complex-a-top-2-earners-per-department-cte-window-function">Complex A) Top 2 earners per department (CTE + window function)<a class="headerlink" href="#complex-a-top-2-earners-per-department-cte-window-function" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">WITH Ranked AS (
-  SELECT d.DeptName, e.Name, e.Salary,
-         ROW_NUMBER() OVER (PARTITION BY e.DeptID ORDER BY e.Salary DESC) AS rn
-  FROM Employees e
-  LEFT JOIN Departments d ON e.DeptID = d.DeptID
-)
-SELECT DeptName, Name, Salary, rn AS Rank
-FROM Ranked
-WHERE rn &lt;= 2
-ORDER BY DeptName, Rank, Name;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">Ranked</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Salary</span><span class="p">,</span>
+<span class="w">         </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rn</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">  </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">DeptName</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span><span class="p">,</span><span class="w"> </span><span class="n">rn</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Rank</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Ranked</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">rn</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DeptName</span><span class="p">,</span><span class="w"> </span><span class="n">Rank</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | DeptName   | Name        |   Salary |   Rank |
 |:-----------|:------------|---------:|-------:|
 | Finance    | Arjun Rao   |    55000 |      1 |
@@ -6124,24 +6124,24 @@ ORDER BY DeptName, Rank, Name;
 | IT         | Riya Mehta  |    70000 |      2 |</p>
 <hr />
 <h2 id="complex-b-highest-revenue-product-per-customer-cte-ranking">Complex B) Highest revenue product per customer (CTE + ranking)<a class="headerlink" href="#complex-b-highest-revenue-product-per-customer-cte-ranking" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">WITH CustProd AS (
-  SELECT o.Customer, oi.Product,
-         SUM(oi.Qty * oi.UnitPrice) AS Revenue
-  FROM Orders o
-  JOIN OrderItems oi ON o.OrderID = oi.OrderID
-  GROUP BY o.Customer, oi.Product
-),
-Ranked AS (
-  SELECT Customer, Product, Revenue,
-         ROW_NUMBER() OVER (PARTITION BY Customer ORDER BY Revenue DESC) AS rk
-  FROM CustProd
-)
-SELECT Customer, Product, Revenue
-FROM Ranked
-WHERE rk = 1
-ORDER BY Customer;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="n">CustProd</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">Customer</span><span class="p">,</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">Product</span><span class="p">,</span>
+<span class="w">         </span><span class="k">SUM</span><span class="p">(</span><span class="n">oi</span><span class="p">.</span><span class="n">Qty</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">UnitPrice</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Revenue</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="n">o</span>
+<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">OrderItems</span><span class="w"> </span><span class="n">oi</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">OrderID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">OrderID</span>
+<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">Customer</span><span class="p">,</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">Product</span>
+<span class="p">),</span>
+<span class="n">Ranked</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">Customer</span><span class="p">,</span><span class="w"> </span><span class="n">Product</span><span class="p">,</span><span class="w"> </span><span class="n">Revenue</span><span class="p">,</span>
+<span class="w">         </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Customer</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Revenue</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rk</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">CustProd</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Customer</span><span class="p">,</span><span class="w"> </span><span class="n">Product</span><span class="p">,</span><span class="w"> </span><span class="n">Revenue</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Ranked</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">rk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Customer</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Customer   | Product   |   Revenue |
 |:-----------|:----------|----------:|
 | Acme       | Laptop    |     60000 |
@@ -6150,18 +6150,18 @@ ORDER BY Customer;
 | Delta      | Laptop    |     60000 |</p>
 <hr />
 <h2 id="complex-c-manager-employee-pairs-recursive-cte-for-relationships">Complex C) Manager → Employee pairs (recursive CTE for relationships)<a class="headerlink" href="#complex-c-manager-employee-pairs-recursive-cte-for-relationships" title="Permanent link">&para;</a></h2>
-<pre><code class="language-sql">WITH RECURSIVE Tree AS (
-  SELECT EmpID, Name, ManagerID, CAST(Name AS VARCHAR(200)) AS Path
-  FROM Employees
-  WHERE ManagerID IS NULL
-  UNION ALL
-  SELECT e.EmpID, e.Name, e.ManagerID, CAST(t.Path || ' &gt; ' || e.Name AS VARCHAR(200))
-  FROM Employees e
-  JOIN Tree t ON e.ManagerID = t.EmpID
-)
-SELECT * FROM Tree ORDER BY Path;
-</code></pre>
-<p><strong>Output</strong>
+<p><div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">Tree</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">ManagerID</span><span class="p">,</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Path</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ManagerID</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">  </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">ManagerID</span><span class="p">,</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">Path</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">' &gt; '</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Tree</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">ManagerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">EmpID</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Tree</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Path</span><span class="p">;</span>
+</code></pre></div>
+<strong>Output</strong>
 | Manager     | Employee    |
 |:------------|:------------|
 | Amit Sharma | Arjun Rao   |
@@ -6228,6 +6228,10 @@ SELECT * FROM Tree ORDER BY Path;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

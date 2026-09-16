@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5617,21 +5617,21 @@
 ✅ Clear examples + outputs  </p>
 <hr />
 <h1 id="sample-hooks-used">✅ Sample Hooks Used<a class="headerlink" href="#sample-hooks-used" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@Before(order = 1)
-public void global() {
-    System.out.println(&quot;GLOBAL&quot;);
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">global</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"GLOBAL"</span><span class="p">);</span>
+<span class="p">}</span>
 
-@Before(value = &quot;@smoke&quot;, order = 2)
-public void smoke() {
-    System.out.println(&quot;SMOKE&quot;);
-}
+<span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke"</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">smoke</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"SMOKE"</span><span class="p">);</span>
+<span class="p">}</span>
 
-@Before(value = &quot;@sanity&quot;, order = 3)
-public void sanity() {
-    System.out.println(&quot;SANITY&quot;);
-}
-</code></pre>
+<span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@sanity"</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sanity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"SANITY"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="rule-reminder">✅ Rule Reminder<a class="headerlink" href="#rule-reminder" title="Permanent link">&para;</a></h1>
 <p>Before hooks:
@@ -5645,15 +5645,15 @@ public void sanity() {
 <h1 id="hook-execution-table-very-important">✅ Hook Execution Table (Very Important)<a class="headerlink" href="#hook-execution-table-very-important" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">@smoke @positive
-Scenario: A
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span><span class="nf"> </span><span class="nt">@positive</span>
+<span class="k">Scenario:</span><span class="nf"> A</span>
 
-@sanity
-Scenario: B
+<span class="nf">@sanity</span>
+<span class="nf">Scenario: B</span>
 
-@positive
-Scenario: C
-</code></pre>
+<span class="nf">@positive</span>
+<span class="nf">Scenario: C</span>
+</code></pre></div>
 <hr />
 <h2 id="execution-matrix">Execution Matrix<a class="headerlink" href="#execution-matrix" title="Permanent link">&para;</a></h2>
 <table>
@@ -5695,71 +5695,71 @@ Scenario: C
 <hr />
 <h2 id="console-output-examples">Console Output Examples<a class="headerlink" href="#console-output-examples" title="Permanent link">&para;</a></h2>
 <h3 id="scenario-a">Scenario A<a class="headerlink" href="#scenario-a" title="Permanent link">&para;</a></h3>
-<pre><code>GLOBAL
+<div class="highlight"><pre><span></span><code>GLOBAL
 SMOKE
 Scenario steps
-</code></pre>
+</code></pre></div>
 <h3 id="scenario-b">Scenario B<a class="headerlink" href="#scenario-b" title="Permanent link">&para;</a></h3>
-<pre><code>GLOBAL
+<div class="highlight"><pre><span></span><code>GLOBAL
 SANITY
 Scenario steps
-</code></pre>
+</code></pre></div>
 <h3 id="scenario-c">Scenario C<a class="headerlink" href="#scenario-c" title="Permanent link">&para;</a></h3>
-<pre><code>GLOBAL
+<div class="highlight"><pre><span></span><code>GLOBAL
 Scenario steps
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="hook-parallel-behavior-critical">✅ Hook + Parallel Behavior (CRITICAL)<a class="headerlink" href="#hook-parallel-behavior-critical" title="Permanent link">&para;</a></h1>
 <hr />
 <p>Enable parallel:</p>
-<pre><code class="language-java">@DataProvider(parallel = true)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
 <p>OR</p>
-<pre><code class="language-xml">&lt;parallel&gt;methods&lt;/parallel&gt;
-&lt;threadCount&gt;3&lt;/threadCount&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;parallel&gt;</span>methods<span class="nt">&lt;/parallel&gt;</span>
+<span class="nt">&lt;threadCount&gt;</span>3<span class="nt">&lt;/threadCount&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="example-feature">Example Feature<a class="headerlink" href="#example-feature" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Scenario: A
-Scenario: B
-Scenario: C
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">Scenario:</span><span class="nf"> A</span>
+<span class="nf">Scenario: B</span>
+<span class="nf">Scenario: C</span>
+</code></pre></div>
 <hr />
 <h2 id="hook">Hook<a class="headerlink" href="#hook" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Before
-public void before() {
-    System.out.println(Thread.currentThread().getName());
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">before</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="execution-parallel">Execution (parallel)<a class="headerlink" href="#execution-parallel" title="Permanent link">&para;</a></h2>
-<pre><code>Thread-1
+<div class="highlight"><pre><span></span><code>Thread-1
 Thread-2
 Thread-3
-</code></pre>
+</code></pre></div>
 <p>👉 Hooks run independently for each scenario</p>
 <hr />
 <hr />
 <h1 id="combined-example-tags-hooks-parallel">✅ Combined Example (Tags + Hooks + Parallel)<a class="headerlink" href="#combined-example-tags-hooks-parallel" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Before(order = 1)
-public void global(){}
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">global</span><span class="p">(){}</span>
 
-@Before(&quot;@smoke&quot;, order = 2)
-public void smoke(){}
-</code></pre>
+<span class="nd">@Before</span><span class="p">(</span><span class="s">"@smoke"</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">smoke</span><span class="p">(){}</span>
+</code></pre></div>
 <h2 id="feature_1">Feature<a class="headerlink" href="#feature_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">@smoke Scenario A
-Scenario B
-@smoke Scenario C
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span><span class="nf"> Scenario A</span>
+<span class="nf">Scenario B</span>
+<span class="nt">@smoke</span><span class="nf"> Scenario C</span>
+</code></pre></div>
 <h2 id="execution-parallel_1">Execution (parallel)<a class="headerlink" href="#execution-parallel_1" title="Permanent link">&para;</a></h2>
-<pre><code>Thread-1 → GLOBAL → SMOKE → A
+<div class="highlight"><pre><span></span><code>Thread-1 → GLOBAL → SMOKE → A
 Thread-2 → GLOBAL → B
 Thread-3 → GLOBAL → SMOKE → C
-</code></pre>
+</code></pre></div>
 <p>Only smoke scenarios trigger smoke hook</p>
 <hr />
 <hr />
@@ -5832,6 +5832,10 @@ Thread-3 → GLOBAL → SMOKE → C
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../som/stress/" class="md-nav__link">
+      <a href="../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5664,146 +5664,146 @@ framework</strong> using:</p>
 <h1 id="2-jackson-objectmapper">2. Jackson ObjectMapper<a class="headerlink" href="#2-jackson-objectmapper" title="Permanent link">&para;</a></h1>
 <p>Used for converting <strong>Java object ↔ JSON</strong>.</p>
 <p>JacksonUtil.java</p>
-<pre><code class="language-java">package utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">utils</span><span class="p">;</span>
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.ObjectMapper</span><span class="p">;</span>
 
-public class JacksonUtil {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JacksonUtil</span><span class="w"> </span><span class="p">{</span>
 
-    private static ObjectMapper mapper = new ObjectMapper();
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span>
 
-    public static String convertObjectToJson(Object obj) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">convertObjectToJson</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        try{
-            return mapper.writeValueAsString(obj);
-        }
-        catch(Exception e){
-            throw new RuntimeException(e);
-        }
-    }
+<span class="w">        </span><span class="k">try</span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="na">writeValueAsString</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static &lt;T&gt; T convertJsonToObject(String json, Class&lt;T&gt; clazz){
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">convertJsonToObject</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clazz</span><span class="p">){</span>
 
-        try{
-            return mapper.readValue(json, clazz);
-        }
-        catch(Exception e){
-            throw new RuntimeException(e);
-        }
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">try</span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">clazz</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="3-request-response-logging-to-file">3. Request / Response Logging to File<a class="headerlink" href="#3-request-response-logging-to-file" title="Permanent link">&para;</a></h1>
 <p>LogUtil.java</p>
-<pre><code class="language-java">package utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">utils</span><span class="p">;</span>
 
-import io.restassured.filter.log.LogDetail;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.restassured.filter.log.LogDetail</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.restassured.filter.log.RequestLoggingFilter</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.restassured.filter.log.ResponseLoggingFilter</span><span class="p">;</span>
 
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileOutputStream</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.PrintStream</span><span class="p">;</span>
 
-public class LogUtil {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LogUtil</span><span class="w"> </span><span class="p">{</span>
 
-    public static PrintStream logStream(){
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">PrintStream</span><span class="w"> </span><span class="nf">logStream</span><span class="p">(){</span>
 
-        try{
-            return new PrintStream(
-                new FileOutputStream(&quot;logs/api-logs.txt&quot;, true)
-            );
-        }catch(Exception e){
-            throw new RuntimeException(e);
-        }
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">try</span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrintStream</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="s">"logs/api-logs.txt"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Usage</p>
-<pre><code class="language-java">given()
-.filter(new RequestLoggingFilter(LogUtil.logStream()))
-.filter(new ResponseLoggingFilter(LogUtil.logStream()))
-.get(&quot;/users&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RequestLoggingFilter</span><span class="p">(</span><span class="n">LogUtil</span><span class="p">.</span><span class="na">logStream</span><span class="p">()))</span>
+<span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ResponseLoggingFilter</span><span class="p">(</span><span class="n">LogUtil</span><span class="p">.</span><span class="na">logStream</span><span class="p">()))</span>
+<span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/users"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="4-retry-mechanism">4. Retry Mechanism<a class="headerlink" href="#4-retry-mechanism" title="Permanent link">&para;</a></h1>
 <p>RetryAnalyzer.java</p>
-<pre><code class="language-java">package listeners;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">listeners</span><span class="p">;</span>
 
-import org.testng.IRetryAnalyzer;
-import org.testng.ITestResult;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.IRetryAnalyzer</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.ITestResult</span><span class="p">;</span>
 
-public class RetryAnalyzer implements IRetryAnalyzer {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RetryAnalyzer</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IRetryAnalyzer</span><span class="w"> </span><span class="p">{</span>
 
-    int count = 0;
-    int maxRetry = 2;
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">maxRetry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 
-    public boolean retry(ITestResult result){
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">retry</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">){</span>
 
-        if(count &lt; maxRetry){
-            count++;
-            return true;
-        }
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">maxRetry</span><span class="p">){</span>
+<span class="w">            </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        return false;
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Usage</p>
-<pre><code class="language-java">@Test(retryAnalyzer = listeners.RetryAnalyzer.class)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">retryAnalyzer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listeners</span><span class="p">.</span><span class="na">RetryAnalyzer</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h1 id="5-token-management-oauth-jwt">5. Token Management (OAuth / JWT)<a class="headerlink" href="#5-token-management-oauth-jwt" title="Permanent link">&para;</a></h1>
 <p>TokenManager.java</p>
-<pre><code class="language-java">package auth;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">auth</span><span class="p">;</span>
 
-import static io.restassured.RestAssured.*;
+<span class="kn">import static</span><span class="w"> </span><span class="nn">io.restassured.RestAssured.*</span><span class="p">;</span>
 
-public class TokenManager {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TokenManager</span><span class="w"> </span><span class="p">{</span>
 
-    static String token;
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">token</span><span class="p">;</span>
 
-    public static String getToken(){
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getToken</span><span class="p">(){</span>
 
-        if(token == null){
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">token</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
 
-            token =
-            given()
-            .contentType(&quot;application/json&quot;)
+<span class="w">            </span><span class="n">token</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="n">given</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">contentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">)</span>
 
-            .body(&quot;{\&quot;username\&quot;:\&quot;admin\&quot;,\&quot;password\&quot;:\&quot;admin\&quot;}&quot;)
+<span class="w">            </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="s">"{\"username\":\"admin\",\"password\":\"admin\"}"</span><span class="p">)</span>
 
-            .post(&quot;/auth/login&quot;)
+<span class="w">            </span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">"/auth/login"</span><span class="p">)</span>
 
-            .jsonPath()
-            .getString(&quot;token&quot;);
+<span class="w">            </span><span class="p">.</span><span class="na">jsonPath</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"token"</span><span class="p">);</span>
 
-        }
+<span class="w">        </span><span class="p">}</span>
 
-        return token;
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">token</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Usage</p>
-<pre><code class="language-java">given()
-.header(&quot;Authorization&quot;,&quot;Bearer &quot; + TokenManager.getToken())
-.get(&quot;/users&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">given</span><span class="p">()</span>
+<span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span><span class="s">"Bearer "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">TokenManager</span><span class="p">.</span><span class="na">getToken</span><span class="p">())</span>
+<span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"/users"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="6-parallel-execution-with-testng">6. Parallel Execution with TestNG<a class="headerlink" href="#6-parallel-execution-with-testng" title="Permanent link">&para;</a></h1>
 <p>testng.xml</p>
-<pre><code class="language-xml">&lt;suite name=&quot;API Suite&quot; parallel=&quot;methods&quot; thread-count=&quot;5&quot;&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;suite</span><span class="w"> </span><span class="na">name=</span><span class="s">"API Suite"</span><span class="w"> </span><span class="na">parallel=</span><span class="s">"methods"</span><span class="w"> </span><span class="na">thread-count=</span><span class="s">"5"</span><span class="nt">&gt;</span>
 
-&lt;test name=&quot;API Tests&quot;&gt;
+<span class="nt">&lt;test</span><span class="w"> </span><span class="na">name=</span><span class="s">"API Tests"</span><span class="nt">&gt;</span>
 
-&lt;classes&gt;
-&lt;class name=&quot;tests.UserAPITest&quot;/&gt;
-&lt;/classes&gt;
+<span class="nt">&lt;classes&gt;</span>
+<span class="nt">&lt;class</span><span class="w"> </span><span class="na">name=</span><span class="s">"tests.UserAPITest"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/classes&gt;</span>
 
-&lt;/test&gt;
+<span class="nt">&lt;/test&gt;</span>
 
-&lt;/suite&gt;
-</code></pre>
+<span class="nt">&lt;/suite&gt;</span>
+</code></pre></div>
 <p>Benefits</p>
 <ul>
 <li>Faster execution</li>
@@ -5986,6 +5986,10 @@ CI/CD Pipeline
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

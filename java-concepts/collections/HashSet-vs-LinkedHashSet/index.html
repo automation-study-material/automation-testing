@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -6595,11 +6595,11 @@
 <p>Before jumping into classes, understand the <strong>problem Set solves</strong>.</p>
 <hr />
 <h2 id="problem-with-arraylist">❌ Problem with ArrayList<a class="headerlink" href="#problem-with-arraylist" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;String&gt; list = new ArrayList&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-list.add(&quot;ACC123&quot;);
-list.add(&quot;ACC123&quot;); // duplicate allowed ❌
-</code></pre>
+<span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"ACC123"</span><span class="p">);</span>
+<span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"ACC123"</span><span class="p">);</span><span class="w"> </span><span class="c1">// duplicate allowed ❌</span>
+</code></pre></div>
 <h3 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">&para;</a></h3>
 <ul>
 <li>❌ Duplicates allowed</li>
@@ -6615,11 +6615,11 @@ list.add(&quot;ACC123&quot;); // duplicate allowed ❌
 <li>✔ Mathematical set behavior</li>
 <li>✔ Useful for unique data</li>
 </ul>
-<pre><code class="language-java">Set&lt;String&gt; set = new HashSet&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-set.add(&quot;ACC123&quot;);
-set.add(&quot;ACC123&quot;); // ignored automatically ✅
-</code></pre>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"ACC123"</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"ACC123"</span><span class="p">);</span><span class="w"> </span><span class="c1">// ignored automatically ✅</span>
+</code></pre></div>
 <hr />
 <h2 id="concept-summary">✅ Concept Summary<a class="headerlink" href="#concept-summary" title="Permanent link">&para;</a></h2>
 <table>
@@ -6665,25 +6665,25 @@ set.add(&quot;ACC123&quot;); // ignored automatically ✅
 <h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
 <p><strong>Unordered + Unique + Fast</strong></p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; set = new HashSet&lt;&gt;();
-set.add(&quot;A&quot;);
-set.add(&quot;B&quot;);
-set.add(&quot;C&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span>
 
-System.out.println(set);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">set</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
-<pre><code>[B, A, C]  // random order
-</code></pre>
+<div class="highlight"><pre><span></span><code>[B, A, C]  // random order
+</code></pre></div>
 <hr />
 <h2 id="hashset-internal-working-deep-explanation">✅ HashSet Internal Working (Deep Explanation)<a class="headerlink" href="#hashset-internal-working-deep-explanation" title="Permanent link">&para;</a></h2>
 <h3 id="what-really-happens-when-you-do">🔹 What really happens when you do:<a class="headerlink" href="#what-really-happens-when-you-do" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; set = new HashSet&lt;&gt;();
-set.add(&quot;ACC123&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"ACC123"</span><span class="p">);</span>
+</code></pre></div>
 <p>Internally, <code>HashSet</code> uses <code>HashMap</code>:</p>
-<pre><code class="language-java">HashMap&lt;E, Object&gt; map;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">E</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="p">;</span>
+</code></pre></div>
 <ul>
 <li>Elements are stored as <strong>keys</strong></li>
 <li>Values are <strong>dummy objects</strong></li>
@@ -6692,11 +6692,11 @@ set.add(&quot;ACC123&quot;);
 <h2 id="step-by-step-internal-flow">🧠 Step-by-Step Internal Flow<a class="headerlink" href="#step-by-step-internal-flow" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="step-1-hashcode-is-generated">✅ Step 1 — <code>hashCode()</code> is generated<a class="headerlink" href="#step-1-hashcode-is-generated" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">&quot;ACC123&quot;.hashCode();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s">"ACC123"</span><span class="p">.</span><span class="na">hashCode</span><span class="p">();</span>
+</code></pre></div>
 <p>Example:</p>
-<pre><code>hashCode = 12345678
-</code></pre>
+<div class="highlight"><pre><span></span><code>hashCode = 12345678
+</code></pre></div>
 <p><strong>Purpose</strong></p>
 <ul>
 <li>Convert object → integer</li>
@@ -6706,25 +6706,25 @@ set.add(&quot;ACC123&quot;);
 <h3 id="step-2-bucket-index-is-calculated">✅ Step 2 — Bucket index is calculated<a class="headerlink" href="#step-2-bucket-index-is-calculated" title="Permanent link">&para;</a></h3>
 <p>HashMap has an internal <strong>bucket array</strong>.</p>
 <p>Default size:</p>
-<pre><code>16 buckets
-</code></pre>
+<div class="highlight"><pre><span></span><code>16 buckets
+</code></pre></div>
 <p>Formula:</p>
-<pre><code class="language-java">index = hashCode % arraySize;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hashCode</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">arraySize</span><span class="p">;</span>
+</code></pre></div>
 <p>Example:</p>
-<pre><code>12345678 % 16 = 14
-</code></pre>
+<div class="highlight"><pre><span></span><code>12345678 % 16 = 14
+</code></pre></div>
 <p>➡ Stored in <code>bucket[14]</code></p>
 <hr />
 <h3 id="step-3-stored-in-bucket">✅ Step 3 — Stored in bucket<a class="headerlink" href="#step-3-stored-in-bucket" title="Permanent link">&para;</a></h3>
 <p>Java checks:</p>
 <p>👉 Is <code>bucket[14]</code> empty?</p>
 <p><strong>Case 1: Empty</strong></p>
-<pre><code>bucket[14] → &quot;ACC123&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>bucket[14] → "ACC123"
+</code></pre></div>
 <p><strong>Case 2: Collision</strong></p>
-<pre><code>bucket[14] → [ACC120, ACC121]
-</code></pre>
+<div class="highlight"><pre><span></span><code>bucket[14] → [ACC120, ACC121]
+</code></pre></div>
 <p>Java adds it using collision handling.</p>
 <p><strong>Internally</strong></p>
 <ul>
@@ -6734,11 +6734,11 @@ set.add(&quot;ACC123&quot;);
 <hr />
 <h3 id="step-4-duplicate-check-using-equals">✅ Step 4 — Duplicate check using <code>equals()</code><a class="headerlink" href="#step-4-duplicate-check-using-equals" title="Permanent link">&para;</a></h3>
 <p>Java compares:</p>
-<pre><code class="language-java">existingElement.equals(newElement);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">existingElement</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">newElement</span><span class="p">);</span>
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-java">&quot;ACC123&quot;.equals(&quot;ACC123&quot;) → true
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s">"ACC123"</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"ACC123"</span><span class="p">)</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
 <ul>
 <li>✅ <code>true</code> → Duplicate → <strong>NOT added</strong></li>
 <li>❌ <code>false</code> → Unique → <strong>Added</strong></li>
@@ -6749,7 +6749,7 @@ set.add(&quot;ACC123&quot;);
 </blockquote>
 <hr />
 <h2 id="summary-flow-interview-gold">🔁 Summary Flow (Interview Gold)<a class="headerlink" href="#summary-flow-interview-gold" title="Permanent link">&para;</a></h2>
-<pre><code>add(element)
+<div class="highlight"><pre><span></span><code>add(element)
    ↓
 hashCode()
    ↓
@@ -6760,13 +6760,13 @@ check bucket
 equals() comparison
    ↓
 add OR ignore
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="why-both-hashcode-and-equals-are-needed">⚠️ Why BOTH <code>hashCode()</code> and <code>equals()</code> are needed?<a class="headerlink" href="#why-both-hashcode-and-equals-are-needed" title="Permanent link">&para;</a></h2>
 <p>Different objects may have <strong>same hashCode</strong>:</p>
-<pre><code class="language-text">&quot;ABC&quot;
-&quot;CBA&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>"ABC"
+"CBA"
+</code></pre></div>
 <p>➡ Same bucket</p>
 <p>So Java uses:</p>
 <ul>
@@ -6775,38 +6775,38 @@ add OR ignore
 </ul>
 <hr />
 <h2 id="custom-object-example-very-important">🧪 Custom Object Example (Very Important)<a class="headerlink" href="#custom-object-example-very-important" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class Account {
-    String accNo;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Account</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">accNo</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>If you <strong>don’t override</strong>:</p>
-<pre><code class="language-java">equals()
-hashCode()
-</code></pre>
-<pre><code class="language-java">set.add(new Account(&quot;A1&quot;));
-set.add(new Account(&quot;A1&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">equals</span><span class="p">()</span>
+<span class="n">hashCode</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span><span class="s">"A1"</span><span class="p">));</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span><span class="s">"A1"</span><span class="p">));</span>
+</code></pre></div>
 <p>❌ Duplicates allowed!</p>
 <h3 id="correct-way">Correct Way<a class="headerlink" href="#correct-way" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Override
-public int hashCode() {
-    return accNo.hashCode();
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">accNo</span><span class="p">.</span><span class="na">hashCode</span><span class="p">();</span>
+<span class="p">}</span>
 
-@Override
-public boolean equals(Object obj) {
-    Account other = (Account) obj;
-    return this.accNo.equals(other.accNo);
-}
-</code></pre>
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Account</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Account</span><span class="p">)</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">accNo</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="na">accNo</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="banking-selenium-example-real-world">🏦 Banking Selenium Example (Real World)<a class="headerlink" href="#banking-selenium-example-real-world" title="Permanent link">&para;</a></h2>
 <h3 id="prevent-duplicate-transaction-ids">Prevent duplicate transaction IDs<a class="headerlink" href="#prevent-duplicate-transaction-ids" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; txnIds = new HashSet&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">txnIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-txnIds.add(&quot;TXN1001&quot;);
-txnIds.add(&quot;TXN1001&quot;); // ignored automatically
-</code></pre>
+<span class="n">txnIds</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"TXN1001"</span><span class="p">);</span>
+<span class="n">txnIds</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"TXN1001"</span><span class="p">);</span><span class="w"> </span><span class="c1">// ignored automatically</span>
+</code></pre></div>
 <p>Why it works:</p>
 <ul>
 <li><code>hashCode()</code> → bucket</li>
@@ -6851,16 +6851,16 @@ On add, it generates hashCode, calculates bucket index, checks duplicates using 
 <h3 id="definition_1">Definition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h3>
 <p><strong>Insertion Order + Unique</strong></p>
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; set = new LinkedHashSet&lt;&gt;();
-set.add(&quot;A&quot;);
-set.add(&quot;B&quot;);
-set.add(&quot;C&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span>
 
-System.out.println(set);
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">set</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
-<pre><code>[A, B, C]
-</code></pre>
+<div class="highlight"><pre><span></span><code>[A, B, C]
+</code></pre></div>
 <hr />
 <h2 id="linkedhashset-internals">✅ LinkedHashSet Internals<a class="headerlink" href="#linkedhashset-internals" title="Permanent link">&para;</a></h2>
 <p>Uses:</p>
@@ -6869,87 +6869,87 @@ System.out.println(set);
 <li>Doubly Linked List</li>
 </ul>
 <p>Internally:</p>
-<pre><code>LinkedHashMap
-</code></pre>
+<div class="highlight"><pre><span></span><code>LinkedHashMap
+</code></pre></div>
 <p>Structure:</p>
-<pre><code>Hash Table  → Fast lookup
+<div class="highlight"><pre><span></span><code>Hash Table  → Fast lookup
 Linked List → Maintains order
-</code></pre>
+</code></pre></div>
 <p>Diagram:</p>
-<pre><code>A &lt;-&gt; B &lt;-&gt; C
-</code></pre>
+<div class="highlight"><pre><span></span><code>A &lt;-&gt; B &lt;-&gt; C
+</code></pre></div>
 <p>✔ Order maintained
 ❌ Slightly slower
 ❌ Extra memory</p>
 <hr />
 <h2 id="real-time-selenium-banking-examples">✅ Real-Time Selenium / Banking Examples<a class="headerlink" href="#real-time-selenium-banking-examples" title="Permanent link">&para;</a></h2>
 <h3 id="example-1-unique-window-handles-hashset">⭐ Example 1 — Unique Window Handles (HashSet)<a class="headerlink" href="#example-1-unique-window-handles-hashset" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; handles = driver.getWindowHandles();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">handles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandles</span><span class="p">();</span>
+</code></pre></div>
 <ul>
 <li>Unique</li>
 <li>Order doesn’t matter</li>
 </ul>
 <hr />
 <h3 id="example-2-unique-login-users">⭐ Example 2 — Unique Login Users<a class="headerlink" href="#example-2-unique-login-users" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; users = new HashSet&lt;&gt;();
-users.add(&quot;cust001&quot;);
-users.add(&quot;cust001&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">users</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"cust001"</span><span class="p">);</span>
+<span class="n">users</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"cust001"</span><span class="p">);</span>
+</code></pre></div>
 <p>✔ No duplicate login</p>
 <hr />
 <h3 id="example-3-transaction-ids-linkedhashset">⭐ Example 3 — Transaction IDs (LinkedHashSet)<a class="headerlink" href="#example-3-transaction-ids-linkedhashset" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; txnIds = new LinkedHashSet&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">txnIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <p>✔ Unique
 ✔ Order preserved for reports</p>
 <hr />
 <h3 id="example-4-dropdown-validation">⭐ Example 4 — Dropdown Validation<a class="headerlink" href="#example-4-dropdown-validation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Set&lt;String&gt; actual = new HashSet&lt;&gt;(optionsFromUI);
-Set&lt;String&gt; expected = new HashSet&lt;&gt;(expectedOptions);
+<div class="highlight"><pre><span></span><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">optionsFromUI</span><span class="p">);</span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">expectedOptions</span><span class="p">);</span>
 
-assert actual.equals(expected);
-</code></pre>
+<span class="k">assert</span><span class="w"> </span><span class="n">actual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">expected</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="common-set-methods">✅ Common Set Methods<a class="headerlink" href="#common-set-methods" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">set.add(&quot;A&quot;);
-set.remove(&quot;A&quot;);
-set.contains(&quot;A&quot;);
-set.size();
-set.isEmpty();
-set.clear();
+<div class="highlight"><pre><span></span><code><span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
+<span class="n">set</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span>
+<span class="n">set</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
 
-for(String s : set) {
-    System.out.println(s);
-}
-</code></pre>
+<span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">set</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="full-example-code">✅ Full Example Code<a class="headerlink" href="#full-example-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import java.util.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
 
-public class SetDemo {
-    public static void main(String[] args) {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SetDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        Set&lt;String&gt; hashSet = new HashSet&lt;&gt;();
-        hashSet.add(&quot;Java&quot;);
-        hashSet.add(&quot;Python&quot;);
-        hashSet.add(&quot;Java&quot;);
+<span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">hashSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">hashSet</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">hashSet</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Python"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">hashSet</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
 
-        System.out.println(&quot;HashSet: &quot; + hashSet);
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"HashSet: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">hashSet</span><span class="p">);</span>
 
-        Set&lt;String&gt; linkedSet = new LinkedHashSet&lt;&gt;();
-        linkedSet.add(&quot;Java&quot;);
-        linkedSet.add(&quot;Python&quot;);
-        linkedSet.add(&quot;Java&quot;);
+<span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">linkedSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">linkedSet</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">linkedSet</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Python"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">linkedSet</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
 
-        System.out.println(&quot;LinkedHashSet: &quot; + linkedSet);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"LinkedHashSet: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">linkedSet</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
-<pre><code>HashSet: [Python, Java]
+<div class="highlight"><pre><span></span><code>HashSet: [Python, Java]
 LinkedHashSet: [Java, Python]
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="hashset-vs-linkedhashset">✅ HashSet vs LinkedHashSet<a class="headerlink" href="#hashset-vs-linkedhashset" title="Permanent link">&para;</a></h2>
 <table>
@@ -7064,6 +7064,10 @@ HashMap vs LinkedHashMap</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

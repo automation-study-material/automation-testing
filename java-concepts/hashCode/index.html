@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5851,45 +5851,45 @@ value representing the object's identity.</p>
 </ol>
 <hr />
 <h2 id="example-1-string-hashcode">✅ Example 1: String hashCode<a class="headerlink" href="#example-1-string-hashcode" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">String name = &quot;Nitin&quot;;
-System.out.println(name.hashCode());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Nitin"</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+</code></pre></div>
 <p>✔ Same string always produces same hashCode.</p>
 <hr />
 <h2 id="example-2-integer-hashcode">✅ Example 2: Integer hashCode<a class="headerlink" href="#example-2-integer-hashcode" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Integer num = 100;
-System.out.println(num.hashCode());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">num</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+</code></pre></div>
 <p>✔ Integer hashCode is the value itself.</p>
 <hr />
 <h2 id="example-3-default-object-hashcode">✅ Example 3: Default Object hashCode<a class="headerlink" href="#example-3-default-object-hashcode" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class Employee {
-    String name;
-    int age;
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
 
-    Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-}
+<span class="w">    </span><span class="n">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-Employee e1 = new Employee(&quot;Nitin&quot;, 28);
-Employee e2 = new Employee(&quot;Nitin&quot;, 28);
+<span class="n">Employee</span><span class="w"> </span><span class="n">e1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Nitin"</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">);</span>
+<span class="n">Employee</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Nitin"</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">);</span>
 
-System.out.println(e1.hashCode());
-System.out.println(e2.hashCode());
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e2</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+</code></pre></div>
 <p>⚠ Default hashCode is based on object identity (memory reference).
 Different objects → different hashCodes.</p>
 <hr />
 <h2 id="custom-hashcode-recommended">✅ Custom hashCode (Recommended)<a class="headerlink" href="#custom-hashcode-recommended" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import java.util.Objects;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Objects</span><span class="p">;</span>
 
-@Override
-public int hashCode() {
-    return Objects.hash(name, age);
-}
-</code></pre>
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">hash</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✔ Objects with same logical data → same hashCode.</p>
 <hr />
 <h2 id="important-rule">🔥 Important Rule<a class="headerlink" href="#important-rule" title="Permanent link">&para;</a></h2>
@@ -5954,6 +5954,10 @@ efficient storage and retrieval.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6887,7 +6887,7 @@
 <li>Avoid static/shared test data</li>
 </ol>
 <h3 id="diagram">Diagram<a class="headerlink" href="#diagram" title="Permanent link">&para;</a></h3>
-<pre><code>CI Pipeline
+<div class="highlight"><pre><span></span><code>CI Pipeline
    |
    v
 Parallel API Tests
@@ -6897,21 +6897,21 @@ Shared Token ❌
    |
    v
 Random Failures
-</code></pre>
+</code></pre></div>
 <h3 id="solution-code-retry-threadlocal">Solution Code (Retry + ThreadLocal)<a class="headerlink" href="#solution-code-retry-threadlocal" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class RetryAnalyzer implements IRetryAnalyzer {
-    private int retryCount = 0;
-    private static final int MAX_RETRY = 2;
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RetryAnalyzer</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IRetryAnalyzer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">retryCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_RETRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 
-    public boolean retry(ITestResult result) {
-        return retryCount++ &lt; MAX_RETRY;
-    }
-}
-</code></pre>
-<pre><code class="language-java">public class TokenManager {
-    private static ThreadLocal&lt;String&gt; token = new ThreadLocal&lt;&gt;();
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">retry</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">retryCount</span><span class="o">++</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MAX_RETRY</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TokenManager</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>📌 <strong>Strong Line</strong></p>
 <blockquote>
 <p>“Retries should stabilize flaky infra, not hide real bugs.”</p>
@@ -6935,14 +6935,14 @@ Random Failures
 <h3 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h3>
 <p>Use <code>ThreadLocal</code></p>
 <h3 id="diagram_1">Diagram<a class="headerlink" href="#diagram_1" title="Permanent link">&para;</a></h3>
-<pre><code>Thread-1 → Token-A
+<div class="highlight"><pre><span></span><code>Thread-1 → Token-A
 Thread-2 → Token-B
 Static Token ❌ (overwritten)
 ThreadLocal Token ✅
-</code></pre>
+</code></pre></div>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">private static ThreadLocal&lt;String&gt; token = new ThreadLocal&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <p>📌 <strong>Interview Gold</strong></p>
 <blockquote>
 <p>“ThreadLocal gives each test thread its own isolated copy of data.”</p>
@@ -6964,18 +6964,18 @@ ThreadLocal Token ✅
 <li>Reusable validation utilities</li>
 </ul>
 <h3 id="code-snippet">Code Snippet<a class="headerlink" href="#code-snippet" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">ResponseValidator.validateStatus(response, 200);
-ResponseValidator.validateNotNull(response, &quot;data.id&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ResponseValidator</span><span class="p">.</span><span class="na">validateStatus</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+<span class="n">ResponseValidator</span><span class="p">.</span><span class="na">validateNotNull</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s">"data.id"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="diagram_2">Diagram<a class="headerlink" href="#diagram_2" title="Permanent link">&para;</a></h3>
-<pre><code>API Response
+<div class="highlight"><pre><span></span><code>API Response
    |
    v
 POJO Mapping
    |
    v
 Business Validation
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="scenario-4-api-contract-changes-suddenly">🧠 SCENARIO 4: API Contract Changes Suddenly<a class="headerlink" href="#scenario-4-api-contract-changes-suddenly" title="Permanent link">&para;</a></h2>
 <h3 id="interviewer-question_3">Interviewer Question<a class="headerlink" href="#interviewer-question_3" title="Permanent link">&para;</a></h3>
@@ -6995,12 +6995,12 @@ Business Validation
 <li>No test rewrite needed</li>
 </ul>
 <h3 id="code_1">Code<a class="headerlink" href="#code_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class LoginRequest {
-    private String username;
-    private String password;
-    private String deviceId; // new field
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginRequest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">deviceId</span><span class="p">;</span><span class="w"> </span><span class="c1">// new field</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="scenario-5-how-do-you-design-api-framework-from-scratch">🧠 SCENARIO 5: How Do You Design API Framework From Scratch?<a class="headerlink" href="#scenario-5-how-do-you-design-api-framework-from-scratch" title="Permanent link">&para;</a></h2>
 <h3 id="interviewer-expectation">Interviewer Expectation<a class="headerlink" href="#interviewer-expectation" title="Permanent link">&para;</a></h3>
@@ -7016,14 +7016,14 @@ Business Validation
 <li>Test layer (BDD style)</li>
 </ol>
 <h3 id="diagram_3">Diagram<a class="headerlink" href="#diagram_3" title="Permanent link">&para;</a></h3>
-<pre><code>Test
+<div class="highlight"><pre><span></span><code>Test
  ↓
 Service Layer
  ↓
 RestClient
  ↓
 HTTP Client
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="scenario-6-api-returns-200-but-data-is-wrong">🧠 SCENARIO 6: API Returns 200 but Data Is Wrong<a class="headerlink" href="#scenario-6-api-returns-200-but-data-is-wrong" title="Permanent link">&para;</a></h2>
 <h3 id="interviewer-question_4">Interviewer Question<a class="headerlink" href="#interviewer-question_4" title="Permanent link">&para;</a></h3>
@@ -7037,8 +7037,8 @@ HTTP Client
 <li>Validate business rules</li>
 </ul>
 <h3 id="code_2">Code<a class="headerlink" href="#code_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Assert.assertEquals(response.jsonPath().getString(&quot;status&quot;), &quot;SUCCESS&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">jsonPath</span><span class="p">().</span><span class="na">getString</span><span class="p">(</span><span class="s">"status"</span><span class="p">),</span><span class="w"> </span><span class="s">"SUCCESS"</span><span class="p">);</span>
+</code></pre></div>
 <p>📌 <strong>Strong Line</strong></p>
 <blockquote>
 <p>“Status code validation alone is not sufficient.”</p>
@@ -7056,10 +7056,10 @@ HTTP Client
 <li>Clear test flow</li>
 </ul>
 <h3 id="code_3">Code<a class="headerlink" href="#code_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">givenValidLoginPayload();
-whenLoginApiIsCalled();
-thenTokenShouldBeGenerated();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">givenValidLoginPayload</span><span class="p">();</span>
+<span class="n">whenLoginApiIsCalled</span><span class="p">();</span>
+<span class="n">thenTokenShouldBeGenerated</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="scenario-8-api-test-data-strategy">🧠 SCENARIO 8: API Test Data Strategy<a class="headerlink" href="#scenario-8-api-test-data-strategy" title="Permanent link">&para;</a></h2>
 <h3 id="interviewer-question_6">Interviewer Question<a class="headerlink" href="#interviewer-question_6" title="Permanent link">&para;</a></h3>
@@ -7079,9 +7079,9 @@ thenTokenShouldBeGenerated();
 <p>“Do you validate performance in Rest Assured?”</p>
 </blockquote>
 <h3 id="answer_1">Answer<a class="headerlink" href="#answer_1" title="Permanent link">&para;</a></h3>
-<p>Yes, but lightly:</p>
-<pre><code class="language-java">Assert.assertTrue(response.time() &lt; 2000);
-</code></pre>
+<p>Yes, but lightly:
+<div class="highlight"><pre><span></span><code><span class="n">Assert</span><span class="p">.</span><span class="na">assertTrue</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">time</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2000</span><span class="p">);</span>
+</code></pre></div></p>
 <p>📌 Emphasize:</p>
 <blockquote>
 <p>“Functional automation is not load testing.”</p>
@@ -7099,9 +7099,9 @@ thenTokenShouldBeGenerated();
 <li>Faster and stable tests</li>
 </ul>
 <h3 id="diagram_4">Diagram<a class="headerlink" href="#diagram_4" title="Permanent link">&para;</a></h3>
-<pre><code>API → Create User
+<div class="highlight"><pre><span></span><code>API → Create User
 UI → Validate User
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="final-interview-power-statement">⭐ FINAL INTERVIEW POWER STATEMENT<a class="headerlink" href="#final-interview-power-statement" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -7175,6 +7175,10 @@ UI → Validate User
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

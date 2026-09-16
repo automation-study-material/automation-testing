@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5888,8 +5888,8 @@
 <hr />
 <h2 id="2-detect-nulls">2. Detect NULLs<a class="headerlink" href="#2-detect-nulls" title="Permanent link">&para;</a></h2>
 <h3 id="q1-employees-with-null-salary">Q1: Employees with NULL salary<a class="headerlink" href="#q1-employees-with-null-salary" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees WHERE salary IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5910,8 +5910,8 @@
 </tbody>
 </table>
 <h3 id="q2-employees-with-null-department">Q2: Employees with NULL department<a class="headerlink" href="#q2-employees-with-null-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees WHERE dept_id IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5932,8 +5932,8 @@
 </tbody>
 </table>
 <h3 id="q3-employees-with-null-name-or-salary">Q3: Employees with NULL name or salary<a class="headerlink" href="#q3-employees-with-null-name-or-salary" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees WHERE name IS NULL OR salary IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5956,8 +5956,8 @@
 <hr />
 <h2 id="3-detect-invalid-or-negative-values">3. Detect invalid or negative values<a class="headerlink" href="#3-detect-invalid-or-negative-values" title="Permanent link">&para;</a></h2>
 <h3 id="q4-employees-with-negative-salary">Q4: Employees with negative salary<a class="headerlink" href="#q4-employees-with-negative-salary" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees WHERE salary &lt; 0;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5978,8 +5978,8 @@
 </tbody>
 </table>
 <h3 id="q5-employees-with-salary-outside-valid-range-eg-0-or-100000">Q5: Employees with salary outside valid range (e.g., &lt;0 or &gt;100000)<a class="headerlink" href="#q5-employees-with-salary-outside-valid-range-eg-0-or-100000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees WHERE salary &lt; 0 OR salary &gt; 100000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6002,10 +6002,10 @@
 <hr />
 <h2 id="4-identify-orphan-records-fk-violations">4. Identify orphan records (FK violations)<a class="headerlink" href="#4-identify-orphan-records-fk-violations" title="Permanent link">&para;</a></h2>
 <h3 id="q6-employees-with-invalid-department">Q6: Employees with invalid department<a class="headerlink" href="#q6-employees-with-invalid-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees e
-LEFT JOIN departments d ON e.dept_id = d.dept_id
-WHERE d.dept_id IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6026,8 +6026,8 @@ WHERE d.dept_id IS NULL;
 </tbody>
 </table>
 <h3 id="q7-employees-not-assigned-to-a-valid-department">Q7: Employees not assigned to a valid department<a class="headerlink" href="#q7-employees-not-assigned-to-a-valid-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees WHERE dept_id NOT IN (SELECT dept_id FROM departments);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_id</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">departments</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6050,8 +6050,8 @@ WHERE d.dept_id IS NULL;
 <hr />
 <h2 id="5-combined-checks">5. Combined checks<a class="headerlink" href="#5-combined-checks" title="Permanent link">&para;</a></h2>
 <h3 id="q8-detect-nulls-or-negative-salaries">Q8: Detect NULLs or negative salaries<a class="headerlink" href="#q8-detect-nulls-or-negative-salaries" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees WHERE salary IS NULL OR salary &lt; 0;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6078,9 +6078,9 @@ WHERE d.dept_id IS NULL;
 </tbody>
 </table>
 <h3 id="q9-employees-with-null-dept_id-or-invalid-department">Q9: Employees with NULL dept_id or invalid department<a class="headerlink" href="#q9-employees-with-null-dept_id-or-invalid-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees e
-WHERE dept_id IS NULL OR dept_id NOT IN (SELECT dept_id FROM departments);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">dept_id</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">departments</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6101,10 +6101,10 @@ WHERE dept_id IS NULL OR dept_id NOT IN (SELECT dept_id FROM departments);
 </tbody>
 </table>
 <h3 id="q10-detect-all-data-issues">Q10: Detect all data issues<a class="headerlink" href="#q10-detect-all-data-issues" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT * FROM employees e
-LEFT JOIN departments d ON e.dept_id = d.dept_id
-WHERE salary IS NULL OR salary &lt; 0 OR d.dept_id IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6203,6 +6203,10 @@ WHERE salary IS NULL OR salary &lt; 0 OR d.dept_id IS NULL;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

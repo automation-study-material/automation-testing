@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5880,107 +5880,107 @@
 </ul>
 <hr />
 <h2 id="complex-inheritance-example">Complex Inheritance Example<a class="headerlink" href="#complex-inheritance-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package com.example.inheritance;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.inheritance</span><span class="p">;</span>
 
-// Superclass
-class Employee {
-    protected String name;
-    private int age;
-    public String company;
-    protected static int employeeCount = 0;
+<span class="c1">// Superclass</span>
+<span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">employeeCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-    // User-defined constructor
-    public Employee(String name, int age, String company) {
-        this.name = name;
-        setAge(age);  // Encapsulation in action
-        this.company = company;
-        employeeCount++;
-        System.out.println(&quot;Employee constructor called for &quot; + name);
-    }
+<span class="w">    </span><span class="c1">// User-defined constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="n">setAge</span><span class="p">(</span><span class="n">age</span><span class="p">);</span><span class="w">  </span><span class="c1">// Encapsulation in action</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">        </span><span class="n">employeeCount</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Employee constructor called for "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Getter and Setter for private field
-    public void setAge(int age) {
-        if(age &lt; 18 || age &gt; 65) {
-            System.out.println(&quot;Age must be between 18 and 65&quot;);
-        } else {
-            this.age = age;
-        }
-    }
+<span class="w">    </span><span class="c1">// Getter and Setter for private field</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">65</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age must be between 18 and 65"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public int getAge() {
-        return age;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Instance method
-    public void displayInfo() {
-        System.out.println(&quot;Name: &quot; + name);
-        System.out.println(&quot;Age: &quot; + age);
-        System.out.println(&quot;Company: &quot; + company);
-    }
+<span class="w">    </span><span class="c1">// Instance method</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Company: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">company</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Static method
-    public static void showEmployeeCount() {
-        System.out.println(&quot;Total Employees: &quot; + employeeCount);
-    }
-}
+<span class="w">    </span><span class="c1">// Static method</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">showEmployeeCount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total Employees: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">employeeCount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-// Subclass
-class Manager extends Employee {
-    private String department;
+<span class="c1">// Subclass</span>
+<span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">department</span><span class="p">;</span>
 
-    // Subclass constructor
-    public Manager(String name, int age, String company, String department) {
-        super(name, age, company); // Call superclass constructor
-        this.department = department;
-        System.out.println(&quot;Manager constructor called for &quot; + name);
-    }
+<span class="w">    </span><span class="c1">// Subclass constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Manager</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">department</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">company</span><span class="p">);</span><span class="w"> </span><span class="c1">// Call superclass constructor</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">department</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">department</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Manager constructor called for "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Method overriding
-    @Override
-    public void displayInfo() {
-        super.displayInfo(); // Call superclass method
-        System.out.println(&quot;Department: &quot; + department);
-    }
+<span class="w">    </span><span class="c1">// Method overriding</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Call superclass method</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Department: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">department</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Subclass-specific method
-    public void approveLeave() {
-        System.out.println(name + &quot; approved leave for the team.&quot;);
-    }
+<span class="w">    </span><span class="c1">// Subclass-specific method</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">approveLeave</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" approved leave for the team."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Static method in subclass (hides superclass static method)
-    public static void showEmployeeCount() {
-        System.out.println(&quot;Manager count: &quot; + employeeCount);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="c1">// Static method in subclass (hides superclass static method)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">showEmployeeCount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Manager count: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">employeeCount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="testing-inheritance-with-static-methods-and-constructors">Testing Inheritance with Static Methods and Constructors<a class="headerlink" href="#testing-inheritance-with-static-methods-and-constructors" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package com.example.inheritance;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.inheritance</span><span class="p">;</span>
 
-public class Main {
-    public static void main(String[] args) {
-        // Create Employee and Manager objects
-        Employee emp1 = new Employee(&quot;Alice&quot;, 28, &quot;TechCorp&quot;);
-        Manager mgr1 = new Manager(&quot;Bob&quot;, 35, &quot;TechCorp&quot;, &quot;IT&quot;);
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Create Employee and Manager objects</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">emp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Alice"</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w"> </span><span class="s">"TechCorp"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Manager</span><span class="w"> </span><span class="n">mgr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Bob"</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="s">"TechCorp"</span><span class="p">,</span><span class="w"> </span><span class="s">"IT"</span><span class="p">);</span>
 
-        System.out.println(&quot;\n--- Display Info ---&quot;);
-        emp1.displayInfo();
-        mgr1.displayInfo(); // Overridden method
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Display Info ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">emp1</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">        </span><span class="n">mgr1</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Overridden method</span>
 
-        System.out.println(&quot;\n--- Approve Leave ---&quot;);
-        mgr1.approveLeave();
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Approve Leave ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mgr1</span><span class="p">.</span><span class="na">approveLeave</span><span class="p">();</span>
 
-        System.out.println(&quot;\n--- Static Methods ---&quot;);
-        Employee.showEmployeeCount(); // Calls superclass static method
-        Manager.showEmployeeCount();  // Calls subclass static method (hides superclass)
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Static Methods ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Employee</span><span class="p">.</span><span class="na">showEmployeeCount</span><span class="p">();</span><span class="w"> </span><span class="c1">// Calls superclass static method</span>
+<span class="w">        </span><span class="n">Manager</span><span class="p">.</span><span class="na">showEmployeeCount</span><span class="p">();</span><span class="w">  </span><span class="c1">// Calls subclass static method (hides superclass)</span>
 
-        // Access modifiers demonstration
-        System.out.println(&quot;\n--- Access Modifiers ---&quot;);
-        System.out.println(&quot;Manager Name (protected): &quot; + mgr1.name);
-        System.out.println(&quot;Manager Company (public): &quot; + mgr1.company);
-        // System.out.println(mgr1.age); // ❌ private, cannot access directly
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="c1">// Access modifiers demonstration</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Access Modifiers ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Manager Name (protected): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mgr1</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Manager Company (public): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mgr1</span><span class="p">.</span><span class="na">company</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// System.out.println(mgr1.age); // ❌ private, cannot access directly</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="what-this-example-shows">✅ What This Example Shows<a class="headerlink" href="#what-this-example-shows" title="Permanent link">&para;</a></h2>
 <h3 id="user-defined-constructors">User-defined Constructors<a class="headerlink" href="#user-defined-constructors" title="Permanent link">&para;</a></h3>
 <ul>
@@ -6061,6 +6061,10 @@ public class Main {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5862,14 +5862,14 @@
 <p>Inheritance is an <strong>OOP concept</strong> where one class (<strong>child/subclass</strong>) <strong>inherits properties and methods</strong> from another class (<strong>parent/superclass</strong>).
 It allows <strong>code reuse</strong> and <strong>hierarchical class structure</strong>.</p>
 <p><strong>Syntax:</strong></p>
-<pre><code class="language-java">class Parent {
-    // parent class code
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Parent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// parent class code</span>
+<span class="p">}</span>
 
-class Child extends Parent {
-    // child class code
-}
-</code></pre>
+<span class="kd">class</span> <span class="nc">Child</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// child class code</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="why-inheritance">🔑 Why Inheritance?<a class="headerlink" href="#why-inheritance" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5890,117 +5890,117 @@ class Child extends Parent {
 </blockquote>
 <hr />
 <h2 id="basic-example-single-inheritance">📝 Basic Example: Single Inheritance<a class="headerlink" href="#basic-example-single-inheritance" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">// Parent class
-class Animal {
-    void eat() {
-        System.out.println(&quot;This animal eats food.&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="c1">// Parent class</span>
+<span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"This animal eats food."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-// Child class
-class Dog extends Animal {
-    void bark() {
-        System.out.println(&quot;Dog barks.&quot;);
-    }
-}
+<span class="c1">// Child class</span>
+<span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">bark</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog barks."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class InheritanceDemo {
-    public static void main(String[] args) {
-        Dog d = new Dog();
-        d.eat();  // inherited method
-        d.bark(); // child’s own method
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InheritanceDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span><span class="w">  </span><span class="c1">// inherited method</span>
+<span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="na">bark</span><span class="p">();</span><span class="w"> </span><span class="c1">// child’s own method</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="example-multilevel-inheritance">📝 Example: Multilevel Inheritance<a class="headerlink" href="#example-multilevel-inheritance" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class Vehicle {
-    void start() {
-        System.out.println(&quot;Vehicle starts&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vehicle starts"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Car extends Vehicle {
-    void honk() {
-        System.out.println(&quot;Car honks&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">honk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car honks"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class SportsCar extends Car {
-    void turbo() {
-        System.out.println(&quot;SportsCar turbo mode&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">SportsCar</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Car</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">turbo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"SportsCar turbo mode"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class MultilevelDemo {
-    public static void main(String[] args) {
-        SportsCar sc = new SportsCar();
-        sc.start(); // from Vehicle
-        sc.honk();  // from Car
-        sc.turbo(); // from SportsCar
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MultilevelDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">SportsCar</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SportsCar</span><span class="p">();</span>
+<span class="w">        </span><span class="n">sc</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w"> </span><span class="c1">// from Vehicle</span>
+<span class="w">        </span><span class="n">sc</span><span class="p">.</span><span class="na">honk</span><span class="p">();</span><span class="w">  </span><span class="c1">// from Car</span>
+<span class="w">        </span><span class="n">sc</span><span class="p">.</span><span class="na">turbo</span><span class="p">();</span><span class="w"> </span><span class="c1">// from SportsCar</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="example-hierarchical-inheritance">📝 Example: Hierarchical Inheritance<a class="headerlink" href="#example-hierarchical-inheritance" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">class Vehicle {
-    void start() {
-        System.out.println(&quot;Vehicle starts&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vehicle starts"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Car extends Vehicle {
-    void honk() {
-        System.out.println(&quot;Car honks&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">honk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car honks"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Bike extends Vehicle {
-    void ringBell() {
-        System.out.println(&quot;Bike rings bell&quot;);
-    }
-}
+<span class="kd">class</span> <span class="nc">Bike</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">ringBell</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bike rings bell"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class HierarchicalDemo {
-    public static void main(String[] args) {
-        Car car = new Car();
-        car.start();
-        car.honk();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HierarchicalDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<span class="w">        </span><span class="n">car</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">        </span><span class="n">car</span><span class="p">.</span><span class="na">honk</span><span class="p">();</span>
 
-        Bike bike = new Bike();
-        bike.start();
-        bike.ringBell();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">Bike</span><span class="w"> </span><span class="n">bike</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bike</span><span class="p">();</span>
+<span class="w">        </span><span class="n">bike</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">        </span><span class="n">bike</span><span class="p">.</span><span class="na">ringBell</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="real-world-example-in-selenium-java-framework">🔹 Real-World Example in Selenium Java Framework<a class="headerlink" href="#real-world-example-in-selenium-java-framework" title="Permanent link">&para;</a></h2>
 <p>In <strong>Page Object Model</strong>, inheritance is used for <strong>BasePage</strong>:</p>
-<pre><code class="language-java">import org.openqa.selenium.WebDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public class BasePage {
-    protected WebDriver driver;
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void openUrl(String url) {
-        driver.get(url);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openUrl</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-// Child Page inherits BasePage
-public class LoginPage extends BasePage {
-    public LoginPage(WebDriver driver) {
-        super(driver); // call parent constructor
-    }
+<span class="c1">// Child Page inherits BasePage</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span><span class="w"> </span><span class="c1">// call parent constructor</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void login(String user, String pass) {
-        // code to perform login
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// code to perform login</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li>Common methods like <code>openUrl()</code> are in <strong>BasePage</strong> → reused in all pages.</li>
@@ -6008,38 +6008,38 @@ public class LoginPage extends BasePage {
 </ul>
 <hr />
 <h2 id="real-world-example-in-java-playwright-framework">🔹 Real-World Example in Java Playwright Framework<a class="headerlink" href="#real-world-example-in-java-playwright-framework" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import com.microsoft.playwright.Page;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.Page</span><span class="p">;</span>
 
-// Base class
-public class BasePage {
-    protected Page page;
+<span class="c1">// Base class</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">;</span>
 
-    public BasePage(Page page) {
-        this.page = page;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void navigateTo(String url) {
-        page.navigate(url);
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">navigateTo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-// Child Page
-public class LoginPage extends BasePage {
-    private final String usernameInput = &quot;#username&quot;;
-    private final String passwordInput = &quot;#password&quot;;
-    private final String loginBtn = &quot;#loginBtn&quot;;
+<span class="c1">// Child Page</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasePage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">usernameInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#username"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">passwordInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#password"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">loginBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#loginBtn"</span><span class="p">;</span>
 
-    public LoginPage(Page page) {
-        super(page);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">page</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void login(String user, String pass) {
-        page.locator(usernameInput).fill(user);
-        page.locator(passwordInput).fill(pass);
-        page.locator(loginBtn).click();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="n">usernameInput</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="n">passwordInput</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="n">pass</span><span class="p">);</span>
+<span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="n">loginBtn</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Explanation:</strong></p>
 <ul>
 <li><code>BasePage</code> contains common page methods (like <code>navigateTo()</code>).</li>
@@ -6107,6 +6107,10 @@ public class LoginPage extends BasePage {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

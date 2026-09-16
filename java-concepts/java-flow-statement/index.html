@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -6760,17 +6760,17 @@
 <h3 id="what-it-is">What it is<a class="headerlink" href="#what-it-is" title="Permanent link">&para;</a></h3>
 <p>Executes a block of code <strong>only when a condition is true</strong>.</p>
 <h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">if (condition) {
-    // code
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// code</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="tester-example-validate-login-result">Tester Example – Validate Login Result<a class="headerlink" href="#tester-example-validate-login-result" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">boolean isLoggedIn = true;
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span><span class="w"> </span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 
-if (isLoggedIn) {
-    System.out.println(&quot;Login Test Passed&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isLoggedIn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Login Test Passed"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="interview-qa">Interview Q&amp;A<a class="headerlink" href="#interview-qa" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> When should you use <code>if</code> instead of <code>if-else</code>?<br />
 <strong>A:</strong> When you only want to act on a true condition and do nothing otherwise.</p>
@@ -6779,21 +6779,21 @@ if (isLoggedIn) {
 <h3 id="what-it-is_1">What it is<a class="headerlink" href="#what-it-is_1" title="Permanent link">&para;</a></h3>
 <p>Provides an <strong>alternative path</strong> when the condition is false.</p>
 <h3 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">if (condition) {
-    // true block
-} else {
-    // false block
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// true block</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// false block</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="tester-example-api-status-validation">Tester Example – API Status Validation<a class="headerlink" href="#tester-example-api-status-validation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">int statusCode = 401;
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">statusCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">401</span><span class="p">;</span>
 
-if (statusCode == 200) {
-    System.out.println(&quot;API Test Passed&quot;);
-} else {
-    System.out.println(&quot;API Test Failed&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">statusCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"API Test Passed"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"API Test Failed"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="interview-qa_1">Interview Q&amp;A<a class="headerlink" href="#interview-qa_1" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> Can <code>else</code> exist without <code>if</code>?<br />
 <strong>A:</strong> No. <code>else</code> must always be associated with an <code>if</code>.</p>
@@ -6802,24 +6802,24 @@ if (statusCode == 200) {
 <h3 id="what-it-is_2">What it is<a class="headerlink" href="#what-it-is_2" title="Permanent link">&para;</a></h3>
 <p>Used to <strong>check multiple conditions</strong> sequentially.</p>
 <h3 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">if (condition1) {
-} else if (condition2) {
-} else {
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="tester-example-response-validation">Tester Example – Response Validation<a class="headerlink" href="#tester-example-response-validation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">int statusCode = 404;
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">statusCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span><span class="p">;</span>
 
-if (statusCode == 200) {
-    System.out.println(&quot;Success&quot;);
-} else if (statusCode == 401) {
-    System.out.println(&quot;Unauthorized&quot;);
-} else if (statusCode == 404) {
-    System.out.println(&quot;Not Found&quot;);
-} else {
-    System.out.println(&quot;Unexpected Response&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">statusCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Success"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">statusCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">401</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Unauthorized"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">statusCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">404</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Not Found"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Unexpected Response"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="interview-qa_2">Interview Q&amp;A<a class="headerlink" href="#interview-qa_2" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> How many <code>else-if</code> blocks are allowed?<br />
 <strong>A:</strong> Unlimited, but only one block executes.</p>
@@ -6828,26 +6828,26 @@ if (statusCode == 200) {
 <h3 id="what-it-is_3">What it is<a class="headerlink" href="#what-it-is_3" title="Permanent link">&para;</a></h3>
 <p>Cleaner alternative to multiple <code>else-if</code> when comparing <strong>fixed values</strong>.</p>
 <h3 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">switch (expression) {
-    case value:
-        break;
-    default:
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">value</span><span class="p">:</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="tester-example-browser-selection">Tester Example – Browser Selection<a class="headerlink" href="#tester-example-browser-selection" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String browser = &quot;chrome&quot;;
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"chrome"</span><span class="p">;</span>
 
-switch (browser) {
-    case &quot;chrome&quot;:
-        System.out.println(&quot;Launching Chrome&quot;);
-        break;
-    case &quot;firefox&quot;:
-        System.out.println(&quot;Launching Firefox&quot;);
-        break;
-    default:
-        System.out.println(&quot;Unsupported Browser&quot;);
-}
-</code></pre>
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">browser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"chrome"</span><span class="p">:</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Launching Chrome"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"firefox"</span><span class="p">:</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Launching Firefox"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Unsupported Browser"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="interview-qa_3">Interview Q&amp;A<a class="headerlink" href="#interview-qa_3" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> Why is <code>break</code> important in switch?<br />
 <strong>A:</strong> Without <code>break</code>, execution continues to the next case (fall-through).</p>
@@ -6856,16 +6856,16 @@ switch (browser) {
 <h3 id="what-it-is_4">What it is<a class="headerlink" href="#what-it-is_4" title="Permanent link">&para;</a></h3>
 <p>Used when the <strong>number of iterations is known</strong>.</p>
 <h3 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">for (initialization; condition; increment) {
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">initialization</span><span class="p">;</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span><span class="w"> </span><span class="n">increment</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="tester-example-loop-through-test-data">Tester Example – Loop Through Test Data<a class="headerlink" href="#tester-example-loop-through-test-data" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">String[] users = {&quot;admin&quot;, &quot;guest&quot;, &quot;tester&quot;};
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"admin"</span><span class="p">,</span><span class="w"> </span><span class="s">"guest"</span><span class="p">,</span><span class="w"> </span><span class="s">"tester"</span><span class="p">};</span>
 
-for (int i = 0; i &lt; users.length; i++) {
-    System.out.println(&quot;Testing login for: &quot; + users[i]);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">users</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Testing login for: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">users</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="interview-qa_4">Interview Q&amp;A<a class="headerlink" href="#interview-qa_4" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> When is <code>for</code> preferred over <code>while</code>?<br />
 <strong>A:</strong> When iteration count is fixed or predictable.</p>
@@ -6874,17 +6874,17 @@ for (int i = 0; i &lt; users.length; i++) {
 <h3 id="what-it-is_5">What it is<a class="headerlink" href="#what-it-is_5" title="Permanent link">&para;</a></h3>
 <p>Executes while a condition remains true. Condition is checked <strong>before</strong> execution.</p>
 <h3 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">while (condition) {
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="tester-example-wait-for-element">Tester Example – Wait for Element<a class="headerlink" href="#tester-example-wait-for-element" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">int attempts = 0;
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">attempts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-while (attempts &lt; 3) {
-    System.out.println(&quot;Checking element...&quot;);
-    attempts++;
-}
-</code></pre>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">attempts</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Checking element..."</span><span class="p">);</span>
+<span class="w">    </span><span class="n">attempts</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="interview-qa_5">Interview Q&amp;A<a class="headerlink" href="#interview-qa_5" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> What is the risk with <code>while</code> loops?<br />
 <strong>A:</strong> Infinite loops if the condition never becomes false.</p>
@@ -6893,17 +6893,17 @@ while (attempts &lt; 3) {
 <h3 id="what-it-is_6">What it is<a class="headerlink" href="#what-it-is_6" title="Permanent link">&para;</a></h3>
 <p>Executes <strong>at least once</strong>, condition checked <strong>after</strong> execution.</p>
 <h3 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">do {
-} while (condition);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="tester-example-retry-logic">Tester Example – Retry Logic<a class="headerlink" href="#tester-example-retry-logic" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">int retry = 1;
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">retry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 
-do {
-    System.out.println(&quot;Retry attempt: &quot; + retry);
-    retry++;
-} while (retry &lt;= 3);
-</code></pre>
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Retry attempt: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">retry</span><span class="p">);</span>
+<span class="w">    </span><span class="n">retry</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">retry</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="interview-qa_6">Interview Q&amp;A<a class="headerlink" href="#interview-qa_6" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> Difference between <code>while</code> and <code>do-while</code>?<br />
 <strong>A:</strong> <code>do-while</code> runs at least once even if condition is false.</p>
@@ -6912,13 +6912,13 @@ do {
 <h3 id="what-it-is_7">What it is<a class="headerlink" href="#what-it-is_7" title="Permanent link">&para;</a></h3>
 <p>Terminates loop or switch immediately.</p>
 <h3 id="tester-example-stop-on-failure">Tester Example – Stop on Failure<a class="headerlink" href="#tester-example-stop-on-failure" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">for (int i = 1; i &lt;= 5; i++) {
-    if (i == 3) {
-        System.out.println(&quot;Critical failure found&quot;);
-        break;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Critical failure found"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="interview-qa_7">Interview Q&amp;A<a class="headerlink" href="#interview-qa_7" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> Can <code>break</code> be used outside loops?<br />
 <strong>A:</strong> No, only inside loops or switch.</p>
@@ -6927,13 +6927,13 @@ do {
 <h3 id="what-it-is_8">What it is<a class="headerlink" href="#what-it-is_8" title="Permanent link">&para;</a></h3>
 <p>Skips current iteration and moves to the next one.</p>
 <h3 id="tester-example-skip-disabled-test-case">Tester Example – Skip Disabled Test Case<a class="headerlink" href="#tester-example-skip-disabled-test-case" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">for (int i = 1; i &lt;= 5; i++) {
-    if (i == 2) {
-        continue;
-    }
-    System.out.println(&quot;Executing test case: &quot; + i);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Executing test case: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="interview-qa_8">Interview Q&amp;A<a class="headerlink" href="#interview-qa_8" title="Permanent link">&para;</a></h3>
 <p><strong>Q:</strong> Difference between <code>break</code> and <code>continue</code>?<br />
 <strong>A:</strong> <code>break</code> exits loop; <code>continue</code> skips iteration.</p>
@@ -7037,6 +7037,10 @@ If you master these, frameworks become easy.</strong></p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

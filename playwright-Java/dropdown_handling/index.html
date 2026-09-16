@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5772,37 +5772,37 @@
 <hr />
 <h2 id="1-classic-select-dropdown">1️⃣ Classic <code>&lt;select&gt;</code> Dropdown<a class="headerlink" href="#1-classic-select-dropdown" title="Permanent link">&para;</a></h2>
 <p><strong>HTML Example:</strong></p>
-<pre><code class="language-html">&lt;select id=&quot;country&quot;&gt;
-  &lt;option value=&quot;IN&quot;&gt;India&lt;/option&gt;
-  &lt;option value=&quot;US&quot;&gt;USA&lt;/option&gt;
-  &lt;option value=&quot;UK&quot;&gt;UK&lt;/option&gt;
-&lt;/select&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">"country"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">"IN"</span><span class="p">&gt;</span>India<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">"US"</span><span class="p">&gt;</span>USA<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">"UK"</span><span class="p">&gt;</span>UK<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="a-select-by-value">a) Select by Value<a class="headerlink" href="#a-select-by-value" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#country&quot;).selectOption(&quot;IN&quot;);  
-// Select India by value
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country"</span><span class="p">).</span><span class="na">selectOption</span><span class="p">(</span><span class="s">"IN"</span><span class="p">);</span><span class="w">  </span>
+<span class="c1">// Select India by value</span>
+</code></pre></div>
 <h3 id="b-select-by-label-visible-text">b) Select by Label (Visible Text)<a class="headerlink" href="#b-select-by-label-visible-text" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#country&quot;).selectOption(new SelectOption().setLabel(&quot;USA&quot;));  
-// Select USA by visible text
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country"</span><span class="p">).</span><span class="na">selectOption</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SelectOption</span><span class="p">().</span><span class="na">setLabel</span><span class="p">(</span><span class="s">"USA"</span><span class="p">));</span><span class="w">  </span>
+<span class="c1">// Select USA by visible text</span>
+</code></pre></div>
 <h3 id="c-select-by-index">c) Select by Index<a class="headerlink" href="#c-select-by-index" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#country&quot;).selectOption(new SelectOption().setIndex(2));  
-// Select 3rd option (UK) – index starts from 0
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country"</span><span class="p">).</span><span class="na">selectOption</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SelectOption</span><span class="p">().</span><span class="na">setIndex</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span><span class="w">  </span>
+<span class="c1">// Select 3rd option (UK) – index starts from 0</span>
+</code></pre></div>
 <h3 id="d-select-multiple-values">d) Select Multiple Values<a class="headerlink" href="#d-select-multiple-values" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#country&quot;).selectOption(new String[]{&quot;IN&quot;, &quot;US&quot;});  
-// Select India and USA (multi-select dropdowns only)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country"</span><span class="p">).</span><span class="na">selectOption</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">"IN"</span><span class="p">,</span><span class="w"> </span><span class="s">"US"</span><span class="p">});</span><span class="w">  </span>
+<span class="c1">// Select India and USA (multi-select dropdowns only)</span>
+</code></pre></div>
 <h3 id="e-iterate-all-options-get-count">e) Iterate All Options &amp; Get Count<a class="headerlink" href="#e-iterate-all-options-get-count" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator options = page.locator(&quot;#country option&quot;);
-int count = options.count();
-System.out.println(&quot;Total options in dropdown: &quot; + count);
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country option"</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total options in dropdown: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
 
-for (int i = 0; i &lt; count; i++) {
-    System.out.println(options.nth(i).innerText());
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="na">nth</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">innerText</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Explanation:</strong><ul>
 <li><code>count()</code> → total number of options.</li>
@@ -5811,53 +5811,53 @@ for (int i = 0; i &lt; count; i++) {
 </li>
 </ul>
 <h3 id="f-example-full-flow">f) Example Full Flow<a class="headerlink" href="#f-example-full-flow" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">// Select India by value
-page.locator(&quot;#country&quot;).selectOption(&quot;IN&quot;);
+<div class="highlight"><pre><span></span><code><span class="c1">// Select India by value</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country"</span><span class="p">).</span><span class="na">selectOption</span><span class="p">(</span><span class="s">"IN"</span><span class="p">);</span>
 
-// Select USA by label
-page.locator(&quot;#country&quot;).selectOption(new SelectOption().setLabel(&quot;USA&quot;));
+<span class="c1">// Select USA by label</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country"</span><span class="p">).</span><span class="na">selectOption</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SelectOption</span><span class="p">().</span><span class="na">setLabel</span><span class="p">(</span><span class="s">"USA"</span><span class="p">));</span>
 
-// Select multiple (India &amp; UK)
-page.locator(&quot;#country&quot;).selectOption(new String[]{&quot;IN&quot;, &quot;UK&quot;});
+<span class="c1">// Select multiple (India &amp; UK)</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country"</span><span class="p">).</span><span class="na">selectOption</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">"IN"</span><span class="p">,</span><span class="w"> </span><span class="s">"UK"</span><span class="p">});</span>
 
-// Iterate and print all options
-Locator options = page.locator(&quot;#country option&quot;);
-for (int i = 0; i &lt; options.count(); i++) {
-    System.out.println(options.nth(i).innerText());
-}
-</code></pre>
+<span class="c1">// Iterate and print all options</span>
+<span class="n">Locator</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#country option"</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="na">count</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="na">nth</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">innerText</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="2-auto-suggestion-custom-dropdown">2️⃣ Auto-suggestion / Custom Dropdown<a class="headerlink" href="#2-auto-suggestion-custom-dropdown" title="Permanent link">&para;</a></h2>
 <p><strong>HTML Example:</strong></p>
-<pre><code class="language-html">&lt;input id=&quot;searchCity&quot; type=&quot;text&quot; placeholder=&quot;Enter city&quot; /&gt;
-&lt;ul id=&quot;cityList&quot;&gt;
-  &lt;li&gt;New York&lt;/li&gt;
-  &lt;li&gt;London&lt;/li&gt;
-  &lt;li&gt;Delhi&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"searchCity"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Enter city"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">"cityList"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>New York<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>London<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Delhi<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="a-type-to-filter-suggestions">a) Type to Filter Suggestions<a class="headerlink" href="#a-type-to-filter-suggestions" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#searchCity&quot;).fill(&quot;Del&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchCity"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="s">"Del"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="b-click-on-desired-option">b) Click on Desired Option<a class="headerlink" href="#b-click-on-desired-option" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#cityList li&quot;, new Locator.LocatorOptions().setHasText(&quot;Delhi&quot;)).click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#cityList li"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Locator</span><span class="p">.</span><span class="na">LocatorOptions</span><span class="p">().</span><span class="na">setHasText</span><span class="p">(</span><span class="s">"Delhi"</span><span class="p">)).</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="c-full-auto-suggestion-flow">c) Full Auto-suggestion Flow<a class="headerlink" href="#c-full-auto-suggestion-flow" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">// Type in search box
-page.locator(&quot;#searchCity&quot;).fill(&quot;Del&quot;);
+<div class="highlight"><pre><span></span><code><span class="c1">// Type in search box</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchCity"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="s">"Del"</span><span class="p">);</span>
 
-// Wait for suggestion and click
-page.locator(&quot;#cityList li&quot;, new Locator.LocatorOptions().setHasText(&quot;Delhi&quot;)).click();
-</code></pre>
+<span class="c1">// Wait for suggestion and click</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#cityList li"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Locator</span><span class="p">.</span><span class="na">LocatorOptions</span><span class="p">().</span><span class="na">setHasText</span><span class="p">(</span><span class="s">"Delhi"</span><span class="p">)).</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="d-iterate-all-auto-suggestion-options-get-count">d) Iterate All Auto-suggestion Options &amp; Get Count<a class="headerlink" href="#d-iterate-all-auto-suggestion-options-get-count" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator cities = page.locator(&quot;#cityList li&quot;);
-int totalCities = cities.count();
-System.out.println(&quot;Total suggestions: &quot; + totalCities);
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">cities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#cityList li"</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">totalCities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cities</span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total suggestions: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">totalCities</span><span class="p">);</span>
 
-for (int i = 0; i &lt; totalCities; i++) {
-    System.out.println(cities.nth(i).innerText());
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">totalCities</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cities</span><span class="p">.</span><span class="na">nth</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">innerText</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>Retrieves all suggestions and their total count.</li>
 </ul>
@@ -5946,6 +5946,10 @@ for (int i = 0; i &lt; totalCities; i++) {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

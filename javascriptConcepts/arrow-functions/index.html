@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5747,28 +5747,28 @@
 <p>Arrow functions are a concise way to write functions in JavaScript introduced in <strong>ES6 (ECMAScript 2015)</strong>. They provide a shorter syntax and some behavioral differences compared to regular functions.</p>
 <hr />
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">// Regular function
-function add(a, b) {
-  return a + b;
-}
+<div class="highlight"><pre><span></span><code><span class="c1">// Regular function</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
 
-// Arrow function
-const add = (a, b) =&gt; a + b;
-</code></pre>
+<span class="c1">// Arrow function</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+</code></pre></div>
 <ul>
 <li>If the function has a single expression, the value is <strong>returned automatically</strong>.</li>
 <li>If there is only <strong>one parameter</strong>, parentheses can be omitted:</li>
 </ul>
-<pre><code class="language-javascript">const square = x =&gt; x * x;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+</code></pre></div>
 <ul>
 <li>For multiple statements, use curly braces <code>{}</code> and <code>return</code> explicitly:</li>
 </ul>
-<pre><code class="language-javascript">const multiplyAndLog = (a, b) =&gt; {
-  console.log(a, b);
-  return a * b;
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">multiplyAndLog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
 <hr />
 <h2 id="why-use-arrow-functions">Why Use Arrow Functions?<a class="headerlink" href="#why-use-arrow-functions" title="Permanent link">&para;</a></h2>
 <ol>
@@ -5781,16 +5781,16 @@ const add = (a, b) =&gt; a + b;
    Arrow functions do <strong>not have their own <code>this</code></strong>. They capture the <code>this</code> value of the surrounding context (lexical <code>this</code>), which avoids issues when using <code>this</code> inside callbacks.</p>
 </li>
 </ol>
-<pre><code class="language-javascript">function Person() {
-  this.age = 0;
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Person</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-  setInterval(() =&gt; {
-    this.age++; // `this` refers to the Person instance
-  }, 1000);
-}
+<span class="w">  </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// `this` refers to the Person instance</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="p">}</span>
 
-const p = new Person();
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Person</span><span class="p">();</span>
+</code></pre></div>
 <ul>
 <li>
 <p>In contrast, a regular function inside <code>setInterval</code> would have its own <code>this</code> pointing to the global object or <code>undefined</code> in strict mode.</p>
@@ -5800,10 +5800,10 @@ const p = new Person();
    Great with array methods like <code>map</code>, <code>filter</code>, and <code>reduce</code>:</p>
 </li>
 </ul>
-<pre><code class="language-javascript">const numbers = [1, 2, 3, 4];
-const squared = numbers.map(n =&gt; n * n);
-console.log(squared); // [1, 4, 9, 16]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">squared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">n</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squared</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 4, 9, 16]</span>
+</code></pre></div>
 <hr />
 <h2 id="key-points">Key Points<a class="headerlink" href="#key-points" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5868,6 +5868,10 @@ console.log(squared); // [1, 4, 9, 16]
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

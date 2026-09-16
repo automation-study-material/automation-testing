@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5887,12 +5887,12 @@
 <hr />
 <h2 id="2-check-for-missing-records-in-target">2. Check for missing records in target<a class="headerlink" href="#2-check-for-missing-records-in-target" title="Permanent link">&para;</a></h2>
 <h3 id="q1-identify-source-orders-missing-in-target">Q1: Identify source orders missing in target<a class="headerlink" href="#q1-identify-source-orders-missing-in-target" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM source_orders s
-WHERE NOT EXISTS (
-    SELECT 1 FROM target_orders t WHERE s.order_id = t.order_id
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span><span class="w"> </span><span class="n">s</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_orders</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">order_id</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5911,12 +5911,12 @@ WHERE NOT EXISTS (
 </tbody>
 </table>
 <h3 id="q2-identify-extra-records-in-target">Q2: Identify extra records in target<a class="headerlink" href="#q2-identify-extra-records-in-target" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM target_orders t
-WHERE NOT EXISTS (
-    SELECT 1 FROM source_orders s WHERE t.order_id = s.order_id
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">target_orders</span><span class="w"> </span><span class="n">t</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">order_id</span>
+<span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5937,10 +5937,10 @@ WHERE NOT EXISTS (
 <hr />
 <h2 id="3-validate-record-counts-per-keygroup">3. Validate record counts per key/group<a class="headerlink" href="#3-validate-record-counts-per-keygroup" title="Permanent link">&para;</a></h2>
 <h3 id="q3-count-orders-per-customer-in-source">Q3: Count orders per customer in source<a class="headerlink" href="#q3-count-orders-per-customer-in-source" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT customer_id, COUNT(*) AS order_count
-FROM source_orders
-GROUP BY customer_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">order_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">customer_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5969,11 +5969,11 @@ GROUP BY customer_id;
 </tbody>
 </table>
 <h3 id="q4-compare-counts-between-source-and-target">Q4: Compare counts between source and target<a class="headerlink" href="#q4-compare-counts-between-source-and-target" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT s.customer_id, COUNT(s.order_id) AS src_count, COUNT(t.order_id) AS tgt_count
-FROM source_orders s
-LEFT JOIN target_orders t ON s.order_id = t.order_id
-GROUP BY s.customer_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">order_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">src_count</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">order_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tgt_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span><span class="w"> </span><span class="n">s</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">target_orders</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">order_id</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">customer_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6009,11 +6009,11 @@ GROUP BY s.customer_id;
 <hr />
 <h2 id="4-identify-duplicates">4. Identify duplicates<a class="headerlink" href="#4-identify-duplicates" title="Permanent link">&para;</a></h2>
 <h3 id="q5-find-duplicate-orders-in-source">Q5: Find duplicate orders in source<a class="headerlink" href="#q5-find-duplicate-orders-in-source" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT order_id, COUNT(*) AS cnt
-FROM source_orders
-GROUP BY order_id
-HAVING COUNT(*) &gt; 1;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">order_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">cnt</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">order_id</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6030,11 +6030,11 @@ HAVING COUNT(*) &gt; 1;
 </tbody>
 </table>
 <h3 id="q6-find-duplicate-customer-entries-in-target">Q6: Find duplicate customer entries in target<a class="headerlink" href="#q6-find-duplicate-customer-entries-in-target" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT customer_id, COUNT(*) AS cnt
-FROM target_orders
-GROUP BY customer_id
-HAVING COUNT(*) &gt; 1;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">cnt</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">target_orders</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">customer_id</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6053,9 +6053,9 @@ HAVING COUNT(*) &gt; 1;
 <hr />
 <h2 id="5-compare-aggregates-sum-avg">5. Compare aggregates (SUM, AVG)<a class="headerlink" href="#5-compare-aggregates-sum-avg" title="Permanent link">&para;</a></h2>
 <h3 id="q7-total-sales-amount-source-vs-target">Q7: Total sales amount source vs target<a class="headerlink" href="#q7-total-sales-amount-source-vs-target" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT SUM(amount) AS source_total FROM source_orders;
-SELECT SUM(amount) AS target_total FROM target_orders;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">source_total</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">target_total</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_orders</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6072,9 +6072,9 @@ SELECT SUM(amount) AS target_total FROM target_orders;
 </tbody>
 </table>
 <h3 id="q8-average-order-amount-comparison">Q8: Average order amount comparison<a class="headerlink" href="#q8-average-order-amount-comparison" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT AVG(amount) AS avg_source FROM source_orders;
-SELECT AVG(amount) AS avg_target FROM target_orders;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_source</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_target</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_orders</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6091,10 +6091,10 @@ SELECT AVG(amount) AS avg_target FROM target_orders;
 </tbody>
 </table>
 <h3 id="q9-compare-per-customer-amount">Q9: Compare per customer amount<a class="headerlink" href="#q9-compare-per-customer-amount" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT s.customer_id, s.amount AS source_amount, t.amount AS target_amount
-FROM source_orders s
-LEFT JOIN target_orders t ON s.order_id = t.order_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">source_amount</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">target_amount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span><span class="w"> </span><span class="n">s</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">target_orders</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">order_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6128,11 +6128,11 @@ LEFT JOIN target_orders t ON s.order_id = t.order_id;
 </tbody>
 </table>
 <h3 id="q10-validate-sum-per-customer-group">Q10: Validate sum per customer group<a class="headerlink" href="#q10-validate-sum-per-customer-group" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT s.customer_id, SUM(s.amount) AS src_sum, SUM(t.amount) AS tgt_sum
-FROM source_orders s
-LEFT JOIN target_orders t ON s.order_id = t.order_id
-GROUP BY s.customer_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">src_sum</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tgt_sum</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">source_orders</span><span class="w"> </span><span class="n">s</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">target_orders</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">order_id</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">customer_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6233,6 +6233,10 @@ GROUP BY s.customer_id;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -1495,6 +1495,17 @@
     <span class="md-ellipsis">
       
         9. TestListener.java (Listener + Screenshot + Report)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-listeners-import-comaventstackextentreportsextenttest-import-orgtestngitestlistener-import-orgtestngitestresult-import-reportingextentmanager-import-utilsscreenshotutil-public-class-testlistener-implements-itestlistener-private-static-threadlocalextenttest-test-new-threadlocal-public-void-onteststartitestresult-result-testsetextentmanagergetreportcreatetestresultgetname-public-void-ontestsuccessitestresult-result-testgetpasstest-passed-public-void-ontestfailureitestresult-result-string-path-screenshotutiltakescreenshotresultgetname-testgetfailresultgetthrowable-if-path-null-testgetaddscreencapturefrompathpath-public-void-onfinishorgtestngitestcontext-context-extentmanagergetreportflush" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        package listeners; import com.aventstack.extentreports.ExtentTest; import org.testng.ITestListener; import org.testng.ITestResult; import reporting.ExtentManager; import utils.ScreenshotUtil; public class TestListener implements ITestListener { private static ThreadLocal&lt;ExtentTest&gt; test = new ThreadLocal&lt;&gt;(); public void onTestStart(ITestResult result) { test.set(ExtentManager.getReport().createTest(result.getName())); } public void onTestSuccess(ITestResult result) { test.get().pass("Test Passed"); } public void onTestFailure(ITestResult result) { String path = ScreenshotUtil.takeScreenshot(result.getName()); test.get().fail(result.getThrowable()); if (path != null) { test.get().addScreenCaptureFromPath(path); } } public void onFinish(org.testng.ITestContext context) { ExtentManager.getReport().flush(); } }
       
     </span>
   </a>
@@ -6028,6 +6039,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#package-listeners-import-comaventstackextentreportsextenttest-import-orgtestngitestlistener-import-orgtestngitestresult-import-reportingextentmanager-import-utilsscreenshotutil-public-class-testlistener-implements-itestlistener-private-static-threadlocalextenttest-test-new-threadlocal-public-void-onteststartitestresult-result-testsetextentmanagergetreportcreatetestresultgetname-public-void-ontestsuccessitestresult-result-testgetpasstest-passed-public-void-ontestfailureitestresult-result-string-path-screenshotutiltakescreenshotresultgetname-testgetfailresultgetthrowable-if-path-null-testgetaddscreencapturefrompathpath-public-void-onfinishorgtestngitestcontext-context-extentmanagergetreportflush" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        package listeners; import com.aventstack.extentreports.ExtentTest; import org.testng.ITestListener; import org.testng.ITestResult; import reporting.ExtentManager; import utils.ScreenshotUtil; public class TestListener implements ITestListener { private static ThreadLocal&lt;ExtentTest&gt; test = new ThreadLocal&lt;&gt;(); public void onTestStart(ITestResult result) { test.set(ExtentManager.getReport().createTest(result.getName())); } public void onTestSuccess(ITestResult result) { test.get().pass("Test Passed"); } public void onTestFailure(ITestResult result) { String path = ScreenshotUtil.takeScreenshot(result.getName()); test.get().fail(result.getThrowable()); if (path != null) { test.get().addScreenCaptureFromPath(path); } } public void onFinish(org.testng.ITestContext context) { ExtentManager.getReport().flush(); } }
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#10-screenshotutiljava" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6112,7 +6134,7 @@
 <p>You can <strong>download this <code>.md</code> file and keep it as notes or documentation</strong>.</p>
 <hr />
 <h2 id="1-folder-structure">1. Folder Structure<a class="headerlink" href="#1-folder-structure" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">selenium-oops-framework/ 
+<div class="highlight"><pre><span></span><code>selenium-oops-framework/ 
 ├── pom.xml
 ├── testng.xml
 ├── src
@@ -6149,174 +6171,173 @@
 │           │   └── BaseTest.java
 │           └── tests
 │               └── GoogleTest.java
-</code></pre>
+</code></pre></div>
 <h2 id="2-driver-factory-drivermanager-driverfactory">2. Driver Factory -&gt; DriverManager + DriverFactory<a class="headerlink" href="#2-driver-factory-drivermanager-driverfactory" title="Permanent link">&para;</a></h2>
 <h3 id="a-driver-manager-its-create-webdriver-instance">A. Driver Manager: Its Create WebDriver Instance.<a class="headerlink" href="#a-driver-manager-its-create-webdriver-instance" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package driver;
-import org.openqa.selenium.WebDriver;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">driver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public class DriverManager {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverManager</span><span class="w"> </span><span class="p">{</span>
 
-    private static final ThreadLocal&lt;WebDriver&gt; driver = new ThreadLocal&lt;&gt;();
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">WebDriver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    private DriverManager(){}
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">DriverManager</span><span class="p">(){}</span>
 
-    public static WebDriver getDriver() {
-        return driver.get();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">getDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static void setDriver(WebDriver drv) {
-        driver.set(drv);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDriver</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">drv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">drv</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static void quit() {
-        if(driver.get()!=null){
-            driver.get().quit();
-            driver.remove();
-        }
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">quit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">()</span><span class="o">!=</span><span class="kc">null</span><span class="p">){</span>
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="b-driver-factory-provide-driver-instance-bases-on-cloud-or-local-provider">B. Driver Factory: Provide driver instance bases on Cloud or Local provider<a class="headerlink" href="#b-driver-factory-provide-driver-instance-bases-on-cloud-or-local-provider" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package driver;
-import config.ConfigReader;
-import driver.provider.*;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">driver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">config.ConfigReader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">driver.provider.*</span><span class="p">;</span>
 
-public final class DriverFactory {
+<span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverFactory</span><span class="w"> </span><span class="p">{</span>
 
-    public static void initDriver() {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        if (DriverManager.getDriver()!=null) {
-            return;
-        }
-        DriverProvider provider;
-        if (ConfigReader.getBoolean(&quot;run.remote&quot;))
-            provider = new RemoteDriverProvider();
-        else
-            provider = new LocalDriverProvider();
-        DriverManager.setDriver(provider.createDriver());
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getDriver</span><span class="p">()</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">DriverProvider</span><span class="w"> </span><span class="n">provider</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ConfigReader</span><span class="p">.</span><span class="na">getBoolean</span><span class="p">(</span><span class="s">"run.remote"</span><span class="p">))</span>
+<span class="w">            </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RemoteDriverProvider</span><span class="p">();</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocalDriverProvider</span><span class="p">();</span>
+<span class="w">        </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">setDriver</span><span class="p">(</span><span class="n">provider</span><span class="p">.</span><span class="na">createDriver</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="3-driverprovider-abstraction-interface-overriding">3. DriverProvider -  Abstraction =&gt; Interface + Overriding<a class="headerlink" href="#3-driverprovider-abstraction-interface-overriding" title="Permanent link">&para;</a></h2>
 <h3 id="a-interface-its-provide-webdriver-creation-instance-based-on-driver-provider">A. Interface: Its provide Webdriver creation instance based on Driver provider<a class="headerlink" href="#a-interface-its-provide-webdriver-creation-instance-based-on-driver-provider" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package driver.provider;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">driver.provider</span><span class="p">;</span>
 
-import org.openqa.selenium.WebDriver;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public interface DriverProvider {
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">DriverProvider</span><span class="w"> </span><span class="p">{</span>
 
-    WebDriver createDriver();
-}
-</code></pre>
+<span class="w">    </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">createDriver</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="b-local-webdriver-ceration">B. Local WebDriver ceration<a class="headerlink" href="#b-local-webdriver-ceration" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package driver.provider;
-import config.ConfigReader;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.*;
-import org.openqa.selenium.firefox.*;
-import org.openqa.selenium.edge.*;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">driver.provider</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">config.ConfigReader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.github.bonigarcia.wdm.WebDriverManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.firefox.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.edge.*</span><span class="p">;</span>
 
-public class LocalDriverProvider implements DriverProvider {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LocalDriverProvider</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">DriverProvider</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    public WebDriver createDriver() {
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">createDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        String browser = ConfigReader.get(&quot;browser&quot;).toLowerCase();
-        boolean headless = ConfigReader.getBoolean(&quot;headless&quot;);
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConfigReader</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"browser"</span><span class="p">).</span><span class="na">toLowerCase</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">headless</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConfigReader</span><span class="p">.</span><span class="na">getBoolean</span><span class="p">(</span><span class="s">"headless"</span><span class="p">);</span>
 
-        switch (browser) {
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">browser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-            case &quot;chrome&quot;:
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions chrome = new ChromeOptions();
-                if(headless) chrome.addArguments(&quot;--headless=new&quot;);
-                return new ChromeDriver(chrome);
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"chrome"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">WebDriverManager</span><span class="p">.</span><span class="na">chromedriver</span><span class="p">().</span><span class="na">setup</span><span class="p">();</span>
+<span class="w">                </span><span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">headless</span><span class="p">)</span><span class="w"> </span><span class="n">chrome</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">"--headless=new"</span><span class="p">);</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chrome</span><span class="p">);</span>
 
-            case &quot;firefox&quot;:
-                WebDriverManager.firefoxdriver().setup();
-                FirefoxOptions firefox = new FirefoxOptions();
-                if(headless) firefox.addArguments(&quot;-headless&quot;);
-                return new FirefoxDriver(firefox);
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"firefox"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">WebDriverManager</span><span class="p">.</span><span class="na">firefoxdriver</span><span class="p">().</span><span class="na">setup</span><span class="p">();</span>
+<span class="w">                </span><span class="n">FirefoxOptions</span><span class="w"> </span><span class="n">firefox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxOptions</span><span class="p">();</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">headless</span><span class="p">)</span><span class="w"> </span><span class="n">firefox</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">"-headless"</span><span class="p">);</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">(</span><span class="n">firefox</span><span class="p">);</span>
 
-            case &quot;edge&quot;:
-                WebDriverManager.edgedriver().setup();
-                return new EdgeDriver();
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"edge"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">WebDriverManager</span><span class="p">.</span><span class="na">edgedriver</span><span class="p">().</span><span class="na">setup</span><span class="p">();</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EdgeDriver</span><span class="p">();</span>
 
-            default:
-                throw new RuntimeException(&quot;Unsupported browser: &quot; + browser);
-        }
-    }
-}
-
-</code></pre>
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">"Unsupported browser: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">browser</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="c-cloud-webdriver-ceration">C. Cloud WebDriver ceration<a class="headerlink" href="#c-cloud-webdriver-ceration" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package driver.provider;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">driver.provider</span><span class="p">;</span>
 
-import driver.config.BrowserStackConfigLoader;
-import driver.config.BrowserStackYamlConfig;
-import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
+<span class="kn">import</span><span class="w"> </span><span class="nn">driver.config.BrowserStackConfigLoader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">driver.config.BrowserStackYamlConfig</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.MutableCapabilities</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.remote.RemoteWebDriver</span><span class="p">;</span>
 
-import java.net.URL;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URL</span><span class="p">;</span>
 
-public class RemoteDriverProvider implements DriverProvider {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RemoteDriverProvider</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">DriverProvider</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    public WebDriver createDriver() {
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">createDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        BrowserStackYamlConfig cfg = BrowserStackConfigLoader.get();
+<span class="w">        </span><span class="n">BrowserStackYamlConfig</span><span class="w"> </span><span class="n">cfg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BrowserStackConfigLoader</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
 
-        MutableCapabilities caps =
-                new MutableCapabilities(cfg.getCapabilities());
+<span class="w">        </span><span class="n">MutableCapabilities</span><span class="w"> </span><span class="n">caps</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">MutableCapabilities</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="na">getCapabilities</span><span class="p">());</span>
 
-        MutableCapabilities opts =
-                new MutableCapabilities(cfg.getOptions());
+<span class="w">        </span><span class="n">MutableCapabilities</span><span class="w"> </span><span class="n">opts</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">MutableCapabilities</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="na">getOptions</span><span class="p">());</span>
 
-        opts.setCapability(&quot;userName&quot;, cfg.getBrowserstack().getUser());
-        opts.setCapability(&quot;accessKey&quot;, cfg.getBrowserstack().getKey());
+<span class="w">        </span><span class="n">opts</span><span class="p">.</span><span class="na">setCapability</span><span class="p">(</span><span class="s">"userName"</span><span class="p">,</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="na">getBrowserstack</span><span class="p">().</span><span class="na">getUser</span><span class="p">());</span>
+<span class="w">        </span><span class="n">opts</span><span class="p">.</span><span class="na">setCapability</span><span class="p">(</span><span class="s">"accessKey"</span><span class="p">,</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="na">getBrowserstack</span><span class="p">().</span><span class="na">getKey</span><span class="p">());</span>
 
-        caps.setCapability(&quot;bstack:options&quot;, opts);
+<span class="w">        </span><span class="n">caps</span><span class="p">.</span><span class="na">setCapability</span><span class="p">(</span><span class="s">"bstack:options"</span><span class="p">,</span><span class="w"> </span><span class="n">opts</span><span class="p">);</span>
 
-        try {
-            return new RemoteWebDriver(
-                    new URL(cfg.getBrowserstack().getHub()),
-                    caps
-            );
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RemoteWebDriver</span><span class="p">(</span>
+<span class="w">                    </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="na">getBrowserstack</span><span class="p">().</span><span class="na">getHub</span><span class="p">()),</span>
+<span class="w">                    </span><span class="n">caps</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="4-basepage-abstraction-abstract-class-overriding">4. BasePage - Abstraction - Abstract class + Overriding<a class="headerlink" href="#4-basepage-abstraction-abstract-class-overriding" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package pages;
-import org.openqa.selenium.WebDriver;
-import utils.ElementActions;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pages</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">utils.ElementActions</span><span class="p">;</span>
 
-public abstract class BasePage {
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
 
-    protected WebDriver driver;
-    protected ElementActions actions;
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">ElementActions</span><span class="w"> </span><span class="n">actions</span><span class="p">;</span>
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-        this.actions = new ElementActions(driver);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ElementActions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-  =================================
-   implemented in Pages class
-  ==================================
-    public abstract String getPageUrl();  
-    public abstract boolean isPageLoaded();
-    public abstract boolean isCorrectpageTitle();
-    public abstract boolean isCorrectPageUrl();
-}
-</code></pre>
+<span class="w">  </span><span class="o">=================================</span>
+<span class="w">   </span><span class="n">implemented</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">Pages</span><span class="w"> </span><span class="kd">class</span>
+  <span class="err">==================================</span>
+    <span class="nc">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getPageUrl</span><span class="p">();</span><span class="w">  </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPageLoaded</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isCorrectpageTitle</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isCorrectPageUrl</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="5-home-page">5. Home Page<a class="headerlink" href="#5-home-page" title="Permanent link">&para;</a></h2>
-<pre><code>package pages;
+<div class="highlight"><pre><span></span><code>package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6329,7 +6350,7 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    private static final String PRODUCT = &quot;//*[text()='%s']&quot;;
+    private static final String PRODUCT = "//*[text()='%s']";
 
 
     private By getProductName(String name) {
@@ -6364,389 +6385,387 @@ public class HomePage extends BasePage {
 
     @Override
     public String getPageUrl() {
-        String urlString=&quot;&quot;;
-        if (ConfigReader.getBoolean(&quot;prod&quot;)) {
-            System.out.println(&quot;PROD URL&quot;);
-            urlString=&quot;https://demoblaze.com/&quot;;
+        String urlString="";
+        if (ConfigReader.getBoolean("prod")) {
+            System.out.println("PROD URL");
+            urlString="https://demoblaze.com/";
         }else {
-            System.out.println(&quot;STAGE URL&quot;);
-            urlString=&quot;https://demoblaze.com/&quot;;
+            System.out.println("STAGE URL");
+            urlString="https://demoblaze.com/";
         }
         return urlString;
     }
 }
-</code></pre>
+</code></pre></div>
 <h2 id="6-elementactions">6. ElementActions<a class="headerlink" href="#6-elementactions" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">utils</span><span class="p">;</span>
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.interactions.Actions</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.support.ui.Select</span><span class="p">;</span>
 
-public class ElementActions {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ElementActions</span><span class="w"> </span><span class="p">{</span>
 
-    private WebDriver driver;
-    private WaitUtils wait;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WaitUtils</span><span class="w"> </span><span class="n">wait</span><span class="p">;</span>
 
-    public ElementActions(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WaitUtils(driver);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ElementActions</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WaitUtils</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Basic Actions
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Basic Actions</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void click(By locator) {
-        wait.waitForClickable(locator);
-        driver.findElement(locator).click();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">click</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">waitForClickable</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void type(By locator, String text) {
-        wait.waitForVisible(locator);
-        WebElement el = driver.findElement(locator);
-        el.clear();
-        el.sendKeys(text);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">type</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">waitForVisible</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="n">el</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
+<span class="w">        </span><span class="n">el</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void clear(By locator) {
-        wait.waitForVisible(locator);
-        driver.findElement(locator).clear();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">waitForVisible</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Getters
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Getters</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public String getText(By locator) {
-        wait.waitForVisible(locator);
-        return driver.findElement(locator).getText();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getText</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">waitForVisible</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">getText</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public String getAttribute(By locator, String attr) {
-        return driver.findElement(locator).getAttribute(attr);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getAttribute</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">attr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">getAttribute</span><span class="p">(</span><span class="n">attr</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // State checks
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// State checks</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public boolean isDisplayed(By locator) {
-        return driver.findElement(locator).isDisplayed();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isDisplayed</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">isDisplayed</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public boolean isEnabled(By locator) {
-        return driver.findElement(locator).isEnabled();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isEnabled</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">isEnabled</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public boolean isSelected(By locator) {
-        return driver.findElement(locator).isSelected();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isSelected</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">isSelected</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Checkbox helpers
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Checkbox helpers</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void check(By locator) {
-        if (!isSelected(locator)) {
-            click(locator);
-        }
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isSelected</span><span class="p">(</span><span class="n">locator</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">click</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void uncheck(By locator) {
-        if (isSelected(locator)) {
-            click(locator);
-        }
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">uncheck</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isSelected</span><span class="p">(</span><span class="n">locator</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">click</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Dropdown
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Dropdown</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void selectByText(By locator, String text) {
-        wait.waitForVisible(locator);
-        new Select(driver.findElement(locator)).selectByVisibleText(text);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">selectByText</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">waitForVisible</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Select</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">)).</span><span class="na">selectByVisibleText</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void selectByValue(By locator, String value) {
-        new Select(driver.findElement(locator)).selectByValue(value);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">selectByValue</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Select</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">)).</span><span class="na">selectByValue</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void selectByIndex(By locator, int index) {
-        new Select(driver.findElement(locator)).selectByIndex(index);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">selectByIndex</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Select</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">)).</span><span class="na">selectByIndex</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Mouse Actions
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Mouse Actions</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void hover(By locator) {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(locator)).perform();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">hover</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Actions</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">moveToElement</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">)).</span><span class="na">perform</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void doubleClick(By locator) {
-        Actions actions = new Actions(driver);
-        actions.doubleClick(driver.findElement(locator)).perform();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doubleClick</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Actions</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">doubleClick</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">)).</span><span class="na">perform</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void rightClick(By locator) {
-        Actions actions = new Actions(driver);
-        actions.contextClick(driver.findElement(locator)).perform();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">rightClick</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Actions</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">contextClick</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">)).</span><span class="na">perform</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Scroll
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Scroll</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void scrollIntoView(By locator) {
-        WebElement el = driver.findElement(locator);
-        ((JavascriptExecutor) driver)
-                .executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, el);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">scrollIntoView</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="p">((</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"arguments[0].scrollIntoView(true);"</span><span class="p">,</span><span class="w"> </span><span class="n">el</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // JavaScript click (fallback)
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// JavaScript click (fallback)</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void jsClick(By locator) {
-        WebElement el = driver.findElement(locator);
-        ((JavascriptExecutor) driver)
-                .executeScript(&quot;arguments[0].click();&quot;, el);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">jsClick</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="p">((</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">"arguments[0].click();"</span><span class="p">,</span><span class="w"> </span><span class="n">el</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // File Upload
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// File Upload</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void uploadFile(By locator, String path) {
-        driver.findElement(locator).sendKeys(path);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">uploadFile</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Generic find
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Generic find</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public WebElement find(By locator) {
-        wait.waitForPresence(locator);
-        return driver.findElement(locator);
-    } 
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">WebElement</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">waitForPresence</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="7-waitutilsjava-centralized-waits">7. WaitUtils.java (Centralized Waits)<a class="headerlink" href="#7-waitutilsjava-centralized-waits" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">utils</span><span class="p">;</span>
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.*;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.support.ui.*</span><span class="p">;</span>
 
-import java.time.Duration;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.Duration</span><span class="p">;</span>
 
-public class WaitUtils {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WaitUtils</span><span class="w"> </span><span class="p">{</span>
 
-    private WebDriver driver;
-    private WebDriverWait wait;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="w"> </span><span class="n">wait</span><span class="p">;</span>
 
-    private static final int DEFAULT_TIMEOUT = 10;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DEFAULT_TIMEOUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 
-    public WaitUtils(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">WaitUtils</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="n">DEFAULT_TIMEOUT</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Element waits
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Element waits</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void waitForVisible(By locator) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForVisible</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForClickable(By locator) {
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForClickable</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">elementToBeClickable</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForPresence(By locator) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForPresence</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">presenceOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForInvisibility(By locator) {
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForInvisibility</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">invisibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForTextToBePresent(By locator, String text) {
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForTextToBePresent</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">textToBePresentInElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForAttributeContains(By locator, String attribute, String value) {
-        wait.until(ExpectedConditions.attributeContains(locator, attribute, value));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForAttributeContains</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">attribute</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">attributeContains</span><span class="p">(</span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="n">attribute</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Page waits
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Page waits</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void waitForTitleContains(String title) {
-        wait.until(ExpectedConditions.titleContains(title));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForTitleContains</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">titleContains</span><span class="p">(</span><span class="n">title</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForUrlContains(String partialUrl) {
-        wait.until(ExpectedConditions.urlContains(partialUrl));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForUrlContains</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">partialUrl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">urlContains</span><span class="p">(</span><span class="n">partialUrl</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Alert &amp; Frame waits
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Alert &amp; Frame waits</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void waitForAlert() {
-        wait.until(ExpectedConditions.alertIsPresent());
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForAlert</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">alertIsPresent</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForFrameAndSwitch(By locator) {
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForFrameAndSwitch</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">frameToBeAvailableAndSwitchToIt</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // =========================
-    // Custom timeout method
-    // =========================
+<span class="w">    </span><span class="c1">// =========================</span>
+<span class="w">    </span><span class="c1">// Custom timeout method</span>
+<span class="w">    </span><span class="c1">// =========================</span>
 
-    public void waitForVisible(By locator, int seconds) {
-        new WebDriverWait(driver, Duration.ofSeconds(seconds))
-                .until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-}
-
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForVisible</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">seconds</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="n">seconds</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="8-retryanalyzerjava">8. RetryAnalyzer.java<a class="headerlink" href="#8-retryanalyzerjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package listeners;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">listeners</span><span class="p">;</span>
 
-import org.testng.IRetryAnalyzer;
-import org.testng.ITestResult;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.IRetryAnalyzer</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.ITestResult</span><span class="p">;</span>
 
-public class RetryAnalyzer implements IRetryAnalyzer {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RetryAnalyzer</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IRetryAnalyzer</span><span class="w"> </span><span class="p">{</span>
 
-    private int retryCount = 0;
-    private static final int MAX_RETRY_COUNT = 2;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">retryCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_RETRY_COUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 
-    public boolean retry(ITestResult result) {
-        if (retryCount &lt; MAX_RETRY_COUNT) {
-            retryCount++;
-            return true;
-        }
-        return false;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">retry</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">retryCount</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MAX_RETRY_COUNT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">retryCount</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="9-testlistenerjava-listener-screenshot-report">9. TestListener.java (Listener + Screenshot + Report)<a class="headerlink" href="#9-testlistenerjava-listener-screenshot-report" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package listeners;
+<h2 id="package-listeners-import-comaventstackextentreportsextenttest-import-orgtestngitestlistener-import-orgtestngitestresult-import-reportingextentmanager-import-utilsscreenshotutil-public-class-testlistener-implements-itestlistener-private-static-threadlocalextenttest-test-new-threadlocal-public-void-onteststartitestresult-result-testsetextentmanagergetreportcreatetestresultgetname-public-void-ontestsuccessitestresult-result-testgetpasstest-passed-public-void-ontestfailureitestresult-result-string-path-screenshotutiltakescreenshotresultgetname-testgetfailresultgetthrowable-if-path-null-testgetaddscreencapturefrompathpath-public-void-onfinishorgtestngitestcontext-context-extentmanagergetreportflush"><div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">listeners</span><span class="p">;</span>
 
-import com.aventstack.extentreports.ExtentTest;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-import reporting.ExtentManager;
-import utils.ScreenshotUtil;
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.aventstack.extentreports.ExtentTest</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.ITestListener</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.ITestResult</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">reporting.ExtentManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">utils.ScreenshotUtil</span><span class="p">;</span>
 
-public class TestListener implements ITestListener {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestListener</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ITestListener</span><span class="w"> </span><span class="p">{</span>
 
-    private static ThreadLocal&lt;ExtentTest&gt; test = new ThreadLocal&lt;&gt;();
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">ExtentTest</span><span class="o">&gt;</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    public void onTestStart(ITestResult result) {
-        test.set(ExtentManager.getReport().createTest(result.getName()));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTestStart</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">test</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">ExtentManager</span><span class="p">.</span><span class="na">getReport</span><span class="p">().</span><span class="na">createTest</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">getName</span><span class="p">()));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void onTestSuccess(ITestResult result) {
-        test.get().pass(&quot;Test Passed&quot;);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTestSuccess</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">test</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">pass</span><span class="p">(</span><span class="s">"Test Passed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void onTestFailure(ITestResult result) {
-        String path = ScreenshotUtil.takeScreenshot(result.getName());
-        test.get().fail(result.getThrowable());
-        if (path != null) {
-            test.get().addScreenCaptureFromPath(path);
-        }
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onTestFailure</span><span class="p">(</span><span class="n">ITestResult</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScreenshotUtil</span><span class="p">.</span><span class="na">takeScreenshot</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="n">test</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">fail</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">getThrowable</span><span class="p">());</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">path</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">test</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addScreenCaptureFromPath</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void onFinish(org.testng.ITestContext context) {
-        ExtentManager.getReport().flush();
-    }
-}
-</code></pre>
-<hr />
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onFinish</span><span class="p">(</span><span class="n">org</span><span class="p">.</span><span class="na">testng</span><span class="p">.</span><span class="na">ITestContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ExtentManager</span><span class="p">.</span><span class="na">getReport</span><span class="p">().</span><span class="na">flush</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><a class="headerlink" href="#package-listeners-import-comaventstackextentreportsextenttest-import-orgtestngitestlistener-import-orgtestngitestresult-import-reportingextentmanager-import-utilsscreenshotutil-public-class-testlistener-implements-itestlistener-private-static-threadlocalextenttest-test-new-threadlocal-public-void-onteststartitestresult-result-testsetextentmanagergetreportcreatetestresultgetname-public-void-ontestsuccessitestresult-result-testgetpasstest-passed-public-void-ontestfailureitestresult-result-string-path-screenshotutiltakescreenshotresultgetname-testgetfailresultgetthrowable-if-path-null-testgetaddscreencapturefrompathpath-public-void-onfinishorgtestngitestcontext-context-extentmanagergetreportflush" title="Permanent link">&para;</a></h2>
 <h2 id="10-screenshotutiljava">10. ScreenshotUtil.java<a class="headerlink" href="#10-screenshotutiljava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">utils</span><span class="p">;</span>
 
-import driver.DriverFactory;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+<span class="kn">import</span><span class="w"> </span><span class="nn">driver.DriverFactory</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.OutputType</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.TakesScreenshot</span><span class="p">;</span>
 
-import java.io.File;
-import java.nio.file.Files;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Files</span><span class="p">;</span>
 
-public class ScreenshotUtil {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScreenshotUtil</span><span class="w"> </span><span class="p">{</span>
 
-    public static String takeScreenshot(String testName) {
-        try {
-            File src = ((TakesScreenshot) DriverFactory.getDriver())
-                .getScreenshotAs(OutputType.FILE);
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">takeScreenshot</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">testName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">File</span><span class="w"> </span><span class="n">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="w"> </span><span class="n">DriverFactory</span><span class="p">.</span><span class="na">getDriver</span><span class="p">())</span>
+<span class="w">                </span><span class="p">.</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span>
 
-            String path = &quot;target/screenshots/&quot; + testName + &quot;.png&quot;;
-            File dest = new File(path);
-            dest.getParentFile().mkdirs();
-            Files.copy(src.toPath(), dest.toPath());
-            return path;
-        } catch (Exception e) {
-            return null;
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"target/screenshots/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">testName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">".png"</span><span class="p">;</span>
+<span class="w">            </span><span class="n">File</span><span class="w"> </span><span class="n">dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">            </span><span class="n">dest</span><span class="p">.</span><span class="na">getParentFile</span><span class="p">().</span><span class="na">mkdirs</span><span class="p">();</span>
+<span class="w">            </span><span class="n">Files</span><span class="p">.</span><span class="na">copy</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="na">toPath</span><span class="p">(),</span><span class="w"> </span><span class="n">dest</span><span class="p">.</span><span class="na">toPath</span><span class="p">());</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">path</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="11-extentmanagerjava">11. ExtentManager.java<a class="headerlink" href="#11-extentmanagerjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package reporting;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">reporting</span><span class="p">;</span>
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.aventstack.extentreports.ExtentReports</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.aventstack.extentreports.reporter.ExtentSparkReporter</span><span class="p">;</span>
 
-public class ExtentManager {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExtentManager</span><span class="w"> </span><span class="p">{</span>
 
-    private static ExtentReports extent;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ExtentReports</span><span class="w"> </span><span class="n">extent</span><span class="p">;</span>
 
-    public static ExtentReports getReport() {
-        if (extent == null) {
-            ExtentSparkReporter reporter =
-                new ExtentSparkReporter(&quot;target/ExtentReport.html&quot;);
-            extent = new ExtentReports();
-            extent.attachReporter(reporter);
-        }
-        return extent;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ExtentReports</span><span class="w"> </span><span class="nf">getReport</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">extent</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ExtentSparkReporter</span><span class="w"> </span><span class="n">reporter</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">ExtentSparkReporter</span><span class="p">(</span><span class="s">"target/ExtentReport.html"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">extent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExtentReports</span><span class="p">();</span>
+<span class="w">            </span><span class="n">extent</span><span class="p">.</span><span class="na">attachReporter</span><span class="p">(</span><span class="n">reporter</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">extent</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="12-logintestjava">12. LoginTest.java<a class="headerlink" href="#12-logintestjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package tests;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">tests</span><span class="p">;</span>
 
-import base.BaseTest;
-import listeners.RetryAnalyzer;
-import listeners.TestListener;
-import org.testng.Assert;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
-import pages.LoginPage;
+<span class="kn">import</span><span class="w"> </span><span class="nn">base.BaseTest</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">listeners.RetryAnalyzer</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">listeners.TestListener</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.Assert</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Listeners</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pages.LoginPage</span><span class="p">;</span>
 
-@Listeners(TestListener.class)
-public class LoginTest extends BaseTest {
+<span class="nd">@Listeners</span><span class="p">(</span><span class="n">TestListener</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseTest</span><span class="w"> </span><span class="p">{</span>
 
-    @Test(retryAnalyzer = RetryAnalyzer.class)
-    public void validLoginTest() {
-        openUrl(&quot;https://example.com/login&quot;);
-        LoginPage lp = new LoginPage(driver);
-        Assert.assertTrue(lp.isPageLoaded());
-        lp.login(&quot;admin&quot;, &quot;password&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Test</span><span class="p">(</span><span class="n">retryAnalyzer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RetryAnalyzer</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">validLoginTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">openUrl</span><span class="p">(</span><span class="s">"https://example.com/login"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">LoginPage</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LoginPage</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertTrue</span><span class="p">(</span><span class="n">lp</span><span class="p">.</span><span class="na">isPageLoaded</span><span class="p">());</span>
+<span class="w">        </span><span class="n">lp</span><span class="p">.</span><span class="na">login</span><span class="p">(</span><span class="s">"admin"</span><span class="p">,</span><span class="w"> </span><span class="s">"password"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="13-uml-diagram-text">13. UML Diagram (Text)<a class="headerlink" href="#13-uml-diagram-text" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">LoginTest
+<div class="highlight"><pre><span></span><code>LoginTest
    |
    v
 BaseTest ----&gt; DriverFactory
@@ -6759,7 +6778,7 @@ ElementActions
    |
    v
 WaitUtils
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="15-interview-summary">15. Interview Summary<a class="headerlink" href="#15-interview-summary" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -6818,6 +6837,10 @@ WaitUtils
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

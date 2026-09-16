@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6221,8 +6221,8 @@
 <h3 id="21-what-is-a-set">2.1 What is a Set?<a class="headerlink" href="#21-what-is-a-set" title="Permanent link">&para;</a></h3>
 <p>A <strong>Set</strong> is a collection of <strong>unique values</strong>.<br />
 Duplicate values are automatically ignored.</p>
-<pre><code class="language-js">const mySet = new Set();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">mySet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h3 id="22-key-characteristics-of-set">2.2 Key Characteristics of Set<a class="headerlink" href="#22-key-characteristics-of-set" title="Permanent link">&para;</a></h3>
 <ul>
@@ -6233,9 +6233,9 @@ Duplicate values are automatically ignored.</p>
 </ul>
 <hr />
 <h3 id="23-creating-a-set">2.3 Creating a Set<a class="headerlink" href="#23-creating-a-set" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">const numbers = new Set([1, 2, 3, 3, 4]);
-console.log(numbers); // Set(4) {1, 2, 3, 4}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set(4) {1, 2, 3, 4}</span>
+</code></pre></div>
 <hr />
 <h3 id="24-common-set-methods">2.4 Common Set Methods<a class="headerlink" href="#24-common-set-methods" title="Permanent link">&para;</a></h3>
 <table>
@@ -6268,37 +6268,37 @@ console.log(numbers); // Set(4) {1, 2, 3, 4}
 </tr>
 </tbody>
 </table>
-<pre><code class="language-js">const set = new Set();
-set.add(10);
-set.add(20);
-set.add(10);
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span>
+<span class="nx">set</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+<span class="nx">set</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mf">20</span><span class="p">);</span>
+<span class="nx">set</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 
-console.log(set.has(20)); // true
-console.log(set.size);    // 2
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">set</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="mf">20</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">set</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w">    </span><span class="c1">// 2</span>
+</code></pre></div>
 <hr />
 <h3 id="25-iterating-a-set">2.5 Iterating a Set<a class="headerlink" href="#25-iterating-a-set" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">for (let value of set) {
-  console.log(value);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">set</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="26-real-world-use-cases-of-set">2.6 Real-World Use Cases of Set<a class="headerlink" href="#26-real-world-use-cases-of-set" title="Permanent link">&para;</a></h3>
 <h4 id="remove-duplicates-from-array">Remove duplicates from array<a class="headerlink" href="#remove-duplicates-from-array" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">const arr = [1, 2, 2, 3, 4, 4];
-const uniqueArr = [...new Set(arr)];
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">uniqueArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">arr</span><span class="p">)];</span>
+</code></pre></div>
 <h4 id="track-unique-user-actions">Track unique user actions<a class="headerlink" href="#track-unique-user-actions" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">const visitedPages = new Set();
-visitedPages.add(&quot;home&quot;);
-visitedPages.add(&quot;profile&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">visitedPages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span>
+<span class="nx">visitedPages</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">"home"</span><span class="p">);</span>
+<span class="nx">visitedPages</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">"profile"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="3-map-in-javascript">3. Map in JavaScript<a class="headerlink" href="#3-map-in-javascript" title="Permanent link">&para;</a></h2>
 <h3 id="31-what-is-a-map">3.1 What is a Map?<a class="headerlink" href="#31-what-is-a-map" title="Permanent link">&para;</a></h3>
 <p>A <strong>Map</strong> stores data in <strong>key–value pairs</strong>, where <strong>keys can be any type</strong>.</p>
-<pre><code class="language-js">const myMap = new Map();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">myMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h3 id="32-why-use-map-instead-of-object">3.2 Why Use Map Instead of Object?<a class="headerlink" href="#32-why-use-map-instead-of-object" title="Permanent link">&para;</a></h3>
 <table>
@@ -6334,10 +6334,10 @@ visitedPages.add(&quot;profile&quot;);
 </table>
 <hr />
 <h3 id="33-creating-a-map">3.3 Creating a Map<a class="headerlink" href="#33-creating-a-map" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">const userMap = new Map();
-userMap.set(&quot;name&quot;, &quot;Nitin&quot;);
-userMap.set(&quot;age&quot;, 28);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">userMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
+<span class="nx">userMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">);</span>
+<span class="nx">userMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"age"</span><span class="p">,</span><span class="w"> </span><span class="mf">28</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="34-common-map-methods">3.4 Common Map Methods<a class="headerlink" href="#34-common-map-methods" title="Permanent link">&para;</a></h3>
 <table>
@@ -6374,42 +6374,42 @@ userMap.set(&quot;age&quot;, 28);
 </tr>
 </tbody>
 </table>
-<pre><code class="language-js">console.log(userMap.get(&quot;name&quot;)); // Nitin
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userMap</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"name"</span><span class="p">));</span><span class="w"> </span><span class="c1">// Nitin</span>
+</code></pre></div>
 <hr />
 <h3 id="35-using-objects-as-keys">3.5 Using Objects as Keys<a class="headerlink" href="#35-using-objects-as-keys" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">const objKey = { id: 1 };
-const map = new Map();
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">objKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
 
-map.set(objKey, &quot;User Data&quot;);
-console.log(map.get(objKey)); // User Data
-</code></pre>
+<span class="nx">map</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">objKey</span><span class="p">,</span><span class="w"> </span><span class="s2">"User Data"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">objKey</span><span class="p">));</span><span class="w"> </span><span class="c1">// User Data</span>
+</code></pre></div>
 <hr />
 <h3 id="36-iterating-a-map">3.6 Iterating a Map<a class="headerlink" href="#36-iterating-a-map" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">for (let [key, value] of map) {
-  console.log(key, value);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">map</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="37-real-world-use-cases-of-map">3.7 Real-World Use Cases of Map<a class="headerlink" href="#37-real-world-use-cases-of-map" title="Permanent link">&para;</a></h3>
 <h4 id="frequency-counter">Frequency Counter<a class="headerlink" href="#frequency-counter" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">const arr = [&quot;a&quot;, &quot;b&quot;, &quot;a&quot;, &quot;c&quot;];
-const freqMap = new Map();
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">freqMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
 
-for (let item of arr) {
-  freqMap.set(item, (freqMap.get(item) || 0) + 1);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">freqMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">freqMap</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h4 id="caching-api-responses">Caching API responses<a class="headerlink" href="#caching-api-responses" title="Permanent link">&para;</a></h4>
-<pre><code class="language-js">const cache = new Map();
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
 
-function getData(key, value) {
-  if (!cache.has(key)) {
-    cache.set(key, value);
-  }
-  return cache.get(key);
-}
-</code></pre>
+<span class="kd">function</span><span class="w"> </span><span class="nx">getData</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">cache</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">cache</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">cache</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="4-set-vs-map-vs-object-vs-array">4. Set vs Map vs Object vs Array<a class="headerlink" href="#4-set-vs-map-vs-object-vs-array" title="Permanent link">&para;</a></h2>
 <table>
@@ -6521,6 +6521,10 @@ function getData(key, value) {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

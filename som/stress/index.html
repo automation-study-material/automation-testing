@@ -12,8 +12,6 @@
       
       
       
-        <link rel="next" href="../../java-concepts/dataTypeVariableBasics/">
-      
       
         
       
@@ -23,7 +21,7 @@
     
     
       
-        <title>Stress - Automation Notes</title>
+        <title>Strength of Materials — Stress, Types of Stress & Direct Stress - Automation Notes</title>
       
     
     
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stress
+              Strength of Materials — Stress, Types of Stress &amp; Direct Stress
             
           </span>
         </div>
@@ -229,20 +227,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -263,7 +259,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -278,20 +274,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
         
           
           <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
@@ -312,7 +306,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -327,37 +321,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Stress
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -373,37 +340,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#amvi-mpsc-consolidated-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AMVI-MPSC Consolidated Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5685,7 +5621,7 @@
 <hr />
 <h1 id="1-big-picture">1. Big Picture<a class="headerlink" href="#1-big-picture" title="Permanent link">&para;</a></h1>
 <p>When an external load acts on a body:</p>
-<pre><code class="language-text">External Load
+<div class="highlight"><pre><span></span><code>External Load
      ↓
 Body tends to deform
      ↓
@@ -5696,7 +5632,7 @@ Internal force is distributed over area
 STRESS
      ↓
 Deformation / Strain
-</code></pre>
+</code></pre></div>
 <h3 id="core-idea">Core idea<a class="headerlink" href="#core-idea" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>Stress is the internal resisting force developed in a body per unit area when the body is subjected to an external load.</strong></p>
@@ -5707,14 +5643,14 @@ Deformation / Strain
 <h2 id="21-definition">2.1 Definition<a class="headerlink" href="#21-definition" title="Permanent link">&para;</a></h2>
 <p><strong>Stress</strong> is the internal resisting force per unit cross-sectional area of a loaded body.</p>
 <p>For a simple uniformly distributed axial load:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma = \frac{P}{A}}
-$$</p>
+\]</div>
 <p>Where:</p>
 <ul>
-<li>$\sigma$ = normal stress</li>
-<li>$P$ = axial load/internal force</li>
-<li>$A$ = cross-sectional area</li>
+<li><span class="arithmatex">\(\sigma\)</span> = normal stress</li>
+<li><span class="arithmatex">\(P\)</span> = axial load/internal force</li>
+<li><span class="arithmatex">\(A\)</span> = cross-sectional area</li>
 </ul>
 <h3 id="in-simple-words">In simple words<a class="headerlink" href="#in-simple-words" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -5724,9 +5660,9 @@ $$</p>
 <h1 id="2a-stress-is-tensorial-in-nature">2A. Stress is Tensorial in Nature<a class="headerlink" href="#2a-stress-is-tensorial-in-nature" title="Permanent link">&para;</a></h1>
 <p>In a general 3-D state of stress, <strong>stress is a second-order tensor</strong>. It is not simply a scalar or a vector.</p>
 <p>In simple Strength of Materials problems, we often calculate one stress component using:</p>
-<p>$$
+<div class="arithmatex">\[
 \sigma=\frac{P}{A}
-$$</p>
+\]</div>
 <p>That single value represents a particular normal-stress component. However, the <strong>complete stress state at a point in a 3-D body requires multiple stress components</strong>, so it is represented by a stress tensor.</p>
 <h3 id="scalar-vs-vector-vs-tensor">Scalar vs Vector vs Tensor<a class="headerlink" href="#scalar-vs-vector-vs-tensor" title="Permanent link">&para;</a></h3>
 <table>
@@ -5769,7 +5705,7 @@ $$</p>
 <p><strong>Diagram guide:</strong> The three normal stresses are shown perpendicular to their respective faces, while the shear stresses are shown tangentially. The matrix at right shows the same information in tensor form.</p>
 </blockquote>
 <p>Consider a small cube taken from inside a loaded 3-D body.</p>
-<pre><code class="language-text">                         z
+<div class="highlight"><pre><span></span><code>                         z
                          ↑
                          │
                     ┌─────────┐
@@ -5783,18 +5719,18 @@ $$</p>
                  │/        │/
                  └─────────┘
                        → x
-</code></pre>
+</code></pre></div>
 <p>At a point in the cube, stresses can act in <strong>three coordinate directions: x, y and z</strong>.</p>
 <h2 id="normal-stresses">Normal stresses<a class="headerlink" href="#normal-stresses" title="Permanent link">&para;</a></h2>
 <p>Normal stress acts <strong>perpendicular to the corresponding face</strong>.</p>
 <p>There are three normal stresses:</p>
 <ul>
-<li>$\sigma_x$ → normal stress associated with the x-direction</li>
-<li>$\sigma_y$ → normal stress associated with the y-direction</li>
-<li>$\sigma_z$ → normal stress associated with the z-direction</li>
+<li><span class="arithmatex">\(\sigma_x\)</span> → normal stress associated with the x-direction</li>
+<li><span class="arithmatex">\(\sigma_y\)</span> → normal stress associated with the y-direction</li>
+<li><span class="arithmatex">\(\sigma_z\)</span> → normal stress associated with the z-direction</li>
 </ul>
 <p>Conceptually:</p>
-<pre><code class="language-text">                 σz
+<div class="highlight"><pre><span></span><code>                 σz
                  ↑
                  │
           σy  ← [ CUBE ] →  σy
@@ -5804,25 +5740,25 @@ $$</p>
 
                  σx acts
               along the x-axis
-</code></pre>
+</code></pre></div>
 <p>For a general 3-D stress state, think of these as the three <strong>direct/normal stress components</strong>.</p>
 <h2 id="shear-stresses">Shear stresses<a class="headerlink" href="#shear-stresses" title="Permanent link">&para;</a></h2>
 <p>Shear stress acts <strong>parallel/tangential to a face</strong>.</p>
 <p>There are six stress components commonly written as:</p>
 <ul>
-<li>$\tau_{xy}$</li>
-<li>$\tau_{xz}$</li>
-<li>$\tau_{yx}$</li>
-<li>$\tau_{yz}$</li>
-<li>$\tau_{zx}$</li>
-<li>$\tau_{zy}$</li>
+<li><span class="arithmatex">\(\tau_{xy}\)</span></li>
+<li><span class="arithmatex">\(\tau_{xz}\)</span></li>
+<li><span class="arithmatex">\(\tau_{yx}\)</span></li>
+<li><span class="arithmatex">\(\tau_{yz}\)</span></li>
+<li><span class="arithmatex">\(\tau_{zx}\)</span></li>
+<li><span class="arithmatex">\(\tau_{zy}\)</span></li>
 </ul>
 <p>For the usual classical stress tensor, the shear components are symmetric:</p>
-<p>$$
+<div class="arithmatex">\[
 \tau_{xy}=\tau_{yx},\qquad
 \tau_{xz}=\tau_{zx},\qquad
 \tau_{yz}=\tau_{zy}
-$$</p>
+\]</div>
 <p>Therefore, there are <strong>6 independent stress components</strong> in the usual 3-D Cauchy stress state:</p>
 <ul>
 <li>3 normal stresses</li>
@@ -5831,25 +5767,25 @@ $$</p>
 <hr />
 <h1 id="2c-3-d-stress-tensor-matrix">2C. 3-D Stress Tensor Matrix<a class="headerlink" href="#2c-3-d-stress-tensor-matrix" title="Permanent link">&para;</a></h1>
 <p>The complete stress state can be represented by the following <strong>3 × 3 stress matrix</strong>:</p>
-<p>$$
+<div class="arithmatex">\[
 [\sigma]=
 \begin{bmatrix}
-\sigma_x &amp; \tau_{xy} &amp; \tau_{xz}\
-\tau_{yx} &amp; \sigma_y &amp; \tau_{yz}\
+\sigma_x &amp; \tau_{xy} &amp; \tau_{xz}\\
+\tau_{yx} &amp; \sigma_y &amp; \tau_{yz}\\
 \tau_{zx} &amp; \tau_{zy} &amp; \sigma_z
 \end{bmatrix}
-$$</p>
+\]</div>
 <h3 id="how-to-read-the-matrix">How to read the matrix<a class="headerlink" href="#how-to-read-the-matrix" title="Permanent link">&para;</a></h3>
 <p>The <strong>diagonal terms</strong> are the normal stresses:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_x,\ \sigma_y,\ \sigma_z}
-$$</p>
+\]</div>
 <p>The <strong>off-diagonal terms</strong> are the shear stresses:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\tau_{xy},\ \tau_{xz},\ \tau_{yx},\ \tau_{yz},\ \tau_{zx},\ \tau_{zy}}
-$$</p>
+\]</div>
 <p>So remember:</p>
-<pre><code class="language-text">              STRESS MATRIX
+<div class="highlight"><pre><span></span><code>              STRESS MATRIX
                    │
           ┌────────┴────────┐
           │                 │
@@ -5859,7 +5795,7 @@ $$</p>
           │                 │
    σx , σy , σz        τxy, τxz, τyx,
                        τyz, τzx, τzy
-</code></pre>
+</code></pre></div>
 <h3 id="easy-memory-trick">⭐ Easy memory trick<a class="headerlink" href="#easy-memory-trick" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>Diagonal = Normal</strong><br />
@@ -5869,32 +5805,32 @@ $$</p>
 <h1 id="2d-vs-3d-stress-quick-understanding">2D vs 3D Stress — Quick Understanding<a class="headerlink" href="#2d-vs-3d-stress-quick-understanding" title="Permanent link">&para;</a></h1>
 <h3 id="2-d-stress-state">2-D stress state<a class="headerlink" href="#2-d-stress-state" title="Permanent link">&para;</a></h3>
 <p>Usually represented using:</p>
-<p>$$
+<div class="arithmatex">\[
 [\sigma]=
 \begin{bmatrix}
-\sigma_x &amp; \tau_{xy}\
+\sigma_x &amp; \tau_{xy}\\
 \tau_{yx} &amp; \sigma_y
 \end{bmatrix}
-$$</p>
+\]</div>
 <p>It contains:</p>
 <ul>
-<li>$\sigma_x$ → normal stress</li>
-<li>$\sigma_y$ → normal stress</li>
-<li>$\tau_{xy},\tau_{yx}$ → shear components</li>
+<li><span class="arithmatex">\(\sigma_x\)</span> → normal stress</li>
+<li><span class="arithmatex">\(\sigma_y\)</span> → normal stress</li>
+<li><span class="arithmatex">\(\tau_{xy},\tau_{yx}\)</span> → shear components</li>
 </ul>
 <p>For the usual classical stress state:</p>
-<p>$$
+<div class="arithmatex">\[
 \tau_{xy}=\tau_{yx}
-$$</p>
+\]</div>
 <h3 id="3-d-stress-state">3-D stress state<a class="headerlink" href="#3-d-stress-state" title="Permanent link">&para;</a></h3>
-<p>$$
+<div class="arithmatex">\[
 [\sigma]=
 \begin{bmatrix}
-\sigma_x &amp; \tau_{xy} &amp; \tau_{xz}\
-\tau_{yx} &amp; \sigma_y &amp; \tau_{yz}\
+\sigma_x &amp; \tau_{xy} &amp; \tau_{xz}\\
+\tau_{yx} &amp; \sigma_y &amp; \tau_{yz}\\
 \tau_{zx} &amp; \tau_{zy} &amp; \sigma_z
 \end{bmatrix}
-$$</p>
+\]</div>
 <p>It contains:</p>
 <ul>
 <li><strong>3 normal stress components</strong></li>
@@ -5907,7 +5843,7 @@ $$</p>
 </blockquote>
 <h1 id="3-stress-classification">3. Stress Classification<a class="headerlink" href="#3-stress-classification" title="Permanent link">&para;</a></h1>
 <p>The most useful basic classification is based on the direction of stress relative to the area.</p>
-<pre><code class="language-text">                         STRESS
+<div class="highlight"><pre><span></span><code>                         STRESS
                            │
              ┌─────────────┴─────────────┐
              │                           │
@@ -5916,7 +5852,7 @@ $$</p>
        ┌─────┴─────┐                     │
        │           │                     │
     TENSILE    COMPRESSIVE             SHEAR
-</code></pre>
+</code></pre></div>
 <h2 id="remember">Remember<a class="headerlink" href="#remember" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Normal stress → perpendicular to area</strong></li>
@@ -5927,9 +5863,9 @@ $$</p>
 <h2 id="41-definition">4.1 Definition<a class="headerlink" href="#41-definition" title="Permanent link">&para;</a></h2>
 <p>Normal stress acts <strong>perpendicular (normal)</strong> to the cross-sectional area.</p>
 <p>For a simple axial load:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma = \frac{P}{A}}
-$$</p>
+\]</div>
 <p>Normal stress has two basic forms:</p>
 <ol>
 <li><strong>Tensile stress</strong></li>
@@ -5939,14 +5875,14 @@ $$</p>
 <h1 id="5-tensile-stress">5. Tensile Stress<a class="headerlink" href="#5-tensile-stress" title="Permanent link">&para;</a></h1>
 <h2 id="51-meaning">5.1 Meaning<a class="headerlink" href="#51-meaning" title="Permanent link">&para;</a></h2>
 <p>When a load tends to <strong>pull or elongate</strong> a body, tensile stress develops.</p>
-<pre><code class="language-text">        P →    ┌────────────────┐    ← P
+<div class="highlight"><pre><span></span><code>        P →    ┌────────────────┐    ← P
                 │      BAR       │
                 └────────────────┘
 
                   ←── PULL ──→
 
                   Length increases
-</code></pre>
+</code></pre></div>
 <h3 id="effect">Effect<a class="headerlink" href="#effect" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Length increases</li>
@@ -5954,14 +5890,14 @@ $$</p>
 <li>Lateral dimensions generally decrease due to Poisson effect</li>
 </ul>
 <h3 id="formula">Formula<a class="headerlink" href="#formula" title="Permanent link">&para;</a></h3>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_t = \frac{P}{A}}
-$$</p>
+\]</div>
 <h3 id="sign-convention">Sign convention<a class="headerlink" href="#sign-convention" title="Permanent link">&para;</a></h3>
 <p>Tensile stress is generally taken as positive:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_t &gt; 0}
-$$</p>
+\]</div>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Tie rod</li>
@@ -5978,14 +5914,14 @@ $$</p>
 <h1 id="6-compressive-stress">6. Compressive Stress<a class="headerlink" href="#6-compressive-stress" title="Permanent link">&para;</a></h1>
 <h2 id="61-meaning">6.1 Meaning<a class="headerlink" href="#61-meaning" title="Permanent link">&para;</a></h2>
 <p>When a load tends to <strong>push or shorten</strong> a body, compressive stress develops.</p>
-<pre><code class="language-text">        P ←    ┌────────────────┐    → P
+<div class="highlight"><pre><span></span><code>        P ←    ┌────────────────┐    → P
                 │      BAR       │
                 └────────────────┘
 
                  →── PUSH ──←
 
                   Length decreases
-</code></pre>
+</code></pre></div>
 <h3 id="effect_1">Effect<a class="headerlink" href="#effect_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Length decreases</li>
@@ -5993,13 +5929,13 @@ $$</p>
 <li>Lateral dimensions generally increase</li>
 </ul>
 <h3 id="formula_1">Formula<a class="headerlink" href="#formula_1" title="Permanent link">&para;</a></h3>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_c = \frac{P}{A}}
-$$</p>
+\]</div>
 <p>With the usual sign convention:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_c &lt; 0}
-$$</p>
+\]</div>
 <h3 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Columns</li>
@@ -6016,25 +5952,25 @@ $$</p>
 <h2 id="71-definition">7.1 Definition<a class="headerlink" href="#71-definition" title="Permanent link">&para;</a></h2>
 <p><strong>Shear stress</strong> acts <strong>parallel or tangential</strong> to the area.</p>
 <p>It occurs when a force tends to make one part of a body <strong>slide relative to another part</strong>.</p>
-<pre><code class="language-text">          Shear force →
+<div class="highlight"><pre><span></span><code>          Shear force →
       ┌─────────────────┐
       │                 │
       │      BODY       │
       │                 │
       └─────────────────┘
-</code></pre>
+</code></pre></div>
 <p>For simple average shear stress:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\tau = \frac{P}{A}}
-$$</p>
+\]</div>
 <p>Where:</p>
 <ul>
-<li>$\tau$ = shear stress</li>
-<li>$P$ = shear force</li>
-<li>$A$ = resisting area</li>
+<li><span class="arithmatex">\(\tau\)</span> = shear stress</li>
+<li><span class="arithmatex">\(P\)</span> = shear force</li>
+<li><span class="arithmatex">\(A\)</span> = resisting area</li>
 </ul>
 <blockquote>
-<p><strong>Important:</strong> $\tau=P/A$ gives <strong>average shear stress</strong>. In many real members, shear stress is not uniformly distributed.</p>
+<p><strong>Important:</strong> <span class="arithmatex">\(\tau=P/A\)</span> gives <strong>average shear stress</strong>. In many real members, shear stress is not uniformly distributed.</p>
 </blockquote>
 <h3 id="effect_2">Effect<a class="headerlink" href="#effect_2" title="Permanent link">&para;</a></h3>
 <p>Shear stress tends to produce:</p>
@@ -6072,13 +6008,13 @@ $$</p>
 </tr>
 <tr>
 <td>Symbol</td>
-<td>$\sigma$</td>
-<td>$\tau$</td>
+<td><span class="arithmatex">\(\sigma\)</span></td>
+<td><span class="arithmatex">\(\tau\)</span></td>
 </tr>
 <tr>
 <td>Simple formula</td>
-<td>$\sigma=P/A$</td>
-<td>$\tau=P/A$</td>
+<td><span class="arithmatex">\(\sigma=P/A\)</span></td>
+<td><span class="arithmatex">\(\tau=P/A\)</span></td>
 </tr>
 <tr>
 <td>Typical loading</td>
@@ -6106,13 +6042,13 @@ $$</p>
 <h1 id="9-direct-stress">9. Direct Stress<a class="headerlink" href="#9-direct-stress" title="Permanent link">&para;</a></h1>
 <h2 id="91-definition">9.1 Definition<a class="headerlink" href="#91-definition" title="Permanent link">&para;</a></h2>
 <p><strong>Direct stress</strong> is the stress produced when an external force acts <strong>directly along the axis of a member</strong>.</p>
-<pre><code class="language-text">                 Member axis
+<div class="highlight"><pre><span></span><code>                 Member axis
         ─────────────────────────→
 
        P →  ┌──────────────────┐  ← P
              │       BAR        │
              └──────────────────┘
-</code></pre>
+</code></pre></div>
 <p>The load is called a <strong>direct/axial load</strong>.</p>
 <p>It can produce:</p>
 <ul>
@@ -6120,14 +6056,14 @@ $$</p>
 <li>Compressive direct stress</li>
 </ul>
 <h3 id="key-relationship">Key relationship<a class="headerlink" href="#key-relationship" title="Permanent link">&para;</a></h3>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\text{Direct Stress is a type of Normal Stress}}
-$$</p>
+\]</div>
 <hr />
 <h1 id="10-direct-load-and-concentric-loading">10. Direct Load and Concentric Loading<a class="headerlink" href="#10-direct-load-and-concentric-loading" title="Permanent link">&para;</a></h1>
 <p>A direct load acts along the longitudinal axis of the member.</p>
 <p>For a <strong>concentric axial load</strong>, the load passes through the centroidal axis of the cross-section.</p>
-<pre><code class="language-text">             P
+<div class="highlight"><pre><span></span><code>             P
              ↓
              │
         ┌─────────┐
@@ -6137,7 +6073,7 @@ $$</p>
         └─────────┘
              │
         Centroidal axis
-</code></pre>
+</code></pre></div>
 <p>For the simple axial model:</p>
 <blockquote>
 <p><strong>Direct load → axial force → direct stress</strong></p>
@@ -6145,33 +6081,33 @@ $$</p>
 <hr />
 <h1 id="11-direct-stress-formula">11. Direct Stress Formula<a class="headerlink" href="#11-direct-stress-formula" title="Permanent link">&para;</a></h1>
 <p>For a prismatic member carrying a concentric axial load:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma = \frac{P}{A}}
-$$</p>
+\]</div>
 <p>Rearranged forms:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{P=\sigma A}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{A=\frac{P}{\sigma}}
-$$</p>
+\]</div>
 <h3 id="units">Units<a class="headerlink" href="#units" title="Permanent link">&para;</a></h3>
 <ul>
-<li>$P$ → N or kN</li>
-<li>$A$ → m² or mm²</li>
-<li>$\sigma$ → Pa, MPa, N/mm²</li>
+<li><span class="arithmatex">\(P\)</span> → N or kN</li>
+<li><span class="arithmatex">\(A\)</span> → m² or mm²</li>
+<li><span class="arithmatex">\(\sigma\)</span> → Pa, MPa, N/mm²</li>
 </ul>
 <h3 id="important-conversion">Important conversion<a class="headerlink" href="#important-conversion" title="Permanent link">&para;</a></h3>
-<p>$$
+<div class="arithmatex">\[
 \boxed{1\,N/mm^2=1\,MPa}
-$$</p>
+\]</div>
 <p>Therefore, if load is in N and area is in mm²:</p>
-<p>$$
+<div class="arithmatex">\[
 \frac{N}{mm^2}
-$$</p>
+\]</div>
 <p>is directly equal numerically to MPa.</p>
 <hr />
-<h1 id="12-conditions-for-using-sigmapa">12. Conditions for Using $\sigma=P/A$<a class="headerlink" href="#12-conditions-for-using-sigmapa" title="Permanent link">&para;</a></h1>
+<h1 id="12-conditions-for-using-sigmapa">12. Conditions for Using <span class="arithmatex">\(\sigma=P/A\)</span><a class="headerlink" href="#12-conditions-for-using-sigmapa" title="Permanent link">&para;</a></h1>
 <p>The simple direct-stress equation is appropriate when the basic axial model applies:</p>
 <ul>
 <li>Load is axial</li>
@@ -6180,7 +6116,7 @@ $$</p>
 <li>Cross-section is uniform for a prismatic member</li>
 <li>Stress distribution is treated as uniform away from local disturbances</li>
 </ul>
-<pre><code class="language-text">Axial load
+<div class="highlight"><pre><span></span><code>Axial load
     ↓
 ┌─────────────┐
 │             │
@@ -6190,7 +6126,7 @@ $$</p>
     ↓
 Uniform direct stress
 over section
-</code></pre>
+</code></pre></div>
 <h3 id="exam-point">⭐ Exam point<a class="headerlink" href="#exam-point" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>Concentric axial loading on a uniform member → direct stress can be treated as uniformly distributed in the simple model.</strong></p>
@@ -6198,13 +6134,13 @@ over section
 <hr />
 <h1 id="13-effect-of-load-on-stress">13. Effect of Load on Stress<a class="headerlink" href="#13-effect-of-load-on-stress" title="Permanent link">&para;</a></h1>
 <p>From:</p>
-<p>$$
+<div class="arithmatex">\[
 \sigma=\frac{P}{A}
-$$</p>
+\]</div>
 <p>For constant area:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma\propto P}
-$$</p>
+\]</div>
 <p>Therefore:</p>
 <ul>
 <li>Load increases → stress increases</li>
@@ -6213,32 +6149,32 @@ $$</p>
 </ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p>If:</p>
-<p>$$
+<div class="arithmatex">\[
 P_2=2P_1
-$$</p>
+\]</div>
 <p>then:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_2=2\sigma_1}
-$$</p>
+\]</div>
 <hr />
 <h1 id="14-effect-of-area-on-stress">14. Effect of Area on Stress<a class="headerlink" href="#14-effect-of-area-on-stress" title="Permanent link">&para;</a></h1>
 <p>For constant load:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma\propto\frac{1}{A}}
-$$</p>
+\]</div>
 <p>Therefore:</p>
 <ul>
 <li>Area increases → stress decreases</li>
 <li>Area decreases → stress increases</li>
 </ul>
 <p>If area is halved:</p>
-<p>$$
+<div class="arithmatex">\[
 A_2=\frac{A_1}{2}
-$$</p>
+\]</div>
 <p>then:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_2=2\sigma_1}
-$$</p>
+\]</div>
 <h3 id="amvi-point_1">⭐ AMVI Point<a class="headerlink" href="#amvi-point_1" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>Same load + smaller area = greater stress.</strong></p>
@@ -6246,75 +6182,75 @@ $$</p>
 <hr />
 <h1 id="15-does-length-affect-direct-stress">15. Does Length Affect Direct Stress?<a class="headerlink" href="#15-does-length-affect-direct-stress" title="Permanent link">&para;</a></h1>
 <p>The direct stress equation is:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=\frac{P}{A}}
-$$</p>
-<p>Length $L$ does not appear in this equation.</p>
+\]</div>
+<p>Length <span class="arithmatex">\(L\)</span> does not appear in this equation.</p>
 <p>Therefore, if load and area remain unchanged:</p>
 <blockquote>
 <p><strong>Changing the length does not directly change the average direct stress.</strong></p>
 </blockquote>
 <p>However, length affects deformation.</p>
 <p>For a uniform elastic axial member:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\delta=\frac{PL}{AE}}
-$$</p>
+\]</div>
 <p>So:</p>
-<pre><code class="language-text">Stress:
+<div class="highlight"><pre><span></span><code>Stress:
 σ = P/A
 → depends on load and area
 
 Deformation:
 δ = PL/(AE)
 → depends on load, length, area and E
-</code></pre>
+</code></pre></div>
 <h3 id="amvi-trap">⭐ AMVI Trap<a class="headerlink" href="#amvi-trap" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>Length affects elongation, not the simple average stress $P/A$, when load and area are unchanged.</strong></p>
+<p><strong>Length affects elongation, not the simple average stress <span class="arithmatex">\(P/A\)</span>, when load and area are unchanged.</strong></p>
 </blockquote>
 <hr />
 <h1 id="16-direct-stress-and-direct-strain">16. Direct Stress and Direct Strain<a class="headerlink" href="#16-direct-stress-and-direct-strain" title="Permanent link">&para;</a></h1>
 <p>For an axially loaded elastic member:</p>
 <h3 id="direct-stress">Direct stress<a class="headerlink" href="#direct-stress" title="Permanent link">&para;</a></h3>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=\frac{P}{A}}
-$$</p>
+\]</div>
 <h3 id="direct-strain">Direct strain<a class="headerlink" href="#direct-strain" title="Permanent link">&para;</a></h3>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\varepsilon=\frac{\delta}{L}}
-$$</p>
+\]</div>
 <p>Within the linear elastic range:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=E\varepsilon}
-$$</p>
+\]</div>
 <p>Therefore:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{E=\frac{\sigma}{\varepsilon}}
-$$</p>
+\]</div>
 <hr />
 <h1 id="17-direct-stress-and-deformation">17. Direct Stress and Deformation<a class="headerlink" href="#17-direct-stress-and-deformation" title="Permanent link">&para;</a></h1>
 <p>For a uniform elastic bar:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\delta=\frac{PL}{AE}}
-$$</p>
+\]</div>
 <p>Since:</p>
-<p>$$
+<div class="arithmatex">\[
 \sigma=\frac{P}{A}
-$$</p>
+\]</div>
 <p>we can also write:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\delta=\frac{\sigma L}{E}}
-$$</p>
+\]</div>
 <p>Therefore:</p>
 <ul>
-<li>Higher stress → greater deformation for same $L,E$</li>
+<li>Higher stress → greater deformation for same <span class="arithmatex">\(L,E\)</span></li>
 <li>Greater length → greater deformation</li>
-<li>Higher $E$ → smaller deformation for same stress</li>
+<li>Higher <span class="arithmatex">\(E\)</span> → smaller deformation for same stress</li>
 </ul>
 <hr />
 <h1 id="18-direct-stress-in-a-stepped-bar">18. Direct Stress in a Stepped Bar<a class="headerlink" href="#18-direct-stress-in-a-stepped-bar" title="Permanent link">&para;</a></h1>
 <p>A stepped bar has different cross-sectional areas.</p>
-<pre><code class="language-text">P →  ┌──────────────┐
+<div class="highlight"><pre><span></span><code>P →  ┌──────────────┐
       │     A₁       │
       └──────┬───────┘
              │ A₂
@@ -6322,22 +6258,22 @@ $$</p>
       ┌──────┴───────┐
       │              │
       └──────────────┘  ← P
-</code></pre>
-<p>If the same axial force $P$ passes through both portions:</p>
-<p>$$
+</code></pre></div>
+<p>If the same axial force <span class="arithmatex">\(P\)</span> passes through both portions:</p>
+<div class="arithmatex">\[
 \boxed{\sigma_1=\frac{P}{A_1}}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{\sigma_2=\frac{P}{A_2}}
-$$</p>
+\]</div>
 <p>If:</p>
-<p>$$
+<div class="arithmatex">\[
 A_2&lt;A_1
-$$</p>
+\]</div>
 <p>then:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_2&gt;\sigma_1}
-$$</p>
+\]</div>
 <h3 id="important">⭐ Important<a class="headerlink" href="#important" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>In a stepped bar carrying the same axial force, the smaller area experiences greater direct stress.</strong></p>
@@ -6363,15 +6299,15 @@ $$</p>
 <p>Both can produce <strong>normal stress</strong>, but their causes differ.</p>
 <h3 id="direct-stress_1">Direct stress<a class="headerlink" href="#direct-stress_1" title="Permanent link">&para;</a></h3>
 <p>Caused by an axial/direct force:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=\frac{P}{A}}
-$$</p>
+\]</div>
 <p>For concentric axial loading, it is treated as uniform in the basic model.</p>
 <h3 id="bending-stress">Bending stress<a class="headerlink" href="#bending-stress" title="Permanent link">&para;</a></h3>
 <p>Caused by a bending moment:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=\frac{My}{I}}
-$$</p>
+\]</div>
 <p>Bending stress varies across the section.</p>
 <table>
 <thead>
@@ -6389,8 +6325,8 @@ $$</p>
 </tr>
 <tr>
 <td>Formula</td>
-<td>$\sigma=P/A$</td>
-<td>$\sigma=My/I$</td>
+<td><span class="arithmatex">\(\sigma=P/A\)</span></td>
+<td><span class="arithmatex">\(\sigma=My/I\)</span></td>
 </tr>
 <tr>
 <td>Distribution</td>
@@ -6407,7 +6343,7 @@ $$</p>
 <hr />
 <h1 id="21-eccentric-load-basic-concept">21. Eccentric Load — Basic Concept<a class="headerlink" href="#21-eccentric-load-basic-concept" title="Permanent link">&para;</a></h1>
 <p>If an axial load does <strong>not</strong> pass through the centroidal axis, it is an <strong>eccentric load</strong>.</p>
-<pre><code class="language-text">        P
+<div class="highlight"><pre><span></span><code>        P
         ↓
         │
         │   e
@@ -6417,16 +6353,16 @@ $$</p>
       │    │    │ ← centroidal axis
       │    │    │
       └─────────┘
-</code></pre>
+</code></pre></div>
 <p>An eccentric load can produce:</p>
 <ul>
 <li>Direct stress</li>
 <li>Bending stress</li>
 </ul>
 <p>Therefore:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\text{Total stress}=\text{Direct stress}+\text{Bending stress}}
-$$</p>
+\]</div>
 <p>The detailed calculation belongs to the <strong>Direct and Bending Stresses</strong> topic.</p>
 <h3 id="amvi-point_2">⭐ AMVI Point<a class="headerlink" href="#amvi-point_2" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -6437,38 +6373,38 @@ $$</p>
 <h1 id="22-single-shear-and-double-shear">22. Single Shear and Double Shear<a class="headerlink" href="#22-single-shear-and-double-shear" title="Permanent link">&para;</a></h1>
 <h2 id="221-single-shear">22.1 Single shear<a class="headerlink" href="#221-single-shear" title="Permanent link">&para;</a></h2>
 <p>There is <strong>one shear plane</strong>.</p>
-<p>If the area of one shear plane is $A$:</p>
-<p>$$
+<p>If the area of one shear plane is <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[
 \boxed{\tau=\frac{P}{A}}
-$$</p>
-<pre><code class="language-text">        P →
+\]</div>
+<div class="highlight"><pre><span></span><code>        P →
      ┌───────┐
      │  PIN  │
      └───────┘
         ↑
     1 shear plane
-</code></pre>
+</code></pre></div>
 <h2 id="222-double-shear">22.2 Double shear<a class="headerlink" href="#222-double-shear" title="Permanent link">&para;</a></h2>
 <p>There are <strong>two shear planes</strong>.</p>
-<p>If each plane has area $A$:</p>
-<p>$$
+<p>If each plane has area <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[
 \boxed{\tau=\frac{P}{2A}}
-$$</p>
-<pre><code class="language-text">        P →
+\]</div>
+<div class="highlight"><pre><span></span><code>        P →
    ┌───────────┐
    │   PIN     │
    └───────────┘
      ↑       ↑
    Plane 1 Plane 2
-</code></pre>
+</code></pre></div>
 <p>Therefore, for the same load and same individual plane area:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\tau_{double}=\frac{1}{2}\tau_{single}}
-$$</p>
+\]</div>
 <h3 id="memory_3">⭐ Memory<a class="headerlink" href="#memory_3" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>Single shear → 1 plane → $P/A$</strong><br />
-<strong>Double shear → 2 planes → $P/(2A)$</strong></p>
+<p><strong>Single shear → 1 plane → <span class="arithmatex">\(P/A\)</span></strong><br />
+<strong>Double shear → 2 planes → <span class="arithmatex">\(P/(2A)\)</span></strong></p>
 </blockquote>
 <hr />
 <h1 id="23-bending-and-torsion-where-they-fit">23. Bending and Torsion — Where They Fit<a class="headerlink" href="#23-bending-and-torsion-where-they-fit" title="Permanent link">&para;</a></h1>
@@ -6480,9 +6416,9 @@ $$</p>
 </ul>
 <h2 id="torsion">Torsion<a class="headerlink" href="#torsion" title="Permanent link">&para;</a></h2>
 <p>Torsion of a shaft primarily produces <strong>shear stress</strong>.</p>
-<pre><code class="language-text">Bending → Normal stress
+<div class="highlight"><pre><span></span><code>Bending → Normal stress
 Torsion → Shear stress
-</code></pre>
+</code></pre></div>
 <p>Detailed bending and torsion equations are studied separately.</p>
 <hr />
 <h1 id="24-stress-force-strain-do-not-confuse">24. Stress, Force, Strain — Do Not Confuse<a class="headerlink" href="#24-stress-force-strain-do-not-confuse" title="Permanent link">&para;</a></h1>
@@ -6513,15 +6449,15 @@ Torsion → Shear stress
 </tbody>
 </table>
 <h3 id="key-formulas">Key formulas<a class="headerlink" href="#key-formulas" title="Permanent link">&para;</a></h3>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=\frac{P}{A}}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{\varepsilon=\frac{\delta}{L}}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{\sigma=E\varepsilon}
-$$</p>
+\]</div>
 <hr />
 <h1 id="25-stress-and-pressure">25. Stress and Pressure<a class="headerlink" href="#25-stress-and-pressure" title="Permanent link">&para;</a></h1>
 <p>Stress and pressure have the <strong>same SI unit and dimensions</strong>, but they are different physical concepts.</p>
@@ -6551,8 +6487,8 @@ $$</p>
 </tr>
 <tr>
 <td>Symbol</td>
-<td>$\sigma,\tau$</td>
-<td>$p$</td>
+<td><span class="arithmatex">\(\sigma,\tau\)</span></td>
+<td><span class="arithmatex">\(p\)</span></td>
 </tr>
 <tr>
 <td>Unit</td>
@@ -6568,9 +6504,9 @@ $$</p>
 <hr />
 <h1 id="26-units-and-dimensions-of-stress">26. Units and Dimensions of Stress<a class="headerlink" href="#26-units-and-dimensions-of-stress" title="Permanent link">&para;</a></h1>
 <h2 id="si-unit">SI unit<a class="headerlink" href="#si-unit" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{Pa=N/m^2}
-$$</p>
+\]</div>
 <p>Common units:</p>
 <ul>
 <li>Pa</li>
@@ -6580,90 +6516,90 @@ $$</p>
 <li>N/mm²</li>
 </ul>
 <p>Important conversion:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{1\,N/mm^2=1\,MPa}
-$$</p>
+\]</div>
 <h2 id="dimensions">Dimensions<a class="headerlink" href="#dimensions" title="Permanent link">&para;</a></h2>
 <p>Since:</p>
-<p>$$
+<div class="arithmatex">\[
 \sigma=\frac{P}{A}
-$$</p>
+\]</div>
 <p>Force dimensions:</p>
-<p>$$
+<div class="arithmatex">\[
 [F]=MLT^{-2}
-$$</p>
+\]</div>
 <p>Area dimensions:</p>
-<p>$$
+<div class="arithmatex">\[
 [A]=L^2
-$$</p>
+\]</div>
 <p>Therefore:</p>
-<p>$$
+<div class="arithmatex">\[
 [\sigma]=\frac{MLT^{-2}}{L^2}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{[\sigma]=ML^{-1}T^{-2}}
-$$</p>
+\]</div>
 <hr />
 <h1 id="27-numerical-examples">27. Numerical Examples<a class="headerlink" href="#27-numerical-examples" title="Permanent link">&para;</a></h1>
 <h2 id="example-1-tensile-direct-stress">Example 1 — Tensile Direct Stress<a class="headerlink" href="#example-1-tensile-direct-stress" title="Permanent link">&para;</a></h2>
-<p>A rod has area $500\,mm^2$ and carries an axial tensile load of $50\,kN$. Find the stress.</p>
+<p>A rod has area <span class="arithmatex">\(500\,mm^2\)</span> and carries an axial tensile load of <span class="arithmatex">\(50\,kN\)</span>. Find the stress.</p>
 <p>Given:</p>
-<p>$$
+<div class="arithmatex">\[
 P=50,000\,N
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 A=500\,mm^2
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \sigma=\frac{P}{A}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \sigma=\frac{50,000}{500}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{\sigma=100\,MPa}
-$$</p>
+\]</div>
 <hr />
 <h2 id="example-2-compressive-stress">Example 2 — Compressive Stress<a class="headerlink" href="#example-2-compressive-stress" title="Permanent link">&para;</a></h2>
-<p>A short column carries $150\,kN$ on an area of $3000\,mm^2$.</p>
-<p>$$
+<p>A short column carries <span class="arithmatex">\(150\,kN\)</span> on an area of <span class="arithmatex">\(3000\,mm^2\)</span>.</p>
+<div class="arithmatex">\[
 \sigma_c=\frac{150,000}{3000}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{\sigma_c=50\,MPa}
-$$</p>
+\]</div>
 <p>With sign convention:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_c=-50\,MPa}
-$$</p>
+\]</div>
 <hr />
 <h2 id="example-3-required-area">Example 3 — Required Area<a class="headerlink" href="#example-3-required-area" title="Permanent link">&para;</a></h2>
-<p>A tie rod carries $80\,kN$. Allowable stress is $100\,MPa$. Find the required area.</p>
-<p>$$
+<p>A tie rod carries <span class="arithmatex">\(80\,kN\)</span>. Allowable stress is <span class="arithmatex">\(100\,MPa\)</span>. Find the required area.</p>
+<div class="arithmatex">\[
 A=\frac{P}{\sigma}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 A=\frac{80,000}{100}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{A=800\,mm^2}
-$$</p>
+\]</div>
 <hr />
 <h2 id="example-4-effect-of-area">Example 4 — Effect of Area<a class="headerlink" href="#example-4-effect-of-area" title="Permanent link">&para;</a></h2>
-<p>A rod carries constant load. Area changes from $400\,mm^2$ to $200\,mm^2$. Original stress is $50\,MPa$.</p>
+<p>A rod carries constant load. Area changes from <span class="arithmatex">\(400\,mm^2\)</span> to <span class="arithmatex">\(200\,mm^2\)</span>. Original stress is <span class="arithmatex">\(50\,MPa\)</span>.</p>
 <p>Area is halved, so stress doubles:</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma_2=100\,MPa}
-$$</p>
+\]</div>
 <hr />
 <h2 id="example-5-average-shear-stress">Example 5 — Average Shear Stress<a class="headerlink" href="#example-5-average-shear-stress" title="Permanent link">&para;</a></h2>
-<p>A pin carries a shear force of $12\,kN$ and has one resisting shear-plane area of $300\,mm^2$.</p>
-<p>$$
+<p>A pin carries a shear force of <span class="arithmatex">\(12\,kN\)</span> and has one resisting shear-plane area of <span class="arithmatex">\(300\,mm^2\)</span>.</p>
+<div class="arithmatex">\[
 \tau=\frac{12,000}{300}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \boxed{\tau=40\,MPa}
-$$</p>
+\]</div>
 <hr />
 <h1 id="28-amvi-mpsc-high-yield-points">28. AMVI-MPSC High-Yield Points<a class="headerlink" href="#28-amvi-mpsc-high-yield-points" title="Permanent link">&para;</a></h1>
 <ol>
@@ -6672,8 +6608,8 @@ $$</p>
 <li>Stress is broadly classified into normal and shear stress.</li>
 <li>Normal stress acts perpendicular to the area.</li>
 <li>Shear stress acts parallel/tangential to the area.</li>
-<li>Normal stress is represented by $\sigma$.</li>
-<li>Shear stress is represented by $\tau$.</li>
+<li>Normal stress is represented by <span class="arithmatex">\(\sigma\)</span>.</li>
+<li>Shear stress is represented by <span class="arithmatex">\(\tau\)</span>.</li>
 <li>Tensile stress is a type of normal stress.</li>
 <li>Compressive stress is a type of normal stress.</li>
 <li>Tensile load produces elongation.</li>
@@ -6681,13 +6617,13 @@ $$</p>
 <li>Shear loading produces sliding/angular distortion.</li>
 <li>Direct stress is a type of normal stress.</li>
 <li>Direct stress is produced by an axial/direct load.</li>
-<li>Basic direct stress formula is $\sigma=P/A$.</li>
-<li>Average simple shear stress is $\tau=P/A$.</li>
+<li>Basic direct stress formula is <span class="arithmatex">\(\sigma=P/A\)</span>.</li>
+<li>Average simple shear stress is <span class="arithmatex">\(\tau=P/A\)</span>.</li>
 <li>At constant area, stress is directly proportional to load.</li>
 <li>At constant load, stress is inversely proportional to area.</li>
 <li>Smaller area means greater stress for the same load.</li>
-<li>Length does not appear in $\sigma=P/A$.</li>
-<li>Length affects axial deformation through $\delta=PL/(AE)$.</li>
+<li>Length does not appear in <span class="arithmatex">\(\sigma=P/A\)</span>.</li>
+<li>Length affects axial deformation through <span class="arithmatex">\(\delta=PL/(AE)\)</span>.</li>
 <li>For a stepped bar carrying the same axial force, the smaller area has greater stress.</li>
 <li>Do not automatically assume equal stress in different materials of a composite member.</li>
 <li>Concentric axial loading gives direct stress in the simple model.</li>
@@ -6703,16 +6639,16 @@ $$</p>
 <li>Diagonal entries of the stress matrix represent normal stresses.</li>
 <li>Off-diagonal entries represent shear-stress components.</li>
 <li>The usual 3-D Cauchy stress state has <strong>6 independent components</strong> because shear stresses are symmetric in classical continuum mechanics.</li>
-<li>$\sigma_x$, $\sigma_y$, and $\sigma_z$ are the three normal stress components.</li>
+<li><span class="arithmatex">\(\sigma_x\)</span>, <span class="arithmatex">\(\sigma_y\)</span>, and <span class="arithmatex">\(\sigma_z\)</span> are the three normal stress components.</li>
 <li>$   au_{xy}$, $ au_{xz}$, $ au_{yx}$, $ au_{yz}$, $ au_{zx}$, and $ au_{zy}$ are shear-stress entries.</li>
 <li>In the usual classical stress tensor, $ au_{xy}=    au_{yx}$, $ au_{xz}=    au_{zx}$, and $ au_{yz}=    au_{zy}$.</li>
 <li>Compressive stress is generally negative.</li>
 <li>Stress has units; strain is dimensionless.</li>
-<li>$1\,N/mm^2=1\,MPa$.</li>
-<li>Stress dimensions are $ML^{-1}T^{-2}$.</li>
+<li><span class="arithmatex">\(1\,N/mm^2=1\,MPa\)</span>.</li>
+<li>Stress dimensions are <span class="arithmatex">\(ML^{-1}T^{-2}\)</span>.</li>
 <li>Stress and pressure have the same dimensions and SI unit.</li>
 <li>Stress and pressure are not the same physical concept.</li>
-<li>Within the linear elastic range, $\sigma=E\varepsilon$.</li>
+<li>Within the linear elastic range, <span class="arithmatex">\(\sigma=E\varepsilon\)</span>.</li>
 <li>Direct stress is normal stress produced by direct axial loading.</li>
 <li><strong>Normal = perpendicular; Shear = parallel.</strong></li>
 </ol>
@@ -6762,10 +6698,10 @@ D. No stress  </p>
 <p><strong>Answer: B</strong></p>
 <h3 id="mcq-7">MCQ 7<a class="headerlink" href="#mcq-7" title="Permanent link">&para;</a></h3>
 <p>The basic direct-stress formula is:</p>
-<p>A. $P A$<br />
-B. $P/A$<br />
-C. $A/P$<br />
-D. $P/L$  </p>
+<p>A. <span class="arithmatex">\(P A\)</span><br />
+B. <span class="arithmatex">\(P/A\)</span><br />
+C. <span class="arithmatex">\(A/P\)</span><br />
+D. <span class="arithmatex">\(P/L\)</span>  </p>
 <p><strong>Answer: B</strong></p>
 <h3 id="mcq-8">MCQ 8<a class="headerlink" href="#mcq-8" title="Permanent link">&para;</a></h3>
 <p>Direct stress is a type of:</p>
@@ -6789,7 +6725,7 @@ C. Becomes four times<br />
 D. Remains unchanged  </p>
 <p><strong>Answer: B</strong></p>
 <h3 id="mcq-11">MCQ 11<a class="headerlink" href="#mcq-11" title="Permanent link">&para;</a></h3>
-<p>Which quantity does not directly appear in $\sigma=P/A$?</p>
+<p>Which quantity does not directly appear in <span class="arithmatex">\(\sigma=P/A\)</span>?</p>
 <p>A. Load<br />
 B. Area<br />
 C. Length<br />
@@ -6853,24 +6789,24 @@ D. m  </p>
 <p><strong>Answer: C</strong></p>
 <h3 id="mcq-20">MCQ 20<a class="headerlink" href="#mcq-20" title="Permanent link">&para;</a></h3>
 <p>Which conversion is correct?</p>
-<p>A. $1\,N/mm^2=1\,kPa$<br />
-B. $1\,N/mm^2=1\,MPa$<br />
-C. $1\,N/mm^2=1\,GPa$<br />
-D. $1\,N/mm^2=100\,MPa$  </p>
+<p>A. <span class="arithmatex">\(1\,N/mm^2=1\,kPa\)</span><br />
+B. <span class="arithmatex">\(1\,N/mm^2=1\,MPa\)</span><br />
+C. <span class="arithmatex">\(1\,N/mm^2=1\,GPa\)</span><br />
+D. <span class="arithmatex">\(1\,N/mm^2=100\,MPa\)</span>  </p>
 <p><strong>Answer: B</strong></p>
 <h3 id="mcq-21">MCQ 21<a class="headerlink" href="#mcq-21" title="Permanent link">&para;</a></h3>
 <p>The dimensions of stress are:</p>
-<p>A. $MLT^{-2}$<br />
-B. $ML^{-1}T^{-2}$<br />
-C. $ML^2T^{-2}$<br />
-D. $M^{-1}LT^{-2}$  </p>
+<p>A. <span class="arithmatex">\(MLT^{-2}\)</span><br />
+B. <span class="arithmatex">\(ML^{-1}T^{-2}\)</span><br />
+C. <span class="arithmatex">\(ML^2T^{-2}\)</span><br />
+D. <span class="arithmatex">\(M^{-1}LT^{-2}\)</span>  </p>
 <p><strong>Answer: B</strong></p>
 <h3 id="mcq-22">MCQ 22<a class="headerlink" href="#mcq-22" title="Permanent link">&para;</a></h3>
 <p>Which relation is Hooke's law for direct loading?</p>
-<p>A. $\sigma=P/A$<br />
-B. $\sigma=E\varepsilon$<br />
-C. $\delta=PL/(AE)$<br />
-D. $\tau=P/A$  </p>
+<p>A. <span class="arithmatex">\(\sigma=P/A\)</span><br />
+B. <span class="arithmatex">\(\sigma=E\varepsilon\)</span><br />
+C. <span class="arithmatex">\(\delta=PL/(AE)\)</span><br />
+D. <span class="arithmatex">\(\tau=P/A\)</span>  </p>
 <p><strong>Answer: B</strong></p>
 <h3 id="mcq-23">MCQ 23<a class="headerlink" href="#mcq-23" title="Permanent link">&para;</a></h3>
 <p>Which statement is correct?</p>
@@ -6896,52 +6832,52 @@ D. Normal stress → parallel to area  </p>
 <hr />
 <h1 id="30-quick-formula-sheet">30. Quick Formula Sheet<a class="headerlink" href="#30-quick-formula-sheet" title="Permanent link">&para;</a></h1>
 <h2 id="stress">Stress<a class="headerlink" href="#stress" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=\frac{P}{A}}
-$$</p>
+\]</div>
 <h2 id="load">Load<a class="headerlink" href="#load" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{P=\sigma A}
-$$</p>
+\]</div>
 <h2 id="required-area">Required area<a class="headerlink" href="#required-area" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{A=\frac{P}{\sigma}}
-$$</p>
+\]</div>
 <h2 id="average-shear-stress">Average shear stress<a class="headerlink" href="#average-shear-stress" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\tau=\frac{P}{A}}
-$$</p>
+\]</div>
 <h2 id="double-shear">Double shear<a class="headerlink" href="#double-shear" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\tau=\frac{P}{2A}}
-$$</p>
+\]</div>
 <h2 id="direct-strain_1">Direct strain<a class="headerlink" href="#direct-strain_1" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\varepsilon=\frac{\delta}{L}}
-$$</p>
+\]</div>
 <h2 id="axial-deformation">Axial deformation<a class="headerlink" href="#axial-deformation" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\delta=\frac{PL}{AE}}
-$$</p>
+\]</div>
 <h2 id="hookes-law">Hooke's law<a class="headerlink" href="#hookes-law" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=E\varepsilon}
-$$</p>
+\]</div>
 <h2 id="bending-stress_1">Bending stress<a class="headerlink" href="#bending-stress_1" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\sigma=\frac{My}{I}}
-$$</p>
+\]</div>
 <h2 id="stress-conversion">Stress conversion<a class="headerlink" href="#stress-conversion" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{1\,N/mm^2=1\,MPa}
-$$</p>
+\]</div>
 <h2 id="stress-dimensions">Stress dimensions<a class="headerlink" href="#stress-dimensions" title="Permanent link">&para;</a></h2>
-<p>$$
+<div class="arithmatex">\[
 \boxed{[\sigma]=ML^{-1}T^{-2}}
-$$</p>
+\]</div>
 <hr />
 <h1 id="31-one-page-memory-map">31. One-Page Memory Map<a class="headerlink" href="#31-one-page-memory-map" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">                         STRESS
+<div class="highlight"><pre><span></span><code>                         STRESS
                            │
             ┌──────────────┴──────────────┐
             │                             │
@@ -6962,21 +6898,21 @@ $$</p>
         Axial load
             │
          σ = P/A
-</code></pre>
+</code></pre></div>
 <h2 id="final-amvi-memory-trick">Final AMVI Memory Trick<a class="headerlink" href="#final-amvi-memory-trick" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><strong>Tension = Pull = Long</strong><br />
 <strong>Compression = Push = Short</strong><br />
 <strong>Normal = Perpendicular</strong><br />
 <strong>Shear = Parallel</strong><br />
-<strong>Direct stress = Axial load → $P/A$</strong><br />
+<strong>Direct stress = Axial load → <span class="arithmatex">\(P/A\)</span></strong><br />
 <strong>Smaller area → Greater stress</strong><br />
-<strong>Longer bar → Greater deformation, not greater $P/A$ stress</strong><br />
+<strong>Longer bar → Greater deformation, not greater <span class="arithmatex">\(P/A\)</span> stress</strong><br />
 <strong>Concentric load → Direct stress</strong><br />
 <strong>Eccentric load → Direct + Bending stress</strong><br />
 <strong>Torsion → Shear stress</strong><br />
 <strong>Double shear → 2 shear planes</strong><br />
-<strong>$1\,N/mm^2=1\,MPa$</strong></p>
+<strong><span class="arithmatex">\(1\,N/mm^2=1\,MPa\)</span></strong></p>
 </blockquote>
 
 
@@ -7031,6 +6967,10 @@ $$</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

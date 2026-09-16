@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5676,29 +5676,29 @@
 <hr />
 <h2 id="1-collections-work-only-with-objects-most-important">🔹 1️⃣ Collections Work Only with Objects (Most Important)<a class="headerlink" href="#1-collections-work-only-with-objects-most-important" title="Permanent link">&para;</a></h2>
 <h3 id="invalid-primitive-not-allowed">❌ Invalid (Primitive not allowed)<a class="headerlink" href="#invalid-primitive-not-allowed" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">ArrayList&lt;int&gt; list = new ArrayList&lt;&gt;(); // compile-time error
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ArrayList</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// compile-time error</span>
+</code></pre></div>
 <h3 id="valid-wrapper">✅ Valid (Wrapper)<a class="headerlink" href="#valid-wrapper" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
-list.add(10);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
 <p>👉 Collections store <strong>object references</strong>, not primitive values.</p>
 <hr />
 <hr />
 <h2 id="2-generics-support-only-objects">🔹 2️⃣ Generics Support Only Objects<a class="headerlink" href="#2-generics-support-only-objects" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
-List&lt;Double&gt; prices = new ArrayList&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <p>Primitives cannot be used with generics.</p>
 <hr />
 <hr />
 <h2 id="3-support-for-null-values">🔹 3️⃣ Support for <code>null</code> Values<a class="headerlink" href="#3-support-for-null-values" title="Permanent link">&para;</a></h2>
 <h3 id="primitive-not-allowed">Primitive (Not allowed)<a class="headerlink" href="#primitive-not-allowed" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">int a = null; // ❌ error
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// ❌ error</span>
+</code></pre></div>
 <h3 id="wrapper-allowed">Wrapper (Allowed)<a class="headerlink" href="#wrapper-allowed" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Integer a = null; // ✅
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// ✅</span>
+</code></pre></div>
 <p>Very useful in:</p>
 <ul>
 <li>Database values</li>
@@ -5710,10 +5710,10 @@ List&lt;Double&gt; prices = new ArrayList&lt;&gt;();
 <h2 id="4-utility-methods-provided">🔹 4️⃣ Utility Methods Provided<a class="headerlink" href="#4-utility-methods-provided" title="Permanent link">&para;</a></h2>
 <p>Wrapper classes provide many <strong>useful methods</strong>.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Integer.parseInt(&quot;100&quot;);
-Double.parseDouble(&quot;10.5&quot;);
-Boolean.parseBoolean(&quot;true&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="s">"100"</span><span class="p">);</span>
+<span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="s">"10.5"</span><span class="p">);</span>
+<span class="n">Boolean</span><span class="p">.</span><span class="na">parseBoolean</span><span class="p">(</span><span class="s">"true"</span><span class="p">);</span>
+</code></pre></div>
 <p>Primitives cannot do this.</p>
 <hr />
 <hr />
@@ -5736,83 +5736,83 @@ Boolean.parseBoolean(&quot;true&quot;);
 <hr />
 <h2 id="autoboxing">🔹 Autoboxing<a class="headerlink" href="#autoboxing" title="Permanent link">&para;</a></h2>
 <p>Automatically converts <strong>primitive → wrapper</strong>.</p>
-<pre><code class="language-java">int x = 10;
-Integer obj = x;   // autoboxing
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">Integer</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">   </span><span class="c1">// autoboxing</span>
+</code></pre></div>
 <p>Internally:</p>
-<pre><code class="language-java">Integer obj = Integer.valueOf(10);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <hr />
 <h2 id="unboxing">🔹 Unboxing<a class="headerlink" href="#unboxing" title="Permanent link">&para;</a></h2>
 <p>Automatically converts <strong>wrapper → primitive</strong>.</p>
-<pre><code class="language-java">Integer obj = 20;
-int y = obj;   // unboxing
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span><span class="w">   </span><span class="c1">// unboxing</span>
+</code></pre></div>
 <p>Internally:</p>
-<pre><code class="language-java">int y = obj.intValue();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="na">intValue</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <hr />
 <h2 id="example-code">🔹 Example Code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class WrapperDemo {
-    public static void main(String[] args) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WrapperDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        int a = 5;
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 
-        // Autoboxing
-        Integer obj = a;
+<span class="w">        </span><span class="c1">// Autoboxing</span>
+<span class="w">        </span><span class="n">Integer</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 
-        // Unboxing
-        int b = obj;
+<span class="w">        </span><span class="c1">// Unboxing</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span>
 
-        System.out.println(obj + &quot; &quot; + b);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">obj</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="real-time-usage-examples">✅ Real-Time Usage Examples<a class="headerlink" href="#real-time-usage-examples" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="example-1-collections">🟢 Example 1: Collections<a class="headerlink" href="#example-1-collections" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;Integer&gt; marks = new ArrayList&lt;&gt;();
-marks.add(90);
-marks.add(85);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">marks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">marks</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span>
+<span class="n">marks</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">85</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="example-2-selenium-test-data">🟢 Example 2: Selenium / Test Data<a class="headerlink" href="#example-2-selenium-test-data" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Map&lt;String, Integer&gt; userAge = new HashMap&lt;&gt;();
-userAge.put(&quot;Nitin&quot;, 28);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">userAge</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Nitin"</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="example-3-api-json-pojo">🟢 Example 3: API / JSON POJO<a class="headerlink" href="#example-3-api-json-pojo" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">private Integer age;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+</code></pre></div>
 <p>Why not <code>int</code>?
 👉 API may return <code>null</code>.</p>
 <hr />
 <hr />
 <h2 id="example-4-database-values">🟢 Example 4: Database Values<a class="headerlink" href="#example-4-database-values" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Integer salary = resultSet.getInt(&quot;salary&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultSet</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"salary"</span><span class="p">);</span>
+</code></pre></div>
 <p>Database fields can be null.</p>
 <hr />
 <hr />
 <h1 id="common-wrapper-utility-methods">✅ Common Wrapper Utility Methods<a class="headerlink" href="#common-wrapper-utility-methods" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="integer">Integer<a class="headerlink" href="#integer" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Integer.parseInt(&quot;123&quot;);
-Integer.valueOf(10);
-Integer.max(5, 10);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="s">"123"</span><span class="p">);</span>
+<span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">Integer</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="double">Double<a class="headerlink" href="#double" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Double.parseDouble(&quot;99.5&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="s">"99.5"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Boolean.parseBoolean(&quot;true&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Boolean</span><span class="p">.</span><span class="na">parseBoolean</span><span class="p">(</span><span class="s">"true"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="primitive-vs-wrapper-interview-table">🔥 Primitive vs Wrapper (Interview Table)<a class="headerlink" href="#primitive-vs-wrapper-interview-table" title="Permanent link">&para;</a></h1>
@@ -5881,8 +5881,8 @@ Integer.max(5, 10);
 <li>Performance is critical</li>
 <li>Local variables</li>
 </ul>
-<pre><code class="language-java">int sum = a + b;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="use-wrapper-when">✔ Use Wrapper When:<a class="headerlink" href="#use-wrapper-when" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5892,8 +5892,8 @@ Integer.max(5, 10);
 <li>Reading DB / API data</li>
 <li>Using utility methods</li>
 </ul>
-<pre><code class="language-java">Integer count = null;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="interview-questions-answers">✅ Interview Questions &amp; Answers<a class="headerlink" href="#interview-questions-answers" title="Permanent link">&para;</a></h1>
@@ -5915,9 +5915,9 @@ Integer.max(5, 10);
 <hr />
 <hr />
 <h1 id="easy-memory-trick">🧠 Easy Memory Trick<a class="headerlink" href="#easy-memory-trick" title="Permanent link">&para;</a></h1>
-<pre><code>Primitive → Fast
+<div class="highlight"><pre><span></span><code>Primitive → Fast
 Wrapper   → Flexible
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="interview-one-liner">🎯 Interview One-Liner<a class="headerlink" href="#interview-one-liner" title="Permanent link">&para;</a></h1>
@@ -5979,6 +5979,10 @@ Wrapper   → Flexible
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

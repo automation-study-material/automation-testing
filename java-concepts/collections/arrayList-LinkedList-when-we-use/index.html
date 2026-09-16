@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5713,53 +5713,53 @@
 <hr />
 <h1 id="arraylist-banking-selenium-scenarios">🔷 ArrayList -- Banking + Selenium Scenarios<a class="headerlink" href="#arraylist-banking-selenium-scenarios" title="Permanent link">&para;</a></h1>
 <h2 id="transaction-table-validation">✅ Transaction Table Validation<a class="headerlink" href="#transaction-table-validation" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;Transaction&gt; transactions = new ArrayList&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Transaction</span><span class="o">&gt;</span><span class="w"> </span><span class="n">transactions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-List&lt;WebElement&gt; rows = driver.findElements(By.xpath(&quot;//table/tbody/tr&quot;));
+<span class="n">List</span><span class="o">&lt;</span><span class="n">WebElement</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElements</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">"//table/tbody/tr"</span><span class="p">));</span>
 
-for(WebElement row : rows){
-    transactions.add(extract(row));
-}
-</code></pre>
+<span class="k">for</span><span class="p">(</span><span class="n">WebElement</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">rows</span><span class="p">){</span>
+<span class="w">    </span><span class="n">transactions</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">extract</span><span class="p">(</span><span class="n">row</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Why? - Heavy iteration - Rare modification - Fast reads</p>
 <hr />
 <h2 id="store-validation-errors">✅ Store Validation Errors<a class="headerlink" href="#store-validation-errors" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;String&gt; errors = new ArrayList&lt;&gt;();
-errors.add(&quot;Balance mismatch&quot;);
-errors.add(&quot;Title missing&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">errors</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Balance mismatch"</span><span class="p">);</span>
+<span class="n">errors</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Title missing"</span><span class="p">);</span>
+</code></pre></div>
 <p>Append only → ArrayList ideal</p>
 <hr />
 <h2 id="selenium-webelements">✅ Selenium WebElements<a class="headerlink" href="#selenium-webelements" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">List&lt;WebElement&gt; buttons = driver.findElements(By.tagName(&quot;button&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">WebElement</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buttons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElements</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">"button"</span><span class="p">));</span>
+</code></pre></div>
 <p>Selenium internally uses ArrayList for fast traversal</p>
 <hr />
 <h1 id="linkedlist-banking-selenium-scenarios">🔷 LinkedList -- Banking + Selenium Scenarios<a class="headerlink" href="#linkedlist-banking-selenium-scenarios" title="Permanent link">&para;</a></h1>
 <h2 id="test-execution-queue">✅ Test Execution Queue<a class="headerlink" href="#test-execution-queue" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Queue&lt;TestCase&gt; queue = new LinkedList&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">Queue</span><span class="o">&lt;</span><span class="n">TestCase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-while(!queue.isEmpty()){
-   run(queue.poll());
-}
-</code></pre>
+<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
+<span class="w">   </span><span class="n">run</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Why? - FIFO behavior - removeFirst() fast</p>
 <hr />
 <h2 id="dynamic-workflow-steps">✅ Dynamic Workflow Steps<a class="headerlink" href="#dynamic-workflow-steps" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">LinkedList&lt;String&gt; steps = new LinkedList&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-steps.addFirst(&quot;LaunchBrowser&quot;);
-steps.remove(&quot;OTP&quot;);
-</code></pre>
+<span class="n">steps</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">"LaunchBrowser"</span><span class="p">);</span>
+<span class="n">steps</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"OTP"</span><span class="p">);</span>
+</code></pre></div>
 <p>Frequent modification → LinkedList best</p>
 <hr />
 <h2 id="retry-failed-steps">✅ Retry Failed Steps<a class="headerlink" href="#retry-failed-steps" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">LinkedList&lt;Runnable&gt; retries = new LinkedList&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Runnable</span><span class="o">&gt;</span><span class="w"> </span><span class="n">retries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-while(!retries.isEmpty()){
-   retries.removeFirst().run();
-}
-</code></pre>
+<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">retries</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
+<span class="w">   </span><span class="n">retries</span><span class="p">.</span><span class="na">removeFirst</span><span class="p">().</span><span class="na">run</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Queue-style execution</p>
 <hr />
 <h1 id="performance-comparison">🔷 Performance Comparison<a class="headerlink" href="#performance-comparison" title="Permanent link">&para;</a></h1>
@@ -5833,6 +5833,10 @@ insert/remove operations occur."</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

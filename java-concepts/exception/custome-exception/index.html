@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5633,8 +5633,8 @@ Custom exceptions tell <strong>WHY it failed in business/framework context</stro
 <p>tell only <strong>technical failure</strong>, not <strong>intent or meaning</strong>.</p>
 <hr />
 <h2 id="example-confusing">❌ Example (Confusing)<a class="headerlink" href="#example-confusing" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">NoSuchElementException
-</code></pre>
+<div class="highlight"><pre><span></span><code>NoSuchElementException
+</code></pre></div>
 <p>Questions:</p>
 <ul>
 <li>Login failed?</li>
@@ -5645,8 +5645,8 @@ Custom exceptions tell <strong>WHY it failed in business/framework context</stro
 <p>❌ Not clear</p>
 <hr />
 <h2 id="with-custom-exception-clear">✅ With Custom Exception (Clear)<a class="headerlink" href="#with-custom-exception-clear" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">LoginFailedException: User could not login due to invalid credentials
-</code></pre>
+<div class="highlight"><pre><span></span><code>LoginFailedException: User could not login due to invalid credentials
+</code></pre></div>
 <p>✔ Meaningful
 ✔ Readable
 ✔ Business-focused</p>
@@ -5701,40 +5701,40 @@ Custom exceptions tell <strong>WHY it failed in business/framework context</stro
 ✔ Framework misuse</p>
 <hr />
 <h2 id="step-1-create-custom-exception-class">Step 1: Create Custom Exception Class<a class="headerlink" href="#step-1-create-custom-exception-class" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class LoginFailedException extends RuntimeException {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginFailedException</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">RuntimeException</span><span class="w"> </span><span class="p">{</span>
 
-    public LoginFailedException(String message) {
-        super(message);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginFailedException</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✔ Extends RuntimeException
 ✔ No need to force handling</p>
 <hr />
 <hr />
 <h2 id="step-2-throw-custom-exception-throw">Step 2: Throw Custom Exception (throw)<a class="headerlink" href="#step-2-throw-custom-exception-throw" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public void login(String user, String pass) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    if(user == null || pass == null) {
-        throw new LoginFailedException(&quot;Username or Password is null&quot;);
-    }
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LoginFailedException</span><span class="p">(</span><span class="s">"Username or Password is null"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Selenium logic
-}
-</code></pre>
+<span class="w">    </span><span class="c1">// Selenium logic</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h2 id="step-3-use-in-selenium-test">Step 3: Use in Selenium Test<a class="headerlink" href="#step-3-use-in-selenium-test" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test
-public void loginTest() {
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-    loginPage.login(null, &quot;password123&quot;);
-}
-</code></pre>
+<span class="w">    </span><span class="n">loginPage</span><span class="p">.</span><span class="na">login</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">"password123"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">LoginFailedException: Username or Password is null
-</code></pre>
+<div class="highlight"><pre><span></span><code>LoginFailedException: Username or Password is null
+</code></pre></div>
 <p>✔ Clear
 ✔ Actionable</p>
 <hr />
@@ -5746,93 +5746,93 @@ public void loginTest() {
 ✔ Mandatory handling</p>
 <hr />
 <h2 id="step-1-create-checked-exception">Step 1: Create Checked Exception<a class="headerlink" href="#step-1-create-checked-exception" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class BrowserNotSupportedException extends Exception {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BrowserNotSupportedException</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
 
-    public BrowserNotSupportedException(String message) {
-        super(message);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BrowserNotSupportedException</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="step-2-declare-using-throws">Step 2: Declare using throws<a class="headerlink" href="#step-2-declare-using-throws" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public void launchBrowser(String browser)
-        throws BrowserNotSupportedException {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">launchBrowser</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">browser</span><span class="p">)</span>
+<span class="w">        </span><span class="kd">throws</span><span class="w"> </span><span class="n">BrowserNotSupportedException</span><span class="w"> </span><span class="p">{</span>
 
-    if(!browser.equals(&quot;chrome&quot;)) {
-        throw new BrowserNotSupportedException(&quot;Browser not supported&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">browser</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"chrome"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BrowserNotSupportedException</span><span class="p">(</span><span class="s">"Browser not supported"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="step-3-handle-using-try-catch">Step 3: Handle using try-catch<a class="headerlink" href="#step-3-handle-using-try-catch" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">try {
-    launchBrowser(&quot;safari&quot;);
-}
-catch (BrowserNotSupportedException e) {
-    System.out.println(e.getMessage());
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">launchBrowser</span><span class="p">(</span><span class="s">"safari"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">BrowserNotSupportedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="real-selenium-framework-example-best-practice">🔥 Real Selenium Framework Example (Best Practice)<a class="headerlink" href="#real-selenium-framework-example-best-practice" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="scenario-element-not-found-after-wait">Scenario: Element not found after wait<a class="headerlink" href="#scenario-element-not-found-after-wait" title="Permanent link">&para;</a></h2>
 <h3 id="bad-practice">❌ Bad practice<a class="headerlink" href="#bad-practice" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">driver.findElement(By.id(&quot;login&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">));</span>
+</code></pre></div>
 <p>Throws:</p>
-<pre><code>NoSuchElementException
-</code></pre>
+<div class="highlight"><pre><span></span><code>NoSuchElementException
+</code></pre></div>
 <hr />
 <h2 id="good-practice-wrap-with-custom-exception">✅ Good practice (Wrap with custom exception)<a class="headerlink" href="#good-practice-wrap-with-custom-exception" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public WebElement findElement(By locator) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="n">WebElement</span><span class="w"> </span><span class="nf">findElement</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    try {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-    catch (TimeoutException e) {
-        throw new ElementNotVisibleException(
-            &quot;Element not visible: &quot; + locator.toString());
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">TimeoutException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ElementNotVisibleException</span><span class="p">(</span>
+<span class="w">            </span><span class="s">"Element not visible: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">locator</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="custom-exception">Custom Exception<a class="headerlink" href="#custom-exception" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class ElementNotVisibleException extends RuntimeException {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ElementNotVisibleException</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">RuntimeException</span><span class="w"> </span><span class="p">{</span>
 
-    public ElementNotVisibleException(String message) {
-        super(message);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ElementNotVisibleException</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="output_1">Output<a class="headerlink" href="#output_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">ElementNotVisibleException: Element not visible: id=loginBtn
-</code></pre>
+<div class="highlight"><pre><span></span><code>ElementNotVisibleException: Element not visible: id=loginBtn
+</code></pre></div>
 <p>✔ Clear failure
 ✔ Better report
 ✔ Faster debugging</p>
 <hr />
 <hr />
 <h1 id="how-custom-exceptions-flow-in-framework">🔁 How Custom Exceptions Flow in Framework<a class="headerlink" href="#how-custom-exceptions-flow-in-framework" title="Permanent link">&para;</a></h1>
-<pre><code>Low-level Selenium action
+<div class="highlight"><pre><span></span><code>Low-level Selenium action
         ↓
 throw CustomException
         ↓
 Test layer (JUnit/TestNG)
         ↓
 Report + Screenshot + Fail test
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="where-to-place-custom-exceptions">🏗️ Where to Place Custom Exceptions<a class="headerlink" href="#where-to-place-custom-exceptions" title="Permanent link">&para;</a></h1>
 <p>Best practice:</p>
-<pre><code>src/main/java
+<div class="highlight"><pre><span></span><code>src/main/java
  └── exceptions
       ├── LoginFailedException.java
       ├── ElementNotVisibleException.java
       ├── BrowserNotSupportedException.java
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="throw-vs-throws-in-custom-exceptions">🔹 throw vs throws in Custom Exceptions<a class="headerlink" href="#throw-vs-throws-in-custom-exceptions" title="Permanent link">&para;</a></h1>
@@ -5856,29 +5856,29 @@ Report + Screenshot + Fail test
 </table>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public void openPage() throws PageLoadException {
-    throw new PageLoadException(&quot;Page load failed&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openPage</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PageLoadException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PageLoadException</span><span class="p">(</span><span class="s">"Page load failed"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="handling-custom-exceptions">✅ Handling Custom Exceptions<a class="headerlink" href="#handling-custom-exceptions" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="option-1-let-test-fail-recommended">Option 1: Let Test Fail (Recommended)<a class="headerlink" href="#option-1-let-test-fail-recommended" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">throw new LoginFailedException(&quot;Login failed&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LoginFailedException</span><span class="p">(</span><span class="s">"Login failed"</span><span class="p">);</span>
+</code></pre></div>
 <p>✔ Test fails
 ✔ Clear reason</p>
 <hr />
 <h2 id="option-2-catch-and-log">Option 2: Catch and Log<a class="headerlink" href="#option-2-catch-and-log" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">try {
-    login();
-}
-catch(LoginFailedException e) {
-    logger.error(e.getMessage());
-    throw e; // rethrow
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">login</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="n">LoginFailedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"> </span><span class="c1">// rethrow</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="when-not-to-create-custom-exception">❌ When NOT to Create Custom Exception<a class="headerlink" href="#when-not-to-create-custom-exception" title="Permanent link">&para;</a></h1>
@@ -5900,9 +5900,9 @@ catch(LoginFailedException e) {
 <hr />
 <hr />
 <h1 id="memory-trick">🧠 Memory Trick<a class="headerlink" href="#memory-trick" title="Permanent link">&para;</a></h1>
-<pre><code>Built-in exception → WHAT failed
+<div class="highlight"><pre><span></span><code>Built-in exception → WHAT failed
 Custom exception   → WHY it failed
-</code></pre>
+</code></pre></div>
 <hr />
 <p>END</p>
 
@@ -5958,6 +5958,10 @@ Custom exception   → WHY it failed
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

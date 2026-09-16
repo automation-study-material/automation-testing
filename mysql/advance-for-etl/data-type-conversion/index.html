@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5813,9 +5813,9 @@
 <hr />
 <h2 id="2-cast-convert-examples">2. CAST() / CONVERT() Examples<a class="headerlink" href="#2-cast-convert-examples" title="Permanent link">&para;</a></h2>
 <h3 id="q1-convert-salary-to-string">Q1: Convert salary to string<a class="headerlink" href="#q1-convert-salary-to-string" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, CAST(salary AS VARCHAR(10)) AS salary_str
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">salary_str</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5854,9 +5854,9 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q2-convert-join_date-to-string">Q2: Convert join_date to string<a class="headerlink" href="#q2-convert-join_date-to-string" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, CONVERT(VARCHAR(10), join_date, 120) AS join_date_str
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">CONVERT</span><span class="p">(</span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">join_date</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">join_date_str</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5895,9 +5895,9 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q3-convert-string-to-date">Q3: Convert string to date<a class="headerlink" href="#q3-convert-string-to-date" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, CAST('2025-09-20' AS DATE) AS example_date
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="s1">'2025-09-20'</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">DATE</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">example_date</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5936,9 +5936,9 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q4-convert-salary-to-float-and-calculate-bonus">Q4: Convert salary to float and calculate bonus<a class="headerlink" href="#q4-convert-salary-to-float-and-calculate-bonus" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, CAST(salary AS FLOAT) * 0.10 AS bonus
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bonus</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5977,9 +5977,9 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q5-implicit-conversion-in-concatenation">Q5: Implicit conversion in concatenation<a class="headerlink" href="#q5-implicit-conversion-in-concatenation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name + ' earns ' + salary AS description
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">' earns '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">description</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6013,9 +6013,9 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q6-convert-numeric-string-to-integer">Q6: Convert numeric string to integer<a class="headerlink" href="#q6-convert-numeric-string-to-integer" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, CAST('12345' AS INT) AS num_value
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="s1">'12345'</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">num_value</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6054,9 +6054,9 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q7-convert-date-to-datetime">Q7: Convert date to datetime<a class="headerlink" href="#q7-convert-date-to-datetime" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, CAST(join_date AS DATETIME) AS join_datetime
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">join_date</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">DATETIME</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">join_datetime</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6095,9 +6095,9 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q8-convert-integer-to-decimal">Q8: Convert integer to decimal<a class="headerlink" href="#q8-convert-integer-to-decimal" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, CONVERT(DECIMAL(10,2), salary) AS salary_decimal
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">CONVERT</span><span class="p">(</span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">salary_decimal</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6136,10 +6136,10 @@ FROM employees;
 </tbody>
 </table>
 <h3 id="q9-implicit-conversion-in-comparison">Q9: Implicit conversion in comparison<a class="headerlink" href="#q9-implicit-conversion-in-comparison" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name
-FROM employees
-WHERE salary &gt; '50000';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">'50000'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6164,9 +6164,9 @@ WHERE salary &gt; '50000';
 </tbody>
 </table>
 <h3 id="q10-convert-string-date-to-different-format">Q10: Convert string date to different format<a class="headerlink" href="#q10-convert-string-date-to-different-format" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name, CONVERT(VARCHAR(10), join_date, 101) AS join_date_us
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">CONVERT</span><span class="p">(</span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">join_date</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">join_date_us</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6272,6 +6272,10 @@ FROM employees;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

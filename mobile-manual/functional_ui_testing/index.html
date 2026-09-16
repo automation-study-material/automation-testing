@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5602,11 +5602,11 @@
 <h1 id="week-3-functional-testing">📖 Week 3: Functional Testing<a class="headerlink" href="#week-3-functional-testing" title="Permanent link">&para;</a></h1>
 <h1 id="what-is-functional-testing">What is Functional Testing?<a class="headerlink" href="#what-is-functional-testing" title="Permanent link">&para;</a></h1>
 <p>Functional Testing means:</p>
-<pre><code class="language-text">Verify application behaves according to business requirements.
-</code></pre>
+<div class="highlight"><pre><span></span><code>Verify application behaves according to business requirements.
+</code></pre></div>
 <p>Simple question:</p>
-<pre><code class="language-text">Does the feature work correctly?
-</code></pre>
+<div class="highlight"><pre><span></span><code>Does the feature work correctly?
+</code></pre></div>
 <p>If yes:</p>
 <p>✅ Pass</p>
 <p>If no:</p>
@@ -5614,74 +5614,74 @@
 <hr />
 <h1 id="real-example">Real Example<a class="headerlink" href="#real-example" title="Permanent link">&para;</a></h1>
 <p>Suppose:</p>
-<pre><code class="language-text">Amazon App
-</code></pre>
+<div class="highlight"><pre><span></span><code>Amazon App
+</code></pre></div>
 <p>Feature:</p>
-<pre><code class="language-text">Login
-</code></pre>
+<div class="highlight"><pre><span></span><code>Login
+</code></pre></div>
 <p>Requirement:</p>
-<pre><code class="language-text">User should login successfully using valid credentials.
-</code></pre>
+<div class="highlight"><pre><span></span><code>User should login successfully using valid credentials.
+</code></pre></div>
 <p>Testing:</p>
-<pre><code class="language-text">Enter username
+<div class="highlight"><pre><span></span><code>Enter username
 
 Enter password
 
 Click Login
-</code></pre>
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">User logged in successfully
-</code></pre>
+<div class="highlight"><pre><span></span><code>User logged in successfully
+</code></pre></div>
 <hr />
 <h1 id="login-testing">🔐 Login Testing<a class="headerlink" href="#login-testing" title="Permanent link">&para;</a></h1>
 <p>Login is one of the most commonly tested features.</p>
 <hr />
 <h1 id="scenario-1-valid-credentials">Scenario 1: Valid Credentials<a class="headerlink" href="#scenario-1-valid-credentials" title="Permanent link">&para;</a></h1>
 <h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Username = nitin@test.com
+<div class="highlight"><pre><span></span><code>Username = nitin@test.com
 
 Password = Password123
-</code></pre>
+</code></pre></div>
 <p>Click Login.</p>
 <p>Expected:</p>
-<pre><code class="language-text">Login successful
-</code></pre>
+<div class="highlight"><pre><span></span><code>Login successful
+</code></pre></div>
 <hr />
 <h1 id="scenario-2-invalid-credentials">Scenario 2: Invalid Credentials<a class="headerlink" href="#scenario-2-invalid-credentials" title="Permanent link">&para;</a></h1>
 <h3 id="steps_1">Steps<a class="headerlink" href="#steps_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Username = nitin@test.com
+<div class="highlight"><pre><span></span><code>Username = nitin@test.com
 
 Password = WrongPassword
-</code></pre>
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">Invalid Username or Password
-</code></pre>
+<div class="highlight"><pre><span></span><code>Invalid Username or Password
+</code></pre></div>
 <hr />
 <h1 id="scenario-3-blank-fields">Scenario 3: Blank Fields<a class="headerlink" href="#scenario-3-blank-fields" title="Permanent link">&para;</a></h1>
 <h3 id="steps_2">Steps<a class="headerlink" href="#steps_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Username = Blank
+<div class="highlight"><pre><span></span><code>Username = Blank
 
 Password = Blank
-</code></pre>
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">Username is required
+<div class="highlight"><pre><span></span><code>Username is required
 
 Password is required
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="common-login-defects">Common Login Defects<a class="headerlink" href="#common-login-defects" title="Permanent link">&para;</a></h1>
 <h3 id="defect-1">Defect 1<a class="headerlink" href="#defect-1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Correct password entered
+<div class="highlight"><pre><span></span><code>Correct password entered
 
 Login failed
-</code></pre>
+</code></pre></div>
 <p>Functional defect.</p>
 <hr />
 <h3 id="defect-2">Defect 2<a class="headerlink" href="#defect-2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Invalid password entered
+<div class="highlight"><pre><span></span><code>Invalid password entered
 
 User logged in
-</code></pre>
+</code></pre></div>
 <p>Critical defect.</p>
 <hr />
 <h1 id="interview-question">Interview Question<a class="headerlink" href="#interview-question" title="Permanent link">&para;</a></h1>
@@ -5704,70 +5704,70 @@ User logged in
 <h2 id="scenario-1">Scenario 1<a class="headerlink" href="#scenario-1" title="Permanent link">&para;</a></h2>
 <p>Correct OTP</p>
 <p>Expected:</p>
-<pre><code class="language-text">Registration successful
-</code></pre>
+<div class="highlight"><pre><span></span><code>Registration successful
+</code></pre></div>
 <hr />
 <h2 id="scenario-2">Scenario 2<a class="headerlink" href="#scenario-2" title="Permanent link">&para;</a></h2>
 <p>Incorrect OTP</p>
 <p>Expected:</p>
-<pre><code class="language-text">Invalid OTP
-</code></pre>
+<div class="highlight"><pre><span></span><code>Invalid OTP
+</code></pre></div>
 <hr />
 <h2 id="scenario-3">Scenario 3<a class="headerlink" href="#scenario-3" title="Permanent link">&para;</a></h2>
 <p>Expired OTP</p>
 <p>Expected:</p>
-<pre><code class="language-text">OTP expired
-</code></pre>
+<div class="highlight"><pre><span></span><code>OTP expired
+</code></pre></div>
 <hr />
 <h1 id="password-rules-testing">Password Rules Testing<a class="headerlink" href="#password-rules-testing" title="Permanent link">&para;</a></h1>
 <p>Suppose requirement says:</p>
-<pre><code class="language-text">Minimum 8 characters
+<div class="highlight"><pre><span></span><code>Minimum 8 characters
 
 1 Uppercase
 
 1 Number
 
 1 Special Character
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="valid-password">Valid Password<a class="headerlink" href="#valid-password" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">Test@123
-</code></pre>
+<div class="highlight"><pre><span></span><code>Test@123
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">Accepted
-</code></pre>
+<div class="highlight"><pre><span></span><code>Accepted
+</code></pre></div>
 <hr />
 <h2 id="invalid-password">Invalid Password<a class="headerlink" href="#invalid-password" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">test123
-</code></pre>
+<div class="highlight"><pre><span></span><code>test123
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">Password policy message
-</code></pre>
+<div class="highlight"><pre><span></span><code>Password policy message
+</code></pre></div>
 <hr />
 <h1 id="email-validation">Email Validation<a class="headerlink" href="#email-validation" title="Permanent link">&para;</a></h1>
 <h2 id="valid">Valid<a class="headerlink" href="#valid" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">test@gmail.com
-</code></pre>
+<div class="highlight"><pre><span></span><code>test@gmail.com
+</code></pre></div>
 <p>Accepted.</p>
 <hr />
 <h2 id="invalid">Invalid<a class="headerlink" href="#invalid" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">testgmail.com
-</code></pre>
+<div class="highlight"><pre><span></span><code>testgmail.com
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">Invalid Email Format
-</code></pre>
+<div class="highlight"><pre><span></span><code>Invalid Email Format
+</code></pre></div>
 <hr />
 <h1 id="common-registration-defects">Common Registration Defects<a class="headerlink" href="#common-registration-defects" title="Permanent link">&para;</a></h1>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Invalid email accepted
-</code></pre>
+<div class="highlight"><pre><span></span><code>Invalid email accepted
+</code></pre></div>
 <p>Bug.</p>
 <hr />
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">OTP expired
+<div class="highlight"><pre><span></span><code>OTP expired
 
 Registration still successful
-</code></pre>
+</code></pre></div>
 <p>Bug.</p>
 <hr />
 <h1 id="search-testing">🔍 Search Testing<a class="headerlink" href="#search-testing" title="Permanent link">&para;</a></h1>
@@ -5775,43 +5775,43 @@ Registration still successful
 <hr />
 <h1 id="exact-match">Exact Match<a class="headerlink" href="#exact-match" title="Permanent link">&para;</a></h1>
 <p>Search:</p>
-<pre><code class="language-text">iPhone 16
-</code></pre>
+<div class="highlight"><pre><span></span><code>iPhone 16
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">iPhone 16 displayed
-</code></pre>
+<div class="highlight"><pre><span></span><code>iPhone 16 displayed
+</code></pre></div>
 <hr />
 <h1 id="partial-match">Partial Match<a class="headerlink" href="#partial-match" title="Permanent link">&para;</a></h1>
 <p>Search:</p>
-<pre><code class="language-text">iPho
-</code></pre>
+<div class="highlight"><pre><span></span><code>iPho
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">iPhone suggestions displayed
-</code></pre>
+<div class="highlight"><pre><span></span><code>iPhone suggestions displayed
+</code></pre></div>
 <hr />
 <h1 id="no-results">No Results<a class="headerlink" href="#no-results" title="Permanent link">&para;</a></h1>
 <p>Search:</p>
-<pre><code class="language-text">XYZ123ABC999
-</code></pre>
+<div class="highlight"><pre><span></span><code>XYZ123ABC999
+</code></pre></div>
 <p>Expected:</p>
-<pre><code class="language-text">No Results Found
-</code></pre>
+<div class="highlight"><pre><span></span><code>No Results Found
+</code></pre></div>
 <hr />
 <h1 id="common-search-defects">Common Search Defects<a class="headerlink" href="#common-search-defects" title="Permanent link">&para;</a></h1>
 <h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Search returns unrelated products
-</code></pre>
+<div class="highlight"><pre><span></span><code>Search returns unrelated products
+</code></pre></div>
 <p>Bug.</p>
 <hr />
 <h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">No results available
+<div class="highlight"><pre><span></span><code>No results available
 
 Blank screen shown
-</code></pre>
+</code></pre></div>
 <p>Bug.</p>
 <p>Expected:</p>
-<pre><code class="language-text">No Results Found
-</code></pre>
+<div class="highlight"><pre><span></span><code>No Results Found
+</code></pre></div>
 <hr />
 <h1 id="functional-testing-checklist">Functional Testing Checklist<a class="headerlink" href="#functional-testing-checklist" title="Permanent link">&para;</a></h1>
 <p>Verify:</p>
@@ -5826,36 +5826,36 @@ Blank screen shown
 <hr />
 <h1 id="defect-report-example">📋 Defect Report Example<a class="headerlink" href="#defect-report-example" title="Permanent link">&para;</a></h1>
 <h3 id="title">Title<a class="headerlink" href="#title" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Login fails with valid credentials
-</code></pre>
+<div class="highlight"><pre><span></span><code>Login fails with valid credentials
+</code></pre></div>
 <hr />
 <h3 id="steps_3">Steps<a class="headerlink" href="#steps_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">1. Open Application
+<div class="highlight"><pre><span></span><code>1. Open Application
 
 2. Enter Valid Username
 
 3. Enter Valid Password
 
 4. Click Login
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="expected">Expected<a class="headerlink" href="#expected" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">User should login successfully
-</code></pre>
+<div class="highlight"><pre><span></span><code>User should login successfully
+</code></pre></div>
 <hr />
 <h3 id="actual">Actual<a class="headerlink" href="#actual" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Invalid Credentials Error Displayed
-</code></pre>
+<div class="highlight"><pre><span></span><code>Invalid Credentials Error Displayed
+</code></pre></div>
 <hr />
 <h3 id="severity">Severity<a class="headerlink" href="#severity" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">High
-</code></pre>
+<div class="highlight"><pre><span></span><code>High
+</code></pre></div>
 <hr />
 <h1 id="week-4-ui-testing">📖 Week 4: UI Testing<a class="headerlink" href="#week-4-ui-testing" title="Permanent link">&para;</a></h1>
 <h1 id="what-is-ui-testing">What is UI Testing?<a class="headerlink" href="#what-is-ui-testing" title="Permanent link">&para;</a></h1>
 <p>UI means:</p>
-<pre><code class="language-text">User Interface
-</code></pre>
+<div class="highlight"><pre><span></span><code>User Interface
+</code></pre></div>
 <p>Everything user sees:</p>
 <ul>
 <li>Buttons</li>
@@ -5867,22 +5867,22 @@ Blank screen shown
 <hr />
 <h1 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h1>
 <p>Expected:</p>
-<pre><code class="language-text">[ LOGIN ]
-</code></pre>
+<div class="highlight"><pre><span></span><code>[ LOGIN ]
+</code></pre></div>
 <p>Actual:</p>
-<pre><code class="language-text">[ LOG
-</code></pre>
+<div class="highlight"><pre><span></span><code>[ LOG
+</code></pre></div>
 <p>Text cut off.</p>
 <p>UI defect.</p>
 <hr />
 <h1 id="portrait-mode-testing">📱 Portrait Mode Testing<a class="headerlink" href="#portrait-mode-testing" title="Permanent link">&para;</a></h1>
 <p>Portrait Mode:</p>
-<pre><code class="language-text">|
+<div class="highlight"><pre><span></span><code>|
 |
 |
 |
 |
-</code></pre>
+</code></pre></div>
 <p>Normal mobile usage.</p>
 <hr />
 <h1 id="verify">Verify<a class="headerlink" href="#verify" title="Permanent link">&para;</a></h1>
@@ -5896,19 +5896,19 @@ Blank screen shown
 <hr />
 <h1 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h1>
 <p>Expected:</p>
-<pre><code class="language-text">Username
+<div class="highlight"><pre><span></span><code>Username
 
 Password
 
 [ Login ]
-</code></pre>
+</code></pre></div>
 <p>Actual:</p>
-<pre><code class="language-text">Username
+<div class="highlight"><pre><span></span><code>Username
 
 [ Login ]
 
 Password
-</code></pre>
+</code></pre></div>
 <p>Layout defect.</p>
 <hr />
 <h1 id="image-testing">Image Testing<a class="headerlink" href="#image-testing" title="Permanent link">&para;</a></h1>
@@ -5922,18 +5922,18 @@ Password
 <h1 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h1>
 <p>Company Logo:</p>
 <p>Expected:</p>
-<pre><code class="language-text">Clear Logo
-</code></pre>
+<div class="highlight"><pre><span></span><code>Clear Logo
+</code></pre></div>
 <p>Actual:</p>
-<pre><code class="language-text">Blurred Logo
-</code></pre>
+<div class="highlight"><pre><span></span><code>Blurred Logo
+</code></pre></div>
 <p>UI defect.</p>
 <hr />
 <h1 id="landscape-mode-testing">🔄 Landscape Mode Testing<a class="headerlink" href="#landscape-mode-testing" title="Permanent link">&para;</a></h1>
 <p>Landscape Mode:</p>
-<pre><code class="language-text">------------------
+<div class="highlight"><pre><span></span><code>------------------
 ------------------
-</code></pre>
+</code></pre></div>
 <p>Rotate phone.</p>
 <hr />
 <h1 id="verify_1">Verify<a class="headerlink" href="#verify_1" title="Permanent link">&para;</a></h1>
@@ -5946,11 +5946,11 @@ Password
 <hr />
 <h1 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h1>
 <p>Portrait:</p>
-<pre><code class="language-text">[ Login ]
-</code></pre>
+<div class="highlight"><pre><span></span><code>[ Login ]
+</code></pre></div>
 <p>Landscape:</p>
-<pre><code class="language-text">Button hidden
-</code></pre>
+<div class="highlight"><pre><span></span><code>Button hidden
+</code></pre></div>
 <p>Bug.</p>
 <hr />
 <h1 id="ui-responsiveness">UI Responsiveness<a class="headerlink" href="#ui-responsiveness" title="Permanent link">&para;</a></h1>
@@ -5959,11 +5959,11 @@ Password
 <h1 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h1>
 <p>Rotate phone.</p>
 <p>Expected:</p>
-<pre><code class="language-text">Screen adjusts properly
-</code></pre>
+<div class="highlight"><pre><span></span><code>Screen adjusts properly
+</code></pre></div>
 <p>Actual:</p>
-<pre><code class="language-text">Text overlaps images
-</code></pre>
+<div class="highlight"><pre><span></span><code>Text overlaps images
+</code></pre></div>
 <p>Bug.</p>
 <hr />
 <h1 id="device-compatibility-testing">📲 Device Compatibility Testing<a class="headerlink" href="#device-compatibility-testing" title="Permanent link">&para;</a></h1>
@@ -5976,11 +5976,11 @@ Password
 <hr />
 <h1 id="real-example_1">Real Example<a class="headerlink" href="#real-example_1" title="Permanent link">&para;</a></h1>
 <p>Application works on:</p>
-<pre><code class="language-text">Samsung S24
-</code></pre>
+<div class="highlight"><pre><span></span><code>Samsung S24
+</code></pre></div>
 <p>but breaks on:</p>
-<pre><code class="language-text">Vivo V29
-</code></pre>
+<div class="highlight"><pre><span></span><code>Vivo V29
+</code></pre></div>
 <p>Compatibility defect.</p>
 <hr />
 <h1 id="devices-to-test">Devices To Test<a class="headerlink" href="#devices-to-test" title="Permanent link">&para;</a></h1>
@@ -5995,16 +5995,16 @@ Password
 <hr />
 <h1 id="common-compatibility-defects">Common Compatibility Defects<a class="headerlink" href="#common-compatibility-defects" title="Permanent link">&para;</a></h1>
 <h3 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Login button hidden on Vivo
-</code></pre>
+<div class="highlight"><pre><span></span><code>Login button hidden on Vivo
+</code></pre></div>
 <hr />
 <h3 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Text overlaps image on OnePlus
-</code></pre>
+<div class="highlight"><pre><span></span><code>Text overlaps image on OnePlus
+</code></pre></div>
 <hr />
 <h3 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">App crashes on Android 12
-</code></pre>
+<div class="highlight"><pre><span></span><code>App crashes on Android 12
+</code></pre></div>
 <hr />
 <h1 id="interview-questions">Interview Questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h1>
 <hr />
@@ -6013,56 +6013,56 @@ Password
 <p>User enters valid credentials but login fails.</p>
 <p>Which testing type found this issue?</p>
 <p>Answer:</p>
-<pre><code class="language-text">Functional Testing
-</code></pre>
+<div class="highlight"><pre><span></span><code>Functional Testing
+</code></pre></div>
 <hr />
 <h1 id="scenario-2_1">Scenario 2<a class="headerlink" href="#scenario-2_1" title="Permanent link">&para;</a></h1>
 <h2 id="question_1">Question<a class="headerlink" href="#question_1" title="Permanent link">&para;</a></h2>
 <p>Login button overlaps password field.</p>
 <p>Which testing type found this issue?</p>
 <p>Answer:</p>
-<pre><code class="language-text">UI Testing
-</code></pre>
+<div class="highlight"><pre><span></span><code>UI Testing
+</code></pre></div>
 <hr />
 <h1 id="scenario-3_1">Scenario 3<a class="headerlink" href="#scenario-3_1" title="Permanent link">&para;</a></h1>
 <h2 id="question_2">Question<a class="headerlink" href="#question_2" title="Permanent link">&para;</a></h2>
 <p>App works on Samsung but crashes on Vivo.</p>
 <p>Which testing type found this issue?</p>
 <p>Answer:</p>
-<pre><code class="language-text">Compatibility Testing
-</code></pre>
+<div class="highlight"><pre><span></span><code>Compatibility Testing
+</code></pre></div>
 <hr />
 <h1 id="scenario-4">Scenario 4<a class="headerlink" href="#scenario-4" title="Permanent link">&para;</a></h1>
 <h2 id="question_3">Question<a class="headerlink" href="#question_3" title="Permanent link">&para;</a></h2>
 <p>User enters expired OTP and registration succeeds.</p>
 <p>What is the defect?</p>
 <p>Answer:</p>
-<pre><code class="language-text">Functional Defect
-</code></pre>
+<div class="highlight"><pre><span></span><code>Functional Defect
+</code></pre></div>
 <hr />
 <h1 id="scenario-5">Scenario 5<a class="headerlink" href="#scenario-5" title="Permanent link">&para;</a></h1>
 <h2 id="question_4">Question<a class="headerlink" href="#question_4" title="Permanent link">&para;</a></h2>
 <p>Landscape mode hides Submit button.</p>
 <p>What is the defect?</p>
 <p>Answer:</p>
-<pre><code class="language-text">UI Defect
-</code></pre>
+<div class="highlight"><pre><span></span><code>UI Defect
+</code></pre></div>
 <hr />
 <h1 id="scenario-6">Scenario 6<a class="headerlink" href="#scenario-6" title="Permanent link">&para;</a></h1>
 <h2 id="question_5">Question<a class="headerlink" href="#question_5" title="Permanent link">&para;</a></h2>
 <p>Searching "iPhone" displays Shoes.</p>
 <p>What is the defect?</p>
 <p>Answer:</p>
-<pre><code class="language-text">Search Functional Defect
-</code></pre>
+<div class="highlight"><pre><span></span><code>Search Functional Defect
+</code></pre></div>
 <hr />
 <h1 id="scenario-7">Scenario 7<a class="headerlink" href="#scenario-7" title="Permanent link">&para;</a></h1>
 <h2 id="question_6">Question<a class="headerlink" href="#question_6" title="Permanent link">&para;</a></h2>
 <p>Text appears correctly on Samsung but overlaps on OnePlus.</p>
 <p>What is the issue?</p>
 <p>Answer:</p>
-<pre><code class="language-text">Device Compatibility Issue
-</code></pre>
+<div class="highlight"><pre><span></span><code>Device Compatibility Issue
+</code></pre></div>
 <hr />
 <h1 id="week-3-week-4-outcome">🎯 Week 3 &amp; Week 4 Outcome<a class="headerlink" href="#week-3-week-4-outcome" title="Permanent link">&para;</a></h1>
 <p>After completing these topics, you should understand:</p>
@@ -6133,6 +6133,10 @@ Password
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

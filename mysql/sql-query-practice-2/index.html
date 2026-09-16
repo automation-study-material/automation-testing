@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5947,10 +5947,10 @@
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary = 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>=</code> operator selects rows where salary equals 50000.</p>
 <p><strong>Output:</strong></p>
@@ -5974,10 +5974,10 @@ WHERE salary = 50000;
 </table>
 <hr />
 <h3 id="q2-employees-with-salary-60000">Q2: Employees with salary &lt;&gt; 60000<a class="headerlink" href="#q2-employees-with-salary-60000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary &lt;&gt; 60000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>&lt;&gt;</code> selects rows not equal to 60000.</p>
 <p><strong>Output:</strong></p>
@@ -6013,10 +6013,10 @@ WHERE salary &lt;&gt; 60000;
 </table>
 <hr />
 <h3 id="q3-employees-with-salary-50000">Q3: Employees with salary &gt; 50000<a class="headerlink" href="#q3-employees-with-salary-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT name, salary
-FROM employees
-WHERE salary &gt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>&gt;</code> selects rows with salary greater than 50000.</p>
 <p><strong>Output:</strong></p>
@@ -6040,10 +6040,10 @@ WHERE salary &gt; 50000;
 </table>
 <hr />
 <h3 id="q4-employees-with-salary-50000">Q4: Employees with salary &lt;= 50000<a class="headerlink" href="#q4-employees-with-salary-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT name, salary
-FROM employees
-WHERE salary &lt;= 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>&lt;=</code> selects salaries less than or equal to 50000.</p>
 <p><strong>Output:</strong></p>
@@ -6067,10 +6067,10 @@ WHERE salary &lt;= 50000;
 </table>
 <hr />
 <h3 id="q5-employees-with-salary-55000">Q5: Employees with salary &gt;= 55000<a class="headerlink" href="#q5-employees-with-salary-55000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary &gt;= 55000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">55000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>&gt;=</code> selects salaries 55000 or more.</p>
 <p><strong>Output:</strong></p>
@@ -6101,10 +6101,10 @@ WHERE salary &gt;= 55000;
 <hr />
 <h2 id="2-logical-operators-and-or-not">2. Logical Operators (AND, OR, NOT)<a class="headerlink" href="#2-logical-operators-and-or-not" title="Permanent link">&para;</a></h2>
 <h3 id="q6-employees-in-hr-and-salary-50000">Q6: Employees in HR AND salary &gt; 50000<a class="headerlink" href="#q6-employees-in-hr-and-salary-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE dept = 'HR' AND salary &gt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'HR'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>AND</code> ensures both conditions are true.</p>
 <p><strong>Output:</strong></p>
@@ -6128,10 +6128,10 @@ WHERE dept = 'HR' AND salary &gt; 50000;
 </table>
 <hr />
 <h3 id="q7-employees-in-hr-or-salary-55000">Q7: Employees in HR OR salary &gt; 55000<a class="headerlink" href="#q7-employees-in-hr-or-salary-55000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE dept = 'HR' OR salary &gt; 55000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'HR'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">55000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>OR</code> selects rows matching either condition.</p>
 <p><strong>Output:</strong></p>
@@ -6167,10 +6167,10 @@ WHERE dept = 'HR' OR salary &gt; 55000;
 </table>
 <hr />
 <h3 id="q8-employees-not-in-hr">Q8: Employees NOT in HR<a class="headerlink" href="#q8-employees-not-in-hr" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE NOT dept = 'HR';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'HR'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>NOT</code> inverts the condition.</p>
 <p><strong>Output:</strong></p>
@@ -6200,10 +6200,10 @@ WHERE NOT dept = 'HR';
 </table>
 <hr />
 <h3 id="q9-employees-in-it-and-salary-60000">Q9: Employees in IT AND salary &gt;= 60000<a class="headerlink" href="#q9-employees-in-it-and-salary-60000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT name, dept, salary
-FROM employees
-WHERE dept = 'IT' AND salary &gt;= 60000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'IT'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 Both conditions must be true.</p>
 <p><strong>Output:</strong></p>
@@ -6225,10 +6225,10 @@ Both conditions must be true.</p>
 </table>
 <hr />
 <h3 id="q10-employees-in-sales-or-hr-with-salary-50000">Q10: Employees in Sales OR HR with salary &lt; 50000<a class="headerlink" href="#q10-employees-in-sales-or-hr-with-salary-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE (dept = 'Sales' OR dept = 'HR') AND salary &lt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Sales'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'HR'</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 Parentheses control precedence: OR is evaluated first.</p>
 <p><strong>Output:</strong></p>
@@ -6253,10 +6253,10 @@ Parentheses control precedence: OR is evaluated first.</p>
 <hr />
 <h2 id="3-between-in-like">3. BETWEEN, IN, LIKE<a class="headerlink" href="#3-between-in-like" title="Permanent link">&para;</a></h2>
 <h3 id="q11-employees-with-salary-between-50000-and-60000">Q11: Employees with salary BETWEEN 50000 AND 60000<a class="headerlink" href="#q11-employees-with-salary-between-50000-and-60000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary BETWEEN 50000 AND 60000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>BETWEEN</code> includes the boundary values.</p>
 <p><strong>Output:</strong></p>
@@ -6292,10 +6292,10 @@ WHERE salary BETWEEN 50000 AND 60000;
 </table>
 <hr />
 <h3 id="q12-employees-in-specific-departments-in">Q12: Employees in specific departments (IN)<a class="headerlink" href="#q12-employees-in-specific-departments-in" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE dept IN ('HR', 'Sales');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">'HR'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sales'</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>IN</code> filters multiple discrete values.</p>
 <p><strong>Output:</strong></p>
@@ -6331,10 +6331,10 @@ WHERE dept IN ('HR', 'Sales');
 </table>
 <hr />
 <h3 id="q13-employees-whose-name-starts-with-a-like">Q13: Employees whose name starts with 'A' (LIKE)<a class="headerlink" href="#q13-employees-whose-name-starts-with-a-like" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE name LIKE 'A%';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'A%'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>%</code> is wildcard for any number of characters.</p>
 <p><strong>Output:</strong></p>
@@ -6358,10 +6358,10 @@ WHERE name LIKE 'A%';
 </table>
 <hr />
 <h3 id="q14-employees-whose-name-contains-a-like">Q14: Employees whose name contains 'a' (LIKE)<a class="headerlink" href="#q14-employees-whose-name-contains-a-like" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE name LIKE '%a%';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%a%'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>%</code> before and after 'a' matches any string containing 'a'.</p>
 <p><strong>Output:</strong></p>
@@ -6403,10 +6403,10 @@ WHERE name LIKE '%a%';
 </table>
 <hr />
 <h3 id="q15-employees-whose-name-ends-with-e">Q15: Employees whose name ends with 'e'<a class="headerlink" href="#q15-employees-whose-name-ends-with-e" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE name LIKE '%e';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%e'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6473,10 +6473,10 @@ WHERE name LIKE '%e';
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>IS NULL</code> selects rows where value is NULL.</p>
 <p><strong>Output:</strong></p>
@@ -6506,10 +6506,10 @@ WHERE salary IS NULL;
 </table>
 <hr />
 <h3 id="q17-employees-with-not-null-salary">Q17: Employees with NOT NULL salary<a class="headerlink" href="#q17-employees-with-not-null-salary" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary IS NOT NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6537,10 +6537,10 @@ WHERE salary IS NOT NULL;
 </table>
 <hr />
 <h3 id="q18-employees-with-salary-null-or-less-than-50000">Q18: Employees with salary NULL or less than 50000<a class="headerlink" href="#q18-employees-with-salary-null-or-less-than-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary IS NULL OR salary &lt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6568,10 +6568,10 @@ WHERE salary IS NULL OR salary &lt; 50000;
 </table>
 <hr />
 <h3 id="q19-employees-with-salary-not-null-and-50000">Q19: Employees with salary NOT NULL AND &gt; 50000<a class="headerlink" href="#q19-employees-with-salary-not-null-and-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary IS NOT NULL AND salary &gt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6599,10 +6599,10 @@ WHERE salary IS NOT NULL AND salary &gt; 50000;
 </table>
 <hr />
 <h3 id="q20-employees-with-salary-is-null-or-department-hr">Q20: Employees with salary IS NULL OR department = 'HR'<a class="headerlink" href="#q20-employees-with-salary-is-null-or-department-hr" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT *
-FROM employees
-WHERE salary IS NULL OR dept = 'HR';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'HR'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6634,7 +6634,8 @@ WHERE salary IS NULL OR dept = 'HR';
 </tr>
 </tbody>
 </table>
-<pre><code></code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 
 
 
@@ -6688,6 +6689,10 @@ WHERE salary IS NULL OR dept = 'HR';
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

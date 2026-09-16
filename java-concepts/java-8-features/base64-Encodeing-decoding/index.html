@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5924,13 +5924,13 @@
 <li>JSON payloads</li>
 <li>URL parameters</li>
 </ul>
-<pre><code>Binary → Base64 → Safe Text Format
-</code></pre>
+<div class="highlight"><pre><span></span><code>Binary → Base64 → Safe Text Format
+</code></pre></div>
 <hr />
 <h2 id="java-8-base64-utility">✅ Java 8 Base64 Utility<a class="headerlink" href="#java-8-base64-utility" title="Permanent link">&para;</a></h2>
 <p>Java 8 introduced:</p>
-<pre><code class="language-java">import java.util.Base64;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Base64</span><span class="p">;</span>
+</code></pre></div>
 <p>Before Java 8, we used external libraries like <strong>Apache Commons Codec</strong>.</p>
 <hr />
 <h2 id="types-of-base64-encoders-in-java-8">🔹 Types of Base64 Encoders in Java 8<a class="headerlink" href="#types-of-base64-encoders-in-java-8" title="Permanent link">&para;</a></h2>
@@ -5962,25 +5962,25 @@
 </table>
 <hr />
 <h2 id="encoding-example-detailed">✅ Encoding Example (Detailed)<a class="headerlink" href="#encoding-example-detailed" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import java.util.Base64;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Base64</span><span class="p">;</span>
 
-public class Base64Example {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Base64Example</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        String original = &quot;Java8&quot;;
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Java8"</span><span class="p">;</span>
 
-        // Convert String to byte[]
-        byte[] bytes = original.getBytes();
+<span class="w">        </span><span class="c1">// Convert String to byte[]</span>
+<span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original</span><span class="p">.</span><span class="na">getBytes</span><span class="p">();</span>
 
-        // Encode
-        String encoded = Base64.getEncoder().encodeToString(bytes);
+<span class="w">        </span><span class="c1">// Encode</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">getEncoder</span><span class="p">().</span><span class="na">encodeToString</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>
 
-        System.out.println(&quot;Encoded: &quot; + encoded);
-        // Output: Encoded: SmF2YTg=
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Encoded: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">encoded</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Output: Encoded: SmF2YTg=</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="step-by-step-internal-working">🔎 Step-by-Step Internal Working<a class="headerlink" href="#step-by-step-internal-working" title="Permanent link">&para;</a></h2>
 <ol>
@@ -5991,16 +5991,16 @@ public class Base64Example {
 </ol>
 <hr />
 <h2 id="decoding-example">✅ Decoding Example<a class="headerlink" href="#decoding-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">String encoded = &quot;SmF2YTg=&quot;;
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SmF2YTg="</span><span class="p">;</span>
 
-byte[] decodedBytes = Base64.getDecoder().decode(encoded);
+<span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">decodedBytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">getDecoder</span><span class="p">().</span><span class="na">decode</span><span class="p">(</span><span class="n">encoded</span><span class="p">);</span>
 
-String decoded = new String(decodedBytes);
+<span class="n">String</span><span class="w"> </span><span class="n">decoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">decodedBytes</span><span class="p">);</span>
 
-System.out.println(&quot;Decoded: &quot; + decoded);
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Decoded: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">decoded</span><span class="p">);</span>
 
-// Output: Decoded: Java8
-</code></pre>
+<span class="c1">// Output: Decoded: Java8</span>
+</code></pre></div>
 <hr />
 <h2 id="interview-points">🔥 Interview Points<a class="headerlink" href="#interview-points" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6010,8 +6010,8 @@ System.out.println(&quot;Decoded: &quot; + decoded);
 <li>Used in <strong>Basic Authentication header</strong></li>
 </ul>
 <p>Example:</p>
-<pre><code>Authorization: Basic base64(username:password)
-</code></pre>
+<div class="highlight"><pre><span></span><code>Authorization: Basic base64(username:password)
+</code></pre></div>
 <p>Tell me what you want next 🚀</p>
 
 
@@ -6066,6 +6066,10 @@ System.out.println(&quot;Decoded: &quot; + decoded);
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

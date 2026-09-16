@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5680,15 +5680,17 @@ Playwright provides APIs to handle these dialogs by <strong>listening to the <co
 <hr />
 <h2 id="playwright-dialog-api">📌 Playwright Dialog API<a class="headerlink" href="#playwright-dialog-api" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Event Listener for Dialog</strong></li>
-</ul>
-<pre><code class="language-java">page.onDialog(dialog -&gt; {
-    System.out.println(&quot;Dialog message: &quot; + dialog.message());
-    dialog.accept(); // or dialog.dismiss()
-});
-</code></pre>
-<ul>
-<li><strong>Dialog Methods</strong></li>
+<li>
+<p><strong>Event Listener for Dialog</strong>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">onDialog</span><span class="p">(</span><span class="n">dialog</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dialog message: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dialog</span><span class="p">.</span><span class="na">message</span><span class="p">());</span>
+<span class="w">    </span><span class="n">dialog</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span><span class="w"> </span><span class="c1">// or dialog.dismiss()</span>
+<span class="p">});</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Dialog Methods</strong></p>
+</li>
 <li><code>dialog.message()</code> → Get text of the dialog.</li>
 <li><code>dialog.type()</code> → Returns type (<code>alert</code>, <code>confirm</code>, <code>prompt</code>, <code>beforeunload</code>).</li>
 <li><code>dialog.accept([promptText])</code> → Accept the dialog (for prompt, send text).</li>
@@ -5696,58 +5698,58 @@ Playwright provides APIs to handle these dialogs by <strong>listening to the <co
 </ul>
 <hr />
 <h2 id="example-code-java-playwright">📌 Example Code (Java + Playwright)<a class="headerlink" href="#example-code-java-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import com.microsoft.playwright.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
 
-public class DialogsExample {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DialogsExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            // Navigate to sample page with dialogs
-            page.navigate(&quot;https://the-internet.herokuapp.com/javascript_alerts&quot;);
+<span class="w">            </span><span class="c1">// Navigate to sample page with dialogs</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://the-internet.herokuapp.com/javascript_alerts"</span><span class="p">);</span>
 
-            // --- Handle Alert ---
-            page.onceDialog(dialog -&gt; {
-                System.out.println(&quot;Alert Text: &quot; + dialog.message());
-                dialog.accept();
-            });
-            page.click(&quot;text=Click for JS Alert&quot;);
+<span class="w">            </span><span class="c1">// --- Handle Alert ---</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">onceDialog</span><span class="p">(</span><span class="n">dialog</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alert Text: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dialog</span><span class="p">.</span><span class="na">message</span><span class="p">());</span>
+<span class="w">                </span><span class="n">dialog</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"text=Click for JS Alert"</span><span class="p">);</span>
 
-            // --- Handle Confirm (OK) ---
-            page.onceDialog(dialog -&gt; {
-                System.out.println(&quot;Confirm Text: &quot; + dialog.message());
-                dialog.accept(); // choose OK
-            });
-            page.click(&quot;text=Click for JS Confirm&quot;);
+<span class="w">            </span><span class="c1">// --- Handle Confirm (OK) ---</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">onceDialog</span><span class="p">(</span><span class="n">dialog</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Confirm Text: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dialog</span><span class="p">.</span><span class="na">message</span><span class="p">());</span>
+<span class="w">                </span><span class="n">dialog</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span><span class="w"> </span><span class="c1">// choose OK</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"text=Click for JS Confirm"</span><span class="p">);</span>
 
-            // --- Handle Confirm (Cancel) ---
-            page.onceDialog(dialog -&gt; {
-                System.out.println(&quot;Confirm Text: &quot; + dialog.message());
-                dialog.dismiss(); // choose Cancel
-            });
-            page.click(&quot;text=Click for JS Confirm&quot;);
+<span class="w">            </span><span class="c1">// --- Handle Confirm (Cancel) ---</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">onceDialog</span><span class="p">(</span><span class="n">dialog</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Confirm Text: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dialog</span><span class="p">.</span><span class="na">message</span><span class="p">());</span>
+<span class="w">                </span><span class="n">dialog</span><span class="p">.</span><span class="na">dismiss</span><span class="p">();</span><span class="w"> </span><span class="c1">// choose Cancel</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"text=Click for JS Confirm"</span><span class="p">);</span>
 
-            // --- Handle Prompt with input ---
-            page.onceDialog(dialog -&gt; {
-                System.out.println(&quot;Prompt Text: &quot; + dialog.message());
-                dialog.accept(&quot;PlaywrightUser&quot;); // enter text
-            });
-            page.click(&quot;text=Click for JS Prompt&quot;);
+<span class="w">            </span><span class="c1">// --- Handle Prompt with input ---</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">onceDialog</span><span class="p">(</span><span class="n">dialog</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Prompt Text: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dialog</span><span class="p">.</span><span class="na">message</span><span class="p">());</span>
+<span class="w">                </span><span class="n">dialog</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="s">"PlaywrightUser"</span><span class="p">);</span><span class="w"> </span><span class="c1">// enter text</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"text=Click for JS Prompt"</span><span class="p">);</span>
 
-            // --- Handle BeforeUnload ---
-            page.onceDialog(dialog -&gt; {
-                System.out.println(&quot;BeforeUnload triggered&quot;);
-                dialog.accept();
-            });
-            page.evaluate(&quot;() =&gt; window.onbeforeunload = () =&gt; true;&quot;);
-            page.reload();
+<span class="w">            </span><span class="c1">// --- Handle BeforeUnload ---</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">onceDialog</span><span class="p">(</span><span class="n">dialog</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"BeforeUnload triggered"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">dialog</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">evaluate</span><span class="p">(</span><span class="s">"() =&gt; window.onbeforeunload = () =&gt; true;"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">reload</span><span class="p">();</span>
 
-            browser.close();
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">browser</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="notes">🔑 Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5812,6 +5814,10 @@ public class DialogsExample {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5614,64 +5614,64 @@
 <p>This guide explains everything with <strong>small feature examples + exact execution output</strong> so you can visually understand behavior.</p>
 <hr />
 <h1 id="tag-example">✅ Tag Example<a class="headerlink" href="#tag-example" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@smoke
-Feature: Login
+<p><div class="highlight"><pre><span></span><code><span class="nd">@smoke</span>
+<span class="nl">Feature</span><span class="p">:</span><span class="w"> </span><span class="n">Login</span>
 
-  Scenario: Valid login
+<span class="w">  </span><span class="nl">Scenario</span><span class="p">:</span><span class="w"> </span><span class="n">Valid</span><span class="w"> </span><span class="n">login</span>
 
-  @regression
-  Scenario: Invalid login
-</code></pre>
-<p>Run</p>
-<pre><code class="language-text">tags = &quot;@smoke&quot;
-</code></pre>
-<p>Output</p>
-<pre><code class="language-text">Internally feature level tag applied to scenario
+<span class="w">  </span><span class="nd">@regression</span>
+<span class="w">  </span><span class="n">Scenario</span><span class="p">:</span><span class="w"> </span><span class="n">Invalid</span><span class="w"> </span><span class="n">login</span>
+</code></pre></div>
+Run
+<div class="highlight"><pre><span></span><code>tags = "@smoke"
+</code></pre></div></p>
+<p>Output
+<div class="highlight"><pre><span></span><code>Internally feature level tag applied to scenario
 Scenario: Valid login
 Scenario: Invalid login
-</code></pre>
+</code></pre></div></p>
 <h1 id="hook-tag-combined-examples-clear-practical">✅ Hook + Tag Combined Examples (Clear + Practical)<a class="headerlink" href="#hook-tag-combined-examples-clear-practical" title="Permanent link">&para;</a></h1>
 <h2 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">@smoke
-Feature: Login
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span>
+<span class="k">Feature:</span><span class="nf"> Login</span>
 
-  Scenario: Login test
-    Given user opens app
-</code></pre>
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Login test</span>
+<span class="k">    Given </span><span class="nf">user opens app</span>
+</code></pre></div>
 <hr />
 <h2 id="hook">Hook<a class="headerlink" href="#hook" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Before(&quot;@smoke&quot;)
-public void smokeSetup() {
-    System.out.println(&quot;Smoke setup&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="s">"@smoke"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">smokeSetup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Smoke setup"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="execution-order">✅ Execution Order<a class="headerlink" href="#execution-order" title="Permanent link">&para;</a></h2>
-<pre><code>Smoke setup
+<div class="highlight"><pre><span></span><code>Smoke setup
 Given user opens app
-</code></pre>
+</code></pre></div>
 <p>👉 Runs ONLY for @smoke scenarios</p>
 <hr />
 <hr />
 <h1 id="multiple-tag-hook-example">✅ Multiple Tag Hook Example<a class="headerlink" href="#multiple-tag-hook-example" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="hook_1">Hook<a class="headerlink" href="#hook_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Before(&quot;@smoke and not @api&quot;)
-public void smokeOnlyUI() {
-    System.out.println(&quot;Only UI smoke test&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="s">"@smoke and not @api"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">smokeOnlyUI</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Only UI smoke test"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="feature_1">Feature<a class="headerlink" href="#feature_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">@smoke @ui
-Scenario: UI smoke
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span><span class="nf"> </span><span class="nt">@ui</span>
+<span class="k">Scenario:</span><span class="nf"> UI smoke</span>
 
-@smoke @api
-Scenario: API smoke
-</code></pre>
+<span class="nf">@smoke @api</span>
+<span class="nf">Scenario: API smoke</span>
+</code></pre></div>
 <h2 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">&para;</a></h2>
-<pre><code>Only UI smoke test   ✔ for UI
+<div class="highlight"><pre><span></span><code>Only UI smoke test   ✔ for UI
 (no hook)            ❌ for API
-</code></pre>
+</code></pre></div>
 <p>👉 Hook runs only when BOTH conditions match</p>
 <hr />
 <hr />
@@ -5683,30 +5683,30 @@ Scenario: API smoke
 <p>Let’s understand step-by-step.</p>
 <hr />
 <h1 id="1-your-hook-code">1️⃣ Your Hook Code<a class="headerlink" href="#1-your-hook-code" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@Before(order = 1)
-public void globalSetup() {
-    System.out.println(&quot;Global setup&quot;);
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">globalSetup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Global setup"</span><span class="p">);</span>
+<span class="p">}</span>
 
-@Before(value = &quot;@smoke&quot;, order = 2)
-public void smokeSetup() {
-    System.out.println(&quot;Smoke setup&quot;);
-}
-</code></pre>
+<span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke"</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">smokeSetup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Smoke setup"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
 <h3 id="hook-1">Hook 1<a class="headerlink" href="#hook-1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Before(order = 1)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 <p><strong>Meaning</strong></p>
 <ol>
 <li>This hook runs <strong>before every scenario</strong>.</li>
 <li><code>order = 1</code> means it will run <strong>first</strong>.</li>
 </ol>
 <p>Method:</p>
-<pre><code class="language-java">public void globalSetup() {
-    System.out.println(&quot;Global setup&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">globalSetup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Global setup"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Example real usage:</p>
 <ul>
 <li>Launch browser</li>
@@ -5715,18 +5715,18 @@ public void smokeSetup() {
 </ul>
 <hr />
 <h3 id="hook-2">Hook 2<a class="headerlink" href="#hook-2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Before(value = &quot;@smoke&quot;, order = 2)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke"</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
 <p><strong>Meaning</strong></p>
 <ol>
 <li>This hook runs <strong>only for scenarios tagged with <code>@smoke</code></strong></li>
 <li><code>order = 2</code> means it runs <strong>after order 1</strong></li>
 </ol>
 <p>Method:</p>
-<pre><code class="language-java">public void smokeSetup() {
-    System.out.println(&quot;Smoke setup&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">smokeSetup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Smoke setup"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Example usage:</p>
 <ul>
 <li>Setup smoke test environment</li>
@@ -5734,7 +5734,7 @@ public void smokeSetup() {
 </ul>
 <hr />
 <h1 id="2-feature-file-example">2️⃣ Feature File Example<a class="headerlink" href="#2-feature-file-example" title="Permanent link">&para;</a></h1>
-<pre><code>Feature: Login functionality
+<div class="highlight"><pre><span></span><code>Feature: Login functionality
 
 @smoke
 Scenario: Login with valid credentials
@@ -5742,31 +5742,31 @@ Given user open login page
 When user enter username
 And user enter password
 Then user should login successfully
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="3-execution-flow">3️⃣ Execution Flow<a class="headerlink" href="#3-execution-flow" title="Permanent link">&para;</a></h1>
 <p>Since scenario has <code>@smoke</code> tag:</p>
 <p>Execution will be:</p>
-<pre><code>Global setup
+<div class="highlight"><pre><span></span><code>Global setup
 Smoke setup
 Scenario steps
-</code></pre>
+</code></pre></div>
 <p>Step-by-step:</p>
 <p>1️⃣ <code>@Before(order = 1)</code> → Runs first</p>
-<pre><code>Global setup
-</code></pre>
+<div class="highlight"><pre><span></span><code>Global setup
+</code></pre></div>
 <p>2️⃣ <code>@Before(value = "@smoke", order = 2)</code> → Runs second</p>
-<pre><code>Smoke setup
-</code></pre>
+<div class="highlight"><pre><span></span><code>Smoke setup
+</code></pre></div>
 <p>3️⃣ Scenario Steps execute</p>
-<pre><code>Given user open login page
+<div class="highlight"><pre><span></span><code>Given user open login page
 When user enter username
 Then user click login button
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="4-feature-file-with-multiple-scenarios">4️⃣ Feature File With Multiple Scenarios<a class="headerlink" href="#4-feature-file-with-multiple-scenarios" title="Permanent link">&para;</a></h1>
 <p>Example:</p>
-<pre><code>Feature: Login functionality
+<div class="highlight"><pre><span></span><code>Feature: Login functionality
 
 @smoke
 Scenario: Login with valid credentials
@@ -5784,7 +5784,7 @@ Scenario: Forgot password
 Given user open login page
 When user click forgot password
 Then reset password page should open
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="5-execution-behavior">5️⃣ Execution Behavior<a class="headerlink" href="#5-execution-behavior" title="Permanent link">&para;</a></h1>
 <table>
@@ -5812,7 +5812,7 @@ Then reset password page should open
 <hr />
 <h1 id="6-console-output">6️⃣ Console Output<a class="headerlink" href="#6-console-output" title="Permanent link">&para;</a></h1>
 <p>Execution order:</p>
-<pre><code>Scenario 1
+<div class="highlight"><pre><span></span><code>Scenario 1
 Global setup
 Smoke setup
 Scenario steps
@@ -5824,7 +5824,7 @@ Scenario steps
 Scenario 3
 Global setup
 Scenario steps
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="7-important-cucumber-hook-rules">7️⃣ Important Cucumber Hook Rules<a class="headerlink" href="#7-important-cucumber-hook-rules" title="Permanent link">&para;</a></h1>
 <p>1️⃣ <code>@Before</code> → runs <strong>before scenario</strong></p>
@@ -5833,21 +5833,21 @@ Scenario steps
 <p>4️⃣ <code>value="@tag"</code> → hook runs <strong>only for tagged scenarios</strong></p>
 <hr />
 <h1 id="8-real-selenium-example">8️⃣ Real Selenium Example<a class="headerlink" href="#8-real-selenium-example" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@Before(order = 1)
-public void setupDriver() {
-    driver = new ChromeDriver();
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setupDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="p">}</span>
 
-@Before(value=&quot;@smoke&quot;, order=2)
-public void maximizeBrowser() {
-    driver.manage().window().maximize();
-}
-</code></pre>
+<span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">"@smoke"</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">maximizeBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">maximize</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Execution for smoke test:</p>
-<pre><code>Driver setup
+<div class="highlight"><pre><span></span><code>Driver setup
 Browser maximize
 Scenario steps
-</code></pre>
+</code></pre></div>
 <hr />
 <p>✅ Since you are <strong>teaching Selenium + Cucumber candidates</strong>, I can also show a <strong>perfect interview explanation of Hooks + Before + After + Background with real framework example</strong>.</p>
 <hr />
@@ -5859,133 +5859,133 @@ Before → ascending order</p>
 <hr />
 <h2 id="enable-parallel">Enable parallel<a class="headerlink" href="#enable-parallel" title="Permanent link">&para;</a></h2>
 <h3 id="runner">Runner<a class="headerlink" href="#runner" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@Override
-@DataProvider(parallel = true)
-public Object[][] scenarios() {
-    return super.scenarios();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="nd">@DataProvider</span><span class="p">(</span><span class="n">parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">scenarios</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">scenarios</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>OR</p>
 <h3 id="pomxml">pom.xml<a class="headerlink" href="#pomxml" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;parallel&gt;methods&lt;/parallel&gt;
-&lt;threadCount&gt;3&lt;/threadCount&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;parallel&gt;</span>methods<span class="nt">&lt;/parallel&gt;</span>
+<span class="nt">&lt;threadCount&gt;</span>3<span class="nt">&lt;/threadCount&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="feature_2">Feature<a class="headerlink" href="#feature_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">@smoke Scenario: A
-@smoke Scenario: B
-@smoke Scenario: C
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span><span class="nf"> Scenario: A</span>
+<span class="nt">@smoke</span><span class="nf"> Scenario: B</span>
+<span class="nt">@smoke</span><span class="nf"> Scenario: C</span>
+</code></pre></div>
 <hr />
 <h2 id="runner_1">Runner<a class="headerlink" href="#runner_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">tags=&quot;@smoke&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">tags</span><span class="o">=</span><span class="s">"@smoke"</span>
+</code></pre></div>
 <hr />
 <h2 id="execution-parallel">✅ Execution (parallel)<a class="headerlink" href="#execution-parallel" title="Permanent link">&para;</a></h2>
-<pre><code>Thread-1 → Scenario A
+<div class="highlight"><pre><span></span><code>Thread-1 → Scenario A
 Thread-2 → Scenario B
 Thread-3 → Scenario C
-</code></pre>
+</code></pre></div>
 <p>⚠ Order NOT guaranteed</p>
 <p>Sometimes:</p>
-<pre><code>C → A → B
-</code></pre>
-<p>or any order</p>
+<p><div class="highlight"><pre><span></span><code>C → A → B
+</code></pre></div>
+or any order</p>
 <hr />
 <hr />
 <h1 id="parallel-hook-execution-example">✅ Parallel + Hook Execution Example<a class="headerlink" href="#parallel-hook-execution-example" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="hook_2">Hook<a class="headerlink" href="#hook_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Before
-public void before() {
-    System.out.println(Thread.currentThread().getName());
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">before</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
-<pre><code>Thread-1
+<div class="highlight"><pre><span></span><code>Thread-1
 Thread-2
 Thread-3
-</code></pre>
+</code></pre></div>
 <p>👉 Shows scenarios running simultaneously</p>
 <hr />
 <hr />
 <h1 id="multiple-runner-strategy-with-calling-examples">✅ Multiple Runner Strategy (with calling examples)<a class="headerlink" href="#multiple-runner-strategy-with-calling-examples" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="smokerunner">SmokeRunner<a class="headerlink" href="#smokerunner" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package runner;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">runner</span><span class="p">;</span>
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.runner.RunWith</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.junit.Cucumber</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.junit.CucumberOptions</span><span class="p">;</span>
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
+<span class="nd">@RunWith</span><span class="p">(</span><span class="n">Cucumber</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
 
-    features = &quot;src/test/resources/features&quot;,   // path of feature files
+<span class="w">    </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span><span class="w">   </span><span class="c1">// path of feature files</span>
 
-    glue = {&quot;stepDefinitions&quot;, &quot;hooks&quot;},        // step definition &amp; hook package
+<span class="w">    </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"stepDefinitions"</span><span class="p">,</span><span class="w"> </span><span class="s">"hooks"</span><span class="p">},</span><span class="w">        </span><span class="c1">// step definition &amp; hook package</span>
 
-    plugin = {
-            &quot;pretty&quot;,
-            &quot;html:target/cucumber-reports/cucumber.html&quot;,
-            &quot;json:target/cucumber-reports/cucumber.json&quot;,
-            &quot;junit:target/cucumber-reports/cucumber.xml&quot;
-    },
+<span class="w">    </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s">"pretty"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"html:target/cucumber-reports/cucumber.html"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"json:target/cucumber-reports/cucumber.json"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"junit:target/cucumber-reports/cucumber.xml"</span>
+<span class="w">    </span><span class="p">},</span>
 
-    tags = &quot;@smoke&quot;,                            // run only smoke tests
+<span class="w">    </span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@smoke"</span><span class="p">,</span><span class="w">                            </span><span class="c1">// run only smoke tests</span>
 
-    monochrome = true,                          // cleaner console output
+<span class="w">    </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                          </span><span class="c1">// cleaner console output</span>
 
-    dryRun = false                              // true = check step mapping only
-)
+<span class="w">    </span><span class="n">dryRun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">                              </span><span class="c1">// true = check step mapping only</span>
+<span class="p">)</span>
 
-public class SmokeRunner {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmokeRunner</span><span class="w"> </span><span class="p">{</span>
 
-}
-</code></pre>
+<span class="p">}</span>
+</code></pre></div>
 <p>Run:</p>
-<pre><code>mvn test -Dtest=SmokeRunner
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn test -Dtest=SmokeRunner
+</code></pre></div>
 <p>Runs → only smoke tests</p>
 <hr />
 <h2 id="regressionrunner">RegressionRunner<a class="headerlink" href="#regressionrunner" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package runner;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">runner</span><span class="p">;</span>
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.runner.RunWith</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.junit.Cucumber</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.junit.CucumberOptions</span><span class="p">;</span>
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
+<span class="nd">@RunWith</span><span class="p">(</span><span class="n">Cucumber</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
 
-    features = &quot;src/test/resources/features&quot;,
+<span class="w">    </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
 
-    glue = {&quot;stepDefinitions&quot;, &quot;hooks&quot;},
+<span class="w">    </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"stepDefinitions"</span><span class="p">,</span><span class="w"> </span><span class="s">"hooks"</span><span class="p">},</span>
 
-    plugin = {
-            &quot;pretty&quot;,
-            &quot;html:target/cucumber-reports/cucumber.html&quot;,
-            &quot;json:target/cucumber-reports/cucumber.json&quot;
-    },
+<span class="w">    </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s">"pretty"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"html:target/cucumber-reports/cucumber.html"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"json:target/cucumber-reports/cucumber.json"</span>
+<span class="w">    </span><span class="p">},</span>
 
-    tags = &quot;@regression&quot;,
+<span class="w">    </span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@regression"</span><span class="p">,</span>
 
-    monochrome = true,
+<span class="w">    </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 
-    dryRun = false
-)
+<span class="w">    </span><span class="n">dryRun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">)</span>
 
-public class RegressionRunner {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RegressionRunner</span><span class="w"> </span><span class="p">{</span>
 
-}
-</code></pre>
+<span class="p">}</span>
+</code></pre></div>
 <p>Runs → only regression tests</p>
 <hr />
 <h2 id="fullsuiterunner">FullSuiteRunner<a class="headerlink" href="#fullsuiterunner" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@CucumberOptions(tags=&quot;not @wip&quot;)
-public class FullSuiteRunner {}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="s">"not @wip"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FullSuiteRunner</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
 <p>Runs → everything except work-in-progress</p>
 <hr />
 <h2 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h2>
@@ -5998,23 +5998,23 @@ public class FullSuiteRunner {}
 <h1 id="full-execution-timeline-example">✅ Full Execution Timeline Example<a class="headerlink" href="#full-execution-timeline-example" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="hooks_1">Hooks<a class="headerlink" href="#hooks_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Before(order = 1)  globalSetup
-@Before(order = 2)  smokeSetup
-@After(order = 2)   smokeCleanup
-@After(order = 1)   globalCleanup
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">  </span><span class="n">globalSetup</span>
+<span class="nd">@Before</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="n">smokeSetup</span>
+<span class="nd">@After</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="n">smokeCleanup</span>
+<span class="nd">@After</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">   </span><span class="n">globalCleanup</span>
+</code></pre></div>
 <h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">@smoke
-Scenario: Test
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">@smoke</span>
+<span class="k">Scenario:</span><span class="nf"> Test</span>
+</code></pre></div>
 <hr />
 <h2 id="actual-flow">✅ Actual Flow<a class="headerlink" href="#actual-flow" title="Permanent link">&para;</a></h2>
-<pre><code>globalSetup
+<div class="highlight"><pre><span></span><code>globalSetup
 smokeSetup
 Scenario steps
 smokeCleanup
 globalCleanup
-</code></pre>
+</code></pre></div>
 <hr />
 <p>👉 After hooks run in reverse order</p>
 <hr />
@@ -6032,8 +6032,8 @@ globalCleanup
 <hr />
 <h3 id="q4-can-hooks-use-tags">Q4. Can hooks use tags?<a class="headerlink" href="#q4-can-hooks-use-tags" title="Permanent link">&para;</a></h3>
 <p>👉 Yes</p>
-<pre><code class="language-java">@Before(&quot;@smoke&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="s">"@smoke"</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h3 id="q5-order-of-hooks">Q5. Order of hooks?<a class="headerlink" href="#q5-order-of-hooks" title="Permanent link">&para;</a></h3>
 <p>👉 Before → ascending<br />
@@ -6102,6 +6102,10 @@ globalCleanup
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

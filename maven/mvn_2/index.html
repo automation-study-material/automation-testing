@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5639,17 +5639,17 @@
 <h1 id="2-why-did-maven-introduce-lifecycle">2. Why Did Maven Introduce Lifecycle?<a class="headerlink" href="#2-why-did-maven-introduce-lifecycle" title="Permanent link">&para;</a></h1>
 <p>Imagine you're developing an Appium automation framework.</p>
 <p>Your project contains:</p>
-<pre><code class="language-text">Appium Framework
+<div class="highlight"><pre><span></span><code>Appium Framework
 
 ├── DriverFactory
 ├── WaitUtils
 ├── ConfigReader
 ├── PageObjects
 └── LoginTest
-</code></pre>
+</code></pre></div>
 <p>Before Maven, you had to perform every build step manually.</p>
 <p>Example:</p>
-<pre><code class="language-text">Write Code
+<div class="highlight"><pre><span></span><code>Write Code
      │
 Compile Java
      │
@@ -5662,7 +5662,7 @@ Create JAR
 Copy JAR
      │
 Upload JAR
-</code></pre>
+</code></pre></div>
 <p>Every developer performed these steps differently.</p>
 <p>This caused problems.</p>
 <hr />
@@ -5674,7 +5674,7 @@ Upload JAR
 <p>❌ Manual deployment mistakes.</p>
 <p>❌ Every project had a different build process.</p>
 <p>Example:</p>
-<pre><code class="language-text">Developer A
+<div class="highlight"><pre><span></span><code>Developer A
 
 Compile
 
@@ -5711,13 +5711,13 @@ Deploy
 Developer C
 
 Package Only
-</code></pre>
+</code></pre></div>
 <p>No standardization.</p>
 <hr />
 <h1 id="mavens-solution">Maven's Solution<a class="headerlink" href="#mavens-solution" title="Permanent link">&para;</a></h1>
 <p>Maven introduced a standard lifecycle.</p>
 <p>Every developer follows exactly the same build process.</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
 
 ↓
 
@@ -5742,7 +5742,7 @@ install
 ↓
 
 deploy
-</code></pre>
+</code></pre></div>
 <p>Every project follows this sequence.</p>
 <hr />
 <h1 id="3-understanding-lifecycle-with-a-real-world-example">3. Understanding Lifecycle with a Real-World Example<a class="headerlink" href="#3-understanding-lifecycle-with-a-real-world-example" title="Permanent link">&para;</a></h1>
@@ -5752,7 +5752,7 @@ deploy
 <p>Can you install windows before building the walls?</p>
 <p>❌ No.</p>
 <p>Everything must happen in order.</p>
-<pre><code class="language-text">Foundation
+<div class="highlight"><pre><span></span><code>Foundation
       │
       ▼
 Walls
@@ -5768,14 +5768,14 @@ Painting
       │
       ▼
 Furniture
-</code></pre>
+</code></pre></div>
 <p>Exactly the same principle is used in Maven.</p>
 <p>You cannot package code before compiling it.</p>
 <p>You cannot deploy code before packaging it.</p>
 <p>Everything follows a fixed order.</p>
 <hr />
 <h1 id="4-maven-lifecycle-architecture">4. Maven Lifecycle Architecture<a class="headerlink" href="#4-maven-lifecycle-architecture" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">                Developer
+<div class="highlight"><pre><span></span><code>                Developer
 
                      │
 
@@ -5830,11 +5830,11 @@ Furniture
      ▼
 
  deploy
-</code></pre>
+</code></pre></div>
 <p>Notice something important.</p>
 <p>You only executed:</p>
-<pre><code class="language-bash">mvn package
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>package
+</code></pre></div>
 <p>But Maven automatically executed:</p>
 <ul>
 <li>validate</li>
@@ -5847,10 +5847,10 @@ Furniture
 <h1 id="important-rule">Important Rule<a class="headerlink" href="#important-rule" title="Permanent link">&para;</a></h1>
 <p>Every Maven phase automatically executes all previous phases.</p>
 <p>Example:</p>
-<pre><code class="language-bash">mvn package
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>package
+</code></pre></div>
 <p>Internally becomes</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
 
 ↓
 
@@ -5863,12 +5863,12 @@ test
 ↓
 
 package
-</code></pre>
+</code></pre></div>
 <p>Similarly</p>
-<pre><code class="language-bash">mvn install
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>install
+</code></pre></div>
 <p>Internally becomes</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
 
 ↓
 
@@ -5889,33 +5889,33 @@ verify
 ↓
 
 install
-</code></pre>
+</code></pre></div>
 <p>You never execute every phase manually.</p>
 <hr />
 <h1 id="5-three-maven-lifecycles">5. Three Maven Lifecycles<a class="headerlink" href="#5-three-maven-lifecycles" title="Permanent link">&para;</a></h1>
 <p>Maven actually provides three lifecycles.</p>
-<pre><code class="language-text">Clean Lifecycle
+<div class="highlight"><pre><span></span><code>Clean Lifecycle
 
 Default Lifecycle
 
 Site Lifecycle
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="clean-lifecycle">Clean Lifecycle<a class="headerlink" href="#clean-lifecycle" title="Permanent link">&para;</a></h2>
 <p>Purpose:</p>
 <p>Clean previously generated files.</p>
 <p>Command:</p>
-<pre><code class="language-bash">mvn clean
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean
+</code></pre></div>
 <p>Deletes:</p>
-<pre><code class="language-text">target/
-</code></pre>
+<div class="highlight"><pre><span></span><code>target/
+</code></pre></div>
 <p>Nothing else.</p>
 <hr />
 <h2 id="default-lifecycle-most-important">Default Lifecycle (Most Important)<a class="headerlink" href="#default-lifecycle-most-important" title="Permanent link">&para;</a></h2>
 <p>This is the lifecycle used every day.</p>
 <p>Contains phases like:</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
 
 compile
 
@@ -5928,28 +5928,28 @@ verify
 install
 
 deploy
-</code></pre>
+</code></pre></div>
 <p>Almost every Maven command belongs here.</p>
 <hr />
 <h2 id="site-lifecycle">Site Lifecycle<a class="headerlink" href="#site-lifecycle" title="Permanent link">&para;</a></h2>
 <p>Used for generating documentation.</p>
 <p>Example:</p>
-<pre><code class="language-bash">mvn site
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>site
+</code></pre></div>
 <p>Produces</p>
-<pre><code class="language-text">Project Documentation
+<div class="highlight"><pre><span></span><code>Project Documentation
 
 Reports
 
 JavaDoc
-</code></pre>
+</code></pre></div>
 <p>Rarely used in automation frameworks.</p>
 <hr />
 <h1 id="6-why-does-maven-use-lifecycle">6. Why Does Maven Use Lifecycle?<a class="headerlink" href="#6-why-does-maven-use-lifecycle" title="Permanent link">&para;</a></h1>
 <p>Suppose Maven had no lifecycle.</p>
 <p>Every developer would execute commands randomly.</p>
 <p>Example</p>
-<pre><code class="language-text">Package
+<div class="highlight"><pre><span></span><code>Package
 
 ↓
 
@@ -5962,7 +5962,7 @@ Deploy
 ↓
 
 Test
-</code></pre>
+</code></pre></div>
 <p>Would this work?</p>
 <p>No.</p>
 <p>Because packaging requires compiled classes.</p>
@@ -5972,12 +5972,12 @@ Test
 <hr />
 <h1 id="7-internal-working">7. Internal Working<a class="headerlink" href="#7-internal-working" title="Permanent link">&para;</a></h1>
 <p>Suppose you execute</p>
-<pre><code class="language-bash">mvn install
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>install
+</code></pre></div>
 <p>What actually happens?</p>
 <p>Many beginners think Maven directly installs the project.</p>
 <p>Actually Maven performs:</p>
-<pre><code class="language-text">Read pom.xml
+<div class="highlight"><pre><span></span><code>Read pom.xml
 
       │
 
@@ -6020,11 +6020,11 @@ Verify Package
       ▼
 
 Copy JAR to .m2 Repository
-</code></pre>
+</code></pre></div>
 <p>Only then does the command complete.</p>
 <hr />
 <h1 id="8-complete-lifecycle-flow">8. Complete Lifecycle Flow<a class="headerlink" href="#8-complete-lifecycle-flow" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">                Write Java Code
+<div class="highlight"><pre><span></span><code>                Write Java Code
 
                         │
 
@@ -6079,13 +6079,13 @@ Copy JAR to .m2 Repository
                         ▼
 
              Local Maven Repository
-</code></pre>
+</code></pre></div>
 <p>Notice that Maven never jumps directly to the install phase.</p>
 <hr />
 <h1 id="9-why-is-lifecycle-important">9. Why is Lifecycle Important?<a class="headerlink" href="#9-why-is-lifecycle-important" title="Permanent link">&para;</a></h1>
 <p>Imagine 5 developers working together.</p>
 <p>Without Maven:</p>
-<pre><code class="language-text">Developer A
+<div class="highlight"><pre><span></span><code>Developer A
 
 ↓
 
@@ -6114,13 +6114,13 @@ Developer C
 ↓
 
 Another Process
-</code></pre>
+</code></pre></div>
 <p>Result:</p>
 <p>Build failures.</p>
 <p>Different JARs.</p>
 <p>Version mismatch.</p>
 <p>Now with Maven.</p>
-<pre><code class="language-text">Developer A
+<div class="highlight"><pre><span></span><code>Developer A
 
 ↓
 
@@ -6141,13 +6141,13 @@ Developer C
 ↓
 
 mvn install
-</code></pre>
+</code></pre></div>
 <p>Every machine produces exactly the same build.</p>
 <p>This is called <strong>Build Standardization</strong>.</p>
 <hr />
 <h1 id="10-real-enterprise-example">10. Real Enterprise Example<a class="headerlink" href="#10-real-enterprise-example" title="Permanent link">&para;</a></h1>
 <p>Suppose Adobe develops an automation framework.</p>
-<pre><code class="language-text">Automation Framework
+<div class="highlight"><pre><span></span><code>Automation Framework
 
 ↓
 
@@ -6164,13 +6164,13 @@ PageObjects
 ↓
 
 BaseTest
-</code></pre>
+</code></pre></div>
 <p>Developer writes code.</p>
 <p>Runs:</p>
-<pre><code class="language-bash">mvn deploy
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>deploy
+</code></pre></div>
 <p>Internally Maven performs:</p>
-<pre><code class="language-text">Validate
+<div class="highlight"><pre><span></span><code>Validate
 
 ↓
 
@@ -6191,42 +6191,42 @@ Install Locally
 ↓
 
 Upload to Artifactory
-</code></pre>
+</code></pre></div>
 <p>Another team simply adds:</p>
-<pre><code class="language-xml">&lt;dependency&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
 
-&lt;groupId&gt;com.adobe.mobile&lt;/groupId&gt;
+<span class="nt">&lt;groupId&gt;</span>com.adobe.mobile<span class="nt">&lt;/groupId&gt;</span>
 
-&lt;artifactId&gt;automation-framework&lt;/artifactId&gt;
+<span class="nt">&lt;artifactId&gt;</span>automation-framework<span class="nt">&lt;/artifactId&gt;</span>
 
-&lt;version&gt;2.0&lt;/version&gt;
+<span class="nt">&lt;version&gt;</span>2.0<span class="nt">&lt;/version&gt;</span>
 
-&lt;/dependency&gt;
-</code></pre>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <p>The framework is automatically downloaded.</p>
 <hr />
 <h1 id="11-key-concepts-to-remember">11. Key Concepts to Remember<a class="headerlink" href="#11-key-concepts-to-remember" title="Permanent link">&para;</a></h1>
 <h2 id="lifecycle-is-not-a-command">Lifecycle is NOT a Command<a class="headerlink" href="#lifecycle-is-not-a-command" title="Permanent link">&para;</a></h2>
 <p>Many beginners think:</p>
-<pre><code class="language-bash">mvn lifecycle
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>lifecycle
+</code></pre></div>
 <p>There is no such command.</p>
 <p>Lifecycle is a <strong>concept</strong>.</p>
 <p>Commands execute phases within the lifecycle.</p>
 <p>Example:</p>
-<pre><code class="language-bash">mvn compile
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>compile
+</code></pre></div>
 <p>Runs the <strong>compile phase</strong>.</p>
 <hr />
 <h2 id="phase-is-not-a-plugin">Phase is NOT a Plugin<a class="headerlink" href="#phase-is-not-a-plugin" title="Permanent link">&para;</a></h2>
 <p>A phase is just a step.</p>
 <p>Example:</p>
-<pre><code class="language-text">compile
-</code></pre>
+<div class="highlight"><pre><span></span><code>compile
+</code></pre></div>
 <p>The actual compilation is performed by the <strong>Maven Compiler Plugin</strong>.</p>
 <p>Similarly</p>
-<pre><code class="language-text">test
-</code></pre>
+<div class="highlight"><pre><span></span><code>test
+</code></pre></div>
 <p>is executed using the <strong>Surefire Plugin</strong>.</p>
 <p>We'll discuss plugins later.</p>
 <hr />
@@ -6270,7 +6270,8 @@ Upload to Artifactory
 <li>Lifecycle standardizes builds across all developers and environments.</li>
 <li>Commands like <code>mvn package</code>, <code>mvn install</code>, and <code>mvn deploy</code> trigger different phases of the same lifecycle, ensuring a consistent and reliable build process.</li>
 </ul>
-<pre><code></code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 
 
 
@@ -6324,6 +6325,10 @@ Upload to Artifactory
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

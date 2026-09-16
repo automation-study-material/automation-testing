@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5762,27 +5762,27 @@
 </ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <h4 id="testng-style-test">TestNG Style Test<a class="headerlink" href="#testng-style-test" title="Permanent link">&para;</a></h4>
-<pre><code class="language-java">@Test
-public void loginTest() {
-    driver.findElement(By.id(&quot;username&quot;)).sendKeys(&quot;admin&quot;);
-    driver.findElement(By.id(&quot;password&quot;)).sendKeys(&quot;1234&quot;);
-    driver.findElement(By.id(&quot;login&quot;)).click();
-    Assert.assertTrue(driver.getTitle().contains(&quot;Dashboard&quot;));
-}
-````
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"username"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"admin"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"password"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"1234"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">)).</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertTrue</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">().</span><span class="na">contains</span><span class="p">(</span><span class="s">"Dashboard"</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="err">````</span>
 
-Only technical users understand this.
+<span class="n">Only</span><span class="w"> </span><span class="n">technical</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">understand</span><span class="w"> </span><span class="k">this</span><span class="p">.</span>
 
 
 
-#### BDD (Cucumber) Style
+<span class="err">####</span><span class="w"> </span><span class="n">BDD</span><span class="w"> </span><span class="p">(</span><span class="n">Cucumber</span><span class="p">)</span><span class="w"> </span><span class="n">Style</span>
 
-```gherkin
-Scenario: Successful login
-  Given user is on login page
-  When user enters username &quot;admin&quot; and password &quot;1234&quot;
-  Then user should see dashboard page
-</code></pre>
+<span class="err">```</span><span class="n">gherkin</span>
+<span class="nl">Scenario</span><span class="p">:</span><span class="w"> </span><span class="n">Successful</span><span class="w"> </span><span class="n">login</span>
+<span class="w">  </span><span class="n">Given</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="n">page</span>
+<span class="w">  </span><span class="n">When</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">enters</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="s">"admin"</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="s">"1234"</span>
+<span class="w">  </span><span class="n">Then</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">dashboard</span><span class="w"> </span><span class="n">page</span>
+</code></pre></div>
 <p>Now <strong>Business, QA, and Developers all understand it</strong>.</p>
 <hr />
 <h1 id="2-advantages-of-bdd-over-testng">2. Advantages of BDD Over TestNG<a class="headerlink" href="#2-advantages-of-bdd-over-testng" title="Permanent link">&para;</a></h1>
@@ -5835,18 +5835,18 @@ Scenario: Successful login
 <hr />
 <h1 id="3-example-framework-structure">3. Example Framework Structure<a class="headerlink" href="#3-example-framework-structure" title="Permanent link">&para;</a></h1>
 <h3 id="testng">TestNG<a class="headerlink" href="#testng" title="Permanent link">&para;</a></h3>
-<pre><code>LoginTest.java
+<div class="highlight"><pre><span></span><code>LoginTest.java
 SignupTest.java
 PaymentTest.java
-</code></pre>
+</code></pre></div>
 <p>Tests are written only in <strong>Java classes</strong>.</p>
 <hr />
 <h3 id="bdd">BDD<a class="headerlink" href="#bdd" title="Permanent link">&para;</a></h3>
-<pre><code>features/
+<div class="highlight"><pre><span></span><code>features/
    login.feature
    signup.feature
    payment.feature
-</code></pre>
+</code></pre></div>
 <p>Feature files describe <strong>system behavior</strong>.</p>
 <hr />
 <h1 id="4-key-components-of-bdd">4. Key Components of BDD<a class="headerlink" href="#4-key-components-of-bdd" title="Permanent link">&para;</a></h1>
@@ -5857,14 +5857,14 @@ PaymentTest.java
 <li><strong>Runner Class</strong> → Executes scenarios</li>
 <li><strong>Gherkin Keywords</strong></li>
 </ol>
-<pre><code>Feature
+<div class="highlight"><pre><span></span><code>Feature
 Scenario
 Given
 When
 Then
 And
 But
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="5-when-to-use-bdd">5. When to Use BDD<a class="headerlink" href="#5-when-to-use-bdd" title="Permanent link">&para;</a></h1>
 <p>BDD is useful when:</p>
@@ -5886,8 +5886,8 @@ But
 <hr />
 <h1 id="7-best-practice-in-industry">7. Best Practice in Industry<a class="headerlink" href="#7-best-practice-in-industry" title="Permanent link">&para;</a></h1>
 <p>Most Selenium automation frameworks use:</p>
-<pre><code>Cucumber + TestNG + Selenium
-</code></pre>
+<div class="highlight"><pre><span></span><code>Cucumber + TestNG + Selenium
+</code></pre></div>
 <p>Where:</p>
 <ul>
 <li><strong>Cucumber</strong> → Behavior scenarios</li>
@@ -5948,6 +5948,10 @@ But
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

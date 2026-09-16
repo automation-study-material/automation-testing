@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5597,7 +5597,7 @@
 <h1 id="selenium-config-override-guide-enterprise-ready">🚀 Selenium Config Override Guide (Enterprise Ready)<a class="headerlink" href="#selenium-config-override-guide-enterprise-ready" title="Permanent link">&para;</a></h1>
 <hr />
 <h1 id="architecture-selenium-perspective">🧠 Architecture (Selenium Perspective)<a class="headerlink" href="#architecture-selenium-perspective" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">config.properties (defaults)
+<div class="highlight"><pre><span></span><code>config.properties (defaults)
         ↓
 CLI -D overrides
         ↓
@@ -5608,186 +5608,185 @@ DriverFactory (create WebDriver)
 Hooks (@Before / @After)
         ↓
 Tests
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="step-1-configproperties-default-values">✅ Step 1 — config.properties (Default values)<a class="headerlink" href="#step-1-configproperties-default-values" title="Permanent link">&para;</a></h1>
 <p>📁 src/test/resources/config.properties</p>
-<pre><code class="language-properties">browser=chrome
-url=https://google.com
-headless=false
-timeout=10
-env=qa
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="na">browser</span><span class="o">=</span><span class="s">chrome</span>
+<span class="na">url</span><span class="o">=</span><span class="s">https://google.com</span>
+<span class="na">headless</span><span class="o">=</span><span class="s">false</span>
+<span class="na">timeout</span><span class="o">=</span><span class="s">10</span>
+<span class="na">env</span><span class="o">=</span><span class="s">qa</span>
+</code></pre></div>
 <p>These are fallback defaults.</p>
 <hr />
 <h1 id="step-2-configmanager-override-logic">✅ Step 2 — ConfigManager (Override Logic)<a class="headerlink" href="#step-2-configmanager-override-logic" title="Permanent link">&para;</a></h1>
 <h2 id="configmanagerjava">🔥 ConfigManager.java<a class="headerlink" href="#configmanagerjava" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">utils</span><span class="p">;</span>
 
-import java.io.FileInputStream;
-import java.util.Properties;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileInputStream</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Properties</span><span class="p">;</span>
 
-public class ConfigManager {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConfigManager</span><span class="w"> </span><span class="p">{</span>
 
-    private static Properties prop = new Properties();
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Properties</span><span class="w"> </span><span class="n">prop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Properties</span><span class="p">();</span>
 
-    // load config file once
-    static {
-        try {
-            prop.load(new FileInputStream(&quot;src/test/resources/config.properties&quot;));
-        } catch (Exception e) {
-            System.out.println(&quot;config.properties not found&quot;);
-        }
-    }
+<span class="w">    </span><span class="c1">// load config file once</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">prop</span><span class="p">.</span><span class="na">load</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">"src/test/resources/config.properties"</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"config.properties not found"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // CLI &gt; config
-    public static String get(String key) {
-        String cli = System.getProperty(key);
+<span class="w">    </span><span class="c1">// CLI &gt; config</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">cli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
 
-        if (cli != null &amp;&amp; !cli.isEmpty()) {
-            return cli;
-        }
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cli</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">cli</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">cli</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        return prop.getProperty(key);
-    }
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">prop</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static int getInt(String key) {
-        return Integer.parseInt(get(key));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getInt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static boolean getBoolean(String key) {
-        return Boolean.parseBoolean(get(key));
-    }
-}
-
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">getBoolean</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Boolean</span><span class="p">.</span><span class="na">parseBoolean</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="override-logic-explained">🧠 Override Logic Explained<a class="headerlink" href="#override-logic-explained" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">System.getProperty(key, prop.getProperty(key));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">prop</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
+</code></pre></div>
 <p>Priority:</p>
-<pre><code>CLI (-D)  → highest
+<div class="highlight"><pre><span></span><code>CLI (-D)  → highest
 config file → fallback
 hardcoded → last
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="step-3-driverfactory">✅ Step 3 — DriverFactory<a class="headerlink" href="#step-3-driverfactory" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">package factory;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">factory</span><span class="p">;</span>
 
-import utils.ConfigManager;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
+<span class="kn">import</span><span class="w"> </span><span class="nn">utils.ConfigManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.firefox.FirefoxDriver</span><span class="p">;</span>
 
-import java.time.Duration;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.Duration</span><span class="p">;</span>
 
-public class DriverFactory {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverFactory</span><span class="w"> </span><span class="p">{</span>
 
-    private static ThreadLocal&lt;WebDriver&gt; driver = new ThreadLocal&lt;&gt;();
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">WebDriver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    public static void initDriver() {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        String browser = ConfigManager.get(&quot;browser&quot;);
-        boolean headless = ConfigManager.getBoolean(&quot;headless&quot;);
-        int timeout = ConfigManager.getInt(&quot;timeout&quot;);
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConfigManager</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"browser"</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">headless</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConfigManager</span><span class="p">.</span><span class="na">getBoolean</span><span class="p">(</span><span class="s">"headless"</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConfigManager</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"timeout"</span><span class="p">);</span>
 
-        switch (browser.toLowerCase()) {
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">browser</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 
-            case &quot;chrome&quot;:
-                ChromeOptions options = new ChromeOptions();
-                if (headless) options.addArguments(&quot;--headless=new&quot;);
-                driver.set(new ChromeDriver(options));
-                break;
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"chrome"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">ChromeOptions</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">headless</span><span class="p">)</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">"--headless=new"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">options</span><span class="p">));</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
 
-            case &quot;firefox&quot;:
-                driver.set(new FirefoxDriver());
-                break;
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"firefox"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">());</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
 
-            default:
-                throw new RuntimeException(&quot;Invalid browser: &quot; + browser);
-        }
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">"Invalid browser: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">browser</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
-        driver.get().manage().window().maximize();
-        driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
-    }
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">maximize</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">manage</span><span class="p">().</span><span class="na">timeouts</span><span class="p">().</span><span class="na">implicitlyWait</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="n">timeout</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static WebDriver getDriver() {
-        return driver.get();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">getDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static void quitDriver() {
-        driver.get().quit();
-        driver.remove();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">quitDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="step-4-hooks">✅ Step 4 — Hooks<a class="headerlink" href="#step-4-hooks" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">import factory.DriverFactory;
-import io.cucumber.java.Before;
-import io.cucumber.java.After;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">factory.DriverFactory</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.Before</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.After</span><span class="p">;</span>
 
-public class Hooks {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hooks</span><span class="w"> </span><span class="p">{</span>
 
-    @Before
-    public void setUp() {
-        DriverFactory.initDriver();
-    }
+<span class="w">    </span><span class="nd">@Before</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setUp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">DriverFactory</span><span class="p">.</span><span class="na">initDriver</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @After
-    public void tearDown() {
-        DriverFactory.quitDriver();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@After</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tearDown</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">DriverFactory</span><span class="p">.</span><span class="na">quitDriver</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="step-5-use-in-steps">✅ Step 5 — Use in Steps<a class="headerlink" href="#step-5-use-in-steps" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">DriverFactory.getDriver().get(ConfigManager.get(&quot;url&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">DriverFactory</span><span class="p">.</span><span class="na">getDriver</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">ConfigManager</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"url"</span><span class="p">));</span>
+</code></pre></div>
 <hr />
 <h1 id="parallel-execution-section">🚀 Parallel Execution Section<a class="headerlink" href="#parallel-execution-section" title="Permanent link">&para;</a></h1>
 <h2 id="why-threadlocal">Why ThreadLocal?<a class="headerlink" href="#why-threadlocal" title="Permanent link">&para;</a></h2>
 <p>Each thread gets its own browser instance.</p>
-<pre><code>Thread 1 → Chrome
+<div class="highlight"><pre><span></span><code>Thread 1 → Chrome
 Thread 2 → Chrome
 Thread 3 → Chrome
-</code></pre>
+</code></pre></div>
 <p>No sharing → No flaky tests.</p>
 <h2 id="maven-parallel-config">Maven Parallel Config<a class="headerlink" href="#maven-parallel-config" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;plugin&gt;
-  &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-  &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
-  &lt;configuration&gt;
-    &lt;parallel&gt;methods&lt;/parallel&gt;
-    &lt;threadCount&gt;3&lt;/threadCount&gt;
-  &lt;/configuration&gt;
-&lt;/plugin&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;plugin&gt;</span>
+<span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;parallel&gt;</span>methods<span class="nt">&lt;/parallel&gt;</span>
+<span class="w">    </span><span class="nt">&lt;threadCount&gt;</span>3<span class="nt">&lt;/threadCount&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div>
 <p>Run:</p>
-<pre><code class="language-bash">mvn test -Dbrowser=chrome
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dbrowser<span class="o">=</span>chrome
+</code></pre></div>
 <hr />
 <h1 id="environment-based-config-switching">🚀 Environment Based Config Switching<a class="headerlink" href="#environment-based-config-switching" title="Permanent link">&para;</a></h1>
 <h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
-<pre><code>config-qa.properties
+<div class="highlight"><pre><span></span><code>config-qa.properties
 config-prod.properties
-</code></pre>
+</code></pre></div>
 <h2 id="load-dynamically">Load dynamically<a class="headerlink" href="#load-dynamically" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">String env = System.getProperty(&quot;env&quot;, &quot;qa&quot;);
-FileInputStream fis = new FileInputStream(&quot;config-&quot; + env + &quot;.properties&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span><span class="w"> </span><span class="s">"qa"</span><span class="p">);</span>
+<span class="n">FileInputStream</span><span class="w"> </span><span class="n">fis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">"config-"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">".properties"</span><span class="p">);</span>
+</code></pre></div>
 <p>Run:</p>
-<pre><code class="language-bash">mvn test -Denv=prod
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Denv<span class="o">=</span>prod
+</code></pre></div>
 <hr />
 <h1 id="jenkins-parameterized-pipeline">🚀 Jenkins Parameterized Pipeline<a class="headerlink" href="#jenkins-parameterized-pipeline" title="Permanent link">&para;</a></h1>
 <p>Pipeline:</p>
-<pre><code class="language-bash">mvn clean test -Dbrowser=${browser} -Denv=${env}
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dbrowser<span class="o">=</span><span class="si">${</span><span class="nv">browser</span><span class="si">}</span><span class="w"> </span>-Denv<span class="o">=</span><span class="si">${</span><span class="nv">env</span><span class="si">}</span>
+</code></pre></div>
 <p>Jenkins → CLI → Framework automatically</p>
 <hr />
 <h1 id="full-framework-template-recommended-structure">📁 Full Framework Template (Recommended Structure)<a class="headerlink" href="#full-framework-template-recommended-structure" title="Permanent link">&para;</a></h1>
-<pre><code>src
+<div class="highlight"><pre><span></span><code>src
  ├─ main
  ├─ test
  │   ├─ factory
@@ -5802,7 +5801,7 @@ FileInputStream fis = new FileInputStream(&quot;config-&quot; + env + &quot;.pro
  │         ├─ config.properties
  │         ├─ config-qa.properties
  │         └─ config-prod.properties
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="final-cheat-sheet">🎯 Final Cheat Sheet<a class="headerlink" href="#final-cheat-sheet" title="Permanent link">&para;</a></h1>
 <table>
@@ -5833,10 +5832,10 @@ FileInputStream fis = new FileInputStream(&quot;config-&quot; + env + &quot;.pro
 </table>
 <hr />
 <h1 id="final-rule">🏆 Final Rule<a class="headerlink" href="#final-rule" title="Permanent link">&para;</a></h1>
-<pre><code>CLI overrides everything
+<div class="highlight"><pre><span></span><code>CLI overrides everything
 config.properties provides defaults
 DriverFactory consumes final values
-</code></pre>
+</code></pre></div>
 <p>Production Ready ✔</p>
 
 
@@ -5891,6 +5890,10 @@ DriverFactory consumes final values
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5821,10 +5821,10 @@
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT name FROM dept_hr
-UNION
-SELECT name FROM dept_it;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_hr</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_it</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 UNION combines results and removes duplicates.</p>
 <p><strong>Output:</strong></p>
@@ -5890,10 +5890,10 @@ UNION combines results and removes duplicates.</p>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT name FROM dept_sales
-UNION ALL
-SELECT name FROM dept_marketing;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_sales</span>
+<span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_marketing</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5966,10 +5966,10 @@ SELECT name FROM dept_marketing;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT name FROM dept_a
-INTERSECT
-SELECT name FROM dept_b;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_a</span>
+<span class="k">INTERSECT</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_b</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 INTERSECT returns only rows present in both tables.</p>
 <p><strong>Output:</strong></p>
@@ -5990,10 +5990,10 @@ INTERSECT returns only rows present in both tables.</p>
 </table>
 <hr />
 <h3 id="q4-intersect-multiple-conditions">Q4: INTERSECT multiple conditions<a class="headerlink" href="#q4-intersect-multiple-conditions" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT emp_id, name FROM dept_a
-INTERSECT
-SELECT emp_id, name FROM dept_b;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_a</span>
+<span class="k">INTERSECT</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_b</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6016,11 +6016,11 @@ SELECT emp_id, name FROM dept_b;
 <hr />
 <h2 id="3-minus-except">3. MINUS / EXCEPT<a class="headerlink" href="#3-minus-except" title="Permanent link">&para;</a></h2>
 <h3 id="q5-employees-in-dept_a-but-not-in-dept_b">Q5: Employees in dept_a but not in dept_b<a class="headerlink" href="#q5-employees-in-dept_a-but-not-in-dept_b" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT name FROM dept_a
-MINUS
-SELECT name FROM dept_b; -- Oracle
--- EXCEPT in SQL Server
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_a</span>
+<span class="n">MINUS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_b</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Oracle</span>
+<span class="c1">-- EXCEPT in SQL Server</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6036,10 +6036,10 @@ SELECT name FROM dept_b; -- Oracle
 </table>
 <hr />
 <h3 id="q6-employees-in-dept_b-but-not-in-dept_a">Q6: Employees in dept_b but not in dept_a<a class="headerlink" href="#q6-employees-in-dept_b-but-not-in-dept_a" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT name FROM dept_b
-MINUS
-SELECT name FROM dept_a;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_b</span>
+<span class="n">MINUS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_a</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6094,14 +6094,14 @@ SELECT name FROM dept_a;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT name FROM (
-  SELECT name FROM dept_x
-  UNION
-  SELECT name FROM dept_y
-) combined
-MINUS
-SELECT name FROM dept_x;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_x</span>
+<span class="w">  </span><span class="k">UNION</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_y</span>
+<span class="p">)</span><span class="w"> </span><span class="n">combined</span>
+<span class="n">MINUS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept_x</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 Combine both tables, then remove names already in dept_x.</p>
 <p><strong>Output:</strong></p>
@@ -6166,10 +6166,10 @@ Combine both tables, then remove names already in dept_x.</p>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT name FROM source_employees
-MINUS
-SELECT name FROM target_employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_employees</span>
+<span class="n">MINUS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6185,10 +6185,10 @@ SELECT name FROM target_employees;
 </table>
 <hr />
 <h3 id="q9-except-example-sql-server">Q9: EXCEPT example (SQL Server)<a class="headerlink" href="#q9-except-example-sql-server" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT name FROM target_employees
-EXCEPT
-SELECT name FROM source_employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_employees</span>
+<span class="k">EXCEPT</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6204,18 +6204,18 @@ SELECT name FROM source_employees;
 </table>
 <hr />
 <h3 id="q10-find-common-employees-and-unique-employees-in-one-query">Q10: Find common employees and unique employees in one query<a class="headerlink" href="#q10-find-common-employees-and-unique-employees-in-one-query" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT name FROM source_employees
-INTERSECT
-SELECT name FROM target_employees; -- common
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_employees</span>
+<span class="k">INTERSECT</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_employees</span><span class="p">;</span><span class="w"> </span><span class="c1">-- common</span>
 
-SELECT name FROM source_employees
-MINUS
-SELECT name FROM target_employees; -- in source only
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_employees</span>
+<span class="n">MINUS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_employees</span><span class="p">;</span><span class="w"> </span><span class="c1">-- in source only</span>
 
-SELECT name FROM target_employees
-MINUS
-SELECT name FROM source_employees; -- in target only
-</code></pre>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">target_employees</span>
+<span class="n">MINUS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">source_employees</span><span class="p">;</span><span class="w"> </span><span class="c1">-- in target only</span>
+</code></pre></div>
 <p><strong>Output:</strong>
 <strong>Common:</strong></p>
 <table>
@@ -6312,6 +6312,10 @@ SELECT name FROM source_employees; -- in target only
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

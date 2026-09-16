@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5629,60 +5629,60 @@
 <h1 id="1-feature-level-parallel">✅ 1️⃣ Feature Level Parallel<a class="headerlink" href="#1-feature-level-parallel" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<pre><code>login.feature
+<div class="highlight"><pre><span></span><code>login.feature
 payment.feature
 search.feature
-</code></pre>
+</code></pre></div>
 <h3 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h3>
-<pre><code>Thread-1 → login.feature
+<div class="highlight"><pre><span></span><code>Thread-1 → login.feature
 Thread-2 → payment.feature
 Thread-3 → search.feature
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="pomxml">pom.xml<a class="headerlink" href="#pomxml" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;parallel&gt;classes&lt;/parallel&gt;
-&lt;threadCount&gt;3&lt;/threadCount&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;parallel&gt;</span>classes<span class="nt">&lt;/parallel&gt;</span>
+<span class="nt">&lt;threadCount&gt;</span>3<span class="nt">&lt;/threadCount&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <p>TestNG treats:</p>
-<pre><code>each feature → class
-</code></pre>
+<div class="highlight"><pre><span></span><code>each feature → class
+</code></pre></div>
 <p>So classes run parallel.</p>
 <hr />
 <hr />
 <h1 id="2-scenario-level-parallel-most-used">✅ 2️⃣ Scenario Level Parallel (Most Used)<a class="headerlink" href="#2-scenario-level-parallel-most-used" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-gherkin">Feature: Login
+<div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> Login</span>
 
-Scenario: A
-Scenario: B
-Scenario: C
-</code></pre>
+<span class="k">Scenario:</span><span class="nf"> A</span>
+<span class="nf">Scenario: B</span>
+<span class="nf">Scenario: C</span>
+</code></pre></div>
 <h3 id="goal_1">Goal<a class="headerlink" href="#goal_1" title="Permanent link">&para;</a></h3>
-<pre><code>Thread-1 → A
+<div class="highlight"><pre><span></span><code>Thread-1 → A
 Thread-2 → B
 Thread-3 → C
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="runner">Runner<a class="headerlink" href="#runner" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Override
-@DataProvider(parallel = true)
-public Object[][] scenarios() {
-    return super.scenarios();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="nd">@DataProvider</span><span class="p">(</span><span class="n">parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">scenarios</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">scenarios</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="pomxml_1">pom.xml<a class="headerlink" href="#pomxml_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xml">&lt;parallel&gt;methods&lt;/parallel&gt;
-&lt;threadCount&gt;3&lt;/threadCount&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;parallel&gt;</span>methods<span class="nt">&lt;/parallel&gt;</span>
+<span class="nt">&lt;threadCount&gt;</span>3<span class="nt">&lt;/threadCount&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="how-it-works_1">How it works<a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h2>
 <p>TestNG treats:</p>
-<pre><code>each scenario → method
-</code></pre>
+<div class="highlight"><pre><span></span><code>each scenario → method
+</code></pre></div>
 <p>So methods run parallel.</p>
 <hr />
 <hr />
@@ -5718,74 +5718,74 @@ public Object[][] scenarios() {
 <hr />
 <h1 id="complete-runner-template">✅ Complete Runner Template<a class="headerlink" href="#complete-runner-template" title="Permanent link">&para;</a></h1>
 <hr />
-<pre><code class="language-java">@CucumberOptions(
-    features = &quot;src/test/resources/features&quot;,
-    glue = {&quot;steps&quot;,&quot;hooks&quot;},
-    plugin = {&quot;pretty&quot;,&quot;summary&quot;},
-    monochrome = true
-)
-public class TestRunner extends AbstractTestNGCucumberTests {
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">    </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"steps"</span><span class="p">,</span><span class="s">"hooks"</span><span class="p">},</span>
+<span class="w">    </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"pretty"</span><span class="p">,</span><span class="s">"summary"</span><span class="p">},</span>
+<span class="w">    </span><span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestRunner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractTestNGCucumberTests</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    @DataProvider(parallel = true)
-    public Object[][] scenarios() {
-        return super.scenarios();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">scenarios</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">scenarios</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="how-to-prove-its-really-parallel-thread-logging">🔥 How to PROVE it's really parallel (Thread logging)<a class="headerlink" href="#how-to-prove-its-really-parallel-thread-logging" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="step-definition-example">Step Definition Example<a class="headerlink" href="#step-definition-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Given(&quot;application is launched&quot;)
-public void launch() {
-    System.out.println(
-        &quot;Thread: &quot; + Thread.currentThread().getName()
-    );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Given</span><span class="p">(</span><span class="s">"application is launched"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">launch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">        </span><span class="s">"Thread: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="output-example">Output Example<a class="headerlink" href="#output-example" title="Permanent link">&para;</a></h2>
-<pre><code>Thread: TestNG-PoolService-0
+<div class="highlight"><pre><span></span><code>Thread: TestNG-PoolService-0
 Thread: TestNG-PoolService-1
 Thread: TestNG-PoolService-2
-</code></pre>
+</code></pre></div>
 <p>👉 Different thread names = parallel execution</p>
 <hr />
 <hr />
 <h1 id="java-thread-basics-simple-understanding">✅ Java Thread Basics (Simple Understanding)<a class="headerlink" href="#java-thread-basics-simple-understanding" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="simple-thread-demo">Simple Thread Demo<a class="headerlink" href="#simple-thread-demo" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public class ThreadDemo {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ThreadDemo</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        Runnable task = () -&gt; {
-            System.out.println(Thread.currentThread().getName());
-        };
+<span class="w">        </span><span class="n">Runnable</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="p">};</span>
 
-        new Thread(task).start();
-        new Thread(task).start();
-        new Thread(task).start();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">task</span><span class="p">).</span><span class="na">start</span><span class="p">();</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">task</span><span class="p">).</span><span class="na">start</span><span class="p">();</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">task</span><span class="p">).</span><span class="na">start</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<pre><code>Thread-0
+<div class="highlight"><pre><span></span><code>Thread-0
 Thread-1
 Thread-2
-</code></pre>
+</code></pre></div>
 <p>👉 Multiple threads running simultaneously</p>
 <hr />
 <h2 id="sleep-demo-to-visualize-parallel">Sleep Demo (to visualize parallel)<a class="headerlink" href="#sleep-demo-to-visualize-parallel" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Runnable task = () -&gt; {
-    try {
-        System.out.println(Thread.currentThread().getName());
-        Thread.sleep(3000);
-    } catch (Exception e) {}
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Runnable</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">};</span>
+</code></pre></div>
 <p>If parallel → all finish in ~3s<br />
 If sequential → 9s</p>
 <hr />
@@ -5810,32 +5810,32 @@ If sequential → 9s</p>
 <hr />
 <h1 id="threadlocal-webdriver-example-selenium">✅ ThreadLocal WebDriver Example (Selenium)<a class="headerlink" href="#threadlocal-webdriver-example-selenium" title="Permanent link">&para;</a></h1>
 <hr />
-<pre><code class="language-java">public class DriverManager {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverManager</span><span class="w"> </span><span class="p">{</span>
 
-    private static ThreadLocal&lt;WebDriver&gt; driver = new ThreadLocal&lt;&gt;();
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">WebDriver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadLocal</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    public static void setDriver(WebDriver d) {
-        driver.set(d);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDriver</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public static WebDriver getDriver() {
-        return driver.get();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">getDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Each thread gets its own driver.</p>
 <hr />
 <hr />
 <h1 id="execution-timeline-comparison">✅ Execution Timeline Comparison<a class="headerlink" href="#execution-timeline-comparison" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="sequential">Sequential<a class="headerlink" href="#sequential" title="Permanent link">&para;</a></h2>
-<pre><code>A → B → C
+<div class="highlight"><pre><span></span><code>A → B → C
 Time = 9s
-</code></pre>
+</code></pre></div>
 <h2 id="parallel">Parallel<a class="headerlink" href="#parallel" title="Permanent link">&para;</a></h2>
-<pre><code>A B C together
+<div class="highlight"><pre><span></span><code>A B C together
 Time = 3s
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="interview-quick-answers">✅ Interview Quick Answers<a class="headerlink" href="#interview-quick-answers" title="Permanent link">&para;</a></h1>
@@ -5911,6 +5911,10 @@ ThreadLocal → safe driver  </p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

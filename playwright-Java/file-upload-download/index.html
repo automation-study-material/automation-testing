@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5701,55 +5701,55 @@
 <li>Supports single and multiple files.</li>
 </ul>
 <h3 id="upload-single-file">✅ Upload Single File<a class="headerlink" href="#upload-single-file" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
 
-public class FileUploadSingle {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileUploadSingle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            page.navigate(&quot;https://www.w3schools.com/howto/howto_html_file_upload_button.asp&quot;);
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://www.w3schools.com/howto/howto_html_file_upload_button.asp"</span><span class="p">);</span>
 
-            // Upload a single file
-            page.setInputFiles(&quot;input[type='file']&quot;, &quot;C:\\Users\\Sandesh\\Desktop\\test.txt&quot;);
+<span class="w">            </span><span class="c1">// Upload a single file</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">setInputFiles</span><span class="p">(</span><span class="s">"input[type='file']"</span><span class="p">,</span><span class="w"> </span><span class="s">"C:\\Users\\Sandesh\\Desktop\\test.txt"</span><span class="p">);</span>
 
-            // Assertion (Check if file input has value)
-            String fileName = page.inputValue(&quot;input[type='file']&quot;);
-            assert fileName.contains(&quot;test.txt&quot;);
+<span class="w">            </span><span class="c1">// Assertion (Check if file input has value)</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">inputValue</span><span class="p">(</span><span class="s">"input[type='file']"</span><span class="p">);</span>
+<span class="w">            </span><span class="k">assert</span><span class="w"> </span><span class="n">fileName</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"test.txt"</span><span class="p">);</span>
 
-            System.out.println(&quot;✅ Single File uploaded successfully&quot;);
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"✅ Single File uploaded successfully"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="upload-multiple-files">✅ Upload Multiple Files<a class="headerlink" href="#upload-multiple-files" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
 
-public class FileUploadMultiple {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileUploadMultiple</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            page.navigate(&quot;https://www.w3schools.com/howto/howto_html_file_upload_button.asp&quot;);
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://www.w3schools.com/howto/howto_html_file_upload_button.asp"</span><span class="p">);</span>
 
-            // Upload multiple files
-            page.setInputFiles(&quot;input[type='file']&quot;, new String[] {
-                &quot;C:\\Users\\Sandesh\\Desktop\\test1.txt&quot;,
-                &quot;C:\\Users\\Sandesh\\Desktop\\test2.txt&quot;
-            });
+<span class="w">            </span><span class="c1">// Upload multiple files</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">setInputFiles</span><span class="p">(</span><span class="s">"input[type='file']"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="s">"C:\\Users\\Sandesh\\Desktop\\test1.txt"</span><span class="p">,</span>
+<span class="w">                </span><span class="s">"C:\\Users\\Sandesh\\Desktop\\test2.txt"</span>
+<span class="w">            </span><span class="p">});</span>
 
-            // Assertion (Check both file names are uploaded)
-            String fileNames = page.inputValue(&quot;input[type='file']&quot;);
-            assert fileNames.contains(&quot;test1.txt&quot;) &amp;&amp; fileNames.contains(&quot;test2.txt&quot;);
+<span class="w">            </span><span class="c1">// Assertion (Check both file names are uploaded)</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">fileNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">inputValue</span><span class="p">(</span><span class="s">"input[type='file']"</span><span class="p">);</span>
+<span class="w">            </span><span class="k">assert</span><span class="w"> </span><span class="n">fileNames</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"test1.txt"</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">fileNames</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"test2.txt"</span><span class="p">);</span>
 
-            System.out.println(&quot;✅ Multiple Files uploaded successfully&quot;);
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"✅ Multiple Files uploaded successfully"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="file-download-concept">📌 File Download Concept<a class="headerlink" href="#file-download-concept" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5757,43 +5757,43 @@ public class FileUploadMultiple {
 <li>Save the downloaded file to a desired location using <code>download.saveAs()</code>.</li>
 </ul>
 <h3 id="file-download-example">✅ File Download Example<a class="headerlink" href="#file-download-example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.*;
-import java.nio.file.Paths;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span>
 
-public class FileDownloadExample {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileDownloadExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            page.navigate(&quot;https://file-examples.com/index.php/sample-documents-download/&quot;);
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://file-examples.com/index.php/sample-documents-download/"</span><span class="p">);</span>
 
-            // Wait for download event
-            Download download = page.waitForDownload(() -&gt; {
-                page.click(&quot;a[href*='sample.doc']&quot;); // sample download link
-            });
+<span class="w">            </span><span class="c1">// Wait for download event</span>
+<span class="w">            </span><span class="n">Download</span><span class="w"> </span><span class="n">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">waitForDownload</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"a[href*='sample.doc']"</span><span class="p">);</span><span class="w"> </span><span class="c1">// sample download link</span>
+<span class="w">            </span><span class="p">});</span>
 
-            // Save the file to desired location
-            download.saveAs(Paths.get(&quot;C:\\Users\\Sandesh\\Downloads\\sample.doc&quot;));
+<span class="w">            </span><span class="c1">// Save the file to desired location</span>
+<span class="w">            </span><span class="n">download</span><span class="p">.</span><span class="na">saveAs</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:\\Users\\Sandesh\\Downloads\\sample.doc"</span><span class="p">));</span>
 
-            // Assertion (Check file is downloaded successfully)
-            assert download.path() != null;
+<span class="w">            </span><span class="c1">// Assertion (Check file is downloaded successfully)</span>
+<span class="w">            </span><span class="k">assert</span><span class="w"> </span><span class="n">download</span><span class="p">.</span><span class="na">path</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 
-            System.out.println(&quot;✅ File downloaded to: &quot; + download.path());
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"✅ File downloaded to: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">download</span><span class="p">.</span><span class="na">path</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="handling-dynamic-filenames">🔹 Handling Dynamic Filenames<a class="headerlink" href="#handling-dynamic-filenames" title="Permanent link">&para;</a></h3>
-<p>If the downloaded file has a random or dynamic name, you can:</p>
-<pre><code class="language-java">Download download = page.waitForDownload(() -&gt; {
-    page.click(&quot;a.download-link&quot;);
-});
+<p>If the downloaded file has a random or dynamic name, you can:
+<div class="highlight"><pre><span></span><code><span class="n">Download</span><span class="w"> </span><span class="n">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">waitForDownload</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"a.download-link"</span><span class="p">);</span>
+<span class="p">});</span>
 
-// Save with a custom name regardless of original name
-download.saveAs(Paths.get(&quot;C:\\Users\\Sandesh\\Downloads\\myFile.docx&quot;));
-</code></pre>
+<span class="c1">// Save with a custom name regardless of original name</span>
+<span class="n">download</span><span class="p">.</span><span class="na">saveAs</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:\\Users\\Sandesh\\Downloads\\myFile.docx"</span><span class="p">));</span>
+</code></pre></div></p>
 <hr />
 <h2 id="key-notes">📌 Key Notes<a class="headerlink" href="#key-notes" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5856,6 +5856,10 @@ download.saveAs(Paths.get(&quot;C:\\Users\\Sandesh\\Downloads\\myFile.docx&quot;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

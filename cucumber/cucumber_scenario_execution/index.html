@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5691,8 +5691,8 @@
 <hr />
 <h1 id="golden-rule-very-important">📌 Golden Rule (Very Important)<a class="headerlink" href="#golden-rule-very-important" title="Permanent link">&para;</a></h1>
 <p>If you are using <strong>TestNG + Cucumber together</strong>, ALWAYS include:</p>
-<pre><code class="language-bash">-Dtest=runner.CucumberRunner
-</code></pre>
+<div class="highlight"><pre><span></span><code>-Dtest<span class="o">=</span>runner.CucumberRunner
+</code></pre></div>
 <p>Otherwise Maven may execute: - ❌ All TestNG @Test methods - ❌ All
 feature files</p>
 <hr />
@@ -5700,55 +5700,55 @@ feature files</p>
 <hr />
 <h2 id="1-run-using-tags-most-recommended">1️⃣ Run Using Tags (Most Recommended)<a class="headerlink" href="#1-run-using-tags-most-recommended" title="Permanent link">&para;</a></h2>
 <h3 id="feature-example">Feature Example<a class="headerlink" href="#feature-example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-gherkin">Feature: Login Feature
+<div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> Login Feature</span>
 
-@Smoke
-Scenario: Valid Login
-  Given User is on login page
-  When User enters &quot;admin&quot; and &quot;admin123&quot;
-  Then Login should be &quot;success&quot;
+<span class="nf">@Smoke</span>
+<span class="k">Scenario:</span><span class="nf"> Valid Login</span>
+<span class="k">  Given </span><span class="nf">User is on login page</span>
+<span class="nf">  </span><span class="k">When </span><span class="nf">User enters "</span><span class="s">admin</span><span class="nf">" and "</span><span class="s">admin123</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">Then </span><span class="nf">Login should be "</span><span class="s">success</span><span class="nf">"</span>
 
-@Regression
-Scenario: Invalid Login
-  Given User is on login page
-  When User enters &quot;admin&quot; and &quot;wrong123&quot;
-  Then Login should be &quot;failure&quot;
-</code></pre>
+<span class="nt">@Regression</span>
+<span class="k">Scenario:</span><span class="nf"> Invalid Login</span>
+<span class="k">  Given </span><span class="nf">User is on login page</span>
+<span class="nf">  </span><span class="k">When </span><span class="nf">User enters "</span><span class="s">admin</span><span class="nf">" and "</span><span class="s">wrong123</span><span class="nf">"</span>
+<span class="nf">  </span><span class="k">Then </span><span class="nf">Login should be "</span><span class="s">failure</span><span class="nf">"</span>
+</code></pre></div>
 <h3 id="runner-class-example">Runner Class Example<a class="headerlink" href="#runner-class-example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">@CucumberOptions(
-    features = &quot;src/test/resources/features&quot;,
-    glue = &quot;stepdefinitions&quot;,
-    tags = &quot;@Smoke&quot;
-)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">    </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"stepdefinitions"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@Smoke"</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>✔ Clean
 ✔ Scalable
 ✔ CI/CD Friendly</p>
 <hr />
 <h2 id="2-run-scenario-by-name">2️⃣ Run Scenario by Name<a class="headerlink" href="#2-run-scenario-by-name" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@CucumberOptions(
-    features = &quot;src/test/resources/features&quot;,
-    glue = &quot;stepdefinitions&quot;,
-    name = &quot;Valid Login&quot;
-)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">    </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"stepdefinitions"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Valid Login"</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>⚠ Not preferred in large frameworks</p>
 <hr />
 <h2 id="3-run-scenario-by-line-number">3️⃣ Run Scenario by Line Number<a class="headerlink" href="#3-run-scenario-by-line-number" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@CucumberOptions(
-    features = &quot;src/test/resources/features/Login.feature:10&quot;,
-    glue = &quot;stepdefinitions&quot;
-)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">    </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features/Login.feature:10"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"stepdefinitions"</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>✔ Useful for debugging</p>
 <hr />
 <h2 id="4-run-from-maven-command-line">4️⃣ Run from Maven Command Line<a class="headerlink" href="#4-run-from-maven-command-line" title="Permanent link">&para;</a></h2>
 <h3 id="using-tag">Using Tag<a class="headerlink" href="#using-tag" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">mvn test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;@Smoke&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.filter.tags<span class="o">=</span><span class="s2">"@Smoke"</span>
+</code></pre></div>
 <h3 id="using-scenario-name">Using Scenario Name<a class="headerlink" href="#using-scenario-name" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">mvn test -Dtest=runner.CucumberRunner -Dcucumber.filter.name=&quot;Valid Login&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.filter.name<span class="o">=</span><span class="s2">"Valid Login"</span>
+</code></pre></div>
 <hr />
 <h2 id="5-run-from-ide">5️⃣ Run from IDE<a class="headerlink" href="#5-run-from-ide" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5758,82 +5758,82 @@ Scenario: Invalid Login
 <hr />
 <h1 id="scenario-outline-execution-behavior">🎯 Scenario Outline Execution Behavior<a class="headerlink" href="#scenario-outline-execution-behavior" title="Permanent link">&para;</a></h1>
 <p>If you tag Scenario Outline:</p>
-<pre><code class="language-gherkin">@Smoke
-Scenario Outline: Login test
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">@Smoke</span>
+<span class="k">Scenario Outline:</span><span class="nf"> Login test</span>
+</code></pre></div>
 <p>👉 All example rows execute.</p>
 <p>If you want to run only one row:</p>
-<pre><code class="language-gherkin">Scenario Outline: Login test
+<div class="highlight"><pre><span></span><code><span class="k">Scenario Outline:</span><span class="nf"> Login test</span>
 
-  @Row1
-  Examples:
-    | username | password | status |
-    | admin    | admin123 | success |
-</code></pre>
+<span class="nf">  @Row1</span>
+<span class="nf">  Examples:</span>
+<span class="nf">    | username | password | status |</span>
+<span class="nf">    | admin    | admin123 | success |</span>
+</code></pre></div>
 <p>Then use:</p>
-<pre><code class="language-java">tags = &quot;@Row1&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"@Row1"</span>
+</code></pre></div>
 <hr />
 <h1 id="cucumber-maven-cli-cheat-sheet">🚀 Cucumber + Maven CLI Cheat Sheet<a class="headerlink" href="#cucumber-maven-cli-cheat-sheet" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="run-all-cucumber-tests">Run all cucumber tests<a class="headerlink" href="#run-all-cucumber-tests" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner
+</code></pre></div>
 <hr />
 <h2 id="run-single-feature-file">Run single feature file<a class="headerlink" href="#run-single-feature-file" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.features=src/test/resources/features/login.feature
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.features<span class="o">=</span>src/test/resources/features/login.feature
+</code></pre></div>
 <hr />
 <h2 id="run-multiple-feature-files">Run multiple feature files<a class="headerlink" href="#run-multiple-feature-files" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.features=login.feature,order.feature
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.features<span class="o">=</span>login.feature,order.feature
+</code></pre></div>
 <hr />
 <h2 id="run-feature-folder">Run feature folder<a class="headerlink" href="#run-feature-folder" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.features=src/test/resources/features/auth
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.features<span class="o">=</span>src/test/resources/features/auth
+</code></pre></div>
 <hr />
 <h2 id="run-specific-scenario-line-number">Run specific scenario (line number)<a class="headerlink" href="#run-specific-scenario-line-number" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.features=login.feature:25
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.features<span class="o">=</span>login.feature:25
+</code></pre></div>
 <hr />
 <h1 id="tag-based-execution">✅ Tag Based Execution<a class="headerlink" href="#tag-based-execution" title="Permanent link">&para;</a></h1>
 <h2 id="run-only-smoke">Run only @smoke<a class="headerlink" href="#run-only-smoke" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;@smoke&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.filter.tags<span class="o">=</span><span class="s2">"@smoke"</span>
+</code></pre></div>
 <hr />
 <h2 id="run-only-regression">Run only @regression<a class="headerlink" href="#run-only-regression" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;@regression&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.filter.tags<span class="o">=</span><span class="s2">"@regression"</span>
+</code></pre></div>
 <hr />
 <h2 id="run-both-tags-and">Run BOTH tags (AND)<a class="headerlink" href="#run-both-tags-and" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;@smoke and @regression&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.filter.tags<span class="o">=</span><span class="s2">"@smoke and @regression"</span>
+</code></pre></div>
 <hr />
 <h2 id="run-either-tag-or">Run either tag (OR)<a class="headerlink" href="#run-either-tag-or" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;@smoke or @regression&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.filter.tags<span class="o">=</span><span class="s2">"@smoke or @regression"</span>
+</code></pre></div>
 <hr />
 <h2 id="exclude-tag-not">Exclude tag (NOT)<a class="headerlink" href="#exclude-tag-not" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;not @slow&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.filter.tags<span class="o">=</span><span class="s2">"not @slow"</span>
+</code></pre></div>
 <hr />
 <h2 id="complex-expression">Complex expression<a class="headerlink" href="#complex-expression" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner -Dcucumber.filter.tags=&quot;(@smoke or @sanity) and not @slow&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner<span class="w"> </span>-Dcucumber.filter.tags<span class="o">=</span><span class="s2">"(@smoke or @sanity) and not @slow"</span>
+</code></pre></div>
 <hr />
 <h1 id="reporting-configuration">📊 Reporting Configuration<a class="headerlink" href="#reporting-configuration" title="Permanent link">&para;</a></h1>
 <p>Add in Runner:</p>
-<pre><code class="language-java">@CucumberOptions(
-    plugin = {
-        &quot;pretty&quot;,
-        &quot;html:target/cucumber-report.html&quot;,
-        &quot;json:target/cucumber.json&quot;
-    }
-)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@CucumberOptions</span><span class="p">(</span>
+<span class="w">    </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s">"pretty"</span><span class="p">,</span>
+<span class="w">        </span><span class="s">"html:target/cucumber-report.html"</span><span class="p">,</span>
+<span class="w">        </span><span class="s">"json:target/cucumber.json"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>Then run:</p>
-<pre><code class="language-bash">mvn clean test -Dtest=runner.CucumberRunner
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>runner.CucumberRunner
+</code></pre></div>
 <p>Reports generated inside:</p>
 <p>target/</p>
 <hr />
@@ -5912,6 +5912,10 @@ frameworks.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

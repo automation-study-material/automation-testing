@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5705,11 +5705,11 @@
 <p>What { browser } means</p>
 <p>How Playwright decides which browser to use</p>
 <p>How configuration affects test execution</p>
-<pre><code class="language-configs.js">## ✅ 1. Using { page } (Most Common)
+<div class="highlight"><pre><span></span><code>## ✅ 1. Using { page } (Most Common)
 test('@Web UI Controls', async ({ page }) =&gt; {
-  await page.goto(&quot;https://rahulshettyacademy.com/loginpagePractise/&quot;);
+  await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 });
-</code></pre>
+</code></pre></div>
 <p>✔ How it works</p>
 <p>Playwright automatically creates:</p>
 <p>a browser (from config)</p>
@@ -5720,12 +5720,12 @@ test('@Web UI Controls', async ({ page }) =&gt; {
 <p>If you do NOT configure anything, Playwright uses:</p>
 <p>Chromium (default)</p>
 <h2 id="2-using-browser-manual-control">📌 2. Using { browser } (Manual Control)<a class="headerlink" href="#2-using-browser-manual-control" title="Permanent link">&para;</a></h2>
-<pre><code class="language-test.js">test('@Web Browser Context-Validating Error login', async ({ browser }) =&gt; {
+<p><div class="highlight"><pre><span></span><code>test('@Web Browser Context-Validating Error login', async ({ browser }) =&gt; {
   const context = await browser.newContext();
   const page = await context.newPage();
 });
-</code></pre>
-<p>✔ How it works</p>
+</code></pre></div>
+✔ How it works</p>
 <p>Here you are responsible for:</p>
 <p>creating the context</p>
 <p>creating the page</p>
@@ -5746,8 +5746,8 @@ Custom context options  Limited Full control
 Simpler to write    ✔✔✔ ✔
 🚀 4. Which Browser Does { page } Use?
 ✔ It uses whatever is defined in your playwright.config.js.</p>
-<p>Example default config:</p>
-<pre><code class="language-configs.js">// playwright.config.js
+<p>Example default config:
+<div class="highlight"><pre><span></span><code>// playwright.config.js
 module.exports = {
   projects: [
     {
@@ -5756,16 +5756,16 @@ module.exports = {
     }
   ]
 };
-</code></pre>
-<p>👉 Result</p>
+</code></pre></div>
+👉 Result</p>
 <p>All { page } tests run in Chromium.</p>
-<p>📌 5. Running Tests in Multiple Browsers</p>
-<pre><code class="language-configs.js">projects: [
+<p>📌 5. Running Tests in Multiple Browsers
+<div class="highlight"><pre><span></span><code>projects: [
   { name: 'chromium', use: { browserName: 'chromium' } },
   { name: 'firefox', use: { browserName: 'firefox' } },
   { name: 'webkit', use: { browserName: 'webkit' } }
 ]
-</code></pre>
+</code></pre></div></p>
 <p>Running:</p>
 <p>npx playwright test</p>
 <p>👉 { page } tests will run in all three browsers automatically.
@@ -5835,6 +5835,10 @@ If no project is configured, it uses Chromium.
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

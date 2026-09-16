@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5801,12 +5801,12 @@ Browser
 <hr />
 <h2 id="7-cleaner-capabilities-handling">7️⃣ Cleaner Capabilities Handling<a class="headerlink" href="#7-cleaner-capabilities-handling" title="Permanent link">&para;</a></h2>
 <h3 id="old-way">❌ Old Way<a class="headerlink" href="#old-way" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">DesiredCapabilities cap = new DesiredCapabilities();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">DesiredCapabilities</span><span class="w"> </span><span class="n">cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DesiredCapabilities</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="new-way">✅ New Way<a class="headerlink" href="#new-way" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">ChromeOptions options = new ChromeOptions();
-options.addArguments(&quot;--start-maximized&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ChromeOptions</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span>
+<span class="n">options</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">"--start-maximized"</span><span class="p">);</span>
+</code></pre></div>
 <p>Standard capability structure:</p>
 <ul>
 <li>alwaysMatch</li>
@@ -5815,8 +5815,8 @@ options.addArguments(&quot;--start-maximized&quot;);
 <hr />
 <h2 id="example-under-the-hood-http-call">🔹 Example (Under the Hood HTTP Call)<a class="headerlink" href="#example-under-the-hood-http-call" title="Permanent link">&para;</a></h2>
 <p>When you run:</p>
-<pre><code class="language-java">driver.get(&quot;https://example.com&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+</code></pre></div>
 <p>Selenium sends:</p>
 <pre><code>POST /session/{id}/url
 {
@@ -5889,10 +5889,10 @@ options.addArguments(&quot;--start-maximized&quot;);
 <li>Routes to Distributor</li>
 </ul>
 <p>Example:</p>
-<pre><code class="language-java">WebDriver driver = new RemoteWebDriver(
-        new URL(&quot;http://grid-ip:4444&quot;),
-        new ChromeOptions());
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RemoteWebDriver</span><span class="p">(</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="s">"http://grid-ip:4444"</span><span class="p">),</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="2-distributor">2️⃣ Distributor<a class="headerlink" href="#2-distributor" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5943,11 +5943,11 @@ Node2 → Firefox ❌</p>
 </ul>
 <hr />
 <h2 id="native-docker-support">✅ Native Docker Support<a class="headerlink" href="#native-docker-support" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">docker run -d -p 4444:4444 selenium/standalone-chrome
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">4444</span>:4444<span class="w"> </span>selenium/standalone-chrome
+</code></pre></div>
 <p>Or:</p>
-<pre><code class="language-bash">docker-compose up
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up
+</code></pre></div>
 <hr />
 <h2 id="docker-architecture-example">🔹 Docker Architecture Example<a class="headerlink" href="#docker-architecture-example" title="Permanent link">&para;</a></h2>
 <pre><code>Test Runner
@@ -5999,12 +5999,12 @@ Chrome Pod
 Improved resilience</p>
 <hr />
 <h1 id="test-flow-in-grid-4">🔥 Test Flow in Grid 4<a class="headerlink" href="#test-flow-in-grid-4" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">ChromeOptions options = new ChromeOptions();
+<div class="highlight"><pre><span></span><code><span class="n">ChromeOptions</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span>
 
-WebDriver driver = new RemoteWebDriver(
-        new URL(&quot;http://localhost:4444&quot;),
-        options);
-</code></pre>
+<span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RemoteWebDriver</span><span class="p">(</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="s">"http://localhost:4444"</span><span class="p">),</span>
+<span class="w">        </span><span class="n">options</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="execution-flow">Execution Flow<a class="headerlink" href="#execution-flow" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Test sends session request\</li>
@@ -6017,32 +6017,32 @@ WebDriver driver = new RemoteWebDriver(
 <hr />
 <h1 id="example-running-test-on-grid-4">🔥 Example -- Running Test on Grid 4<a class="headerlink" href="#example-running-test-on-grid-4" title="Permanent link">&para;</a></h1>
 <h2 id="start-grid-standalone">Start Grid (Standalone)<a class="headerlink" href="#start-grid-standalone" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">java -jar selenium-server-4.x.x.jar standalone
-</code></pre>
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-jar<span class="w"> </span>selenium-server-4.x.x.jar<span class="w"> </span>standalone
+</code></pre></div>
 <h2 id="test-code">Test Code<a class="headerlink" href="#test-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.remote.RemoteWebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeOptions</span><span class="p">;</span>
 
-import java.net.URL;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URL</span><span class="p">;</span>
 
-public class GridTest {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GridTest</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String[] args) throws Exception {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
 
-        ChromeOptions options = new ChromeOptions();
+<span class="w">        </span><span class="n">ChromeOptions</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span>
 
-        WebDriver driver = new RemoteWebDriver(
-                new URL(&quot;http://localhost:4444&quot;),
-                options);
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RemoteWebDriver</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="s">"http://localhost:4444"</span><span class="p">),</span>
+<span class="w">                </span><span class="n">options</span><span class="p">);</span>
 
-        driver.get(&quot;https://example.com&quot;);
-        System.out.println(driver.getTitle());
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span>
 
-        driver.quit();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="grid-4-execution-modes">🔥 Grid 4 Execution Modes<a class="headerlink" href="#grid-4-execution-modes" title="Permanent link">&para;</a></h1>
 <h2 id="1-standalone">1️⃣ Standalone<a class="headerlink" href="#1-standalone" title="Permanent link">&para;</a></h2>
@@ -6132,6 +6132,10 @@ Parallel Execution
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

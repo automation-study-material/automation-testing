@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5712,18 +5712,18 @@ It primarily deals with queries to fetch results.</p>
 <ul>
 <li>Fetches data from tables with conditions, joins, and aggregations.</li>
 </ul>
-<pre><code class="language-sql">-- Get all employees
-SELECT * FROM Employee;
+<div class="highlight"><pre><span></span><code><span class="c1">-- Get all employees</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="p">;</span>
 
--- Get employees with salary &gt; 50k
-SELECT Name, Salary FROM Employee WHERE Salary &gt; 50000;
+<span class="c1">-- Get employees with salary &gt; 50k</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
 
--- Aggregation
-SELECT DepartmentID, AVG(Salary) AS AvgSalary
-FROM Employee
-GROUP BY DepartmentID
-HAVING AVG(Salary) &gt; 50000;
-</code></pre>
+<span class="c1">-- Aggregation</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">DepartmentID</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">AvgSalary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employee</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DepartmentID</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="pros-cons-of-dql">🔹 Pros &amp; Cons of DQL<a class="headerlink" href="#pros-cons-of-dql" title="Permanent link">&para;</a></h2>
 <h3 id="pros">✅ Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
@@ -5835,6 +5835,10 @@ HAVING AVG(Salary) &gt; 50000;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

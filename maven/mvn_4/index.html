@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5617,7 +5617,7 @@
 <hr />
 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <p>The <strong>Default Maven Lifecycle</strong> contains several phases.</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
     │
     ▼
 compile
@@ -5636,42 +5636,42 @@ install
     │
     ▼
 deploy
-</code></pre>
+</code></pre></div>
 <p>Each phase has a specific responsibility.</p>
 <p>One important concept is:</p>
 <blockquote>
 <p><strong>When you execute a Maven phase, Maven automatically executes all previous phases first.</strong></p>
 </blockquote>
 <p>For example,</p>
-<pre><code class="language-bash">mvn compile
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>compile
+</code></pre></div>
 <p>does <strong>not</strong> execute only the compile phase.</p>
 <p>Internally Maven executes</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
       │
       ▼
 compile
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="what-is-a-phase">What is a Phase?<a class="headerlink" href="#what-is-a-phase" title="Permanent link">&para;</a></h1>
 <p>A phase is simply a <strong>step</strong> in the Maven lifecycle.</p>
 <p>Think of building a house.</p>
-<pre><code class="language-text">Foundation
+<div class="highlight"><pre><span></span><code>Foundation
      │
 Walls
      │
 Roof
      │
 Painting
-</code></pre>
+</code></pre></div>
 <p>You cannot build the roof before building the walls.</p>
 <p>Similarly,</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
 
 ↓
 
 compile
-</code></pre>
+</code></pre></div>
 <p>Compilation cannot begin until validation is successful.</p>
 <hr />
 <h1 id="validate-phase">validate Phase<a class="headerlink" href="#validate-phase" title="Permanent link">&para;</a></h1>
@@ -5689,28 +5689,28 @@ compile
 <hr />
 <h1 id="why-do-we-need-validate">Why Do We Need validate?<a class="headerlink" href="#why-do-we-need-validate" title="Permanent link">&para;</a></h1>
 <p>Imagine your project:</p>
-<pre><code class="language-text">AppiumFramework
+<div class="highlight"><pre><span></span><code>AppiumFramework
 
 ├── pom.xml
 ├── src
 └── target
-</code></pre>
+</code></pre></div>
 <p>Suppose your <code>pom.xml</code> contains:</p>
-<pre><code class="language-xml">&lt;artifactId&gt;&lt;/artifactId&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;artifactId&gt;&lt;/artifactId&gt;</span>
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-xml">&lt;version&gt;&lt;/version&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;version&gt;&lt;/version&gt;</span>
+</code></pre></div>
 <p>Would Maven start compiling?</p>
 <p>No.</p>
 <p>It first validates the project.</p>
 <hr />
 <h1 id="internal-working-of-validate">Internal Working of validate<a class="headerlink" href="#internal-working-of-validate" title="Permanent link">&para;</a></h1>
 <p>When you execute</p>
-<pre><code class="language-bash">mvn validate
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>validate
+</code></pre></div>
 <p>Maven performs something similar to this.</p>
-<pre><code class="language-text">Read pom.xml
+<div class="highlight"><pre><span></span><code>Read pom.xml
       │
       ▼
 Parse XML
@@ -5732,13 +5732,13 @@ Build Project Model
       │
       ▼
 Validation Successful
-</code></pre>
+</code></pre></div>
 <p>Only then does Maven stop because you requested only the <strong>validate</strong> phase.</p>
 <hr />
 <h1 id="what-does-validate-actually-check">What Does validate Actually Check?<a class="headerlink" href="#what-does-validate-actually-check" title="Permanent link">&para;</a></h1>
 <p>It checks many things.</p>
 <h3 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h3>
-<pre><code class="language-text">Project
+<div class="highlight"><pre><span></span><code>Project
 
 ↓
 
@@ -5747,57 +5747,57 @@ pom.xml exists?
 ↓
 
 Yes
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="xml-syntax">XML Syntax<a class="headerlink" href="#xml-syntax" title="Permanent link">&para;</a></h3>
 <p>Example</p>
 <p>Correct</p>
-<pre><code class="language-xml">&lt;project&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;project&gt;</span>
 
-&lt;/project&gt;
-</code></pre>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
 <p>Incorrect</p>
-<pre><code class="language-xml">&lt;project&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;project&gt;</span>
 
-&lt;dependencies&gt;
+<span class="nt">&lt;dependencies&gt;</span>
 
-&lt;/project&gt;
-</code></pre>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
 <p>Missing closing tag.</p>
 <p>Validation fails.</p>
 <hr />
 <h3 id="coordinates">Coordinates<a class="headerlink" href="#coordinates" title="Permanent link">&para;</a></h3>
 <p>Checks</p>
-<pre><code class="language-xml">&lt;groupId&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;groupId&gt;</span>
 
-&lt;artifactId&gt;
+<span class="nt">&lt;artifactId&gt;</span>
 
-&lt;version&gt;
-</code></pre>
+<span class="nt">&lt;version&gt;</span>
+</code></pre></div>
 <p>These are required for a valid Maven project.</p>
 <hr />
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
 <p>Checks whether dependency declarations are valid.</p>
 <p>Example</p>
-<pre><code class="language-xml">&lt;dependency&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
 
-&lt;groupId&gt;org.testng&lt;/groupId&gt;
+<span class="nt">&lt;groupId&gt;</span>org.testng<span class="nt">&lt;/groupId&gt;</span>
 
-&lt;artifactId&gt;testng&lt;/artifactId&gt;
+<span class="nt">&lt;artifactId&gt;</span>testng<span class="nt">&lt;/artifactId&gt;</span>
 
-&lt;/dependency&gt;
-</code></pre>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <p>Maven verifies that the dependency declaration is structurally correct before later phases attempt to resolve it.</p>
 <hr />
 <h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h3>
 <p>Checks configured plugins.</p>
 <p>Example</p>
-<pre><code class="language-xml">&lt;plugin&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;plugin&gt;</span>
 
-&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+<span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
 
-&lt;/plugin&gt;
-</code></pre>
+<span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div>
 <hr />
 <h1 id="output-of-validate">Output of validate<a class="headerlink" href="#output-of-validate" title="Permanent link">&para;</a></h1>
 <p>Nothing is compiled.</p>
@@ -5808,7 +5808,7 @@ Yes
 <hr />
 <h1 id="real-world-example">Real-World Example<a class="headerlink" href="#real-world-example" title="Permanent link">&para;</a></h1>
 <p>Imagine Adobe has a project.</p>
-<pre><code class="language-text">Automation Framework
+<div class="highlight"><pre><span></span><code>Automation Framework
 
 ↓
 
@@ -5819,7 +5819,7 @@ Developer modifies pom.xml
 Runs
 
 mvn validate
-</code></pre>
+</code></pre></div>
 <p>If validation fails,</p>
 <p>the CI pipeline stops immediately.</p>
 <p>This saves time because Maven doesn't waste time compiling a project with an invalid configuration.</p>
@@ -5837,20 +5837,20 @@ mvn validate
 <p><code>.class</code></p>
 <hr />
 <h1 id="command">Command<a class="headerlink" href="#command" title="Permanent link">&para;</a></h1>
-<pre><code class="language-bash">mvn compile
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>compile
+</code></pre></div>
 <p>Remember</p>
 <p>Internally Maven first executes</p>
-<pre><code class="language-text">validate
+<div class="highlight"><pre><span></span><code>validate
 
 ↓
 
 compile
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="what-happens-during-compile">What Happens During compile?<a class="headerlink" href="#what-happens-during-compile" title="Permanent link">&para;</a></h1>
 <p>Suppose</p>
-<pre><code class="language-text">src/main/java
+<div class="highlight"><pre><span></span><code>src/main/java
 
 ↓
 
@@ -5863,11 +5863,11 @@ WaitUtils.java
 ↓
 
 ConfigReader.java
-</code></pre>
+</code></pre></div>
 <p>Maven compiles all Java source files.</p>
 <hr />
 <h1 id="internal-working">Internal Working<a class="headerlink" href="#internal-working" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">Read pom.xml
+<div class="highlight"><pre><span></span><code>Read pom.xml
 
       │
 
@@ -5904,13 +5904,13 @@ Generate .class Files
       ▼
 
 Store Inside target/classes
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="who-performs-compilation">Who Performs Compilation?<a class="headerlink" href="#who-performs-compilation" title="Permanent link">&para;</a></h1>
 <p>Many beginners think Maven itself compiles Java.</p>
 <p>Actually,</p>
 <p>Maven delegates this work to the <strong>Maven Compiler Plugin</strong>.</p>
-<pre><code class="language-text">Maven
+<div class="highlight"><pre><span></span><code>Maven
 
       │
 
@@ -5929,43 +5929,43 @@ javac
       ▼
 
 .class Files
-</code></pre>
+</code></pre></div>
 <p>The plugin internally calls the Java compiler (<code>javac</code>) provided by your JDK.</p>
 <hr />
 <h1 id="source-folder-used">Source Folder Used<a class="headerlink" href="#source-folder-used" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">src
+<div class="highlight"><pre><span></span><code>src
 
 └── main
 
       └── java
-</code></pre>
+</code></pre></div>
 <p>Only this folder is compiled during the <strong>compile</strong> phase.</p>
 <p>Notice</p>
-<pre><code class="language-text">src/test/java
-</code></pre>
+<div class="highlight"><pre><span></span><code>src/test/java
+</code></pre></div>
 <p>is <strong>NOT</strong> compiled yet.</p>
 <p>That happens during the <strong>test-compile</strong> phase, which occurs later in the lifecycle.</p>
 <hr />
 <h1 id="output-folder">Output Folder<a class="headerlink" href="#output-folder" title="Permanent link">&para;</a></h1>
 <p>Generated files go into</p>
-<pre><code class="language-text">target
+<div class="highlight"><pre><span></span><code>target
 
 └── classes
-</code></pre>
+</code></pre></div>
 <p>Example</p>
 <p>Before</p>
-<pre><code class="language-text">DriverFactory.java
-</code></pre>
+<div class="highlight"><pre><span></span><code>DriverFactory.java
+</code></pre></div>
 <p>After</p>
-<pre><code class="language-text">target
+<div class="highlight"><pre><span></span><code>target
 
 └── classes
 
       └── DriverFactory.class
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="java-compilation-flow">Java Compilation Flow<a class="headerlink" href="#java-compilation-flow" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">DriverFactory.java
+<div class="highlight"><pre><span></span><code>DriverFactory.java
 
       │
 
@@ -5990,43 +5990,43 @@ DriverFactory.class
       ▼
 
 target/classes
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="why-class-files">Why .class Files?<a class="headerlink" href="#why-class-files" title="Permanent link">&para;</a></h1>
 <p>The JVM cannot execute</p>
-<pre><code class="language-text">.java
-</code></pre>
+<div class="highlight"><pre><span></span><code>.java
+</code></pre></div>
 <p>It executes</p>
-<pre><code class="language-text">.class
-</code></pre>
+<div class="highlight"><pre><span></span><code>.class
+</code></pre></div>
 <p>Compilation converts human-readable Java code into JVM bytecode.</p>
 <hr />
 <h1 id="what-happens-if-compilation-fails">What Happens if Compilation Fails?<a class="headerlink" href="#what-happens-if-compilation-fails" title="Permanent link">&para;</a></h1>
 <p>Example</p>
-<pre><code class="language-java">public class Demo {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span>
 
-    public static void main(String args[]) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">args</span><span class="o">[]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        System.out.println(&quot;Hello&quot;)
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
 
-    }
+<span class="w">    </span><span class="p">}</span>
 
-}
-</code></pre>
+<span class="p">}</span>
+</code></pre></div>
 <p>Missing semicolon.</p>
 <p>Compilation stops.</p>
 <p>No</p>
-<pre><code class="language-text">.class
-</code></pre>
+<div class="highlight"><pre><span></span><code>.class
+</code></pre></div>
 <p>files are generated.</p>
 <p>No later phases execute.</p>
 <hr />
 <h1 id="files-generated">Files Generated<a class="headerlink" href="#files-generated" title="Permanent link">&para;</a></h1>
 <p>After</p>
-<pre><code class="language-bash">mvn compile
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>compile
+</code></pre></div>
 <p>Example</p>
-<pre><code class="language-text">target
+<div class="highlight"><pre><span></span><code>target
 
 ├── classes
 
@@ -6037,17 +6037,17 @@ target/classes
 │     └── ConfigReader.class
 
 └── generated-sources
-</code></pre>
+</code></pre></div>
 <p>Notice</p>
 <p>No</p>
-<pre><code class="language-text">.jar
-</code></pre>
+<div class="highlight"><pre><span></span><code>.jar
+</code></pre></div>
 <p>yet.</p>
 <p>Packaging happens later.</p>
 <hr />
 <h1 id="real-enterprise-example">Real Enterprise Example<a class="headerlink" href="#real-enterprise-example" title="Permanent link">&para;</a></h1>
 <p>Suppose your company has</p>
-<pre><code class="language-text">Automation Framework
+<div class="highlight"><pre><span></span><code>Automation Framework
 
 ↓
 
@@ -6064,12 +6064,12 @@ ConfigReader.java
 ↓
 
 PageObjects.java
-</code></pre>
+</code></pre></div>
 <p>Developer executes</p>
-<pre><code class="language-bash">mvn compile
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>compile
+</code></pre></div>
 <p>Internally</p>
-<pre><code class="language-text">Validate Project
+<div class="highlight"><pre><span></span><code>Validate Project
 
 ↓
 
@@ -6082,7 +6082,7 @@ Generate Bytecode
 ↓
 
 Store Inside target/classes
-</code></pre>
+</code></pre></div>
 <p>Now the framework is ready for the next lifecycle phase.</p>
 <hr />
 <h1 id="difference-between-validate-and-compile">Difference Between validate and compile<a class="headerlink" href="#difference-between-validate-and-compile" title="Permanent link">&para;</a></h1>
@@ -6118,7 +6118,7 @@ Store Inside target/classes
 </table>
 <hr />
 <h1 id="complete-flow">Complete Flow<a class="headerlink" href="#complete-flow" title="Permanent link">&para;</a></h1>
-<pre><code class="language-text">Developer
+<div class="highlight"><pre><span></span><code>Developer
 
       │
 
@@ -6167,7 +6167,7 @@ Generate .class Files
       ▼
 
 target/classes
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="interview-questions">Interview Questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h1>
 <h2 id="q1-what-does-the-validate-phase-do">Q1. What does the validate phase do?<a class="headerlink" href="#q1-what-does-the-validate-phase-do" title="Permanent link">&para;</a></h2>
@@ -6195,7 +6195,8 @@ target/classes
 <li>If validation or compilation fails, Maven stops the build and does not continue to later phases.</li>
 <li>Every Maven phase automatically runs all previous phases in the lifecycle before executing the requested phase.</li>
 </ul>
-<pre><code></code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 
 
 
@@ -6249,6 +6250,10 @@ target/classes
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

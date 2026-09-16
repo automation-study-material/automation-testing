@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5603,56 +5603,56 @@
 
   <h1>Excel Handling</h1>
 
-<pre><code class="language-js">const ExcelJs = require('exceljs');
-const { test, expect } = require('@playwright/test');
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ExcelJs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'exceljs'</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">test</span><span class="p">,</span><span class="w"> </span><span class="nx">expect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'@playwright/test'</span><span class="p">);</span>
 
-async function writeExcelTest(searchText, replaceText, change, filePath) {
-  const workbook = new ExcelJs.Workbook();
-  await workbook.xlsx.readFile(filePath);
-  const worksheet = workbook.getWorksheet('Sheet1');
-  const output = readExcel(worksheet, searchText); // not async
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">writeExcelTest</span><span class="p">(</span><span class="nx">searchText</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceText</span><span class="p">,</span><span class="w"> </span><span class="nx">change</span><span class="p">,</span><span class="w"> </span><span class="nx">filePath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">workbook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ExcelJs</span><span class="p">.</span><span class="nx">Workbook</span><span class="p">();</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">xlsx</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">worksheet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">getWorksheet</span><span class="p">(</span><span class="s1">'Sheet1'</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">readExcel</span><span class="p">(</span><span class="nx">worksheet</span><span class="p">,</span><span class="w"> </span><span class="nx">searchText</span><span class="p">);</span><span class="w"> </span><span class="c1">// not async</span>
 
-  const cell = worksheet.getCell(output.row, output.column + change.colChange);
-  cell.value = replaceText;
-  await workbook.xlsx.writeFile(filePath);
-}
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">worksheet</span><span class="p">.</span><span class="nx">getCell</span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">row</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">column</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">change</span><span class="p">.</span><span class="nx">colChange</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">replaceText</span><span class="p">;</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">xlsx</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
+<span class="p">}</span>
 
-// This does no async work, so don't mark it async.
-function readExcel(worksheet, searchText) {
-  let output = { row: -1, column: -1 };
-  worksheet.eachRow((row, rowNumber) =&gt; {
-    row.eachCell((cell, colNumber) =&gt; {
-      if (cell.value === searchText) {
-        output = { row: rowNumber, column: colNumber };
-      }
-    });
-  });
-  return output;
-}
+<span class="c1">// This does no async work, so don't mark it async.</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">readExcel</span><span class="p">(</span><span class="nx">worksheet</span><span class="p">,</span><span class="w"> </span><span class="nx">searchText</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">row</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">column</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="nx">worksheet</span><span class="p">.</span><span class="nx">eachRow</span><span class="p">((</span><span class="nx">row</span><span class="p">,</span><span class="w"> </span><span class="nx">rowNumber</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">row</span><span class="p">.</span><span class="nx">eachCell</span><span class="p">((</span><span class="nx">cell</span><span class="p">,</span><span class="w"> </span><span class="nx">colNumber</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">searchText</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">row</span><span class="o">:</span><span class="w"> </span><span class="nx">rowNumber</span><span class="p">,</span><span class="w"> </span><span class="nx">column</span><span class="o">:</span><span class="w"> </span><span class="nx">colNumber</span><span class="w"> </span><span class="p">};</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">output</span><span class="p">;</span>
+<span class="p">}</span>
 
-//update Mango Price to 350. 
-//writeExcelTest(&quot;Mango&quot;,350,{rowChange:0,colChange:2},&quot;/Users/rahulshetty/downloads/excelTest.xlsx&quot;);
+<span class="c1">//update Mango Price to 350. </span>
+<span class="c1">//writeExcelTest("Mango",350,{rowChange:0,colChange:2},"/Users/rahulshetty/downloads/excelTest.xlsx");</span>
 
-test('Upload download excel validation', async ({ page }) =&gt; {
-  const textSearch = 'Mango';
-  const updateValue = '350';
+<span class="nx">test</span><span class="p">(</span><span class="s1">'Upload download excel validation'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">textSearch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Mango'</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">updateValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'350'</span><span class="p">;</span>
 
-  await page.goto('https://rahulshettyacademy.com/upload-download-test/index.html');
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">'https://rahulshettyacademy.com/upload-download-test/index.html'</span><span class="p">);</span>
 
-  const download = page.waitForEvent('download');
-  await page.getByRole('button', { name: 'Download' }).click();
-  const dl = await download;
-  const filePath = '/Users/rahulshetty/downloads/download.xlsx'; // or await dl.path()
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForEvent</span><span class="p">(</span><span class="s1">'download'</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">'button'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">'Download'</span><span class="w"> </span><span class="p">}).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">download</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'/Users/rahulshetty/downloads/download.xlsx'</span><span class="p">;</span><span class="w"> </span><span class="c1">// or await dl.path()</span>
 
-  // ✅ Ensure the edit finishes before upload
-  await writeExcelTest(textSearch, updateValue, { rowChange: 0, colChange: 2 }, filePath);
+<span class="w">  </span><span class="c1">// ✅ Ensure the edit finishes before upload</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">writeExcelTest</span><span class="p">(</span><span class="nx">textSearch</span><span class="p">,</span><span class="w"> </span><span class="nx">updateValue</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rowChange</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">colChange</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">filePath</span><span class="p">);</span>
 
-  await page.locator('#fileinput').setInputFiles(filePath);
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#fileinput'</span><span class="p">).</span><span class="nx">setInputFiles</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
 
-  const desiredRow = await page.getByRole('row').filter({ has: page.getByText(textSearch) });
-  await expect(desiredRow.locator('#cell-4-undefined')).toContainText(updateValue);
-});
-</code></pre>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">desiredRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">'row'</span><span class="p">).</span><span class="nx">filter</span><span class="p">({</span><span class="w"> </span><span class="nx">has</span><span class="o">:</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="nx">textSearch</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">desiredRow</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#cell-4-undefined'</span><span class="p">)).</span><span class="nx">toContainText</span><span class="p">(</span><span class="nx">updateValue</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 
 
@@ -5706,6 +5706,10 @@ test('Upload download excel validation', async ({ page }) =&gt; {
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

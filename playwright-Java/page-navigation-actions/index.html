@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5686,68 +5686,68 @@
 <p>👉 Navigates the browser to the given URL.<br />
 - Waits until the page is loaded (<code>load</code> event by default).<br />
 - Supports additional options like timeout, waiting for specific load states, etc.  </p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-java">Page page = context.newPage();
-page.navigate(&quot;https://example.com&quot;);
-</code></pre>
-<p><strong>With options (wait until DOM content loaded):</strong></p>
-<pre><code class="language-java">page.navigate(&quot;https://example.com&quot;,
-    new Page.NavigateOptions().setWaitUntil(LoadState.DOMCONTENTLOADED));
-</code></pre>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>With options (wait until DOM content loaded):</strong>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">NavigateOptions</span><span class="p">().</span><span class="na">setWaitUntil</span><span class="p">(</span><span class="n">LoadState</span><span class="p">.</span><span class="na">DOMCONTENTLOADED</span><span class="p">));</span>
+</code></pre></div></p>
 <hr />
 <h2 id="2-pagegoback">2. <code>page.goBack()</code><a class="headerlink" href="#2-pagegoback" title="Permanent link">&para;</a></h2>
 <p>👉 Simulates the <strong>browser back button</strong>.<br />
 - Goes to the previous page in the history.<br />
 - Returns a <code>Response</code> object if navigation is successful, or <code>null</code> if there’s no history.  </p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-java">page.navigate(&quot;https://example.com&quot;);
-page.navigate(&quot;https://google.com&quot;);
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://google.com"</span><span class="p">);</span>
 
-// Go back to example.com
-page.goBack();
-</code></pre>
+<span class="c1">// Go back to example.com</span>
+<span class="n">page</span><span class="p">.</span><span class="na">goBack</span><span class="p">();</span>
+</code></pre></div></p>
 <hr />
 <h2 id="3-pagegoforward">3. <code>page.goForward()</code><a class="headerlink" href="#3-pagegoforward" title="Permanent link">&para;</a></h2>
 <p>👉 Simulates the <strong>browser forward button</strong>.<br />
 - Moves forward in the history if available.<br />
 - Returns a <code>Response</code> object or <code>null</code> if no forward entry exists.  </p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-java">page.goBack();     // goes to example.com
-page.goForward();  // goes to google.com again
-</code></pre>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">goBack</span><span class="p">();</span><span class="w">     </span><span class="c1">// goes to example.com</span>
+<span class="n">page</span><span class="p">.</span><span class="na">goForward</span><span class="p">();</span><span class="w">  </span><span class="c1">// goes to google.com again</span>
+</code></pre></div></p>
 <hr />
 <h2 id="4-pagereload">4. <code>page.reload()</code><a class="headerlink" href="#4-pagereload" title="Permanent link">&para;</a></h2>
 <p>👉 Reloads the current page.<br />
 - Similar to pressing the refresh button.<br />
 - By default waits for the <code>load</code> event, but you can customize wait states.  </p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-java">page.reload();
-</code></pre>
-<p><strong>With options:</strong></p>
-<pre><code class="language-java">page.reload(new Page.ReloadOptions().setWaitUntil(LoadState.DOMCONTENTLOADED));
-</code></pre>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">reload</span><span class="p">();</span>
+</code></pre></div></p>
+<p><strong>With options:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">reload</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">ReloadOptions</span><span class="p">().</span><span class="na">setWaitUntil</span><span class="p">(</span><span class="n">LoadState</span><span class="p">.</span><span class="na">DOMCONTENTLOADED</span><span class="p">));</span>
+</code></pre></div></p>
 <hr />
 <h2 id="5-pagetitle">5. <code>page.title()</code><a class="headerlink" href="#5-pagetitle" title="Permanent link">&para;</a></h2>
 <p>👉 Gets the <strong>title of the current page</strong> (the <code>&lt;title&gt;</code> tag content).<br />
 - Returns a <code>String</code>.  </p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-java">String title = page.title();
-System.out.println(&quot;Page title is: &quot; + title);
-</code></pre>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">title</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Page title is: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">title</span><span class="p">);</span>
+</code></pre></div></p>
 <hr />
 <h2 id="6-pageurl">6. <code>page.url()</code><a class="headerlink" href="#6-pageurl" title="Permanent link">&para;</a></h2>
 <p>👉 Returns the <strong>current page URL</strong> as a <code>String</code>.  </p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-java">System.out.println(&quot;Current URL: &quot; + page.url());
-</code></pre>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current URL: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">url</span><span class="p">());</span>
+</code></pre></div></p>
 <hr />
 <h2 id="7-pagecontent">7. <code>page.content()</code><a class="headerlink" href="#7-pagecontent" title="Permanent link">&para;</a></h2>
 <p>👉 Returns the <strong>full HTML content</strong> of the page as a <code>String</code>.<br />
 - Useful for debugging, parsing, or verifying HTML.  </p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-java">String html = page.content();
-System.out.println(html);
-</code></pre>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">content</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">html</span><span class="p">);</span>
+</code></pre></div></p>
 <hr />
 <h1 id="quick-notes">🔑 Quick Notes<a class="headerlink" href="#quick-notes" title="Permanent link">&para;</a></h1>
 <ul>
@@ -5808,6 +5808,10 @@ System.out.println(html);
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

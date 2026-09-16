@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6003,12 +6003,12 @@
 <h2 id="1-what-is-an-object">1. What is an Object?<a class="headerlink" href="#1-what-is-an-object" title="Permanent link">&para;</a></h2>
 <p>An object in JavaScript is a collection of key-value pairs.
 Objects are used to store structured data.</p>
-<pre><code class="language-js">const person = {
-  name: &quot;Nitin&quot;,
-  age: 25,
-  city: &quot;Pune&quot;
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">"Pune"</span>
+<span class="p">};</span>
+</code></pre></div>
 <ul>
 <li>Keys are also called <strong>properties</strong></li>
 <li>Values can be <strong>string, number, boolean, array, function, or another object</strong></li>
@@ -6016,98 +6016,98 @@ Objects are used to store structured data.</p>
 <hr />
 <h2 id="2-nested-objects">2. Nested Objects<a class="headerlink" href="#2-nested-objects" title="Permanent link">&para;</a></h2>
 <p>Objects can have other objects as values (nested objects).</p>
-<pre><code class="language-js">const person = {
-  name: &quot;Nitin&quot;,
-  age: 25,
-  city: &quot;Pune&quot;,
-  address: {
-    street: &quot;MG Road&quot;,
-    zip: 411001,
-    state: &quot;Maharashtra&quot;
-  }
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">"Pune"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s2">"MG Road"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">zip</span><span class="o">:</span><span class="w"> </span><span class="mf">411001</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="s2">"Maharashtra"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
 <h3 id="accessing-nested-properties">Accessing Nested Properties<a class="headerlink" href="#accessing-nested-properties" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">console.log(person.address.street);  // MG Road
-console.log(person[&quot;address&quot;][&quot;zip&quot;]); // 411001
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">street</span><span class="p">);</span><span class="w">  </span><span class="c1">// MG Road</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="s2">"address"</span><span class="p">][</span><span class="s2">"zip"</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 411001</span>
+</code></pre></div>
 <hr />
 <h2 id="3-adding-functions-in-objects">3. Adding Functions in Objects<a class="headerlink" href="#3-adding-functions-in-objects" title="Permanent link">&para;</a></h2>
 <p>Objects can have methods (functions as values):</p>
-<pre><code class="language-js">const person = {
-  name: &quot;Nitin&quot;,
-  greet: function() {
-    console.log(&quot;Hello, &quot; + this.name);
-  },
-  greetES6() {
-    console.log(`Hello, ${this.name}`);
-  }
-};
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">greet</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">greetES6</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
 
-person.greet();   // Hello, Nitin
-person.greetES6(); // Hello, Nitin
-</code></pre>
+<span class="nx">person</span><span class="p">.</span><span class="nx">greet</span><span class="p">();</span><span class="w">   </span><span class="c1">// Hello, Nitin</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">greetES6</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hello, Nitin</span>
+</code></pre></div>
 <hr />
 <h2 id="4-adding-updating-and-deleting-properties">4. Adding, Updating, and Deleting Properties<a class="headerlink" href="#4-adding-updating-and-deleting-properties" title="Permanent link">&para;</a></h2>
 <h3 id="add-new-property">Add New Property<a class="headerlink" href="#add-new-property" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">person.country = &quot;India&quot;;
-person[&quot;language&quot;] = &quot;English&quot;;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">person</span><span class="p">.</span><span class="nx">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"India"</span><span class="p">;</span>
+<span class="nx">person</span><span class="p">[</span><span class="s2">"language"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"English"</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="update-existing-property">Update Existing Property<a class="headerlink" href="#update-existing-property" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">person.age = 26;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">26</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="delete-property">Delete Property<a class="headerlink" href="#delete-property" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">delete person.city;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="ow">delete</span><span class="w"> </span><span class="nx">person</span><span class="p">.</span><span class="nx">city</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="5-checking-if-property-exists">5. Checking if Property Exists<a class="headerlink" href="#5-checking-if-property-exists" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">&quot;name&quot; in person;               // true
-person.hasOwnProperty(&quot;city&quot;);  // false (if deleted above)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"name"</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">person</span><span class="p">;</span><span class="w">               </span><span class="c1">// true</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"city"</span><span class="p">);</span><span class="w">  </span><span class="c1">// false (if deleted above)</span>
+</code></pre></div>
 <hr />
 <h2 id="6-iterating-over-object-properties">6. Iterating Over Object Properties<a class="headerlink" href="#6-iterating-over-object-properties" title="Permanent link">&para;</a></h2>
 <h3 id="using-forin-loop">Using for...in loop<a class="headerlink" href="#using-forin-loop" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">for (let key in person) {
-  console.log(key, person[key]);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">person</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">person</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="using-object-methods">Using Object Methods<a class="headerlink" href="#using-object-methods" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">// Keys
-Object.keys(person); // [&quot;name&quot;, &quot;age&quot;, &quot;country&quot;, &quot;language&quot;, &quot;greet&quot;, &quot;greetES6&quot;]
+<div class="highlight"><pre><span></span><code><span class="c1">// Keys</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span><span class="w"> </span><span class="c1">// ["name", "age", "country", "language", "greet", "greetES6"]</span>
 
-// Values
-Object.values(person); // [&quot;Nitin&quot;, 26, &quot;India&quot;, &quot;English&quot;, f, f]
+<span class="c1">// Values</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span><span class="w"> </span><span class="c1">// ["Nitin", 26, "India", "English", f, f]</span>
 
-// Entries
-Object.entries(person);
-/*
-[
-  [&quot;name&quot;,&quot;Nitin&quot;],
-  [&quot;age&quot;,26],
-  [&quot;country&quot;,&quot;India&quot;],
-  [&quot;language&quot;,&quot;English&quot;],
-  [&quot;greet&quot;, f],
-  [&quot;greetES6&quot;, f]
-]
-*/
-</code></pre>
+<span class="c1">// Entries</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+<span class="cm">/*</span>
+<span class="cm">[</span>
+<span class="cm">  ["name","Nitin"],</span>
+<span class="cm">  ["age",26],</span>
+<span class="cm">  ["country","India"],</span>
+<span class="cm">  ["language","English"],</span>
+<span class="cm">  ["greet", f],</span>
+<span class="cm">  ["greetES6", f]</span>
+<span class="cm">]</span>
+<span class="cm">*/</span>
+</code></pre></div>
 <hr />
 <h2 id="7-nested-objects-and-arrays">7. Nested Objects and Arrays<a class="headerlink" href="#7-nested-objects-and-arrays" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">const person = {
-  name: &quot;Nitin&quot;,
-  hobbies: [&quot;reading&quot;, &quot;coding&quot;, &quot;travelling&quot;],
-  address: {
-    city: &quot;Pune&quot;,
-    history: [
-      { year: 2019, city: &quot;Nagpur&quot; },
-      { year: 2020, city: &quot;Delhi&quot; }
-    ]
-  }
-};
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">hobbies</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"reading"</span><span class="p">,</span><span class="w"> </span><span class="s2">"coding"</span><span class="p">,</span><span class="w"> </span><span class="s2">"travelling"</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">"Pune"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">history</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2019</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nagpur"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2020</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">"Delhi"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
 
-console.log(person.hobbies[1]);             // coding
-console.log(person.address.history[1].city); // Delhi
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">hobbies</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w">             </span><span class="c1">// coding</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">history</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">city</span><span class="p">);</span><span class="w"> </span><span class="c1">// Delhi</span>
+</code></pre></div>
 <hr />
 <h2 id="8-summary-table">8. Summary Table<a class="headerlink" href="#8-summary-table" title="Permanent link">&para;</a></h2>
 <table>
@@ -6231,6 +6231,10 @@ console.log(person.address.history[1].city); // Delhi
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

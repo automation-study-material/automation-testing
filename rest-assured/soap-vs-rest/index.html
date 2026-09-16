@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6493,16 +6493,16 @@ protocol used for communication between applications.</p>
 <p>Think of SOAP like sending a registered legal document 📄
 Everything must follow a fixed format, otherwise it's rejected.</p>
 <h3 id="example-soap-request">Example (SOAP Request)<a class="headerlink" href="#example-soap-request" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
-                  xmlns:emp=&quot;http://example.com/employee&quot;&gt;
-   &lt;soapenv:Header/&gt;
-   &lt;soapenv:Body&gt;
-      &lt;emp:getEmployee&gt;
-         &lt;emp:id&gt;101&lt;/emp:id&gt;
-      &lt;/emp:getEmployee&gt;
-   &lt;/soapenv:Body&gt;
-&lt;/soapenv:Envelope&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;soapenv:Envelope</span><span class="w"> </span><span class="na">xmlns:soapenv=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span>
+<span class="w">                  </span><span class="na">xmlns:emp=</span><span class="s">"http://example.com/employee"</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;soapenv:Header/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;soapenv:Body&gt;</span>
+<span class="w">      </span><span class="nt">&lt;emp:getEmployee&gt;</span>
+<span class="w">         </span><span class="nt">&lt;emp:id&gt;</span>101<span class="nt">&lt;/emp:id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/emp:getEmployee&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</code></pre></div>
 <h3 id="key-characteristics">Key Characteristics<a class="headerlink" href="#key-characteristics" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Always wrapped inside Envelope → Header → Body\</li>
@@ -6524,13 +6524,13 @@ Simple request → simple response.</p>
 <pre><code>GET /employees/101
 </code></pre>
 <h3 id="rest-response-json">REST Response (JSON)<a class="headerlink" href="#rest-response-json" title="Permanent link">&para;</a></h3>
-<pre><code class="language-json">{
-  &quot;id&quot;: 101,
-  &quot;name&quot;: &quot;Nitin&quot;,
-  &quot;age&quot;: 30,
-  &quot;department&quot;: &quot;QA&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QA"</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="key-characteristics_1">Key Characteristics<a class="headerlink" href="#key-characteristics_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>No strict format</li>
@@ -6569,15 +6569,15 @@ Used in banking &amp; enterprise systems where HTTP may not be enough.</p>
 <li>Only XML</li>
 <li>Very verbose</li>
 </ul>
-<pre><code class="language-xml">&lt;age&gt;30&lt;/age&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;age&gt;</span>30<span class="nt">&lt;/age&gt;</span>
+</code></pre></div>
 <h3 id="rest_1">REST<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>JSON (most common)</li>
 <li>XML, text, HTML also possible</li>
 </ul>
-<pre><code class="language-json">&quot;age&quot;: 30
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+</code></pre></div>
 <p>👉 REST is lighter and faster</p>
 <hr />
 <h2 id="5-contract-wsdl-vs-openapi">5️⃣ Contract (WSDL vs OpenAPI)<a class="headerlink" href="#5-contract-wsdl-vs-openapi" title="Permanent link">&para;</a></h2>
@@ -6632,28 +6632,27 @@ User logs in → session maintained across calls</p>
 <li>Stateless</li>
 <li>Each request is independent</li>
 </ul>
-<pre><code>&lt;!-- --&gt;
-</code></pre>
-<pre><code>Authorization: Bearer &lt;token&gt;
-</code></pre>
+<p><div class="highlight"><pre><span></span><code>&lt;!-- --&gt;
+</code></pre></div>
+    Authorization: Bearer <token></p>
 <p>👉 REST scales better for cloud &amp; microservices</p>
 <hr />
 <h2 id="8-error-handling">8️⃣ Error Handling<a class="headerlink" href="#8-error-handling" title="Permanent link">&para;</a></h2>
 <h3 id="soap_4">SOAP<a class="headerlink" href="#soap_4" title="Permanent link">&para;</a></h3>
 <p>Uses structured Faults</p>
-<pre><code class="language-xml">&lt;soap:Fault&gt;
-   &lt;faultcode&gt;soap:Client&lt;/faultcode&gt;
-   &lt;faultstring&gt;Invalid Employee ID&lt;/faultstring&gt;
-&lt;/soap:Fault&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;soap:Fault&gt;</span>
+<span class="w">   </span><span class="nt">&lt;faultcode&gt;</span>soap:Client<span class="nt">&lt;/faultcode&gt;</span>
+<span class="w">   </span><span class="nt">&lt;faultstring&gt;</span>Invalid<span class="w"> </span>Employee<span class="w"> </span>ID<span class="nt">&lt;/faultstring&gt;</span>
+<span class="nt">&lt;/soap:Fault&gt;</span>
+</code></pre></div>
 <h3 id="rest_4">REST<a class="headerlink" href="#rest_4" title="Permanent link">&para;</a></h3>
 <p>Uses HTTP status codes</p>
 <pre><code>404 Not Found
 </code></pre>
-<pre><code class="language-json">{
-  &quot;error&quot;: &quot;Employee not found&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Employee not found"</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="9-performance">9️⃣ Performance<a class="headerlink" href="#9-performance" title="Permanent link">&para;</a></h2>
 <h3 id="soap_5">SOAP<a class="headerlink" href="#soap_5" title="Permanent link">&para;</a></h3>
@@ -6722,19 +6721,19 @@ Next day room service knows:
 <hr />
 <h2 id="3-stateful-technical-example-soap-style">3️⃣ Stateful -- Technical Example (SOAP-style)<a class="headerlink" href="#3-stateful-technical-example-soap-style" title="Permanent link">&para;</a></h2>
 <h3 id="step-1-login">Step 1: Login<a class="headerlink" href="#step-1-login" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;login&gt;
-   &lt;username&gt;nitin&lt;/username&gt;
-   &lt;password&gt;pass123&lt;/password&gt;
-&lt;/login&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;login&gt;</span>
+<span class="w">   </span><span class="nt">&lt;username&gt;</span>nitin<span class="nt">&lt;/username&gt;</span>
+<span class="w">   </span><span class="nt">&lt;password&gt;</span>pass123<span class="nt">&lt;/password&gt;</span>
+<span class="nt">&lt;/login&gt;</span>
+</code></pre></div>
 <h3 id="step-2-server-creates-session">Step 2: Server Creates Session<a class="headerlink" href="#step-2-server-creates-session" title="Permanent link">&para;</a></h3>
 <pre><code>SessionID = ABC123
 </code></pre>
 <h3 id="step-3-next-request">Step 3: Next Request<a class="headerlink" href="#step-3-next-request" title="Permanent link">&para;</a></h3>
-<pre><code class="language-xml">&lt;getAccountBalance&gt;
-   &lt;sessionId&gt;ABC123&lt;/sessionId&gt;
-&lt;/getAccountBalance&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;getAccountBalance&gt;</span>
+<span class="w">   </span><span class="nt">&lt;sessionId&gt;</span>ABC123<span class="nt">&lt;/sessionId&gt;</span>
+<span class="nt">&lt;/getAccountBalance&gt;</span>
+</code></pre></div>
 <h3 id="characteristics">Characteristics<a class="headerlink" href="#characteristics" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Server stores session</li>
@@ -6756,11 +6755,11 @@ Authorization: Bearer eyJhbGciOi...
 <pre><code>PUT /users/101
 Authorization: Bearer eyJhbGciOi...
 </code></pre>
-<pre><code class="language-json">{
-  &quot;name&quot;: &quot;Nitin&quot;,
-  &quot;age&quot;: 30
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>👉 Server does NOT store session
 👉 Token contains identity info</p>
 <hr />
@@ -6868,6 +6867,10 @@ Request 3 → Server C
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5769,113 +5769,113 @@
 </table>
 <hr />
 <h2 id="complex-encapsulation-example">Complex Encapsulation Example<a class="headerlink" href="#complex-encapsulation-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package com.example.encapsulation;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.encapsulation</span><span class="p">;</span>
 
-// Employee class demonstrating encapsulation
-public class Employee {
+<span class="c1">// Employee class demonstrating encapsulation</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
 
-    // Private instance variables (best practice)
-    private String name;
-    private int age;
+<span class="w">    </span><span class="c1">// Private instance variables (best practice)</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
 
-    // Protected variable (accessible in subclasses)
-    protected String department;
+<span class="w">    </span><span class="c1">// Protected variable (accessible in subclasses)</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">department</span><span class="p">;</span>
 
-    // Default access variable (accessible in same package)
-    String project;
+<span class="w">    </span><span class="c1">// Default access variable (accessible in same package)</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">project</span><span class="p">;</span>
 
-    // Public variable (less recommended)
-    public String company;
+<span class="w">    </span><span class="c1">// Public variable (less recommended)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
 
-    // Static variable (class-level, shared across objects)
-    private static int employeeCount = 0;
+<span class="w">    </span><span class="c1">// Static variable (class-level, shared across objects)</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">employeeCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-    // Constructor
-    public Employee(String name, int age, String department, String project, String company) {
-        setName(name);       // Using setter for validation
-        setAge(age);         // Using setter for validation
-        this.department = department;
-        this.project = project;
-        this.company = company;
+<span class="w">    </span><span class="c1">// Constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">department</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">project</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w">       </span><span class="c1">// Using setter for validation</span>
+<span class="w">        </span><span class="n">setAge</span><span class="p">(</span><span class="n">age</span><span class="p">);</span><span class="w">         </span><span class="c1">// Using setter for validation</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">department</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">department</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">project</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
 
-        employeeCount++;     // Increment static count
-    }
+<span class="w">        </span><span class="n">employeeCount</span><span class="o">++</span><span class="p">;</span><span class="w">     </span><span class="c1">// Increment static count</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // ----------------------
-    // Getters &amp; Setters
-    // ----------------------
+<span class="w">    </span><span class="c1">// ----------------------</span>
+<span class="w">    </span><span class="c1">// Getters &amp; Setters</span>
+<span class="w">    </span><span class="c1">// ----------------------</span>
 
-    public String getName() {
-        return name;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setName(String name) {
-        if(name == null || name.isEmpty()) {
-            System.out.println(&quot;Invalid name!&quot;);
-        } else {
-            this.name = name;
-        }
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Invalid name!"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public int getAge() {
-        return age;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void setAge(int age) {
-        if(age &lt; 18 || age &gt; 65) {
-            System.out.println(&quot;Age must be between 18 and 65&quot;);
-        } else {
-            this.age = age;
-        }
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">65</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age must be between 18 and 65"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Getter for static variable
-    public static int getEmployeeCount() {
-        return employeeCount;
-    }
+<span class="w">    </span><span class="c1">// Getter for static variable</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getEmployeeCount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">employeeCount</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // No setter for employeeCount (read-only) to protect encapsulation
+<span class="w">    </span><span class="c1">// No setter for employeeCount (read-only) to protect encapsulation</span>
 
-    // Method to display info
-    public void displayInfo() {
-        System.out.println(&quot;Name: &quot; + name);
-        System.out.println(&quot;Age: &quot; + age);
-        System.out.println(&quot;Department: &quot; + department);
-        System.out.println(&quot;Project: &quot; + project);
-        System.out.println(&quot;Company: &quot; + company);
-        System.out.println(&quot;Total Employees: &quot; + employeeCount);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="c1">// Method to display info</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Department: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">department</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Project: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">project</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Company: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">company</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total Employees: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">employeeCount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h1 id="testing-the-encapsulation-in-java">Testing the Encapsulation in Java<a class="headerlink" href="#testing-the-encapsulation-in-java" title="Permanent link">&para;</a></h1>
 <h2 id="main-class-example">Main Class Example<a class="headerlink" href="#main-class-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">package com.example.encapsulation;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.encapsulation</span><span class="p">;</span>
 
-public class Main {
-    public static void main(String[] args) {
-        // Create employee objects
-        Employee emp1 = new Employee(&quot;Alice&quot;, 25, &quot;IT&quot;, &quot;Automation&quot;, &quot;TechCorp&quot;);
-        Employee emp2 = new Employee(&quot;Bob&quot;, 30, &quot;HR&quot;, &quot;Recruitment&quot;, &quot;TechCorp&quot;);
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Create employee objects</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">emp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Alice"</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="s">"IT"</span><span class="p">,</span><span class="w"> </span><span class="s">"Automation"</span><span class="p">,</span><span class="w"> </span><span class="s">"TechCorp"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">emp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">(</span><span class="s">"Bob"</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s">"HR"</span><span class="p">,</span><span class="w"> </span><span class="s">"Recruitment"</span><span class="p">,</span><span class="w"> </span><span class="s">"TechCorp"</span><span class="p">);</span>
 
-        // Accessing fields through getters and setters
-        System.out.println(&quot;Employee 1 Name: &quot; + emp1.getName());
-        emp1.setAge(17);  // Invalid age, setter validation triggers
-        emp1.setAge(28);  // Valid
+<span class="w">        </span><span class="c1">// Accessing fields through getters and setters</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Employee 1 Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">emp1</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="n">emp1</span><span class="p">.</span><span class="na">setAge</span><span class="p">(</span><span class="mi">17</span><span class="p">);</span><span class="w">  </span><span class="c1">// Invalid age, setter validation triggers</span>
+<span class="w">        </span><span class="n">emp1</span><span class="p">.</span><span class="na">setAge</span><span class="p">(</span><span class="mi">28</span><span class="p">);</span><span class="w">  </span><span class="c1">// Valid</span>
 
-        // Accessing protected, default, and public variables directly
-        System.out.println(&quot;Employee 1 Department: &quot; + emp1.department); // Protected
-        System.out.println(&quot;Employee 1 Project: &quot; + emp1.project);       // Default
-        System.out.println(&quot;Employee 1 Company: &quot; + emp1.company);       // Public
+<span class="w">        </span><span class="c1">// Accessing protected, default, and public variables directly</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Employee 1 Department: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">emp1</span><span class="p">.</span><span class="na">department</span><span class="p">);</span><span class="w"> </span><span class="c1">// Protected</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Employee 1 Project: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">emp1</span><span class="p">.</span><span class="na">project</span><span class="p">);</span><span class="w">       </span><span class="c1">// Default</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Employee 1 Company: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">emp1</span><span class="p">.</span><span class="na">company</span><span class="p">);</span><span class="w">       </span><span class="c1">// Public</span>
 
-        // Display info
-        emp1.displayInfo();
-        emp2.displayInfo();
+<span class="w">        </span><span class="c1">// Display info</span>
+<span class="w">        </span><span class="n">emp1</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
+<span class="w">        </span><span class="n">emp2</span><span class="p">.</span><span class="na">displayInfo</span><span class="p">();</span>
 
-        // Access static variable
-        System.out.println(&quot;Total employees: &quot; + Employee.getEmployeeCount());
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="c1">// Access static variable</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total employees: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Employee</span><span class="p">.</span><span class="na">getEmployeeCount</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="what-this-example-shows">✅ What This Example Shows<a class="headerlink" href="#what-this-example-shows" title="Permanent link">&para;</a></h2>
 <h3 id="private-variables-gettersetter">Private Variables + Getter/Setter<a class="headerlink" href="#private-variables-gettersetter" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5958,6 +5958,10 @@ A complex encapsulation question might ask:  </p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

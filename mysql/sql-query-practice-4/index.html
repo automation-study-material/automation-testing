@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5983,10 +5983,10 @@
 </tbody>
 </table>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT e.emp_id, e.name, d.dept_name
-FROM employees e
-INNER JOIN departments d ON e.dept_id = d.dept_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 INNER JOIN returns rows where there is a match in both tables.</p>
 <p><strong>Output:</strong></p>
@@ -6041,12 +6041,12 @@ INNER JOIN returns rows where there is a match in both tables.</p>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT e.name, s.salary, d.dept_name
-FROM employees e
-INNER JOIN salaries s ON e.emp_id = s.emp_id
-INNER JOIN departments d ON e.dept_id = d.dept_id
-WHERE s.salary &gt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">salaries</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6093,10 +6093,10 @@ WHERE s.salary &gt; 50000;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT e.name, p.project_name
-FROM employees e
-INNER JOIN projects p ON e.emp_id = p.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6142,10 +6142,10 @@ employees same as above, departments without dept_id 30</p>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT e.name, d.dept_name
-FROM employees e
-INNER JOIN departments d ON e.dept_id = d.dept_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6189,11 +6189,11 @@ INNER JOIN departments d ON e.dept_id = d.dept_id;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT e.name, ep.role, p.project_name
-FROM employees e
-INNER JOIN employee_projects ep ON e.emp_id = ep.emp_id
-INNER JOIN projects p ON ep.project_id = p.project_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ep</span><span class="p">.</span><span class="k">role</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">employee_projects</span><span class="w"> </span><span class="n">ep</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ep</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ep</span><span class="p">.</span><span class="n">project_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6220,10 +6220,10 @@ INNER JOIN projects p ON ep.project_id = p.project_id;
 <h2 id="2-left-join">2. LEFT JOIN<a class="headerlink" href="#2-left-join" title="Permanent link">&para;</a></h2>
 <h3 id="q6-all-employees-and-their-departments-include-those-without-dept">Q6: All employees and their departments (include those without dept)<a class="headerlink" href="#q6-all-employees-and-their-departments-include-those-without-dept" title="Permanent link">&para;</a></h3>
 <p><strong>Input Tables:</strong> employees and departments</p>
-<pre><code class="language-sql">SELECT e.name, d.dept_name
-FROM employees e
-LEFT JOIN departments d ON e.dept_id = d.dept_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 LEFT JOIN returns all rows from left table (employees), NULL if no match in right table.</p>
 <p><strong>Output:</strong></p>
@@ -6252,10 +6252,10 @@ LEFT JOIN returns all rows from left table (employees), NULL if no match in righ
 <hr />
 <h3 id="q7-employees-with-projects-include-those-without-projects">Q7: Employees with projects (include those without projects)<a class="headerlink" href="#q7-employees-with-projects-include-those-without-projects" title="Permanent link">&para;</a></h3>
 <p><strong>Query:</strong></p>
-<pre><code class="language-sql">SELECT e.name, p.project_name
-FROM employees e
-LEFT JOIN projects p ON e.emp_id = p.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6281,11 +6281,11 @@ LEFT JOIN projects p ON e.emp_id = p.emp_id;
 </table>
 <hr />
 <h3 id="q8-left-join-with-condition">Q8: Left join with condition<a class="headerlink" href="#q8-left-join-with-condition" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, s.salary
-FROM employees e
-LEFT JOIN salaries s ON e.emp_id = s.emp_id
-WHERE s.salary &gt; 50000 OR s.salary IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">salaries</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6311,11 +6311,11 @@ WHERE s.salary &gt; 50000 OR s.salary IS NULL;
 </table>
 <hr />
 <h3 id="q9-left-join-multiple-tables">Q9: Left join multiple tables<a class="headerlink" href="#q9-left-join-multiple-tables" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, d.dept_name, p.project_name
-FROM employees e
-LEFT JOIN departments d ON e.dept_id = d.dept_id
-LEFT JOIN projects p ON e.emp_id = p.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6345,11 +6345,11 @@ LEFT JOIN projects p ON e.emp_id = p.emp_id;
 </table>
 <hr />
 <h3 id="q10-left-join-with-filtering">Q10: Left join with filtering<a class="headerlink" href="#q10-left-join-with-filtering" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, d.dept_name
-FROM employees e
-LEFT JOIN departments d ON e.dept_id = d.dept_id
-WHERE d.dept_name IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6368,10 +6368,10 @@ WHERE d.dept_name IS NULL;
 <hr />
 <h2 id="3-right-join">3. RIGHT JOIN<a class="headerlink" href="#3-right-join" title="Permanent link">&para;</a></h2>
 <h3 id="q11-all-departments-and-employees-include-depts-without-employees">Q11: All departments and employees (include depts without employees)<a class="headerlink" href="#q11-all-departments-and-employees-include-depts-without-employees" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, d.dept_name
-FROM employees e
-RIGHT JOIN departments d ON e.dept_id = d.dept_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6401,10 +6401,10 @@ RIGHT JOIN departments d ON e.dept_id = d.dept_id;
 </table>
 <hr />
 <h3 id="q12-right-join-with-projects">Q12: Right join with projects<a class="headerlink" href="#q12-right-join-with-projects" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, p.project_name
-FROM employees e
-RIGHT JOIN projects p ON e.emp_id = p.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6426,11 +6426,11 @@ RIGHT JOIN projects p ON e.emp_id = p.emp_id;
 </table>
 <hr />
 <h3 id="q13-right-join-multiple-tables">Q13: Right join multiple tables<a class="headerlink" href="#q13-right-join-multiple-tables" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, s.salary, d.dept_name
-FROM employees e
-RIGHT JOIN salaries s ON e.emp_id = s.emp_id
-RIGHT JOIN departments d ON e.dept_id = d.dept_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">salaries</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6465,11 +6465,11 @@ RIGHT JOIN departments d ON e.dept_id = d.dept_id;
 </table>
 <hr />
 <h3 id="q14-right-join-with-condition">Q14: Right join with condition<a class="headerlink" href="#q14-right-join-with-condition" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, d.dept_name
-FROM employees e
-RIGHT JOIN departments d ON e.dept_id = d.dept_id
-WHERE e.name IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6487,11 +6487,11 @@ WHERE e.name IS NULL;
 </table>
 <hr />
 <h3 id="q15-right-join-with-filtering-on-null">Q15: Right join with filtering on NULL<a class="headerlink" href="#q15-right-join-with-filtering-on-null" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, p.project_name
-FROM employees e
-RIGHT JOIN projects p ON e.emp_id = p.emp_id
-WHERE e.name IS NULL;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">emp_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6510,10 +6510,10 @@ WHERE e.name IS NULL;
 <hr />
 <h2 id="4-full-outer-join">4. FULL OUTER JOIN<a class="headerlink" href="#4-full-outer-join" title="Permanent link">&para;</a></h2>
 <h3 id="q16-employees-and-departments-all-records">Q16: Employees and departments (all records)<a class="headerlink" href="#q16-employees-and-departments-all-records" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, d.dept_name
-FROM employees e
-FULL OUTER JOIN departments d ON e.dept_id = d.dept_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">FULL</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6543,10 +6543,10 @@ FULL OUTER JOIN departments d ON e.dept_id = d.dept_id;
 </table>
 <hr />
 <h3 id="q17-employees-and-projects-all-records">Q17: Employees and projects (all records)<a class="headerlink" href="#q17-employees-and-projects-all-records" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, p.project_name
-FROM employees e
-FULL OUTER JOIN projects p ON e.emp_id = p.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">FULL</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6572,11 +6572,11 @@ FULL OUTER JOIN projects p ON e.emp_id = p.emp_id;
 </table>
 <hr />
 <h3 id="q18-full-join-with-multiple-tables">Q18: Full join with multiple tables<a class="headerlink" href="#q18-full-join-with-multiple-tables" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e.name, d.dept_name, p.project_name
-FROM employees e
-FULL OUTER JOIN departments d ON e.dept_id = d.dept_id
-FULL OUTER JOIN projects p ON e.emp_id = p.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">FULL</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept_id</span>
+<span class="k">FULL</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6639,10 +6639,10 @@ FULL OUTER JOIN projects p ON e.emp_id = p.emp_id;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT e1.name AS employee, e2.name AS manager
-FROM employees e1
-LEFT JOIN employees e2 ON e1.manager_id = e2.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">employee</span><span class="p">,</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">manager</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6668,11 +6668,11 @@ LEFT JOIN employees e2 ON e1.manager_id = e2.emp_id;
 </table>
 <hr />
 <h3 id="q20-employees-reporting-to-the-same-manager">Q20: Employees reporting to the same manager<a class="headerlink" href="#q20-employees-reporting-to-the-same-manager" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT e1.name AS emp1, e2.name AS emp2, e1.manager_id
-FROM employees e1
-INNER JOIN employees e2 ON e1.manager_id = e2.manager_id
-WHERE e1.emp_id &lt; e2.emp_id;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp1</span><span class="p">,</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp2</span><span class="p">,</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">manager_id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e1</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">manager_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">manager_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e1</span><span class="p">.</span><span class="n">emp_id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">e2</span><span class="p">.</span><span class="n">emp_id</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6743,6 +6743,10 @@ WHERE e1.emp_id &lt; e2.emp_id;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

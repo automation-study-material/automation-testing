@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5959,8 +5959,8 @@ with a focus on the <strong><code>pressSequentially()</code></strong> method for
 <li>Mimics real user behavior</li>
 </ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">await locator.pressSequentially('Ind');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">locator</span><span class="p">.</span><span class="nx">pressSequentially</span><span class="p">(</span><span class="s1">'Ind'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
 <h3 id="requirement">Requirement<a class="headerlink" href="#requirement" title="Permanent link">&para;</a></h3>
@@ -5977,13 +5977,13 @@ with a focus on the <strong><code>pressSequentially()</code></strong> method for
 </ul>
 <hr />
 <h2 id="sample-html-structure-assumed">Sample HTML Structure (Assumed)<a class="headerlink" href="#sample-html-structure-assumed" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;input id=&quot;country&quot; /&gt;
-&lt;ul class=&quot;suggestions&quot;&gt;
-  &lt;li&gt;India&lt;/li&gt;
-  &lt;li&gt;Indonesia&lt;/li&gt;
-  &lt;li&gt;Indore&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"country"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">"suggestions"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>India<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Indonesia<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Indore<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="step-by-step-automation-approach">Step-by-Step Automation Approach<a class="headerlink" href="#step-by-step-automation-approach" title="Permanent link">&para;</a></h2>
 <ol>
@@ -5997,37 +5997,37 @@ with a focus on the <strong><code>pressSequentially()</code></strong> method for
 </ol>
 <hr />
 <h2 id="playwright-javascript-example">Playwright JavaScript Example<a class="headerlink" href="#playwright-javascript-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">import { test, expect } from '@playwright/test';
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">test</span><span class="p">,</span><span class="w"> </span><span class="nx">expect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@playwright/test'</span><span class="p">;</span>
 
-test('Handle auto-suggestion dropdown using pressSequentially', async ({ page }) =&gt; {
+<span class="nx">test</span><span class="p">(</span><span class="s1">'Handle auto-suggestion dropdown using pressSequentially'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 
-  await page.goto('https://example.com');
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">'https://example.com'</span><span class="p">);</span>
 
-  const countryInput = page.locator('#country');
-  await countryInput.click();
-  await countryInput.pressSequentially('Ind');
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">countryInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'#country'</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">countryInput</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">countryInput</span><span class="p">.</span><span class="nx">pressSequentially</span><span class="p">(</span><span class="s1">'Ind'</span><span class="p">);</span>
 
-  const suggestions = page.locator('.suggestions li');
-  await expect(suggestions).toHaveCountGreaterThan(0);
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">suggestions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s1">'.suggestions li'</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">suggestions</span><span class="p">).</span><span class="nx">toHaveCountGreaterThan</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
 
-  const totalSuggestions = await suggestions.count();
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">totalSuggestions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">suggestions</span><span class="p">.</span><span class="nx">count</span><span class="p">();</span>
 
-  for (let i = 0; i &lt; totalSuggestions; i++) {
-    const suggestionText = await suggestions.nth(i).innerText();
-    if (suggestionText.trim() === 'India') {
-      await suggestions.nth(i).click();
-      break;
-    }
-  }
-});
-</code></pre>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">totalSuggestions</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">suggestionText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">suggestions</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">innerText</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">suggestionText</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'India'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">suggestions</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
 <hr />
 <h2 id="keyboard-based-selection">Keyboard-Based Selection<a class="headerlink" href="#keyboard-based-selection" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">await countryInput.pressSequentially('Ind');
-await page.waitForTimeout(500);
-await countryInput.press('ArrowDown');
-await countryInput.press('Enter');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">countryInput</span><span class="p">.</span><span class="nx">pressSequentially</span><span class="p">(</span><span class="s1">'Ind'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForTimeout</span><span class="p">(</span><span class="mf">500</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">countryInput</span><span class="p">.</span><span class="nx">press</span><span class="p">(</span><span class="s1">'ArrowDown'</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">countryInput</span><span class="p">.</span><span class="nx">press</span><span class="p">(</span><span class="s1">'Enter'</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6109,6 +6109,10 @@ That means it enters  i → (delay 150 ms) → enters n → (delay 150 ms) → e
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

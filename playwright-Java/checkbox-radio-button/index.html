@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5697,42 +5697,42 @@ Playwright provides a clean API to handle these elements.</p>
 </ul>
 <hr />
 <h2 id="example-code-java-playwright">📌 Example Code (Java + Playwright)<a class="headerlink" href="#example-code-java-playwright" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">import com.microsoft.playwright.*;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
 
-public class CheckboxRadioExample {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CheckboxRadioExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            // Navigate to sample page
-            page.navigate(&quot;https://the-internet.herokuapp.com/checkboxes&quot;);
+<span class="w">            </span><span class="c1">// Navigate to sample page</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://the-internet.herokuapp.com/checkboxes"</span><span class="p">);</span>
 
-            // ✅ Locate checkbox
-            Locator checkbox1 = page.locator(&quot;//form[@id='checkboxes']/input[1]&quot;);
+<span class="w">            </span><span class="c1">// ✅ Locate checkbox</span>
+<span class="w">            </span><span class="n">Locator</span><span class="w"> </span><span class="n">checkbox1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"//form[@id='checkboxes']/input[1]"</span><span class="p">);</span>
 
-            // --- Check a checkbox ---
-            checkbox1.check();
-            System.out.println(&quot;Checkbox 1 checked: &quot; + checkbox1.isChecked());
+<span class="w">            </span><span class="c1">// --- Check a checkbox ---</span>
+<span class="w">            </span><span class="n">checkbox1</span><span class="p">.</span><span class="na">check</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Checkbox 1 checked: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">checkbox1</span><span class="p">.</span><span class="na">isChecked</span><span class="p">());</span>
 
-            // --- Uncheck a checkbox ---
-            checkbox1.uncheck();
-            System.out.println(&quot;Checkbox 1 checked after uncheck: &quot; + checkbox1.isChecked());
+<span class="w">            </span><span class="c1">// --- Uncheck a checkbox ---</span>
+<span class="w">            </span><span class="n">checkbox1</span><span class="p">.</span><span class="na">uncheck</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Checkbox 1 checked after uncheck: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">checkbox1</span><span class="p">.</span><span class="na">isChecked</span><span class="p">());</span>
 
-            // ✅ Radio button example
-            page.navigate(&quot;https://demoqa.com/radio-button&quot;);
+<span class="w">            </span><span class="c1">// ✅ Radio button example</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://demoqa.com/radio-button"</span><span class="p">);</span>
 
-            Locator yesRadio = page.locator(&quot;input[id='yesRadio']&quot;);
+<span class="w">            </span><span class="n">Locator</span><span class="w"> </span><span class="n">yesRadio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"input[id='yesRadio']"</span><span class="p">);</span>
 
-            // --- Select radio button ---
-            yesRadio.check();
-            System.out.println(&quot;Yes Radio selected: &quot; + yesRadio.isChecked());
+<span class="w">            </span><span class="c1">// --- Select radio button ---</span>
+<span class="w">            </span><span class="n">yesRadio</span><span class="p">.</span><span class="na">check</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Yes Radio selected: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">yesRadio</span><span class="p">.</span><span class="na">isChecked</span><span class="p">());</span>
 
-            browser.close();
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">browser</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="notes">🔑 Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5796,6 +5796,10 @@ public class CheckboxRadioExample {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5626,8 +5626,7 @@
 </ul>
 <hr />
 <h1 id="1-folder-structure">1. Folder Structure<a class="headerlink" href="#1-folder-structure" title="Permanent link">&para;</a></h1>
-<pre><code>
-selenium-bdd-cucumber-framework/
+<div class="highlight"><pre><span></span><code>selenium-bdd-cucumber-framework/
 
 ├── pom.xml
 │
@@ -5741,7 +5740,7 @@ public final class DriverFactory {
 
         DriverProvider provider;
 
-        if(ConfigReader.getBoolean(&quot;run.remote&quot;))
+        if(ConfigReader.getBoolean("run.remote"))
             provider = new RemoteDriverProvider();
         else
             provider = new LocalDriverProvider();
@@ -5749,267 +5748,267 @@ public final class DriverFactory {
         DriverManager.setDriver(provider.createDriver());
     }
 }
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="4-driverprovider-abstraction">4. DriverProvider (Abstraction)<a class="headerlink" href="#4-driverprovider-abstraction" title="Permanent link">&para;</a></h1>
 <p>Interface defining driver creation.</p>
-<pre><code class="language-java">package driver.provider;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">driver.provider</span><span class="p">;</span>
 
-import org.openqa.selenium.WebDriver;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public interface DriverProvider {
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">DriverProvider</span><span class="w"> </span><span class="p">{</span>
 
-    WebDriver createDriver();
-}
-</code></pre>
+<span class="w">    </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">createDriver</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="5-local-driver-provider">5. Local Driver Provider<a class="headerlink" href="#5-local-driver-provider" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">package driver.provider;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">driver.provider</span><span class="p">;</span>
 
-import config.ConfigReader;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.WebDriver;
+<span class="kn">import</span><span class="w"> </span><span class="nn">config.ConfigReader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.github.bonigarcia.wdm.WebDriverManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public class LocalDriverProvider implements DriverProvider {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LocalDriverProvider</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">DriverProvider</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    public WebDriver createDriver() {
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">createDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriverManager.chromedriver().setup();
+<span class="w">        </span><span class="n">WebDriverManager</span><span class="p">.</span><span class="na">chromedriver</span><span class="p">().</span><span class="na">setup</span><span class="p">();</span>
 
-        return new ChromeDriver();
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="6-basepage-abstraction">6. BasePage (Abstraction)<a class="headerlink" href="#6-basepage-abstraction" title="Permanent link">&para;</a></h1>
 <p>Abstract class used by all pages.</p>
-<pre><code class="language-java">package pages;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pages</span><span class="p">;</span>
 
-import org.openqa.selenium.WebDriver;
-import utils.ElementActions;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">utils.ElementActions</span><span class="p">;</span>
 
-public abstract class BasePage {
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasePage</span><span class="w"> </span><span class="p">{</span>
 
-    protected WebDriver driver;
-    protected ElementActions actions;
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">ElementActions</span><span class="w"> </span><span class="n">actions</span><span class="p">;</span>
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-        this.actions = new ElementActions(driver);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BasePage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ElementActions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public abstract String getPageUrl();
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getPageUrl</span><span class="p">();</span>
 
-    public abstract boolean isPageLoaded();
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPageLoaded</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="7-homepage">7. HomePage<a class="headerlink" href="#7-homepage" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">package pages;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pages</span><span class="p">;</span>
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebDriver</span><span class="p">;</span>
 
-public class HomePage extends BasePage {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HomePage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasePage</span><span class="w"> </span><span class="p">{</span>
 
-    private By loginButton = By.id(&quot;login&quot;);
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">By</span><span class="w"> </span><span class="n">loginButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"login"</span><span class="p">);</span>
 
-    public HomePage(WebDriver driver) {
-        super(driver);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">HomePage</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void clickLogin() {
-        actions.click(loginButton);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickLogin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">actions</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="n">loginButton</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    public String getPageUrl() {
-        return &quot;https://example.com&quot;;
-    }
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getPageUrl</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"https://example.com"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    public boolean isPageLoaded() {
-        return actions.isDisplayed(loginButton);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPageLoaded</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">actions</span><span class="p">.</span><span class="na">isDisplayed</span><span class="p">(</span><span class="n">loginButton</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="8-waitutils">8. WaitUtils<a class="headerlink" href="#8-waitutils" title="Permanent link">&para;</a></h1>
 <p>Centralized waits.</p>
-<pre><code class="language-java">package utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">utils</span><span class="p">;</span>
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.*;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.support.ui.*</span><span class="p">;</span>
 
-import java.time.Duration;
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.Duration</span><span class="p">;</span>
 
-public class WaitUtils {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WaitUtils</span><span class="w"> </span><span class="p">{</span>
 
-    private WebDriverWait wait;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="w"> </span><span class="n">wait</span><span class="p">;</span>
 
-    public WaitUtils(WebDriver driver){
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">WaitUtils</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">){</span>
+<span class="w">        </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="p">.</span><span class="na">ofSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForVisible(By locator){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForVisible</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">){</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void waitForClickable(By locator){
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForClickable</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">){</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">elementToBeClickable</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="9-elementactions">9. ElementActions<a class="headerlink" href="#9-elementactions" title="Permanent link">&para;</a></h1>
 <p>Encapsulation of WebElement operations.</p>
-<pre><code class="language-java">package utils;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">utils</span><span class="p">;</span>
 
-import org.openqa.selenium.*;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.*</span><span class="p">;</span>
 
-public class ElementActions {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ElementActions</span><span class="w"> </span><span class="p">{</span>
 
-    private WebDriver driver;
-    private WaitUtils wait;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WaitUtils</span><span class="w"> </span><span class="n">wait</span><span class="p">;</span>
 
-    public ElementActions(WebDriver driver){
-        this.driver = driver;
-        this.wait = new WaitUtils(driver);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ElementActions</span><span class="p">(</span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">){</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WaitUtils</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void click(By locator){
-        wait.waitForClickable(locator);
-        driver.findElement(locator).click();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">click</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">){</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">waitForClickable</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public void type(By locator,String text){
-        wait.waitForVisible(locator);
-        driver.findElement(locator).sendKeys(text);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">type</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">,</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">){</span>
+<span class="w">        </span><span class="n">wait</span><span class="p">.</span><span class="na">waitForVisible</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public boolean isDisplayed(By locator){
-        return driver.findElement(locator).isDisplayed();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isDisplayed</span><span class="p">(</span><span class="n">By</span><span class="w"> </span><span class="n">locator</span><span class="p">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">isDisplayed</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="10-hooks-replacement-for-testng-listeners">10. Hooks (Replacement for TestNG Listeners)<a class="headerlink" href="#10-hooks-replacement-for-testng-listeners" title="Permanent link">&para;</a></h1>
 <p>In Cucumber we use <strong>Hooks instead of TestNG listeners</strong>.</p>
-<pre><code class="language-java">package hooks;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">hooks</span><span class="p">;</span>
 
-import driver.DriverFactory;
-import driver.DriverManager;
-import io.cucumber.java.*;
+<span class="kn">import</span><span class="w"> </span><span class="nn">driver.DriverFactory</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">driver.DriverManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.*</span><span class="p">;</span>
 
-public class Hooks {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hooks</span><span class="w"> </span><span class="p">{</span>
 
-    @Before
-    public void setUp(){
+<span class="w">    </span><span class="nd">@Before</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(){</span>
 
-        DriverFactory.initDriver();
+<span class="w">        </span><span class="n">DriverFactory</span><span class="p">.</span><span class="na">initDriver</span><span class="p">();</span>
 
-        System.out.println(&quot;Browser Started&quot;);
-    }
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Browser Started"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @After
-    public void tearDown(){
+<span class="w">    </span><span class="nd">@After</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tearDown</span><span class="p">(){</span>
 
-        DriverManager.quit();
+<span class="w">        </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
 
-        System.out.println(&quot;Browser Closed&quot;);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Browser Closed"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="11-screenshot-on-failure-cucumber">11. Screenshot on Failure (Cucumber)<a class="headerlink" href="#11-screenshot-on-failure-cucumber" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@After
-public void takeScreenshot(Scenario scenario){
+<div class="highlight"><pre><span></span><code><span class="nd">@After</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">takeScreenshot</span><span class="p">(</span><span class="n">Scenario</span><span class="w"> </span><span class="n">scenario</span><span class="p">){</span>
 
-    if(scenario.isFailed()){
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="na">isFailed</span><span class="p">()){</span>
 
-        byte[] screenshot =
-          ((TakesScreenshot)DriverManager.getDriver())
-          .getScreenshotAs(OutputType.BYTES);
+<span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">screenshot</span><span class="w"> </span><span class="o">=</span>
+<span class="w">          </span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getDriver</span><span class="p">())</span>
+<span class="w">          </span><span class="p">.</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">BYTES</span><span class="p">);</span>
 
-        scenario.attach(screenshot,&quot;image/png&quot;,&quot;Failed Screenshot&quot;);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">scenario</span><span class="p">.</span><span class="na">attach</span><span class="p">(</span><span class="n">screenshot</span><span class="p">,</span><span class="s">"image/png"</span><span class="p">,</span><span class="s">"Failed Screenshot"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="12-step-definitions">12. Step Definitions<a class="headerlink" href="#12-step-definitions" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">package stepdefinitions;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">stepdefinitions</span><span class="p">;</span>
 
-import io.cucumber.java.en.*;
-import pages.HomePage;
-import driver.DriverManager;
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.java.en.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pages.HomePage</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">driver.DriverManager</span><span class="p">;</span>
 
-public class LoginSteps {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginSteps</span><span class="w"> </span><span class="p">{</span>
 
-    HomePage home;
+<span class="w">    </span><span class="n">HomePage</span><span class="w"> </span><span class="n">home</span><span class="p">;</span>
 
-    @Given(&quot;user is on home page&quot;)
-    public void openHomePage(){
+<span class="w">    </span><span class="nd">@Given</span><span class="p">(</span><span class="s">"user is on home page"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openHomePage</span><span class="p">(){</span>
 
-        home = new HomePage(DriverManager.getDriver());
+<span class="w">        </span><span class="n">home</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HomePage</span><span class="p">(</span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getDriver</span><span class="p">());</span>
 
-        DriverManager.getDriver().get(home.getPageUrl());
-    }
+<span class="w">        </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getDriver</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">home</span><span class="p">.</span><span class="na">getPageUrl</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @When(&quot;user clicks login button&quot;)
-    public void clickLogin(){
+<span class="w">    </span><span class="nd">@When</span><span class="p">(</span><span class="s">"user clicks login button"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickLogin</span><span class="p">(){</span>
 
-        home.clickLogin();
-    }
+<span class="w">        </span><span class="n">home</span><span class="p">.</span><span class="na">clickLogin</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Then(&quot;login page should open&quot;)
-    public void verifyLogin(){
+<span class="w">    </span><span class="nd">@Then</span><span class="p">(</span><span class="s">"login page should open"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">verifyLogin</span><span class="p">(){</span>
 
-        System.out.println(&quot;Login page opened&quot;);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Login page opened"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="13-feature-file">13. Feature File<a class="headerlink" href="#13-feature-file" title="Permanent link">&para;</a></h1>
-<pre><code>Feature: Login Feature
+<div class="highlight"><pre><span></span><code>Feature: Login Feature
 
 Scenario: Open login page
 
 Given user is on home page
 When user clicks login button
 Then login page should open
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="14-runner-class">14. Runner Class<a class="headerlink" href="#14-runner-class" title="Permanent link">&para;</a></h1>
 <p>Cucumber Runner replaces <strong>TestNG XML execution</strong>.</p>
-<pre><code class="language-java">package runner;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">runner</span><span class="p">;</span>
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.AbstractTestNGCucumberTests</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.cucumber.testng.CucumberOptions</span><span class="p">;</span>
 
-@CucumberOptions(
+<span class="nd">@CucumberOptions</span><span class="p">(</span>
 
-features = &quot;src/test/resources/features&quot;,
-glue = {&quot;stepdefinitions&quot;,&quot;hooks&quot;},
+<span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"src/test/resources/features"</span><span class="p">,</span>
+<span class="n">glue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"stepdefinitions"</span><span class="p">,</span><span class="s">"hooks"</span><span class="p">},</span>
 
-plugin = {
+<span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 
-&quot;pretty&quot;,
-&quot;html:target/cucumber-report.html&quot;
+<span class="s">"pretty"</span><span class="p">,</span>
+<span class="s">"html:target/cucumber-report.html"</span>
 
-},
+<span class="p">},</span>
 
-monochrome = true
-)
+<span class="n">monochrome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">)</span>
 
-public class TestRunner extends AbstractTestNGCucumberTests {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestRunner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractTestNGCucumberTests</span><span class="w"> </span><span class="p">{</span>
 
-}
-</code></pre>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="15-uml-diagram">15. UML Diagram<a class="headerlink" href="#15-uml-diagram" title="Permanent link">&para;</a></h1>
-<pre><code>Feature File
+<div class="highlight"><pre><span></span><code>Feature File
       |
       v
 Step Definitions
@@ -6025,7 +6024,7 @@ WaitUtils
       |
       v
 DriverFactory → DriverManager
-</code></pre>
+</code></pre></div>
 <hr />
 
 
@@ -6080,6 +6079,10 @@ DriverFactory → DriverManager
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

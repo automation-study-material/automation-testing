@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5945,10 +5945,10 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT dept, COUNT(*) AS emp_count
-FROM employees
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Explanation:</strong>
 <code>COUNT(*)</code> counts rows in each department.</p>
 <p><strong>Output:</strong></p>
@@ -6019,11 +6019,11 @@ GROUP BY dept;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-sql">SELECT dept, COUNT(*) AS emp_count_high_salary
-FROM employees
-WHERE salary &gt; 50000
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp_count_high_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6049,9 +6049,9 @@ GROUP BY dept;
 </table>
 <hr />
 <h3 id="q3-count-distinct-departments">Q3: Count distinct departments<a class="headerlink" href="#q3-count-distinct-departments" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT COUNT(DISTINCT dept) AS distinct_departments
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">dept</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">distinct_departments</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6067,11 +6067,11 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q4-count-employees-per-department-having-more-than-1-employee">Q4: Count employees per department having more than 1 employee<a class="headerlink" href="#q4-count-employees-per-department-having-more-than-1-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, COUNT(*) AS emp_count
-FROM employees
-GROUP BY dept
-HAVING COUNT(*) &gt; 1;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6093,11 +6093,11 @@ HAVING COUNT(*) &gt; 1;
 </table>
 <hr />
 <h3 id="q5-count-employees-whose-name-starts-with-a-per-department">Q5: Count employees whose name starts with 'A' per department<a class="headerlink" href="#q5-count-employees-whose-name-starts-with-a-per-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, COUNT(*) AS count_A
-FROM employees
-WHERE name LIKE 'A%'
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">count_A</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'A%'</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6116,10 +6116,10 @@ GROUP BY dept;
 <hr />
 <h2 id="2-sum">2. SUM<a class="headerlink" href="#2-sum" title="Permanent link">&para;</a></h2>
 <h3 id="q6-total-salary-per-department">Q6: Total salary per department<a class="headerlink" href="#q6-total-salary-per-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, SUM(salary) AS total_salary
-FROM employees
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6145,11 +6145,11 @@ GROUP BY dept;
 </table>
 <hr />
 <h3 id="q7-total-salary-of-employees-with-salary-50000-per-department">Q7: Total salary of employees with salary &gt; 50000 per department<a class="headerlink" href="#q7-total-salary-of-employees-with-salary-50000-per-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, SUM(salary) AS high_salary_sum
-FROM employees
-WHERE salary &gt; 50000
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">high_salary_sum</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6175,9 +6175,9 @@ GROUP BY dept;
 </table>
 <hr />
 <h3 id="q8-total-salary-across-company">Q8: Total salary across company<a class="headerlink" href="#q8-total-salary-across-company" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT SUM(salary) AS total_company_salary
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_company_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6193,11 +6193,11 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q9-sum-of-salary-per-department-having-sum-100000">Q9: Sum of salary per department having sum &gt; 100000<a class="headerlink" href="#q9-sum-of-salary-per-department-having-sum-100000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, SUM(salary) AS total_salary
-FROM employees
-GROUP BY dept
-HAVING SUM(salary) &gt; 100000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6219,10 +6219,10 @@ HAVING SUM(salary) &gt; 100000;
 </table>
 <hr />
 <h3 id="q10-sum-salary-where-employee-name-contains-a">Q10: Sum salary where employee name contains 'a'<a class="headerlink" href="#q10-sum-salary-where-employee-name-contains-a" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT SUM(salary) AS total_a_salary
-FROM employees
-WHERE name LIKE '%a%';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_a_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%a%'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6239,10 +6239,10 @@ WHERE name LIKE '%a%';
 <hr />
 <h2 id="3-avg">3. AVG<a class="headerlink" href="#3-avg" title="Permanent link">&para;</a></h2>
 <h3 id="q11-average-salary-per-department">Q11: Average salary per department<a class="headerlink" href="#q11-average-salary-per-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, AVG(salary) AS avg_salary
-FROM employees
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6268,10 +6268,10 @@ GROUP BY dept;
 </table>
 <hr />
 <h3 id="q12-average-salary-of-employees-with-salary-50000">Q12: Average salary of employees with salary &gt; 50000<a class="headerlink" href="#q12-average-salary-of-employees-with-salary-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT AVG(salary) AS avg_high_salary
-FROM employees
-WHERE salary &gt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_high_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6287,11 +6287,11 @@ WHERE salary &gt; 50000;
 </table>
 <hr />
 <h3 id="q13-average-salary-per-department-having-more-than-1-employee">Q13: Average salary per department having more than 1 employee<a class="headerlink" href="#q13-average-salary-per-department-having-more-than-1-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, AVG(salary) AS avg_salary
-FROM employees
-GROUP BY dept
-HAVING COUNT(*) &gt; 1;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6313,10 +6313,10 @@ HAVING COUNT(*) &gt; 1;
 </table>
 <hr />
 <h3 id="q14-average-salary-of-employees-whose-name-starts-with-c">Q14: Average salary of employees whose name starts with 'C'<a class="headerlink" href="#q14-average-salary-of-employees-whose-name-starts-with-c" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT AVG(salary) AS avg_C_salary
-FROM employees
-WHERE name LIKE 'C%';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_C_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'C%'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6332,9 +6332,9 @@ WHERE name LIKE 'C%';
 </table>
 <hr />
 <h3 id="q15-average-salary-across-company">Q15: Average salary across company<a class="headerlink" href="#q15-average-salary-across-company" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT AVG(salary) AS avg_salary_company
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_salary_company</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6351,10 +6351,10 @@ FROM employees;
 <hr />
 <h2 id="4-minmax">4. MIN/MAX<a class="headerlink" href="#4-minmax" title="Permanent link">&para;</a></h2>
 <h3 id="q16-minimum-and-maximum-salary-per-department">Q16: Minimum and Maximum salary per department<a class="headerlink" href="#q16-minimum-and-maximum-salary-per-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, MIN(salary) AS min_salary, MAX(salary) AS max_salary
-FROM employees
-GROUP BY dept;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">min_salary</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6384,9 +6384,9 @@ GROUP BY dept;
 </table>
 <hr />
 <h3 id="q17-minimum-salary-in-company">Q17: Minimum salary in company<a class="headerlink" href="#q17-minimum-salary-in-company" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT MIN(salary) AS min_salary_company
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">min_salary_company</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6402,9 +6402,9 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q18-maximum-salary-in-company">Q18: Maximum salary in company<a class="headerlink" href="#q18-maximum-salary-in-company" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT MAX(salary) AS max_salary_company
-FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_salary_company</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6420,11 +6420,11 @@ FROM employees;
 </table>
 <hr />
 <h3 id="q19-maximum-salary-per-department-having-more-than-1-employee">Q19: Maximum salary per department having more than 1 employee<a class="headerlink" href="#q19-maximum-salary-per-department-having-more-than-1-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT dept, MAX(salary) AS max_salary
-FROM employees
-GROUP BY dept
-HAVING COUNT(*) &gt; 1;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6446,10 +6446,10 @@ HAVING COUNT(*) &gt; 1;
 </table>
 <hr />
 <h3 id="q20-minimum-salary-for-employees-with-salary-50000">Q20: Minimum salary for employees with salary &gt; 50000<a class="headerlink" href="#q20-minimum-salary-for-employees-with-salary-50000" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">SELECT MIN(salary) AS min_high_salary
-FROM employees
-WHERE salary &gt; 50000;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">min_high_salary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employees</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50000</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6516,6 +6516,10 @@ WHERE salary &gt; 50000;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

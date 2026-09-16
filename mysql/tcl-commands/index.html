@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5743,29 +5743,29 @@ They ensure data integrity and control how changes are saved or undone.</p>
 <h2 id="key-tcl-commands-in-depth">🔹 Key TCL Commands (in depth)<a class="headerlink" href="#key-tcl-commands-in-depth" title="Permanent link">&para;</a></h2>
 <h3 id="1-commit">1. COMMIT<a class="headerlink" href="#1-commit" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Saves changes permanently.</li>
+<li>Saves changes permanently.
+<div class="highlight"><pre><span></span><code><span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">COMMIT;
-</code></pre>
 <h3 id="2-rollback">2. ROLLBACK<a class="headerlink" href="#2-rollback" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Undo changes since last commit.</li>
+<li>Undo changes since last commit.
+<div class="highlight"><pre><span></span><code><span class="k">ROLLBACK</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">ROLLBACK;
-</code></pre>
 <h3 id="3-savepoint">3. SAVEPOINT<a class="headerlink" href="#3-savepoint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Creates a point to rollback partially.</li>
+<li>Creates a point to rollback partially.
+<div class="highlight"><pre><span></span><code><span class="n">SAVEPOINT</span><span class="w"> </span><span class="n">sp1</span><span class="p">;</span>
+<span class="k">ROLLBACK</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">sp1</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">SAVEPOINT sp1;
-ROLLBACK TO sp1;
-</code></pre>
 <h3 id="4-set-transaction">4. SET TRANSACTION<a class="headerlink" href="#4-set-transaction" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Sets transaction properties like isolation level.</li>
+<li>Sets transaction properties like isolation level.
+<div class="highlight"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">ONLY</span><span class="p">;</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-sql">SET TRANSACTION READ ONLY;
-</code></pre>
 <hr />
 <h2 id="pros-cons-of-tcl">🔹 Pros &amp; Cons of TCL<a class="headerlink" href="#pros-cons-of-tcl" title="Permanent link">&para;</a></h2>
 <h3 id="pros">✅ Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
@@ -5916,6 +5916,10 @@ ROLLBACK TO sp1;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

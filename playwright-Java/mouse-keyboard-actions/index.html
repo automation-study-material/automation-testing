@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5916,36 +5916,36 @@
 <hr />
 <h2 id="1-drag-and-drop">1️⃣ Drag and Drop<a class="headerlink" href="#1-drag-and-drop" title="Permanent link">&para;</a></h2>
 <h3 id="example-html">Example HTML<a class="headerlink" href="#example-html" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;div id=&quot;source&quot; draggable=&quot;true&quot;&gt;Drag me&lt;/div&gt;
-&lt;div id=&quot;target&quot;&gt;Drop here&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"source"</span> <span class="na">draggable</span><span class="o">=</span><span class="s">"true"</span><span class="p">&gt;</span>Drag me<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"target"</span><span class="p">&gt;</span>Drop here<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="a-simple-drag-and-drop-using-dragto">a) Simple Drag and Drop using <code>dragTo()</code><a class="headerlink" href="#a-simple-drag-and-drop-using-dragto" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator source = page.locator(&quot;#source&quot;);
-Locator target = page.locator(&quot;#target&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#source"</span><span class="p">);</span>
+<span class="n">Locator</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#target"</span><span class="p">);</span>
 
-source.dragTo(target);
-</code></pre>
+<span class="n">source</span><span class="p">.</span><span class="na">dragTo</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li>Simulates dragging from source element to target element.</li>
 <li>Handles mouse events automatically.</li>
 <li>Auto-waits for elements to be visible.</li>
 </ul>
 <h3 id="b-drag-and-drop-using-mouse-actions">b) Drag and Drop Using Mouse Actions<a class="headerlink" href="#b-drag-and-drop-using-mouse-actions" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.mouse().move(100, 200);  // Move to source coordinates
-page.mouse().down();           // Click and hold
-page.mouse().move(300, 400);  // Move to target coordinates
-page.mouse().up();             // Release
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">move</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w">  </span><span class="c1">// Move to source coordinates</span>
+<span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">down</span><span class="p">();</span><span class="w">           </span><span class="c1">// Click and hold</span>
+<span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">move</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">);</span><span class="w">  </span><span class="c1">// Move to target coordinates</span>
+<span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">up</span><span class="p">();</span><span class="w">             </span><span class="c1">// Release</span>
+</code></pre></div>
 <ul>
 <li>Useful if elements are custom draggable items not directly supported by <code>dragTo()</code>.</li>
 </ul>
 <h3 id="c-iterating-multiple-draggable-items">c) Iterating Multiple Draggable Items<a class="headerlink" href="#c-iterating-multiple-draggable-items" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator items = page.locator(&quot;.draggable&quot;);
-int count = items.count();
-for (int i = 0; i &lt; count; i++) {
-    items.nth(i).dragTo(page.locator(&quot;#target&quot;));
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">".draggable"</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">items</span><span class="p">.</span><span class="na">nth</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">dragTo</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#target"</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>Allows dragging multiple items to the target container.</li>
 </ul>
@@ -5958,47 +5958,47 @@ for (int i = 0; i &lt; count; i++) {
 <hr />
 <h2 id="2-keyboard-interactions">2️⃣ Keyboard Interactions<a class="headerlink" href="#2-keyboard-interactions" title="Permanent link">&para;</a></h2>
 <h3 id="a-typing-text-fill-and-type">a) Typing Text (<code>fill</code> and <code>type</code>)<a class="headerlink" href="#a-typing-text-fill-and-type" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#searchBox&quot;).fill(&quot;Playwright&quot;);  // Instant fill
-page.locator(&quot;#searchBox&quot;).type(&quot;Automation&quot;);  // Simulate typing character by character
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="s">"Playwright"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Instant fill</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">type</span><span class="p">(</span><span class="s">"Automation"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Simulate typing character by character</span>
+</code></pre></div>
 <ul>
 <li><code>fill()</code> sets value instantly.</li>
 <li><code>type()</code> triggers keyboard events.</li>
 </ul>
 <h3 id="b-pressing-keys">b) Pressing Keys<a class="headerlink" href="#b-pressing-keys" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#searchBox&quot;).press(&quot;Enter&quot;);     // Press Enter key
-page.locator(&quot;#searchBox&quot;).press(&quot;Tab&quot;);       // Move focus to next element
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">press</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">);</span><span class="w">     </span><span class="c1">// Press Enter key</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">press</span><span class="p">(</span><span class="s">"Tab"</span><span class="p">);</span><span class="w">       </span><span class="c1">// Move focus to next element</span>
+</code></pre></div>
 <ul>
 <li>Equivalent to <code>sendKeys(Keys.ENTER)</code> in Selenium.</li>
 <li>Triggers keypress events.</li>
 </ul>
 <h3 id="c-keyboard-shortcuts-combination-keys">c) Keyboard Shortcuts / Combination Keys<a class="headerlink" href="#c-keyboard-shortcuts-combination-keys" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.keyboard().press(&quot;Control+A&quot;);  // Select all text
-page.keyboard().press(&quot;Control+C&quot;);  // Copy
-page.keyboard().press(&quot;Control+V&quot;);  // Paste
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">press</span><span class="p">(</span><span class="s">"Control+A"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Select all text</span>
+<span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">press</span><span class="p">(</span><span class="s">"Control+C"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Copy</span>
+<span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">press</span><span class="p">(</span><span class="s">"Control+V"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Paste</span>
+</code></pre></div>
 <ul>
 <li>Can simulate shortcuts for copy, paste, undo, etc.</li>
 </ul>
 <h3 id="d-using-keyboardtype-for-raw-input">d) Using <code>keyboard.type()</code> for Raw Input<a class="headerlink" href="#d-using-keyboardtype-for-raw-input" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.keyboard().type(&quot;Hello World&quot;);  // Types text anywhere the focus is active
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">type</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Types text anywhere the focus is active</span>
+</code></pre></div>
 <ul>
 <li>Useful when no input locator is available but you need to send keys globally.</li>
 </ul>
 <h3 id="e-full-example-flow">e) Full Example Flow<a class="headerlink" href="#e-full-example-flow" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">// Focus search box
-page.locator(&quot;#searchBox&quot;).click();
+<div class="highlight"><pre><span></span><code><span class="c1">// Focus search box</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
 
-// Fill and submit
-page.locator(&quot;#searchBox&quot;).fill(&quot;Playwright&quot;);
-page.locator(&quot;#searchBox&quot;).press(&quot;Enter&quot;);
+<span class="c1">// Fill and submit</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">fill</span><span class="p">(</span><span class="s">"Playwright"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#searchBox"</span><span class="p">).</span><span class="na">press</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">);</span>
 
-// Select all text and delete
-page.keyboard().press(&quot;Control+A&quot;);
-page.keyboard().press(&quot;Backspace&quot;);
-</code></pre>
+<span class="c1">// Select all text and delete</span>
+<span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">press</span><span class="p">(</span><span class="s">"Control+A"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">press</span><span class="p">(</span><span class="s">"Backspace"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="tips">✅ Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Playwright auto-waits for elements to be visible before keyboard interactions.</li>
@@ -6008,78 +6008,78 @@ page.keyboard().press(&quot;Backspace&quot;);
 <hr />
 <h2 id="3-mouse-actions">3️⃣ Mouse Actions<a class="headerlink" href="#3-mouse-actions" title="Permanent link">&para;</a></h2>
 <h3 id="a-click">a) Click<a class="headerlink" href="#a-click" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator button = page.locator(&quot;#submitBtn&quot;);
-button.click();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#submitBtn"</span><span class="p">);</span>
+<span class="n">button</span><span class="p">.</span><span class="na">click</span><span class="p">();</span>
+</code></pre></div>
 <ul>
 <li>Simulates a single left mouse click on the element.</li>
 </ul>
 <h3 id="b-double-click">b) Double Click<a class="headerlink" href="#b-double-click" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator textBox = page.locator(&quot;#inputBox&quot;);
-textBox.dblclick();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">textBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#inputBox"</span><span class="p">);</span>
+<span class="n">textBox</span><span class="p">.</span><span class="na">dblclick</span><span class="p">();</span>
+</code></pre></div>
 <ul>
 <li>Selects text or activates default double-click behavior.</li>
 </ul>
 <h3 id="c-hover">c) Hover<a class="headerlink" href="#c-hover" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator menu = page.locator(&quot;#menu&quot;);
-menu.hover();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#menu"</span><span class="p">);</span>
+<span class="n">menu</span><span class="p">.</span><span class="na">hover</span><span class="p">();</span>
+</code></pre></div>
 <ul>
 <li>Moves mouse over the element (useful for dropdowns, tooltips).</li>
 </ul>
 <h3 id="d-move-mouse">d) Move Mouse<a class="headerlink" href="#d-move-mouse" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.mouse().move(200, 300);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">move</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li>Moves mouse pointer to specific screen coordinates.</li>
 </ul>
 <h3 id="e-mouse-down-and-up">e) Mouse Down and Up<a class="headerlink" href="#e-mouse-down-and-up" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.mouse().move(100, 200); // Move to element
-page.mouse().down();         // Press and hold mouse button
-page.mouse().up();           // Release mouse button
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">move</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="c1">// Move to element</span>
+<span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">down</span><span class="p">();</span><span class="w">         </span><span class="c1">// Press and hold mouse button</span>
+<span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">up</span><span class="p">();</span><span class="w">           </span><span class="c1">// Release mouse button</span>
+</code></pre></div>
 <ul>
 <li>Useful for drag-and-drop or click-and-hold actions.</li>
 </ul>
 <h3 id="f-click-at-coordinates">f) Click at Coordinates<a class="headerlink" href="#f-click-at-coordinates" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.mouse().click(150, 250);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">mouse</span><span class="p">().</span><span class="na">click</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li>Clicks at absolute screen coordinates, bypassing locators.</li>
 </ul>
 <h3 id="g-right-click">g) Right Click<a class="headerlink" href="#g-right-click" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator element = page.locator(&quot;#contextMenu&quot;);
-element.click(new Locator.ClickOptions().setButton(MouseButton.RIGHT));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#contextMenu"</span><span class="p">);</span>
+<span class="n">element</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Locator</span><span class="p">.</span><span class="na">ClickOptions</span><span class="p">().</span><span class="na">setButton</span><span class="p">(</span><span class="n">MouseButton</span><span class="p">.</span><span class="na">RIGHT</span><span class="p">));</span>
+</code></pre></div>
 <ul>
 <li>Opens context menus.</li>
 </ul>
 <hr />
 <h2 id="4-advanced-keyboard-actions">4️⃣ Advanced Keyboard Actions<a class="headerlink" href="#4-advanced-keyboard-actions" title="Permanent link">&para;</a></h2>
 <h3 id="a-type-text">a) Type Text<a class="headerlink" href="#a-type-text" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.keyboard().type(&quot;Hello&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">type</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li>Types text wherever the focus is set.</li>
 </ul>
 <h3 id="b-press-enter">b) Press Enter<a class="headerlink" href="#b-press-enter" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.keyboard().press(&quot;Enter&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">press</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li>Simulates pressing Enter key.</li>
 </ul>
 <h3 id="c-key-down-and-key-up">c) Key Down and Key Up<a class="headerlink" href="#c-key-down-and-key-up" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.keyboard().down(&quot;Shift&quot;);   // Hold Shift
-page.keyboard().up(&quot;Shift&quot;);     // Release Shift
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">down</span><span class="p">(</span><span class="s">"Shift"</span><span class="p">);</span><span class="w">   </span><span class="c1">// Hold Shift</span>
+<span class="n">page</span><span class="p">.</span><span class="na">keyboard</span><span class="p">().</span><span class="na">up</span><span class="p">(</span><span class="s">"Shift"</span><span class="p">);</span><span class="w">     </span><span class="c1">// Release Shift</span>
+</code></pre></div>
 <ul>
 <li>Useful for combinations like Shift+Click.</li>
 </ul>
 <h3 id="d-sequential-typing">d) Sequential Typing<a class="headerlink" href="#d-sequential-typing" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Locator field = page.locator(&quot;#username&quot;);
-field.pressSequentially(&quot;Playwright&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#username"</span><span class="p">);</span>
+<span class="n">field</span><span class="p">.</span><span class="na">pressSequentially</span><span class="p">(</span><span class="s">"Playwright"</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li>Types text character by character into a field (human-like typing).</li>
 </ul>
@@ -6136,6 +6136,10 @@ field.pressSequentially(&quot;Playwright&quot;);
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

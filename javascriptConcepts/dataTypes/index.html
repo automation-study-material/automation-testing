@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6049,36 +6049,36 @@
 <li><strong>BigInt</strong> – Large integer values</li>
 </ol>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">// Number
-let age = 25;
+<div class="highlight"><pre><span></span><code><span class="c1">// Number</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25</span><span class="p">;</span>
 
-// String
-let name = &quot;Nitin&quot;;
+<span class="c1">// String</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">;</span>
 
-// Boolean
-let isActive = true;
+<span class="c1">// Boolean</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">isActive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 
-// Undefined
-let city;
+<span class="c1">// Undefined</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">city</span><span class="p">;</span>
 
-// Null
-let country = null;
+<span class="c1">// Null</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 
-// Symbol
-let sym = Symbol('id');
+<span class="c1">// Symbol</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sym</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
 
-// BigInt
-let bigNumber = 123456789012345678901234567890n;
-</code></pre>
+<span class="c1">// BigInt</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">bigNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123456789012345678901234567890n</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="checking-data-types">Checking Data Types<a class="headerlink" href="#checking-data-types" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">console.log(typeof age);       // number
-console.log(typeof name);      // string
-console.log(typeof isActive);  // boolean
-console.log(typeof city);      // undefined
-console.log(typeof country);   // object (this is a known JS quirk)
-console.log(typeof sym);       // symbol
-console.log(typeof bigNumber); // bigint
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">age</span><span class="p">);</span><span class="w">       </span><span class="c1">// number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span><span class="w">      </span><span class="c1">// string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">isActive</span><span class="p">);</span><span class="w">  </span><span class="c1">// boolean</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">city</span><span class="p">);</span><span class="w">      </span><span class="c1">// undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">country</span><span class="p">);</span><span class="w">   </span><span class="c1">// object (this is a known JS quirk)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">sym</span><span class="p">);</span><span class="w">       </span><span class="c1">// symbol</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">bigNumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// bigint</span>
+</code></pre></div>
 <hr />
 <h2 id="non-primitive-data-types">🔹 Non-Primitive Data Types<a class="headerlink" href="#non-primitive-data-types" title="Permanent link">&para;</a></h2>
 <p>Non-primitive types are <strong>mutable</strong> and include:</p>
@@ -6088,57 +6088,57 @@ console.log(typeof bigNumber); // bigint
 <li><strong>Function</strong> – Callable objects</li>
 </ol>
 <h3 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">// Object
-let person = { name: &quot;Nitin&quot;, age: 25 };
+<div class="highlight"><pre><span></span><code><span class="c1">// Object</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="p">};</span>
 
-// Array
-let fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;mango&quot;];
+<span class="c1">// Array</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span><span class="w"> </span><span class="s2">"banana"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mango"</span><span class="p">];</span>
 
-// Function
-function greet() {
-  console.log(&quot;Hello&quot;);
-}
-</code></pre>
+<span class="c1">// Function</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="checking-data-types_1">Checking Data Types<a class="headerlink" href="#checking-data-types_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">console.log(typeof person); // object
-console.log(typeof fruits); // object
-console.log(typeof greet);  // function
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">person</span><span class="p">);</span><span class="w"> </span><span class="c1">// object</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">fruits</span><span class="p">);</span><span class="w"> </span><span class="c1">// object</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">greet</span><span class="p">);</span><span class="w">  </span><span class="c1">// function</span>
+</code></pre></div>
 <hr />
 <h2 id="type-conversion">🔹 Type Conversion<a class="headerlink" href="#type-conversion" title="Permanent link">&para;</a></h2>
 <p>JavaScript allows <strong>explicit and implicit type conversions</strong>.</p>
 <h3 id="implicit-conversion">Implicit Conversion<a class="headerlink" href="#implicit-conversion" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let result = '5' + 5; // '55' (number converted to string)
-console.log(result);
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'5'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// '55' (number converted to string)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
 
-let value = '10' - 2; // 8 (string converted to number)
-console.log(value);
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'10'</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 8 (string converted to number)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="explicit-conversion">Explicit Conversion<a class="headerlink" href="#explicit-conversion" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let str = String(123); // '123'
-let num = Number('456'); // 456
-let bool = Boolean(0);    // false
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span><span class="w"> </span><span class="c1">// '123'</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="s1">'456'</span><span class="p">);</span><span class="w"> </span><span class="c1">// 456</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// false</span>
+</code></pre></div>
 <hr />
 <h2 id="common-interview-programs">🔹 Common Interview Programs<a class="headerlink" href="#common-interview-programs" title="Permanent link">&para;</a></h2>
 <h3 id="1-check-if-variable-is-array">1. Check if Variable is Array<a class="headerlink" href="#1-check-if-variable-is-array" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let arr = [1,2,3];
-console.log(Array.isArray(arr)); // true
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">arr</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
 <h3 id="2-convert-string-to-number">2. Convert String to Number<a class="headerlink" href="#2-convert-string-to-number" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let str = '123';
-let num = Number(str);
-console.log(num); // 123
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'123'</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// 123</span>
+</code></pre></div>
 <h3 id="3-convert-number-to-string">3. Convert Number to String<a class="headerlink" href="#3-convert-number-to-string" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let num = 456;
-let str = String(num);
-console.log(str); // '456'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">456</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// '456'</span>
+</code></pre></div>
 <h3 id="4-check-data-type">4. Check Data Type<a class="headerlink" href="#4-check-data-type" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">let value = true;
-console.log(typeof value); // boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// boolean</span>
+</code></pre></div>
 <hr />
 <h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6201,6 +6201,10 @@ console.log(typeof value); // boolean
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

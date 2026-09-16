@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5631,75 +5631,75 @@ This is where many people get confused.</p>
 <hr />
 <h1 id="how-logging-works-in-cucumber-extent-adapter">✅ How Logging Works in Cucumber + Extent Adapter<a class="headerlink" href="#how-logging-works-in-cucumber-extent-adapter" title="Permanent link">&para;</a></h1>
 <p>You DO NOT write:</p>
-<pre><code class="language-java">ExtentReports extent = new ExtentReports();
-ExtentTest test = extent.createTest(&quot;Test&quot;);
-test.pass(&quot;Step Passed&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ExtentReports</span><span class="w"> </span><span class="n">extent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExtentReports</span><span class="p">();</span>
+<span class="n">ExtentTest</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extent</span><span class="p">.</span><span class="na">createTest</span><span class="p">(</span><span class="s">"Test"</span><span class="p">);</span>
+<span class="n">test</span><span class="p">.</span><span class="na">pass</span><span class="p">(</span><span class="s">"Step Passed"</span><span class="p">);</span>
+</code></pre></div>
 <p>❌ That is for TestNG only.</p>
 <hr />
 <h1 id="instead-logging-happens-automatically">✅ Instead — Logging Happens Automatically<a class="headerlink" href="#instead-logging-happens-automatically" title="Permanent link">&para;</a></h1>
 <p>Your Step:</p>
-<pre><code class="language-java">@When(&quot;User enters {string} and {string}&quot;)
-public void user_enters_credentials(String username, String password) {
+<div class="highlight"><pre><span></span><code><span class="nd">@When</span><span class="p">(</span><span class="s">"User enters {string} and {string}"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">user_enters_credentials</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    driver.findElement(By.id(&quot;user&quot;)).sendKeys(username);
-    driver.findElement(By.id(&quot;pass&quot;)).sendKeys(password);
-}
-</code></pre>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"user"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">username</span><span class="p">);</span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"pass"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>If step passes → Extent marks it GREEN
 If assertion fails → Extent marks it RED</p>
 <p>No extra logging required.</p>
 <hr />
 <h1 id="where-you-actually-add-extent-configuration">✅ Where You Actually Add Extent Configuration<a class="headerlink" href="#where-you-actually-add-extent-configuration" title="Permanent link">&para;</a></h1>
 <h3 id="1-in-runner">1️⃣ In Runner<a class="headerlink" href="#1-in-runner" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">plugin = {
-    &quot;pretty&quot;,
-    &quot;json:target/cucumber.json&quot;,
-    &quot;tech.grasshopper.extentreports.cucumber.adapter.ExtentCucumberAdapter:&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s">"pretty"</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"json:target/cucumber.json"</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"tech.grasshopper.extentreports.cucumber.adapter.ExtentCucumberAdapter:"</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="2-in-extentproperties">2️⃣ In extent.properties<a class="headerlink" href="#2-in-extentproperties" title="Permanent link">&para;</a></h3>
-<pre><code>src/test/resources/extent.properties
-</code></pre>
-<pre><code class="language-properties">extent.reporter.spark.start=true
-extent.reporter.spark.out=target/ExtentReport.html
-</code></pre>
+<div class="highlight"><pre><span></span><code>src/test/resources/extent.properties
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="na">extent.reporter.spark.start</span><span class="o">=</span><span class="s">true</span>
+<span class="na">extent.reporter.spark.out</span><span class="o">=</span><span class="s">target/ExtentReport.html</span>
+</code></pre></div>
 <hr />
 <h1 id="how-to-add-custom-logs-inside-steps">✅ How To Add Custom Logs Inside Steps<a class="headerlink" href="#how-to-add-custom-logs-inside-steps" title="Permanent link">&para;</a></h1>
 <p>If you want to log extra details (optional):</p>
-<pre><code class="language-java">import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter</span><span class="p">;</span>
 
-@When(&quot;User enters credentials&quot;)
-public void user_enters_credentials() {
+<span class="nd">@When</span><span class="p">(</span><span class="s">"User enters credentials"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">user_enters_credentials</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-    ExtentCucumberAdapter.addTestStepLog(&quot;Entering username and password&quot;);
+<span class="w">    </span><span class="n">ExtentCucumberAdapter</span><span class="p">.</span><span class="na">addTestStepLog</span><span class="p">(</span><span class="s">"Entering username and password"</span><span class="p">);</span>
 
-    driver.findElement(By.id(&quot;user&quot;)).sendKeys(&quot;admin&quot;);
-}
-</code></pre>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">"user"</span><span class="p">)).</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">"admin"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✔ This will appear as additional log line in report.</p>
 <hr />
 <h1 id="how-to-attach-screenshot-most-important">✅ How To Attach Screenshot (Most Important)<a class="headerlink" href="#how-to-attach-screenshot-most-important" title="Permanent link">&para;</a></h1>
 <p>Inside Hooks:</p>
-<pre><code class="language-java">@After
-public void tearDown(Scenario scenario) {
+<div class="highlight"><pre><span></span><code><span class="nd">@After</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tearDown</span><span class="p">(</span><span class="n">Scenario</span><span class="w"> </span><span class="n">scenario</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    if (scenario.isFailed()) {
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="na">isFailed</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 
-        byte[] screenshot = ((TakesScreenshot) driver)
-                .getScreenshotAs(OutputType.BYTES);
+<span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">screenshot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">BYTES</span><span class="p">);</span>
 
-        scenario.attach(screenshot, &quot;image/png&quot;, &quot;Failure Screenshot&quot;);
-    }
+<span class="w">        </span><span class="n">scenario</span><span class="p">.</span><span class="na">attach</span><span class="p">(</span><span class="n">screenshot</span><span class="p">,</span><span class="w"> </span><span class="s">"image/png"</span><span class="p">,</span><span class="w"> </span><span class="s">"Failure Screenshot"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    driver.quit();
-}
-</code></pre>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>✔ Screenshot automatically appears in Extent report.</p>
 <hr />
 <h1 id="clean-enterprise-structure">🏆 Clean Enterprise Structure<a class="headerlink" href="#clean-enterprise-structure" title="Permanent link">&para;</a></h1>
-<pre><code>src/test/java
+<div class="highlight"><pre><span></span><code>src/test/java
    ├── runner
    ├── stepdefinitions
    ├── hooks
@@ -5707,7 +5707,7 @@ src/test/resources
    ├── features
    ├── extent.properties
    ├── spark-config.xml
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="advanced-if-you-want-manual-extent-control">🔥 Advanced: If You Want Manual Extent Control<a class="headerlink" href="#advanced-if-you-want-manual-extent-control" title="Permanent link">&para;</a></h1>
 <p>If you don’t use adapter, then:</p>
@@ -5785,6 +5785,10 @@ src/test/resources
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

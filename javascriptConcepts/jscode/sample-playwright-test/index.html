@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5679,72 +5679,72 @@
 
 <h1 id="sample-test-code">Sample test code<a class="headerlink" href="#sample-test-code" title="Permanent link">&para;</a></h1>
 <h3 id="1-handle-auto-suggestion-dropdown-and-e2e-flow">1. Handle auto suggestion dropdown and E2E flow<a class="headerlink" href="#1-handle-auto-suggestion-dropdown-and-e2e-flow" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">const { test, expect } = require('@playwright/test');
-test('@Webst Client App login', async ({ page }) =&gt; {
-   //js file- Login js, DashboardPage
-   const email = &quot;anshika@gmail.com&quot;;
-   const productName = 'ZARA COAT 3';
-   const products = page.locator(&quot;.card-body&quot;);
-   await page.goto(&quot;https://rahulshettyacademy.com/client&quot;);
-   await page.locator(&quot;#userEmail&quot;).fill(email);
-   await page.locator(&quot;#userPassword&quot;).fill(&quot;Iamking@000&quot;);
-   await page.locator(&quot;[value='Login']&quot;).click();
-   await page.waitForLoadState('networkidle');
-   await page.locator(&quot;.card-body b&quot;).first().waitFor();
-   const titles = await page.locator(&quot;.card-body b&quot;).allTextContents();
-   console.log(titles); 
-   const count = await products.count();
-   for (let i = 0; i &lt; count; ++i) {
-      if (await products.nth(i).locator(&quot;b&quot;).textContent() === productName) {
-         //add to cart
-         await products.nth(i).locator(&quot;text= Add To Cart&quot;).click();
-         break;
-      }
-   }
+<p><div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">test</span><span class="p">,</span><span class="w"> </span><span class="nx">expect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'@playwright/test'</span><span class="p">);</span>
+<span class="nx">test</span><span class="p">(</span><span class="s1">'@Webst Client App login'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">//js file- Login js, DashboardPage</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"anshika@gmail.com"</span><span class="p">;</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">productName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ZARA COAT 3'</span><span class="p">;</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body"</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s2">"https://rahulshettyacademy.com/client"</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#userEmail"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"#userPassword"</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">"Iamking@000"</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"[value='Login']"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">waitForLoadState</span><span class="p">(</span><span class="s1">'networkidle'</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body b"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">waitFor</span><span class="p">();</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">titles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".card-body b"</span><span class="p">).</span><span class="nx">allTextContents</span><span class="p">();</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">titles</span><span class="p">);</span><span class="w"> </span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">products</span><span class="p">.</span><span class="nx">count</span><span class="p">();</span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">products</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"b"</span><span class="p">).</span><span class="nx">textContent</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">productName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="c1">//add to cart</span>
+<span class="w">         </span><span class="k">await</span><span class="w"> </span><span class="nx">products</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"text= Add To Cart"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">         </span><span class="k">break</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
 
-   await page.locator(&quot;[routerlink*='cart']&quot;).click();
-   //await page.pause();
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"[routerlink*='cart']"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">   </span><span class="c1">//await page.pause();</span>
 
-   await page.locator(&quot;div li&quot;).first().waitFor();
-   const bool = await page.locator(&quot;h3:has-text('ZARA COAT 3')&quot;).isVisible();
-   expect(bool).toBeTruthy();
-   await page.locator(&quot;text=Checkout&quot;).click();
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"div li"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">waitFor</span><span class="p">();</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"h3:has-text('ZARA COAT 3')"</span><span class="p">).</span><span class="nx">isVisible</span><span class="p">();</span>
+<span class="w">   </span><span class="nx">expect</span><span class="p">(</span><span class="nx">bool</span><span class="p">).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"text=Checkout"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
 
-  await page.getByPlaceholder('Select Country').pressSequentially(&quot;ind&quot;, { delay: 150 }) 
-   const dropdown = page.locator(&quot;.ta-results&quot;);
-   await dropdown.waitFor();
-   const optionsCount = await dropdown.locator(&quot;button&quot;).count();
-   for (let i = 0; i &lt; optionsCount; ++i) {
-      const text = await dropdown.locator(&quot;button&quot;).nth(i).textContent();
-      if (text === &quot; India&quot;) {
-         await dropdown.locator(&quot;button&quot;).nth(i).click();
-         break;
-      }
-   }
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">getByPlaceholder</span><span class="p">(</span><span class="s1">'Select Country'</span><span class="p">).</span><span class="nx">pressSequentially</span><span class="p">(</span><span class="s2">"ind"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">delay</span><span class="o">:</span><span class="w"> </span><span class="mf">150</span><span class="w"> </span><span class="p">})</span><span class="w"> </span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">dropdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".ta-results"</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">dropdown</span><span class="p">.</span><span class="nx">waitFor</span><span class="p">();</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">optionsCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">dropdown</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">count</span><span class="p">();</span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">optionsCount</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">dropdown</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">textContent</span><span class="p">();</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">" India"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="k">await</span><span class="w"> </span><span class="nx">dropdown</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">         </span><span class="k">break</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
 
-   expect(page.locator(&quot;.user__name [type='text']&quot;).first()).toHaveText(email);
-   await page.locator(&quot;.action__submit&quot;).click();
-   await expect(page.locator(&quot;.hero-primary&quot;)).toHaveText(&quot; Thankyou for the order. &quot;);
-   const orderId = await page.locator(&quot;.em-spacer-1 .ng-star-inserted&quot;).textContent();
-   console.log(orderId);
+<span class="w">   </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".user__name [type='text']"</span><span class="p">).</span><span class="nx">first</span><span class="p">()).</span><span class="nx">toHaveText</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".action__submit"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">expect</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".hero-primary"</span><span class="p">)).</span><span class="nx">toHaveText</span><span class="p">(</span><span class="s2">" Thankyou for the order. "</span><span class="p">);</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">orderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".em-spacer-1 .ng-star-inserted"</span><span class="p">).</span><span class="nx">textContent</span><span class="p">();</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">orderId</span><span class="p">);</span>
 
-   await page.locator(&quot;button[routerlink*='myorders']&quot;).click();
-   await page.locator(&quot;tbody&quot;).waitFor();
-   const rows = await page.locator(&quot;tbody tr&quot;);
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"button[routerlink*='myorders']"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">   </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"tbody"</span><span class="p">).</span><span class="nx">waitFor</span><span class="p">();</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"tbody tr"</span><span class="p">);</span>
 
 
-   for (let i = 0; i &lt; await rows.count(); ++i) {
-      const rowOrderId = await rows.nth(i).locator(&quot;th&quot;).textContent();
-      if (orderId.includes(rowOrderId)) {
-         await rows.nth(i).locator(&quot;button&quot;).first().click();
-         break;
-      }
-   }
-   const orderIdDetails = await page.locator(&quot;.col-text&quot;).textContent();
-   expect(orderId.includes(orderIdDetails)).toBeTruthy(); 
-});
-</code></pre>
-<p>### 2. Handle web Table for order history
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">rows</span><span class="p">.</span><span class="nx">count</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">rowOrderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">rows</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"th"</span><span class="p">).</span><span class="nx">textContent</span><span class="p">();</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">orderId</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">rowOrderId</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="k">await</span><span class="w"> </span><span class="nx">rows</span><span class="p">.</span><span class="nx">nth</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">locator</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">click</span><span class="p">();</span>
+<span class="w">         </span><span class="k">break</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">orderIdDetails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">locator</span><span class="p">(</span><span class="s2">".col-text"</span><span class="p">).</span><span class="nx">textContent</span><span class="p">();</span>
+<span class="w">   </span><span class="nx">expect</span><span class="p">(</span><span class="nx">orderId</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">orderIdDetails</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span><span class="w"> </span>
+<span class="p">});</span>
+</code></pre></div>
+ ### 2. Handle web Table for order history
  ```js
 const { test, expect } = require('@playwright/test');</p>
 <p>test('@Webst Client App login', async ({ page }) =&gt; {
@@ -5857,6 +5857,10 @@ const { test, expect } = require('@playwright/test');</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

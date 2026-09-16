@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -6317,10 +6317,10 @@
 <li>Public static final variables (constants)</li>
 </ul>
 <h3 id="example-java-7-style">Example (Java 7 style):<a class="headerlink" href="#example-java-7-style" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">interface Animal {
-    void makeSound();  // abstract method
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">();</span><span class="w">  </span><span class="c1">// abstract method</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>👉 If we later add a new method to <code>Animal</code>, all implementing classes
 will break.</p>
 <p>That was the main problem.</p>
@@ -6337,82 +6337,82 @@ will break.</p>
 <li>To support Lambda expressions &amp; Stream API internally</li>
 </ul>
 <h3 id="syntax">✅ Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">interface Animal {
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
 
-    void makeSound();  // abstract method
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">();</span><span class="w">  </span><span class="c1">// abstract method</span>
 
-    default void sleep() {
-        System.out.println(&quot;Animal is sleeping&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Animal is sleeping"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="implementation">✅ Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class Dog implements Animal {
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
 
-    public void makeSound() {
-        System.out.println(&quot;Dog barks&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog barks"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="main-method">Main Method<a class="headerlink" href="#main-method" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">public class Main {
-    public static void main(String[] args) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        Dog d = new Dog();
-        d.makeSound();  // implemented method
-        d.sleep();      // default method from interface
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span><span class="w">  </span><span class="c1">// implemented method</span>
+<span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="na">sleep</span><span class="p">();</span><span class="w">      </span><span class="c1">// default method from interface</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
 <pre><code>Dog barks
 Animal is sleeping
 </code></pre>
 <h3 id="can-we-override-default-method">✅ Can We Override Default Method?<a class="headerlink" href="#can-we-override-default-method" title="Permanent link">&para;</a></h3>
 <p>Yes ✔</p>
-<pre><code class="language-java">class Dog implements Animal {
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
 
-    public void makeSound() {
-        System.out.println(&quot;Dog barks&quot;);
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog barks"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    @Override
-    public void sleep() {
-        System.out.println(&quot;Dog sleeps in kennel&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sleep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog sleeps in kennel"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>👉 Default method behaves like a normal inherited method.</p>
 <hr />
 <h2 id="what-if-two-interfaces-have-same-default-method">🔥 What If Two Interfaces Have Same Default Method?<a class="headerlink" href="#what-if-two-interfaces-have-same-default-method" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">interface A {
-    default void show() {
-        System.out.println(&quot;A show&quot;);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">show</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"A show"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-interface B {
-    default void show() {
-        System.out.println(&quot;B show&quot;);
-    }
-}
+<span class="kd">interface</span> <span class="nc">B</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">show</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"B show"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Test implements A, B {
-}
-</code></pre>
+<span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>❌ Compilation Error:</p>
 <pre><code>class inherits unrelated defaults for show()
 </code></pre>
 <h3 id="solution">✅ Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h3>
 <p>You MUST override it:</p>
-<pre><code class="language-java">class Test implements A, B {
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">{</span>
 
-    @Override
-    public void show() {
-        A.super.show();  // or B.super.show();
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">show</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">A</span><span class="p">.</span><span class="na">super</span><span class="p">.</span><span class="na">show</span><span class="p">();</span><span class="w">  </span><span class="c1">// or B.super.show();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="3-static-methods-in-interfaces-java-8">🔹 3️⃣ Static Methods in Interfaces (Java 8)<a class="headerlink" href="#3-static-methods-in-interfaces-java-8" title="Permanent link">&para;</a></h2>
 <p>Java 8 also allowed static methods inside interface.</p>
@@ -6423,32 +6423,32 @@ class Test implements A, B {
 <li>No need for separate utility class</li>
 </ul>
 <h3 id="syntax_1">✅ Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">interface Calculator {
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
 
-    static int add(int a, int b) {
-        return a + b;
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="how-to-call-static-method">✅ How To Call Static Method?<a class="headerlink" href="#how-to-call-static-method" title="Permanent link">&para;</a></h3>
 <p>⚠ Important:</p>
 <p>Static methods in interface cannot be called using object.</p>
 <p>They must be called using interface name.</p>
-<pre><code class="language-java">public class Main {
-    public static void main(String[] args) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        int result = Calculator.add(10, 20);
-        System.out.println(result);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Calculator</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="output_1">Output<a class="headerlink" href="#output_1" title="Permanent link">&para;</a></h3>
 <pre><code>30
 </code></pre>
 <h3 id="this-is-not-allowed">❌ This is NOT allowed:<a class="headerlink" href="#this-is-not-allowed" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Calculator c = new Calculator(); // Not allowed
-c.add(10, 20); // Not allowed
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Calculator</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Calculator</span><span class="p">();</span><span class="w"> </span><span class="c1">// Not allowed</span>
+<span class="n">c</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w"> </span><span class="c1">// Not allowed</span>
+</code></pre></div>
 <hr />
 <h2 id="default-vs-static-method-important-interview-table">🔥 Default vs Static Method (Important Interview Table)<a class="headerlink" href="#default-vs-static-method-important-interview-table" title="Permanent link">&para;</a></h2>
 <table>
@@ -6592,6 +6592,10 @@ c.add(10, 20); // Not allowed
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

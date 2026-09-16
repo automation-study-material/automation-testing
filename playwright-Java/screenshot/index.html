@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5707,135 +5707,135 @@
 <hr />
 <h2 id="screenshots-in-playwright">📸 Screenshots in Playwright<a class="headerlink" href="#screenshots-in-playwright" title="Permanent link">&para;</a></h2>
 <h3 id="full-page-screenshot">✅ Full Page Screenshot<a class="headerlink" href="#full-page-screenshot" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.*;
-import java.nio.file.Paths;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span>
 
-public class FullPageScreenshot {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FullPageScreenshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            page.navigate(&quot;https://example.com&quot;);
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
 
-            // Capture full page screenshot
-            page.screenshot(new Page.ScreenshotOptions()
-                .setPath(Paths.get(&quot;C:\\Users\\Sandesh\\Desktop\\fullpage.png&quot;))
-                .setFullPage(true));
+<span class="w">            </span><span class="c1">// Capture full page screenshot</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">screenshot</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">ScreenshotOptions</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">setPath</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:\\Users\\Sandesh\\Desktop\\fullpage.png"</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">setFullPage</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
 
-            System.out.println(&quot;✅ Full page screenshot captured&quot;);
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"✅ Full page screenshot captured"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="element-screenshot">✅ Element Screenshot<a class="headerlink" href="#element-screenshot" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.*;
-import java.nio.file.Paths;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span>
 
-public class ElementScreenshot {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ElementScreenshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            page.navigate(&quot;https://example.com&quot;);
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
 
-            // Take screenshot of a specific element
-            Locator heading = page.locator(&quot;h1&quot;);
-            heading.screenshot(new Locator.ScreenshotOptions()
-                .setPath(Paths.get(&quot;C:\\Users\\Sandesh\\Desktop\\element.png&quot;)));
+<span class="w">            </span><span class="c1">// Take screenshot of a specific element</span>
+<span class="w">            </span><span class="n">Locator</span><span class="w"> </span><span class="n">heading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"h1"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">heading</span><span class="p">.</span><span class="na">screenshot</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Locator</span><span class="p">.</span><span class="na">ScreenshotOptions</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">setPath</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:\\Users\\Sandesh\\Desktop\\element.png"</span><span class="p">)));</span>
 
-            System.out.println(&quot;✅ Element screenshot captured&quot;);
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"✅ Element screenshot captured"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="screenshot-after-assertion">✅ Screenshot After Assertion<a class="headerlink" href="#screenshot-after-assertion" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.*;
-import java.nio.file.Paths;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span>
 
-public class ScreenshotWithAssertion {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScreenshotWithAssertion</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
 
-            page.navigate(&quot;https://example.com&quot;);
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
 
-            // Assertion
-            String title = page.title();
-            assert title.contains(&quot;Example&quot;);
+<span class="w">            </span><span class="c1">// Assertion</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">title</span><span class="p">();</span>
+<span class="w">            </span><span class="k">assert</span><span class="w"> </span><span class="n">title</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"Example"</span><span class="p">);</span>
 
-            // Capture screenshot after validation
-            page.screenshot(new Page.ScreenshotOptions()
-                .setPath(Paths.get(&quot;C:\\Users\\Sandesh\\Desktop\\assertion.png&quot;)));
+<span class="w">            </span><span class="c1">// Capture screenshot after validation</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">screenshot</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">ScreenshotOptions</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">setPath</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:\\Users\\Sandesh\\Desktop\\assertion.png"</span><span class="p">)));</span>
 
-            System.out.println(&quot;✅ Screenshot captured after assertion&quot;);
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"✅ Screenshot captured after assertion"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="videos-in-playwright">🎥 Videos in Playwright<a class="headerlink" href="#videos-in-playwright" title="Permanent link">&para;</a></h2>
 <h3 id="record-video-for-a-single-page">✅ Record Video for a Single Page<a class="headerlink" href="#record-video-for-a-single-page" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.*;
-import java.nio.file.Paths;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span>
 
-public class RecordVideoExample {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RecordVideoExample</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BrowserType</span><span class="p">.</span><span class="na">LaunchOptions</span><span class="p">().</span><span class="na">setHeadless</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
 
-            // Enable video recording when creating context
-            BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-                .setRecordVideoDir(Paths.get(&quot;C:\\Users\\Sandesh\\Desktop\\videos&quot;))
-                .setRecordVideoSize(1280, 720));
+<span class="w">            </span><span class="c1">// Enable video recording when creating context</span>
+<span class="w">            </span><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">setRecordVideoDir</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:\\Users\\Sandesh\\Desktop\\videos"</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">setRecordVideoSize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">));</span>
 
-            Page page = context.newPage();
-            page.navigate(&quot;https://example.com&quot;);
-            page.click(&quot;a&quot;); // some action
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"a"</span><span class="p">);</span><span class="w"> </span><span class="c1">// some action</span>
 
-            // Close context to ensure video is saved
-            context.close();
+<span class="w">            </span><span class="c1">// Close context to ensure video is saved</span>
+<span class="w">            </span><span class="n">context</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
 
-            System.out.println(&quot;✅ Video recorded and saved&quot;);
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"✅ Video recorded and saved"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="record-video-for-each-test-dynamic-naming">✅ Record Video for Each Test (Dynamic Naming)<a class="headerlink" href="#record-video-for-each-test-dynamic-naming" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">import com.microsoft.playwright.*;
-import java.nio.file.Paths;
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.microsoft.playwright.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span>
 
-public class RecordVideoDynamicName {
-    public static void main(String[] args) {
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch();
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RecordVideoDynamicName</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Playwright</span><span class="w"> </span><span class="n">playwright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Playwright</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playwright</span><span class="p">.</span><span class="na">chromium</span><span class="p">().</span><span class="na">launch</span><span class="p">();</span>
 
-            // Set folder where videos will be stored
-            BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-                .setRecordVideoDir(Paths.get(&quot;C:\\Users\\Sandesh\\Desktop\\videos&quot;))
-                .setRecordVideoSize(1920, 1080));
+<span class="w">            </span><span class="c1">// Set folder where videos will be stored</span>
+<span class="w">            </span><span class="n">BrowserContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browser</span><span class="p">.</span><span class="na">newContext</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">.</span><span class="na">NewContextOptions</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">setRecordVideoDir</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"C:\\Users\\Sandesh\\Desktop\\videos"</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">setRecordVideoSize</span><span class="p">(</span><span class="mi">1920</span><span class="p">,</span><span class="w"> </span><span class="mi">1080</span><span class="p">));</span>
 
-            Page page = context.newPage();
-            page.navigate(&quot;https://example.com&quot;);
+<span class="w">            </span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">newPage</span><span class="p">();</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">);</span>
 
-            // Perform some actions
-            page.click(&quot;a&quot;);
+<span class="w">            </span><span class="c1">// Perform some actions</span>
+<span class="w">            </span><span class="n">page</span><span class="p">.</span><span class="na">click</span><span class="p">(</span><span class="s">"a"</span><span class="p">);</span>
 
-            // Retrieve video path after context closes
-            context.close();
+<span class="w">            </span><span class="c1">// Retrieve video path after context closes</span>
+<span class="w">            </span><span class="n">context</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
 
-            for (Page p : context.pages()) {
-                System.out.println(&quot;Video Path: &quot; + p.video().path());
-            }
-        }
-    }
-}
-</code></pre>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">pages</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Video Path: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">video</span><span class="p">().</span><span class="na">path</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="key-notes">📌 Key Notes<a class="headerlink" href="#key-notes" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5908,6 +5908,10 @@ public class RecordVideoDynamicName {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

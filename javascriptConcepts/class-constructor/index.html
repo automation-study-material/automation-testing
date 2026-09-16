@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6024,161 +6024,161 @@ This guide explains how to create classes, use constructors, create objects, sha
 <hr />
 <h2 id="1-classes-constructors">1. Classes &amp; Constructors<a class="headerlink" href="#1-classes-constructors" title="Permanent link">&para;</a></h2>
 <h3 id="defining-a-class">✔ Defining a Class<a class="headerlink" href="#defining-a-class" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    greet() {
-        console.log(`Hello, I am ${this.name}`);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nx">greet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, I am </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="creating-an-object">✔ Creating an Object<a class="headerlink" href="#creating-an-object" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">Copy code
-const p1 = new Person(&quot;Alice&quot;, 25);
-p1.greet();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Person</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span><span class="w"> </span><span class="mf">25</span><span class="p">);</span>
+<span class="nx">p1</span><span class="p">.</span><span class="nx">greet</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="2-object-creation">2. Object Creation<a class="headerlink" href="#2-object-creation" title="Permanent link">&para;</a></h3>
 <p>Objects are created using the new keyword:</p>
-<pre><code class="language-javascript">Copy code
-const obj = new ClassName(args);
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-javascript">Copy code
-const p = new Person(&quot;John&quot;, 30);
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ClassName</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+</code></pre></div>
+Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Person</span><span class="p">(</span><span class="s2">"John"</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="3-using-one-class-inside-another">3. Using One Class Inside Another<a class="headerlink" href="#3-using-one-class-inside-another" title="Permanent link">&para;</a></h3>
 <h4 id="a-direct-instantiation">A) Direct Instantiation<a class="headerlink" href="#a-direct-instantiation" title="Permanent link">&para;</a></h4>
 <p>Most common in utility-based architectures.</p>
-<pre><code class="language-javascript">Copy code
-class Logger {
-    log(message) {
-        console.log(&quot;[LOG]:&quot;, message);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Logger</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"[LOG]:"</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class UserService {
-    constructor() {
-        this.logger = new Logger(); // direct object creation
-    }
+<span class="kd">class</span><span class="w"> </span><span class="nx">UserService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Logger</span><span class="p">();</span><span class="w"> </span><span class="c1">// direct object creation</span>
+<span class="w">    </span><span class="p">}</span>
 
-    createUser(username) {
-        this.logger.log(`User '${username}' created`);
-    }
-}
+<span class="w">    </span><span class="nx">createUser</span><span class="p">(</span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`User '</span><span class="si">${</span><span class="nx">username</span><span class="si">}</span><span class="sb">' created`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-const service = new UserService();
-service.createUser(&quot;rahul123&quot;);
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">UserService</span><span class="p">();</span>
+<span class="nx">service</span><span class="p">.</span><span class="nx">createUser</span><span class="p">(</span><span class="s2">"rahul123"</span><span class="p">);</span>
+</code></pre></div>
 <h4 id="b-dependency-injection">B) Dependency Injection<a class="headerlink" href="#b-dependency-injection" title="Permanent link">&para;</a></h4>
 <p>Preferred in scalable or testable systems.</p>
-<pre><code class="language-javascript">class Logger {
-    log(message) {
-        console.log(&quot;[LOG]:&quot;, message);
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Logger</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"[LOG]:"</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class OrderService {
-    constructor(logger) {
-        this.logger = logger;
-    }
+<span class="kd">class</span><span class="w"> </span><span class="nx">OrderService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">logger</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">logger</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    placeOrder(id) {
-        this.logger.log(`Order #${id} placed`);
-    }
-}
+<span class="w">    </span><span class="nx">placeOrder</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Order #</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> placed`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-const logger = new Logger();
-const orderService = new OrderService(logger);
-orderService.placeOrder(101);
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Logger</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">orderService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OrderService</span><span class="p">(</span><span class="nx">logger</span><span class="p">);</span>
+<span class="nx">orderService</span><span class="p">.</span><span class="nx">placeOrder</span><span class="p">(</span><span class="mf">101</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="4-interview-based-examples">4. Interview-Based Examples<a class="headerlink" href="#4-interview-based-examples" title="Permanent link">&para;</a></h3>
 <p>⭐ Static Methods</p>
-<pre><code class="language-javascript">Copy code
-class MathUtil {
-    static add(a, b) {
-        return a + b;
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">MathUtil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-console.log(MathUtil.add(5, 7));
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">MathUtil</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">));</span>
+</code></pre></div>
 <p>⭐ Inheritance</p>
-<pre><code class="language-javascript">Copy code
-class Animal {
-    constructor(name) {
-        this.name = name;
-    }
+<div class="highlight"><pre><span></span><code><span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    speak() {
-        console.log(`${this.name} makes a sound`);
-    }
-}
+<span class="w">    </span><span class="nx">speak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> makes a sound`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Dog extends Animal {
-    speak() {
-        console.log(`${this.name} barks`);
-    }
-}
+<span class="kd">class</span><span class="w"> </span><span class="nx">Dog</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">speak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> barks`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-const d = new Dog(&quot;Tommy&quot;);
-d.speak();
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dog</span><span class="p">(</span><span class="s2">"Tommy"</span><span class="p">);</span>
+<span class="nx">d</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span>
+</code></pre></div>
 <p>⭐ Private Fields</p>
-<pre><code class="language-javascript">Copy code
-class BankAccount {
-    #balance = 0;
+<div class="highlight"><pre><span></span><code><span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">BankAccount</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">#balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-    deposit(amount) {
-        this.#balance += amount;
-    }
+<span class="w">    </span><span class="nx">deposit</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">#balance</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    getBalance() {
-        return this.#balance;
-    }
-}
+<span class="w">    </span><span class="nx">getBalance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">#balance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-const acc = new BankAccount();
-acc.deposit(500);
-console.log(acc.getBalance());
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">BankAccount</span><span class="p">();</span>
+<span class="nx">acc</span><span class="p">.</span><span class="nx">deposit</span><span class="p">(</span><span class="mf">500</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">acc</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">());</span>
+</code></pre></div>
 <p>⭐ Singleton Pattern</p>
-<pre><code class="language-javascript">Copy code
-class Config {
-    constructor() {
-        if (Config.instance) return Config.instance;
-        this.settings = {};
-        Config.instance = this;
-    }
+<div class="highlight"><pre><span></span><code><span class="nx">Copy</span><span class="w"> </span><span class="nx">code</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Config</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">Config</span><span class="p">.</span><span class="nx">instance</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">        </span><span class="nx">Config</span><span class="p">.</span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    set(key, value) {
-        this.settings[key] = value;
-    }
-}
+<span class="w">    </span><span class="nx">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-const c1 = new Config();
-const c2 = new Config();
+<span class="kd">const</span><span class="w"> </span><span class="nx">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Config</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Config</span><span class="p">();</span>
 
-console.log(c1 === c2); // true
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">c2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
 <h3 id="4-how-to-share-utility-classes-across-multiple-files">4. How to Share Utility Classes Across Multiple Files<a class="headerlink" href="#4-how-to-share-utility-classes-across-multiple-files" title="Permanent link">&para;</a></h3>
 <h4 id="create-a-utility-class">Create a utility class<a class="headerlink" href="#create-a-utility-class" title="Permanent link">&para;</a></h4>
-<pre><code>class DateUtils {
+<div class="highlight"><pre><span></span><code>class DateUtils {
   getToday() {
-    return new Date().toISOString().split(&quot;T&quot;)[0];
+    return new Date().toISOString().split("T")[0];
   }
 }
 
 module.exports = DateUtils;
-</code></pre>
+</code></pre></div>
 <h4 id="import-and-use-anywhere">Import and use anywhere<a class="headerlink" href="#import-and-use-anywhere" title="Permanent link">&para;</a></h4>
-<pre><code>const DateUtils = require(&quot;./DateUtils&quot;);
+<div class="highlight"><pre><span></span><code>const DateUtils = require("./DateUtils");
 
 const utils = new DateUtils();
 console.log(utils.getToday());
-</code></pre>
+</code></pre></div>
 <h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Use classes to structure reusable objects.</li>
@@ -6240,6 +6240,10 @@ console.log(utils.getToday());
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

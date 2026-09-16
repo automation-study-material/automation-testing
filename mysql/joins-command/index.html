@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5869,11 +5869,11 @@ We’ll use four sample tables: <strong>Employees, Departments, Projects, Employ
 <hr />
 <h2 id="1-inner-join-only-matching-rows-in-both-tables">1) INNER JOIN – Only matching rows in both tables<a class="headerlink" href="#1-inner-join-only-matching-rows-in-both-tables" title="Permanent link">&para;</a></h2>
 <p>Get each employee’s department name (employees without department are excluded).</p>
-<pre><code class="language-sql">SELECT e.EmpID, e.Name, d.DeptName
-FROM Employees e
-INNER JOIN Departments d ON e.DeptID = d.DeptID
-ORDER BY e.EmpID;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 |   EmpID | Name        | DeptName   |
 |--------:|:------------|:-----------|
@@ -5884,11 +5884,11 @@ ORDER BY e.EmpID;
 <hr />
 <h2 id="2-left-join-all-rows-from-left-employees-matched-departments-if-any">2) LEFT JOIN – All rows from left (Employees), matched Departments if any<a class="headerlink" href="#2-left-join-all-rows-from-left-employees-matched-departments-if-any" title="Permanent link">&para;</a></h2>
 <p>Shows all employees; missing departments appear as NULL.</p>
-<pre><code class="language-sql">SELECT e.EmpID, e.Name, d.DeptName
-FROM Employees e
-LEFT JOIN Departments d ON e.DeptID = d.DeptID
-ORDER BY e.EmpID;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 |   EmpID | Name        | DeptName   |
 |--------:|:------------|:-----------|
@@ -5901,11 +5901,11 @@ ORDER BY e.EmpID;
 <hr />
 <h2 id="3-right-join-all-rows-from-right-departments-matched-employees-if-any">3) RIGHT JOIN – All rows from right (Departments), matched Employees if any<a class="headerlink" href="#3-right-join-all-rows-from-right-departments-matched-employees-if-any" title="Permanent link">&para;</a></h2>
 <p>Shows all departments; departments without employees show NULLs for employee columns.</p>
-<pre><code class="language-sql">SELECT d.DeptID, d.DeptName, e.EmpID, e.Name
-FROM Employees e
-RIGHT JOIN Departments d ON e.DeptID = d.DeptID
-ORDER BY d.DeptID, e.EmpID;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 |   DeptID | DeptName   |   EmpID | Name        |
 |---------:|:-----------|--------:|:------------|
@@ -5920,22 +5920,22 @@ ORDER BY d.DeptID, e.EmpID;
 <blockquote>
 <p>Note: Some databases (e.g., MySQL) don’t support <code>FULL JOIN</code>. You can emulate it using <code>LEFT JOIN UNION RIGHT JOIN</code>.</p>
 </blockquote>
-<pre><code class="language-sql">-- Standard syntax (supported in SQL Server, PostgreSQL, etc.)
-SELECT e.EmpID, e.Name, e.DeptID, d.DeptName
-FROM Employees e
-FULL OUTER JOIN Departments d ON e.DeptID = d.DeptID
-ORDER BY e.DeptID, e.EmpID;
+<div class="highlight"><pre><span></span><code><span class="c1">-- Standard syntax (supported in SQL Server, PostgreSQL, etc.)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">FULL</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">;</span>
 
--- MySQL-compatible workaround
-SELECT e.EmpID, e.Name, e.DeptID, d.DeptName
-FROM Employees e
-LEFT JOIN Departments d ON e.DeptID = d.DeptID
-UNION
-SELECT e.EmpID, e.Name, e.DeptID, d.DeptName
-FROM Employees e
-RIGHT JOIN Departments d ON e.DeptID = d.DeptID
-ORDER BY DeptID, EmpID;
-</code></pre>
+<span class="c1">-- MySQL-compatible workaround</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">EmpID</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 |   EmpID | Name        |   DeptID | DeptName   |
 |--------:|:------------|---------:|:-----------|
@@ -5949,12 +5949,12 @@ ORDER BY DeptID, EmpID;
 <hr />
 <h2 id="5-inner-join-with-filter-ordering">5) INNER JOIN with filter + ordering<a class="headerlink" href="#5-inner-join-with-filter-ordering" title="Permanent link">&para;</a></h2>
 <p>Employees in <strong>IT</strong> or <strong>Finance</strong>, sorted by department then name.</p>
-<pre><code class="language-sql">SELECT e.Name, d.DeptName, e.EmpID
-FROM Employees e
-INNER JOIN Departments d ON e.DeptID = d.DeptID
-WHERE d.DeptName IN ('IT','Finance')
-ORDER BY d.DeptName, e.Name;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">'IT'</span><span class="p">,</span><span class="s1">'Finance'</span><span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 | Name       | DeptName   |   EmpID |
 |:-----------|:-----------|--------:|
@@ -5965,17 +5965,17 @@ ORDER BY d.DeptName, e.Name;
 <h1 id="complex-examples">Complex Examples<a class="headerlink" href="#complex-examples" title="Permanent link">&para;</a></h1>
 <h2 id="complex-a-multi-join-aggregation">Complex A) Multi-join + Aggregation<a class="headerlink" href="#complex-a-multi-join-aggregation" title="Permanent link">&para;</a></h2>
 <p>Total hours and unique contributors per <strong>project</strong> and <strong>department</strong>.</p>
-<pre><code class="language-sql">SELECT d.DeptName,
-       p.ProjName,
-       SUM(ep.Hours)    AS TotalHours,
-       COUNT(DISTINCT e.EmpID) AS Contributors
-FROM EmployeeProject ep
-JOIN Employees e   ON ep.EmpID = e.EmpID
-JOIN Projects  p   ON ep.ProjID = p.ProjID
-LEFT JOIN Departments d ON p.DeptID = d.DeptID
-GROUP BY d.DeptName, p.ProjName
-ORDER BY d.DeptName, p.ProjName;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span><span class="p">,</span>
+<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">ProjName</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">ep</span><span class="p">.</span><span class="n">Hours</span><span class="p">)</span><span class="w">    </span><span class="k">AS</span><span class="w"> </span><span class="n">TotalHours</span><span class="p">,</span>
+<span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Contributors</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">EmployeeProject</span><span class="w"> </span><span class="n">ep</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">e</span><span class="w">   </span><span class="k">ON</span><span class="w"> </span><span class="n">ep</span><span class="p">.</span><span class="n">EmpID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">EmpID</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Projects</span><span class="w">  </span><span class="n">p</span><span class="w">   </span><span class="k">ON</span><span class="w"> </span><span class="n">ep</span><span class="p">.</span><span class="n">ProjID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">ProjID</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Departments</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptID</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">ProjName</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">DeptName</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">ProjName</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 | DeptName   | ProjName        |   TotalHours |   Contributors |
 |:-----------|:----------------|-------------:|---------------:|
@@ -5986,12 +5986,12 @@ ORDER BY d.DeptName, p.ProjName;
 <hr />
 <h2 id="complex-b-self-join-coworker-pairs-in-the-same-department">Complex B) Self-join – Coworker pairs in the same department<a class="headerlink" href="#complex-b-self-join-coworker-pairs-in-the-same-department" title="Permanent link">&para;</a></h2>
 <p>List all unique <strong>pairs of employees</strong> who are in the same department (NULL departments excluded).</p>
-<pre><code class="language-sql">SELECT a.DeptID, a.Name AS EmployeeA, b.Name AS EmployeeB
-FROM Employees a
-JOIN Employees b ON a.DeptID = b.DeptID AND a.EmpID &lt; b.EmpID
-WHERE a.DeptID IS NOT NULL
-ORDER BY a.DeptID, EmployeeA, EmployeeB;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">EmployeeA</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">EmployeeB</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">a</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">EmpID</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">EmpID</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">DeptID</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">DeptID</span><span class="p">,</span><span class="w"> </span><span class="n">EmployeeA</span><span class="p">,</span><span class="w"> </span><span class="n">EmployeeB</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output</strong>
 |   DeptID | EmployeeA   | EmployeeB   |
 |---------:|:------------|:------------|
@@ -6056,6 +6056,10 @@ ORDER BY a.DeptID, EmployeeA, EmployeeB;
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

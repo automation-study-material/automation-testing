@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5632,16 +5632,16 @@
 <p>👉 Think: <strong>loop execution</strong></p>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test(invocationCount = 3)
-public void testLoginAPI() {
-    System.out.println(&quot;Running login API test&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">invocationCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testLoginAPI</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Running login API test"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">&para;</a></h3>
-<pre><code>Run
+<div class="highlight"><pre><span></span><code>Run
 Run
 Run
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5657,18 +5657,18 @@ Run
 <p>Runs invocations in <strong>parallel threads</strong> (must be used with invocationCount).</p>
 <hr />
 <h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@Test(invocationCount = 5, threadPoolSize = 2)
-public void testPaymentAPI() {
-    System.out.println(Thread.currentThread().getId());
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="p">(</span><span class="n">invocationCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">threadPoolSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testPaymentAPI</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getId</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="execution-parallel">Execution (parallel)<a class="headerlink" href="#execution-parallel" title="Permanent link">&para;</a></h3>
-<pre><code>Thread 11
+<div class="highlight"><pre><span></span><code>Thread 11
 Thread 12
 Thread 11
 Thread 12
 Thread 11
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="use-cases_1">Use Cases<a class="headerlink" href="#use-cases_1" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5687,82 +5687,82 @@ Use ThreadLocal<WebDriver> for thread safety.</p>
 <p>👉 Think: <strong>parameterized testing</strong></p>
 <hr />
 <h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">@DataProvider
-public Object[][] users() {
-    return new Object[][]{
-        {&quot;user1&quot;, &quot;pass1&quot;},
-        {&quot;user2&quot;, &quot;pass2&quot;}
-    };
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@DataProvider</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">users</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="p">{</span>
+<span class="w">        </span><span class="p">{</span><span class="s">"user1"</span><span class="p">,</span><span class="w"> </span><span class="s">"pass1"</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">"user2"</span><span class="p">,</span><span class="w"> </span><span class="s">"pass2"</span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
 
-@Test(dataProvider = &quot;users&quot;)
-public void loginTest(String user, String pass) {
-    System.out.println(user);
-}
-</code></pre>
+<span class="nd">@Test</span><span class="p">(</span><span class="n">dataProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"users"</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginTest</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="execution_1">Execution<a class="headerlink" href="#execution_1" title="Permanent link">&para;</a></h3>
-<pre><code>user1
+<div class="highlight"><pre><span></span><code>user1
 user2
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="new-cross-package-dataprovider-real-framework-use-case">🔥 NEW — Cross Package DataProvider (Real Framework Use Case)<a class="headerlink" href="#new-cross-package-dataprovider-real-framework-use-case" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="scenario">✅ Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
 <p>We have:</p>
-<pre><code>xyz package → DataProvider class
+<div class="highlight"><pre><span></span><code>xyz package → DataProvider class
 bny.erp package → Test class
-</code></pre>
+</code></pre></div>
 <p>We want to reuse common test data across packages.</p>
 <hr />
 <h2 id="package-structure">📦 Package Structure<a class="headerlink" href="#package-structure" title="Permanent link">&para;</a></h2>
-<pre><code>src/test/java
+<div class="highlight"><pre><span></span><code>src/test/java
    ├─ xyz
    │     └─ TestDataProvider.java
    ├─ bny/erp
    │     └─ ERPLoginTest.java
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="step-1-create-dataprovider-in-xyz-package">Step 1 — Create DataProvider in xyz package<a class="headerlink" href="#step-1-create-dataprovider-in-xyz-package" title="Permanent link">&para;</a></h2>
 <h3 id="xyztestdataproviderjava">xyz/TestDataProvider.java<a class="headerlink" href="#xyztestdataproviderjava" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package xyz;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">xyz</span><span class="p">;</span>
 
-import org.testng.annotations.DataProvider;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.DataProvider</span><span class="p">;</span>
 
-public class TestDataProvider {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestDataProvider</span><span class="w"> </span><span class="p">{</span>
 
-    @DataProvider(name = &quot;erpUsers&quot;)
-    public static Object[][] erpUsers() {
-        return new Object[][]{
-            {&quot;admin&quot;, &quot;admin123&quot;},
-            {&quot;manager&quot;, &quot;manager123&quot;},
-            {&quot;user&quot;, &quot;user123&quot;}
-        };
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"erpUsers"</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">erpUsers</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="p">{</span>
+<span class="w">            </span><span class="p">{</span><span class="s">"admin"</span><span class="p">,</span><span class="w"> </span><span class="s">"admin123"</span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span><span class="s">"manager"</span><span class="p">,</span><span class="w"> </span><span class="s">"manager123"</span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span><span class="s">"user"</span><span class="p">,</span><span class="w"> </span><span class="s">"user123"</span><span class="p">}</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="step-2-use-in-another-packageclass">Step 2 — Use in another package/class<a class="headerlink" href="#step-2-use-in-another-packageclass" title="Permanent link">&para;</a></h2>
 <h3 id="bnyerperplogintestjava">bny/erp/ERPLoginTest.java<a class="headerlink" href="#bnyerperplogintestjava" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">package bny.erp;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">bny.erp</span><span class="p">;</span>
 
-import org.testng.annotations.Test;
-import xyz.TestDataProvider;
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xyz.TestDataProvider</span><span class="p">;</span>
 
-public class ERPLoginTest {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ERPLoginTest</span><span class="w"> </span><span class="p">{</span>
 
-    @Test(dataProvider = &quot;erpUsers&quot;, dataProviderClass = TestDataProvider.class)
-    public void loginERP(String username, String password) {
-        System.out.println(username + &quot; -&gt; &quot; + password);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="nd">@Test</span><span class="p">(</span><span class="n">dataProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"erpUsers"</span><span class="p">,</span><span class="w"> </span><span class="n">dataProviderClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestDataProvider</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginERP</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">username</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" -&gt; "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="important">✅ Important<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
 <p>When DataProvider is in DIFFERENT class/package:</p>
 <p>You MUST use:</p>
-<pre><code>dataProviderClass = TestDataProvider.class
-</code></pre>
+<div class="highlight"><pre><span></span><code>dataProviderClass = TestDataProvider.class
+</code></pre></div>
 <p>Otherwise TestNG cannot find it.</p>
 <hr />
 <h2 id="execution-flow">🔥 Execution Flow<a class="headerlink" href="#execution-flow" title="Permanent link">&para;</a></h2>
@@ -5775,10 +5775,10 @@ public class ERPLoginTest {
 </ol>
 <hr />
 <h2 id="execution-output">Execution Output<a class="headerlink" href="#execution-output" title="Permanent link">&para;</a></h2>
-<pre><code>admin -&gt; admin123
+<div class="highlight"><pre><span></span><code>admin -&gt; admin123
 manager -&gt; manager123
 user -&gt; user123
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="real-use-cases">✅ Real Use Cases<a class="headerlink" href="#real-use-cases" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5791,8 +5791,8 @@ user -&gt; user123
 <hr />
 <hr />
 <h1 id="parallel-dataprovider">🔵 Parallel DataProvider<a class="headerlink" href="#parallel-dataprovider" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">@DataProvider(name=&quot;erpUsers&quot;, parallel=true)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"erpUsers"</span><span class="p">,</span><span class="w"> </span><span class="n">parallel</span><span class="o">=</span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
 <p>Runs each dataset in parallel.</p>
 <hr />
 <hr />
@@ -5897,6 +5897,10 @@ user -&gt; user123
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5928,10 +5928,10 @@
 <p>JavaScript executes code <strong>line by line</strong> and <strong>blocks</strong> until each line
 finishes.</p>
 <h3 id="example-1-simple-synchronous">Example 1: Simple Synchronous<a class="headerlink" href="#example-1-simple-synchronous" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">console.log(&quot;A&quot;);
-console.log(&quot;B&quot;);
-console.log(&quot;C&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"A"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"B"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"C"</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
 <pre><code>A
 B
@@ -5943,14 +5943,14 @@ C
 <p>Asynchronous behavior uses <strong>Web APIs</strong>, <strong>Promises</strong>, <strong>setTimeout</strong>,
 <strong>fetch</strong>, etc.</p>
 <h3 id="example-2-settimeout-async-task">Example 2: setTimeout (Async Task)<a class="headerlink" href="#example-2-settimeout-async-task" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">console.log(&quot;A&quot;);
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"A"</span><span class="p">);</span>
 
-setTimeout(() =&gt; {
-  console.log(&quot;B&quot;);
-}, 1000);
+<span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"B"</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
 
-console.log(&quot;C&quot;);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"C"</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
 <pre><code>A
 C
@@ -5961,16 +5961,16 @@ B
 ✔ When timer completes, callback returns via <strong>event loop</strong></p>
 <hr />
 <h2 id="3-promises-another-async-example">🧩 3. Promises --- Another Async Example<a class="headerlink" href="#3-promises-another-async-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">console.log(&quot;Start&quot;);
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Start"</span><span class="p">);</span>
 
-const promise = new Promise((resolve) =&gt; {
-  setTimeout(() =&gt; resolve(&quot;Async Result&quot;), 1500);
-});
+<span class="kd">const</span><span class="w"> </span><span class="nx">promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="s2">"Async Result"</span><span class="p">),</span><span class="w"> </span><span class="mf">1500</span><span class="p">);</span>
+<span class="p">});</span>
 
-promise.then(result =&gt; console.log(result));
+<span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">));</span>
 
-console.log(&quot;End&quot;);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"End"</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
 <pre><code>Start
 End
@@ -5979,15 +5979,15 @@ Async Result
 <p>📝 <code>promise.then()</code> executes later when async completes.</p>
 <hr />
 <h2 id="4-asyncawait-cleaner-async-code">🧩 4. Async/Await --- Cleaner Async Code<a class="headerlink" href="#4-asyncawait-cleaner-async-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">async function fetchData() {
-  console.log(&quot;Fetching...&quot;);
-  const data = await new Promise(res =&gt; setTimeout(() =&gt; res(&quot;Done&quot;), 2000));
-  console.log(data);
-}
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Fetching..."</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">(</span><span class="s2">"Done"</span><span class="p">),</span><span class="w"> </span><span class="mf">2000</span><span class="p">));</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
 
-fetchData();
-console.log(&quot;Next Line&quot;);
-</code></pre>
+<span class="nx">fetchData</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Next Line"</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
 <pre><code>Fetching...
 Next Line
@@ -5997,16 +5997,16 @@ Done
 ➡️ Rest of code continues normally</p>
 <hr />
 <h2 id="5-real-world-async-example-api-request">🧩 5. Real-World Async Example (API Request)<a class="headerlink" href="#5-real-world-async-example-api-request" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">async function getUser() {
-  const response = await fetch(&quot;https://jsonplaceholder.typicode.com/users/1&quot;);
-  const user = await response.json();
-  console.log(user.name);
-}
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getUser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://jsonplaceholder.typicode.com/users/1"</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
 
-console.log(&quot;Before API&quot;);
-getUser();
-console.log(&quot;After API&quot;);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Before API"</span><span class="p">);</span>
+<span class="nx">getUser</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"After API"</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Possible Output</strong></p>
 <pre><code>Before API
 After API
@@ -6017,30 +6017,30 @@ Leanne Graham
 ✔ <code>await</code> returns only when data is ready</p>
 <hr />
 <h2 id="6-parallel-async-example-using-promiseall">🧩 6. Parallel Async Example using Promise.all<a class="headerlink" href="#6-parallel-async-example-using-promiseall" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">async function run() {
-  const p1 = new Promise(res =&gt; setTimeout(() =&gt; res(&quot;Task 1&quot;), 2000));
-  const p2 = new Promise(res =&gt; setTimeout(() =&gt; res(&quot;Task 2&quot;), 1000));
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">(</span><span class="s2">"Task 1"</span><span class="p">),</span><span class="w"> </span><span class="mf">2000</span><span class="p">));</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">(</span><span class="s2">"Task 2"</span><span class="p">),</span><span class="w"> </span><span class="mf">1000</span><span class="p">));</span>
 
-  const results = await Promise.all([p1, p2]);
-  console.log(results);
-}
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">p1</span><span class="p">,</span><span class="w"> </span><span class="nx">p2</span><span class="p">]);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+<span class="p">}</span>
 
-run();
-</code></pre>
+<span class="nx">run</span><span class="p">();</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
 <pre><code>["Task 1", "Task 2"]
 </code></pre>
 <p>👉 Executes in parallel, then combines results.</p>
 <hr />
 <h2 id="7-event-loop-explanation-simplified">🧩 7. Event Loop Explanation (Simplified)<a class="headerlink" href="#7-event-loop-explanation-simplified" title="Permanent link">&para;</a></h2>
-<pre><code class="language-js">console.log(&quot;1&quot;);
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"1"</span><span class="p">);</span>
 
-setTimeout(() =&gt; console.log(&quot;2&quot;), 0);
+<span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2"</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
 
-Promise.resolve().then(() =&gt; console.log(&quot;3&quot;));
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"3"</span><span class="p">));</span>
 
-console.log(&quot;4&quot;);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"4"</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output</strong></p>
 <pre><code>1
 4
@@ -6118,6 +6118,10 @@ timers, and async/await.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

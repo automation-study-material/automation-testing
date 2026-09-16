@@ -324,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5830,15 +5830,15 @@
 <hr />
 <h2 id="2-stored-procedure-examples">2. Stored Procedure Examples<a class="headerlink" href="#2-stored-procedure-examples" title="Permanent link">&para;</a></h2>
 <h3 id="q1-create-procedure-to-give-10-bonus-to-employee">Q1: Create procedure to give 10% bonus to employee<a class="headerlink" href="#q1-create-procedure-to-give-10-bonus-to-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE PROCEDURE give_bonus(IN emp INT, OUT bonus_amt DECIMAL(10,2))
-BEGIN
-    SELECT salary*0.10 INTO bonus_amt FROM employees WHERE emp_id=emp;
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">give_bonus</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="n">bonus_amt</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">salary</span><span class="o">*</span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">bonus_amt</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">emp_id</span><span class="o">=</span><span class="n">emp</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">CALL give_bonus(2, @b);
-SELECT @b;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span><span class="w"> </span><span class="n">give_bonus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">b</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="n">b</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5853,17 +5853,17 @@ SELECT @b;
 </tbody>
 </table>
 <h3 id="q2-procedure-to-increase-salary-by-for-a-department">Q2: Procedure to increase salary by % for a department<a class="headerlink" href="#q2-procedure-to-increase-salary-by-for-a-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE PROCEDURE increase_salary(IN dept_name VARCHAR(20), IN increment DECIMAL(5,2))
-BEGIN
-    UPDATE employees
-    SET salary = salary + (salary * increment/100)
-    WHERE dept = dept_name;
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">increase_salary</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="k">increment</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">increment</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dept_name</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">CALL increase_salary('HR', 5);
-SELECT * FROM employees WHERE dept='HR';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span><span class="w"> </span><span class="n">increase_salary</span><span class="p">(</span><span class="s1">'HR'</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="s1">'HR'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5890,15 +5890,15 @@ SELECT * FROM employees WHERE dept='HR';
 </tbody>
 </table>
 <h3 id="q3-procedure-to-get-total-salary-of-department">Q3: Procedure to get total salary of department<a class="headerlink" href="#q3-procedure-to-get-total-salary-of-department" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE PROCEDURE dept_total_salary(IN dept_name VARCHAR(20), OUT total_salary DECIMAL(10,2))
-BEGIN
-    SELECT SUM(salary) INTO total_salary FROM employees WHERE dept=dept_name;
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">dept_total_salary</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="n">total_salary</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">total_salary</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="o">=</span><span class="n">dept_name</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">CALL dept_total_salary('IT', @ts);
-SELECT @ts;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span><span class="w"> </span><span class="n">dept_total_salary</span><span class="p">(</span><span class="s1">'IT'</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">ts</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="n">ts</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5913,14 +5913,14 @@ SELECT @ts;
 </tbody>
 </table>
 <h3 id="q4-procedure-to-get-employee-details-by-id">Q4: Procedure to get employee details by ID<a class="headerlink" href="#q4-procedure-to-get-employee-details-by-id" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE PROCEDURE emp_details(IN emp INT)
-BEGIN
-    SELECT * FROM employees WHERE emp_id = emp;
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">emp_details</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">CALL emp_details(5);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span><span class="w"> </span><span class="n">emp_details</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5943,14 +5943,14 @@ END;
 <hr />
 <h2 id="3-user-defined-function-examples">3. User Defined Function Examples<a class="headerlink" href="#3-user-defined-function-examples" title="Permanent link">&para;</a></h2>
 <h3 id="q5-function-to-calculate-bonus">Q5: Function to calculate bonus<a class="headerlink" href="#q5-function-to-calculate-bonus" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE FUNCTION calc_bonus(sal DECIMAL(10,2)) RETURNS DECIMAL(10,2)
-BEGIN
-    RETURN sal * 0.10;
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">calc_bonus</span><span class="p">(</span><span class="n">sal</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">RETURNS</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">RETURN</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">SELECT name, calc_bonus(salary) AS bonus FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">calc_bonus</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bonus</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -5983,14 +5983,14 @@ END;
 </tbody>
 </table>
 <h3 id="q6-function-to-check-if-salary-threshold">Q6: Function to check if salary &gt; threshold<a class="headerlink" href="#q6-function-to-check-if-salary-threshold" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE FUNCTION is_high_salary(sal DECIMAL(10,2)) RETURNS VARCHAR(3)
-BEGIN
-    RETURN IF(sal&gt;60000,'YES','NO');
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">is_high_salary</span><span class="p">(</span><span class="n">sal</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">RETURNS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">RETURN</span><span class="w"> </span><span class="k">IF</span><span class="p">(</span><span class="n">sal</span><span class="o">&gt;</span><span class="mi">60000</span><span class="p">,</span><span class="s1">'YES'</span><span class="p">,</span><span class="s1">'NO'</span><span class="p">);</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">SELECT name, is_high_salary(salary) AS high_sal FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">is_high_salary</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">high_sal</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6023,15 +6023,15 @@ END;
 </tbody>
 </table>
 <h3 id="q7-procedure-to-insert-new-employee">Q7: Procedure to insert new employee<a class="headerlink" href="#q7-procedure-to-insert-new-employee" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE PROCEDURE add_employee(IN ename VARCHAR(50), IN esal DECIMAL(10,2), IN edept VARCHAR(20))
-BEGIN
-    INSERT INTO employees(name,salary,dept) VALUES(ename,esal,edept);
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">add_employee</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">ename</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="n">esal</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="n">edept</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">employees</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">salary</span><span class="p">,</span><span class="n">dept</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="n">ename</span><span class="p">,</span><span class="n">esal</span><span class="p">,</span><span class="n">edept</span><span class="p">);</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">CALL add_employee('Frank', 48000, 'IT');
-SELECT * FROM employees WHERE name='Frank';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span><span class="w"> </span><span class="n">add_employee</span><span class="p">(</span><span class="s1">'Frank'</span><span class="p">,</span><span class="w"> </span><span class="mi">48000</span><span class="p">,</span><span class="w"> </span><span class="s1">'IT'</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">'Frank'</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6052,14 +6052,14 @@ SELECT * FROM employees WHERE name='Frank';
 </tbody>
 </table>
 <h3 id="q8-function-to-convert-salary-to-string-with-currency">Q8: Function to convert salary to string with currency<a class="headerlink" href="#q8-function-to-convert-salary-to-string-with-currency" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE FUNCTION salary_str(sal DECIMAL(10,2)) RETURNS VARCHAR(20)
-BEGIN
-    RETURN CONCAT('$', CAST(sal AS CHAR));
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">salary_str</span><span class="p">(</span><span class="n">sal</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">RETURNS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">RETURN</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="s1">'$'</span><span class="p">,</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">sal</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">));</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">SELECT name, salary_str(salary) AS salary_display FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary_str</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">salary_display</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6071,47 +6071,47 @@ END;
 <tbody>
 <tr>
 <td>Alice</td>
-<td>\$50400</td>
+<td>$50400</td>
 </tr>
 <tr>
 <td>Bob</td>
-<td>\$60000</td>
+<td>$60000</td>
 </tr>
 <tr>
 <td>Charlie</td>
-<td>\$57750</td>
+<td>$57750</td>
 </tr>
 <tr>
 <td>David</td>
-<td>\$45000</td>
+<td>$45000</td>
 </tr>
 <tr>
 <td>Eva</td>
-<td>\$70000</td>
+<td>$70000</td>
 </tr>
 </tbody>
 </table>
 <h3 id="q9-procedure-to-delete-employee-by-id">Q9: Procedure to delete employee by ID<a class="headerlink" href="#q9-procedure-to-delete-employee-by-id" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE PROCEDURE delete_employee(IN emp INT)
-BEGIN
-    DELETE FROM employees WHERE emp_id = emp;
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">delete_employee</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">emp_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">CALL delete_employee(6);
-SELECT * FROM employees WHERE emp_id=6;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span><span class="w"> </span><span class="n">delete_employee</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">emp_id</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong>
 | -- No rows -- |</p>
 <h3 id="q10-function-to-calculate-tax-at-10">Q10: Function to calculate tax at 10%<a class="headerlink" href="#q10-function-to-calculate-tax-at-10" title="Permanent link">&para;</a></h3>
-<pre><code class="language-sql">CREATE FUNCTION calc_tax(sal DECIMAL(10,2)) RETURNS DECIMAL(10,2)
-BEGIN
-    RETURN sal * 0.10;
-END;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">calc_tax</span><span class="p">(</span><span class="n">sal</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">RETURNS</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">RETURN</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-sql">SELECT name, calc_tax(salary) AS tax FROM employees;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">calc_tax</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tax</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
@@ -6210,6 +6210,10 @@ END;
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5617,12 +5617,12 @@
 <h1 id="why-did-factory-come-into-picture">🧠 Why did Factory come into picture?<a class="headerlink" href="#why-did-factory-come-into-picture" title="Permanent link">&para;</a></h1>
 <p>Let’s first see the common beginner approach.</p>
 <h2 id="without-factory">❌ Without Factory<a class="headerlink" href="#without-factory" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">WebDriver driver = new ChromeDriver();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+</code></pre></div>
 <p>Problem?</p>
 <p>If tomorrow you want Firefox:</p>
-<pre><code class="language-java">WebDriver driver = new FirefoxDriver();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">();</span>
+</code></pre></div>
 <p>Now imagine:</p>
 <ul>
 <li>150 test classes</li>
@@ -5638,56 +5638,56 @@
 <p>Instead of tests creating drivers… Factory creates drivers.</p>
 <hr />
 <h1 id="driverfactory-example">✅ DriverFactory Example<a class="headerlink" href="#driverfactory-example" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">public class DriverFactory {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverFactory</span><span class="w"> </span><span class="p">{</span>
 
-    public static WebDriver createDriver(String browser) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">WebDriver</span><span class="w"> </span><span class="nf">createDriver</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">browser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver;
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-        switch (browser.toLowerCase()) {
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">browser</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 
-            case &quot;firefox&quot;:
-                driver = new FirefoxDriver();
-                break;
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"firefox"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">();</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
 
-            case &quot;edge&quot;:
-                driver = new EdgeDriver();
-                break;
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"edge"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EdgeDriver</span><span class="p">();</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
 
-            default:
-                driver = new ChromeDriver();
-        }
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
 
-        return driver;
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="usage">✅ Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">WebDriver driver = DriverFactory.createDriver(&quot;chrome&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverFactory</span><span class="p">.</span><span class="na">createDriver</span><span class="p">(</span><span class="s">"chrome"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h1 id="professional-version-factory-singleton-threadlocal">⭐ Professional Version (Factory + Singleton + ThreadLocal)<a class="headerlink" href="#professional-version-factory-singleton-threadlocal" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">public class DriverFactory {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriverFactory</span><span class="w"> </span><span class="p">{</span>
 
-    public static void initDriver(String browser) {
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initDriver</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">browser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        WebDriver driver;
+<span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span>
 
-        switch (browser.toLowerCase()) {
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">browser</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 
-            case &quot;firefox&quot;:
-                driver = new FirefoxDriver();
-                break;
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"firefox"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">();</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
 
-            default:
-                driver = new ChromeDriver();
-        }
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
 
-        DriverManager.setDriver(driver);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">setDriver</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h1 id="flow">✅ Flow<a class="headerlink" href="#flow" title="Permanent link">&para;</a></h1>
 <p>Test → BaseTest → DriverFactory → DriverManager → ThreadLocal</p>
@@ -5747,6 +5747,10 @@
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

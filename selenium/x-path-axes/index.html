@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -5626,19 +5626,19 @@ dynamic.</p>
 <hr />
 <h1 id="sample-dom-structure-understand-this-first">🌳 Sample DOM Structure (Understand This First)<a class="headerlink" href="#sample-dom-structure-understand-this-first" title="Permanent link">&para;</a></h1>
 <h2 id="consider-this-html">Consider this HTML:<a class="headerlink" href="#consider-this-html" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;html&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;main&quot;&gt;
-      &lt;h1&gt;Title&lt;/h1&gt;
-      &lt;div class=&quot;container&quot;&gt;
-        &lt;label&gt;Email&lt;/label&gt;
-        &lt;input type=&quot;text&quot; id=&quot;email&quot;/&gt;
-        &lt;button&gt;Submit&lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"main"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Email<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="dom-tree-representation">DOM Tree Representation:<a class="headerlink" href="#dom-tree-representation" title="Permanent link">&para;</a></h2>
 <pre><code>html
@@ -5651,8 +5651,8 @@ dynamic.</p>
                 └── button
 </code></pre>
 <p>Assume we start from:</p>
-<pre><code class="language-xpath">//input[@id='email']
-</code></pre>
+<div class="highlight"><pre><span></span><code>//input[@id='email']
+</code></pre></div>
 <p>Now let's see axes.</p>
 <hr />
 <h1 id="1-parent">🚀 1️⃣ parent<a class="headerlink" href="#1-parent" title="Permanent link">&para;</a></h1>
@@ -5662,8 +5662,8 @@ dynamic.</p>
 <pre><code>xpath/parent::tagname
 </code></pre>
 <h2 id="example">🔹 Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//input[@id='email']/parent::div
-</code></pre>
+<div class="highlight"><pre><span></span><code>//input[@id='email']/parent::div
+</code></pre></div>
 <p>👉 Selects <code>&lt;div class="container"&gt;</code></p>
 <hr />
 <h1 id="2-child">🚀 2️⃣ child<a class="headerlink" href="#2-child" title="Permanent link">&para;</a></h1>
@@ -5673,8 +5673,8 @@ dynamic.</p>
 <pre><code>xpath/child::tagname
 </code></pre>
 <h2 id="example_1">🔹 Example:<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//div[@class='container']/child::input
-</code></pre>
+<div class="highlight"><pre><span></span><code>//div[@class='container']/child::input
+</code></pre></div>
 <p>👉 Selects <code>&lt;input id="email"&gt;</code></p>
 <hr />
 <h1 id="3-following-sibling">🚀 3️⃣ following-sibling<a class="headerlink" href="#3-following-sibling" title="Permanent link">&para;</a></h1>
@@ -5684,8 +5684,8 @@ dynamic.</p>
 <pre><code>xpath/following-sibling::tagname
 </code></pre>
 <h2 id="example_2">🔹 Example:<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//label[text()='Email']/following-sibling::input
-</code></pre>
+<div class="highlight"><pre><span></span><code>//label[text()='Email']/following-sibling::input
+</code></pre></div>
 <p>👉 Selects input next to label.</p>
 <hr />
 <h1 id="4-preceding-sibling">🚀 4️⃣ preceding-sibling<a class="headerlink" href="#4-preceding-sibling" title="Permanent link">&para;</a></h1>
@@ -5695,8 +5695,8 @@ dynamic.</p>
 <pre><code>xpath/preceding-sibling::tagname
 </code></pre>
 <h2 id="example_3">🔹 Example:<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//button/preceding-sibling::input
-</code></pre>
+<div class="highlight"><pre><span></span><code>//button/preceding-sibling::input
+</code></pre></div>
 <p>👉 Selects input before button.</p>
 <hr />
 <h1 id="5-ancestor">🚀 5️⃣ ancestor<a class="headerlink" href="#5-ancestor" title="Permanent link">&para;</a></h1>
@@ -5706,8 +5706,8 @@ dynamic.</p>
 <pre><code>xpath/ancestor::tagname
 </code></pre>
 <h2 id="example_4">🔹 Example:<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//input[@id='email']/ancestor::div
-</code></pre>
+<div class="highlight"><pre><span></span><code>//input[@id='email']/ancestor::div
+</code></pre></div>
 <p>👉 Selects both container div and main div.</p>
 <hr />
 <h1 id="6-descendant">🚀 6️⃣ descendant<a class="headerlink" href="#6-descendant" title="Permanent link">&para;</a></h1>
@@ -5717,8 +5717,8 @@ dynamic.</p>
 <pre><code>xpath/descendant::tagname
 </code></pre>
 <h2 id="example_5">🔹 Example:<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//div[@id='main']/descendant::input
-</code></pre>
+<div class="highlight"><pre><span></span><code>//div[@id='main']/descendant::input
+</code></pre></div>
 <p>👉 Selects input inside main div.</p>
 <hr />
 <h1 id="7-following">🚀 7️⃣ following<a class="headerlink" href="#7-following" title="Permanent link">&para;</a></h1>
@@ -5728,8 +5728,8 @@ dynamic.</p>
 <pre><code>xpath/following::tagname
 </code></pre>
 <h2 id="example_6">🔹 Example:<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//label/following::button
-</code></pre>
+<div class="highlight"><pre><span></span><code>//label/following::button
+</code></pre></div>
 <hr />
 <h1 id="8-preceding">🚀 8️⃣ preceding<a class="headerlink" href="#8-preceding" title="Permanent link">&para;</a></h1>
 <h2 id="description_7">🔹 Description:<a class="headerlink" href="#description_7" title="Permanent link">&para;</a></h2>
@@ -5745,8 +5745,8 @@ dynamic.</p>
 <pre><code>xpath/self::tagname
 </code></pre>
 <h2 id="example_7">Example:<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//input/self::input
-</code></pre>
+<div class="highlight"><pre><span></span><code>//input/self::input
+</code></pre></div>
 <hr />
 <h1 id="10-ancestor-or-self">🚀 1️⃣0️⃣ ancestor-or-self<a class="headerlink" href="#10-ancestor-or-self" title="Permanent link">&para;</a></h1>
 <p>Includes current node + ancestors.</p>
@@ -5768,11 +5768,11 @@ dynamic.</p>
 <h2 id="question">Question:<a class="headerlink" href="#question" title="Permanent link">&para;</a></h2>
 <p>Click Submit button using Email label.</p>
 <h2 id="answer">Answer:<a class="headerlink" href="#answer" title="Permanent link">&para;</a></h2>
-<pre><code class="language-xpath">//label[text()='Email']/following-sibling::button
-</code></pre>
+<div class="highlight"><pre><span></span><code>//label[text()='Email']/following-sibling::button
+</code></pre></div>
 <p>OR safer:</p>
-<pre><code class="language-xpath">//label[text()='Email']/parent::div//button
-</code></pre>
+<div class="highlight"><pre><span></span><code>//label[text()='Email']/parent::div//button
+</code></pre></div>
 <hr />
 <h1 id="axis-summary-table">📊 Axis Summary Table<a class="headerlink" href="#axis-summary-table" title="Permanent link">&para;</a></h1>
 <table>
@@ -5894,6 +5894,10 @@ dynamic.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

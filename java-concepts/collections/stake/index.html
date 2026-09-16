@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5626,7 +5626,7 @@
 </ul>
 <hr />
 <h2 id="diagram-lifo">Diagram (LIFO)<a class="headerlink" href="#diagram-lifo" title="Permanent link">&para;</a></h2>
-<pre><code>push(A)
+<div class="highlight"><pre><span></span><code>push(A)
 push(B)
 push(C)
 
@@ -5636,13 +5636,13 @@ Stack:
 | B |
 | A |
 -----
-</code></pre>
+</code></pre></div>
 <p>After pop() → C removed first</p>
 <hr />
 <h2 id="internal-working">Internal Working<a class="headerlink" href="#internal-working" title="Permanent link">&para;</a></h2>
 <p>Stack extends Vector:</p>
-<pre><code>Stack → Vector → Object[]
-</code></pre>
+<div class="highlight"><pre><span></span><code>Stack → Vector → Object[]
+</code></pre></div>
 <p>Internally:</p>
 <p>Object[] elementData
 int size</p>
@@ -5654,52 +5654,52 @@ int size</p>
 <hr />
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h3 id="push_1">push()<a class="headerlink" href="#push_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">stack.push(&quot;A&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="pop_1">pop()<a class="headerlink" href="#pop_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">stack.pop();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="peek">peek()<a class="headerlink" href="#peek" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">stack.peek();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="empty">empty()<a class="headerlink" href="#empty" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">stack.empty();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">stack</span><span class="p">.</span><span class="na">empty</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="search">search()<a class="headerlink" href="#search" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">stack.search(&quot;A&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">stack</span><span class="p">.</span><span class="na">search</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h2 id="example-code">Example Code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">Stack</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-stack.push(&quot;Java&quot;);
-stack.push(&quot;Python&quot;);
-stack.push(&quot;Go&quot;);
+<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
+<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Python"</span><span class="p">);</span>
+<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Go"</span><span class="p">);</span>
 
-System.out.println(stack.peek());
-System.out.println(stack.pop());
-System.out.println(stack.empty());
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">empty</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="selenium-real-time-use-cases">Selenium Real-time Use Cases<a class="headerlink" href="#selenium-real-time-use-cases" title="Permanent link">&para;</a></h2>
 <h3 id="1-window-handling">1. Window Handling<a class="headerlink" href="#1-window-handling" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Stack&lt;String&gt; windows = new Stack&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">Stack</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">windows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-windows.push(driver.getWindowHandle());
+<span class="n">windows</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandle</span><span class="p">());</span>
 
-driver.switchTo().window(windows.pop());
-</code></pre>
+<span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">windows</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
+</code></pre></div>
 <h3 id="2-navigation-history">2. Navigation History<a class="headerlink" href="#2-navigation-history" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Stack&lt;String&gt; pages = new Stack&lt;&gt;();
-pages.push(&quot;Login&quot;);
-pages.push(&quot;Home&quot;);
-pages.pop();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Stack</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">pages</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Login"</span><span class="p">);</span>
+<span class="n">pages</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Home"</span><span class="p">);</span>
+<span class="n">pages</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="3-undo-steps">3. Undo Steps<a class="headerlink" href="#3-undo-steps" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Stack&lt;Runnable&gt; undo = new Stack&lt;&gt;();
-undo.push(() -&gt; driver.close());
-undo.pop().run();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Runnable</span><span class="o">&gt;</span><span class="w"> </span><span class="n">undo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">undo</span><span class="p">.</span><span class="na">push</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">close</span><span class="p">());</span>
+<span class="n">undo</span><span class="p">.</span><span class="na">pop</span><span class="p">().</span><span class="na">run</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="queue-fifo">📌 Queue (FIFO)<a class="headerlink" href="#queue-fifo" title="Permanent link">&para;</a></h1>
@@ -5713,14 +5713,14 @@ undo.pop().run();
 </ul>
 <hr />
 <h2 id="diagram-fifo">Diagram (FIFO)<a class="headerlink" href="#diagram-fifo" title="Permanent link">&para;</a></h2>
-<pre><code>offer(A)
+<div class="highlight"><pre><span></span><code>offer(A)
 offer(B)
 offer(C)
 
 Front → A  B  C ← Rear
 
 poll() removes A first
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="internal-working_1">Internal Working<a class="headerlink" href="#internal-working_1" title="Permanent link">&para;</a></h2>
 <p>Usually implemented by:</p>
@@ -5738,49 +5738,49 @@ poll() removes A first
 <hr />
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
 <h3 id="offer">offer()<a class="headerlink" href="#offer" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">queue.offer(&quot;A&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="poll">poll()<a class="headerlink" href="#poll" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">queue.poll();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="peek_1">peek()<a class="headerlink" href="#peek_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">queue.peek();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="isempty">isEmpty()<a class="headerlink" href="#isempty" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">queue.isEmpty();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="example-code_1">Example Code<a class="headerlink" href="#example-code_1" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Queue&lt;String&gt; queue = new LinkedList&lt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-queue.offer(&quot;Java&quot;);
-queue.offer(&quot;Python&quot;);
-queue.offer(&quot;Go&quot;);
+<span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
+<span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Python"</span><span class="p">);</span>
+<span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Go"</span><span class="p">);</span>
 
-System.out.println(queue.poll());
-System.out.println(queue.peek());
-</code></pre>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span>
+</code></pre></div>
 <hr />
 <h2 id="selenium-real-time-use-cases_1">Selenium Real-time Use Cases<a class="headerlink" href="#selenium-real-time-use-cases_1" title="Permanent link">&para;</a></h2>
 <h3 id="1-test-execution-queue">1. Test Execution Queue<a class="headerlink" href="#1-test-execution-queue" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Queue&lt;String&gt; tests = new LinkedList&lt;&gt;();
-tests.offer(&quot;LoginTest&quot;);
-tests.offer(&quot;PaymentTest&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">tests</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"LoginTest"</span><span class="p">);</span>
+<span class="n">tests</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"PaymentTest"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="2-api-requests-queue">2. API Requests Queue<a class="headerlink" href="#2-api-requests-queue" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">Queue&lt;Request&gt; apiQueue = new LinkedList&lt;&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Request</span><span class="o">&gt;</span><span class="w"> </span><span class="n">apiQueue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="3-parallel-job-scheduling">3. Parallel job scheduling<a class="headerlink" href="#3-parallel-job-scheduling" title="Permanent link">&para;</a></h3>
 <hr />
 <hr />
 <h1 id="stack-vs-queue-comparison">🚀 Stack vs Queue Comparison<a class="headerlink" href="#stack-vs-queue-comparison" title="Permanent link">&para;</a></h1>
 <h2 id="visual-comparison">Visual Comparison<a class="headerlink" href="#visual-comparison" title="Permanent link">&para;</a></h2>
-<pre><code>STACK (LIFO)               QUEUE (FIFO)
+<div class="highlight"><pre><span></span><code>STACK (LIFO)               QUEUE (FIFO)
 
    | C |  ← pop()            Front → A B C ← Rear
    | B |                     poll() removes A
    | A |
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="table-comparison">Table Comparison<a class="headerlink" href="#table-comparison" title="Permanent link">&para;</a></h2>
 <table>
@@ -5841,15 +5841,15 @@ tests.offer(&quot;PaymentTest&quot;);
 ❌ Vector</p>
 <p>✅ Use ArrayDeque</p>
 <h2 id="stack-style">Stack style<a class="headerlink" href="#stack-style" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Deque&lt;String&gt; stack = new ArrayDeque&lt;&gt;();
-stack.push(&quot;A&quot;);
-stack.pop();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Deque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+</code></pre></div>
 <h2 id="queue-style">Queue style<a class="headerlink" href="#queue-style" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">Deque&lt;String&gt; queue = new ArrayDeque&lt;&gt;();
-queue.offer(&quot;A&quot;);
-queue.poll();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Deque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+<span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="interview-questions">🎯 Interview Questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h1>
@@ -5876,17 +5876,17 @@ pop → remove + read</p>
 <hr />
 <h1 id="quick-cheatsheet">✅ Quick Cheatsheet<a class="headerlink" href="#quick-cheatsheet" title="Permanent link">&para;</a></h1>
 <h2 id="stack">Stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">push()
-pop()
-peek()
-empty()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">push</span><span class="p">()</span>
+<span class="n">pop</span><span class="p">()</span>
+<span class="n">peek</span><span class="p">()</span>
+<span class="n">empty</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="queue">Queue<a class="headerlink" href="#queue" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">offer()
-poll()
-peek()
-isEmpty()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">offer</span><span class="p">()</span>
+<span class="n">poll</span><span class="p">()</span>
+<span class="n">peek</span><span class="p">()</span>
+<span class="n">isEmpty</span><span class="p">()</span>
+</code></pre></div>
 <hr />
 <h1 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h1>
 <p>Use Stack → history/backtracking
@@ -5947,6 +5947,10 @@ Prefer ArrayDeque in modern Java</p>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

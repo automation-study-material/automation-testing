@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -5989,333 +5989,331 @@
 
 <h1 id="oop-concepts-java-examples-51-80">OOP Concepts Java – Examples 51-80<a class="headerlink" href="#oop-concepts-java-examples-51-80" title="Permanent link">&para;</a></h1>
 <h3 id="example-51-complex-inheritance-5-level">Example 51 – Complex Inheritance (5-Level)<a class="headerlink" href="#example-51-complex-inheritance-5-level" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class Device {
-    void powerOn() { System.out.println(&quot;Device power on&quot;); }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Device</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Device power on"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Computer extends Device {
-    void startOS() { System.out.println(&quot;Computer OS started&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Computer</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Device</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">startOS</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Computer OS started"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Laptop extends Computer {
-    void openLid() { System.out.println(&quot;Laptop lid opened&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Laptop</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Computer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">openLid</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Laptop lid opened"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class GamingLaptop extends Laptop {
-    void launchGame() { System.out.println(&quot;Game launched&quot;); }
-}
+<span class="kd">class</span> <span class="nc">GamingLaptop</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Laptop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">launchGame</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Game launched"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Alienware extends GamingLaptop {
-    void rgbLighting() { System.out.println(&quot;RGB lighting activated&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Alienware</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">GamingLaptop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">rgbLighting</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"RGB lighting activated"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Alienware a = new Alienware();
-        a.powerOn();
-        a.startOS();
-        a.openLid();
-        a.launchGame();
-        a.rgbLighting();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Alienware</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Alienware</span><span class="p">();</span>
+<span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="na">powerOn</span><span class="p">();</span>
+<span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="na">startOS</span><span class="p">();</span>
+<span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="na">openLid</span><span class="p">();</span>
+<span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="na">launchGame</span><span class="p">();</span>
+<span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="na">rgbLighting</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-52-polymorphism-inheritance-overriding">Example 52 – Polymorphism + Inheritance (Overriding)<a class="headerlink" href="#example-52-polymorphism-inheritance-overriding" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class Vehicle {
-    void move() { System.out.println(&quot;Vehicle moves&quot;); }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vehicle moves"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Car extends Vehicle {
-    void move() { System.out.println(&quot;Car moves fast&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car moves fast"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class SportsCar extends Car {
-    void move() { System.out.println(&quot;SportsCar zooms&quot;); }
-}
+<span class="kd">class</span> <span class="nc">SportsCar</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Car</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"SportsCar zooms"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Vehicle v1 = new Car();
-        Vehicle v2 = new SportsCar();
-        v1.move();
-        v2.move();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Vehicle</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Vehicle</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SportsCar</span><span class="p">();</span>
+<span class="w">        </span><span class="n">v1</span><span class="p">.</span><span class="na">move</span><span class="p">();</span>
+<span class="w">        </span><span class="n">v2</span><span class="p">.</span><span class="na">move</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-53-abstraction-multiple-children">Example 53 – Abstraction + Multiple Children<a class="headerlink" href="#example-53-abstraction-multiple-children" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">abstract class Employee {
-    abstract void work();
-}
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">();</span>
+<span class="p">}</span>
 
-class Developer extends Employee {
-    void work() { System.out.println(&quot;Writing code&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Developer</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Writing code"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Tester extends Employee {
-    void work() { System.out.println(&quot;Testing code&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Tester</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Testing code"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Manager extends Employee {
-    void work() { System.out.println(&quot;Managing team&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Managing team"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Employee[] employees = {new Developer(), new Tester(), new Manager()};
-        for(Employee e : employees) e.work();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Employee</span><span class="o">[]</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="n">Developer</span><span class="p">(),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tester</span><span class="p">(),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">()};</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">employees</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-54-encapsulation-validation-multiple-objects">Example 54 – Encapsulation + Validation + Multiple Objects<a class="headerlink" href="#example-54-encapsulation-validation-multiple-objects" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class BankAccount {
-    private double balance;
-    public BankAccount(double initialBalance) {
-        balance = initialBalance &lt; 0 ? 0 : initialBalance;
-    }
-    public void deposit(double amount) {
-        if(amount &gt; 0) balance += amount;
-    }
-    public void withdraw(double amount) {
-        if(amount &lt;= balance) balance -= amount;
-        else System.out.println(&quot;Insufficient funds&quot;);
-    }
-    public double getBalance() { return balance; }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">BankAccount</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BankAccount</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">initialBalance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">initialBalance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">initialBalance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deposit</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">withdraw</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Insufficient funds"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getBalance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        BankAccount a1 = new BankAccount(1000);
-        BankAccount a2 = new BankAccount(-500);
-        a1.deposit(500);
-        a2.withdraw(100);
-        System.out.println(a1.getBalance());
-        System.out.println(a2.getBalance());
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">BankAccount</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BankAccount</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">        </span><span class="n">BankAccount</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BankAccount</span><span class="p">(</span><span class="o">-</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">        </span><span class="n">a1</span><span class="p">.</span><span class="na">deposit</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">        </span><span class="n">a2</span><span class="p">.</span><span class="na">withdraw</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a1</span><span class="p">.</span><span class="na">getBalance</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a2</span><span class="p">.</span><span class="na">getBalance</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-55-polymorphism-interface-runtime">Example 55 – Polymorphism + Interface + Runtime<a class="headerlink" href="#example-55-polymorphism-interface-runtime" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">interface Drawable {
-    void draw();
-}
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Drawable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">();</span>
+<span class="p">}</span>
 
-class Circle implements Drawable {
-    public void draw() { System.out.println(&quot;Circle drawn&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Circle</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Drawable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Circle drawn"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Rectangle implements Drawable {
-    public void draw() { System.out.println(&quot;Rectangle drawn&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Drawable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Rectangle drawn"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Drawable[] shapes = {new Circle(), new Rectangle()};
-        for(Drawable d : shapes) d.draw();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Drawable</span><span class="o">[]</span><span class="w"> </span><span class="n">shapes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="n">Circle</span><span class="p">(),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">()};</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">Drawable</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">shapes</span><span class="p">)</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-56-complex-inheritance-super-constructor">Example 56 – Complex Inheritance + Super Constructor<a class="headerlink" href="#example-56-complex-inheritance-super-constructor" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class Animal {
-    Animal(String msg) { System.out.println(msg); }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Animal</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Mammal extends Animal {
-    Mammal() { super(&quot;Animal is alive&quot;); System.out.println(&quot;Mammal created&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Mammal</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Mammal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kd">super</span><span class="p">(</span><span class="s">"Animal is alive"</span><span class="p">);</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mammal created"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Dog extends Mammal {
-    Dog() { System.out.println(&quot;Dog created&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Mammal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Dog</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog created"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Dog d = new Dog();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-57-polymorphism-method-overloading-overriding">Example 57 – Polymorphism + Method Overloading + Overriding<a class="headerlink" href="#example-57-polymorphism-method-overloading-overriding" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class Calculator {
-    int add(int a, int b) { return a + b; }
-    double add(double a, double b) { return a + b; }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class AdvancedCalculator extends Calculator {
-    int add(int a, int b, int c) { return a + b + c; }
-}
+<span class="kd">class</span> <span class="nc">AdvancedCalculator</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Calculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        AdvancedCalculator calc = new AdvancedCalculator();
-        System.out.println(calc.add(5,10));
-        System.out.println(calc.add(2.5,3.5));
-        System.out.println(calc.add(1,2,3));
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">AdvancedCalculator</span><span class="w"> </span><span class="n">calc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AdvancedCalculator</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calc</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calc</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calc</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-58-interface-multiple-implementations">Example 58 – Interface + Multiple Implementations<a class="headerlink" href="#example-58-interface-multiple-implementations" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">interface Vehicle {
-    void start();
-}
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">();</span>
+<span class="p">}</span>
 
-class Car implements Vehicle {
-    public void start() { System.out.println(&quot;Car starts&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car starts"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Bike implements Vehicle {
-    public void start() { System.out.println(&quot;Bike starts&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Bike</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bike starts"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Vehicle v1 = new Car();
-        Vehicle v2 = new Bike();
-        v1.start();
-        v2.start();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Vehicle</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Vehicle</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bike</span><span class="p">();</span>
+<span class="w">        </span><span class="n">v1</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">        </span><span class="n">v2</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-59-abstraction-polymorphism-array">Example 59 – Abstraction + Polymorphism + Array<a class="headerlink" href="#example-59-abstraction-polymorphism-array" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">abstract class Shape {
-    abstract void area();
-}
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Shape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">area</span><span class="p">();</span>
+<span class="p">}</span>
 
-class Circle extends Shape {
-    double r = 3;
-    void area() { System.out.println(3.14 * r * r); }
-}
+<span class="kd">class</span> <span class="nc">Circle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mf">3.14</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Square extends Shape {
-    double side = 4;
-    void area() { System.out.println(side * side); }
-}
+<span class="kd">class</span> <span class="nc">Square</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">side</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">side</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Shape[] shapes = {new Circle(), new Square()};
-        for(Shape s : shapes) s.area();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Shape</span><span class="o">[]</span><span class="w"> </span><span class="n">shapes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="n">Circle</span><span class="p">(),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Square</span><span class="p">()};</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">Shape</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">shapes</span><span class="p">)</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">area</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-60-encapsulation-static-field-multiple-objects">Example 60 – Encapsulation + Static Field + Multiple Objects<a class="headerlink" href="#example-60-encapsulation-static-field-multiple-objects" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class Counter {
-    private static int count = 0;
-    public Counter() { count++; }
-    public static int getCount() { return count; }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Counter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Counter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">count</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getCount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        new Counter();
-        new Counter();
-        new Counter();
-        System.out.println(Counter.getCount());
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Counter</span><span class="p">();</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Counter</span><span class="p">();</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Counter</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Counter</span><span class="p">.</span><span class="na">getCount</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-61-multi-level-inheritance-method-overriding">Example 61 – Multi-Level Inheritance + Method Overriding<a class="headerlink" href="#example-61-multi-level-inheritance-method-overriding" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class A { void msg() { System.out.println(&quot;A&quot;); } }
-class B extends A { void msg() { System.out.println(&quot;B&quot;); } }
-class C extends B { void msg() { System.out.println(&quot;C&quot;); } }
-class D extends C { void msg() { System.out.println(&quot;D&quot;); } }
-class E extends D { void msg() { System.out.println(&quot;E&quot;); } }
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">msg</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">msg</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">class</span> <span class="nc">C</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">msg</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">class</span> <span class="nc">D</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">msg</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"D"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">class</span> <span class="nc">E</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">msg</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"E"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        A obj = new E();
-        obj.msg();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">A</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">E</span><span class="p">();</span>
+<span class="w">        </span><span class="n">obj</span><span class="p">.</span><span class="na">msg</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-62-polymorphism-casting">Example 62 – Polymorphism + Casting<a class="headerlink" href="#example-62-polymorphism-casting" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class Animal { void sound() { System.out.println(&quot;Animal sound&quot;); } }
-class Dog extends Animal { void sound() { System.out.println(&quot;Dog barks&quot;); } void run() { System.out.println(&quot;Dog runs&quot;); } }
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Animal sound"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog barks"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dog runs"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Animal a = new Dog();
-        a.sound();
-        ((Dog)a).run();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="na">sound</span><span class="p">();</span>
+<span class="w">        </span><span class="p">((</span><span class="n">Dog</span><span class="p">)</span><span class="n">a</span><span class="p">).</span><span class="na">run</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-63-abstraction-constructor-polymorphism">Example 63 – Abstraction + Constructor + Polymorphism<a class="headerlink" href="#example-63-abstraction-constructor-polymorphism" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">abstract class Device {
-    Device() { System.out.println(&quot;Device created&quot;); }
-    abstract void start();
-}
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Device</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Device</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Device created"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">();</span>
+<span class="p">}</span>
 
-class Phone extends Device {
-    Phone() { System.out.println(&quot;Phone created&quot;); }
-    void start() { System.out.println(&quot;Phone starts&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Phone</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Device</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Phone</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Phone created"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Phone starts"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Device d = new Phone();
-        d.start();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Device</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Phone</span><span class="p">();</span>
+<span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-64-interface-default-methods">Example 64 – Interface + Default Methods<a class="headerlink" href="#example-64-interface-default-methods" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">interface Vehicle {
-    void start();
-    default void stop() { System.out.println(&quot;Vehicle stopped&quot;); }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">();</span>
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vehicle stopped"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Car implements Vehicle {
-    public void start() { System.out.println(&quot;Car started&quot;); }
-}
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Car started"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Car c = new Car();
-        c.start();
-        c.stop();
-    }
-}
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<span class="w">        </span><span class="n">c</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">        </span><span class="n">c</span><span class="p">.</span><span class="na">stop</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Question:</strong> Predict the output.</p>
 <hr />
 <h3 id="example-65-encapsulation-method-validation">Example 65 – Encapsulation + Method Validation<a class="headerlink" href="#example-65-encapsulation-method-validation" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">class Product {
-    private int price;
-    public void setPrice(int price) { this.price = price&lt;0?0:price; }
-    public int getPrice() { return price; }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Product</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPrice</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">?</span><span class="mi">0</span><span class="p">:</span><span class="n">price</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-public class Test {
-    public static void main(String[] args) {
-        Product p = new Product();
-        p.setPrice(-100);
-        System.out.println(p.getPrice());
-
-
-</code></pre>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Product</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Product</span><span class="p">();</span>
+<span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="na">setPrice</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
+</code></pre></div>
 
 
 
@@ -6369,6 +6367,10 @@ public class Test {
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

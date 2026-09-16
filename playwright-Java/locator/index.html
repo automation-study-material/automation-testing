@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6001,97 +6001,97 @@
 <p>This guide covers <strong>all locator strategies in Playwright (Java)</strong> with examples, including ARIA roles and accessibility-based locators.</p>
 <hr />
 <h2 id="example-html">🔹 Example HTML<a class="headerlink" href="#example-html" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;input type=&quot;text&quot; id=&quot;email&quot; class=&quot;form-control&quot; placeholder=&quot;Enter email&quot; /&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="na">class</span><span class="o">=</span><span class="s">"form-control"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Enter email"</span> <span class="p">/&gt;</span>
 
-&lt;button id=&quot;submitBtn&quot; class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">"submitBtn"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 
-&lt;span class=&quot;text&quot;&gt;Title&lt;/span&gt;
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"text"</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 
-&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;
-</code></pre>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/home"</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="locator-types">🔹 Locator Types<a class="headerlink" href="#locator-types" title="Permanent link">&para;</a></h2>
 <h3 id="1-by-id">1. By <strong>ID</strong><a class="headerlink" href="#1-by-id" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;#email&quot;);
-page.locator(&quot;#submitBtn&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#email"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"#submitBtn"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="2-by-class">2. By <strong>Class</strong><a class="headerlink" href="#2-by-class" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;.form-control&quot;);
-page.locator(&quot;.btn.btn-primary&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">".form-control"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">".btn.btn-primary"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="3-by-tag-name">3. By <strong>Tag Name</strong><a class="headerlink" href="#3-by-tag-name" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;button&quot;);
-page.locator(&quot;input&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"button"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"input"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="4-by-text-content">4. By <strong>Text Content</strong><a class="headerlink" href="#4-by-text-content" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.getByText(&quot;Submit&quot;);
-page.getByText(&quot;Home&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">getByText</span><span class="p">(</span><span class="s">"Submit"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">getByText</span><span class="p">(</span><span class="s">"Home"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="5-by-role-aria-accessibility">5. By <strong>Role (ARIA Accessibility)</strong><a class="headerlink" href="#5-by-role-aria-accessibility" title="Permanent link">&para;</a></h3>
 <p><strong>ARIA roles</strong> are accessibility attributes in HTML that define the purpose of an element for screen readers. Playwright’s <code>getByRole</code> uses the accessibility tree.</p>
-<pre><code class="language-java">page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(&quot;Submit&quot;));
-page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;Home&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">getByRole</span><span class="p">(</span><span class="n">AriaRole</span><span class="p">.</span><span class="na">BUTTON</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">GetByRoleOptions</span><span class="p">().</span><span class="na">setName</span><span class="p">(</span><span class="s">"Submit"</span><span class="p">));</span>
+<span class="n">page</span><span class="p">.</span><span class="na">getByRole</span><span class="p">(</span><span class="n">AriaRole</span><span class="p">.</span><span class="na">LINK</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="p">.</span><span class="na">GetByRoleOptions</span><span class="p">().</span><span class="na">setName</span><span class="p">(</span><span class="s">"Home"</span><span class="p">));</span>
+</code></pre></div>
 <ul>
 <li>Use <code>getByRole</code> for buttons, links, headings, checkboxes, etc.</li>
 <li>More stable than CSS/XPath since roles rarely change.</li>
 <li>Filters elements by their <strong>accessible name</strong> (text or ARIA label).</li>
 </ul>
-<p><strong>Example of explicit role in HTML:</strong></p>
-<pre><code class="language-html">&lt;div role=&quot;button&quot; aria-label=&quot;Submit Form&quot;&gt;Submit&lt;/div&gt;
-</code></pre>
+<p><strong>Example of explicit role in HTML:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">"button"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Submit Form"</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></p>
 <p><strong>Rule of Thumb:</strong> Prefer <code>getByRole</code> if a semantic role exists; fallback to XPath/CSS otherwise.</p>
 <h3 id="6-by-placeholder">6. By <strong>Placeholder</strong><a class="headerlink" href="#6-by-placeholder" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.getByPlaceholder(&quot;Enter email&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">getByPlaceholder</span><span class="p">(</span><span class="s">"Enter email"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="7-by-label">7. By <strong>Label</strong><a class="headerlink" href="#7-by-label" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
-&lt;input id=&quot;email&quot; /&gt;
-</code></pre>
-<pre><code class="language-java">page.getByLabel(&quot;Email&quot;);
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"email"</span><span class="p">&gt;</span>Email<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">getByLabel</span><span class="p">(</span><span class="s">"Email"</span><span class="p">);</span>
+</code></pre></div></p>
 <h3 id="8-by-alt-text">8. By <strong>Alt Text</strong><a class="headerlink" href="#8-by-alt-text" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;img src=&quot;logo.png&quot; alt=&quot;Company Logo&quot;&gt;
-</code></pre>
-<pre><code class="language-java">page.getByAltText(&quot;Company Logo&quot;);
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"logo.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Company Logo"</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">getByAltText</span><span class="p">(</span><span class="s">"Company Logo"</span><span class="p">);</span>
+</code></pre></div></p>
 <h3 id="9-by-title-attribute">9. By <strong>Title Attribute</strong><a class="headerlink" href="#9-by-title-attribute" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;button title=&quot;Click to submit&quot;&gt;Submit&lt;/button&gt;
-</code></pre>
-<pre><code class="language-java">page.getByTitle(&quot;Click to submit&quot;);
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">title</span><span class="o">=</span><span class="s">"Click to submit"</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">getByTitle</span><span class="p">(</span><span class="s">"Click to submit"</span><span class="p">);</span>
+</code></pre></div></p>
 <h3 id="10-by-css-attribute-selector">10. By <strong>CSS Attribute Selector</strong><a class="headerlink" href="#10-by-css-attribute-selector" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;input[type='text']&quot;);
-page.locator(&quot;button[type='submit']&quot;);
-page.locator(&quot;a[href='/home']&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"input[type='text']"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"button[type='submit']"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"a[href='/home']"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="11-by-xpath">11. By <strong>XPath</strong><a class="headerlink" href="#11-by-xpath" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">page.locator(&quot;//button[text()='Submit']&quot;);
-page.locator(&quot;//input[@id='email']&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"//button[text()='Submit']"</span><span class="p">);</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">"//input[@id='email']"</span><span class="p">);</span>
+</code></pre></div>
 <h2 id="handling-multiple-matches">🔹 Handling Multiple Matches<a class="headerlink" href="#handling-multiple-matches" title="Permanent link">&para;</a></h2>
-<pre><code class="language-html">&lt;ul&gt;
-  &lt;li class=&quot;item&quot;&gt;Apple&lt;/li&gt;
-  &lt;li class=&quot;item&quot;&gt;Banana&lt;/li&gt;
-  &lt;li class=&quot;item&quot;&gt;Cherry&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-<pre><code class="language-java">Locator items = page.locator(&quot;.item&quot;);
-int count = items.count();
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="p">&gt;</span>Apple<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="p">&gt;</span>Banana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="p">&gt;</span>Cherry<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Locator</span><span class="w"> </span><span class="n">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">".item"</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
 
-items.nth(0);  // Apple
-items.nth(1);  // Banana
-items.nth(2);  // Cherry
+<span class="n">items</span><span class="p">.</span><span class="na">nth</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// Apple</span>
+<span class="n">items</span><span class="p">.</span><span class="na">nth</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// Banana</span>
+<span class="n">items</span><span class="p">.</span><span class="na">nth</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// Cherry</span>
 
-for (int i = 0; i &lt; count; i++) {
-    System.out.println(items.nth(i).innerText());
-}
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">items</span><span class="p">.</span><span class="na">nth</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">innerText</span><span class="p">());</span>
+<span class="p">}</span>
 
-Locator banana = page.locator(&quot;.item&quot;).filter(new Locator.FilterOptions().setHasText(&quot;Banana&quot;));
+<span class="n">Locator</span><span class="w"> </span><span class="n">banana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">".item"</span><span class="p">).</span><span class="na">filter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Locator</span><span class="p">.</span><span class="na">FilterOptions</span><span class="p">().</span><span class="na">setHasText</span><span class="p">(</span><span class="s">"Banana"</span><span class="p">));</span>
 
-page.locator(&quot;.item&quot;).first();
-page.locator(&quot;.item&quot;).last();
-</code></pre>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">".item"</span><span class="p">).</span><span class="na">first</span><span class="p">();</span>
+<span class="n">page</span><span class="p">.</span><span class="na">locator</span><span class="p">(</span><span class="s">".item"</span><span class="p">).</span><span class="na">last</span><span class="p">();</span>
+</code></pre></div>
 <h2 id="summary">🔹 Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Use <strong>semantic locators</strong> (<code>getByRole</code>, <code>getByLabel</code>, <code>getByPlaceholder</code>) for stable and accessibility-compliant tests.  </li>
@@ -6152,6 +6152,10 @@ page.locator(&quot;.item&quot;).last();
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

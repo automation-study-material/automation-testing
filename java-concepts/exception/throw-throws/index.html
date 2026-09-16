@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../som/stress/" class="md-nav__link">
+      <a href="../../som/stress.md" class="md-nav__link">
         
   
   
@@ -5621,10 +5621,10 @@
 </blockquote>
 <hr />
 <h2 id="one-line-answer">✅ One-line Answer<a class="headerlink" href="#one-line-answer" title="Permanent link">&para;</a></h2>
-<pre><code>try–catch → handles exception HERE
+<div class="highlight"><pre><span></span><code>try–catch → handles exception HERE
 throw     → CREATES an exception
 throws    → PASSES responsibility to CALLER
-</code></pre>
+</code></pre></div>
 <p>👉 They solve <strong>different problems</strong>, not the same one.</p>
 <hr />
 <hr />
@@ -5659,12 +5659,12 @@ throws    → PASSES responsibility to CALLER
 <h1 id="why-trycatch-alone-is-not-enough">✅ Why try–catch alone is NOT enough<a class="headerlink" href="#why-trycatch-alone-is-not-enough" title="Permanent link">&para;</a></h1>
 <h2 id="problem-with-trycatch-everywhere">❌ Problem with try–catch everywhere<a class="headerlink" href="#problem-with-trycatch-everywhere" title="Permanent link">&para;</a></h2>
 <p>If you do this everywhere:</p>
-<pre><code class="language-java">try {
-   readFile();
-} catch (Exception e) {
-   e.printStackTrace();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">readFile</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h3>
 <p>❌ code becomes messy
 ❌ business logic + error handling mixed
@@ -5688,25 +5688,25 @@ throws    → PASSES responsibility to CALLER
 </blockquote>
 <hr />
 <h2 id="example-business-rule-failure">Example (Business rule failure)<a class="headerlink" href="#example-business-rule-failure" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">int age = -5;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+</code></pre></div>
 <p>Java will NOT throw error automatically.</p>
 <p>But logically:</p>
-<pre><code>❌ Invalid age
-</code></pre>
+<div class="highlight"><pre><span></span><code>❌ Invalid age
+</code></pre></div>
 <hr />
 <h2 id="solution-throw">Solution → throw<a class="headerlink" href="#solution-throw" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">if (age &lt; 0) {
-    throw new IllegalArgumentException(&quot;Age cannot be negative&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"Age cannot be negative"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="key-point">Key Point<a class="headerlink" href="#key-point" title="Permanent link">&para;</a></h2>
 <p>✔ Not system error
 ✔ Your business rule</p>
 <h3 id="rule">Rule<a class="headerlink" href="#rule" title="Permanent link">&para;</a></h3>
-<pre><code>throw = YOU decide something is wrong
-</code></pre>
+<div class="highlight"><pre><span></span><code>throw = YOU decide something is wrong
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="throws-why-we-need-it">🔹 <code>throws</code> — WHY we need it<a class="headerlink" href="#throws-why-we-need-it" title="Permanent link">&para;</a></h1>
@@ -5721,69 +5721,69 @@ throws    → PASSES responsibility to CALLER
 ✔ low-level code</p>
 <hr />
 <h2 id="without-throws-compile-error">WITHOUT throws (compile error)<a class="headerlink" href="#without-throws-compile-error" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public void readFile() {
-    FileReader fr = new FileReader(&quot;a.txt&quot;); // ❌ compile error
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">readFile</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">FileReader</span><span class="w"> </span><span class="n">fr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">"a.txt"</span><span class="p">);</span><span class="w"> </span><span class="c1">// ❌ compile error</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Java says:</p>
-<pre><code>Handle it OR declare it
-</code></pre>
+<div class="highlight"><pre><span></span><code>Handle it OR declare it
+</code></pre></div>
 <hr />
 <h2 id="with-throws">WITH throws<a class="headerlink" href="#with-throws" title="Permanent link">&para;</a></h2>
-<pre><code class="language-java">public void readFile() throws IOException {
-    FileReader fr = new FileReader(&quot;a.txt&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">readFile</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">FileReader</span><span class="w"> </span><span class="n">fr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">"a.txt"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="meaning">Meaning<a class="headerlink" href="#meaning" title="Permanent link">&para;</a></h2>
 <p>👉 Caller must handle it</p>
 <hr />
 <h3 id="rule_1">Rule<a class="headerlink" href="#rule_1" title="Permanent link">&para;</a></h3>
-<pre><code>throws = pass responsibility upward
-</code></pre>
+<div class="highlight"><pre><span></span><code>throws = pass responsibility upward
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="how-all-three-work-together-real-flow">🔥 How ALL THREE work together (REAL FLOW)<a class="headerlink" href="#how-all-three-work-together-real-flow" title="Permanent link">&para;</a></h1>
 <p>Let’s see real project style architecture.</p>
 <hr />
 <h1 id="step-1-low-level-method-throws">Step 1️⃣ Low-level method → throws<a class="headerlink" href="#step-1-low-level-method-throws" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">public void readFile() throws IOException {
-    FileReader fr = new FileReader(&quot;data.txt&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">readFile</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">FileReader</span><span class="w"> </span><span class="n">fr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h3>
 <p>This method cannot decide what to do if file missing.</p>
 <hr />
 <hr />
 <h1 id="step-2-business-logic-throw">Step 2️⃣ Business logic → throw<a class="headerlink" href="#step-2-business-logic-throw" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">public void processUser(int age) throws IOException {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">processUser</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
 
-    if (age &lt; 18) {
-        throw new IllegalArgumentException(&quot;User not eligible&quot;);
-    }
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"User not eligible"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    readFile();
-}
-</code></pre>
+<span class="w">    </span><span class="n">readFile</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="here">Here<a class="headerlink" href="#here" title="Permanent link">&para;</a></h3>
 <p>✔ throw → business validation
 ✔ throws → technical delegation</p>
 <hr />
 <hr />
 <h1 id="step-3-top-level-trycatch">Step 3️⃣ Top-level → try–catch<a class="headerlink" href="#step-3-top-level-trycatch" title="Permanent link">&para;</a></h1>
-<pre><code class="language-java">public static void main(String[] args) {
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    try {
-        processUser(15);
-    }
-    catch (IllegalArgumentException e) {
-        System.out.println(&quot;Business error: &quot; + e.getMessage());
-    }
-    catch (IOException e) {
-        System.out.println(&quot;Technical error: file missing&quot;);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">processUser</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Business error: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Technical error: file missing"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="this-is-the-correct-architecture">✅ THIS is the correct architecture<a class="headerlink" href="#this-is-the-correct-architecture" title="Permanent link">&para;</a></h2>
 <hr />
@@ -5814,7 +5814,7 @@ throws    → PASSES responsibility to CALLER
 <hr />
 <hr />
 <h1 id="visual-flow-diagram">🔥 Visual Flow Diagram<a class="headerlink" href="#visual-flow-diagram" title="Permanent link">&para;</a></h1>
-<pre><code>Low Level (DAO)
+<div class="highlight"><pre><span></span><code>Low Level (DAO)
     ↓
 throws IOException
     ↓
@@ -5825,7 +5825,7 @@ throw BusinessException
 Controller / Main
     ↓
 try–catch handles everything
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="key-differences">🔹 Key Differences<a class="headerlink" href="#key-differences" title="Permanent link">&para;</a></h1>
@@ -5893,12 +5893,12 @@ try–catch handles everything
 <hr />
 <hr />
 <h1 id="simple-memory-trick">🔹 Simple Memory Trick<a class="headerlink" href="#simple-memory-trick" title="Permanent link">&para;</a></h1>
-<pre><code>throw  → create
+<div class="highlight"><pre><span></span><code>throw  → create
 throws → declare
 try    → test
 catch  → handle
 finally→ cleanup
-</code></pre>
+</code></pre></div>
 <hr />
 <hr />
 <h1 id="interview-gold-explanation">🎯 Interview GOLD Explanation<a class="headerlink" href="#interview-gold-explanation" title="Permanent link">&para;</a></h1>
@@ -5911,10 +5911,10 @@ try–catch is used only where the application can actually decide how to recove
 <hr />
 <hr />
 <h1 id="final-one-line-summary">✅ Final One-Line Summary<a class="headerlink" href="#final-one-line-summary" title="Permanent link">&para;</a></h1>
-<pre><code>throw   → create problem
+<div class="highlight"><pre><span></span><code>throw   → create problem
 throws  → pass problem
 try-catch → solve problem
-</code></pre>
+</code></pre></div>
 <hr />
 <p>END</p>
 
@@ -5970,6 +5970,10 @@ try-catch → solve problem
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

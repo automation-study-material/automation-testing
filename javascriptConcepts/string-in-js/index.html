@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6698,165 +6698,165 @@
 <p>A <strong>string</strong> in JavaScript is a sequence of characters used to represent
 text.\
 Example:</p>
-<pre><code class="language-js">let name = &quot;Nitin&quot;;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="2-string-declaration-methods">2. String Declaration Methods<a class="headerlink" href="#2-string-declaration-methods" title="Permanent link">&para;</a></h2>
 <h3 id="a-single-quotes"><strong>a) Single Quotes</strong><a class="headerlink" href="#a-single-quotes" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">let city = 'Pune';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Pune'</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="b-double-quotes"><strong>b) Double Quotes</strong><a class="headerlink" href="#b-double-quotes" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">let job = &quot;Developer&quot;;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Developer"</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="c-backticks-template-literals"><strong>c) Backticks (Template Literals)</strong><a class="headerlink" href="#c-backticks-template-literals" title="Permanent link">&para;</a></h3>
 <p>Supports: - multiline strings\
 - interpolation (<code>${variable}</code>)</p>
-<pre><code class="language-js">let user = &quot;Nitin&quot;;
-let msg = `Hello ${user}, welcome!`;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Nitin"</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hello </span><span class="si">${</span><span class="nx">user</span><span class="si">}</span><span class="sb">, welcome!`</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="3-string-immutability">3. String Immutability<a class="headerlink" href="#3-string-immutability" title="Permanent link">&para;</a></h2>
 <p>Strings in JavaScript <strong>cannot be changed after creation</strong>.</p>
-<pre><code class="language-js">let s = &quot;Hi&quot;;
-s[0] = &quot;h&quot;; // ❌ does nothing
-console.log(s); // &quot;Hi&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Hi"</span><span class="p">;</span>
+<span class="nx">s</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"h"</span><span class="p">;</span><span class="w"> </span><span class="c1">// ❌ does nothing</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Hi"</span>
+</code></pre></div>
 <p>To modify a string, create a new one:</p>
-<pre><code class="language-js">s = &quot;h&quot; + s[1];
-console.log(s); // &quot;hi&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"h"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">s</span><span class="p">[</span><span class="mf">1</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// "hi"</span>
+</code></pre></div>
 <hr />
 <h2 id="4-string-comparison">4. String Comparison<a class="headerlink" href="#4-string-comparison" title="Permanent link">&para;</a></h2>
 <h3 id="loose-equality"><strong>== (loose equality)</strong><a class="headerlink" href="#loose-equality" title="Permanent link">&para;</a></h3>
 <p>Converts types before comparison.</p>
-<pre><code class="language-js">&quot;10&quot; == 10   // true
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"10"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">10</span><span class="w">   </span><span class="c1">// true</span>
+</code></pre></div>
 <h3 id="strict-equality"><strong>=== (strict equality)</strong><a class="headerlink" href="#strict-equality" title="Permanent link">&para;</a></h3>
 <p>No type conversion.</p>
-<pre><code class="language-js">&quot;10&quot; === 10  // false
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"10"</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">10</span><span class="w">  </span><span class="c1">// false</span>
+</code></pre></div>
 <h3 id="localecompare"><strong>localeCompare()</strong><a class="headerlink" href="#localecompare" title="Permanent link">&para;</a></h3>
 <p>Used for lexicographical comparison:</p>
-<pre><code class="language-js">&quot;apple&quot;.localeCompare(&quot;banana&quot;); // -1
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"apple"</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="s2">"banana"</span><span class="p">);</span><span class="w"> </span><span class="c1">// -1</span>
+</code></pre></div>
 <hr />
 <h2 id="5-string-methods-detailed-with-examples">5. String Methods --- Detailed With Examples<a class="headerlink" href="#5-string-methods-detailed-with-examples" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="1-charatindex"><strong>1. charAt(index)</strong><a class="headerlink" href="#1-charatindex" title="Permanent link">&para;</a></h3>
 <p>Returns character at given index.</p>
-<pre><code class="language-js">&quot;Hello&quot;.charAt(1); // 'e'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"Hello"</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 'e'</span>
+</code></pre></div>
 <hr />
 <h3 id="2-atindex"><strong>2. at(index)</strong><a class="headerlink" href="#2-atindex" title="Permanent link">&para;</a></h3>
 <p>Supports negative index.</p>
-<pre><code class="language-js">&quot;Hello&quot;.at(-1); // 'o'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"Hello"</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 'o'</span>
+</code></pre></div>
 <hr />
 <h3 id="3-indexof"><strong>3. indexOf()</strong><a class="headerlink" href="#3-indexof" title="Permanent link">&para;</a></h3>
 <p>Finds first occurrence.</p>
-<pre><code class="language-js">&quot;javascript&quot;.indexOf(&quot;a&quot;); // 1
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"javascript"</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+</code></pre></div>
 <p>Find After specific index</p>
-<pre><code class="language-js">&quot;javascript&quot;.indexOf(&quot;a&quot;, 2); //3
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"javascript"</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">//3</span>
+</code></pre></div>
 <hr />
 <h3 id="4-lastindexof"><strong>4. lastIndexOf()</strong><a class="headerlink" href="#4-lastindexof" title="Permanent link">&para;</a></h3>
 <p>Finds last occurrence.</p>
-<pre><code class="language-js">&quot;javascript&quot;.lastIndexOf(&quot;a&quot;); // 3
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"javascript"</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3</span>
+</code></pre></div>
 <hr />
 <h3 id="5-includes"><strong>5. includes()</strong><a class="headerlink" href="#5-includes" title="Permanent link">&para;</a></h3>
 <p>Checks substring present or not.</p>
-<pre><code class="language-js">&quot;hello world&quot;.includes(&quot;world&quot;); // true
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"hello world"</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"world"</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
 <hr />
 <h3 id="6-startswith"><strong>6. startsWith()</strong><a class="headerlink" href="#6-startswith" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;JavaScript&quot;.startsWith(&quot;Java&quot;); // true
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"JavaScript"</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">"Java"</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
 <h3 id="7-endswith"><strong>7. endsWith()</strong><a class="headerlink" href="#7-endswith" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;JavaScript&quot;.endsWith(&quot;Script&quot;); // true
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"JavaScript"</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">"Script"</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
 <hr />
 <h3 id="8-slicestart-end"><strong>8. slice(start, end)</strong><a class="headerlink" href="#8-slicestart-end" title="Permanent link">&para;</a></h3>
 <p>Supports negative index.</p>
-<pre><code class="language-js">&quot;JavaScript&quot;.slice(0, 4); // 'Java'
-&quot;JavaScript&quot;.slice(-6);  // 'Script'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"JavaScript"</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// 'Java'</span>
+<span class="s2">"JavaScript"</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mf">6</span><span class="p">);</span><span class="w">  </span><span class="c1">// 'Script'</span>
+</code></pre></div>
 <hr />
 <h3 id="9-substringstart-end"><strong>9. substring(start, end)</strong><a class="headerlink" href="#9-substringstart-end" title="Permanent link">&para;</a></h3>
 <p>Negative values treated as 0.</p>
-<pre><code class="language-js">&quot;JavaScript&quot;.substring(4, 10); // &quot;Script&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"JavaScript"</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Script"</span>
+</code></pre></div>
 <hr />
 <h3 id="10-substrstart-length"><strong>10. substr(start, length)</strong><a class="headerlink" href="#10-substrstart-length" title="Permanent link">&para;</a></h3>
 <p>(Deprecated but asked in interviews)</p>
-<pre><code class="language-js">&quot;JavaScript&quot;.substr(4, 6); // &quot;Script&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"JavaScript"</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Script"</span>
+</code></pre></div>
 <hr />
 <h3 id="11-touppercase-tolowercase"><strong>11. toUpperCase() / toLowerCase()</strong><a class="headerlink" href="#11-touppercase-tolowercase" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;hello&quot;.toUpperCase(); // &quot;HELLO&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"hello"</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// "HELLO"</span>
+</code></pre></div>
 <hr />
 <h3 id="12-trim"><strong>12. trim()</strong><a class="headerlink" href="#12-trim" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;   hi   &quot;.trim(); // &quot;hi&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"   hi   "</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span><span class="w"> </span><span class="c1">// "hi"</span>
+</code></pre></div>
 <h3 id="trimstart"><strong>trimStart()</strong><a class="headerlink" href="#trimstart" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;   hi&quot;.trimStart();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"   hi"</span><span class="p">.</span><span class="nx">trimStart</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="trimend"><strong>trimEnd()</strong><a class="headerlink" href="#trimend" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;hi   &quot;.trimEnd();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"hi   "</span><span class="p">.</span><span class="nx">trimEnd</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h3 id="13-replace"><strong>13. replace()</strong><a class="headerlink" href="#13-replace" title="Permanent link">&para;</a></h3>
 <p>Replaces first match.</p>
-<pre><code class="language-js">&quot;hello world&quot;.replace(&quot;world&quot;,&quot;JS&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"hello world"</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"world"</span><span class="p">,</span><span class="s2">"JS"</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="replaceall"><strong>replaceAll()</strong><a class="headerlink" href="#replaceall" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;aa11aa&quot;.replaceAll(&quot;a&quot;,&quot;b&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"aa11aa"</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="14-split"><strong>14. split()</strong><a class="headerlink" href="#14-split" title="Permanent link">&para;</a></h3>
 <p>Converts string → array.</p>
-<pre><code class="language-js">&quot;apple,mango&quot;.split(&quot;,&quot;); 
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"apple,mango"</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">","</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
 <hr />
 <h3 id="15-concat"><strong>15. concat()</strong><a class="headerlink" href="#15-concat" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;Hello&quot;.concat(&quot; JavaScript&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"Hello"</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s2">" JavaScript"</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="16-match"><strong>16. match()</strong><a class="headerlink" href="#16-match" title="Permanent link">&para;</a></h3>
 <p>Regex matching.</p>
-<pre><code class="language-js">&quot;abc123&quot;.match(/[0-9]+/);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"abc123"</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/[0-9]+/</span><span class="p">);</span>
+</code></pre></div>
 <hr />
 <h3 id="17-matchall"><strong>17. matchAll()</strong><a class="headerlink" href="#17-matchall" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">[... &quot;a1b2&quot;.matchAll(/[a-z]/g)];
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">[...</span><span class="w"> </span><span class="s2">"a1b2"</span><span class="p">.</span><span class="nx">matchAll</span><span class="p">(</span><span class="sr">/[a-z]/g</span><span class="p">)];</span>
+</code></pre></div>
 <hr />
 <h3 id="18-padstart"><strong>18. padStart()</strong><a class="headerlink" href="#18-padstart" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;7&quot;.padStart(3,&quot;0&quot;); // &quot;007&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"7"</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="s2">"0"</span><span class="p">);</span><span class="w"> </span><span class="c1">// "007"</span>
+</code></pre></div>
 <h3 id="19-padend"><strong>19. padEnd()</strong><a class="headerlink" href="#19-padend" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;7&quot;.padEnd(3,&quot;0&quot;); // &quot;700&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"7"</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="s2">"0"</span><span class="p">);</span><span class="w"> </span><span class="c1">// "700"</span>
+</code></pre></div>
 <hr />
 <h3 id="20-repeat"><strong>20. repeat()</strong><a class="headerlink" href="#20-repeat" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">&quot;ha&quot;.repeat(3); // &quot;hahaha&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"ha"</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// "hahaha"</span>
+</code></pre></div>
 <hr />
 <h3 id="21-localecompare"><strong>21. localeCompare()</strong><a class="headerlink" href="#21-localecompare" title="Permanent link">&para;</a></h3>
 <p>Lexicographic comparison.</p>
-<pre><code class="language-js">&quot;apple&quot;.localeCompare(&quot;banana&quot;); // -1
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"apple"</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="s2">"banana"</span><span class="p">);</span><span class="w"> </span><span class="c1">// -1</span>
+</code></pre></div>
 <hr />
 <h3 id="22-valueof"><strong>22. valueOf()</strong><a class="headerlink" href="#22-valueof" title="Permanent link">&para;</a></h3>
 <p>Returns primitive string.</p>
-<pre><code class="language-js">&quot;hello&quot;.valueOf();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="s2">"hello"</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h3 id="23-tostring"><strong>23. toString()</strong><a class="headerlink" href="#23-tostring" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">(100).toString();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="mf">100</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+</code></pre></div>
 <hr />
 <h2 id="6-string-methods-table-cheat-sheet">6. String Methods Table (Cheat Sheet)<a class="headerlink" href="#6-string-methods-table-cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
@@ -7012,34 +7012,34 @@ console.log(s); // &quot;hi&quot;
 <hr />
 <h2 id="7-small-interview-programs">7. Small Interview Programs<a class="headerlink" href="#7-small-interview-programs" title="Permanent link">&para;</a></h2>
 <h3 id="reverse-string">Reverse string<a class="headerlink" href="#reverse-string" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">str.split(&quot;&quot;).reverse().join(&quot;&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="check-palindrome">Check palindrome<a class="headerlink" href="#check-palindrome" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">function isPalindrome(s){ return s === s.split(&quot;&quot;).reverse().join(&quot;&quot;); }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">isPalindrome</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <h3 id="count-vowels">Count vowels<a class="headerlink" href="#count-vowels" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">(str.match(/[aeiou]/gi) || []).length;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/[aeiou]/gi</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[]).</span><span class="nx">length</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="character-frequency">Character frequency<a class="headerlink" href="#character-frequency" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">for(let ch of str){ map[ch]=(map[ch]||0)+1; }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">ch</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">str</span><span class="p">){</span><span class="w"> </span><span class="nx">map</span><span class="p">[</span><span class="nx">ch</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="nx">map</span><span class="p">[</span><span class="nx">ch</span><span class="p">]</span><span class="o">||</span><span class="mf">0</span><span class="p">)</span><span class="o">+</span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <h3 id="first-non-repeating-character">First non-repeating character<a class="headerlink" href="#first-non-repeating-character" title="Permanent link">&para;</a></h3>
-<pre><code class="language-js">for(let c of str){
-  if(str.indexOf(c)===str.lastIndexOf(c)) return c;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">str</span><span class="p">){</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span><span class="o">===</span><span class="nx">str</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="nx">c</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">c</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="find-occurance-of-substring-into-main-string">Find occurance of substring into main string<a class="headerlink" href="#find-occurance-of-substring-into-main-string" title="Permanent link">&para;</a></h3>
-<pre><code>let newQuote='happy new year, new day, new vision'
-let values=newQuote.indexOf(&quot;day&quot;)
+<div class="highlight"><pre><span></span><code>let newQuote='happy new year, new day, new vision'
+let values=newQuote.indexOf("day")
 let count=0
 
 while(values!==-1){
     count++
-    values =newQuote.indexOf(&quot;new&quot;,values+1)
+    values =newQuote.indexOf("new",values+1)
 }
 
 console.log(count) //3
-</code></pre>
+</code></pre></div>
 <hr />
 <h1 id="end-of-document">End of Document<a class="headerlink" href="#end-of-document" title="Permanent link">&para;</a></h1>
 
@@ -7095,6 +7095,10 @@ console.log(count) //3
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

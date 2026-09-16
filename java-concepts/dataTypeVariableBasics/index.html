@@ -11,8 +11,6 @@
         <link rel="canonical" href="https://automation-study-material.github.io/automation-testing/java-concepts/dataTypeVariableBasics/">
       
       
-        <link rel="prev" href="../../som/stress/">
-      
       
         <link rel="next" href="../java-flow-statement/">
       
@@ -328,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../som/stress.md" class="md-nav__link">
         
   
   
@@ -6144,8 +6142,8 @@
 <li>Used to store text</li>
 <li>Most commonly used in testing</li>
 </ul>
-<pre><code class="language-java">String message = &quot;Login Successful&quot;;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Login Successful"</span><span class="p">;</span>
+</code></pre></div>
 <p><strong>Common testing usage:</strong>
 - UI text validation
 - API response validation
@@ -6154,26 +6152,26 @@
 <h2 id="2-variables-in-java">2️⃣ Variables in Java<a class="headerlink" href="#2-variables-in-java" title="Permanent link">&para;</a></h2>
 <p>A variable stores data that can change during program execution.</p>
 <h3 id="syntax">🔹 Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">dataType variableName = value;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">dataType</span><span class="w"> </span><span class="n">variableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="example">🔹 Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-java">int expectedResult = 200;
-boolean isDisplayed = true;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">expectedResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">isDisplayed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h3 id="variable-naming-rules">🔹 Variable Naming Rules<a class="headerlink" href="#variable-naming-rules" title="Permanent link">&para;</a></h3>
 <p>✅ Must start with a letter, <code>_</code> or <code>$</code><br />
 ✅ Cannot start with a number<br />
 ✅ Cannot use Java keywords<br />
 ✅ Case-sensitive  </p>
-<p>❌ Invalid</p>
-<pre><code class="language-java">int 1value;
-int class;
-</code></pre>
-<p>✅ Valid</p>
-<pre><code class="language-java">int value1;
-int totalCount;
-</code></pre>
+<p>❌ Invalid
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="mi">1</span><span class="n">value</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="kd">class</span><span class="err">;</span>
+</code></pre></div></p>
+<p>✅ Valid
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">value1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">totalCount</span><span class="p">;</span>
+</code></pre></div></p>
 <hr />
 <h2 id="3-operators-in-java">3️⃣ Operators in Java<a class="headerlink" href="#3-operators-in-java" title="Permanent link">&para;</a></h2>
 <p>Operators perform operations on variables and values.</p>
@@ -6301,10 +6299,10 @@ int totalCount;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-java">if (actual == expected) {
-    System.out.println(&quot;Test Passed&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">actual</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">expected</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Test Passed"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="logical-operators">🔹 Logical Operators<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h3>
 <p>Used to combine multiple conditions.</p>
@@ -6334,14 +6332,14 @@ int totalCount;
 </tr>
 </tbody>
 </table>
-<pre><code class="language-java">if (isLoggedIn &amp;&amp; isDashboardVisible) {
-    System.out.println(&quot;Login Test Passed&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isDashboardVisible</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Login Test Passed"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="4-type-casting-in-java">4️⃣ Type Casting in Java<a class="headerlink" href="#4-type-casting-in-java" title="Permanent link">&para;</a></h2>
 <p>Type casting is converting one data type into another.</p>
-<pre><code class="language-text">double
+<div class="highlight"><pre><span></span><code>double
 ↓
 float
 ↓
@@ -6352,18 +6350,18 @@ int
 short
 ↓
 byte
-</code></pre>
+</code></pre></div>
 <h3 id="implicit-casting-widening">🔹 Implicit Casting (Widening)<a class="headerlink" href="#implicit-casting-widening" title="Permanent link">&para;</a></h3>
 <p>Automatic conversion from smaller to larger type.</p>
-<pre><code class="language-java">int a = 10;
-double b = a;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h3 id="explicit-casting-narrowing">🔹 Explicit Casting (Narrowing)<a class="headerlink" href="#explicit-casting-narrowing" title="Permanent link">&para;</a></h3>
 <p>Manual conversion from larger to smaller type.</p>
-<pre><code class="language-java">double x = 10.5;
-int y = (int) x;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.5</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="testing-perspective-summary">🧪 Testing Perspective Summary<a class="headerlink" href="#testing-perspective-summary" title="Permanent link">&para;</a></h2>
 <table>
@@ -6452,6 +6450,10 @@ Strong fundamentals = strong framework understanding.</strong></p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

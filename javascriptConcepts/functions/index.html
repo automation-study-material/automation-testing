@@ -328,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../som/stress/" class="md-nav__link">
+      <a href="../../java-concepts/som/stress.md" class="md-nav__link">
         
   
   
@@ -6006,88 +6006,88 @@
 <h2 id="function-declaration">🔹 Function Declaration<a class="headerlink" href="#function-declaration" title="Permanent link">&para;</a></h2>
 <p>A standard way to define a named function.</p>
 <h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">function functionName(parameters) {
-  // code
-  return result;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">functionName</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="example-add-two-numbers">Example – Add two numbers<a class="headerlink" href="#example-add-two-numbers" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">function add(a, b) {
-  return a + b;
-}
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
 
-let sum = add(5, 3);
-console.log(sum); // 8
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span><span class="w"> </span><span class="c1">// 8</span>
+</code></pre></div>
 <p><strong>Playwright Use Case:</strong> Reusable function to click buttons or fill forms.</p>
 <hr />
 <h2 id="function-expression">🔹 Function Expression<a class="headerlink" href="#function-expression" title="Permanent link">&para;</a></h2>
 <p>Assign a function to a variable. Can be anonymous.</p>
 <h3 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">const functionName = function(parameters) {
-  // code
-  return result;
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">functionName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
 <h3 id="example-multiply-two-numbers">Example – Multiply two numbers<a class="headerlink" href="#example-multiply-two-numbers" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">const multiply = function(a, b) {
-  return a * b;
-};
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">multiply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
 
-console.log(multiply(4, 5)); // 20
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 20</span>
+</code></pre></div>
 <p><strong>Note:</strong> You can also create the same function using a <strong>function declaration</strong> as shown below. Both are valid.</p>
 <h3 id="example-function-declaration-vs-function-expression">Example – Function Declaration vs Function Expression<a class="headerlink" href="#example-function-declaration-vs-function-expression" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">// Function Declaration
-function multiplyDecl(a, b) {
-  return a * b;
-}
-console.log(multiplyDecl(4, 5)); // 20
+<div class="highlight"><pre><span></span><code><span class="c1">// Function Declaration</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">multiplyDecl</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiplyDecl</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 20</span>
 
-// Function Expression
-const multiplyExpr = function(a, b) {
-  return a * b;
-};
-console.log(multiplyExpr(4, 5)); // 20
-</code></pre>
+<span class="c1">// Function Expression</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">multiplyExpr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiplyExpr</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 20</span>
+</code></pre></div>
 <p><strong>Key Difference:</strong>
 - Function Declarations are <strong>hoisted</strong> → can be called before definition.
 - Function Expressions are <strong>not hoisted</strong> → cannot be called before definition.</p>
 <hr />
 <h2 id="function-with-no-parameters">🔹 Function with No Parameters<a class="headerlink" href="#function-with-no-parameters" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">function greet() {
-  console.log(&quot;Hello!&quot;);
-}
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello!"</span><span class="p">);</span>
+<span class="p">}</span>
 
-greet(); // Hello!
-</code></pre>
+<span class="nx">greet</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hello!</span>
+</code></pre></div>
 <hr />
 <h2 id="function-returning-integer">🔹 Function Returning Integer<a class="headerlink" href="#function-returning-integer" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">function square(x) {
-  return x * x;
-}
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">square</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
 
-let result = square(6);
-console.log(result); // 36
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">square</span><span class="p">(</span><span class="mf">6</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 36</span>
+</code></pre></div>
 <hr />
 <h2 id="function-returning-arraylist">🔹 Function Returning Array/List<a class="headerlink" href="#function-returning-arraylist" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">function createList() {
-  return [1, 2, 3, 4, 5];
-}
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">createList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="p">}</span>
 
-let numbers = createList();
-console.log(numbers); // [1, 2, 3, 4, 5]
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createList</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4, 5]</span>
+</code></pre></div>
 <hr />
 <h2 id="function-with-default-parameters">🔹 Function with Default Parameters<a class="headerlink" href="#function-with-default-parameters" title="Permanent link">&para;</a></h2>
-<pre><code class="language-javascript">function greet(name = &quot;Guest&quot;) {
-  console.log(`Hello, ${name}!`);
-}
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Guest"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
+<span class="p">}</span>
 
-greet(&quot;Nitin&quot;); // Hello, Nitin!
-greet();         // Hello, Guest!
-</code></pre>
+<span class="nx">greet</span><span class="p">(</span><span class="s2">"Nitin"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Hello, Nitin!</span>
+<span class="nx">greet</span><span class="p">();</span><span class="w">         </span><span class="c1">// Hello, Guest!</span>
+</code></pre></div>
 <hr />
 <h2 id="calling-a-function">🔹 Calling a Function<a class="headerlink" href="#calling-a-function" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6095,13 +6095,13 @@ greet();         // Hello, Guest!
 <li>Pass arguments inside parentheses if needed: <code>functionName(arg1, arg2)</code></li>
 </ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-javascript">function add(a, b) {
-  return a + b;
-}
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
 
-let result = add(10, 20);
-console.log(result); // 30
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 30</span>
+</code></pre></div>
 <hr />
 <h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6166,6 +6166,10 @@ console.log(result); // 30
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
