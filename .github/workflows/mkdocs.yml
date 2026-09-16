@@ -5,6 +5,7 @@ on:
     branches:
       - main
 
+# Give GitHub Actions permission to push to the repository
 permissions:
   contents: write
 
@@ -13,22 +14,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material
 
+      # Step 4: Build MkDocs site
       - name: Build site
         run: mkdocs build
 
+      # Step 5: Deploy site to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
