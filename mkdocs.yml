@@ -4,206 +4,216 @@ use_directory_urls: true
 
 nav:
   - AMVI:
-    - SOM:
-      - Stress: som/stress.md
+      - SOM:
+          - Stress: java-concepts/som/stress.md
 
   - Java Concepts:
-    - DataTypesBasics: java-concepts/dataTypeVariableBasics.md
-    - FlowControl: java-concepts/java-flow-statement.md
+      - DataTypesBasics: java-concepts/dataTypeVariableBasics.md
+      - FlowControl: java-concepts/java-flow-statement.md
 
-    - Constructor:
-      - Concept: java-concepts/constructor.md
-      - Advanace: java-concepts/constructor-advance.md
-      - Notes: java-concepts/this-vs-super-and-inheritance-notes.md
+      - Constructor:
+          - Concept: java-concepts/constructor.md
+          - Advanace: java-concepts/constructor-advance.md
+          - Notes: java-concepts/this-vs-super-and-inheritance-notes.md
 
-    - Access modifier: java-concepts/access-modifier.md
-    - HashCode: java-concepts/hashCode.md
+      - Access modifier: java-concepts/access-modifier.md
+      - HashCode: java-concepts/hashCode.md
 
-    - Oops Concepts:
-      - Encapsulation:
-        - Concept: java-concepts/encapsulation.md
-        - Adavance: java-concepts/encapsulation-advance.md
+      - Oops Concepts:
+          - Encapsulation:
+              - Concept: java-concepts/encapsulation.md
+              - Adavance: java-concepts/encapsulation-advance.md
 
-      - Inheritance:
-        - Concept: java-concepts/inheritance.md
-        - Advance: java-concepts/inheritance-advance.md
+          - Inheritance:
+              - Concept: java-concepts/inheritance.md
+              - Advance: java-concepts/inheritance-advance.md
 
-      - Abstraction:
-        - Abstraction-Notes-1: java-concepts/abstraction.md
-        - Abstraction-Notes-2: java-concepts/abstraction-in-depth1.md
-        - Abstraction-Notes-3: java-concepts/abstraction-in-depth2.md
-        - Abstraction-Notes-4: java-concepts/abstraction_notes4.md
+          - Abstraction:
+              - Abstraction-Notes-1: java-concepts/abstraction.md
+              - Abstraction-Notes-2: java-concepts/abstraction-in-depth1.md
+              - Abstraction-Notes-3: java-concepts/abstraction-in-depth2.md
+              - Abstraction-Notes-4: java-concepts/abstraction_notes4.md
 
-      - Polymorphism: java-concepts/polymorphism.md
+          - Polymorphism: java-concepts/polymorphism.md
 
-    - Oops Concept Implementation:
-      - code-1: java-concepts/code-Oppos-concept.md
-      - code-2: java-concepts/code-oppose-concepts-2.md
-      - code-3: java-concepts/code-oppose-3.md
-      - Java Selenium Implementaions: java-concepts/Java-SeleniumFramework.md
+      - Oops Concept Implementation:
+          - code-1: java-concepts/code-Oppos-concept.md
+          - code-2: java-concepts/code-oppose-concepts-2.md
+          - code-3: java-concepts/code-oppose-3.md
+          - Java Selenium Implementaions: java-concepts/Java-SeleniumFramework.md
 
-    - Error Handling:
-      - Try Vs Catch: java-concepts/exception/intro.md
-      - Throw vs throws: java-concepts/exception/throw-throws.md
-      - Custome Exception: java-concepts/exception/custome-exception.md
+      - Error Handling:
+          - Try Vs Catch: java-concepts/exception/intro.md
+          - Throw vs throws: java-concepts/exception/throw-throws.md
+          - Custome Exception: java-concepts/exception/custome-exception.md
 
-    - Collections:
-      - ArrayList: java-concepts/collections/ArrayList.md
-      - LinkedList: java-concepts/collections/LinkedList.md
-      - ArrayList vs LinkedList: java-concepts/collections/arrayList-LinkedList-when-we-use.md
-      - Stake: java-concepts/collections/stake.md
-      - HashSet vs LinkedHashSet: java-concepts/collections/HashSet-vs-LinkedHashSet.md
-      - Map: java-concepts/collections/Map-Framework.md
-      - Map Internal Working: java-concepts/collections/hashmap-internal-working.md
-      - Iterator: java-concepts/collections/Java-Iterator.md
+      - Collections:
+          - ArrayList: java-concepts/collections/ArrayList.md
+          - LinkedList: java-concepts/collections/LinkedList.md
+          - ArrayList vs LinkedList: java-concepts/collections/arrayList-LinkedList-when-we-use.md
+          - Stake: java-concepts/collections/stake.md
+          - HashSet vs LinkedHashSet: java-concepts/collections/HashSet-vs-LinkedHashSet.md
+          - Map: java-concepts/collections/Map-Framework.md
+          - Map Internal Working: java-concepts/collections/hashmap-internal-working.md
+          - Iterator: java-concepts/collections/Java-Iterator.md
 
-    - Wrapper Class:
-      - Wrapper class: java-concepts/wrapper-classes/wrapper-classes.md
+      - Wrapper Class:
+          - Wrapper class: java-concepts/wrapper-classes/wrapper-classes.md
 
-    - Java 8 Features:
-      - Lambda: java-concepts/java-8-features/lambda.md
-      - Stream API:
-        - Stream doc 1: java-concepts/java-8-features/stream-api.md
-        - Stream doc 2: java-concepts/java-8-features/stream-master.md
-      - Functional Interface: java-concepts/java-8-features/functional-interface.md
-      - Interface Default and static methods: java-concepts/java-8-features/interface-default-static-methods.md
-      - Base64 encoding decoding: java-concepts/java-8-features/base64-Encodeing-decoding.md
-      - Data Time API: java-concepts/java-8-features/data-time-api.md
+      - Java 8 Features:
+          - Lambda: java-concepts/java-8-features/lambda.md
+
+          - Stream API:
+              - Stream doc 1: java-concepts/java-8-features/stream-api.md
+              - Stream doc 2: java-concepts/java-8-features/stream-master.md
+
+          - Functional Interface: java-concepts/java-8-features/functional-interface.md
+          - Interface Default and static methods: java-concepts/java-8-features/interface-default-static-methods.md
+          - Base64 encoding decoding: java-concepts/java-8-features/base64-Encodeing-decoding.md
+          - Data Time API: java-concepts/java-8-features/data-time-api.md
 
   - Java Program:
-    - Array:
-      - Sorting Of Array and Find second Largest: java-concepts/java-program/array/Sorting_Array_And_2nd_highest.md
-      - Find Duplicate From Array: java-concepts/java-program/array/FindDuplicateFromArray.md
-      - Find Duplicate From Array By HashSet: java-concepts/java-program/array/DuplicateFromArrayByHashSet.md
-      - FInd unique From Array: java-concepts/java-program/array/FindUniqueFromArray.md
-      - Find Max & Min from ARray: java-concepts/java-program/array/Min_Max_From_Array.md
-      - Reverse Array: java-concepts/java-program/array/Reverse_Array.md
-      - Reverse First Half of Array: java-concepts/java-program/array/Reverse_First_Half_Array.md
-      - Revrese Second Half of Array: java-concepts/java-program/array/Reverse_Second_Half_Array2.md
-      - Move all Zero to left side: java-concepts/java-program/array/ZeroLeftSizeOneRightSide.md
+      - Array:
+          - Sorting Of Array and Find second Largest: java-concepts/java-program/array/Sorting_Array_And_2nd_highest.md
+          - Find Duplicate From Array: java-concepts/java-program/array/FindDuplicateFromArray.md
+          - Find Duplicate From Array By HashSet: java-concepts/java-program/array/DuplicateFromArrayByHashSet.md
+          - FInd unique From Array: java-concepts/java-program/array/FindUniqueFromArray.md
+          - Find Max & Min from ARray: java-concepts/java-program/array/Min_Max_From_Array.md
+          - Reverse Array: java-concepts/java-program/array/Reverse_Array.md
+          - Reverse First Half of Array: java-concepts/java-program/array/Reverse_First_Half_Array.md
+          - Revrese Second Half of Array: java-concepts/java-program/array/Reverse_Second_Half_Array2.md
+          - Move all Zero to left side: java-concepts/java-program/array/ZeroLeftSizeOneRightSide.md
 
   - Selenium V4:
-    - Locators: selenium/v4/locator.md
-    - W3C protocall: selenium/v4/w3c-grid.md
-    - WebDriver Manager: selenium/v4/webDriverManager.md
-    - Window Dev tool screen operation: selenium/v4/window-devtool-screen-opertaion.md
+      - Locators: selenium/v4/locator.md
+      - W3C protocall: selenium/v4/w3c-grid.md
+      - WebDriver Manager: selenium/v4/webDriverManager.md
+      - Window Dev tool screen operation: selenium/v4/window-devtool-screen-opertaion.md
 
   - Selenium:
-    - Find Broken link from webpage: selenium/selenium-code/find-broken-link.md
-    - Xpath Axes: selenium/x-path-axes.md
-    - Design Pattern:
-      - page factory/ page object model: selenium/design-pattern/page-object-model.md
-      - Driver Factory Pattern: selenium/design-pattern/driver-factory-pattern.md
-      - Singl ton pattern: selenium/design-pattern/singleton-pattern.md
-      - Template Method pattern: selenium/design-pattern/template-method-pattern.md
-    - Selenium Exception: selenium/exception/selenium-exception.md
-    - Selenium All Methods: selenium/selenium-commands.md
-    - Shaddow DOM Element Handling: selenium/shaddow_dom_element.md
+      - Find Broken link from webpage: selenium/selenium-code/find-broken-link.md
+      - Xpath Axes: selenium/x-path-axes.md
+
+      - Design Pattern:
+          - page factory/ page object model: selenium/design-pattern/page-object-model.md
+          - Driver Factory Pattern: selenium/design-pattern/driver-factory-pattern.md
+          - Singl ton pattern: selenium/design-pattern/singleton-pattern.md
+          - Template Method pattern: selenium/design-pattern/template-method-pattern.md
+
+      - Selenium Exception: selenium/exception/selenium-exception.md
+      - Selenium All Methods: selenium/selenium-commands.md
+      - Shaddow DOM Element Handling: selenium/shaddow_dom_element.md
 
   - BDD Cucumber:
-    - Why BDD: cucumber/why_bdd.md
-    - Cucumber Notes: cucumber/cucumber.md
-    - CucumberTags: cucumber/cucumber-tags.md
-    - Cucumber Hooks: cucumber/cucumber-hooks.md
-    - CucumberTags & Hooks: cucumber/cucumber-tag-inheritance-hooks-guide.md
-    - Background VS Hooks: cucumber/Background_vs_Hooks.md
-    - Scenario Outline VS DataTable: cucumber/scenario_outline_vs_data_table.md
-    - Parallel execution: cucumber/cucumber_parallel_execution.md
-    - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
-    - Cucumber Scenario Execution: cucumber/cucumber_scenario_execution.md
-    - Extends Reports: cucumber/extends_reports.md
-    - BDD Framework: cucumber/selenium-bdd-cucumber-framework.md
-    - Stef Def Ambiguity: cucumber/stefDefAmbigity.md
+      - Why BDD: cucumber/why_bdd.md
+      - Cucumber Notes: cucumber/cucumber.md
+      - CucumberTags: cucumber/cucumber-tags.md
+      - Cucumber Hooks: cucumber/cucumber-hooks.md
+      - CucumberTags & Hooks: cucumber/cucumber-tag-inheritance-hooks-guide.md
+      - Background VS Hooks: cucumber/Background_vs_Hooks.md
+      - Scenario Outline VS DataTable: cucumber/scenario_outline_vs_data_table.md
+      - Parallel execution: cucumber/cucumber_parallel_execution.md
+      - DryRun vs Strict: cucumber/Strict-vs-dryRun.md
+      - Cucumber Scenario Execution: cucumber/cucumber_scenario_execution.md
+      - Extends Reports: cucumber/extends_reports.md
+      - BDD Framework: cucumber/selenium-bdd-cucumber-framework.md
+      - Stef Def Ambiguity: cucumber/stefDefAmbigity.md
 
   - TestNg:
-    - TestNG Questions: testng/testNg-questions.md
-    - Core Concepts: testng/core-concepts.md
-    - Depends on Methode and Groups: testng/dependency-resolve.md
-    - Skipping test: testng/skippingTest.md
-    - Invocation Count and Data Provider: testng/invocationCount_threaPool_dataProvider.md
-    - Test Data Driven: testng/testingDataDriven.md
-    - XMl configuration: testng/xmlConfigs.md
-    - Extend Report: testng/extends-report.md
-    - Retry Mechanism: testng/retry-mechanism.md
-    - Sample XML: testng/xml-sample.md
+      - TestNG Questions: testng/testNg-questions.md
+      - Core Concepts: testng/core-concepts.md
+      - Depends on Methode and Groups: testng/dependency-resolve.md
+      - Skipping test: testng/skippingTest.md
+      - Invocation Count and Data Provider: testng/invocationCount_threaPool_dataProvider.md
+      - Test Data Driven: testng/testingDataDriven.md
+      - XMl configuration: testng/xmlConfigs.md
+      - Extend Report: testng/extends-report.md
+      - Retry Mechanism: testng/retry-mechanism.md
+      - Sample XML: testng/xml-sample.md
 
   - Rest Assured:
-    - Why API Important to test: rest-assured/why-api-important-how-to-start-test.md
-    - API testing checklist: rest-assured/api-testing-checklist.md
-    - Rest vs Soap:
-      - Rest vs Soap difference one: rest-assured/soap-vs-rest.md
-      - Rest vs Soap difference two: rest-assured/soap-vs-rest2.md
-    - Rest API Notes: rest-assured/rest-assured-notes.md
-    - URI vs URL: rest-assured/URI-vs-URL.md
-    - JsonPath: rest-assured/rest-assured-jsonpath.md
-    - Data Loading: rest-assured/data-loading.md
-    - GET/POST Resposne: rest-assured/response-handle-pojo.md
-    - Interview Question: rest-assured/interview-questions.md
-    - Framework: rest-assured/rest_assured_framework.md
+      - Why API Important to test: rest-assured/why-api-important-how-to-start-test.md
+      - API testing checklist: rest-assured/api-testing-checklist.md
+
+      - Rest vs Soap:
+          - Rest vs Soap difference one: rest-assured/soap-vs-rest.md
+          - Rest vs Soap difference two: rest-assured/soap-vs-rest2.md
+
+      - Rest API Notes: rest-assured/rest-assured-notes.md
+      - URI vs URL: rest-assured/URI-vs-URL.md
+      - JsonPath: rest-assured/rest-assured-jsonpath.md
+      - Data Loading: rest-assured/data-loading.md
+      - GET/POST Resposne: rest-assured/response-handle-pojo.md
+      - Interview Question: rest-assured/interview-questions.md
+      - Framework: rest-assured/rest_assured_framework.md
 
   - Postman:
-    - Postman Script for Validation: rest-assured/postmand_valiodation.md
+      - Postman Script for Validation: rest-assured/postmand_valiodation.md
 
   - PlayWright With Java:
-    - Locators: playwright-Java/locator.md
-    # - Page Navigation: playwright-Java/page-navigation-actions.md
-    # - Inputs And Buttons: playwright-Java/playwright-interaction.md
-    # - Checkbox And Radio buttons: playwright-Java/checkbox-radio-button.md
-    # - Dropdown Handling: playwright-Java/dropdown_handling.md
-    # - iframe: playwright-Java/iframes.md
-    # - Mouse Keyboard Actions: playwright-Java/mouse-keyboard-actions.md
-    # - Alerts: playwright-Java/alerts-promt.md
-    # - Handle Windows: playwright-Java/handling-windows.md
-    # - File upload And Download: playwright-Java/file-upload-download.md
-    # - ScreenShot: playwright-Java/screenshot.md
-    # - Exceptions: playwright-Java/exceptions.md
-    # - InterViwe Questions: playwright-Java/interview-question.md
+      - Locators: playwright-Java/locator.md
+      # - Page Navigation: playwright-Java/page-navigation-actions.md
+      # - Inputs And Buttons: playwright-Java/playwright-interaction.md
+      # - Checkbox And Radio buttons: playwright-Java/checkbox-radio-button.md
+      # - Dropdown Handling: playwright-Java/dropdown_handling.md
+      # - iframe: playwright-Java/iframes.md
+      # - Mouse Keyboard Actions: playwright-Java/mouse-keyboard-actions.md
+      # - Alerts: playwright-Java/alerts-promt.md
+      # - Handle Windows: playwright-Java/handling-windows.md
+      # - File upload And Download: playwright-Java/file-upload-download.md
+      # - ScreenShot: playwright-Java/screenshot.md
+      # - Exceptions: playwright-Java/exceptions.md
+      # - InterViwe Questions: playwright-Java/interview-question.md
 
   - JavaScript Concepts:
-    - RoadMap: javascriptConcepts/30-day-roadmap.md
-    - "Synchronous & ASynchronous":
-      - concepts: javascriptConcepts/Synchronous-And-Asynchronous.md
-      - deep guide: javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide.md
-    - Data Types: javascriptConcepts/dataTypes.md
-    - Variables: javascriptConcepts/variables.md
-    - Var vs Let: javascriptConcepts/var-vs-let-vaiable.md
-    - Vaiables snipped code: javascriptConcepts/variables-code.md
-    - Operator: javascriptConcepts/operator.md
-    - Objects in JS: javascriptConcepts/objects-in-js.md
-    - Flow Statements: javascriptConcepts/flow-statement.md
-    - Arrays & Objects: javascriptConcepts/Arrays.md
-    - String in JS: javascriptConcepts/string-in-js.md
-    - Set & Map: javascriptConcepts/set-map.md
-    - Class & Constructor: javascriptConcepts/class-constructor.md
-    - Functions: javascriptConcepts/functions.md
-    - Arrow Functions: javascriptConcepts/arrow-functions.md
-    - Regular Function vs Arrow Function: javascriptConcepts/regularfunction-vs-arrowFunction.md
-    - JavaScript Promises: javascriptConcepts/js-promises.md
-    - JavaScript Promises – Snippet Code: javascriptConcepts/js-promises-snipped-code.md
-    - Interview code: javascriptConcepts/basics-interview-code.md
+      - RoadMap: javascriptConcepts/30-day-roadmap.md
+
+      - "Synchronous & ASynchronous":
+          - concepts: javascriptConcepts/Synchronous-And-Asynchronous.md
+          - deep guide: javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide.md
+
+      - Data Types: javascriptConcepts/dataTypes.md
+      - Variables: javascriptConcepts/variables.md
+      - Var vs Let: javascriptConcepts/var-vs-let-vaiable.md
+      - Vaiables snipped code: javascriptConcepts/variables-code.md
+      - Operator: javascriptConcepts/operator.md
+      - Objects in JS: javascriptConcepts/objects-in-js.md
+      - Flow Statements: javascriptConcepts/flow-statement.md
+      - Arrays & Objects: javascriptConcepts/Arrays.md
+      - String in JS: javascriptConcepts/string-in-js.md
+      - Set & Map: javascriptConcepts/set-map.md
+      - Class & Constructor: javascriptConcepts/class-constructor.md
+      - Functions: javascriptConcepts/functions.md
+      - Arrow Functions: javascriptConcepts/arrow-functions.md
+      - Regular Function vs Arrow Function: javascriptConcepts/regularfunction-vs-arrowFunction.md
+      - JavaScript Promises: javascriptConcepts/js-promises.md
+      - JavaScript Promises – Snippet Code: javascriptConcepts/js-promises-snipped-code.md
+      - Interview code: javascriptConcepts/basics-interview-code.md
 
   - PlayWright with Javascript:
-    - General: javascriptConcepts/jscode/general.md
-    - Test Package: javascriptConcepts/jscode/test-package.md
-    - Sample Playwright Test: javascriptConcepts/jscode/sample-playwright-test.md
-    - Page vs Browser: javascriptConcepts/jscode/page-vs-browser.md
-    - Locators: javascriptConcepts/jscode/locators.md
-    - Methods in Playwright: javascriptConcepts/jscode/methods-in-playwright.md
-    - SendKeys Command: javascriptConcepts/jscode/sendkeys-command.md
-    - Input Value & Text Content: javascriptConcepts/jscode/inputValue&TextContent.md
-    - Dropdown: javascriptConcepts/jscode/dropdown.md
-    - Auto Suggestion Dropdown: javascriptConcepts/jscode/auto-suggestion-dropdown.md
-    - Radio Buttons: javascriptConcepts/jscode/radio-buttons.md
-    - Alert & Iframe: javascriptConcepts/jscode/alert-iframe.md
-    - Window & Tab Handle: javascriptConcepts/jscode/window-tab-handle.md
-    - Calendar: javascriptConcepts/jscode/calender.md
-    - Playwright Assertions: javascriptConcepts/jscode/playwright-assertion.md
-    - JSON Data Iteration: javascriptConcepts/jscode/json-data-iteration.md
-    - Excel Handling: javascriptConcepts/jscode/excel.md
-    - Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
+      - General: javascriptConcepts/jscode/general.md
+      - Test Package: javascriptConcepts/jscode/test-package.md
+      - Sample Playwright Test: javascriptConcepts/jscode/sample-playwright-test.md
+      - Page vs Browser: javascriptConcepts/jscode/page-vs-browser.md
+      - Locators: javascriptConcepts/jscode/locators.md
+      - Methods in Playwright: javascriptConcepts/jscode/methods-in-playwright.md
+      - SendKeys Command: javascriptConcepts/jscode/sendkeys-command.md
+      - Input Value & Text Content: javascriptConcepts/jscode/inputValue&TextContent.md
+      - Dropdown: javascriptConcepts/jscode/dropdown.md
+      - Auto Suggestion Dropdown: javascriptConcepts/jscode/auto-suggestion-dropdown.md
+      - Radio Buttons: javascriptConcepts/jscode/radio-buttons.md
+      - Alert & Iframe: javascriptConcepts/jscode/alert-iframe.md
+      - Window & Tab Handle: javascriptConcepts/jscode/window-tab-handle.md
+      - Calendar: javascriptConcepts/jscode/calender.md
+      - Playwright Assertions: javascriptConcepts/jscode/playwright-assertion.md
+      - JSON Data Iteration: javascriptConcepts/jscode/json-data-iteration.md
+      - Excel Handling: javascriptConcepts/jscode/excel.md
+      - Custom Fixture to Get Test Data: javascriptConcepts/jscode/customeFixureToGetTestData.md
+
 
 theme:
   name: material
+
   palette:
     - scheme: default
       primary: blue
@@ -219,7 +229,22 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
 
+
 markdown_extensions:
+
   - toc:
       permalink: true
+
   - tables
+
+  # Math equations
+  - pymdownx.arithmatex:
+      generic: true
+
+  # Better code blocks
+  - pymdownx.superfences
+
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
