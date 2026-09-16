@@ -5,7 +5,7 @@ use_directory_urls: true
 nav:
   - AMVI:
       - SOM:
-          - Stress: java-concepts/som/stress.md
+          - Stress: som/stress.md
 
   - Java Concepts:
       - DataTypesBasics: java-concepts/dataTypeVariableBasics.md
