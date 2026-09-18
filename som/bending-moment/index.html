@@ -1,0 +1,6863 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://automation-study-material.github.io/automation-testing/som/bending-moment/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Bending Stress — Complete AMVI-MPSC Notes - Automation Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bending-stress-complete-amvi-mpsc-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Automation Notes" class="md-header__button md-logo" aria-label="Automation Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Automation Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bending Stress — Complete AMVI-MPSC Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Automation Notes" class="md-nav__button md-logo" aria-label="Automation Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Automation Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMVI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AMVI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SOM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stress-strain_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/dataTypeVariableBasics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DataTypesBasics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-flow-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FlowControl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constructor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Constructor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/constructor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/constructor-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/this-vs-super-and-inheritance-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/access-modifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access modifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/hashCode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HashCode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oops Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Oops Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_1" id="__nav_2_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Encapsulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/encapsulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/encapsulation-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adavance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inheritance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/inheritance-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Abstraction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/abstraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/abstraction-in-depth1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/abstraction-in-depth2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/abstraction_notes4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oops Concept Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Oops Concept Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/code-Oppos-concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/code-oppose-concepts-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/code-oppose-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/Java-SeleniumFramework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Selenium Implementaions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Error Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/exception/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Try Vs Catch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/exception/throw-throws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Throw vs throws
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/exception/custome-exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custome Exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Collections
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/ArrayList/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArrayList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/LinkedList/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/arrayList-LinkedList-when-we-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArrayList vs LinkedList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/stake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/HashSet-vs-LinkedHashSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HashSet vs LinkedHashSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/Map-Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/hashmap-internal-working/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map Internal Working
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/collections/Java-Iterator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iterator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wrapper Class
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wrapper Class
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/wrapper-classes/wrapper-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wrapper class
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java 8 Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java 8 Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-8-features/lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11_2" id="__nav_2_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stream API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stream API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-8-features/stream-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stream doc 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-8-features/stream-master/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stream doc 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-8-features/functional-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-8-features/interface-default-static-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interface Default and static methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-8-features/base64-Encodeing-decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base64 encoding decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-8-features/data-time-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Time API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Program
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java Program
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Array
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Array
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/Sorting_Array_And_2nd_highest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorting Of Array and Find second Largest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/FindDuplicateFromArray/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find Duplicate From Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/DuplicateFromArrayByHashSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find Duplicate From Array By HashSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/FindUniqueFromArray/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FInd unique From Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/Min_Max_From_Array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find Max & Min from ARray
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/Reverse_Array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/Reverse_First_Half_Array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse First Half of Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/Reverse_Second_Half_Array2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revrese Second Half of Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java-concepts/java-program/array/ZeroLeftSizeOneRightSide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Move all Zero to left side
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium V4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Selenium V4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/v4/locator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/v4/w3c-grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W3C protocall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/v4/webDriverManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebDriver Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/v4/window-devtool-screen-opertaion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window Dev tool screen operation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Selenium
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/selenium-code/find-broken-link/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find Broken link from webpage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/x-path-axes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Xpath Axes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Pattern
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design Pattern
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/design-pattern/page-object-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    page factory/ page object model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/design-pattern/driver-factory-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver Factory Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/design-pattern/singleton-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Singl ton pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/design-pattern/template-method-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Template Method pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/exception/selenium-exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium Exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/selenium-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium All Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/shaddow_dom_element/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shaddow DOM Element Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDD Cucumber
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BDD Cucumber
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/why_bdd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why BDD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/cucumber/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cucumber Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/cucumber-tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CucumberTags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/cucumber-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cucumber Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/cucumber-tag-inheritance-hooks-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CucumberTags & Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/Background_vs_Hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background VS Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/scenario_outline_vs_data_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario Outline VS DataTable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/cucumber_parallel_execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parallel execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/Strict-vs-dryRun/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DryRun vs Strict
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/cucumber_scenario_execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cucumber Scenario Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/extends_reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extends Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/selenium-bdd-cucumber-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDD Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber/stefDefAmbigity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stef Def Ambiguity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TestNg
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TestNg
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/testNg-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TestNG Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/core-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/dependency-resolve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depends on Methode and Groups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/skippingTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skipping test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/invocationCount_threaPool_dataProvider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invocation Count and Data Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/testingDataDriven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Data Driven
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/xmlConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XMl configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/extends-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extend Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/retry-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry Mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testng/xml-sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest Assured
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rest Assured
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/why-api-important-how-to-start-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why API Important to test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/api-testing-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API testing checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest vs Soap
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rest vs Soap
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/soap-vs-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest vs Soap difference one
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/soap-vs-rest2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest vs Soap difference two
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/rest-assured-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest API Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/URI-vs-URL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URI vs URL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/rest-assured-jsonpath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JsonPath
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/data-loading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/response-handle-pojo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET/POST Resposne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/interview-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Question
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/rest_assured_framework.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postman
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Postman
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-assured/postmand_valiodation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postman Script for Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlayWright With Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PlayWright With Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playwright-Java/locator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JavaScript Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/30-day-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RoadMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synchronous & ASynchronous
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Synchronous & ASynchronous
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/Synchronous-And-Asynchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    deep guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/dataTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/var-vs-let-vaiable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Var vs Let
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/variables-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vaiables snipped code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/objects-in-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Objects in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/flow-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/Arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays & Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/string-in-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/set-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set & Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/class-constructor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class & Constructor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/arrow-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrow Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/regularfunction-vs-arrowFunction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Function vs Arrow Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/js-promises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Promises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/js-promises-snipped-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Promises – Snippet Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/basics-interview-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlayWright with Javascript
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PlayWright with Javascript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/test-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/sample-playwright-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Playwright Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/page-vs-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page vs Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/locators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/methods-in-playwright/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods in Playwright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/sendkeys-command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SendKeys Command
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/inputValue%26TextContent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Value & Text Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/dropdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dropdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/auto-suggestion-dropdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auto Suggestion Dropdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/radio-buttons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/alert-iframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert & Iframe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/window-tab-handle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window & Tab Handle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/calender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/playwright-assertion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playwright Assertions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/json-data-iteration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Data Iteration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascriptConcepts/jscode/customeFixureToGetTestData/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fixture to Get Test Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bending-stress-complete-amvi-mpsc-notes">Bending Stress — Complete AMVI-MPSC Notes<a class="headerlink" href="#bending-stress-complete-amvi-mpsc-notes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Combined notes from 01, 02 and 03 Bending Stress source PDFs, with additional AMVI-MPSC exam points added separately.</strong></p>
+<p>Source-derived concepts are retained from the uploaded handwritten notes. Additional explanations, examples and MCQ points are added to make the chapter more robust.</p>
+</blockquote>
+<hr />
+<h1 id="1-pure-bending">1. Pure Bending<a class="headerlink" href="#1-pure-bending" title="Permanent link">&para;</a></h1>
+<p>A beam member is said to be under <strong>pure bending</strong> when it is subjected to <strong>equal and opposite couples</strong> such that the bending moment remains constant over the considered portion of the beam.</p>
+<h3 id="key-points">Key points<a class="headerlink" href="#key-points" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pure bending produces a <strong>constant bending moment</strong>.</li>
+<li>Shear force in the pure-bending region is <strong>zero</strong>.</li>
+<li>The beam bends into a circular arc in the ideal simple-bending model.</li>
+<li>One side of the beam is under compression.</li>
+<li>The opposite side is under tension.</li>
+<li>The neutral axis lies between the tensile and compressive regions.</li>
+</ul>
+<h3 id="pure-bending-region">Pure-bending region<a class="headerlink" href="#pure-bending-region" title="Permanent link">&para;</a></h3>
+<p>For a simply supported beam carrying two equal loads symmetrically:</p>
+<div class="highlight"><pre><span></span><code>      W                 W
+      ↓                 ↓
+A ────┬─────────────────┬──── D
+      B                 C
+
+      ←── Pure Bending ─→
+</code></pre></div>
+<p>For the arrangement shown in the source, the reactions are:</p>
+<div class="arithmatex">\[
+R_A=W
+\]</div>
+<div class="arithmatex">\[
+R_D=W
+\]</div>
+<p>The bending moment between the two loads is constant.</p>
+<p>If the distance from a reaction to the corresponding load is <code>L</code>:</p>
+<div class="arithmatex">\[
+\boxed{M=WL}
+\]</div>
+<h3 id="amvi-point">AMVI point<a class="headerlink" href="#amvi-point" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Pure bending → constant bending moment → zero shear force.</strong></p>
+</blockquote>
+<hr />
+<h1 id="2-bending-of-a-beam">2. Bending of a Beam<a class="headerlink" href="#2-bending-of-a-beam" title="Permanent link">&para;</a></h1>
+<p>Before bending, longitudinal fibres of a straight beam are approximately straight and parallel.</p>
+<p>After bending:</p>
+<ul>
+<li>Fibres on one side become shorter → <strong>compression</strong>.</li>
+<li>Fibres on the other side become longer → <strong>tension</strong>.</li>
+<li>One layer does not change its length → <strong>neutral fibre</strong>.</li>
+</ul>
+<p>The neutral fibre forms the basis for defining the <strong>neutral axis</strong> in the cross-section.</p>
+<hr />
+<h1 id="3-neutral-axis">3. Neutral Axis<a class="headerlink" href="#3-neutral-axis" title="Permanent link">&para;</a></h1>
+<p>The <strong>neutral axis (N.A.)</strong> is the line in the cross-section where the longitudinal bending stress and longitudinal strain are zero in simple elastic bending.</p>
+<p>At the neutral axis:</p>
+<div class="arithmatex">\[
+\boxed{y=0}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon=0}
+\]</div>
+<p>and:</p>
+<div class="arithmatex">\[
+\boxed{\sigma=0}
+\]</div>
+<h3 id="important">Important<a class="headerlink" href="#important" title="Permanent link">&para;</a></h3>
+<p>For a homogeneous, symmetric, prismatic beam under simple bending about a centroidal principal axis, the neutral axis passes through the <strong>centroid</strong> of the cross-section.</p>
+<blockquote>
+<p><strong>AMVI:</strong> Do not assume the neutral axis is always at the geometric center for every possible loading/cross-section. Its location depends on the bending situation and section properties.</p>
+</blockquote>
+<hr />
+<h1 id="4-strain-distribution-in-bending">4. Strain Distribution in Bending<a class="headerlink" href="#4-strain-distribution-in-bending" title="Permanent link">&para;</a></h1>
+<p>Consider a beam bent into an arc of radius <code>R</code>.</p>
+<p>Let:</p>
+<ul>
+<li><code>R</code> = radius of curvature of neutral fibre</li>
+<li><code>y</code> = distance of a fibre from neutral axis</li>
+<li><code>θ</code> = angle subtended by the neutral fibre</li>
+</ul>
+<p>Length of neutral fibre:</p>
+<div class="arithmatex">\[
+L=R\theta
+\]</div>
+<p>For a fibre at distance <code>y</code> on the compressed side:</p>
+<div class="arithmatex">\[
+L_y=(R-y)\theta
+\]</div>
+<p>Hence:</p>
+<div class="arithmatex">\[
+\varepsilon
+=
+\frac{L_y-L}{L}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon
+=
+\frac{(R-y)\theta-R\theta}{R\theta}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon=-\frac{y}{R}}
+\]</div>
+<p>The sign depends on whether the fibre is on the tensile or compressive side.</p>
+<p>In magnitude:</p>
+<div class="arithmatex">\[
+\boxed{|\varepsilon|=\frac{|y|}{R}}
+\]</div>
+<h3 id="main-conclusion">Main conclusion<a class="headerlink" href="#main-conclusion" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\varepsilon\propto y}
+\]</div>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Longitudinal strain varies linearly with distance from the neutral axis.</strong></p>
+</blockquote>
+<hr />
+<h1 id="5-stress-distribution-in-bending">5. Stress Distribution in Bending<a class="headerlink" href="#5-stress-distribution-in-bending" title="Permanent link">&para;</a></h1>
+<p>Within the elastic range, Hooke's law applies:</p>
+<div class="arithmatex">\[
+\sigma=E\varepsilon
+\]</div>
+<p>Using:</p>
+<div class="arithmatex">\[
+\varepsilon=-\frac{y}{R}
+\]</div>
+<p>we get:</p>
+<div class="arithmatex">\[
+\boxed{\sigma=-\frac{Ey}{R}}
+\]</div>
+<p>In magnitude:</p>
+<div class="arithmatex">\[
+\boxed{|\sigma|=\frac{E|y|}{R}}
+\]</div>
+<p>Therefore:</p>
+<ul>
+<li>Stress is zero at the neutral axis.</li>
+<li>Stress varies linearly from the neutral axis.</li>
+<li>Maximum stress occurs at the extreme fibre.</li>
+<li>Tensile and compressive stresses occur on opposite sides.</li>
+</ul>
+<h3 id="stress-distribution">Stress distribution<a class="headerlink" href="#stress-distribution" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>        Compression
+             /|
+            / |
+           /  |
+----------/---|---------- Neutral Axis
+         /    |
+        /     |
+       /      |
+      /       |
+         Tension
+
+Stress varies linearly with distance from N.A.
+</code></pre></div>
+<hr />
+<h1 id="6-maximum-bending-stress">6. Maximum Bending Stress<a class="headerlink" href="#6-maximum-bending-stress" title="Permanent link">&para;</a></h1>
+<p>Since:</p>
+<div class="arithmatex">\[
+\sigma=\frac{My}{I}
+\]</div>
+<p>maximum stress occurs at maximum <code>y</code>.</p>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_{\max}=\frac{My_{\max}}{I}}
+\]</div>
+<p>Define section modulus:</p>
+<div class="arithmatex">\[
+\boxed{Z=\frac{I}{y_{\max}}}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_{\max}=\frac{M}{Z}}
+\]</div>
+<h3 id="amvi-point_1">AMVI point<a class="headerlink" href="#amvi-point_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Maximum bending stress occurs at the extreme fibre, not at the neutral axis.</strong></p>
+</blockquote>
+<hr />
+<h1 id="7-euler-bernoulli-simple-bending-equation">7. Euler-Bernoulli / Simple Bending Equation<a class="headerlink" href="#7-euler-bernoulli-simple-bending-equation" title="Permanent link">&para;</a></h1>
+<p>The fundamental bending equation is:</p>
+<div class="arithmatex">\[
+\boxed{
+\frac{\sigma}{y}
+=
+\frac{M}{I}
+=
+\frac{E}{R}
+}
+\]</div>
+<p>Where:</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Typical unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>σ</code></td>
+<td>Bending stress</td>
+<td>MPa or N/mm²</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td>Distance from neutral axis</td>
+<td>mm or m</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Bending moment</td>
+<td>N·mm, N·m, kN·m</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>Second moment of area</td>
+<td>mm⁴ or m⁴</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>Young's modulus</td>
+<td>MPa, GPa</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>Radius of curvature</td>
+<td>mm or m</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rearranged-forms">Rearranged forms<a class="headerlink" href="#rearranged-forms" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\sigma=\frac{My}{I}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{M=\frac{\sigma I}{y}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\frac{E}{R}=\frac{M}{I}}
+\]</div>
+<hr />
+<h1 id="8-derivation-of-moment-of-resistance">8. Derivation of Moment of Resistance<a class="headerlink" href="#8-derivation-of-moment-of-resistance" title="Permanent link">&para;</a></h1>
+<p>Consider a small cross-sectional area <code>dA</code> at distance <code>y</code>.</p>
+<p>Stress:</p>
+<div class="arithmatex">\[
+\sigma=\frac{Ey}{R}
+\]</div>
+<p>Small resisting force:</p>
+<div class="arithmatex">\[
+dF=\sigma dA
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+dF=\frac{Ey}{R}dA
+\]</div>
+<p>Moment of this elemental force about the neutral axis:</p>
+<div class="arithmatex">\[
+dM_R=dF\times y
+\]</div>
+<p>Thus:</p>
+<div class="arithmatex">\[
+dM_R=\frac{E}{R}y^2dA
+\]</div>
+<p>Integrating over the entire cross-section:</p>
+<div class="arithmatex">\[
+M_R=\frac{E}{R}\int y^2dA
+\]</div>
+<p>By definition:</p>
+<div class="arithmatex">\[
+\boxed{I=\int y^2dA}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{M_R=\frac{EI}{R}}
+\]</div>
+<p>and:</p>
+<div class="arithmatex">\[
+\boxed{\frac{M_R}{I}=\frac{E}{R}}
+\]</div>
+<p>Combining with the stress relation:</p>
+<div class="arithmatex">\[
+\boxed{
+\frac{\sigma}{y}
+=
+\frac{M}{I}
+=
+\frac{E}{R}
+}
+\]</div>
+<hr />
+<h1 id="9-moment-of-resistance">9. Moment of Resistance<a class="headerlink" href="#9-moment-of-resistance" title="Permanent link">&para;</a></h1>
+<p>The internal tensile and compressive stresses form an internal couple.</p>
+<p>This internal couple is called the <strong>moment of resistance</strong>.</p>
+<p>At the limiting permissible condition:</p>
+<div class="arithmatex">\[
+\boxed{M_R=\sigma_{\text{permissible}}Z}
+\]</div>
+<p>For safe design:</p>
+<div class="arithmatex">\[
+\boxed{M&lt;M_R}
+\]</div>
+<p>where:</p>
+<ul>
+<li><code>M</code> = applied bending moment</li>
+<li><code>M_R</code> = resisting moment based on permissible stress</li>
+</ul>
+<hr />
+<h1 id="10-section-modulus">10. Section Modulus<a class="headerlink" href="#10-section-modulus" title="Permanent link">&para;</a></h1>
+<p>Section modulus is defined as:</p>
+<div class="arithmatex">\[
+\boxed{Z=\frac{I}{y_{\max}}}
+\]</div>
+<p>It is a <strong>geometrical property of a cross-section</strong>.</p>
+<p>From:</p>
+<div class="arithmatex">\[
+\sigma_{\max}=\frac{M}{Z}
+\]</div>
+<p>for the same bending moment:</p>
+<div class="arithmatex">\[
+Z\uparrow\Rightarrow\sigma_{\max}\downarrow
+\]</div>
+<p>For the same permissible stress:</p>
+<div class="arithmatex">\[
+Z\uparrow\Rightarrow M_R\uparrow
+\]</div>
+<h3 id="important-distinction">Important distinction<a class="headerlink" href="#important-distinction" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>I</code> measures resistance related to distribution of area about an axis.</li>
+<li><code>Z</code> directly relates bending moment to extreme-fibre bending stress.</li>
+<li><code>E</code> is a material property.</li>
+<li><code>EI</code> is flexural rigidity.</li>
+</ul>
+<hr />
+<h1 id="11-common-section-modulus-formulas">11. Common Section Modulus Formulas<a class="headerlink" href="#11-common-section-modulus-formulas" title="Permanent link">&para;</a></h1>
+<h2 id="111-solid-circular-section">11.1 Solid Circular Section<a class="headerlink" href="#111-solid-circular-section" title="Permanent link">&para;</a></h2>
+<p>Diameter = <code>d</code></p>
+<div class="arithmatex">\[
+I=\frac{\pi d^4}{64}
+\]</div>
+<div class="arithmatex">\[
+y_{\max}=\frac{d}{2}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{Z=\frac{\pi d^3}{32}}
+\]</div>
+<hr />
+<h2 id="112-hollow-circular-section">11.2 Hollow Circular Section<a class="headerlink" href="#112-hollow-circular-section" title="Permanent link">&para;</a></h2>
+<p>Outer diameter = <code>D</code></p>
+<p>Inner diameter = <code>d</code></p>
+<div class="arithmatex">\[
+I=\frac{\pi}{64}(D^4-d^4)
+\]</div>
+<div class="arithmatex">\[
+y_{\max}=\frac{D}{2}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{
+Z=\frac{\pi(D^4-d^4)}{32D}
+}
+\]</div>
+<p>Equivalent form:</p>
+<div class="arithmatex">\[
+\boxed{
+Z=
+\frac{\pi D^3}{32}
+\left[
+1-\left(\frac{d}{D}\right)^4
+\right]
+}
+\]</div>
+<hr />
+<h2 id="113-rectangular-section">11.3 Rectangular Section<a class="headerlink" href="#113-rectangular-section" title="Permanent link">&para;</a></h2>
+<p>Width = <code>b</code></p>
+<p>Depth = <code>d</code></p>
+<div class="arithmatex">\[
+I=\frac{bd^3}{12}
+\]</div>
+<div class="arithmatex">\[
+y_{\max}=\frac{d}{2}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{Z=\frac{bd^2}{6}}
+\]</div>
+<h3 id="important_1">Important<a class="headerlink" href="#important_1" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+Z\propto d^2
+\]</div>
+<p>So increasing depth is more effective than increasing width for the same orientation.</p>
+<hr />
+<h2 id="114-triangular-section">11.4 Triangular Section<a class="headerlink" href="#114-triangular-section" title="Permanent link">&para;</a></h2>
+<p>Base = <code>b</code></p>
+<p>Height = <code>h</code></p>
+<p>For the extreme fibre arrangement shown in the source:</p>
+<div class="arithmatex">\[
+I=\frac{bh^3}{36}
+\]</div>
+<p>Distance from neutral axis to the apex:</p>
+<div class="arithmatex">\[
+y_{\max}=\frac{2h}{3}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{Z=\frac{bh^2}{24}}
+\]</div>
+<hr />
+<h2 id="115-diamond-rhombus-section">11.5 Diamond / Rhombus Section<a class="headerlink" href="#115-diamond-rhombus-section" title="Permanent link">&para;</a></h2>
+<p>For the diamond-shaped geometry shown in the source, with side <code>a</code>, the source calculation gives:</p>
+<div class="arithmatex">\[
+\boxed{
+Z=\frac{a^3}{6\sqrt{2}}
+}
+\]</div>
+<blockquote>
+<p><strong>Source-specific:</strong> Use this result with the same geometry/orientation shown in the source diagram.</p>
+</blockquote>
+<hr />
+<h1 id="12-section-modulus-quick-table">12. Section Modulus Quick Table<a class="headerlink" href="#12-section-modulus-quick-table" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Section Modulus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solid circle, diameter <code>d</code></td>
+<td><code>Z = πd³/32</code></td>
+</tr>
+<tr>
+<td>Hollow circle</td>
+<td><code>Z = π(D⁴-d⁴)/(32D)</code></td>
+</tr>
+<tr>
+<td>Rectangle <code>b × d</code></td>
+<td><code>Z = bd²/6</code></td>
+</tr>
+<tr>
+<td>Triangle <code>b × h</code></td>
+<td><code>Z = bh²/24</code></td>
+</tr>
+<tr>
+<td>Diamond/rhombus shown in source</td>
+<td><code>Z = a³/(6√2)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="13-strength-criterion">13. Strength Criterion<a class="headerlink" href="#13-strength-criterion" title="Permanent link">&para;</a></h1>
+<p>Strength criterion checks whether the developed stress remains within the allowable value.</p>
+<p>Safe condition:</p>
+<div class="arithmatex">\[
+\boxed{
+\sigma_{\text{developed}}
+&lt;
+\sigma_{\text{permissible}}
+}
+\]</div>
+<p>For bending:</p>
+<div class="arithmatex">\[
+\frac{M}{Z}&lt;\sigma_{\text{permissible}}
+\]</div>
+<p>The permissible stress is commonly related to failure/yield stress through a factor of safety:</p>
+<div class="arithmatex">\[
+\boxed{
+\sigma_{\text{permissible}}
+=
+\frac{\sigma_{\text{reference}}}{\text{Factor of Safety}}
+}
+\]</div>
+<p>The exact reference stress depends on the design standard/material/design method.</p>
+<h3 id="amvi-concept">AMVI concept<a class="headerlink" href="#amvi-concept" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Strength → stress → failure prevention.</strong></p>
+</blockquote>
+<hr />
+<h1 id="14-rigidity-criterion">14. Rigidity Criterion<a class="headerlink" href="#14-rigidity-criterion" title="Permanent link">&para;</a></h1>
+<p>Rigidity criterion controls excessive deformation.</p>
+<p>Safe condition:</p>
+<div class="arithmatex">\[
+\boxed{
+\text{Maximum deformation}
+&lt;
+\text{Permissible deformation}
+}
+\]</div>
+<p>For a simple axial member:</p>
+<div class="arithmatex">\[
+\delta=\frac{PL}{AE}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{
+\frac{PL}{AE}&lt;\delta_{\text{permissible}}
+}
+\]</div>
+<h3 id="strength-vs-rigidity">Strength vs Rigidity<a class="headerlink" href="#strength-vs-rigidity" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Strength Criterion</th>
+<th>Rigidity Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concerned with stress</td>
+<td>Concerned with deformation</td>
+</tr>
+<tr>
+<td>Prevents excessive stress/failure</td>
+<td>Limits excessive deformation</td>
+</tr>
+<tr>
+<td>Uses permissible stress</td>
+<td>Uses permissible deformation</td>
+</tr>
+<tr>
+<td>Bending check: <code>M/Z &lt; σ_per</code></td>
+<td>Deflection must remain within limit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="15-flexural-rigidity">15. Flexural Rigidity<a class="headerlink" href="#15-flexural-rigidity" title="Permanent link">&para;</a></h1>
+<p>From:</p>
+<div class="arithmatex">\[
+\frac{M}{I}=\frac{E}{R}
+\]</div>
+<p>we get:</p>
+<div class="arithmatex">\[
+M=\frac{EI}{R}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{EI=\text{Flexural Rigidity}}
+\]</div>
+<p>where:</p>
+<ul>
+<li><code>E</code> = material stiffness</li>
+<li><code>I</code> = cross-sectional geometric property</li>
+</ul>
+<h3 id="important_2">Important<a class="headerlink" href="#important_2" title="Permanent link">&para;</a></h3>
+<p>For the same material:</p>
+<div class="arithmatex">\[
+E=\text{constant}
+\]</div>
+<p>so increasing <code>I</code> increases flexural rigidity.</p>
+<p>For a given bending moment:</p>
+<div class="arithmatex">\[
+\frac{1}{R}=\frac{M}{EI}
+\]</div>
+<p>Therefore, larger <code>EI</code> gives smaller curvature.</p>
+<hr />
+<h1 id="16-curvature-of-a-beam">16. Curvature of a Beam<a class="headerlink" href="#16-curvature-of-a-beam" title="Permanent link">&para;</a></h1>
+<p>From:</p>
+<div class="arithmatex">\[
+\frac{M}{I}=\frac{E}{R}
+\]</div>
+<p>we obtain:</p>
+<div class="arithmatex">\[
+\boxed{\frac{1}{R}=\frac{M}{EI}}
+\]</div>
+<p>This quantity <code>1/R</code> is the <strong>curvature</strong>.</p>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+M\uparrow\Rightarrow\frac{1}{R}\uparrow
+\]</div>
+<p>for constant <code>E</code> and <code>I</code>.</p>
+<p>And:</p>
+<div class="arithmatex">\[
+EI\uparrow\Rightarrow\frac{1}{R}\downarrow
+\]</div>
+<p>for constant <code>M</code>.</p>
+<h3 id="amvi-memory">AMVI memory<a class="headerlink" href="#amvi-memory" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Moment causes curvature; flexural rigidity resists curvature.</strong></p>
+</blockquote>
+<hr />
+<h1 id="17-thin-walled-belt-ring-section">17. Thin-Walled Belt / Ring Section<a class="headerlink" href="#17-thin-walled-belt-ring-section" title="Permanent link">&para;</a></h1>
+<p>The source includes a thin-walled belt/ring-type section and uses the bending-stress relation.</p>
+<p>For the specific geometry shown in the source, where thickness <code>t</code> is very small, the source obtains:</p>
+<div class="arithmatex">\[
+\boxed{
+\sigma_{\max}=\frac{Et}{D+t}
+}
+\]</div>
+<blockquote>
+<p><strong>Source-specific formula:</strong> This result should be used with the same geometry and assumptions shown in the supplied diagram. Do not apply it to every thin-walled section automatically.</p>
+</blockquote>
+<hr />
+<h1 id="18-comparison-of-section-orientations">18. Comparison of Section Orientations<a class="headerlink" href="#18-comparison-of-section-orientations" title="Permanent link">&para;</a></h1>
+<p>The source compares a square in two different orientations.</p>
+<p>The governing relationship is:</p>
+<div class="arithmatex">\[
+\boxed{\sigma=\frac{M}{Z}}
+\]</div>
+<p>For the same bending moment:</p>
+<div class="arithmatex">\[
+\boxed{
+\frac{\sigma_1}{\sigma_2}
+=
+\frac{Z_2}{Z_1}
+}
+\]</div>
+<p>Thus:</p>
+<blockquote>
+<p>The orientation having the larger section modulus develops lower bending stress for the same bending moment.</p>
+</blockquote>
+<p>The source's calculation gives:</p>
+<div class="arithmatex">\[
+\boxed{\frac{Z_I}{Z_{II}}=\sqrt{2}}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{
+\frac{\sigma_I}{\sigma_{II}}
+=
+\frac{1}{\sqrt{2}}
+}
+\]</div>
+<p>for the orientation labels used in the source calculation.</p>
+<blockquote>
+<p><strong>Exam caution:</strong> Always identify which orientation is called I and II before using the ratio.</p>
+</blockquote>
+<hr />
+<h1 id="19-beam-of-uniform-strength">19. Beam of Uniform Strength<a class="headerlink" href="#19-beam-of-uniform-strength" title="Permanent link">&para;</a></h1>
+<p>A beam of uniform strength is designed so that the bending stress remains the same at different sections along its length.</p>
+<p>Since:</p>
+<div class="arithmatex">\[
+\sigma=\frac{M}{Z}
+\]</div>
+<p>for constant bending stress:</p>
+<div class="arithmatex">\[
+\boxed{\frac{M}{Z}=\text{constant}}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{Z\propto M}
+\]</div>
+<p>when permissible stress is constant.</p>
+<h3 id="meaning">Meaning<a class="headerlink" href="#meaning" title="Permanent link">&para;</a></h3>
+<p>Where bending moment is high:</p>
+<ul>
+<li>Section modulus should be high.</li>
+</ul>
+<p>Where bending moment is low:</p>
+<ul>
+<li>Section modulus can be lower.</li>
+</ul>
+<p>This principle is used to reduce unnecessary material while maintaining the required stress level.</p>
+<hr />
+<h1 id="20-why-i-sections-are-efficient-in-bending">20. Why I-Sections Are Efficient in Bending<a class="headerlink" href="#20-why-i-sections-are-efficient-in-bending" title="Permanent link">&para;</a></h1>
+<p>The source illustrates an I-shaped section and notes that material is placed toward the extreme fibres.</p>
+<p>The reason comes directly from:</p>
+<div class="arithmatex">\[
+\sigma=\frac{My}{I}
+\]</div>
+<p>Bending stress increases with distance <code>y</code> from the neutral axis.</p>
+<p>Therefore, material placed far from the neutral axis contributes strongly to the second moment of area.</p>
+<h3 id="concept">Concept<a class="headerlink" href="#concept" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Extreme fibre
+      ↑
+  High bending stress
+      ↑
+Material placed here is structurally effective
+      ↑
+Neutral axis
+      ↓
+Low/zero bending stress
+      ↓
+Extreme fibre
+</code></pre></div>
+<p>This is one reason I-sections are commonly used as efficient bending members.</p>
+<hr />
+<h1 id="21-assumptions-of-simple-bending-theory">21. Assumptions of Simple Bending Theory<a class="headerlink" href="#21-assumptions-of-simple-bending-theory" title="Permanent link">&para;</a></h1>
+<p>The source lists the following assumptions:</p>
+<ol>
+<li>Material is homogeneous and isotropic.</li>
+<li>Beam/bar is prismatic.</li>
+<li>Material obeys Hooke's law.</li>
+<li>Member is under pure bending.</li>
+<li>Young's modulus is constant in tension and compression.</li>
+<li>Bending couple acts about a centroidal principal axis of the cross-section.</li>
+<li>Plane sections remain plane after bending.</li>
+</ol>
+<h3 id="meaning-of-important-assumptions">Meaning of important assumptions<a class="headerlink" href="#meaning-of-important-assumptions" title="Permanent link">&para;</a></h3>
+<h4 id="homogeneous">Homogeneous<a class="headerlink" href="#homogeneous" title="Permanent link">&para;</a></h4>
+<p>Material properties are the same throughout the member.</p>
+<h4 id="isotropic">Isotropic<a class="headerlink" href="#isotropic" title="Permanent link">&para;</a></h4>
+<p>Material properties are the same in different directions.</p>
+<h4 id="prismatic">Prismatic<a class="headerlink" href="#prismatic" title="Permanent link">&para;</a></h4>
+<p>Cross-section remains constant along the length.</p>
+<h4 id="hookes-law">Hooke's law<a class="headerlink" href="#hookes-law" title="Permanent link">&para;</a></h4>
+<p>Stress is proportional to strain within the elastic range:</p>
+<div class="arithmatex">\[
+\sigma=E\varepsilon
+\]</div>
+<h4 id="plane-sections-remain-plane">Plane sections remain plane<a class="headerlink" href="#plane-sections-remain-plane" title="Permanent link">&para;</a></h4>
+<p>A plane cross-section before bending remains plane after bending in the simple bending model.</p>
+<blockquote>
+<p><strong>Very important AMVI point:</strong> Plane sections remain plane after bending.</p>
+</blockquote>
+<hr />
+<h1 id="22-important-difference-stress-strain-i-z-e-and-ei">22. Important Difference: Stress, Strain, I, Z, E and EI<a class="headerlink" href="#22-important-difference-stress-strain-i-z-e-and-ei" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Meaning</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>σ</code></td>
+<td>Bending stress</td>
+<td>Material response</td>
+</tr>
+<tr>
+<td><code>ε</code></td>
+<td>Strain</td>
+<td>Deformation measure</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>Second moment of area</td>
+<td>Geometrical property</td>
+</tr>
+<tr>
+<td><code>Z</code></td>
+<td>Section modulus</td>
+<td>Geometrical property</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>Young's modulus</td>
+<td>Material property</td>
+</tr>
+<tr>
+<td><code>EI</code></td>
+<td>Flexural rigidity</td>
+<td>Combined material + geometry</td>
+</tr>
+</tbody>
+</table>
+<h3 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>E → Material stiffness
+I → Section geometry
+EI → Flexural rigidity
+Z → Bending stress capacity indicator
+</code></pre></div>
+<hr />
+<h1 id="23-important-numerical-examples">23. Important Numerical Examples<a class="headerlink" href="#23-important-numerical-examples" title="Permanent link">&para;</a></h1>
+<h2 id="example-1-bending-stress">Example 1 — Bending Stress<a class="headerlink" href="#example-1-bending-stress" title="Permanent link">&para;</a></h2>
+<p>A beam has:</p>
+<ul>
+<li><code>M = 10 kN·m</code></li>
+<li><code>I = 20 × 10^6 mm⁴</code></li>
+<li><code>y = 50 mm</code></li>
+</ul>
+<p>Convert:</p>
+<div class="arithmatex">\[
+M=10\times10^6\text{ N·mm}
+\]</div>
+<p>Using:</p>
+<div class="arithmatex">\[
+\sigma=\frac{My}{I}
+\]</div>
+<div class="arithmatex">\[
+\sigma=
+\frac{10\times10^6\times50}
+{20\times10^6}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\sigma=25\text{ MPa}}
+\]</div>
+<hr />
+<h2 id="example-2-section-modulus">Example 2 — Section Modulus<a class="headerlink" href="#example-2-section-modulus" title="Permanent link">&para;</a></h2>
+<p>A rectangular section has:</p>
+<ul>
+<li><code>b = 100 mm</code></li>
+<li><code>d = 200 mm</code></li>
+</ul>
+<div class="arithmatex">\[
+Z=\frac{bd^2}{6}
+\]</div>
+<div class="arithmatex">\[
+Z=
+\frac{100(200)^2}{6}
+\]</div>
+<div class="arithmatex">\[
+\boxed{Z=666666.7\text{ mm}^3}
+\]</div>
+<hr />
+<h2 id="example-3-maximum-bending-stress">Example 3 — Maximum Bending Stress<a class="headerlink" href="#example-3-maximum-bending-stress" title="Permanent link">&para;</a></h2>
+<p>For:</p>
+<ul>
+<li><code>M = 20 kN·m</code></li>
+<li><code>Z = 500000 mm³</code></li>
+</ul>
+<p>Convert:</p>
+<div class="arithmatex">\[
+M=20\times10^6\text{ N·mm}
+\]</div>
+<p>Then:</p>
+<div class="arithmatex">\[
+\sigma_{\max}=\frac{M}{Z}
+\]</div>
+<div class="arithmatex">\[
+\sigma_{\max}
+=
+\frac{20\times10^6}{500000}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\sigma_{\max}=40\text{ MPa}}
+\]</div>
+<hr />
+<h2 id="example-4-stress-at-another-fibre">Example 4 — Stress at Another Fibre<a class="headerlink" href="#example-4-stress-at-another-fibre" title="Permanent link">&para;</a></h2>
+<p>Maximum stress is <code>60 MPa</code> at <code>50 mm</code> from the neutral axis.</p>
+<p>Find stress at <code>30 mm</code>.</p>
+<p>Because:</p>
+<div class="arithmatex">\[
+\sigma\propto y
+\]</div>
+<div class="arithmatex">\[
+\frac{\sigma_{30}}{60}
+=
+\frac{30}{50}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_{30}=36\text{ MPa}}
+\]</div>
+<hr />
+<h2 id="example-5-solid-circular-section">Example 5 — Solid Circular Section<a class="headerlink" href="#example-5-solid-circular-section" title="Permanent link">&para;</a></h2>
+<p>A solid circular beam has diameter <code>100 mm</code>.</p>
+<div class="arithmatex">\[
+Z=\frac{\pi d^3}{32}
+\]</div>
+<div class="arithmatex">\[
+Z=\frac{\pi(100)^3}{32}
+\]</div>
+<div class="arithmatex">\[
+\boxed{Z\approx981747.7\text{ mm}^3}
+\]</div>
+<hr />
+<h2 id="example-6-flexural-rigidity">Example 6 — Flexural Rigidity<a class="headerlink" href="#example-6-flexural-rigidity" title="Permanent link">&para;</a></h2>
+<p>Suppose:</p>
+<ul>
+<li><code>E = 200 GPa</code></li>
+<li><code>I = 50 × 10^6 mm⁴</code></li>
+</ul>
+<p>Convert:</p>
+<div class="arithmatex">\[
+E=200000\text{ N/mm}^2
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+EI=200000(50\times10^6)
+\]</div>
+<div class="arithmatex">\[
+\boxed{EI=10^{13}\text{ N·mm}^2}
+\]</div>
+<hr />
+<h1 id="24-high-yield-amvi-mpsc-one-liners">24. High-Yield AMVI-MPSC One-Liners<a class="headerlink" href="#24-high-yield-amvi-mpsc-one-liners" title="Permanent link">&para;</a></h1>
+<ol>
+<li>Pure bending produces constant bending moment.</li>
+<li>Shear force is zero in a pure-bending region.</li>
+<li>Neutral axis has zero bending stress.</li>
+<li>Neutral axis has zero longitudinal strain.</li>
+<li>Bending strain varies linearly with distance from N.A.</li>
+<li>Bending stress varies linearly with distance from N.A.</li>
+<li>Maximum bending stress occurs at the extreme fibre.</li>
+<li>Bending stress is tensile on one side and compressive on the other.</li>
+<li>Basic bending equation is <code>σ/y = M/I = E/R</code>.</li>
+<li>Section modulus is <code>Z = I/y_max</code>.</li>
+<li>Maximum bending stress is <code>M/Z</code>.</li>
+<li>Section modulus is a geometrical property.</li>
+<li>Moment of resistance is the internal resisting couple.</li>
+<li><code>M_R = σ_per Z</code>.</li>
+<li>Safe strength design requires developed stress to be below permissible stress.</li>
+<li>Rigidity criterion controls deformation.</li>
+<li>Flexural rigidity is <code>EI</code>.</li>
+<li>Curvature is <code>1/R</code>.</li>
+<li><code>1/R = M/EI</code>.</li>
+<li>Increasing <code>EI</code> reduces curvature for the same moment.</li>
+<li>For a rectangle, <code>Z = bd²/6</code>.</li>
+<li>For a solid circle, <code>Z = πd³/32</code>.</li>
+<li>For a hollow circle, <code>Z = π(D⁴-d⁴)/(32D)</code>.</li>
+<li>For a triangle in the source orientation, <code>Z = bh²/24</code>.</li>
+<li>For fixed <code>M</code>, increasing <code>Z</code> decreases bending stress.</li>
+<li>For fixed permissible stress, increasing <code>Z</code> increases moment resistance.</li>
+<li>Beam of uniform strength satisfies <code>M/Z = constant</code>.</li>
+<li>For uniform strength and constant permissible stress, <code>Z ∝ M</code>.</li>
+<li>Material near the extreme fibres is highly effective in increasing bending resistance.</li>
+<li>Plane sections remain plane is a fundamental simple-bending assumption.</li>
+<li>Simple bending theory assumes homogeneous and isotropic material.</li>
+<li>Simple bending theory assumes a prismatic member.</li>
+<li>Hooke's law is assumed valid.</li>
+<li><code>E</code> is a material property.</li>
+<li><code>I</code> is a geometrical property.</li>
+<li><code>Z</code> is a geometrical property.</li>
+<li><code>EI</code> combines material stiffness and geometry.</li>
+<li>Tensile and compressive stresses are equal in magnitude only for symmetric material/geometry and symmetric pure bending conditions; do not assume this for every unsymmetrical section.</li>
+<li>Sign of bending stress depends on the adopted sign convention.</li>
+<li>Stress magnitude is what is normally required in basic numerical questions unless tensile/compressive nature is asked.</li>
+</ol>
+<hr />
+<h1 id="25-common-amvi-traps">25. Common AMVI Traps<a class="headerlink" href="#25-common-amvi-traps" title="Permanent link">&para;</a></h1>
+<h3 id="trap-1">Trap 1<a class="headerlink" href="#trap-1" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> Where is bending stress maximum?</p>
+<p>❌ Neutral axis</p>
+<p>✅ Extreme fibre</p>
+<hr />
+<h3 id="trap-2">Trap 2<a class="headerlink" href="#trap-2" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> Where is bending stress zero?</p>
+<p>✅ Neutral axis</p>
+<hr />
+<h3 id="trap-3">Trap 3<a class="headerlink" href="#trap-3" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> What is section modulus?</p>
+<p>❌ <code>I × y</code></p>
+<p>✅</p>
+<div class="arithmatex">\[
+Z=\frac{I}{y_{\max}}
+\]</div>
+<hr />
+<h3 id="trap-4">Trap 4<a class="headerlink" href="#trap-4" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> What is flexural rigidity?</p>
+<p>❌ <code>E/Z</code></p>
+<p>❌ <code>I/E</code></p>
+<p>✅</p>
+<div class="arithmatex">\[
+EI
+\]</div>
+<hr />
+<h3 id="trap-5">Trap 5<a class="headerlink" href="#trap-5" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> What happens when section modulus increases?</p>
+<p>For fixed <code>M</code>:</p>
+<div class="arithmatex">\[
+\sigma_{\max}=\frac{M}{Z}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+Z\uparrow\Rightarrow\sigma_{\max}\downarrow
+\]</div>
+<hr />
+<h3 id="trap-6">Trap 6<a class="headerlink" href="#trap-6" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> What happens when <code>EI</code> increases?</p>
+<p>For fixed <code>M</code>:</p>
+<div class="arithmatex">\[
+\frac{1}{R}=\frac{M}{EI}
+\]</div>
+<p>Therefore curvature decreases.</p>
+<hr />
+<h3 id="trap-7">Trap 7<a class="headerlink" href="#trap-7" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> Pure bending means?</p>
+<p>✅ Constant bending moment.</p>
+<p>Not simply "any bending of a beam."</p>
+<hr />
+<h1 id="26-amvi-mpsc-mcqs">26. AMVI-MPSC MCQs<a class="headerlink" href="#26-amvi-mpsc-mcqs" title="Permanent link">&para;</a></h1>
+<h3 id="mcq-1">MCQ 1<a class="headerlink" href="#mcq-1" title="Permanent link">&para;</a></h3>
+<p>In pure bending, the bending moment is:</p>
+<p>A. Zero<br />
+B. Constant<br />
+C. Increasing linearly<br />
+D. Increasing parabolically</p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-2">MCQ 2<a class="headerlink" href="#mcq-2" title="Permanent link">&para;</a></h3>
+<p>In a pure-bending region, shear force is:</p>
+<p>A. Maximum<br />
+B. Minimum but non-zero<br />
+C. Zero<br />
+D. Infinite</p>
+<p><strong>Answer: C</strong></p>
+<hr />
+<h3 id="mcq-3">MCQ 3<a class="headerlink" href="#mcq-3" title="Permanent link">&para;</a></h3>
+<p>Bending stress is maximum at:</p>
+<p>A. Neutral axis<br />
+B. Centroid only<br />
+C. Extreme fibre<br />
+D. Mid-depth always</p>
+<p><strong>Answer: C</strong></p>
+<hr />
+<h3 id="mcq-4">MCQ 4<a class="headerlink" href="#mcq-4" title="Permanent link">&para;</a></h3>
+<p>Bending stress at the neutral axis is:</p>
+<p>A. Maximum<br />
+B. Minimum but non-zero<br />
+C. Zero<br />
+D. Equal to UTS</p>
+<p><strong>Answer: C</strong></p>
+<hr />
+<h3 id="mcq-5">MCQ 5<a class="headerlink" href="#mcq-5" title="Permanent link">&para;</a></h3>
+<p>The bending equation is:</p>
+<p>A. <code>σ = E/I</code><br />
+B. <code>σ/y = M/I = E/R</code><br />
+C. <code>M = EI/R²</code><br />
+D. <code>σ = M I/y</code></p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-6">MCQ 6<a class="headerlink" href="#mcq-6" title="Permanent link">&para;</a></h3>
+<p>Section modulus is:</p>
+<p>A. <code>I y_max</code><br />
+B. <code>I/y_max</code><br />
+C. <code>y_max/I</code><br />
+D. <code>M/I</code></p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-7">MCQ 7<a class="headerlink" href="#mcq-7" title="Permanent link">&para;</a></h3>
+<p>Maximum bending stress is:</p>
+<p>A. <code>MZ</code><br />
+B. <code>M/I</code><br />
+C. <code>M/Z</code><br />
+D. <code>Z/M</code></p>
+<p><strong>Answer: C</strong></p>
+<hr />
+<h3 id="mcq-8">MCQ 8<a class="headerlink" href="#mcq-8" title="Permanent link">&para;</a></h3>
+<p>Flexural rigidity is:</p>
+<p>A. <code>E/I</code><br />
+B. <code>E + I</code><br />
+C. <code>EI</code><br />
+D. <code>E/Z</code></p>
+<p><strong>Answer: C</strong></p>
+<hr />
+<h3 id="mcq-9">MCQ 9<a class="headerlink" href="#mcq-9" title="Permanent link">&para;</a></h3>
+<p>For the same bending moment, if section modulus doubles, maximum bending stress becomes:</p>
+<p>A. Double<br />
+B. Half<br />
+C. Four times<br />
+D. Unchanged</p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-10">MCQ 10<a class="headerlink" href="#mcq-10" title="Permanent link">&para;</a></h3>
+<p>For a rectangular section, section modulus is:</p>
+<p>A. <code>bd/6</code><br />
+B. <code>bd²/6</code><br />
+C. <code>b²d/6</code><br />
+D. <code>bd³/12</code></p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-11">MCQ 11<a class="headerlink" href="#mcq-11" title="Permanent link">&para;</a></h3>
+<p>For a solid circular section of diameter <code>d</code>, section modulus is:</p>
+<p>A. <code>πd²/32</code><br />
+B. <code>πd³/32</code><br />
+C. <code>πd⁴/64</code><br />
+D. <code>πd³/64</code></p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-12">MCQ 12<a class="headerlink" href="#mcq-12" title="Permanent link">&para;</a></h3>
+<p>For a beam of uniform strength:</p>
+<p>A. <code>MZ = constant</code><br />
+B. <code>M/Z = constant</code><br />
+C. <code>M/I = 0</code><br />
+D. <code>Z/M = 0</code></p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-13">MCQ 13<a class="headerlink" href="#mcq-13" title="Permanent link">&para;</a></h3>
+<p>Curvature of a beam in elastic bending is:</p>
+<p>A. <code>EI/M</code><br />
+B. <code>M/EI</code><br />
+C. <code>M/E</code><br />
+D. <code>I/M</code></p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-14">MCQ 14<a class="headerlink" href="#mcq-14" title="Permanent link">&para;</a></h3>
+<p>The unit of section modulus is:</p>
+<p>A. <code>mm²</code><br />
+B. <code>mm³</code><br />
+C. <code>mm⁴</code><br />
+D. <code>N/mm²</code></p>
+<p><strong>Answer: B</strong></p>
+<hr />
+<h3 id="mcq-15">MCQ 15<a class="headerlink" href="#mcq-15" title="Permanent link">&para;</a></h3>
+<p>The unit of moment of inertia of area is:</p>
+<p>A. <code>mm</code><br />
+B. <code>mm²</code><br />
+C. <code>mm³</code><br />
+D. <code>mm⁴</code></p>
+<p><strong>Answer: D</strong></p>
+<hr />
+<h1 id="27-formula-sheet-last-minute-revision">27. Formula Sheet — Last-Minute Revision<a class="headerlink" href="#27-formula-sheet-last-minute-revision" title="Permanent link">&para;</a></h1>
+<h2 id="fundamental-bending-equation">Fundamental bending equation<a class="headerlink" href="#fundamental-bending-equation" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{
+\frac{\sigma}{y}
+=
+\frac{M}{I}
+=
+\frac{E}{R}
+}
+\]</div>
+<h2 id="bending-stress">Bending stress<a class="headerlink" href="#bending-stress" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{\sigma=\frac{My}{I}}
+\]</div>
+<h2 id="maximum-bending-stress">Maximum bending stress<a class="headerlink" href="#maximum-bending-stress" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{\sigma_{\max}=\frac{M}{Z}}
+\]</div>
+<h2 id="section-modulus">Section modulus<a class="headerlink" href="#section-modulus" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{Z=\frac{I}{y_{\max}}}
+\]</div>
+<h2 id="moment-of-resistance">Moment of resistance<a class="headerlink" href="#moment-of-resistance" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{M_R=\sigma_{\text{permissible}}Z}
+\]</div>
+<h2 id="curvature">Curvature<a class="headerlink" href="#curvature" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{\frac{1}{R}=\frac{M}{EI}}
+\]</div>
+<h2 id="flexural-rigidity">Flexural rigidity<a class="headerlink" href="#flexural-rigidity" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{EI}
+\]</div>
+<h2 id="moment-of-resistance-from-curvature">Moment of resistance from curvature<a class="headerlink" href="#moment-of-resistance-from-curvature" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{M_R=\frac{EI}{R}}
+\]</div>
+<h2 id="second-moment-of-area">Second moment of area<a class="headerlink" href="#second-moment-of-area" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{I=\int y^2dA}
+\]</div>
+<h2 id="solid-circle">Solid circle<a class="headerlink" href="#solid-circle" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{Z=\frac{\pi d^3}{32}}
+\]</div>
+<h2 id="hollow-circle">Hollow circle<a class="headerlink" href="#hollow-circle" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{
+Z=\frac{\pi(D^4-d^4)}{32D}
+}
+\]</div>
+<h2 id="rectangle">Rectangle<a class="headerlink" href="#rectangle" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{Z=\frac{bd^2}{6}}
+\]</div>
+<h2 id="triangle-source-orientation">Triangle — source orientation<a class="headerlink" href="#triangle-source-orientation" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{Z=\frac{bh^2}{24}}
+\]</div>
+<h2 id="uniform-strength">Uniform strength<a class="headerlink" href="#uniform-strength" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{\frac{M}{Z}=\text{constant}}
+\]</div>
+<hr />
+<h1 id="28-final-memory-map">28. Final Memory Map<a class="headerlink" href="#28-final-memory-map" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>                         BENDING STRESS
+                              │
+              ┌───────────────┴────────────────┐
+              │                                │
+         PURE BENDING                     SIMPLE BENDING
+              │                                │
+       M = constant                         σ/y
+              │                                │
+       V = 0 in region                       M/I
+                                               │
+                                               E/R
+                                               │
+                           ┌───────────────────┼──────────────────┐
+                           │                   │                  │
+                         STRESS              STRAIN            CURVATURE
+                           │                   │                  │
+                        σ = My/I             ε = y/R            1/R=M/EI
+                           │                   │                  │
+                           ↓                   ↓                  ↓
+                    Max at extreme       Zero at N.A.      EI resists
+                       fibre                                  curvature
+                           │
+                           ↓
+                    SECTION MODULUS
+                           │
+                       Z = I/ymax
+                           │
+                       σmax = M/Z
+                           │
+             ┌─────────────┴─────────────┐
+             │                           │
+        Strength                     Rigidity
+             │                           │
+      σ &lt; σpermissible          δ &lt; δpermissible
+             │
+      MR = σper Z
+</code></pre></div>
+<hr />
+<h1 id="29-ultra-short-amvi-revision">29. Ultra-Short AMVI Revision<a class="headerlink" href="#29-ultra-short-amvi-revision" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Pure bending:</strong> <code>M = constant</code>, <code>V = 0</code></p>
+<p><strong>Neutral axis:</strong> <code>σ = 0</code>, <code>ε = 0</code></p>
+<p><strong>Extreme fibre:</strong> maximum bending stress</p>
+<p><strong>Bending equation:</strong> <code>σ/y = M/I = E/R</code></p>
+<p><strong>Section modulus:</strong> <code>Z = I/y_max</code></p>
+<p><strong>Maximum stress:</strong> <code>σ_max = M/Z</code></p>
+<p><strong>Moment resistance:</strong> <code>M_R = σ_per Z</code></p>
+<p><strong>Flexural rigidity:</strong> <code>EI</code></p>
+<p><strong>Curvature:</strong> <code>1/R = M/EI</code></p>
+<p><strong>Uniform strength:</strong> <code>M/Z = constant</code></p>
+<p><strong>Most important assumption:</strong> plane sections remain plane after bending.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
