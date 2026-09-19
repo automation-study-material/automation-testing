@@ -981,16 +981,27 @@ $$
 $$
 
 
-> General 3D Stress State — Important Distinction
-
+### General 3D Stress State — Important Distinction
 
 For an isotropic material:
 
-$$ \varepsilon_x= \frac{1}{E} [\sigma_x-\mu(\sigma_y+\sigma_z)] $$ $$ \varepsilon_y= \frac{1}{E} [\sigma_y-\mu(\sigma_x+\sigma_z)] $$ $$ \varepsilon_z= \frac{1}{E} [\sigma_z-\mu(\sigma_x+\sigma_y)] $$
+$$
+\varepsilon_x=\frac{1}{E}[\sigma_x-\mu(\sigma_y+\sigma_z)]
+$$
+
+$$
+\varepsilon_y=\frac{1}{E}[\sigma_y-\mu(\sigma_x+\sigma_z)]
+$$
+
+$$
+\varepsilon_z=\frac{1}{E}[\sigma_z-\mu(\sigma_x+\sigma_y)]
+$$
 
 Adding them:
 
-$$ \boxed{ \varepsilon_v = \frac{1-2\mu}{E} (\sigma_x+\sigma_y+\sigma_z) } $$
+$$
+\boxed{ \varepsilon_v = \frac{1-2\mu}{E} (\sigma_x+\sigma_y+\sigma_z) }
+$$
 
 This is the general 3D relation for an isotropic, linear-elastic material.
 Let's derive it for each shape.
@@ -1544,7 +1555,9 @@ $$
 \boxed{\text{Elastic Limit}}
 $$
 
-> ### Beyond the elastic limit, **permanent deformation remains even after removing the load**.
+### Beyond the elastic limit
+
+**Permanent deformation remains even after removing the load.**
 ------------------------------------------------------------------------
 
 ## 🔥 Sequence for MCQ
