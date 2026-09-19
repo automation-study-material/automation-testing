@@ -6360,7 +6360,7 @@ L=1000\,mm
 \boxed{0.2\%}
 \]</div>
 <hr />
-<h1 id="51-types-of-strain">5.1 Types of Strain<a class="headerlink" href="#51-types-of-strain" title="Permanent link">&para;</a></h1>
+<h2 id="51-types-of-strain">5.1 Types of Strain<a class="headerlink" href="#51-types-of-strain" title="Permanent link">&para;</a></h2>
 <p>There are four important types.</p>
 <h2 id="511-longitudinal-strain">5.1.1 Longitudinal Strain<a class="headerlink" href="#511-longitudinal-strain" title="Permanent link">&para;</a></h2>
 <p>Change in length/original length:</p>
@@ -6402,6 +6402,240 @@ is <strong>lateral strain</strong>.</p>
 <div class="arithmatex">\[
 \boxed{\varepsilon_v=\frac{\Delta V}{V}}
 \]</div>
+<blockquote>
+<p>Yes. The <strong>basic definition is always the same</strong>:</p>
+</blockquote>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\frac{\Delta V}{V}}
+\]</div>
+<p>For a small deformation, volumetric strain can also be written as the <strong>sum of strains in three mutually perpendicular directions</strong>:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_x+\varepsilon_y+\varepsilon_z}
+\]</div>
+<blockquote>
+<p>General 3D Stress State — Important Distinction</p>
+</blockquote>
+<p>For an isotropic material:</p>
+<div class="arithmatex">\[ \varepsilon_x= \frac{1}{E} [\sigma_x-\mu(\sigma_y+\sigma_z)] $$ $$ \varepsilon_y= \frac{1}{E} [\sigma_y-\mu(\sigma_x+\sigma_z)] $$ $$ \varepsilon_z= \frac{1}{E} [\sigma_z-\mu(\sigma_x+\sigma_y)] \]</div>
+<p>Adding them:</p>
+<div class="arithmatex">\[ \boxed{ \varepsilon_v = \frac{1-2\mu}{E} (\sigma_x+\sigma_y+\sigma_z) } \]</div>
+<p>This is the general 3D relation for an isotropic, linear-elastic material.
+Let's derive it for each shape.</p>
+<hr />
+<h3 id="1-circular-cylinder-solid-round-rod">1. Circular Cylinder / Solid Round Rod<a class="headerlink" href="#1-circular-cylinder-solid-round-rod" title="Permanent link">&para;</a></h3>
+<p>Consider a cylindrical rod:</p>
+<ul>
+<li>Original diameter = <span class="arithmatex">\(d\)</span></li>
+<li>Original length = <span class="arithmatex">\(L\)</span></li>
+</ul>
+<p>Volume:</p>
+<div class="arithmatex">\[
+V=\frac{\pi d^2L}{4}
+\]</div>
+<p>For small deformation:</p>
+<ul>
+<li>Longitudinal strain = <span class="arithmatex">\(\varepsilon_L\)</span></li>
+<li>Lateral strain in diameter direction = <span class="arithmatex">\(\varepsilon_d\)</span></li>
+</ul>
+<p>Since the diameter has <strong>two perpendicular lateral directions</strong>, both lateral strains are <span class="arithmatex">\(\varepsilon_d\)</span>.</p>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_d}
+\]</div>
+<p>Using Poisson's ratio:</p>
+<div class="arithmatex">\[
+\nu=-\frac{\varepsilon_d}{\varepsilon_L}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\varepsilon_d=-\nu\varepsilon_L
+\]</div>
+<p>Substitute:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_L(1-2\nu)}
+\]</div>
+<h3 id="for-tensile-loading">For tensile loading<a class="headerlink" href="#for-tensile-loading" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\varepsilon_L&gt;0
+\]</div>
+<p>and</p>
+<div class="arithmatex">\[
+\varepsilon_d&lt;0
+\]</div>
+<p>So:</p>
+<div class="arithmatex">\[
+\varepsilon_v=\varepsilon_L+2\varepsilon_d
+\]</div>
+<h3 id="for-compression">For compression<a class="headerlink" href="#for-compression" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\varepsilon_L&lt;0
+\]</div>
+<p>and</p>
+<div class="arithmatex">\[
+\varepsilon_d&gt;0
+\]</div>
+<p>Again:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_d}
+\]</div>
+<hr />
+<h3 id="2-rectangular-bar">2. Rectangular Bar<a class="headerlink" href="#2-rectangular-bar" title="Permanent link">&para;</a></h3>
+<p>Consider a rectangular bar:</p>
+<ul>
+<li>Length = <span class="arithmatex">\(L\)</span></li>
+<li>Width = <span class="arithmatex">\(b\)</span></li>
+<li>Thickness = <span class="arithmatex">\(t\)</span></li>
+</ul>
+<p>Volume:</p>
+<div class="arithmatex">\[
+V=Lbt
+\]</div>
+<p>There are three mutually perpendicular dimensions:</p>
+<div class="highlight"><pre><span></span><code>             Length → L
+        ┌────────────────┐
+       /                /│
+      /                / │
+     └────────────────┘  │
+     │                │  │
+     │                │ /
+     │                │/
+     └────────────────┘
+
+       b = width
+       t = thickness
+</code></pre></div>
+<p>Therefore:</p>
+<ul>
+<li>Strain along length = <span class="arithmatex">\(\varepsilon_L\)</span></li>
+<li>Strain along width = <span class="arithmatex">\(\varepsilon_b\)</span></li>
+<li>Strain along thickness = <span class="arithmatex">\(\varepsilon_t\)</span></li>
+</ul>
+<p>Hence:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_L+\varepsilon_b+\varepsilon_t}
+\]</div>
+<p>If the material is under <strong>uniaxial loading along the length</strong>, the two lateral strains are equal:</p>
+<div class="arithmatex">\[
+\varepsilon_b=\varepsilon_t=\varepsilon_{lat}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_{lat}}
+\]</div>
+<p>And using Poisson's ratio:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_L(1-2\nu)}
+\]</div>
+<h3 id="important-point">Important point<a class="headerlink" href="#important-point" title="Permanent link">&para;</a></h3>
+<p>For a rectangular bar under axial loading, the formula is <strong>the same as the circular rod</strong>.</p>
+<p>Why?</p>
+<p>Because there are:</p>
+<ul>
+<li><strong>1 longitudinal direction</strong></li>
+<li><strong>2 perpendicular lateral directions</strong></li>
+</ul>
+<hr />
+<h3 id="3-sphere">3. Sphere<a class="headerlink" href="#3-sphere" title="Permanent link">&para;</a></h3>
+<p>Now consider a sphere of radius <span class="arithmatex">\(r\)</span>.</p>
+<p>Original volume:</p>
+<div class="arithmatex">\[
+V=\frac{4}{3}\pi r^3
+\]</div>
+<p>For a sphere under <strong>uniform expansion/compression</strong>, deformation occurs equally in all three mutually perpendicular directions.</p>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\varepsilon_x=\varepsilon_y=\varepsilon_z=\varepsilon
+\]</div>
+<p>Hence:</p>
+<div class="arithmatex">\[
+\varepsilon_v
+=
+\varepsilon+\varepsilon+\varepsilon
+\]</div>
+<p>So:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=3\varepsilon}
+\]</div>
+<h3 id="using-poissons-ratio">Using Poisson's ratio?<a class="headerlink" href="#using-poissons-ratio" title="Permanent link">&para;</a></h3>
+<p>For a sphere under <strong>uniform hydrostatic stress</strong>, the situation is different from a simple uniaxial rod.</p>
+<p>The three normal strains are equal:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_x=\varepsilon_y=\varepsilon_z}
+\]</div>
+<p>and therefore:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=3\varepsilon}
+\]</div>
+<h3 id="4-taper-bar">4. Taper Bar<a class="headerlink" href="#4-taper-bar" title="Permanent link">&para;</a></h3>
+<p>For a <strong>circular rod uniformly tapered from <span class="arithmatex">\(d_1\)</span> to <span class="arithmatex">\(d_2\)</span></strong>:</p>
+<div class="arithmatex">\[
+\boxed{\Delta L=\frac{4PL}{\pi E d_1d_2}}
+\]</div>
+<hr />
+<h3 id="comparison-very-important-for-amvi">Comparison — Very Important for AMVI<a class="headerlink" href="#comparison-very-important-for-amvi" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Shape / Loading</th>
+<th>Volumetric strain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circular rod, axial loading</td>
+<td><span class="arithmatex">\(\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_{lat}}\)</span></td>
+</tr>
+<tr>
+<td>Rectangular bar, axial loading</td>
+<td><span class="arithmatex">\(\boxed{\varepsilon_v=\varepsilon_L+\varepsilon_b+\varepsilon_t}\)</span></td>
+</tr>
+<tr>
+<td>Rectangular bar, uniaxial + equal lateral strains</td>
+<td><span class="arithmatex">\(\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_{lat}}\)</span></td>
+</tr>
+<tr>
+<td>Sphere, uniform deformation</td>
+<td><span class="arithmatex">\(\boxed{\varepsilon_v=3\varepsilon}\)</span></td>
+</tr>
+<tr>
+<td>Any 3D state</td>
+<td><span class="arithmatex">\(\boxed{\varepsilon_v=\varepsilon_x+\varepsilon_y+\varepsilon_z}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="most-important-concept">🔥 Most important concept<a class="headerlink" href="#most-important-concept" title="Permanent link">&para;</a></h3>
+<p>Don't memorize the shape-specific formulas first. Remember:</p>
+<div class="arithmatex">\[
+\boxed{\text{Volumetric strain = sum of strains in 3 perpendicular directions}}
+\]</div>
+<p>Then:</p>
+<h3 id="rod-under-axial-load">Rod under axial load<a class="headerlink" href="#rod-under-axial-load" title="Permanent link">&para;</a></h3>
+<p><strong>1 longitudinal + 2 lateral</strong></p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_{lat}}
+\]</div>
+<h3 id="rectangular-bar-under-axial-load">Rectangular bar under axial load<a class="headerlink" href="#rectangular-bar-under-axial-load" title="Permanent link">&para;</a></h3>
+<p><strong>1 length + 2 lateral</strong></p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=\varepsilon_L+\varepsilon_b+\varepsilon_t}
+\]</div>
+<h3 id="sphere-under-uniform-deformation">Sphere under uniform deformation<a class="headerlink" href="#sphere-under-uniform-deformation" title="Permanent link">&para;</a></h3>
+<p><strong>3 equal directions</strong></p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_v=3\varepsilon}
+\]</div>
+<p>And one very useful special case:</p>
+<p>If <span class="arithmatex">\(\nu=0.5\)</span> for a uniaxially loaded isotropic material,</p>
+<div class="arithmatex">\[
+\varepsilon_v=\varepsilon_L(1-2\nu)
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_v=\varepsilon_L(1-1)=0
+\]</div>
+<p>So:</p>
+<blockquote>
+<p><strong><span class="arithmatex">\(\nu=0.5\)</span> → zero volumetric strain → approximately incompressible material.</strong></p>
+</blockquote>
 <hr />
 <h2 id="quick-table">Quick Table<a class="headerlink" href="#quick-table" title="Permanent link">&para;</a></h2>
 <table>
@@ -6589,7 +6823,7 @@ Plastic deformation continues
 <p>Eventually the specimen breaks.</p>
 <p><strong>Point F = Fracture / Breaking Point</strong></p>
 <hr />
-<h1 id="complete-curve-in-one-flow">Complete Curve in One Flow<a class="headerlink" href="#complete-curve-in-one-flow" title="Permanent link">&para;</a></h1>
+<h2 id="complete-curve-in-one-flow">Complete Curve in One Flow<a class="headerlink" href="#complete-curve-in-one-flow" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>O
 │
 │  Linear region
@@ -6672,7 +6906,7 @@ Plastic deformation continues
 <div class="arithmatex">\[
 \boxed{\text{Elastic Limit}}
 \]</div>
-<h2 id="beyond-the-elastic-limit-permanent-deformation-remains-even-after-removing-the-load">&gt; #### Beyond the elastic limit, <strong>permanent deformation remains even after removing the load</strong>.<a class="headerlink" href="#beyond-the-elastic-limit-permanent-deformation-remains-even-after-removing-the-load" title="Permanent link">&para;</a></h2>
+<h2 id="beyond-the-elastic-limit-permanent-deformation-remains-even-after-removing-the-load">&gt; ### Beyond the elastic limit, <strong>permanent deformation remains even after removing the load</strong>.<a class="headerlink" href="#beyond-the-elastic-limit-permanent-deformation-remains-even-after-removing-the-load" title="Permanent link">&para;</a></h2>
 <h2 id="sequence-for-mcq">🔥 Sequence for MCQ<a class="headerlink" href="#sequence-for-mcq" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[
 \boxed{
@@ -6776,7 +7010,7 @@ original dimensions after removal of load.</p>
 <div class="arithmatex">\[
 \boxed{\text{Proportional Limit}&lt;\text{Elastic Limit}}
 \]</div>
-<h1 id="111-poissons-ratio">1.11 Poisson's Ratio<a class="headerlink" href="#111-poissons-ratio" title="Permanent link">&para;</a></h1>
+<h1 id="6-poissons-ratio">6 Poisson's Ratio<a class="headerlink" href="#6-poissons-ratio" title="Permanent link">&para;</a></h1>
 <p>When a bar is subjected to tensile load:</p>
 <ul>
 <li>Length increases</li>
@@ -6794,7 +7028,7 @@ longitudinal strain.</p>
 <p>The negative sign is used because lateral and longitudinal strains have
 opposite signs under tensile loading.</p>
 <hr />
-<h2 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h2>
+<h3 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h3>
 <p>Suppose:</p>
 <div class="arithmatex">\[
 \text{Longitudinal strain}=0.002
@@ -6816,328 +7050,1027 @@ opposite signs under tensile loading.</p>
 \]</div>
 <p>It has no unit.</p>
 <hr />
-<h1 id="112-thermal-stress-strain">1.12 Thermal Stress &amp; Strain<a class="headerlink" href="#112-thermal-stress-strain" title="Permanent link">&para;</a></h1>
-<p>Temperature change can cause a body to expand or contract.</p>
-<p>For a bar with original length <span class="arithmatex">\(L\)</span>:</p>
+<h1 id="7-elastic-constants">7. Elastic Constants<a class="headerlink" href="#7-elastic-constants" title="Permanent link">&para;</a></h1>
+<p><strong>Elastic constants</strong> are material properties that describe the relationship between <strong>stress and strain within the elastic limit</strong>.</p>
+<p>For an isotropic, linear-elastic material, the important elastic constants are:</p>
+<ol>
+<li><strong>Young's Modulus — <span class="arithmatex">\(E\)</span></strong></li>
+<li><strong>Modulus of Rigidity / Shear Modulus — <span class="arithmatex">\(G\)</span></strong></li>
+<li><strong>Bulk Modulus — <span class="arithmatex">\(K\)</span></strong></li>
+<li><strong>Poisson's Ratio — <span class="arithmatex">\(\mu\)</span> or <span class="arithmatex">\(\nu\)</span></strong></li>
+</ol>
+<hr />
+<h2 id="1-youngs-modulus-e">1. Young's Modulus — <span class="arithmatex">\(E\)</span><a class="headerlink" href="#1-youngs-modulus-e" title="Permanent link">&para;</a></h2>
+<p>Young's modulus represents the resistance of a material to <strong>longitudinal deformation</strong>.</p>
 <div class="arithmatex">\[
-\boxed{\Delta L=\alpha L\Delta T}
+\boxed{E=\frac{\text{Longitudinal stress}}{\text{Longitudinal strain}}}
+\]</div>
+<p>For axial loading:</p>
+<div class="arithmatex">\[
+\boxed{E=\frac{\sigma}{\varepsilon_L}}
 \]</div>
 <p>where:</p>
 <ul>
-<li><span class="arithmatex">\(\alpha\)</span> = coefficient of linear expansion</li>
-<li><span class="arithmatex">\(L\)</span> = original length</li>
-<li><span class="arithmatex">\(\Delta T\)</span> = temperature change</li>
+<li><span class="arithmatex">\(E\)</span> = Young's modulus</li>
+<li><span class="arithmatex">\(\sigma\)</span> = normal/direct stress</li>
+<li><span class="arithmatex">\(\varepsilon_L\)</span> = longitudinal strain</li>
 </ul>
-<p>Thermal strain:</p>
-<div class="arithmatex">\[
-\boxed{\varepsilon_{th}=\alpha\Delta T}
-\]</div>
+<p><strong>Unit:</strong> Pa, MPa, GPa, or N/mm²</p>
+<p>Higher <span class="arithmatex">\(E\)</span> → material undergoes <strong>less elastic deformation</strong> for the same stress.</p>
 <hr />
-<h2 id="free-expansion">Free Expansion<a class="headerlink" href="#free-expansion" title="Permanent link">&para;</a></h2>
-<p>Suppose a bar is free to expand:</p>
-<div class="highlight"><pre><span></span><code>Wall                         Free end
-
-│────────────── Rod ───────────→
-                              →
-</code></pre></div>
-<p>When temperature increases, the bar expands.</p>
-<p>No restraint means:</p>
+<h2 id="2-modulus-of-rigidity-g">2. Modulus of Rigidity — <span class="arithmatex">\(G\)</span><a class="headerlink" href="#2-modulus-of-rigidity-g" title="Permanent link">&para;</a></h2>
+<p>Also called:</p>
+<ul>
+<li><strong>Shear modulus</strong></li>
+<li><strong>Modulus of rigidity</strong></li>
+</ul>
+<p>It represents the resistance of a material to <strong>shear deformation</strong>.</p>
 <div class="arithmatex">\[
-\boxed{\text{Thermal stress}=0}
+\boxed{G=\frac{\text{Shear stress}}{\text{Shear strain}}}
 \]</div>
-<p>but:</p>
-<div class="arithmatex">\[
-\boxed{\text{Thermal strain}\neq0}
-\]</div>
-<p>This is a <strong>very important MCQ point</strong>.</p>
-<hr />
-<h2 id="fully-restrained-bar">Fully Restrained Bar<a class="headerlink" href="#fully-restrained-bar" title="Permanent link">&para;</a></h2>
-<p>Now suppose the bar cannot expand:</p>
-<div class="highlight"><pre><span></span><code>│──────────── Rod ────────────│
-       Both ends fixed
-</code></pre></div>
-<p>Temperature increases.</p>
-<p>The bar wants to expand but cannot.</p>
-<p>Therefore thermal stress develops.</p>
-<p>Thermal strain that would have occurred:</p>
-<div class="arithmatex">\[
-\varepsilon_{th}=\alpha\Delta T
-\]</div>
-<p>Thermal stress:</p>
-<div class="arithmatex">\[
-\boxed{\sigma_{th}=E\alpha\Delta T}
-\]</div>
-<p>For heating of a fully restrained bar, the stress is <strong>compressive</strong>.</p>
-<p>For cooling of a fully restrained bar, the stress is <strong>tensile</strong>.</p>
-<h3 id="mcq">🔥 MCQ<a class="headerlink" href="#mcq" title="Permanent link">&para;</a></h3>
-<p><strong>A freely expanding bar subjected to temperature rise develops:</strong></p>
-<p>Answer:</p>
-<div class="arithmatex">\[
-\boxed{\text{No thermal stress}}
-\]</div>
-<hr />
-<h1 id="113-elastic-constants">1.13 Elastic Constants<a class="headerlink" href="#113-elastic-constants" title="Permanent link">&para;</a></h1>
-<p>There are four important elastic constants:</p>
-<ol>
-<li>Young's modulus --- <span class="arithmatex">\(E\)</span></li>
-<li>Modulus of rigidity --- <span class="arithmatex">\(G\)</span></li>
-<li>Bulk modulus --- <span class="arithmatex">\(K\)</span></li>
-<li>Poisson's ratio --- <span class="arithmatex">\(\nu\)</span></li>
-</ol>
-<hr />
-<h2 id="1131-youngs-modulus-e">1.13.1 Young's Modulus --- E<a class="headerlink" href="#1131-youngs-modulus-e" title="Permanent link">&para;</a></h2>
-<p>Ratio of normal stress to longitudinal strain:</p>
-<div class="arithmatex">\[
-\boxed{E=\frac{\sigma}{\varepsilon}}
-\]</div>
-<p>It represents <strong>stiffness against longitudinal deformation</strong>.</p>
-<p>Unit:</p>
-<div class="arithmatex">\[
-\boxed{Pa,\;MPa,\;GPa}
-\]</div>
-<hr />
-<h2 id="1132-modulus-of-rigidity-g">1.13.2 Modulus of Rigidity --- G<a class="headerlink" href="#1132-modulus-of-rigidity-g" title="Permanent link">&para;</a></h2>
-<p>Also called <strong>Shear Modulus</strong>.</p>
-<p>Ratio of shear stress to shear strain:</p>
+<p>Therefore:</p>
 <div class="arithmatex">\[
 \boxed{G=\frac{\tau}{\gamma}}
 \]</div>
-<p>It represents resistance to <strong>shear deformation</strong>.</p>
-<p>Unit:</p>
-<div class="arithmatex">\[
-\boxed{Pa}
-\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(G\)</span> = shear modulus</li>
+<li><span class="arithmatex">\(\tau\)</span> = shear stress</li>
+<li><span class="arithmatex">\(\gamma\)</span> = shear strain</li>
+</ul>
+<p><strong>Unit:</strong> Pa, MPa, GPa or N/mm²</p>
 <hr />
-<h2 id="1133-bulk-modulus-k">1.13.3 Bulk Modulus --- K<a class="headerlink" href="#1133-bulk-modulus-k" title="Permanent link">&para;</a></h2>
-<p>Bulk modulus measures resistance to <strong>volume change</strong>.</p>
+<h2 id="3-bulk-modulus-k">3. Bulk Modulus — <span class="arithmatex">\(K\)</span><a class="headerlink" href="#3-bulk-modulus-k" title="Permanent link">&para;</a></h2>
+<p>Bulk modulus represents the resistance of a material to <strong>change in volume</strong>.</p>
 <div class="arithmatex">\[
-\boxed{K=\frac{\text{Volumetric stress}}{\text{Volumetric strain}}}
+\boxed{K=\frac{\text{Hydrostatic stress}}{\text{Volumetric strain}}}
 \]</div>
-<p>For hydrostatic pressure <span class="arithmatex">\(p\)</span>:</p>
+<p>Usually:</p>
 <div class="arithmatex">\[
-\boxed{K=-\frac{p}{\Delta V/V}}
+\boxed{K=-\frac{p}{\varepsilon_v}}
 \]</div>
-<p>The negative sign is used because an increase in pressure normally
-produces a decrease in volume.</p>
-<p>Unit:</p>
-<div class="arithmatex">\[
-\boxed{Pa}
-\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(K\)</span> = bulk modulus</li>
+<li><span class="arithmatex">\(p\)</span> = hydrostatic pressure</li>
+<li><span class="arithmatex">\(\varepsilon_v\)</span> = volumetric strain</li>
+</ul>
+<p>The negative sign is used because pressure causes a <strong>decrease in volume</strong>.</p>
+<p><strong>Unit:</strong> Pa, MPa, GPa or N/mm²</p>
 <hr />
-<h2 id="1134-poissons-ratio-">1.13.4 Poisson's Ratio --- ν<a class="headerlink" href="#1134-poissons-ratio-" title="Permanent link">&para;</a></h2>
+<h2 id="4-poissons-ratio-mu-or-nu">4. Poisson's Ratio — <span class="arithmatex">\(\mu\)</span> or <span class="arithmatex">\(\nu\)</span><a class="headerlink" href="#4-poissons-ratio-mu-or-nu" title="Permanent link">&para;</a></h2>
+<p>Poisson's ratio represents the relationship between <strong>lateral strain and longitudinal strain</strong>.</p>
 <div class="arithmatex">\[
-\boxed{\nu=-\frac{\text{Lateral strain}}{\text{Longitudinal strain}}}
+\boxed{\mu=-\frac{\varepsilon_{lat}}{\varepsilon_L}}
 \]</div>
-<p>It is dimensionless.</p>
-<hr />
-<h1 id="114-relations-between-elastic-constants">1.14 Relations Between Elastic Constants<a class="headerlink" href="#114-relations-between-elastic-constants" title="Permanent link">&para;</a></h1>
-<p>This is an <strong>extremely important AMVI formula section</strong>.</p>
-<p>For an isotropic, homogeneous, linearly elastic material:</p>
-<h2 id="relation-between-e-g-and">Relation between E, G and ν<a class="headerlink" href="#relation-between-e-g-and" title="Permanent link">&para;</a></h2>
+<p>or</p>
 <div class="arithmatex">\[
-\boxed{E=2G(1+\nu)}
+\boxed{\nu=-\frac{\varepsilon_{lat}}{\varepsilon_L}}
+\]</div>
+<p>It is <strong>dimensionless</strong>.</p>
+<hr />
+<h2 id="important-relations-between-elastic-constants">Important Relations Between Elastic Constants<a class="headerlink" href="#important-relations-between-elastic-constants" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>For an <strong>isotropic, homogeneous, linear-elastic material</strong>:</p>
+</blockquote>
+<h3 id="relation-between-e-g-and-mu">Relation between <span class="arithmatex">\(E\)</span>, <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(\mu\)</span><a class="headerlink" href="#relation-between-e-g-and-mu" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{E=2G(1+\mu)}
 \]</div>
 <p>Therefore:</p>
 <div class="arithmatex">\[
-\boxed{G=\frac{E}{2(1+\nu)}}
+\boxed{G=\frac{E}{2(1+\mu)}}
 \]</div>
 <hr />
-<h2 id="relation-between-e-k-and">Relation between E, K and ν<a class="headerlink" href="#relation-between-e-k-and" title="Permanent link">&para;</a></h2>
+<h3 id="relation-between-e-k-and-mu">Relation between <span class="arithmatex">\(E\)</span>, <span class="arithmatex">\(K\)</span> and <span class="arithmatex">\(\mu\)</span><a class="headerlink" href="#relation-between-e-k-and-mu" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
-\boxed{E=3K(1-2\nu)}
+\boxed{E=3K(1-2\mu)}
 \]</div>
 <p>Therefore:</p>
 <div class="arithmatex">\[
-\boxed{K=\frac{E}{3(1-2\nu)}}
+\boxed{K=\frac{E}{3(1-2\mu)}}
 \]</div>
 <hr />
-<h2 id="relation-between-k-g-and">Relation between K, G and ν<a class="headerlink" href="#relation-between-k-g-and" title="Permanent link">&para;</a></h2>
+<h3 id="relation-between-k-g-and-mu">Relation between <span class="arithmatex">\(K\)</span>, <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(\mu\)</span><a class="headerlink" href="#relation-between-k-g-and-mu" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
-\boxed{K=\frac{2G(1+\nu)}{3(1-2\nu)}}
+\boxed{K=\frac{2G(1+\mu)}{3(1-2\mu)}}
 \]</div>
 <hr />
-<h2 id="very-useful-combined-formula">Very Useful Combined Formula<a class="headerlink" href="#very-useful-combined-formula" title="Permanent link">&para;</a></h2>
-<p>From:</p>
+<h3 id="relation-between-e-k-and-g">Relation between <span class="arithmatex">\(E\)</span>, <span class="arithmatex">\(K\)</span> and <span class="arithmatex">\(G\)</span><a class="headerlink" href="#relation-between-e-k-and-g" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
-E=2G(1+\nu)
+\boxed{E=\frac{9KG}{3K+G}}
+\]</div>
+<hr />
+<h1 id="amvimpsc-formula-table">🔥 AMVI/MPSC Formula Table<a class="headerlink" href="#amvimpsc-formula-table" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Elastic Constant</th>
+<th style="text-align: right;">Symbol</th>
+<th>Definition</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Young's modulus</td>
+<td style="text-align: right;"><span class="arithmatex">\(E\)</span></td>
+<td>Longitudinal stress / longitudinal strain</td>
+<td>Pa</td>
+</tr>
+<tr>
+<td>Shear modulus</td>
+<td style="text-align: right;"><span class="arithmatex">\(G\)</span></td>
+<td>Shear stress / shear strain</td>
+<td>Pa</td>
+</tr>
+<tr>
+<td>Bulk modulus</td>
+<td style="text-align: right;"><span class="arithmatex">\(K\)</span></td>
+<td>Hydrostatic stress / volumetric strain</td>
+<td>Pa</td>
+</tr>
+<tr>
+<td>Poisson's ratio</td>
+<td style="text-align: right;"><span class="arithmatex">\(\mu\)</span> or <span class="arithmatex">\(\nu\)</span></td>
+<td>− lateral strain / longitudinal strain</td>
+<td>Dimensionless</td>
+</tr>
+</tbody>
+</table>
+<h3 id="most-important-formulas-to-remember">Most important formulas to remember<a class="headerlink" href="#most-important-formulas-to-remember" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{E=2G(1+\mu)}
+\]</div>
+<div class="arithmatex">\[
+\boxed{E=3K(1-2\mu)}
+\]</div>
+<div class="arithmatex">\[
+\boxed{E=\frac{9KG}{3K+G}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{G=\frac{E}{2(1+\mu)}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{K=\frac{E}{3(1-2\mu)}}
+\]</div>
+<p><strong>Memory:</strong>
+<strong>E → Length</strong>
+<strong>G → Shape / Shear</strong>
+<strong>K → Volume</strong>
+<strong>μ → Lateral vs Longitudinal</strong></p>
+<h1 id="8-material-classification">8. Material Classification<a class="headerlink" href="#8-material-classification" title="Permanent link">&para;</a></h1>
+<p>These terms are important in <strong>Strength of Materials</strong> because they describe how a material behaves in different directions.</p>
+<hr />
+<h2 id="1-homogeneous-material">1. Homogeneous Material<a class="headerlink" href="#1-homogeneous-material" title="Permanent link">&para;</a></h2>
+<p>A material is <strong>homogeneous</strong> when its properties are the <strong>same at every location within the material</strong>.</p>
+<p>In simple words:</p>
+<blockquote>
+<p><strong>Same material properties from point to point.</strong></p>
+</blockquote>
+<p>For example, if Young's modulus <span class="arithmatex">\(E\)</span> is the same throughout the material, it is homogeneous with respect to <span class="arithmatex">\(E\)</span>.</p>
+<h3 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mild steel (idealized as a uniform material)</li>
+<li>Aluminium (idealized as uniform)</li>
+<li>Copper</li>
+</ul>
+<h3 id="simple-example">Simple example<a class="headerlink" href="#simple-example" title="Permanent link">&para;</a></h3>
+<p>Imagine a steel bar:</p>
+<div class="highlight"><pre><span></span><code>|----------------------------|
+  E = 200 GPa throughout
+|----------------------------|
+</code></pre></div>
+<p>Every portion has approximately the same material properties.</p>
+<hr />
+<h2 id="2-isotropic-material">2. Isotropic Material<a class="headerlink" href="#2-isotropic-material" title="Permanent link">&para;</a></h2>
+<p>A material is <strong>isotropic</strong> when its properties are <strong>the same in all directions at a given point</strong>.</p>
+<p>In simple words:</p>
+<blockquote>
+<p><strong>Same properties in every direction.</strong></p>
+</blockquote>
+<p>For an isotropic material:</p>
+<div class="arithmatex">\[
+E_x=E_y=E_z
+\]</div>
+<p>and the material behaves similarly regardless of the direction of loading.</p>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Glass</li>
+<li>Most metals such as steel and aluminium, when treated as isotropic in engineering analysis</li>
+<li>Rubber, when modeled as isotropic</li>
+</ul>
+<h3 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h3>
+<p>Imagine a small element:</p>
+<div class="highlight"><pre><span></span><code>          ↑
+          │ E
+          │
+     E ← [■] → E
+          │
+          ↓
+          E
+</code></pre></div>
+<p>The material has the same elastic response in different directions.</p>
+<hr />
+<h2 id="3-anisotropic-material">3. Anisotropic Material<a class="headerlink" href="#3-anisotropic-material" title="Permanent link">&para;</a></h2>
+<p>A material is <strong>anisotropic</strong> when its properties <strong>depend on the direction</strong>.</p>
+<p>In simple words:</p>
+<blockquote>
+<p><strong>Different properties in different directions.</strong></p>
+</blockquote>
+<p>For example:</p>
+<div class="arithmatex">\[
+E_x\neq E_y
+\]</div>
+<h3 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wood</li>
+<li>Carbon-fiber composites</li>
+<li>Many fiber-reinforced composites</li>
+</ul>
+<h3 id="wood-example">Wood example<a class="headerlink" href="#wood-example" title="Permanent link">&para;</a></h3>
+<p>Wood behaves differently:</p>
+<div class="highlight"><pre><span></span><code>          Grain direction
+               ↑
+               │
+               │
+        ───────┼───────
+               │
+               │
+</code></pre></div>
+<p>Its strength and stiffness <strong>along the grain</strong> are different from those <strong>across the grain</strong>.</p>
+<hr />
+<h2 id="4-orthotropic-material">4. Orthotropic Material<a class="headerlink" href="#4-orthotropic-material" title="Permanent link">&para;</a></h2>
+<p><strong>Orthotropic material is a special type of anisotropic material.</strong></p>
+<p>It has different material properties along <strong>three mutually perpendicular directions</strong>, called the <strong>principal material directions</strong>.</p>
+<p>Usually:</p>
+<div class="arithmatex">\[
+E_x\neq E_y\neq E_z
+\]</div>
+<h3 id="examples_2">Examples<a class="headerlink" href="#examples_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wood</li>
+<li>Fiber-reinforced composites</li>
+<li>Rolled metal sheets can exhibit orthotropic behavior due to processing</li>
+</ul>
+<h3 id="wood-example_1">Wood example<a class="headerlink" href="#wood-example_1" title="Permanent link">&para;</a></h3>
+<p>For wood, we commonly consider:</p>
+<ol>
+<li><strong>Longitudinal (L)</strong> → along the grain</li>
+<li><strong>Radial (R)</strong> → perpendicular to grain</li>
+<li><strong>Tangential (T)</strong> → tangent to growth rings</li>
+</ol>
+<p>These directions have different mechanical properties.</p>
+<hr />
+<h2 id="isotropic-vs-anisotropic-vs-orthotropic">Isotropic vs Anisotropic vs Orthotropic<a class="headerlink" href="#isotropic-vs-anisotropic-vs-orthotropic" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Material type</th>
+<th>Meaning</th>
+<th>Properties</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Homogeneous</strong></td>
+<td>Same from point to point</td>
+<td>Location-independent</td>
+<td>Uniform steel</td>
+</tr>
+<tr>
+<td><strong>Isotropic</strong></td>
+<td>Same in all directions</td>
+<td>Direction-independent</td>
+<td>Glass, idealized steel</td>
+</tr>
+<tr>
+<td><strong>Anisotropic</strong></td>
+<td>Different in different directions</td>
+<td>Direction-dependent</td>
+<td>Wood, composites</td>
+</tr>
+<tr>
+<td><strong>Orthotropic</strong></td>
+<td>Different in 3 mutually perpendicular directions</td>
+<td>Direction-dependent with 3 principal directions</td>
+<td>Wood, fiber composites</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="very-important-homogeneous-isotropic">🔥 Very Important: Homogeneous ≠ Isotropic<a class="headerlink" href="#very-important-homogeneous-isotropic" title="Permanent link">&para;</a></h2>
+<p>These are <strong>two different concepts</strong>.</p>
+<h3 id="homogeneous-asks">Homogeneous asks:<a class="headerlink" href="#homogeneous-asks" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Does the property change from one location to another?</strong></p>
+</blockquote>
+<h3 id="isotropic-asks">Isotropic asks:<a class="headerlink" href="#isotropic-asks" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Does the property change when I change the direction?</strong></p>
+</blockquote>
+<p>Therefore, a material can be:</p>
+<ul>
+<li><strong>Homogeneous + isotropic</strong></li>
+<li><strong>Homogeneous + anisotropic</strong></li>
+<li><strong>Non-homogeneous + isotropic</strong></li>
+<li><strong>Non-homogeneous + anisotropic</strong></li>
+</ul>
+<h3 id="easy-memory-trick">Easy memory trick<a class="headerlink" href="#easy-memory-trick" title="Permanent link">&para;</a></h3>
+<p><strong>HOMO → Location</strong></p>
+<p><strong>ISO → Same direction</strong></p>
+<p><strong>ANISO → Different direction</strong></p>
+<p><strong>ORTHO → 3 perpendicular directions</strong></p>
+<hr />
+<h1 id="7-for-self-weight-elongation-compare-the-two-cases-as-follows">7. For <strong>self-weight elongation</strong>, compare the two cases as follows.<a class="headerlink" href="#7-for-self-weight-elongation-compare-the-two-cases-as-follows" title="Permanent link">&para;</a></h1>
+<h2 id="1-uniform-vertical-bar">1. Uniform Vertical Bar<a class="headerlink" href="#1-uniform-vertical-bar" title="Permanent link">&para;</a></h2>
+<p>For a uniform bar of length <span class="arithmatex">\(L\)</span>, area <span class="arithmatex">\(A\)</span>, total weight <span class="arithmatex">\(W\)</span>:</p>
+<div class="arithmatex">\[
+\boxed{\delta=\frac{WL}{2AE}}
+\]</div>
+<p>Since:</p>
+<div class="arithmatex">\[
+W=\rho gAL
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\delta=\frac{\rho gL^2}{2E}}
+\]</div>
+<hr />
+<h2 id="2-solid-conical-bar">2. Solid Conical Bar<a class="headerlink" href="#2-solid-conical-bar" title="Permanent link">&para;</a></h2>
+<p>For a solid conical bar of length <span class="arithmatex">\(L\)</span>, with the <strong>larger end at the top</strong>, base area <span class="arithmatex">\(A\)</span>, and total weight <span class="arithmatex">\(W\)</span>:</p>
+<div class="arithmatex">\[
+\boxed{\delta=\frac{WL}{2AE}}
+\]</div>
+<p>But for a cone:</p>
+<div class="arithmatex">\[
+W=\frac{1}{3}\rho gAL
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\delta=\frac{\rho gL^2}{6E}}
+\]</div>
+<hr />
+<h2 id="comparison_1">Comparison<a class="headerlink" href="#comparison_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Bar</th>
+<th>Self-weight elongation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Uniform bar</strong></td>
+<td><span class="arithmatex">\(\displaystyle \boxed{\delta=\frac{WL}{2AE}=\frac{\rho gL^2}{2E}}\)</span></td>
+</tr>
+<tr>
+<td><strong>Conical bar</strong></td>
+<td><span class="arithmatex">\(\displaystyle \boxed{\delta=\frac{WL}{2AE}=\frac{\rho gL^2}{6E}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="important-correction">Important correction<a class="headerlink" href="#important-correction" title="Permanent link">&para;</a></h3>
+<p>The expression <span class="arithmatex">\(\frac{WL}{2AE}\)</span> <strong>cannot be used with the cone's total weight and base area as a general derivation</strong>; it happens to give the correct cone result only because of the cone geometry and the <span class="arithmatex">\(1/3\)</span> volume factor when interpreted with the base area. The safest AMVI formula to memorize for a <strong>solid cone, larger end at top</strong> is:</p>
+<div class="arithmatex">\[
+\boxed{\delta=\frac{\rho gL^2}{6E}}
+\]</div>
+<p>Thus, for the same <span class="arithmatex">\(L\)</span>, <span class="arithmatex">\(\rho\)</span>, and <span class="arithmatex">\(E\)</span>:</p>
+<div class="arithmatex">\[
+\boxed{\delta_{\text{cone}}=\frac{1}{3}\delta_{\text{uniform}}}
+\]</div>
+<h1 id="8-thermal-expansion-change-in-length">8. Thermal Expansion — Change in Length<a class="headerlink" href="#8-thermal-expansion-change-in-length" title="Permanent link">&para;</a></h1>
+<h3 id="concept">Concept<a class="headerlink" href="#concept" title="Permanent link">&para;</a></h3>
+<p>When the temperature of a bar changes, the bar <strong>expands or contracts</strong>.</p>
+<ul>
+<li>Temperature increases → <strong>length increases</strong></li>
+<li>Temperature decreases → <strong>length decreases</strong></li>
+<li>If the bar is free to expand/contract → <strong>no thermal stress develops</strong></li>
+</ul>
+<h3 id="formula">Formula<a class="headerlink" href="#formula" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\Delta L=\alpha L\Delta T}
+\]</div>
+<h3 id="terms-and-units">Terms and Units<a class="headerlink" href="#terms-and-units" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>SI Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\Delta L\)</span></td>
+<td>Change in length</td>
+<td>m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\alpha\)</span></td>
+<td>Coefficient of linear thermal expansion</td>
+<td><span class="arithmatex">\(1/K\)</span> or <span class="arithmatex">\(/^\circ C\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L\)</span></td>
+<td>Original length</td>
+<td>m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Delta T\)</span></td>
+<td>Change in temperature</td>
+<td>K or <span class="arithmatex">\(^\circ C\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="temperature-change">Temperature Change<a class="headerlink" href="#temperature-change" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\Delta T=T_2-T_1}
+\]</div>
+<p>Therefore:</p>
+<ul>
+<li>Heating: <span class="arithmatex">\(\Delta T&gt;0\)</span> → <span class="arithmatex">\(\Delta L&gt;0\)</span> → <strong>Expansion</strong></li>
+<li>Cooling: <span class="arithmatex">\(\Delta T&lt;0\)</span> → <span class="arithmatex">\(\Delta L&lt;0\)</span> → <strong>Contraction</strong></li>
+</ul>
+<h3 id="thermal-strain">Thermal Strain<a class="headerlink" href="#thermal-strain" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\varepsilon_{th}=\frac{\Delta L}{L}=\alpha\Delta T}
+\]</div>
+<p>Thermal strain is <strong>dimensionless</strong>.</p>
+<h2 id="thermal-expansion-3-cases">Thermal Expansion — 3 Cases<a class="headerlink" href="#thermal-expansion-3-cases" title="Permanent link">&para;</a></h2>
+<p>The basic <strong>free thermal expansion</strong> of a bar is:</p>
+<div class="arithmatex">\[
+\boxed{\Delta L_{free}=\lambda L\Delta T}
+\]</div>
+<p>where <span class="arithmatex">\(\lambda\)</span> is the coefficient of linear expansion.</p>
+<hr />
+<h2 id="1-free-expansion">1. Free Expansion<a class="headerlink" href="#1-free-expansion" title="Permanent link">&para;</a></h2>
+<p>The bar is <strong>completely free to expand or contract</strong>.</p>
+<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<p>When temperature increases, the bar expands by its natural thermal expansion.</p>
+<div class="arithmatex">\[
+\boxed{\Delta L_{actual}=\Delta L_{free}=\lambda L\Delta T}
+\]</div>
+<p>Thermal strain:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_{th}=\lambda\Delta T}
+\]</div>
+<p>Since there is no restraint:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_{th}=0}
+\]</div>
+<h3 id="key-point">Key point<a class="headerlink" href="#key-point" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Free expansion → Full expansion + Zero thermal stress</strong></p>
+</blockquote>
+<hr />
+<h2 id="2-completely-fixed-fully-restrained">2. Completely Fixed / Fully Restrained<a class="headerlink" href="#2-completely-fixed-fully-restrained" title="Permanent link">&para;</a></h2>
+<p>Both ends are fixed, so the bar <strong>cannot change its length</strong>.</p>
+<h3 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h3>
+<p>The bar wants to expand by:</p>
+<div class="arithmatex">\[
+\Delta L_{free}=\lambda L\Delta T
+\]</div>
+<p>but:</p>
+<div class="arithmatex">\[
+\boxed{\Delta L_{actual}=0}
+\]</div>
+<p>The entire free expansion is prevented, producing thermal stress.</p>
+<p>Thermal stress:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_{th}=E\lambda\Delta T}
+\]</div>
+<p>For <strong>heating</strong>:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_{th}=E\lambda\Delta T}
+\]</div>
+<p>→ <strong>Compressive stress</strong></p>
+<p>For <strong>cooling</strong>:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_{th}=E\lambda|\Delta T|}
+\]</div>
+<p>→ <strong>Tensile stress</strong></p>
+<h3 id="key-point_1">Key point<a class="headerlink" href="#key-point_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Complete restraint → Zero expansion + Maximum thermal stress</strong></p>
+</blockquote>
+<hr />
+<h2 id="3-partially-fixed-partially-restrained">3. Partially Fixed / Partially Restrained<a class="headerlink" href="#3-partially-fixed-partially-restrained" title="Permanent link">&para;</a></h2>
+<p>The bar is allowed to expand <strong>partially</strong>, but not by its complete free expansion.</p>
+<p>Suppose:</p>
+<ul>
+<li>Free expansion = <span class="arithmatex">\(\Delta L_{free}\)</span></li>
+<li>Actual expansion = <span class="arithmatex">\(\Delta L_{actual}\)</span></li>
+</ul>
+<p>Then:</p>
+<div class="arithmatex">\[
+\boxed{
+\Delta L_{prevented}
+=
+\Delta L_{free}-\Delta L_{actual}
+}
+\]</div>
+<p>Since:</p>
+<div class="arithmatex">\[
+\Delta L_{free}=\lambda L\Delta T
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{
+\Delta L_{prevented}
+=
+\lambda L\Delta T-\Delta L_{actual}
+}
+\]</div>
+<p>The restrained strain is:</p>
+<div class="arithmatex">\[
+\boxed{
+\varepsilon_{restrained}
+=
+\frac{\Delta L_{prevented}}{L}
+}
+\]</div>
+<p>Therefore thermal stress is:</p>
+<div class="arithmatex">\[
+\boxed{
+\sigma_{th}
+=
+E\frac{\Delta L_{prevented}}{L}
+}
+\]</div>
+<p>Substituting:</p>
+<div class="arithmatex">\[
+\boxed{
+\sigma_{th}
+=
+E\left(
+\lambda\Delta T-
+\frac{\Delta L_{actual}}{L}
+\right)
+}
+\]</div>
+<h3 id="key-point_2">Key point<a class="headerlink" href="#key-point_2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Partial restraint → Partial expansion + Partial thermal stress</strong></p>
+</blockquote>
+<hr />
+<h3 id="comparison-of-all-3-cases">🔥 Comparison of All 3 Cases<a class="headerlink" href="#comparison-of-all-3-cases" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Actual expansion</th>
+<th>Thermal stress</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Free expansion</strong></td>
+<td><span class="arithmatex">\(\lambda L\Delta T\)</span></td>
+<td><span class="arithmatex">\(0\)</span></td>
+</tr>
+<tr>
+<td><strong>Completely fixed</strong></td>
+<td><span class="arithmatex">\(0\)</span></td>
+<td><span class="arithmatex">\(E\lambda\Delta T\)</span></td>
+</tr>
+<tr>
+<td><strong>Partially restrained</strong></td>
+<td>Between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\lambda L\Delta T\)</span></td>
+<td>Between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(E\lambda\Delta T\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="easy-amvi-memory">Easy AMVI Memory<a class="headerlink" href="#easy-amvi-memory" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\text{Free} \rightarrow \text{Expansion only}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{Fully fixed} \rightarrow \text{Stress only}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{Partially fixed} \rightarrow \text{Expansion + Stress}}
+\]</div>
+<p>For heating, the restraint-induced thermal stress is <strong>compressive</strong>; for cooling, it is <strong>tensile</strong>. </p>
+<h1 id="90-composite-bars">9.0  Composite Bars<a class="headerlink" href="#90-composite-bars" title="Permanent link">&para;</a></h1>
+<p>Yes. For <strong>composite bars</strong>, the two important arrangements are <strong>bars in series</strong> and <strong>bars in parallel</strong>. The key difference is whether the <strong>load or deformation is common</strong>.</p>
+<h2 id="1-bars-in-series">1. Bars in Series<a class="headerlink" href="#1-bars-in-series" title="Permanent link">&para;</a></h2>
+<p>Bars are connected <strong>end-to-end</strong>.</p>
+<div class="highlight"><pre><span></span><code>        P
+        ↓
+   ┌────────┐
+   │ Bar 1  │  L₁, A₁, E₁
+   └────────┘
+   ┌────────┐
+   │ Bar 2  │  L₂, A₂, E₂
+   └────────┘
+        ↑
+</code></pre></div>
+<h3 id="key-concept">Key concept<a class="headerlink" href="#key-concept" title="Permanent link">&para;</a></h3>
+<p>For bars in <strong>series</strong>:</p>
+<blockquote>
+<p><strong>Same load acts through each bar, but elongation is different.</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{P_1=P_2=P}
+\]</div>
+<h3 id="stress-in-each-bar">Stress in each bar<a class="headerlink" href="#stress-in-each-bar" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\sigma_1=\frac{P}{A_1}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\sigma_2=\frac{P}{A_2}}
+\]</div>
+<p>So, if areas are different:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_1\neq\sigma_2}
+\]</div>
+<h3 id="change-in-length-of-each-bar">Change in length of each bar<a class="headerlink" href="#change-in-length-of-each-bar" title="Permanent link">&para;</a></h3>
+<p>For Bar 1:</p>
+<div class="arithmatex">\[
+\boxed{\Delta L_1=\frac{PL_1}{A_1E_1}}
+\]</div>
+<p>For Bar 2:</p>
+<div class="arithmatex">\[
+\boxed{\Delta L_2=\frac{PL_2}{A_2E_2}}
+\]</div>
+<h3 id="total-change-in-length">Total change in length<a class="headerlink" href="#total-change-in-length" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\Delta L=\Delta L_1+\Delta L_2}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{
+\Delta L=
+\frac{PL_1}{A_1E_1}
++
+\frac{PL_2}{A_2E_2}
+}
+\]</div>
+<h3 id="strain">Strain<a class="headerlink" href="#strain" title="Permanent link">&para;</a></h3>
+<p>For each bar:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_1=\frac{\sigma_1}{E_1}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\varepsilon_2=\frac{\sigma_2}{E_2}}
+\]</div>
+<hr />
+<h2 id="2-bars-in-parallel">2. Bars in Parallel<a class="headerlink" href="#2-bars-in-parallel" title="Permanent link">&para;</a></h2>
+<p>Bars are connected <strong>side-by-side</strong> between the same two rigid plates.</p>
+<div class="highlight"><pre><span></span><code>             P
+             ↓
+        ┌─────────┐
+        │ Rigid   │
+        │  plate  │
+        └─┬─────┬─┘
+          │     │
+       ┌──┐   ┌──┐
+       │  │   │  │
+       │A₁│   │A₂│
+       │E₁│   │E₂│
+       │  │   │  │
+       └──┘   └──┘
+          │     │
+        ┌─┴─────┴─┐
+        │  plate  │
+        └─────────┘
+</code></pre></div>
+<h3 id="key-concept_1">Key concept<a class="headerlink" href="#key-concept_1" title="Permanent link">&para;</a></h3>
+<p>For bars in <strong>parallel</strong>:</p>
+<blockquote>
+<p><strong>Same deformation/strain occurs in each bar, but the load carried by each bar can be different.</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\Delta L_1=\Delta L_2=\Delta L}
+\]</div>
+<p>and:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_1=\varepsilon_2=\varepsilon}
+\]</div>
+<h3 id="load-carried-by-each-bar">Load carried by each bar<a class="headerlink" href="#load-carried-by-each-bar" title="Permanent link">&para;</a></h3>
+<p>Total load:</p>
+<div class="arithmatex">\[
+\boxed{P=P_1+P_2}
+\]</div>
+<p>For Bar 1:</p>
+<div class="arithmatex">\[
+P_1=\frac{A_1E_1}{L}\Delta L
+\]</div>
+<p>For Bar 2:</p>
+<div class="arithmatex">\[
+P_2=\frac{A_2E_2}{L}\Delta L
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{
+\frac{P_1}{P_2}
+=
+\frac{A_1E_1}{A_2E_2}
+}
+\]</div>
+<h3 id="stress-in-each-bar_1">Stress in each bar<a class="headerlink" href="#stress-in-each-bar_1" title="Permanent link">&para;</a></h3>
+<p>Since:</p>
+<div class="arithmatex">\[
+\sigma=\frac{P}{A}
 \]</div>
 <p>we get:</p>
 <div class="arithmatex">\[
-\boxed{\nu=\frac{E}{2G}-1}
-\]</div>
-<p>And from:</p>
-<div class="arithmatex">\[
-E=3K(1-2\nu)
+\boxed{\sigma_1=E_1\varepsilon}
 \]</div>
 <div class="arithmatex">\[
-\boxed{\nu=\frac{1}{2}\left(1-\frac{E}{3K}\right)}
+\boxed{\sigma_2=E_2\varepsilon}
 \]</div>
-<hr />
-<h1 id="amvi-formula-sheet-simple-stress">⭐ AMVI Formula Sheet --- Simple Stress<a class="headerlink" href="#amvi-formula-sheet-simple-stress" title="Permanent link">&para;</a></h1>
-<hr />
-<p>Concept                     Formula</p>
-<hr />
-<p>Normal stress               <span class="arithmatex">\(\boxed{\sigma=P/A}\)</span></p>
-<p>Shear stress                <span class="arithmatex">\(\boxed{\tau=P/A}\)</span></p>
-<p>Longitudinal strain         <span class="arithmatex">\(\boxed{\varepsilon=\Delta L/L}\)</span></p>
-<p>Volumetric strain           <span class="arithmatex">\(\boxed{\Delta V/V}\)</span></p>
-<p>Shear strain                <span class="arithmatex">\(\boxed{\gamma\approx\phi}\)</span></p>
-<p>Hooke's law                 <span class="arithmatex">\(\boxed{\sigma=E\varepsilon}\)</span></p>
-<p>Shear Hooke's law           <span class="arithmatex">\(\boxed{\tau=G\gamma}\)</span></p>
-<p>Young's modulus             <span class="arithmatex">\(\boxed{E=\sigma/\varepsilon}\)</span></p>
-<p>Rigidity modulus            <span class="arithmatex">\(\boxed{G=\tau/\gamma}\)</span></p>
-<p>Poisson's ratio             <span class="arithmatex">\(\boxed{\nu=-\varepsilon_{lat}/\varepsilon_L}\)</span></p>
-<p>Thermal strain              <span class="arithmatex">\(\boxed{\alpha\Delta T}\)</span></p>
-<p>Thermal expansion           <span class="arithmatex">\(\boxed{\Delta L=\alpha L\Delta T}\)</span></p>
-<p>Fully restrained thermal    <span class="arithmatex">\(\boxed{\sigma=E\alpha\Delta T}\)</span>
-  stress                      </p>
-<p>Elastic constant relation   <span class="arithmatex">\(\boxed{E=2G(1+\nu)}\)</span></p>
-<p>Elastic constant relation   <span class="arithmatex">\(\boxed{E=3K(1-2\nu)}\)</span></p>
-<hr />
-<hr />
-<h1 id="amvi-mcq-must-remember">🚨 AMVI MCQ --- Must Remember<a class="headerlink" href="#amvi-mcq-must-remember" title="Permanent link">&para;</a></h1>
-<h3 id="1-stress-has-unit">1. Stress has unit?<a class="headerlink" href="#1-stress-has-unit" title="Permanent link">&para;</a></h3>
+<p>Therefore:</p>
 <div class="arithmatex">\[
-\boxed{N/m^2=Pa}
+\boxed{
+\frac{\sigma_1}{\sigma_2}
+=
+\frac{E_1}{E_2}
+}
 \]</div>
-<h3 id="2-engineering-stress-unit">2. Engineering stress unit?<a class="headerlink" href="#2-engineering-stress-unit" title="Permanent link">&para;</a></h3>
+<p><strong>Important:</strong> In parallel bars, stress is generally <strong>not equal</strong> if <span class="arithmatex">\(E_1\neq E_2\)</span>.</p>
+<hr />
+<h1 id="series-vs-parallel-amvi">🔥 Series vs Parallel — AMVI<a class="headerlink" href="#series-vs-parallel-amvi" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Series</th>
+<th>Parallel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrangement</td>
+<td>End-to-end</td>
+<td>Side-by-side</td>
+</tr>
+<tr>
+<td>Load</td>
+<td><strong>Same</strong></td>
+<td>Divided</td>
+</tr>
+<tr>
+<td>Deformation</td>
+<td>Different</td>
+<td><strong>Same</strong></td>
+</tr>
+<tr>
+<td>Strain</td>
+<td>Generally different</td>
+<td><strong>Same</strong></td>
+</tr>
+<tr>
+<td>Stress</td>
+<td>Generally different</td>
+<td>Generally different</td>
+</tr>
+<tr>
+<td>Total load</td>
+<td><span class="arithmatex">\(P\)</span></td>
+<td><span class="arithmatex">\(P=P_1+P_2\)</span></td>
+</tr>
+<tr>
+<td>Total elongation</td>
+<td><span class="arithmatex">\(\Delta L_1+\Delta L_2\)</span></td>
+<td>Common <span class="arithmatex">\(\Delta L\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="easy-memory">Easy memory<a class="headerlink" href="#easy-memory" title="Permanent link">&para;</a></h3>
+<p><strong>SERIES → Same Stress/Load</strong></p>
 <div class="arithmatex">\[
-\boxed{N/mm^2=MPa}
+\boxed{P_1=P_2=P}
 \]</div>
-<h3 id="3-strain-has-unit">3. Strain has unit?<a class="headerlink" href="#3-strain-has-unit" title="Permanent link">&para;</a></h3>
+<p><strong>PARALLEL → Same Strain/Deformation</strong></p>
 <div class="arithmatex">\[
-\boxed{\text{No unit}}
+\boxed{\varepsilon_1=\varepsilon_2}
 \]</div>
-<h3 id="4-poissons-ratio-has-unit">4. Poisson's ratio has unit?<a class="headerlink" href="#4-poissons-ratio-has-unit" title="Permanent link">&para;</a></h3>
+<p>These are the two most important rules for solving composite-bar problems.</p>
+<h1 id="100-composite-bars-under-thermal-stress">10.0 Composite Bars Under Thermal Stress<a class="headerlink" href="#100-composite-bars-under-thermal-stress" title="Permanent link">&para;</a></h1>
+<p>For thermal stress, the same <strong>series vs parallel</strong> idea applies, but now the important quantities are:</p>
+<ul>
+<li><strong>Free thermal expansion</strong></li>
+<li><strong>Actual expansion</strong></li>
+<li><strong>Compatibility</strong></li>
+<li><strong>Thermal stress</strong></li>
+</ul>
+<hr />
+<h2 id="1-bars-in-series-thermal-loading">1. Bars in Series — Thermal Loading<a class="headerlink" href="#1-bars-in-series-thermal-loading" title="Permanent link">&para;</a></h2>
+<p>Bars are connected <strong>end-to-end</strong>.</p>
+<div class="highlight"><pre><span></span><code> Fixed                                  Free end
+   │                                        │
+   ├──── Bar 1 ────┬──── Bar 2 ────────────┤
+   │   L₁,A₁,E₁    │    L₂,A₂,E₂           │
+</code></pre></div>
+<p>Suppose both bars experience the same temperature change <span class="arithmatex">\(\Delta T\)</span>.</p>
+<h3 id="free-expansion-of-each-bar">Free expansion of each bar<a class="headerlink" href="#free-expansion-of-each-bar" title="Permanent link">&para;</a></h3>
+<p>For Bar 1:</p>
 <div class="arithmatex">\[
-\boxed{\text{No unit}}
+\boxed{\Delta L_{1,free}=\alpha_1L_1\Delta T}
 \]</div>
-<h3 id="5-youngs-modulus-represents">5. Young's modulus represents?<a class="headerlink" href="#5-youngs-modulus-represents" title="Permanent link">&para;</a></h3>
+<p>For Bar 2:</p>
 <div class="arithmatex">\[
-\boxed{\text{Stiffness}}
+\boxed{\Delta L_{2,free}=\alpha_2L_2\Delta T}
 \]</div>
-<h3 id="6-hookes-law">6. Hooke's law?<a class="headerlink" href="#6-hookes-law" title="Permanent link">&para;</a></h3>
+<p>If completely free, total expansion is:</p>
 <div class="arithmatex">\[
-\boxed{\sigma\propto\varepsilon}
+\boxed{
+\Delta L_{free}
+=
+\alpha_1L_1\Delta T+
+\alpha_2L_2\Delta T
+}
 \]</div>
-<p>within proportional limit.</p>
-<h3 id="7-maximum-engineering-stress">7. Maximum engineering stress?<a class="headerlink" href="#7-maximum-engineering-stress" title="Permanent link">&para;</a></h3>
+<h3 id="if-the-series-assembly-is-restrained">If the series assembly is restrained<a class="headerlink" href="#if-the-series-assembly-is-restrained" title="Permanent link">&para;</a></h3>
+<p>A thermal stress may develop.</p>
+<p>For two bars in series, the <strong>internal axial force is the same</strong>:</p>
 <div class="arithmatex">\[
-\boxed{\text{Ultimate tensile stress}}
+\boxed{P_1=P_2=P}
 \]</div>
-<h3 id="8-necking-starts-after">8. Necking starts after?<a class="headerlink" href="#8-necking-starts-after" title="Permanent link">&para;</a></h3>
+<p>The total actual deformation is:</p>
 <div class="arithmatex">\[
-\boxed{\text{Ultimate tensile stress}}
+\boxed{\Delta L=\Delta L_1+\Delta L_2}
 \]</div>
-<h3 id="9-free-thermal-expansion-produces">9. Free thermal expansion produces?<a class="headerlink" href="#9-free-thermal-expansion-produces" title="Permanent link">&para;</a></h3>
+<p>For each bar:</p>
 <div class="arithmatex">\[
-\boxed{\text{No thermal stress}}
+\boxed{
+\Delta L_i=
+\alpha_iL_i\Delta T+
+\frac{PL_i}{A_iE_i}
+}
 \]</div>
-<h3 id="10-fully-restrained-heating-produces">10. Fully restrained heating produces?<a class="headerlink" href="#10-fully-restrained-heating-produces" title="Permanent link">&para;</a></h3>
+<p>Use the appropriate sign for <span class="arithmatex">\(P\)</span> depending on whether the restraint produces tension or compression.</p>
+<h3 id="key-concept_2">Key concept<a class="headerlink" href="#key-concept_2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Series → Same internal force, total deformation is the sum of individual deformations.</strong></p>
+</blockquote>
+<hr />
+<h2 id="2-bars-in-parallel-thermal-loading">2. Bars in Parallel — Thermal Loading<a class="headerlink" href="#2-bars-in-parallel-thermal-loading" title="Permanent link">&para;</a></h2>
+<p>Bars are connected <strong>side-by-side between common rigid plates</strong>.</p>
+<div class="highlight"><pre><span></span><code>          Rigid plate
+       ┌───────────────┐
+       │               │
+       ├───┐       ┌───┤
+       │ A₁│       │ A₂│
+       │E₁│       │E₂│
+       │α₁│       │α₂│
+       ├───┘       └───┤
+       │               │
+       └───────────────┘
+          Rigid plate
+</code></pre></div>
+<p>Suppose both bars experience the same temperature change.</p>
+<h3 id="key-concept_3">Key concept<a class="headerlink" href="#key-concept_3" title="Permanent link">&para;</a></h3>
+<p>Because both bars are connected to the same rigid plates:</p>
 <div class="arithmatex">\[
-\boxed{\text{Compressive thermal stress}}
+\boxed{\Delta L_1=\Delta L_2=\Delta L}
 \]</div>
-<h3 id="11-fully-restrained-cooling-produces">11. Fully restrained cooling produces?<a class="headerlink" href="#11-fully-restrained-cooling-produces" title="Permanent link">&para;</a></h3>
+<p>Therefore:</p>
 <div class="arithmatex">\[
-\boxed{\text{Tensile thermal stress}}
+\boxed{\varepsilon_1=\varepsilon_2=\varepsilon}
 \]</div>
-<h3 id="12-relation-between-e-and-g">12. Relation between E and G?<a class="headerlink" href="#12-relation-between-e-and-g" title="Permanent link">&para;</a></h3>
+<p>This is the <strong>compatibility condition</strong>.</p>
+<p>But their free thermal expansions may be different:</p>
 <div class="arithmatex">\[
-\boxed{E=2G(1+\nu)}
+\Delta L_{1,free}=\alpha_1L\Delta T
 \]</div>
-<h3 id="13-relation-between-e-and-k">13. Relation between E and K?<a class="headerlink" href="#13-relation-between-e-and-k" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
-\boxed{E=3K(1-2\nu)}
+\Delta L_{2,free}=\alpha_2L\Delta T
+\]</div>
+<p>If:</p>
+<div class="arithmatex">\[
+\alpha_1\neq\alpha_2
+\]</div>
+<p>they cannot both expand freely by different amounts because the rigid plates force them to have the <strong>same actual expansion</strong>.</p>
+<p>Therefore, internal thermal stresses develop.</p>
+<hr />
+<h2 id="thermal-stress-in-each-parallel-bar">Thermal Stress in Each Parallel Bar<a class="headerlink" href="#thermal-stress-in-each-parallel-bar" title="Permanent link">&para;</a></h2>
+<p>For each bar:</p>
+<div class="arithmatex">\[
+\boxed{
+\sigma_i=E_i(\varepsilon-\alpha_i\Delta T)
+}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\varepsilon\)</span> = common actual strain</li>
+<li><span class="arithmatex">\(\alpha_i\Delta T\)</span> = free thermal strain</li>
+</ul>
+<p>The load carried by each bar is:</p>
+<div class="arithmatex">\[
+\boxed{P_i=\sigma_iA_i}
+\]</div>
+<p>For an assembly with <strong>no external axial load</strong>:</p>
+<div class="arithmatex">\[
+\boxed{P_1+P_2=0}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\sigma_1A_1+\sigma_2A_2=0}
 \]</div>
 <hr />
-<h1 id="amvi-practice-mcqs">📝 AMVI Practice MCQs<a class="headerlink" href="#amvi-practice-mcqs" title="Permanent link">&para;</a></h1>
-<h3 id="q1-stress-is-defined-as">Q1. Stress is defined as:<a class="headerlink" href="#q1-stress-is-defined-as" title="Permanent link">&para;</a></h3>
-<p>A. Force × area B. Force per unit area C. Deformation per unit length D.
-Energy per unit volume</p>
-<p><strong>Answer: B ✅</strong></p>
-<hr />
-<h3 id="q2-which-quantity-is-dimensionless">Q2. Which quantity is dimensionless?<a class="headerlink" href="#q2-which-quantity-is-dimensionless" title="Permanent link">&para;</a></h3>
-<p>A. Stress B. Young's modulus C. Strain D. Force</p>
-<p><strong>Answer: C ✅</strong></p>
-<hr />
-<h3 id="q3-a-tensile-force-causes">Q3. A tensile force causes:<a class="headerlink" href="#q3-a-tensile-force-causes" title="Permanent link">&para;</a></h3>
-<p>A. Decrease in length B. Increase in length C. No deformation D. Only
-angular deformation</p>
-<p><strong>Answer: B ✅</strong></p>
-<hr />
-<h3 id="q4-the-slope-of-the-initial-straight-portion-of-a-stress-strain-curve-represents">Q4. The slope of the initial straight portion of a stress-strain curve represents:<a class="headerlink" href="#q4-the-slope-of-the-initial-straight-portion-of-a-stress-strain-curve-represents" title="Permanent link">&para;</a></h3>
-<p>A. Toughness B. Young's modulus C. Yield stress D. Ultimate stress</p>
-<p><strong>Answer: B ✅</strong></p>
-<hr />
-<h3 id="q5-hookes-law-is-valid-up-to">Q5. Hooke's law is valid up to:<a class="headerlink" href="#q5-hookes-law-is-valid-up-to" title="Permanent link">&para;</a></h3>
-<p>A. Ultimate point B. Breaking point C. Proportional limit D. Necking
-point</p>
-<p><strong>Answer: C ✅</strong></p>
-<hr />
-<h3 id="q6-permanent-deformation-begins-beyond">Q6. Permanent deformation begins beyond:<a class="headerlink" href="#q6-permanent-deformation-begins-beyond" title="Permanent link">&para;</a></h3>
-<p>A. Origin B. Elastic limit C. Proportional region only D. Ultimate point</p>
-<p><strong>Answer: B ✅</strong></p>
-<hr />
-<h3 id="q7-if-the-area-of-a-bar-is-doubled-while-load-remains-constant-stress-becomes">Q7. If the area of a bar is doubled while load remains constant, stress becomes:<a class="headerlink" href="#q7-if-the-area-of-a-bar-is-doubled-while-load-remains-constant-stress-becomes" title="Permanent link">&para;</a></h3>
-<p>A. Double B. Half C. Four times D. Unchanged</p>
-<p><strong>Answer: B ✅</strong></p>
-<hr />
-<h3 id="q8-the-modulus-of-rigidity-is">Q8. The modulus of rigidity is:<a class="headerlink" href="#q8-the-modulus-of-rigidity-is" title="Permanent link">&para;</a></h3>
-<p>A. Normal stress / longitudinal strain B. Shear stress / shear strain C.
-Pressure / volume D. Load / area</p>
-<p><strong>Answer: B ✅</strong></p>
-<hr />
-<h3 id="q9-a-freely-expanding-bar-subjected-to-temperature-rise-develops">Q9. A freely expanding bar subjected to temperature rise develops:<a class="headerlink" href="#q9-a-freely-expanding-bar-subjected-to-temperature-rise-develops" title="Permanent link">&para;</a></h3>
-<p>A. Tensile thermal stress B. Compressive thermal stress C. Zero thermal
-stress D. Shear stress</p>
-<p><strong>Answer: C ✅</strong></p>
-<hr />
-<h3 id="q10-for-an-isotropic-material">Q10. For an isotropic material:<a class="headerlink" href="#q10-for-an-isotropic-material" title="Permanent link">&para;</a></h3>
+<h2 id="important-special-case-two-parallel-bars">🔥 Important Special Case — Two Parallel Bars<a class="headerlink" href="#important-special-case-two-parallel-bars" title="Permanent link">&para;</a></h2>
+<p>If there is <strong>no external load</strong> and both bars have the same length:</p>
 <div class="arithmatex">\[
-E=?
+E_1A_1(\varepsilon-\alpha_1\Delta T)
++
+E_2A_2(\varepsilon-\alpha_2\Delta T)=0
 \]</div>
-<p>A. <span class="arithmatex">\(G(1+\nu)\)</span> B. <span class="arithmatex">\(2G(1+\nu)\)</span> C. <span class="arithmatex">\(3G(1-\nu)\)</span> D. <span class="arithmatex">\(G/(1+\nu)\)</span></p>
-<p><strong>Answer: B ✅</strong></p>
-<hr />
-<h3 id="q11-if-e200gpa-and-nu025-find-g">Q11. If <span class="arithmatex">\(E=200\,GPa\)</span> and <span class="arithmatex">\(\nu=0.25\)</span>, find <span class="arithmatex">\(G\)</span>.<a class="headerlink" href="#q11-if-e200gpa-and-nu025-find-g" title="Permanent link">&para;</a></h3>
+<p>The common actual strain is:</p>
 <div class="arithmatex">\[
-G=\frac{E}{2(1+\nu)}
+\boxed{
+\varepsilon=
+\frac{E_1A_1\alpha_1+E_2A_2\alpha_2}
+{E_1A_1+E_2A_2}
+\Delta T
+}
+\]</div>
+<p>Then calculate stress in each bar using:</p>
+<div class="arithmatex">\[
+\boxed{
+\sigma_1=E_1(\varepsilon-\alpha_1\Delta T)
+}
 \]</div>
 <div class="arithmatex">\[
-G=\frac{200}{2(1.25)}
+\boxed{
+\sigma_2=E_2(\varepsilon-\alpha_2\Delta T)
+}
 \]</div>
+<h3 id="important_1">Important<a class="headerlink" href="#important_1" title="Permanent link">&para;</a></h3>
+<p>If <span class="arithmatex">\(\alpha_1&gt;\alpha_2\)</span>:</p>
+<ul>
+<li>Material 1 wants to expand more.</li>
+<li>The rigid connection prevents it from expanding fully.</li>
+<li>Material 1 generally develops <strong>compressive stress</strong>.</li>
+<li>Material 2 generally develops <strong>tensile stress</strong>.</li>
+</ul>
+<hr />
+<h2 id="series-vs-parallel-thermal-case">Series vs Parallel — Thermal Case<a class="headerlink" href="#series-vs-parallel-thermal-case" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Series</th>
+<th>Parallel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrangement</td>
+<td>End-to-end</td>
+<td>Side-by-side</td>
+</tr>
+<tr>
+<td>Free expansion</td>
+<td><span class="arithmatex">\(\alpha_1L_1\Delta T+\alpha_2L_2\Delta T\)</span></td>
+<td>Each bar has its own free expansion</td>
+</tr>
+<tr>
+<td>Internal force</td>
+<td><strong>Same</strong></td>
+<td>Loads/stresses are shared</td>
+</tr>
+<tr>
+<td>Actual deformation</td>
+<td><span class="arithmatex">\(\Delta L=\Delta L_1+\Delta L_2\)</span></td>
+<td><strong>Same deformation</strong></td>
+</tr>
+<tr>
+<td>Actual strain</td>
+<td>Generally different</td>
+<td><strong>Same strain</strong></td>
+</tr>
+<tr>
+<td>Compatibility</td>
+<td>Total deformation</td>
+<td><span class="arithmatex">\(\boxed{\varepsilon_1=\varepsilon_2}\)</span></td>
+</tr>
+<tr>
+<td>Main equation</td>
+<td>Deformations add</td>
+<td>Forces balance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="amvi-memory_1">🔑 AMVI Memory<a class="headerlink" href="#amvi-memory_1" title="Permanent link">&para;</a></h3>
+<p><strong>Series:</strong></p>
 <div class="arithmatex">\[
-\boxed{G=80\,GPa}
+\boxed{P_1=P_2}
 \]</div>
-<p><strong>Answer: 80 GPa ✅</strong></p>
-<hr />
-<h3 id="q12-a-fully-restrained-steel-bar-is-heated-the-thermal-stress-developed-is">Q12. A fully restrained steel bar is heated. The thermal stress developed is:<a class="headerlink" href="#q12-a-fully-restrained-steel-bar-is-heated-the-thermal-stress-developed-is" title="Permanent link">&para;</a></h3>
-<p>A. Tensile B. Compressive C. Shear D. Zero</p>
-<p><strong>Answer: B --- Compressive ✅</strong></p>
-<hr />
-<h1 id="chapter-1-simple-stress-completion-status">🎯 Chapter 1 --- Simple Stress: Completion Status<a class="headerlink" href="#chapter-1-simple-stress-completion-status" title="Permanent link">&para;</a></h1>
-<pre><code> No. Topic                                  Status
-</code></pre>
-<hr />
-<pre><code> 1.1 Load &amp; Internal Resistance               ✅
- 1.2 Stress                                   ✅
- 1.3 Types of Stress                          ✅
- 1.4 Direct Stress                            ✅
- 1.5 Strain                                   ✅
- 1.6 Types of Strain                          ✅
- 1.7 Hooke's Law                              ✅
- 1.8 Elasticity &amp; Plasticity                  ✅
- 1.9 Proportional &amp; Elastic Limit             ✅
-1.10 Stress-Strain Curve                      ✅
-1.11 Poisson's Ratio                          ✅
-1.12 Thermal Stress &amp; Strain                  ✅
-1.13 Elastic Constants                        ✅
-1.14 Relations Between Elastic Constants      ✅
-</code></pre>
-<p><strong>For our AMVI preparation, I would consider the basic theory covered,
-but not the chapter fully mastered yet until we do a dedicated set of
-formula-based, conceptual, and numerical MCQs.</strong> The next major syllabus
-keyword is <strong>2. Strain Energy</strong>.</p>
+<p><strong>Parallel:</strong></p>
+<div class="arithmatex">\[
+\boxed{\Delta L_1=\Delta L_2}
+\]</div>
+<p>and therefore:</p>
+<div class="arithmatex">\[
+\boxed{\varepsilon_1=\varepsilon_2}
+\]</div>
+<p><strong>Thermal stress develops when the actual deformation is different from the deformation the material would freely undergo.</strong> </p>
 
 
 
