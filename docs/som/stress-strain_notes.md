@@ -1555,9 +1555,9 @@ $$
 \boxed{\text{Elastic Limit}}
 $$
 
-### Beyond the elastic limit
+### Beyond the elastic limit **Permanent deformation remains even after removing the load.**
 
-**Permanent deformation remains even after removing the load.**
+
 ------------------------------------------------------------------------
 
 ## 🔥 Sequence for MCQ
