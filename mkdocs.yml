@@ -6,6 +6,7 @@ nav:
   - AMVI:
       - SOM:
           - Stress: som/stress-strain_notes.md
+          - stresses-compact: som/stress-strain-compact-Notes.md
 
   - Java Concepts:
       - DataTypesBasics: java-concepts/dataTypeVariableBasics.md
