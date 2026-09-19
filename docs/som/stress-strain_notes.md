@@ -905,7 +905,7 @@ $$
 
 ------------------------------------------------------------------------
 
-# 5.1 Types of Strain
+## 5.1 Types of Strain
 
 There are four important types.
 
@@ -967,6 +967,308 @@ Change in volume/original volume:
 $$
 \boxed{\varepsilon_v=\frac{\Delta V}{V}}
 $$
+
+> Yes. The **basic definition is always the same**:
+
+$$
+\boxed{\varepsilon_v=\frac{\Delta V}{V}}
+$$
+
+For a small deformation, volumetric strain can also be written as the **sum of strains in three mutually perpendicular directions**:
+
+$$
+\boxed{\varepsilon_v=\varepsilon_x+\varepsilon_y+\varepsilon_z}
+$$
+
+
+> General 3D Stress State — Important Distinction
+
+
+For an isotropic material:
+
+$$ \varepsilon_x= \frac{1}{E} [\sigma_x-\mu(\sigma_y+\sigma_z)] $$ $$ \varepsilon_y= \frac{1}{E} [\sigma_y-\mu(\sigma_x+\sigma_z)] $$ $$ \varepsilon_z= \frac{1}{E} [\sigma_z-\mu(\sigma_x+\sigma_y)] $$
+
+Adding them:
+
+$$ \boxed{ \varepsilon_v = \frac{1-2\mu}{E} (\sigma_x+\sigma_y+\sigma_z) } $$
+
+This is the general 3D relation for an isotropic, linear-elastic material.
+Let's derive it for each shape.
+
+---
+
+### 1. Circular Cylinder / Solid Round Rod
+
+Consider a cylindrical rod:
+
+* Original diameter = $d$
+* Original length = $L$
+
+Volume:
+
+$$
+V=\frac{\pi d^2L}{4}
+$$
+
+For small deformation:
+
+* Longitudinal strain = $\varepsilon_L$
+* Lateral strain in diameter direction = $\varepsilon_d$
+
+Since the diameter has **two perpendicular lateral directions**, both lateral strains are $\varepsilon_d$.
+
+Therefore:
+
+$$
+\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_d}
+$$
+
+Using Poisson's ratio:
+
+$$
+\nu=-\frac{\varepsilon_d}{\varepsilon_L}
+$$
+
+Therefore:
+
+$$
+\varepsilon_d=-\nu\varepsilon_L
+$$
+
+Substitute:
+
+$$
+\boxed{\varepsilon_v=\varepsilon_L(1-2\nu)}
+$$
+
+### For tensile loading
+
+$$
+\varepsilon_L>0
+$$
+
+and
+
+$$
+\varepsilon_d<0
+$$
+
+So:
+
+$$
+\varepsilon_v=\varepsilon_L+2\varepsilon_d
+$$
+
+### For compression
+
+$$
+\varepsilon_L<0
+$$
+
+and
+
+$$
+\varepsilon_d>0
+$$
+
+Again:
+
+$$
+\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_d}
+$$
+
+---
+
+### 2. Rectangular Bar
+
+Consider a rectangular bar:
+
+* Length = $L$
+* Width = $b$
+* Thickness = $t$
+
+Volume:
+
+$$
+V=Lbt
+$$
+
+There are three mutually perpendicular dimensions:
+
+```text
+             Length → L
+        ┌────────────────┐
+       /                /│
+      /                / │
+     └────────────────┘  │
+     │                │  │
+     │                │ /
+     │                │/
+     └────────────────┘
+
+       b = width
+       t = thickness
+```
+
+Therefore:
+
+* Strain along length = $\varepsilon_L$
+* Strain along width = $\varepsilon_b$
+* Strain along thickness = $\varepsilon_t$
+
+Hence:
+
+$$
+\boxed{\varepsilon_v=\varepsilon_L+\varepsilon_b+\varepsilon_t}
+$$
+
+If the material is under **uniaxial loading along the length**, the two lateral strains are equal:
+
+$$
+\varepsilon_b=\varepsilon_t=\varepsilon_{lat}
+$$
+
+Therefore:
+
+$$
+\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_{lat}}
+$$
+
+And using Poisson's ratio:
+
+$$
+\boxed{\varepsilon_v=\varepsilon_L(1-2\nu)}
+$$
+
+### Important point
+
+For a rectangular bar under axial loading, the formula is **the same as the circular rod**.
+
+Why?
+
+Because there are:
+
+* **1 longitudinal direction**
+* **2 perpendicular lateral directions**
+
+---
+
+### 3. Sphere
+
+Now consider a sphere of radius $r$.
+
+Original volume:
+
+$$
+V=\frac{4}{3}\pi r^3
+$$
+
+For a sphere under **uniform expansion/compression**, deformation occurs equally in all three mutually perpendicular directions.
+
+Therefore:
+
+$$
+\varepsilon_x=\varepsilon_y=\varepsilon_z=\varepsilon
+$$
+
+Hence:
+
+$$
+\varepsilon_v
+=
+\varepsilon+\varepsilon+\varepsilon
+$$
+
+So:
+
+$$
+\boxed{\varepsilon_v=3\varepsilon}
+$$
+
+### Using Poisson's ratio?
+
+For a sphere under **uniform hydrostatic stress**, the situation is different from a simple uniaxial rod.
+
+The three normal strains are equal:
+
+$$
+\boxed{\varepsilon_x=\varepsilon_y=\varepsilon_z}
+$$
+
+and therefore:
+
+$$
+\boxed{\varepsilon_v=3\varepsilon}
+$$
+
+### 4. Taper Bar
+
+For a **circular rod uniformly tapered from $d_1$ to $d_2$**:
+
+$$
+\boxed{\Delta L=\frac{4PL}{\pi E d_1d_2}}
+$$
+---
+
+### Comparison — Very Important for AMVI
+
+| Shape / Loading                                   | Volumetric strain                                                 |
+| ------------------------------------------------- | ----------------------------------------------------------------- |
+| Circular rod, axial loading                       | $\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_{lat}}$          |
+| Rectangular bar, axial loading                    | $\boxed{\varepsilon_v=\varepsilon_L+\varepsilon_b+\varepsilon_t}$ |
+| Rectangular bar, uniaxial + equal lateral strains | $\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_{lat}}$          |
+| Sphere, uniform deformation                       | $\boxed{\varepsilon_v=3\varepsilon}$                              |
+| Any 3D state                                      | $\boxed{\varepsilon_v=\varepsilon_x+\varepsilon_y+\varepsilon_z}$ |
+
+### 🔥 Most important concept
+
+Don't memorize the shape-specific formulas first. Remember:
+
+$$
+\boxed{\text{Volumetric strain = sum of strains in 3 perpendicular directions}}
+$$
+
+Then:
+
+### Rod under axial load
+
+**1 longitudinal + 2 lateral**
+
+$$
+\boxed{\varepsilon_v=\varepsilon_L+2\varepsilon_{lat}}
+$$
+
+### Rectangular bar under axial load
+
+**1 length + 2 lateral**
+
+$$
+\boxed{\varepsilon_v=\varepsilon_L+\varepsilon_b+\varepsilon_t}
+$$
+
+### Sphere under uniform deformation
+
+**3 equal directions**
+
+$$
+\boxed{\varepsilon_v=3\varepsilon}
+$$
+
+And one very useful special case:
+
+If $\nu=0.5$ for a uniaxially loaded isotropic material,
+
+$$
+\varepsilon_v=\varepsilon_L(1-2\nu)
+$$
+
+$$
+\varepsilon_v=\varepsilon_L(1-1)=0
+$$
+
+So:
+
+> **$\nu=0.5$ → zero volumetric strain → approximately incompressible material.**
 
 ------------------------------------------------------------------------
 
@@ -1037,6 +1339,7 @@ For a typical **mild steel/ductile material**, the important sequence
 is:
 
 ## Stress–Strain Curve — Ductile Material
+
 
 
 The curve plots:
@@ -1184,7 +1487,7 @@ Eventually the specimen breaks.
 
 ---
 
-# Complete Curve in One Flow
+## Complete Curve in One Flow
 
 ```text
 O
@@ -1241,7 +1544,7 @@ $$
 \boxed{\text{Elastic Limit}}
 $$
 
-> #### Beyond the elastic limit, **permanent deformation remains even after removing the load**.
+> ### Beyond the elastic limit, **permanent deformation remains even after removing the load**.
 ------------------------------------------------------------------------
 
 ## 🔥 Sequence for MCQ
@@ -1342,7 +1645,7 @@ $$
 $$
 
 
-# 1.11 Poisson's Ratio
+# 6 Poisson's Ratio
 
 When a bar is subjected to tensile load:
 
@@ -1369,7 +1672,7 @@ opposite signs under tensile loading.
 
 ------------------------------------------------------------------------
 
-## Example
+### Example
 
 Suppose:
 
@@ -1403,514 +1706,1172 @@ It has no unit.
 
 ------------------------------------------------------------------------
 
-# 1.12 Thermal Stress & Strain
 
-Temperature change can cause a body to expand or contract.
+# 7. Elastic Constants
 
-For a bar with original length $L$:
+**Elastic constants** are material properties that describe the relationship between **stress and strain within the elastic limit**.
+
+For an isotropic, linear-elastic material, the important elastic constants are:
+
+1. **Young's Modulus — $E$**
+2. **Modulus of Rigidity / Shear Modulus — $G$**
+3. **Bulk Modulus — $K$**
+4. **Poisson's Ratio — $\mu$ or $\nu$**
+
+---
+
+## 1. Young's Modulus — $E$
+
+Young's modulus represents the resistance of a material to **longitudinal deformation**.
 
 $$
-\boxed{\Delta L=\alpha L\Delta T}
+\boxed{E=\frac{\text{Longitudinal stress}}{\text{Longitudinal strain}}}
+$$
+
+For axial loading:
+
+$$
+\boxed{E=\frac{\sigma}{\varepsilon_L}}
 $$
 
 where:
 
--   $\alpha$ = coefficient of linear expansion
--   $L$ = original length
--   $\Delta T$ = temperature change
+* $E$ = Young's modulus
+* $\sigma$ = normal/direct stress
+* $\varepsilon_L$ = longitudinal strain
 
-Thermal strain:
+**Unit:** Pa, MPa, GPa, or N/mm²
 
-$$
-\boxed{\varepsilon_{th}=\alpha\Delta T}
-$$
+Higher $E$ → material undergoes **less elastic deformation** for the same stress.
 
-------------------------------------------------------------------------
+---
 
-## Free Expansion
+## 2. Modulus of Rigidity — $G$
 
-Suppose a bar is free to expand:
+Also called:
 
-``` text
-Wall                         Free end
+* **Shear modulus**
+* **Modulus of rigidity**
 
-│────────────── Rod ───────────→
-                              →
-```
-
-When temperature increases, the bar expands.
-
-No restraint means:
+It represents the resistance of a material to **shear deformation**.
 
 $$
-\boxed{\text{Thermal stress}=0}
+\boxed{G=\frac{\text{Shear stress}}{\text{Shear strain}}}
 $$
 
-but:
-
-$$
-\boxed{\text{Thermal strain}\neq0}
-$$
-
-This is a **very important MCQ point**.
-
-------------------------------------------------------------------------
-
-## Fully Restrained Bar
-
-Now suppose the bar cannot expand:
-
-``` text
-│──────────── Rod ────────────│
-       Both ends fixed
-```
-
-Temperature increases.
-
-The bar wants to expand but cannot.
-
-Therefore thermal stress develops.
-
-Thermal strain that would have occurred:
-
-$$
-\varepsilon_{th}=\alpha\Delta T
-$$
-
-Thermal stress:
-
-$$
-\boxed{\sigma_{th}=E\alpha\Delta T}
-$$
-
-For heating of a fully restrained bar, the stress is **compressive**.
-
-For cooling of a fully restrained bar, the stress is **tensile**.
-
-### 🔥 MCQ
-
-**A freely expanding bar subjected to temperature rise develops:**
-
-Answer:
-
-$$
-\boxed{\text{No thermal stress}}
-$$
-
-------------------------------------------------------------------------
-
-# 1.13 Elastic Constants
-
-There are four important elastic constants:
-
-1.  Young's modulus --- $E$
-2.  Modulus of rigidity --- $G$
-3.  Bulk modulus --- $K$
-4.  Poisson's ratio --- $\nu$
-
-------------------------------------------------------------------------
-
-## 1.13.1 Young's Modulus --- E
-
-Ratio of normal stress to longitudinal strain:
-
-$$
-\boxed{E=\frac{\sigma}{\varepsilon}}
-$$
-
-It represents **stiffness against longitudinal deformation**.
-
-Unit:
-
-$$
-\boxed{Pa,\;MPa,\;GPa}
-$$
-
-------------------------------------------------------------------------
-
-## 1.13.2 Modulus of Rigidity --- G
-
-Also called **Shear Modulus**.
-
-Ratio of shear stress to shear strain:
+Therefore:
 
 $$
 \boxed{G=\frac{\tau}{\gamma}}
 $$
 
-It represents resistance to **shear deformation**.
+where:
 
-Unit:
+* $G$ = shear modulus
+* $\tau$ = shear stress
+* $\gamma$ = shear strain
 
-$$
-\boxed{Pa}
-$$
+**Unit:** Pa, MPa, GPa or N/mm²
 
-------------------------------------------------------------------------
+---
 
-## 1.13.3 Bulk Modulus --- K
+## 3. Bulk Modulus — $K$
 
-Bulk modulus measures resistance to **volume change**.
-
-$$
-\boxed{K=\frac{\text{Volumetric stress}}{\text{Volumetric strain}}}
-$$
-
-For hydrostatic pressure $p$:
+Bulk modulus represents the resistance of a material to **change in volume**.
 
 $$
-\boxed{K=-\frac{p}{\Delta V/V}}
+\boxed{K=\frac{\text{Hydrostatic stress}}{\text{Volumetric strain}}}
 $$
 
-The negative sign is used because an increase in pressure normally
-produces a decrease in volume.
-
-Unit:
+Usually:
 
 $$
-\boxed{Pa}
+\boxed{K=-\frac{p}{\varepsilon_v}}
 $$
 
-------------------------------------------------------------------------
+where:
 
-## 1.13.4 Poisson's Ratio --- ν
+* $K$ = bulk modulus
+* $p$ = hydrostatic pressure
+* $\varepsilon_v$ = volumetric strain
 
-$$
-\boxed{\nu=-\frac{\text{Lateral strain}}{\text{Longitudinal strain}}}
-$$
+The negative sign is used because pressure causes a **decrease in volume**.
 
-It is dimensionless.
+**Unit:** Pa, MPa, GPa or N/mm²
 
-------------------------------------------------------------------------
+---
 
-# 1.14 Relations Between Elastic Constants
+## 4. Poisson's Ratio — $\mu$ or $\nu$
 
-This is an **extremely important AMVI formula section**.
-
-For an isotropic, homogeneous, linearly elastic material:
-
-## Relation between E, G and ν
+Poisson's ratio represents the relationship between **lateral strain and longitudinal strain**.
 
 $$
-\boxed{E=2G(1+\nu)}
+\boxed{\mu=-\frac{\varepsilon_{lat}}{\varepsilon_L}}
 $$
 
-Therefore:
+or
 
 $$
-\boxed{G=\frac{E}{2(1+\nu)}}
+\boxed{\nu=-\frac{\varepsilon_{lat}}{\varepsilon_L}}
 $$
 
-------------------------------------------------------------------------
+It is **dimensionless**.
 
-## Relation between E, K and ν
+---
+
+## Important Relations Between Elastic Constants
+
+> For an **isotropic, homogeneous, linear-elastic material**:
+
+### Relation between $E$, $G$ and $\mu$
 
 $$
-\boxed{E=3K(1-2\nu)}
+\boxed{E=2G(1+\mu)}
 $$
 
 Therefore:
 
 $$
-\boxed{K=\frac{E}{3(1-2\nu)}}
+\boxed{G=\frac{E}{2(1+\mu)}}
 $$
 
-------------------------------------------------------------------------
+---
 
-## Relation between K, G and ν
-
-$$
-\boxed{K=\frac{2G(1+\nu)}{3(1-2\nu)}}
-$$
-
-------------------------------------------------------------------------
-
-## Very Useful Combined Formula
-
-From:
+### Relation between $E$, $K$ and $\mu$
 
 $$
-E=2G(1+\nu)
+\boxed{E=3K(1-2\mu)}
+$$
+
+Therefore:
+
+$$
+\boxed{K=\frac{E}{3(1-2\mu)}}
+$$
+
+---
+
+### Relation between $K$, $G$ and $\mu$
+
+$$
+\boxed{K=\frac{2G(1+\mu)}{3(1-2\mu)}}
+$$
+
+---
+
+### Relation between $E$, $K$ and $G$
+
+$$
+\boxed{E=\frac{9KG}{3K+G}}
+$$
+
+---
+
+# 🔥 AMVI/MPSC Formula Table
+
+| Elastic Constant |         Symbol | Definition                                | Unit          |
+| ---------------- | -------------: | ----------------------------------------- | ------------- |
+| Young's modulus  |            $E$ | Longitudinal stress / longitudinal strain | Pa            |
+| Shear modulus    |            $G$ | Shear stress / shear strain               | Pa            |
+| Bulk modulus     |            $K$ | Hydrostatic stress / volumetric strain    | Pa            |
+| Poisson's ratio  | $\mu$ or $\nu$ | − lateral strain / longitudinal strain    | Dimensionless |
+
+### Most important formulas to remember
+
+$$
+\boxed{E=2G(1+\mu)}
+$$
+
+$$
+\boxed{E=3K(1-2\mu)}
+$$
+
+$$
+\boxed{E=\frac{9KG}{3K+G}}
+$$
+
+$$
+\boxed{G=\frac{E}{2(1+\mu)}}
+$$
+
+$$
+\boxed{K=\frac{E}{3(1-2\mu)}}
+$$
+
+**Memory:**
+**E → Length**
+**G → Shape / Shear**
+**K → Volume**
+**μ → Lateral vs Longitudinal**
+
+
+# 8. Material Classification
+
+These terms are important in **Strength of Materials** because they describe how a material behaves in different directions.
+
+---
+
+## 1. Homogeneous Material
+
+A material is **homogeneous** when its properties are the **same at every location within the material**.
+
+In simple words:
+
+> **Same material properties from point to point.**
+
+For example, if Young's modulus $E$ is the same throughout the material, it is homogeneous with respect to $E$.
+
+### Example
+
+* Mild steel (idealized as a uniform material)
+* Aluminium (idealized as uniform)
+* Copper
+
+### Simple example
+
+Imagine a steel bar:
+
+```text
+|----------------------------|
+  E = 200 GPa throughout
+|----------------------------|
+```
+
+Every portion has approximately the same material properties.
+
+---
+
+## 2. Isotropic Material
+
+A material is **isotropic** when its properties are **the same in all directions at a given point**.
+
+In simple words:
+
+> **Same properties in every direction.**
+
+For an isotropic material:
+
+$$
+E_x=E_y=E_z
+$$
+
+and the material behaves similarly regardless of the direction of loading.
+
+### Examples
+
+* Glass
+* Most metals such as steel and aluminium, when treated as isotropic in engineering analysis
+* Rubber, when modeled as isotropic
+
+### Example
+
+Imagine a small element:
+
+```text
+          ↑
+          │ E
+          │
+     E ← [■] → E
+          │
+          ↓
+          E
+```
+
+The material has the same elastic response in different directions.
+
+---
+
+## 3. Anisotropic Material
+
+A material is **anisotropic** when its properties **depend on the direction**.
+
+In simple words:
+
+> **Different properties in different directions.**
+
+For example:
+
+$$
+E_x\neq E_y
+$$
+
+### Examples
+
+* Wood
+* Carbon-fiber composites
+* Many fiber-reinforced composites
+
+### Wood example
+
+Wood behaves differently:
+
+```text
+          Grain direction
+               ↑
+               │
+               │
+        ───────┼───────
+               │
+               │
+```
+
+Its strength and stiffness **along the grain** are different from those **across the grain**.
+
+---
+
+## 4. Orthotropic Material
+
+**Orthotropic material is a special type of anisotropic material.**
+
+It has different material properties along **three mutually perpendicular directions**, called the **principal material directions**.
+
+Usually:
+
+$$
+E_x\neq E_y\neq E_z
+$$
+
+### Examples
+
+* Wood
+* Fiber-reinforced composites
+* Rolled metal sheets can exhibit orthotropic behavior due to processing
+
+### Wood example
+
+For wood, we commonly consider:
+
+1. **Longitudinal (L)** → along the grain
+2. **Radial (R)** → perpendicular to grain
+3. **Tangential (T)** → tangent to growth rings
+
+These directions have different mechanical properties.
+
+---
+
+## Isotropic vs Anisotropic vs Orthotropic
+
+| Material type   | Meaning                                          | Properties                                      | Example                |
+| --------------- | ------------------------------------------------ | ----------------------------------------------- | ---------------------- |
+| **Homogeneous** | Same from point to point                         | Location-independent                            | Uniform steel          |
+| **Isotropic**   | Same in all directions                           | Direction-independent                           | Glass, idealized steel |
+| **Anisotropic** | Different in different directions                | Direction-dependent                             | Wood, composites       |
+| **Orthotropic** | Different in 3 mutually perpendicular directions | Direction-dependent with 3 principal directions | Wood, fiber composites |
+
+---
+
+## 🔥 Very Important: Homogeneous ≠ Isotropic
+
+These are **two different concepts**.
+
+### Homogeneous asks:
+
+> **Does the property change from one location to another?**
+
+### Isotropic asks:
+
+> **Does the property change when I change the direction?**
+
+Therefore, a material can be:
+
+* **Homogeneous + isotropic**
+* **Homogeneous + anisotropic**
+* **Non-homogeneous + isotropic**
+* **Non-homogeneous + anisotropic**
+
+### Easy memory trick
+
+**HOMO → Location**
+
+**ISO → Same direction**
+
+**ANISO → Different direction**
+
+**ORTHO → 3 perpendicular directions**
+
+
+---
+
+# 7. For **self-weight elongation**, compare the two cases as follows.
+
+
+## 1. Uniform Vertical Bar
+
+For a uniform bar of length $L$, area $A$, total weight $W$:
+
+$$
+\boxed{\delta=\frac{WL}{2AE}}
+$$
+
+Since:
+
+$$
+W=\rho gAL
+$$
+
+Therefore:
+
+$$
+\boxed{\delta=\frac{\rho gL^2}{2E}}
+$$
+
+---
+
+## 2. Solid Conical Bar
+
+For a solid conical bar of length $L$, with the **larger end at the top**, base area $A$, and total weight $W$:
+
+$$
+\boxed{\delta=\frac{WL}{2AE}}
+$$
+
+But for a cone:
+
+$$
+W=\frac{1}{3}\rho gAL
+$$
+
+Therefore:
+
+$$
+\boxed{\delta=\frac{\rho gL^2}{6E}}
+$$
+
+---
+
+## Comparison
+
+| Bar             | Self-weight elongation                                             |
+| --------------- | ------------------------------------------------------------------ |
+| **Uniform bar** | $\displaystyle \boxed{\delta=\frac{WL}{2AE}=\frac{\rho gL^2}{2E}}$ |
+| **Conical bar** | $\displaystyle \boxed{\delta=\frac{WL}{2AE}=\frac{\rho gL^2}{6E}}$ |
+
+### Important correction
+
+The expression $\frac{WL}{2AE}$ **cannot be used with the cone's total weight and base area as a general derivation**; it happens to give the correct cone result only because of the cone geometry and the $1/3$ volume factor when interpreted with the base area. The safest AMVI formula to memorize for a **solid cone, larger end at top** is:
+
+$$
+\boxed{\delta=\frac{\rho gL^2}{6E}}
+$$
+
+Thus, for the same $L$, $\rho$, and $E$:
+
+$$
+\boxed{\delta_{\text{cone}}=\frac{1}{3}\delta_{\text{uniform}}}
+$$
+
+# 8. Thermal Expansion — Change in Length
+
+### Concept
+
+When the temperature of a bar changes, the bar **expands or contracts**.
+
+* Temperature increases → **length increases**
+* Temperature decreases → **length decreases**
+* If the bar is free to expand/contract → **no thermal stress develops**
+
+### Formula
+
+$$
+\boxed{\Delta L=\alpha L\Delta T}
+$$
+
+### Terms and Units
+
+| Symbol     | Meaning                                 | SI Unit              |
+| ---------- | --------------------------------------- | -------------------- |
+| $\Delta L$ | Change in length                        | m                    |
+| $\alpha$   | Coefficient of linear thermal expansion | $1/K$ or $/^\circ C$ |
+| $L$        | Original length                         | m                    |
+| $\Delta T$ | Change in temperature                   | K or $^\circ C$      |
+
+### Temperature Change
+
+$$
+\boxed{\Delta T=T_2-T_1}
+$$
+
+Therefore:
+
+* Heating: $\Delta T>0$ → $\Delta L>0$ → **Expansion**
+* Cooling: $\Delta T<0$ → $\Delta L<0$ → **Contraction**
+
+### Thermal Strain
+
+$$
+\boxed{\varepsilon_{th}=\frac{\Delta L}{L}=\alpha\Delta T}
+$$
+
+Thermal strain is **dimensionless**.
+
+
+## Thermal Expansion — 3 Cases
+
+The basic **free thermal expansion** of a bar is:
+
+$$
+\boxed{\Delta L_{free}=\lambda L\Delta T}
+$$
+
+where $\lambda$ is the coefficient of linear expansion.
+
+---
+
+## 1. Free Expansion
+
+The bar is **completely free to expand or contract**.
+
+### Description
+
+When temperature increases, the bar expands by its natural thermal expansion.
+
+$$
+\boxed{\Delta L_{actual}=\Delta L_{free}=\lambda L\Delta T}
+$$
+
+Thermal strain:
+
+$$
+\boxed{\varepsilon_{th}=\lambda\Delta T}
+$$
+
+Since there is no restraint:
+
+$$
+\boxed{\sigma_{th}=0}
+$$
+
+### Key point
+
+> **Free expansion → Full expansion + Zero thermal stress**
+
+---
+
+## 2. Completely Fixed / Fully Restrained
+
+Both ends are fixed, so the bar **cannot change its length**.
+
+### Description
+
+The bar wants to expand by:
+
+$$
+\Delta L_{free}=\lambda L\Delta T
+$$
+
+but:
+
+$$
+\boxed{\Delta L_{actual}=0}
+$$
+
+The entire free expansion is prevented, producing thermal stress.
+
+Thermal stress:
+
+$$
+\boxed{\sigma_{th}=E\lambda\Delta T}
+$$
+
+For **heating**:
+
+$$
+\boxed{\sigma_{th}=E\lambda\Delta T}
+$$
+
+→ **Compressive stress**
+
+For **cooling**:
+
+$$
+\boxed{\sigma_{th}=E\lambda|\Delta T|}
+$$
+
+→ **Tensile stress**
+
+### Key point
+
+> **Complete restraint → Zero expansion + Maximum thermal stress**
+
+---
+
+## 3. Partially Fixed / Partially Restrained
+
+The bar is allowed to expand **partially**, but not by its complete free expansion.
+
+Suppose:
+
+* Free expansion = $\Delta L_{free}$
+* Actual expansion = $\Delta L_{actual}$
+
+Then:
+
+$$
+\boxed{
+\Delta L_{prevented}
+=
+\Delta L_{free}-\Delta L_{actual}
+}
+$$
+
+Since:
+
+$$
+\Delta L_{free}=\lambda L\Delta T
+$$
+
+Therefore:
+
+$$
+\boxed{
+\Delta L_{prevented}
+=
+\lambda L\Delta T-\Delta L_{actual}
+}
+$$
+
+The restrained strain is:
+
+$$
+\boxed{
+\varepsilon_{restrained}
+=
+\frac{\Delta L_{prevented}}{L}
+}
+$$
+
+Therefore thermal stress is:
+
+$$
+\boxed{
+\sigma_{th}
+=
+E\frac{\Delta L_{prevented}}{L}
+}
+$$
+
+Substituting:
+
+$$
+\boxed{
+\sigma_{th}
+=
+E\left(
+\lambda\Delta T-
+\frac{\Delta L_{actual}}{L}
+\right)
+}
+$$
+
+### Key point
+
+> **Partial restraint → Partial expansion + Partial thermal stress**
+
+---
+
+### 🔥 Comparison of All 3 Cases
+
+| Case                     | Actual expansion                    | Thermal stress                     |
+| ------------------------ | ----------------------------------- | ---------------------------------- |
+| **Free expansion**       | $\lambda L\Delta T$                 | $0$                                |
+| **Completely fixed**     | $0$                                 | $E\lambda\Delta T$                 |
+| **Partially restrained** | Between $0$ and $\lambda L\Delta T$ | Between $0$ and $E\lambda\Delta T$ |
+
+### Easy AMVI Memory
+
+$$
+\boxed{\text{Free} \rightarrow \text{Expansion only}}
+$$
+
+$$
+\boxed{\text{Fully fixed} \rightarrow \text{Stress only}}
+$$
+
+$$
+\boxed{\text{Partially fixed} \rightarrow \text{Expansion + Stress}}
+$$
+
+For heating, the restraint-induced thermal stress is **compressive**; for cooling, it is **tensile**. 
+
+
+# 9.0  Composite Bars
+Yes. For **composite bars**, the two important arrangements are **bars in series** and **bars in parallel**. The key difference is whether the **load or deformation is common**.
+
+## 1. Bars in Series
+
+Bars are connected **end-to-end**.
+
+```text
+        P
+        ↓
+   ┌────────┐
+   │ Bar 1  │  L₁, A₁, E₁
+   └────────┘
+   ┌────────┐
+   │ Bar 2  │  L₂, A₂, E₂
+   └────────┘
+        ↑
+```
+
+### Key concept
+
+For bars in **series**:
+
+> **Same load acts through each bar, but elongation is different.**
+
+Therefore:
+
+$$
+\boxed{P_1=P_2=P}
+$$
+
+### Stress in each bar
+
+$$
+\boxed{\sigma_1=\frac{P}{A_1}}
+$$
+
+$$
+\boxed{\sigma_2=\frac{P}{A_2}}
+$$
+
+So, if areas are different:
+
+$$
+\boxed{\sigma_1\neq\sigma_2}
+$$
+
+### Change in length of each bar
+
+For Bar 1:
+
+$$
+\boxed{\Delta L_1=\frac{PL_1}{A_1E_1}}
+$$
+
+For Bar 2:
+
+$$
+\boxed{\Delta L_2=\frac{PL_2}{A_2E_2}}
+$$
+
+### Total change in length
+
+$$
+\boxed{\Delta L=\Delta L_1+\Delta L_2}
+$$
+
+Therefore:
+
+$$
+\boxed{
+\Delta L=
+\frac{PL_1}{A_1E_1}
++
+\frac{PL_2}{A_2E_2}
+}
+$$
+
+### Strain
+
+For each bar:
+
+$$
+\boxed{\varepsilon_1=\frac{\sigma_1}{E_1}}
+$$
+
+$$
+\boxed{\varepsilon_2=\frac{\sigma_2}{E_2}}
+$$
+
+---
+
+## 2. Bars in Parallel
+
+Bars are connected **side-by-side** between the same two rigid plates.
+
+```text
+             P
+             ↓
+        ┌─────────┐
+        │ Rigid   │
+        │  plate  │
+        └─┬─────┬─┘
+          │     │
+       ┌──┐   ┌──┐
+       │  │   │  │
+       │A₁│   │A₂│
+       │E₁│   │E₂│
+       │  │   │  │
+       └──┘   └──┘
+          │     │
+        ┌─┴─────┴─┐
+        │  plate  │
+        └─────────┘
+```
+
+### Key concept
+
+For bars in **parallel**:
+
+> **Same deformation/strain occurs in each bar, but the load carried by each bar can be different.**
+
+Therefore:
+
+$$
+\boxed{\Delta L_1=\Delta L_2=\Delta L}
+$$
+
+and:
+
+$$
+\boxed{\varepsilon_1=\varepsilon_2=\varepsilon}
+$$
+
+### Load carried by each bar
+
+Total load:
+
+$$
+\boxed{P=P_1+P_2}
+$$
+
+For Bar 1:
+
+$$
+P_1=\frac{A_1E_1}{L}\Delta L
+$$
+
+For Bar 2:
+
+$$
+P_2=\frac{A_2E_2}{L}\Delta L
+$$
+
+Therefore:
+
+$$
+\boxed{
+\frac{P_1}{P_2}
+=
+\frac{A_1E_1}{A_2E_2}
+}
+$$
+
+### Stress in each bar
+
+Since:
+
+$$
+\sigma=\frac{P}{A}
 $$
 
 we get:
 
 $$
-\boxed{\nu=\frac{E}{2G}-1}
-$$
-
-And from:
-
-$$
-E=3K(1-2\nu)
+\boxed{\sigma_1=E_1\varepsilon}
 $$
 
 $$
-\boxed{\nu=\frac{1}{2}\left(1-\frac{E}{3K}\right)}
+\boxed{\sigma_2=E_2\varepsilon}
 $$
 
-------------------------------------------------------------------------
-
-# ⭐ AMVI Formula Sheet --- Simple Stress
-
-  ----------------------------------------------------------------------------
-  Concept                     Formula
-  --------------------------- ------------------------------------------------
-  Normal stress               $\boxed{\sigma=P/A}$
-
-  Shear stress                $\boxed{\tau=P/A}$
-
-  Longitudinal strain         $\boxed{\varepsilon=\Delta L/L}$
-
-  Volumetric strain           $\boxed{\Delta V/V}$
-
-  Shear strain                $\boxed{\gamma\approx\phi}$
-
-  Hooke's law                 $\boxed{\sigma=E\varepsilon}$
-
-  Shear Hooke's law           $\boxed{\tau=G\gamma}$
-
-  Young's modulus             $\boxed{E=\sigma/\varepsilon}$
-
-  Rigidity modulus            $\boxed{G=\tau/\gamma}$
-
-  Poisson's ratio             $\boxed{\nu=-\varepsilon_{lat}/\varepsilon_L}$
-
-  Thermal strain              $\boxed{\alpha\Delta T}$
-
-  Thermal expansion           $\boxed{\Delta L=\alpha L\Delta T}$
-
-  Fully restrained thermal    $\boxed{\sigma=E\alpha\Delta T}$
-  stress                      
-
-  Elastic constant relation   $\boxed{E=2G(1+\nu)}$
-
-  Elastic constant relation   $\boxed{E=3K(1-2\nu)}$
-  ----------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-# 🚨 AMVI MCQ --- Must Remember
-
-### 1. Stress has unit?
+Therefore:
 
 $$
-\boxed{N/m^2=Pa}
+\boxed{
+\frac{\sigma_1}{\sigma_2}
+=
+\frac{E_1}{E_2}
+}
 $$
 
-### 2. Engineering stress unit?
+**Important:** In parallel bars, stress is generally **not equal** if $E_1\neq E_2$.
+
+---
+
+# 🔥 Series vs Parallel — AMVI
+
+| Property         | Series                  | Parallel            |
+| ---------------- | ----------------------- | ------------------- |
+| Arrangement      | End-to-end              | Side-by-side        |
+| Load             | **Same**                | Divided             |
+| Deformation      | Different               | **Same**            |
+| Strain           | Generally different     | **Same**            |
+| Stress           | Generally different     | Generally different |
+| Total load       | $P$                     | $P=P_1+P_2$         |
+| Total elongation | $\Delta L_1+\Delta L_2$ | Common $\Delta L$   |
+
+### Easy memory
+
+**SERIES → Same Stress/Load**
 
 $$
-\boxed{N/mm^2=MPa}
+\boxed{P_1=P_2=P}
 $$
 
-### 3. Strain has unit?
+**PARALLEL → Same Strain/Deformation**
 
 $$
-\boxed{\text{No unit}}
+\boxed{\varepsilon_1=\varepsilon_2}
 $$
 
-### 4. Poisson's ratio has unit?
+These are the two most important rules for solving composite-bar problems.
+
+
+# 10.0 Composite Bars Under Thermal Stress
+
+
+For thermal stress, the same **series vs parallel** idea applies, but now the important quantities are:
+
+* **Free thermal expansion**
+* **Actual expansion**
+* **Compatibility**
+* **Thermal stress**
+
+---
+
+## 1. Bars in Series — Thermal Loading
+
+Bars are connected **end-to-end**.
+
+```text
+ Fixed                                  Free end
+   │                                        │
+   ├──── Bar 1 ────┬──── Bar 2 ────────────┤
+   │   L₁,A₁,E₁    │    L₂,A₂,E₂           │
+```
+
+Suppose both bars experience the same temperature change $\Delta T$.
+
+### Free expansion of each bar
+
+For Bar 1:
 
 $$
-\boxed{\text{No unit}}
+\boxed{\Delta L_{1,free}=\alpha_1L_1\Delta T}
 $$
 
-### 5. Young's modulus represents?
+For Bar 2:
 
 $$
-\boxed{\text{Stiffness}}
+\boxed{\Delta L_{2,free}=\alpha_2L_2\Delta T}
 $$
 
-### 6. Hooke's law?
+If completely free, total expansion is:
 
 $$
-\boxed{\sigma\propto\varepsilon}
+\boxed{
+\Delta L_{free}
+=
+\alpha_1L_1\Delta T+
+\alpha_2L_2\Delta T
+}
 $$
 
-within proportional limit.
+### If the series assembly is restrained
 
-### 7. Maximum engineering stress?
+A thermal stress may develop.
 
-$$
-\boxed{\text{Ultimate tensile stress}}
-$$
-
-### 8. Necking starts after?
+For two bars in series, the **internal axial force is the same**:
 
 $$
-\boxed{\text{Ultimate tensile stress}}
+\boxed{P_1=P_2=P}
 $$
 
-### 9. Free thermal expansion produces?
+The total actual deformation is:
 
 $$
-\boxed{\text{No thermal stress}}
+\boxed{\Delta L=\Delta L_1+\Delta L_2}
 $$
 
-### 10. Fully restrained heating produces?
+For each bar:
 
 $$
-\boxed{\text{Compressive thermal stress}}
+\boxed{
+\Delta L_i=
+\alpha_iL_i\Delta T+
+\frac{PL_i}{A_iE_i}
+}
 $$
 
-### 11. Fully restrained cooling produces?
+Use the appropriate sign for $P$ depending on whether the restraint produces tension or compression.
+
+### Key concept
+
+> **Series → Same internal force, total deformation is the sum of individual deformations.**
+
+---
+
+## 2. Bars in Parallel — Thermal Loading
+
+Bars are connected **side-by-side between common rigid plates**.
+
+```text
+          Rigid plate
+       ┌───────────────┐
+       │               │
+       ├───┐       ┌───┤
+       │ A₁│       │ A₂│
+       │E₁│       │E₂│
+       │α₁│       │α₂│
+       ├───┘       └───┤
+       │               │
+       └───────────────┘
+          Rigid plate
+```
+
+Suppose both bars experience the same temperature change.
+
+### Key concept
+
+Because both bars are connected to the same rigid plates:
 
 $$
-\boxed{\text{Tensile thermal stress}}
+\boxed{\Delta L_1=\Delta L_2=\Delta L}
 $$
 
-### 12. Relation between E and G?
+Therefore:
 
 $$
-\boxed{E=2G(1+\nu)}
+\boxed{\varepsilon_1=\varepsilon_2=\varepsilon}
 $$
 
-### 13. Relation between E and K?
+This is the **compatibility condition**.
+
+But their free thermal expansions may be different:
 
 $$
-\boxed{E=3K(1-2\nu)}
-$$
-
-------------------------------------------------------------------------
-
-# 📝 AMVI Practice MCQs
-
-### Q1. Stress is defined as:
-
-A. Force × area B. Force per unit area C. Deformation per unit length D.
-Energy per unit volume
-
-**Answer: B ✅**
-
-------------------------------------------------------------------------
-
-### Q2. Which quantity is dimensionless?
-
-A. Stress B. Young's modulus C. Strain D. Force
-
-**Answer: C ✅**
-
-------------------------------------------------------------------------
-
-### Q3. A tensile force causes:
-
-A. Decrease in length B. Increase in length C. No deformation D. Only
-angular deformation
-
-**Answer: B ✅**
-
-------------------------------------------------------------------------
-
-### Q4. The slope of the initial straight portion of a stress-strain curve represents:
-
-A. Toughness B. Young's modulus C. Yield stress D. Ultimate stress
-
-**Answer: B ✅**
-
-------------------------------------------------------------------------
-
-### Q5. Hooke's law is valid up to:
-
-A. Ultimate point B. Breaking point C. Proportional limit D. Necking
-point
-
-**Answer: C ✅**
-
-------------------------------------------------------------------------
-
-### Q6. Permanent deformation begins beyond:
-
-A. Origin B. Elastic limit C. Proportional region only D. Ultimate point
-
-**Answer: B ✅**
-
-------------------------------------------------------------------------
-
-### Q7. If the area of a bar is doubled while load remains constant, stress becomes:
-
-A. Double B. Half C. Four times D. Unchanged
-
-**Answer: B ✅**
-
-------------------------------------------------------------------------
-
-### Q8. The modulus of rigidity is:
-
-A. Normal stress / longitudinal strain B. Shear stress / shear strain C.
-Pressure / volume D. Load / area
-
-**Answer: B ✅**
-
-------------------------------------------------------------------------
-
-### Q9. A freely expanding bar subjected to temperature rise develops:
-
-A. Tensile thermal stress B. Compressive thermal stress C. Zero thermal
-stress D. Shear stress
-
-**Answer: C ✅**
-
-------------------------------------------------------------------------
-
-### Q10. For an isotropic material:
-
-$$
-E=?
-$$
-
-A. $G(1+\nu)$ B. $2G(1+\nu)$ C. $3G(1-\nu)$ D. $G/(1+\nu)$
-
-**Answer: B ✅**
-
-------------------------------------------------------------------------
-
-### Q11. If $E=200\,GPa$ and $\nu=0.25$, find $G$.
-
-$$
-G=\frac{E}{2(1+\nu)}
+\Delta L_{1,free}=\alpha_1L\Delta T
 $$
 
 $$
-G=\frac{200}{2(1.25)}
+\Delta L_{2,free}=\alpha_2L\Delta T
+$$
+
+If:
+
+$$
+\alpha_1\neq\alpha_2
+$$
+
+they cannot both expand freely by different amounts because the rigid plates force them to have the **same actual expansion**.
+
+Therefore, internal thermal stresses develop.
+
+---
+
+## Thermal Stress in Each Parallel Bar
+
+For each bar:
+
+$$
+\boxed{
+\sigma_i=E_i(\varepsilon-\alpha_i\Delta T)
+}
+$$
+
+where:
+
+* $\varepsilon$ = common actual strain
+* $\alpha_i\Delta T$ = free thermal strain
+
+The load carried by each bar is:
+
+$$
+\boxed{P_i=\sigma_iA_i}
+$$
+
+For an assembly with **no external axial load**:
+
+$$
+\boxed{P_1+P_2=0}
+$$
+
+Therefore:
+
+$$
+\boxed{\sigma_1A_1+\sigma_2A_2=0}
+$$
+
+---
+
+## 🔥 Important Special Case — Two Parallel Bars
+
+If there is **no external load** and both bars have the same length:
+
+$$
+E_1A_1(\varepsilon-\alpha_1\Delta T)
++
+E_2A_2(\varepsilon-\alpha_2\Delta T)=0
+$$
+
+The common actual strain is:
+
+$$
+\boxed{
+\varepsilon=
+\frac{E_1A_1\alpha_1+E_2A_2\alpha_2}
+{E_1A_1+E_2A_2}
+\Delta T
+}
+$$
+
+Then calculate stress in each bar using:
+
+$$
+\boxed{
+\sigma_1=E_1(\varepsilon-\alpha_1\Delta T)
+}
 $$
 
 $$
-\boxed{G=80\,GPa}
+\boxed{
+\sigma_2=E_2(\varepsilon-\alpha_2\Delta T)
+}
 $$
 
-**Answer: 80 GPa ✅**
+### Important
 
-------------------------------------------------------------------------
+If $\alpha_1>\alpha_2$:
 
-### Q12. A fully restrained steel bar is heated. The thermal stress developed is:
+* Material 1 wants to expand more.
+* The rigid connection prevents it from expanding fully.
+* Material 1 generally develops **compressive stress**.
+* Material 2 generally develops **tensile stress**.
 
-A. Tensile B. Compressive C. Shear D. Zero
+---
 
-**Answer: B --- Compressive ✅**
+## Series vs Parallel — Thermal Case
 
-------------------------------------------------------------------------
+| Property           | Series                                    | Parallel                              |
+| ------------------ | ----------------------------------------- | ------------------------------------- |
+| Arrangement        | End-to-end                                | Side-by-side                          |
+| Free expansion     | $\alpha_1L_1\Delta T+\alpha_2L_2\Delta T$ | Each bar has its own free expansion   |
+| Internal force     | **Same**                                  | Loads/stresses are shared             |
+| Actual deformation | $\Delta L=\Delta L_1+\Delta L_2$          | **Same deformation**                  |
+| Actual strain      | Generally different                       | **Same strain**                       |
+| Compatibility      | Total deformation                         | $\boxed{\varepsilon_1=\varepsilon_2}$ |
+| Main equation      | Deformations add                          | Forces balance                        |
 
-# 🎯 Chapter 1 --- Simple Stress: Completion Status
+### 🔑 AMVI Memory
 
-     No. Topic                                  Status
-  ------ ------------------------------------- --------
-     1.1 Load & Internal Resistance               ✅
-     1.2 Stress                                   ✅
-     1.3 Types of Stress                          ✅
-     1.4 Direct Stress                            ✅
-     1.5 Strain                                   ✅
-     1.6 Types of Strain                          ✅
-     1.7 Hooke's Law                              ✅
-     1.8 Elasticity & Plasticity                  ✅
-     1.9 Proportional & Elastic Limit             ✅
-    1.10 Stress-Strain Curve                      ✅
-    1.11 Poisson's Ratio                          ✅
-    1.12 Thermal Stress & Strain                  ✅
-    1.13 Elastic Constants                        ✅
-    1.14 Relations Between Elastic Constants      ✅
+**Series:**
 
-**For our AMVI preparation, I would consider the basic theory covered,
-but not the chapter fully mastered yet until we do a dedicated set of
-formula-based, conceptual, and numerical MCQs.** The next major syllabus
-keyword is **2. Strain Energy**.
+$$
+\boxed{P_1=P_2}
+$$
+
+**Parallel:**
+
+$$
+\boxed{\Delta L_1=\Delta L_2}
+$$
+
+and therefore:
+
+$$
+\boxed{\varepsilon_1=\varepsilon_2}
+$$
+
+**Thermal stress develops when the actual deformation is different from the deformation the material would freely undergo.** 
