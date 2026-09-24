@@ -6,6 +6,20 @@ nav:
   - AMVI:
       - SOM:
           - Stress: som/stress-strain_notes.md
+      - Fluid:
+          - Fluids and their properties:
+            - Basics of Fluid: fluid/Fluids_and_their_properties/fluids_basic_concepts.md
+            - Density: fluid/Fluids_and_their_properties/density.md
+            - Specific Weight: fluid/Fluids_and_their_properties/specific_weight.md
+            - Specific Gravity: fluid/Fluids_and_their_properties/specific_gravity.md
+            - Specific Volume: fluid/Fluids_and_their_properties/Specific_Volume.md
+            - Types of Fluid: fluid/Fluids_and_their_properties/types_of_fluid.md
+          - Fluid Pressure
+            - Vapour Pressure: fluid/fluid-pressure/vapour-pressure.md
+            - Fluid Pressure: fluid/fluid-pressure/fluid-pressure.md
+
+            
+            
      
          
 
