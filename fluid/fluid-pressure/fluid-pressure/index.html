@@ -1,0 +1,6724 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://automation-study-material.github.io/automation-testing/fluid/fluid-pressure/fluid-pressure/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AMVI – Hydraulics & Fluid Mechanics - Automation Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#amvi-hydraulics-fluid-mechanics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Automation Notes" class="md-header__button md-logo" aria-label="Automation Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Automation Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AMVI – Hydraulics &amp; Fluid Mechanics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Automation Notes" class="md-nav__button md-logo" aria-label="Automation Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Automation Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMVI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AMVI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SOM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../som/stress-strain_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/dataTypeVariableBasics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DataTypesBasics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-flow-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FlowControl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constructor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Constructor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/constructor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/constructor-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/this-vs-super-and-inheritance-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/access-modifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access modifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/hashCode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HashCode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oops Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Oops Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_1" id="__nav_2_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Encapsulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/encapsulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/encapsulation-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adavance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inheritance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inheritance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/inheritance-advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Abstraction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/abstraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/abstraction-in-depth1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/abstraction-in-depth2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/abstraction_notes4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstraction-Notes-4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oops Concept Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Oops Concept Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/code-Oppos-concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/code-oppose-concepts-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/code-oppose-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    code-3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/Java-SeleniumFramework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Selenium Implementaions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Error Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/exception/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Try Vs Catch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/exception/throw-throws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Throw vs throws
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/exception/custome-exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custome Exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Collections
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/collections/ArrayList/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArrayList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/collections/LinkedList/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/collections/arrayList-LinkedList-when-we-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArrayList vs LinkedList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/collections/stake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/collections/HashSet-vs-LinkedHashSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HashSet vs LinkedHashSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/collections/Map-Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/collections/hashmap-internal-working/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map Internal Working
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/collections/Java-Iterator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iterator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wrapper Class
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wrapper Class
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/wrapper-classes/wrapper-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wrapper class
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java 8 Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java 8 Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-8-features/lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11_2" id="__nav_2_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stream API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stream API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-8-features/stream-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stream doc 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-8-features/stream-master/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stream doc 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-8-features/functional-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-8-features/interface-default-static-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interface Default and static methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-8-features/base64-Encodeing-decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base64 encoding decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-8-features/data-time-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Time API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Program
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java Program
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Array
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Array
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/Sorting_Array_And_2nd_highest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorting Of Array and Find second Largest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/FindDuplicateFromArray/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find Duplicate From Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/DuplicateFromArrayByHashSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find Duplicate From Array By HashSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/FindUniqueFromArray/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FInd unique From Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/Min_Max_From_Array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find Max & Min from ARray
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/Reverse_Array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/Reverse_First_Half_Array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse First Half of Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/Reverse_Second_Half_Array2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revrese Second Half of Array
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java-concepts/java-program/array/ZeroLeftSizeOneRightSide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Move all Zero to left side
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium V4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Selenium V4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/v4/locator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/v4/w3c-grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W3C protocall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/v4/webDriverManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebDriver Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/v4/window-devtool-screen-opertaion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window Dev tool screen operation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Selenium
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/selenium-code/find-broken-link/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find Broken link from webpage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/x-path-axes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Xpath Axes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Pattern
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design Pattern
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/design-pattern/page-object-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    page factory/ page object model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/design-pattern/driver-factory-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver Factory Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/design-pattern/singleton-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Singl ton pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/design-pattern/template-method-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Template Method pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/exception/selenium-exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium Exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/selenium-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium All Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selenium/shaddow_dom_element/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shaddow DOM Element Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDD Cucumber
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BDD Cucumber
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/why_bdd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why BDD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/cucumber/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cucumber Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/cucumber-tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CucumberTags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/cucumber-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cucumber Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/cucumber-tag-inheritance-hooks-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CucumberTags & Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/Background_vs_Hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background VS Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/scenario_outline_vs_data_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario Outline VS DataTable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/cucumber_parallel_execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parallel execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/Strict-vs-dryRun/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DryRun vs Strict
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/cucumber_scenario_execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cucumber Scenario Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/extends_reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extends Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/selenium-bdd-cucumber-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDD Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/stefDefAmbigity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stef Def Ambiguity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TestNg
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TestNg
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/testNg-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TestNG Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/core-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/dependency-resolve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depends on Methode and Groups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/skippingTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skipping test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/invocationCount_threaPool_dataProvider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invocation Count and Data Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/testingDataDriven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Data Driven
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/xmlConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XMl configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/extends-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extend Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/retry-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry Mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testng/xml-sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest Assured
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rest Assured
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/why-api-important-how-to-start-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why API Important to test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/api-testing-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API testing checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest vs Soap
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rest vs Soap
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/soap-vs-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest vs Soap difference one
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/soap-vs-rest2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest vs Soap difference two
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/rest-assured-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rest API Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/URI-vs-URL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URI vs URL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/rest-assured-jsonpath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JsonPath
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/data-loading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/response-handle-pojo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET/POST Resposne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/interview-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Question
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/rest_assured_framework.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postman
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Postman
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rest-assured/postmand_valiodation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postman Script for Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlayWright With Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PlayWright With Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playwright-Java/locator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JavaScript Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/30-day-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RoadMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synchronous & ASynchronous
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Synchronous & ASynchronous
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/Synchronous-And-Asynchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/Synchronous-vs-Asynchronous-deep-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    deep guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/dataTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/var-vs-let-vaiable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Var vs Let
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/variables-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vaiables snipped code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/objects-in-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Objects in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/flow-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/Arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays & Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/string-in-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String in JS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/set-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set & Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/class-constructor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class & Constructor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/arrow-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrow Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/regularfunction-vs-arrowFunction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Function vs Arrow Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/js-promises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Promises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/js-promises-snipped-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Promises – Snippet Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/basics-interview-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlayWright with Javascript
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PlayWright with Javascript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/test-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/sample-playwright-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Playwright Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/page-vs-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page vs Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/locators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/methods-in-playwright/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods in Playwright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/sendkeys-command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SendKeys Command
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/inputValue%26TextContent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Value & Text Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/dropdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dropdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/auto-suggestion-dropdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auto Suggestion Dropdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/radio-buttons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/alert-iframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert & Iframe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/window-tab-handle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window & Tab Handle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/calender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/playwright-assertion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playwright Assertions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/json-data-iteration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Data Iteration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascriptConcepts/jscode/customeFixureToGetTestData/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Fixture to Get Test Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="amvi-hydraulics-fluid-mechanics">AMVI – Hydraulics &amp; Fluid Mechanics<a class="headerlink" href="#amvi-hydraulics-fluid-mechanics" title="Permanent link">&para;</a></h1>
+<h1 id="4-fluid-pressure-complete-mcq-oriented-notes">4. FLUID PRESSURE – Complete MCQ-Oriented Notes<a class="headerlink" href="#4-fluid-pressure-complete-mcq-oriented-notes" title="Permanent link">&para;</a></h1>
+<hr />
+<h1 id="41-pressure">4.1 Pressure<a class="headerlink" href="#41-pressure" title="Permanent link">&para;</a></h1>
+<h2 id="411-definition">4.1.1 Definition<a class="headerlink" href="#411-definition" title="Permanent link">&para;</a></h2>
+<p><strong>Pressure is the normal force acting per unit area.</strong></p>
+<div class="highlight"><pre><span></span><code>P = \frac{F}{A}
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><code>P</code> = pressure</li>
+<li><code>F</code> = normal force</li>
+<li><code>A</code> = area</li>
+</ul>
+<h3 id="important">Important<a class="headerlink" href="#important" title="Permanent link">&para;</a></h3>
+<p>Pressure force acts <strong>normal/perpendicular to the surface</strong>.</p>
+<div class="highlight"><pre><span></span><code>Draw:
+Fluid element with pressure force acting normal to its surface.
+</code></pre></div>
+<hr />
+<h2 id="412-pressure-in-a-static-fluid">4.1.2 Pressure in a Static Fluid<a class="headerlink" href="#412-pressure-in-a-static-fluid" title="Permanent link">&para;</a></h2>
+<p>A very important AMVI concept:</p>
+<blockquote>
+<p><strong>In a fluid at rest, shear stress is zero, but normal stress is not zero.</strong></p>
+</blockquote>
+<p>Why?</p>
+<p>A fluid cannot sustain a shear stress when it is at rest. If a shear stress acts continuously, the fluid starts flowing.</p>
+<p>However, the fluid can have <strong>normal stress due to pressure</strong>.</p>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>Static fluid:
+
+Shear stress (τ) = 0
+Normal stress = Pressure ≠ 0
+</code></pre></div>
+<h3 id="amvi-mcq">⭐ AMVI MCQ<a class="headerlink" href="#amvi-mcq" title="Permanent link">&para;</a></h3>
+<p><strong>For a fluid at rest, which statement is correct?</strong></p>
+<p>A. Shear stress = 0 and normal stress = 0
+B. Shear stress ≠ 0 and normal stress = 0
+C. Shear stress = 0 and normal stress ≠ 0
+D. Both are always non-zero</p>
+<p><strong>Answer: C</strong> ✅</p>
+<hr />
+<h1 id="413-si-unit">4.1.3 SI Unit<a class="headerlink" href="#413-si-unit" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>Pressure = Pascal (Pa)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>1 Pa = 1 \frac{N}{m^2}
+</code></pre></div>
+<p>Important conversions:</p>
+<div class="highlight"><pre><span></span><code>1 kPa = 10³ Pa
+1 MPa = 10⁶ Pa
+1 bar = 10⁵ Pa
+</code></pre></div>
+<p>Standard atmospheric pressure:</p>
+<div class="highlight"><pre><span></span><code>1 atm ≈ 101.325 kPa
+</code></pre></div>
+<hr />
+<h1 id="414-dimension-of-pressure">4.1.4 Dimension of Pressure<a class="headerlink" href="#414-dimension-of-pressure" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>[P] = ML^{-1}T^{-2}
+</code></pre></div>
+<h3 id="remember">Remember<a class="headerlink" href="#remember" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Pressure → <code>ML⁻¹T⁻²</code></strong></p>
+</blockquote>
+<hr />
+<h1 id="42-atmospheric-pressure">4.2 Atmospheric Pressure<a class="headerlink" href="#42-atmospheric-pressure" title="Permanent link">&para;</a></h1>
+<h2 id="421-definition">4.2.1 Definition<a class="headerlink" href="#421-definition" title="Permanent link">&para;</a></h2>
+<p>The atmosphere has weight. The weight of the atmospheric air produces pressure on the Earth's surface.</p>
+<p>This is called:</p>
+<blockquote>
+<p><strong>Atmospheric pressure</strong></p>
+</blockquote>
+<p>Symbol:</p>
+<div class="highlight"><pre><span></span><code>Patm
+</code></pre></div>
+<hr />
+<h2 id="422-standard-atmospheric-pressure">4.2.2 Standard Atmospheric Pressure<a class="headerlink" href="#422-standard-atmospheric-pressure" title="Permanent link">&para;</a></h2>
+<p>At approximately sea level:</p>
+<div class="highlight"><pre><span></span><code>Patm = 101325 Pa
+     = 101.325 kPa
+     ≈ 1.01325 bar
+     = 760 mm Hg
+     = 76 cm Hg
+</code></pre></div>
+<h3 id="remember_1">⭐ Remember<a class="headerlink" href="#remember_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1 atm
+≈ 101.325 kPa
+≈ 1.01325 bar
+= 760 mm Hg
+</code></pre></div>
+<hr />
+<h1 id="423-measurement-of-atmospheric-pressure">4.2.3 Measurement of Atmospheric Pressure<a class="headerlink" href="#423-measurement-of-atmospheric-pressure" title="Permanent link">&para;</a></h1>
+<p>Atmospheric pressure is measured using a:</p>
+<blockquote>
+<p><strong>Barometer</strong></p>
+</blockquote>
+<h3 id="important-distinction">Important distinction<a class="headerlink" href="#important-distinction" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Barometer → Atmospheric pressure
+Manometer → Pressure / pressure difference
+Bourdon gauge → Pressure
+</code></pre></div>
+<h3 id="mcq">⭐ MCQ<a class="headerlink" href="#mcq" title="Permanent link">&para;</a></h3>
+<p><strong>Atmospheric pressure is measured by:</strong></p>
+<p>A. Piezometer
+B. Barometer
+C. Bourdon gauge
+D. Venturimeter</p>
+<p><strong>Answer: B — Barometer</strong> ✅</p>
+<hr />
+<h2 id="424-atmospheric-pressure-and-altitude">4.2.4 Atmospheric Pressure and Altitude<a class="headerlink" href="#424-atmospheric-pressure-and-altitude" title="Permanent link">&para;</a></h2>
+<p>As altitude increases:</p>
+<div class="highlight"><pre><span></span><code>Altitude ↑
+    ↓
+Atmospheric pressure ↓
+</code></pre></div>
+<p>Therefore atmospheric pressure is generally <strong>maximum near sea level</strong> compared with higher elevations.</p>
+<hr />
+<h1 id="43-absolute-pressure">4.3 Absolute Pressure<a class="headerlink" href="#43-absolute-pressure" title="Permanent link">&para;</a></h1>
+<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p>Absolute pressure is measured from <strong>perfect vacuum</strong>.</p>
+<p>Perfect vacuum is:</p>
+<div class="highlight"><pre><span></span><code>Pabsolute = 0
+</code></pre></div>
+<p>Therefore absolute pressure is always:</p>
+<div class="highlight"><pre><span></span><code>Pabs ≥ 0
+</code></pre></div>
+<hr />
+<h2 id="431-relation">4.3.1 Relation<a class="headerlink" href="#431-relation" title="Permanent link">&para;</a></h2>
+<p>For pressure above atmospheric:</p>
+<div class="highlight"><pre><span></span><code>P_{abs}=P_{atm}+P_g
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>P_g=P_{abs}-P_{atm}
+</code></pre></div>
+<hr />
+<h1 id="44-gauge-pressure">4.4 Gauge Pressure<a class="headerlink" href="#44-gauge-pressure" title="Permanent link">&para;</a></h1>
+<h2 id="definition_1">Definition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Gauge pressure is pressure measured with respect to atmospheric pressure.</strong></p>
+</blockquote>
+<p>This is one of the most important definitions for AMVI.</p>
+<div class="highlight"><pre><span></span><code>P_g=P_{abs}-P_{atm}
+</code></pre></div>
+<hr />
+<h2 id="441-gauge-pressure-can-be-positive-or-negative">4.4.1 Gauge Pressure Can Be Positive or Negative ⭐⭐⭐<a class="headerlink" href="#441-gauge-pressure-can-be-positive-or-negative" title="Permanent link">&para;</a></h2>
+<p>Yes.</p>
+<h3 id="positive-gauge-pressure">Positive gauge pressure<a class="headerlink" href="#positive-gauge-pressure" title="Permanent link">&para;</a></h3>
+<p>When:</p>
+<div class="highlight"><pre><span></span><code>Pabs &gt; Patm
+</code></pre></div>
+<p>then:</p>
+<div class="highlight"><pre><span></span><code>Pg &gt; 0
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Patm = 100 kPa
+Pabs = 250 kPa
+
+Pg = 250 - 100
+   = +150 kPa
+</code></pre></div>
+<hr />
+<h3 id="negative-gauge-pressure">Negative gauge pressure<a class="headerlink" href="#negative-gauge-pressure" title="Permanent link">&para;</a></h3>
+<p>When:</p>
+<div class="highlight"><pre><span></span><code>Pabs &lt; Patm
+</code></pre></div>
+<p>then:</p>
+<div class="highlight"><pre><span></span><code>Pg &lt; 0
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Patm = 100 kPa
+Pabs = 70 kPa
+
+Pg = 70 - 100
+   = -30 kPa
+</code></pre></div>
+<p>This represents a <strong>vacuum condition</strong> relative to atmosphere.</p>
+<h3 id="important_1">⭐ Important<a class="headerlink" href="#important_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Gauge pressure can be positive, zero, or negative.</strong></p>
+</blockquote>
+<p>But:</p>
+<blockquote>
+<p><strong>Absolute pressure cannot be negative.</strong></p>
+</blockquote>
+<hr />
+<h1 id="45-vacuum-pressure">4.5 Vacuum Pressure<a class="headerlink" href="#45-vacuum-pressure" title="Permanent link">&para;</a></h1>
+<h2 id="definition_2">Definition<a class="headerlink" href="#definition_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vacuum pressure is the pressure below atmospheric pressure.</strong></p>
+</blockquote>
+<p>More precisely, it is the difference between atmospheric pressure and absolute pressure when the absolute pressure is below atmospheric pressure.</p>
+<div class="highlight"><pre><span></span><code>P_{vac}=P_{atm}-P_{abs}
+</code></pre></div>
+<p>Since:</p>
+<div class="highlight"><pre><span></span><code>P_g=P_{abs}-P_{atm}
+</code></pre></div>
+<p>we get:</p>
+<div class="highlight"><pre><span></span><code>P_{vac}=-P_g
+</code></pre></div>
+<p>when gauge pressure is negative.</p>
+<hr />
+<h2 id="451-pressure-relationship">4.5.1 Pressure Relationship<a class="headerlink" href="#451-pressure-relationship" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Perfect Vacuum
+      │
+      │
+      ↓
+Absolute Pressure
+      │
+      │ Vacuum pressure
+      ↓
+Atmospheric Pressure
+      │
+      │ Gauge pressure
+      ↓
+Higher Pressure
+</code></pre></div>
+<h3 id="easy-memory">Easy memory<a class="headerlink" href="#easy-memory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Above atmosphere → Positive gauge pressure
+
+Below atmosphere → Negative gauge pressure
+                  → Vacuum pressure
+</code></pre></div>
+<hr />
+<h1 id="46-pressure-head">4.6 Pressure Head<a class="headerlink" href="#46-pressure-head" title="Permanent link">&para;</a></h1>
+<p>Pressure can also be expressed as the height of an equivalent liquid column.</p>
+<p>This is called:</p>
+<blockquote>
+<p><strong>Pressure head</strong></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>h_p=\frac{P}{\rho g}
+</code></pre></div>
+<p>Since:</p>
+<div class="highlight"><pre><span></span><code>\gamma=\rho g
+</code></pre></div>
+<p>we can write:</p>
+<div class="highlight"><pre><span></span><code>h_p=\frac{P}{\gamma}
+</code></pre></div>
+<p>Unit:</p>
+<div class="highlight"><pre><span></span><code>metre (m)
+</code></pre></div>
+<p>Dimension:</p>
+<div class="highlight"><pre><span></span><code>[L]
+</code></pre></div>
+<h3 id="important-mcq">Important MCQ<a class="headerlink" href="#important-mcq" title="Permanent link">&para;</a></h3>
+<p><strong>Unit of pressure head is:</strong></p>
+<p>A. Pa
+B. N/m²
+C. m
+D. kg/m³</p>
+<p><strong>Answer: C</strong> ✅</p>
+<hr />
+<h1 id="47-hydrostatic-pressure">4.7 Hydrostatic Pressure<a class="headerlink" href="#47-hydrostatic-pressure" title="Permanent link">&para;</a></h1>
+<h2 id="471-meaning">4.7.1 Meaning<a class="headerlink" href="#471-meaning" title="Permanent link">&para;</a></h2>
+<p>Hydrostatic pressure is pressure in a <strong>fluid at rest</strong>.</p>
+<p>Hydro:</p>
+<blockquote>
+<p>Fluid</p>
+</blockquote>
+<p>Static:</p>
+<blockquote>
+<p>At rest</p>
+</blockquote>
+<hr />
+<h2 id="472-hydrostatic-pressure-equation">4.7.2 Hydrostatic Pressure Equation<a class="headerlink" href="#472-hydrostatic-pressure-equation" title="Permanent link">&para;</a></h2>
+<p>For a fluid at rest:</p>
+<div class="highlight"><pre><span></span><code>P=\rho gh
+</code></pre></div>
+<p>or:</p>
+<div class="highlight"><pre><span></span><code>P=\gamma h
+</code></pre></div>
+<p>where:</p>
+<ul>
+<li><code>P</code> = gauge pressure</li>
+<li><code>ρ</code> = density</li>
+<li><code>g</code> = gravitational acceleration</li>
+<li><code>h</code> = depth</li>
+<li><code>γ</code> = specific weight</li>
+</ul>
+<hr />
+<h1 id="473-differential-hydrostatic-equation">4.7.3 Differential Hydrostatic Equation ⭐⭐⭐<a class="headerlink" href="#473-differential-hydrostatic-equation" title="Permanent link">&para;</a></h1>
+<p>The basic hydrostatic pressure relationship is:</p>
+<div class="highlight"><pre><span></span><code>\frac{dP}{dh}=-\gamma
+</code></pre></div>
+<p>or:</p>
+<div class="highlight"><pre><span></span><code>\frac{dP}{dh}=-\rho g
+</code></pre></div>
+<p>The negative sign appears because <strong>pressure decreases as elevation <code>h</code> increases</strong>.</p>
+<p>If depth is measured downward instead of elevation upward, the relationship becomes:</p>
+<div class="highlight"><pre><span></span><code>dP=\rho g\,dh
+</code></pre></div>
+<h3 id="important-mcq_1">Important MCQ<a class="headerlink" href="#important-mcq_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><code>dP/dh = -γ</code> represents the <strong>hydrostatic pressure equation</strong>.</p>
+</blockquote>
+<p>It is <strong>not Pascal's law</strong>.</p>
+<hr />
+<h1 id="474-pascals-law-vs-hydrostatic-equation">4.7.4 Pascal's Law vs Hydrostatic Equation<a class="headerlink" href="#474-pascals-law-vs-hydrostatic-equation" title="Permanent link">&para;</a></h1>
+<p>These two are commonly confused.</p>
+<h2 id="pascals-law">Pascal's Law<a class="headerlink" href="#pascals-law" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Pressure applied to a confined fluid is transmitted undiminished in all directions and acts normally on the containing surfaces.</p>
+</blockquote>
+<p>Example:</p>
+<ul>
+<li>Hydraulic jack</li>
+<li>Hydraulic press</li>
+<li>Hydraulic brake</li>
+</ul>
+<hr />
+<h2 id="hydrostatic-equation">Hydrostatic equation<a class="headerlink" href="#hydrostatic-equation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>\frac{dP}{dh}=-\gamma
+</code></pre></div>
+<p>It describes how pressure changes with <strong>elevation/depth in a static fluid</strong>.</p>
+<h3 id="mcq-trap">⭐ MCQ Trap<a class="headerlink" href="#mcq-trap" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Pascal's law       → transmission of applied pressure
+
+dP/dh = -γ         → hydrostatic pressure variation
+</code></pre></div>
+<hr />
+<h1 id="475-factors-affecting-hydrostatic-pressure">4.7.5 Factors Affecting Hydrostatic Pressure<a class="headerlink" href="#475-factors-affecting-hydrostatic-pressure" title="Permanent link">&para;</a></h1>
+<p>From:</p>
+<div class="highlight"><pre><span></span><code>P=\rho gh
+</code></pre></div>
+<p>we can see:</p>
+<h3 id="density-increases">Density increases<a class="headerlink" href="#density-increases" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ρ ↑ → P ↑
+</code></pre></div>
+<h3 id="depth-increases">Depth increases<a class="headerlink" href="#depth-increases" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>h ↑ → P ↑
+</code></pre></div>
+<h3 id="gravity-increases">Gravity increases<a class="headerlink" href="#gravity-increases" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>g ↑ → P ↑
+</code></pre></div>
+<hr />
+<h1 id="476-pressure-increases-with-depth">4.7.6 Pressure Increases with Depth<a class="headerlink" href="#476-pressure-increases-with-depth" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>Free surface
+────────────────────────
+          ↓
+          │ h₁
+          ↓
+       Point A
+────────────────────────
+          ↓
+          │ h₂
+          ↓
+       Point B
+────────────────────────
+</code></pre></div>
+<p>If:</p>
+<div class="highlight"><pre><span></span><code>h₂ &gt; h₁
+</code></pre></div>
+<p>then:</p>
+<div class="highlight"><pre><span></span><code>PB &gt; PA
+</code></pre></div>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Pressure increases with depth.</strong></p>
+</blockquote>
+<h3 id="diagram-space">[DIAGRAM SPACE]<a class="headerlink" href="#diagram-space" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Draw water tank showing pressure increasing with depth.
+</code></pre></div>
+<hr />
+<h1 id="477-pressure-at-same-depth">4.7.7 Pressure at Same Depth<a class="headerlink" href="#477-pressure-at-same-depth" title="Permanent link">&para;</a></h1>
+<p>For the same continuous fluid at rest:</p>
+<div class="highlight"><pre><span></span><code>A ●────────────● B
+</code></pre></div>
+<p>if A and B are at the same depth:</p>
+<div class="highlight"><pre><span></span><code>P_A=P_B
+</code></pre></div>
+<h3 id="very-important">⭐ Very important<a class="headerlink" href="#very-important" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Same fluid + same depth + static condition → same pressure.</strong></p>
+</blockquote>
+<hr />
+<h1 id="478-container-shape-does-not-directly-affect-hydrostatic-pressure">4.7.8 Container Shape Does Not Directly Affect Hydrostatic Pressure<a class="headerlink" href="#478-container-shape-does-not-directly-affect-hydrostatic-pressure" title="Permanent link">&para;</a></h1>
+<p>For a static liquid:</p>
+<div class="highlight"><pre><span></span><code>P=\rho gh
+</code></pre></div>
+<p>There is no container-shape term.</p>
+<p>Therefore, at the same depth:</p>
+<blockquote>
+<p>Pressure is independent of the shape of the container.</p>
+</blockquote>
+<h3 id="mcq-trap_1">MCQ Trap<a class="headerlink" href="#mcq-trap_1" title="Permanent link">&para;</a></h3>
+<p>Different containers may contain different quantities of water but pressure at the same depth can be the same.</p>
+<hr />
+<h1 id="48-pressure-measurement">4.8 Pressure Measurement<a class="headerlink" href="#48-pressure-measurement" title="Permanent link">&para;</a></h1>
+<p>Major instruments:</p>
+<div class="highlight"><pre><span></span><code>Pressure Measurement
+│
+├── Barometer
+├── Piezometer
+├── Manometer
+│   ├── Simple U-tube
+│   ├── Differential U-tube
+│   └── Inclined manometer
+└── Bourdon pressure gauge
+</code></pre></div>
+<hr />
+<h1 id="49-piezometer">4.9 Piezometer<a class="headerlink" href="#49-piezometer" title="Permanent link">&para;</a></h1>
+<h2 id="definition_3">Definition<a class="headerlink" href="#definition_3" title="Permanent link">&para;</a></h2>
+<p>A piezometer is a simple vertical tube connected to a pipe/vessel and open to atmosphere.</p>
+<p>It measures:</p>
+<blockquote>
+<p><strong>Pressure head of a liquid.</strong></p>
+</blockquote>
+<h3 id="diagram-space_1">[DIAGRAM SPACE]<a class="headerlink" href="#diagram-space_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Draw a vertical piezometer connected to a pipe.
+</code></pre></div>
+<hr />
+<h2 id="principle">Principle<a class="headerlink" href="#principle" title="Permanent link">&para;</a></h2>
+<p>It works using hydrostatic balance.</p>
+<div class="highlight"><pre><span></span><code>P=\rho gh
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>h=\frac{P}{\rho g}
+</code></pre></div>
+<hr />
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<p>Used for:</p>
+<ul>
+<li>Liquid pressure measurement</li>
+<li>Pressure head measurement</li>
+<li>Low/moderate liquid pressures</li>
+</ul>
+<hr />
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<p>A piezometer is generally not suitable for:</p>
+<ul>
+<li>Gas pressure</li>
+<li>Very high pressure</li>
+<li>Very low pressure requiring a very tall liquid column</li>
+</ul>
+<h3 id="mcq_1">⭐ MCQ<a class="headerlink" href="#mcq_1" title="Permanent link">&para;</a></h3>
+<p><strong>Piezometer is primarily used for:</strong></p>
+<blockquote>
+<p>Liquid pressure/head</p>
+</blockquote>
+<hr />
+<h1 id="410-manometer">4.10 Manometer<a class="headerlink" href="#410-manometer" title="Permanent link">&para;</a></h1>
+<h2 id="4101-purpose-of-manometer">4.10.1 Purpose of Manometer<a class="headerlink" href="#4101-purpose-of-manometer" title="Permanent link">&para;</a></h2>
+<p>A manometer is used to measure:</p>
+<blockquote>
+<p><strong>Pressure or pressure difference by balancing liquid columns under hydrostatic conditions.</strong></p>
+</blockquote>
+<p>The basic principle is:</p>
+<div class="highlight"><pre><span></span><code>P=\rho gh
+</code></pre></div>
+<p>A manometer converts pressure into a measurable <strong>liquid-column height difference</strong>.</p>
+<hr />
+<h2 id="4102-main-uses">4.10.2 Main Uses<a class="headerlink" href="#4102-main-uses" title="Permanent link">&para;</a></h2>
+<p>Manometers can measure:</p>
+<ol>
+<li>Gauge pressure</li>
+<li>Vacuum pressure</li>
+<li>Pressure difference</li>
+<li>Small pressure differences, depending on design</li>
+</ol>
+<hr />
+<h1 id="4103-important-manometer-rule">4.10.3 Important Manometer Rule ⭐⭐⭐<a class="headerlink" href="#4103-important-manometer-rule" title="Permanent link">&para;</a></h1>
+<p>When solving a manometer:</p>
+<div class="highlight"><pre><span></span><code>Move DOWN through a liquid:
+Pressure increases
+
+Move UP through a liquid:
+Pressure decreases
+</code></pre></div>
+<p>Mathematically:</p>
+<div class="highlight"><pre><span></span><code>\Delta P=\rho g\Delta h
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>DOWN → +ρgΔh
+
+UP → −ρgΔh
+</code></pre></div>
+<hr />
+<h1 id="4104-manometric-fluid">4.10.4 Manometric Fluid<a class="headerlink" href="#4104-manometric-fluid" title="Permanent link">&para;</a></h1>
+<p>The liquid used inside a manometer is called:</p>
+<blockquote>
+<p><strong>Manometric fluid</strong></p>
+</blockquote>
+<p>It should be selected according to the pressure range and the fluids being measured.</p>
+<hr />
+<h1 id="411-simple-u-tube-manometer">4.11 Simple U-Tube Manometer<a class="headerlink" href="#411-simple-u-tube-manometer" title="Permanent link">&para;</a></h1>
+<p>A simple U-tube manometer generally measures pressure at one point relative to atmospheric pressure/reference pressure.</p>
+<h3 id="diagram-space_2">[DIAGRAM SPACE]<a class="headerlink" href="#diagram-space_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Draw:
+Simple U-tube manometer connected to a pipe
+with manometric liquid at the bottom.
+</code></pre></div>
+<hr />
+<h2 id="working-principle">Working Principle<a class="headerlink" href="#working-principle" title="Permanent link">&para;</a></h2>
+<p>Pressure from the pipe causes the manometric liquid levels to change.</p>
+<p>The difference in levels is related to pressure through hydrostatic balance.</p>
+<p>For a simple arrangement, the basic idea is:</p>
+<div class="highlight"><pre><span></span><code>P \sim \rho g h
+</code></pre></div>
+<p>The exact equation depends on the fluids and connection arrangement.</p>
+<hr />
+<h1 id="412-differential-u-tube-manometer">4.12 Differential U-Tube Manometer<a class="headerlink" href="#412-differential-u-tube-manometer" title="Permanent link">&para;</a></h1>
+<h2 id="definition_4">Definition<a class="headerlink" href="#definition_4" title="Permanent link">&para;</a></h2>
+<p>A differential manometer is used to determine:</p>
+<blockquote>
+<p><strong>Pressure difference between two points.</strong></p>
+</blockquote>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>Point A ───────────── Point B
+    │                   │
+    │                   │
+    └──── U-tube ───────┘
+</code></pre></div>
+<h3 id="diagram-space_3">[DIAGRAM SPACE]<a class="headerlink" href="#diagram-space_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Draw:
+Differential U-tube manometer connected between
+two points A and B in a pipe.
+</code></pre></div>
+<hr />
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<p>If:</p>
+<div class="highlight"><pre><span></span><code>P_A&gt;P_B
+</code></pre></div>
+<p>the liquid levels move in a corresponding manner.</p>
+<p>The manometer allows us to determine:</p>
+<div class="highlight"><pre><span></span><code>\Delta P=P_A-P_B
+</code></pre></div>
+<hr />
+<h2 id="simple-vs-differential-manometer">Simple vs Differential Manometer<a class="headerlink" href="#simple-vs-differential-manometer" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Simple U-tube</th>
+<th>Differential U-tube</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pressure at one point</td>
+<td>Pressure difference</td>
+</tr>
+<tr>
+<td>One point connected to pipe/reference</td>
+<td>Two points connected</td>
+</tr>
+<tr>
+<td>Often referenced to atmosphere</td>
+<td>Compares A and B</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mcq_2">⭐ MCQ<a class="headerlink" href="#mcq_2" title="Permanent link">&para;</a></h3>
+<p><strong>Which instrument is specifically used to measure pressure difference between two points?</strong></p>
+<blockquote>
+<p>Differential manometer.</p>
+</blockquote>
+<hr />
+<h1 id="413-inclined-manometer">4.13 Inclined Manometer ⭐⭐⭐<a class="headerlink" href="#413-inclined-manometer" title="Permanent link">&para;</a></h1>
+<p>An inclined manometer is a manometer whose measuring tube is inclined at a small angle.</p>
+<h3 id="diagram-space_4">[DIAGRAM SPACE]<a class="headerlink" href="#diagram-space_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Draw:
+Inclined manometer with angle θ and
+small pressure difference.
+</code></pre></div>
+<hr />
+<h2 id="4131-why-is-an-inclined-manometer-used">4.13.1 Why is an Inclined Manometer Used?<a class="headerlink" href="#4131-why-is-an-inclined-manometer-used" title="Permanent link">&para;</a></h2>
+<p>It is particularly useful for:</p>
+<blockquote>
+<p><strong>Very small pressure differences.</strong></p>
+</blockquote>
+<p>The vertical pressure head may be very small, but the movement along the inclined tube becomes much larger.</p>
+<hr />
+<h2 id="4132-relation-between-vertical-height-and-length">4.13.2 Relation Between Vertical Height and Length<a class="headerlink" href="#4132-relation-between-vertical-height-and-length" title="Permanent link">&para;</a></h2>
+<p>If:</p>
+<ul>
+<li><code>l</code> = length moved along inclined tube</li>
+<li><code>h</code> = vertical height difference</li>
+<li><code>θ</code> = angle of inclination</li>
+</ul>
+<p>then:</p>
+<div class="highlight"><pre><span></span><code>h=l\sin\theta
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>l=\frac{h}{\sin\theta}
+</code></pre></div>
+<p>This is the key sensitivity relationship.</p>
+<hr />
+<h2 id="4133-why-low-inclination-gives-high-sensitivity">4.13.3 Why Low Inclination Gives High Sensitivity?<a class="headerlink" href="#4133-why-low-inclination-gives-high-sensitivity" title="Permanent link">&para;</a></h2>
+<p>Suppose:</p>
+<div class="highlight"><pre><span></span><code>θ ↓
+</code></pre></div>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code>sin θ ↓
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>l=\frac{h}{\sin\theta}
+</code></pre></div>
+<p>means:</p>
+<div class="highlight"><pre><span></span><code>l ↑
+</code></pre></div>
+<p>for the same vertical pressure head.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Smaller inclination angle → larger movement → higher sensitivity.</strong></p>
+</blockquote>
+<h3 id="amvi">⭐ AMVI<a class="headerlink" href="#amvi" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Low θ
+  ↓
+sin θ small
+  ↓
+l large
+  ↓
+High sensitivity
+</code></pre></div>
+<hr />
+<h1 id="4134-applications">4.13.4 Applications<a class="headerlink" href="#4134-applications" title="Permanent link">&para;</a></h1>
+<p>Inclined manometers are commonly used for:</p>
+<ul>
+<li>Very low pressure measurement</li>
+<li>Small pressure differences</li>
+<li>Gas pressure measurement</li>
+<li>Sensitive pressure measurements</li>
+</ul>
+<hr />
+<h1 id="4135-why-gas-pressure">4.13.5 Why Gas Pressure?<a class="headerlink" href="#4135-why-gas-pressure" title="Permanent link">&para;</a></h1>
+<p>Gases often produce relatively small pressure differences in applications where an ordinary vertical manometer may show only a very small movement.</p>
+<p>The inclined arrangement magnifies that movement.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>Inclined manometers are commonly used for <strong>low-pressure gas measurements</strong>.</p>
+</blockquote>
+<hr />
+<h1 id="4136-design-conditions-for-high-sensitivity">4.13.6 Design Conditions for High Sensitivity<a class="headerlink" href="#4136-design-conditions-for-high-sensitivity" title="Permanent link">&para;</a></h1>
+<p>For high sensitivity:</p>
+<h3 id="1-small-inclination-angle">1. Small inclination angle<a class="headerlink" href="#1-small-inclination-angle" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>θ ↓ → sensitivity ↑
+</code></pre></div>
+<h3 id="2-small-diameter-of-measuring-tube">2. Small diameter of measuring tube<a class="headerlink" href="#2-small-diameter-of-measuring-tube" title="Permanent link">&para;</a></h3>
+<p>A small tube gives a clearer/larger displacement for small pressure differences.</p>
+<h3 id="3-low-density-manometric-liquid">3. Low-density manometric liquid<a class="headerlink" href="#3-low-density-manometric-liquid" title="Permanent link">&para;</a></h3>
+<p>For a given pressure difference:</p>
+<div class="highlight"><pre><span></span><code>\Delta P=\rho_m gh
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>h=\frac{\Delta P}{\rho_m g}
+</code></pre></div>
+<p>If <code>ρm</code> decreases:</p>
+<div class="highlight"><pre><span></span><code>h ↑
+</code></pre></div>
+<p>So a lower-density manometric liquid can provide greater displacement for a given small pressure difference.</p>
+<hr />
+<h2 id="important-clarification">Important clarification<a class="headerlink" href="#important-clarification" title="Permanent link">&para;</a></h2>
+<p>For an inclined manometer, the <strong>tube diameter should be small</strong>, but the reservoir arrangement is designed appropriately so that reservoir-level movement is negligible compared with the movement in the narrow tube.</p>
+<hr />
+<h1 id="4137-inclined-manometer-quick-revision">4.13.7 Inclined Manometer – Quick Revision<a class="headerlink" href="#4137-inclined-manometer-quick-revision" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>INCLINED MANOMETER
+│
+├── Very low pressure
+├── Small pressure difference
+├── Commonly used for gas
+├── High sensitivity
+├── Small inclination angle
+├── Small measuring-tube diameter
+└── Low-density manometric liquid
+</code></pre></div>
+<hr />
+<h1 id="414-manometric-fluids">4.14 Manometric Fluids<a class="headerlink" href="#414-manometric-fluids" title="Permanent link">&para;</a></h1>
+<p>A manometric fluid should have suitable properties for the pressure range and application.</p>
+<p>Common examples include:</p>
+<h3 id="high-density-manometric-fluids">High-density manometric fluids<a class="headerlink" href="#high-density-manometric-fluids" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mercury</li>
+<li>Carbon tetrachloride (historically used)</li>
+<li>Dense oils</li>
+</ul>
+<h3 id="low-density-manometric-fluids">Low-density manometric fluids<a class="headerlink" href="#low-density-manometric-fluids" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Water</li>
+<li>Light oils</li>
+<li>Organic liquids</li>
+<li>Alcohols</li>
+</ul>
+<h3 id="special-low-pressure-applications">Special low-pressure applications<a class="headerlink" href="#special-low-pressure-applications" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Water</li>
+<li>Alcohol</li>
+<li>Light oils</li>
+<li>Other low-density liquids chosen for compatibility and required sensitivity</li>
+</ul>
+<hr />
+<h1 id="4141-important-properties-of-a-good-manometric-fluid">4.14.1 Important Properties of a Good Manometric Fluid<a class="headerlink" href="#4141-important-properties-of-a-good-manometric-fluid" title="Permanent link">&para;</a></h1>
+<p>A suitable manometric liquid generally should have:</p>
+<ol>
+<li>Appropriate density</li>
+<li>Low vapour pressure</li>
+<li>Should not react with the measured fluid</li>
+<li>Should not stick excessively to the tube</li>
+<li>Should give a clear interface</li>
+<li>Should have suitable viscosity</li>
+<li>Should be chemically stable</li>
+</ol>
+<hr />
+<h1 id="415-why-is-mercury-used-as-a-manometric-fluid">4.15 Why is Mercury Used as a Manometric Fluid? ⭐⭐⭐<a class="headerlink" href="#415-why-is-mercury-used-as-a-manometric-fluid" title="Permanent link">&para;</a></h1>
+<p>Mercury is widely associated with manometers and barometers.</p>
+<p>Important reasons include:</p>
+<h3 id="1-high-density">1. High density<a class="headerlink" href="#1-high-density" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ρHg ≈ 13,600 kg/m³
+</code></pre></div>
+<p>Therefore, for a given pressure:</p>
+<div class="highlight"><pre><span></span><code>h=\frac{P}{\rho g}
+</code></pre></div>
+<p>Higher density → smaller column height.</p>
+<p>This makes mercury practical for relatively high pressures.</p>
+<hr />
+<h3 id="2-very-low-vapour-pressure">2. Very low vapour pressure ⭐⭐⭐<a class="headerlink" href="#2-very-low-vapour-pressure" title="Permanent link">&para;</a></h3>
+<p>This is an especially important reason.</p>
+<p>Mercury has <strong>very low vapour pressure</strong>, so evaporation of the manometric liquid is small.</p>
+<p>This is important because significant vapour pressure of the manometric liquid can introduce measurement errors.</p>
+<h3 id="3-does-not-wet-glass-strongly">3. Does not wet glass strongly<a class="headerlink" href="#3-does-not-wet-glass-strongly" title="Permanent link">&para;</a></h3>
+<p>Mercury has a useful meniscus behavior in glass tubes and does not wet glass in the same way as water.</p>
+<hr />
+<h3 id="4-high-density-reduces-column-height">4. High density reduces column height<a class="headerlink" href="#4-high-density-reduces-column-height" title="Permanent link">&para;</a></h3>
+<p>For the same pressure:</p>
+<div class="highlight"><pre><span></span><code>Mercury → small column
+Water → much larger column
+</code></pre></div>
+<h3 id="mcq_3">⭐ MCQ<a class="headerlink" href="#mcq_3" title="Permanent link">&para;</a></h3>
+<p><strong>An important property making mercury suitable for pressure measurement is:</strong></p>
+<p>A. Very high vapour pressure
+B. Very low density
+C. Very low vapour pressure
+D. Very high compressibility</p>
+<p><strong>Answer: C</strong> ✅</p>
+<hr />
+<h1 id="416-conversion-of-height-of-one-fluid-into-another-fluid">4.16 Conversion of Height of One Fluid into Another Fluid ⭐⭐⭐<a class="headerlink" href="#416-conversion-of-height-of-one-fluid-into-another-fluid" title="Permanent link">&para;</a></h1>
+<p>This is a very important numerical concept.</p>
+<p>Suppose a pressure is represented by:</p>
+<div class="highlight"><pre><span></span><code>h₁
+</code></pre></div>
+<p>of fluid 1 and the same pressure is represented by:</p>
+<div class="highlight"><pre><span></span><code>h₂
+</code></pre></div>
+<p>of fluid 2.</p>
+<p>For the same pressure:</p>
+<div class="highlight"><pre><span></span><code>P=\rho_1gh_1
+</code></pre></div>
+<p>and:</p>
+<div class="highlight"><pre><span></span><code>P=\rho_2gh_2
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>\rho_1gh_1=\rho_2gh_2
+</code></pre></div>
+<p>Cancel <code>g</code>:</p>
+<div class="highlight"><pre><span></span><code>\rho_1h_1=\rho_2h_2
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>h_2=\frac{\rho_1}{\rho_2}h_1
+</code></pre></div>
+<hr />
+<h2 id="4161-using-specific-gravity">4.16.1 Using Specific Gravity<a class="headerlink" href="#4161-using-specific-gravity" title="Permanent link">&para;</a></h2>
+<p>Since:</p>
+<div class="highlight"><pre><span></span><code>SG=\frac{\rho}{\rho_{water}}
+</code></pre></div>
+<p>we can write:</p>
+<div class="highlight"><pre><span></span><code>SG_1h_1=SG_2h_2
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>h_2=\frac{SG_1}{SG_2}h_1
+</code></pre></div>
+<hr />
+<h1 id="4162-example-water-to-mercury">4.16.2 Example: Water to Mercury<a class="headerlink" href="#4162-example-water-to-mercury" title="Permanent link">&para;</a></h1>
+<p>Suppose:</p>
+<div class="highlight"><pre><span></span><code>Water column = 13.6 m
+</code></pre></div>
+<p>Specific gravity:</p>
+<div class="highlight"><pre><span></span><code>SGwater = 1
+SGmercury = 13.6
+</code></pre></div>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code>SG_w h_w=SG_{Hg}h_{Hg}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>1\times13.6=13.6\times h_{Hg}
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>hHg = 1 m
+</code></pre></div>
+<p>So:</p>
+<blockquote>
+<p><strong>13.6 m water head = 1 m mercury head</strong></p>
+</blockquote>
+<hr />
+<h1 id="4163-very-important-conversion-rule">4.16.3 Very Important Conversion Rule<a class="headerlink" href="#4163-very-important-conversion-rule" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>Same pressure:
+
+ρ₁h₁ = ρ₂h₂
+</code></pre></div>
+<p>or:</p>
+<div class="highlight"><pre><span></span><code>SG₁h₁ = SG₂h₂
+</code></pre></div>
+<h3 id="memory-trick">Memory trick<a class="headerlink" href="#memory-trick" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Higher-density fluid requires a smaller column height for the same pressure.</strong></p>
+</blockquote>
+<hr />
+<h1 id="417-bourdon-pressure-gauge">4.17 Bourdon Pressure Gauge<a class="headerlink" href="#417-bourdon-pressure-gauge" title="Permanent link">&para;</a></h1>
+<h2 id="definition_5">Definition<a class="headerlink" href="#definition_5" title="Permanent link">&para;</a></h2>
+<p>A Bourdon pressure gauge is a mechanical pressure-measuring instrument that works using the <strong>elastic deformation of a curved tube</strong>.</p>
+<hr />
+<h2 id="construction">Construction<a class="headerlink" href="#construction" title="Permanent link">&para;</a></h2>
+<p>Main components:</p>
+<div class="highlight"><pre><span></span><code>Bourdon tube
+     ↓
+Link
+     ↓
+Gear mechanism
+     ↓
+Pointer
+     ↓
+Dial
+</code></pre></div>
+<h3 id="diagram-space_5">[DIAGRAM SPACE]<a class="headerlink" href="#diagram-space_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Draw:
+Bourdon tube + link + gear + pointer + dial.
+</code></pre></div>
+<hr />
+<h1 id="4171-working">4.17.1 Working<a class="headerlink" href="#4171-working" title="Permanent link">&para;</a></h1>
+<p>Pressure enters the Bourdon tube.</p>
+<p>The tube tends to deform/uncoil because of internal pressure.</p>
+<p>This movement is transmitted through:</p>
+<div class="highlight"><pre><span></span><code>Bourdon tube
+      ↓
+Link
+      ↓
+Gear
+      ↓
+Pointer
+      ↓
+Dial reading
+</code></pre></div>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Pressure → elastic deformation → mechanical movement → pressure indication</strong></p>
+</blockquote>
+<hr />
+<h2 id="4172-principle">4.17.2 Principle<a class="headerlink" href="#4172-principle" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Elastic deformation
+</code></pre></div>
+<h3 id="mcq_4">⭐ MCQ<a class="headerlink" href="#mcq_4" title="Permanent link">&para;</a></h3>
+<p>Bourdon gauge works on:</p>
+<p>A. Buoyancy
+B. Surface tension
+C. Elastic deformation
+D. Capillary action</p>
+<p><strong>Answer: C</strong> ✅</p>
+<hr />
+<h1 id="418-pressure-instruments-complete-comparison">4.18 Pressure Instruments – Complete Comparison<a class="headerlink" href="#418-pressure-instruments-complete-comparison" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Measures</th>
+<th>Principle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Barometer</strong></td>
+<td>Atmospheric pressure</td>
+<td>Liquid column</td>
+</tr>
+<tr>
+<td><strong>Piezometer</strong></td>
+<td>Liquid pressure/head</td>
+<td>Hydrostatic column</td>
+</tr>
+<tr>
+<td><strong>Simple U-tube</strong></td>
+<td>Pressure at a point</td>
+<td>Hydrostatic balance</td>
+</tr>
+<tr>
+<td><strong>Differential U-tube</strong></td>
+<td>Pressure difference</td>
+<td>Hydrostatic balance</td>
+</tr>
+<tr>
+<td><strong>Inclined manometer</strong></td>
+<td>Very small pressure difference</td>
+<td>Enlarged liquid displacement</td>
+</tr>
+<tr>
+<td><strong>Bourdon gauge</strong></td>
+<td>Pressure</td>
+<td>Elastic deformation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="419-extremely-important-amvi-mcq-differences">4.19 Extremely Important AMVI MCQ Differences<a class="headerlink" href="#419-extremely-important-amvi-mcq-differences" title="Permanent link">&para;</a></h1>
+<h2 id="gauge-vs-absolute-vs-vacuum">Gauge vs Absolute vs Vacuum<a class="headerlink" href="#gauge-vs-absolute-vs-vacuum" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Absolute pressure</td>
+<td>Perfect vacuum</td>
+</tr>
+<tr>
+<td>Gauge pressure</td>
+<td>Atmospheric pressure</td>
+</tr>
+<tr>
+<td>Vacuum pressure</td>
+<td>Amount below atmospheric pressure</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="simple-vs-differential-manometer_1">Simple vs Differential Manometer<a class="headerlink" href="#simple-vs-differential-manometer_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Simple</th>
+<th>Differential</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One pressure/reference point</td>
+<td>Two pressure points</td>
+</tr>
+<tr>
+<td>Measures pressure</td>
+<td>Measures pressure difference</td>
+</tr>
+<tr>
+<td>Usually atmospheric reference</td>
+<td>Compares A and B</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="piezometer-vs-manometer">Piezometer vs Manometer<a class="headerlink" href="#piezometer-vs-manometer" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Piezometer</th>
+<th>Manometer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple vertical tube</td>
+<td>U-tube/other arrangement</td>
+</tr>
+<tr>
+<td>Mainly liquid pressure</td>
+<td>Pressure/pressure difference</td>
+</tr>
+<tr>
+<td>Limited pressure range</td>
+<td>Wider applications</td>
+</tr>
+<tr>
+<td>Cannot normally measure gas pressure</td>
+<td>Can be used for gas pressure depending on arrangement</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="420-high-value-mcq-statements">4.20 High-Value MCQ Statements<a class="headerlink" href="#420-high-value-mcq-statements" title="Permanent link">&para;</a></h1>
+<p>Memorize these statements:
+* Atmospheric pressure is measured by a <strong>barometer</strong>.
+* Gauge pressure is measured with respect to atmospheric pressure.
+* Gauge pressure can be <strong>positive, zero, or negative</strong>.
+* Vacuum pressure represents pressure below atmospheric pressure.
+* Absolute pressure is measured from perfect vacuum.
+* Absolute pressure cannot be negative.
+* <code>dP/dh = -γ</code> is the hydrostatic pressure equation.
+* Pascal's law deals with transmission of pressure in a confined fluid.
+* Piezometer is mainly used for liquid pressure/head.
+* Differential manometer measures pressure difference between two points.
+* Inclined manometer is useful for very small pressure differences.
+* Smaller inclination angle gives higher sensitivity.
+* Lower-density manometric fluid gives greater column displacement for the same pressure difference, other conditions being equal.
+* Mercury has very low vapour pressure and high density.
+* Higher-density manometric fluid requires a smaller column height for the same pressure.
+* Bourdon gauge works on elastic deformation.</p>
+<hr />
+<h1 id="421-final-formula-sheet">4.21 Final Formula Sheet<a class="headerlink" href="#421-final-formula-sheet" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>P=\frac{F}{A}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>P_{abs}=P_{atm}+P_g
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>P_g=P_{abs}-P_{atm}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>P_{vac}=P_{atm}-P_{abs}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>h_p=\frac{P}{\rho g}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>P=\rho gh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>\frac{dP}{dh}=-\rho g=-\gamma
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>\Delta P=\rho g\Delta h
+</code></pre></div>
+<p>Inclined manometer:</p>
+<div class="highlight"><pre><span></span><code>h=l\sin\theta
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>l=\frac{h}{\sin\theta}
+</code></pre></div>
+<p>Fluid-column conversion:</p>
+<div class="highlight"><pre><span></span><code>\rho_1h_1=\rho_2h_2
+</code></pre></div>
+<p>or:</p>
+<div class="highlight"><pre><span></span><code>SG_1h_1=SG_2h_2
+</code></pre></div>
+<hr />
+<h1 id="422-one-minute-amvi-revision">4.22 One-Minute AMVI Revision<a class="headerlink" href="#422-one-minute-amvi-revision" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>                    FLUID PRESSURE
+                         │
+       ┌─────────────────┼──────────────────┐
+       ↓                 ↓                  ↓
+    PRESSURE          PRESSURE TYPES     STATIC FLUID
+       │                 │                  │
+      F/A          Absolute / Gauge       τ = 0
+                       / Vacuum             │
+                                           Normal
+                                           stress ≠ 0
+       │
+       ↓
+ Hydrostatic
+       │
+      ρgh
+       │
+       ├── Depth ↑ → P ↑
+       ├── Density ↑ → P ↑
+       └── Same depth → same P
+
+MEASUREMENT
+│
+├── Barometer → Atmospheric pressure
+├── Piezometer → Liquid pressure head
+├── Simple U-tube → Pressure
+├── Differential U-tube → ΔP
+├── Inclined → Very small ΔP
+└── Bourdon → Elastic deformation
+
+MANOMETER RULE
+↓ DOWN → +ρgh
+↑ UP   → −ρgh
+
+INCLINED
+θ ↓ → l ↑ → Sensitivity ↑
+
+MERCURY
+High density
++
+Very low vapour pressure
+
+COLUMN CONVERSION
+ρ₁h₁ = ρ₂h₂
+</code></pre></div>
+<p>This expanded version now covers the <strong>full 4.1–4.12 Fluid Pressure syllabus</strong> plus the additional points you identified, including <strong>simple/differential/inclined manometers, manometric fluids, mercury, column conversion, hydrostatic equation, Pascal-law distinction, and static-fluid stress concepts</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
