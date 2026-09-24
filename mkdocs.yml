@@ -6,8 +6,7 @@ nav:
   - AMVI:
       - SOM:
           - Stress: som/stress-strain_notes.md
-      - Fluid
-          - Fluid Pressure: fluid/fluid-pressure.md
+     
          
 
   - Java Concepts:
