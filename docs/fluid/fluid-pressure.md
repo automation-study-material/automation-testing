@@ -5,9 +5,9 @@
 
 ---
 
-# 4.1 Pressure
+# 1.1 Pressure
 
-## 4.1.1 Definition
+## 1.1.1 Definition
 
 **Pressure is the normal force acting per unit area.**
 
@@ -32,7 +32,7 @@ Fluid element with pressure force acting normal to its surface.
 
 ---
 
-## 4.1.2 Pressure in a Static Fluid
+## 1.1.2 Pressure in a Static Fluid
 
 A very important AMVI concept:
 
@@ -66,7 +66,7 @@ D. Both are always non-zero
 
 ---
 
-# 4.1.3 SI Unit
+# 1.1.3 SI Unit
 
 ```text
 Pressure = Pascal (Pa)
@@ -92,7 +92,7 @@ Standard atmospheric pressure:
 
 ---
 
-# 4.1.4 Dimension of Pressure
+# 1.1.4 Dimension of Pressure
 
 ```math
 [P] = ML^{-1}T^{-2}
@@ -104,9 +104,9 @@ Standard atmospheric pressure:
 
 ---
 
-# 4.2 Atmospheric Pressure
+# 1.2 Atmospheric Pressure
 
-## 4.2.1 Definition
+## 1.2.1 Definition
 
 The atmosphere has weight. The weight of the atmospheric air produces pressure on the Earth's surface.
 
@@ -122,7 +122,7 @@ Patm
 
 ---
 
-## 4.2.2 Standard Atmospheric Pressure
+## 1.2.2 Standard Atmospheric Pressure
 
 At approximately sea level:
 
@@ -145,7 +145,7 @@ Patm = 101325 Pa
 
 ---
 
-# 4.2.3 Measurement of Atmospheric Pressure
+# 1.2.3 Measurement of Atmospheric Pressure
 
 Atmospheric pressure is measured using a:
 
@@ -172,7 +172,7 @@ D. Venturimeter
 
 ---
 
-## 4.2.4 Atmospheric Pressure and Altitude
+## 1.2.4 Atmospheric Pressure and Altitude
 
 As altitude increases:
 
@@ -186,7 +186,7 @@ Therefore atmospheric pressure is generally **maximum near sea level** compared 
 
 ---
 
-# 4.3 Absolute Pressure
+# 1.3 Absolute Pressure
 
 ## Definition
 
@@ -206,7 +206,7 @@ Pabs ≥ 0
 
 ---
 
-## 4.3.1 Relation
+## 1.3.1 Relation
 
 For pressure above atmospheric:
 
@@ -222,7 +222,7 @@ P_g=P_{abs}-P_{atm}
 
 ---
 
-# 4.4 Gauge Pressure
+# 1.4 Gauge Pressure
 
 ## Definition
 
@@ -236,7 +236,7 @@ P_g=P_{abs}-P_{atm}
 
 ---
 
-## 4.4.1 Gauge Pressure Can Be Positive or Negative ⭐⭐⭐
+## 1.4.1 Gauge Pressure Can Be Positive or Negative ⭐⭐⭐
 
 Yes.
 
@@ -302,7 +302,7 @@ But:
 
 ---
 
-# 4.5 Vacuum Pressure
+# 1.5 Vacuum Pressure
 
 ## Definition
 
@@ -330,7 +330,7 @@ when gauge pressure is negative.
 
 ---
 
-## 4.5.1 Pressure Relationship
+## 1.5.1 Pressure Relationship
 
 ```text
 Perfect Vacuum
@@ -359,7 +359,7 @@ Below atmosphere → Negative gauge pressure
 
 ---
 
-# 4.6 Pressure Head
+# 1.6 Pressure Head
 
 Pressure can also be expressed as the height of an equivalent liquid column.
 
@@ -408,9 +408,9 @@ D. kg/m³
 
 ---
 
-# 4.7 Hydrostatic Pressure
+# 1.7 Hydrostatic Pressure
 
-## 4.7.1 Meaning
+## 1.7.1 Meaning
 
 Hydrostatic pressure is pressure in a **fluid at rest**.
 
@@ -424,7 +424,7 @@ Static:
 
 ---
 
-## 4.7.2 Hydrostatic Pressure Equation
+## 1.7.2 Hydrostatic Pressure Equation
 
 For a fluid at rest:
 
@@ -448,7 +448,7 @@ where:
 
 ---
 
-# 4.7.3 Differential Hydrostatic Equation ⭐⭐⭐
+# 1.7.3 Differential Hydrostatic Equation ⭐⭐⭐
 
 The basic hydrostatic pressure relationship is:
 
@@ -478,7 +478,7 @@ It is **not Pascal's law**.
 
 ---
 
-# 4.7.4 Pascal's Law vs Hydrostatic Equation
+# 1.7.4 Pascal's Law vs Hydrostatic Equation
 
 These two are commonly confused.
 
@@ -512,7 +512,7 @@ dP/dh = -γ         → hydrostatic pressure variation
 
 ---
 
-# 4.7.5 Factors Affecting Hydrostatic Pressure
+# 1.7.5 Factors Affecting Hydrostatic Pressure
 
 From:
 
@@ -542,7 +542,7 @@ g ↑ → P ↑
 
 ---
 
-# 4.7.6 Pressure Increases with Depth
+# 1.7.6 Pressure Increases with Depth
 
 ```text
 Free surface
@@ -583,7 +583,7 @@ Draw water tank showing pressure increasing with depth.
 
 ---
 
-# 4.7.7 Pressure at Same Depth
+# 1.7.7 Pressure at Same Depth
 
 For the same continuous fluid at rest:
 
@@ -603,7 +603,7 @@ P_A=P_B
 
 ---
 
-# 4.7.8 Container Shape Does Not Directly Affect Hydrostatic Pressure
+# 1.7.8 Container Shape Does Not Directly Affect Hydrostatic Pressure
 
 For a static liquid:
 
@@ -623,7 +623,7 @@ Different containers may contain different quantities of water but pressure at t
 
 ---
 
-# 4.8 Pressure Measurement
+# 1.8 Pressure Measurement
 
 Major instruments:
 
@@ -641,7 +641,7 @@ Pressure Measurement
 
 ---
 
-# 4.9 Piezometer
+# 1.9 Piezometer
 
 ## Definition
 
@@ -701,9 +701,9 @@ A piezometer is generally not suitable for:
 
 ---
 
-# 4.10 Manometer
+# 1.10 Manometer
 
-## 4.10.1 Purpose of Manometer
+## 1.10.1 Purpose of Manometer
 
 A manometer is used to measure:
 
@@ -719,7 +719,7 @@ A manometer converts pressure into a measurable **liquid-column height differenc
 
 ---
 
-## 4.10.2 Main Uses
+## 1.10.2 Main Uses
 
 Manometers can measure:
 
@@ -730,7 +730,7 @@ Manometers can measure:
 
 ---
 
-# 4.10.3 Important Manometer Rule ⭐⭐⭐
+# 1.10.3 Important Manometer Rule ⭐⭐⭐
 
 When solving a manometer:
 
@@ -758,7 +758,7 @@ UP → −ρgΔh
 
 ---
 
-# 4.10.4 Manometric Fluid
+# 1.10.4 Manometric Fluid
 
 The liquid used inside a manometer is called:
 
@@ -768,7 +768,7 @@ It should be selected according to the pressure range and the fluids being measu
 
 ---
 
-# 4.11 Simple U-Tube Manometer
+# 1.11 Simple U-Tube Manometer
 
 A simple U-tube manometer generally measures pressure at one point relative to atmospheric pressure/reference pressure.
 
@@ -798,7 +798,7 @@ The exact equation depends on the fluids and connection arrangement.
 
 ---
 
-# 4.12 Differential U-Tube Manometer
+# 1.12 Differential U-Tube Manometer
 
 ## Definition
 
@@ -859,7 +859,7 @@ The manometer allows us to determine:
 
 ---
 
-# 4.13 Inclined Manometer ⭐⭐⭐
+# 1.13 Inclined Manometer ⭐⭐⭐
 
 An inclined manometer is a manometer whose measuring tube is inclined at a small angle.
 
@@ -873,7 +873,7 @@ small pressure difference.
 
 ---
 
-## 4.13.1 Why is an Inclined Manometer Used?
+## 1.13.1 Why is an Inclined Manometer Used?
 
 It is particularly useful for:
 
@@ -883,7 +883,7 @@ The vertical pressure head may be very small, but the movement along the incline
 
 ---
 
-## 4.13.2 Relation Between Vertical Height and Length
+## 1.13.2 Relation Between Vertical Height and Length
 
 If:
 
@@ -907,7 +907,7 @@ This is the key sensitivity relationship.
 
 ---
 
-## 4.13.3 Why Low Inclination Gives High Sensitivity?
+## 1.13.3 Why Low Inclination Gives High Sensitivity?
 
 Suppose:
 
@@ -953,7 +953,7 @@ High sensitivity
 
 ---
 
-# 4.13.4 Applications
+# 1.13.4 Applications
 
 Inclined manometers are commonly used for:
 
@@ -964,7 +964,7 @@ Inclined manometers are commonly used for:
 
 ---
 
-# 4.13.5 Why Gas Pressure?
+# 1.13.5 Why Gas Pressure?
 
 Gases often produce relatively small pressure differences in applications where an ordinary vertical manometer may show only a very small movement.
 
@@ -976,7 +976,7 @@ Therefore:
 
 ---
 
-# 4.13.6 Design Conditions for High Sensitivity
+# 1.13.6 Design Conditions for High Sensitivity
 
 For high sensitivity:
 
@@ -1020,7 +1020,7 @@ For an inclined manometer, the **tube diameter should be small**, but the reserv
 
 ---
 
-# 4.13.7 Inclined Manometer – Quick Revision
+# 1.13.7 Inclined Manometer – Quick Revision
 
 ```text
 INCLINED MANOMETER
@@ -1036,7 +1036,7 @@ INCLINED MANOMETER
 
 ---
 
-# 4.14 Manometric Fluids
+# 1.14 Manometric Fluids
 
 A manometric fluid should have suitable properties for the pressure range and application.
 
@@ -1064,7 +1064,7 @@ Common examples include:
 
 ---
 
-# 4.14.1 Important Properties of a Good Manometric Fluid
+# 1.14.1 Important Properties of a Good Manometric Fluid
 
 A suitable manometric liquid generally should have:
 
@@ -1078,7 +1078,7 @@ A suitable manometric liquid generally should have:
 
 ---
 
-# 4.15 Why is Mercury Used as a Manometric Fluid? ⭐⭐⭐
+# 1.15 Why is Mercury Used as a Manometric Fluid? ⭐⭐⭐
 
 Mercury is widely associated with manometers and barometers.
 
@@ -1138,7 +1138,7 @@ D. Very high compressibility
 
 ---
 
-# 4.16 Conversion of Height of One Fluid into Another Fluid ⭐⭐⭐
+# 1.16 Conversion of Height of One Fluid into Another Fluid ⭐⭐⭐
 
 This is a very important numerical concept.
 
@@ -1188,7 +1188,7 @@ h_2=\frac{\rho_1}{\rho_2}h_1
 
 ---
 
-## 4.16.1 Using Specific Gravity
+## 1.16.1 Using Specific Gravity
 
 Since:
 
@@ -1210,7 +1210,7 @@ h_2=\frac{SG_1}{SG_2}h_1
 
 ---
 
-# 4.16.2 Example: Water to Mercury
+# 1.16.2 Example: Water to Mercury
 
 Suppose:
 
@@ -1247,7 +1247,7 @@ So:
 
 ---
 
-# 4.16.3 Very Important Conversion Rule
+# 1.16.3 Very Important Conversion Rule
 
 ```text
 Same pressure:
@@ -1267,7 +1267,7 @@ SG₁h₁ = SG₂h₂
 
 ---
 
-# 4.17 Bourdon Pressure Gauge
+# 1.17 Bourdon Pressure Gauge
 
 ## Definition
 
@@ -1300,7 +1300,7 @@ Bourdon tube + link + gear + pointer + dial.
 
 ---
 
-# 4.17.1 Working
+# 1.17.1 Working
 
 Pressure enters the Bourdon tube.
 
@@ -1326,7 +1326,7 @@ Therefore:
 
 ---
 
-## 4.17.2 Principle
+## 1.17.2 Principle
 
 ```text
 Elastic deformation
@@ -1345,7 +1345,7 @@ D. Capillary action
 
 ---
 
-# 4.18 Pressure Instruments – Complete Comparison
+# 1.18 Pressure Instruments – Complete Comparison
 
 | Instrument              | Measures                       | Principle                    |
 | ----------------------- | ------------------------------ | ---------------------------- |
@@ -1358,7 +1358,7 @@ D. Capillary action
 
 ---
 
-# 4.19 Extremely Important AMVI MCQ Differences
+# 1.19 Extremely Important AMVI MCQ Differences
 
 ## Gauge vs Absolute vs Vacuum
 
@@ -1391,7 +1391,7 @@ D. Capillary action
 
 ---
 
-# 4.20 High-Value MCQ Statements
+# 1.20 High-Value MCQ Statements
 
 Memorize these statements:
 * Atmospheric pressure is measured by a **barometer**.
@@ -1414,7 +1414,7 @@ Memorize these statements:
 
 ---
 
-# 4.21 Final Formula Sheet
+# 1.21 Final Formula Sheet
 
 ```math
 P=\frac{F}{A}
@@ -1474,7 +1474,7 @@ SG_1h_1=SG_2h_2
 
 ---
 
-# 4.22 One-Minute AMVI Revision
+# 1.22 One-Minute AMVI Revision
 
 ```text
                     FLUID PRESSURE
